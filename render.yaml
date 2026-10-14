@@ -2,6 +2,7 @@
 services:
   - type: web
     name: nadx
+    branch: nadx-site
     runtime: node
     plan: free
     buildCommand: npm ci && npm run build

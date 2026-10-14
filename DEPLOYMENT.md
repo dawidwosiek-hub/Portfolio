@@ -2,7 +2,7 @@
 
 ## Render (Node.js)
 
-1. Dodaj projekt do swojego repozytorium GitHub. W tym zadaniu nie wykonywano push ani publikacji.
+1. Kod udostępniono w repozytorium `dawidwosiek-hub/Portfolio` na gałęzi `nadx-site`. W Render wybierz tę gałąź. Nie wykonano publikacji strony na hostingu.
 2. W Render wybierz nowy Web Service z repozytorium lub użyj Blueprint z `render.yaml`. Sprawdź aktualne warunki darmowego planu. Jeśli darmowy plan nie jest dostępny, nie przechodź na płatny bez decyzji właściciela.
 3. Build: `npm ci && npm run build`. Start: `npm start`. Node 24. Health check: `/`. Render przekazuje `PORT`, aplikacja go respektuje.
 4. Po przydzieleniu adresu `https://nazwa.onrender.com` ustaw `SITE_URL` na ten rzeczywisty adres. Ustaw go dla **builda i runtime**, potem wykonaj ponowny deploy. Dla podglądu bez indeksowania nie ustawiaj domeny do czasu finalizacji treści; formularz pozostanie nieaktywny.
