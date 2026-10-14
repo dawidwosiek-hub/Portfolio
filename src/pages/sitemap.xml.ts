@@ -1,0 +1,3 @@
+import type {APIRoute} from 'astro';
+import {services,projects} from '../lib/content';
+export const GET:APIRoute=()=>{const url=process.env.SITE_URL||import.meta.env.SITE_URL;if(!url)return new Response('SITE_URL is required',{status:503});const routes=['/','/oferta','/realizacje','/o-mnie','/kontakt','/prywatnosc',...services.map(s=>`/oferta/${s.slug}`),...projects.map(p=>`/realizacje/${p.slug}`)];const escape=(s:string)=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(p=>`<url><loc>${escape(new URL(p,url).href)}</loc></url>`).join('')}</urlset>`,{headers:{'Content-Type':'application/xml'}});};

@@ -1,0 +1,42 @@
+{
+  "name": "nadx",
+  "version": "1.0.0",
+  "description": "NADX \u2014 grafika, film i produkcja",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "start": "node --env-file-if-exists=.env dist/server/entry.mjs",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "test": "playwright test",
+    "test:api": "node --import tsx --test tests/api.test.ts",
+    "test:portfolio": "node --test tests/portfolio.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawidwosiek-hub/Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/dawidwosiek-hub/Portfolio/issues"
+  },
+  "homepage": "https://github.com/dawidwosiek-hub/Portfolio#readme",
+  "dependencies": {
+    "@astrojs/node": "^11.1.7",
+    "astro": "^7.3.8"
+  },
+  "private": true,
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

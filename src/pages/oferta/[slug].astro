@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Process from '../../components/Process.astro';
+import {services,projects} from '../../lib/content';
+export function getStaticPaths(){return services.map(s=>({params:{slug:s.slug},props:{service:s}}));}
+export const prerender=true;
+interface Props {service: (typeof services)[number]}
+const {service:s}=Astro.props;
+const related=projects.filter(p=>p.category===s.category);
+---
+<Layout title={`${s.title} — Kraków i zdalnie | NADX`} description={s.intro}>
+<section class="page-intro section"><a class="breadcrumb" href="/oferta">← Wszystkie usługi</a><span class="eyebrow">USŁUGA / {s.number}</span><h1>{s.title}<em>.</em></h1><p>{s.intro}</p><a class="button yellow" href={`/kontakt?usluga=${s.slug}`} data-track="service_select" data-service={s.slug}>Zapytaj o ten projekt <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></section>
+<section class="section service-detail"><div><span class="eyebrow">ZAKRES WSPÓŁPRACY</span><h2>Co możesz<br/>otrzymać?</h2></div><div><ul class="deliverables">{s.deliverables.map(d=><li>{d}</li>)}</ul><p>{s.detail}</p><div class="price-note"><strong>{s.price || 'Wycena indywidualna'}</strong><p>Ostateczny zakres, termin i warunki współpracy ustalamy na podstawie Twojego zapytania. Kraków i okolice oraz praca zdalna w całej Polsce.</p></div></div></section>
+{related.length>0&&<section class="section"><h2>W praktyce.</h2><div class="project-grid">{related.map(p=><a class="project" href={`/realizacje/${p.slug}`}><img src={p.image} alt={p.alt} loading="lazy" width="1000" height="750"/><h3>{p.name}</h3><p>{p.scope}</p></a>)}</div></section>}
+<Process/>
+</Layout>

@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Projects from '../../components/Projects.astro';
+import CTA from '../../components/CTA.astro';
+import {categories,projects} from '../../lib/content';
+---
+<Layout title="Realizacje — portfolio grafiki i wideo | NADX" description="Portfolio NADX. Logo i identyfikacja, druk i reklama, filmy, odzież i oklejenia — poznaj zakres projektów.">
+<section class="page-intro section"><span class="eyebrow">PORTFOLIO / NADX</span><h1>Forma.<br/>Z <em>charakterem.</em></h1><p>Grafika, film i produkcja — różne media, jeden sposób myślenia o marce.</p></section>
+<section class="section portfolio-section">{projects.length>0&&<><div class="filters" role="group" aria-label="Filtruj realizacje"><button aria-pressed="true" data-filter="all">Wszystkie</button>{categories.map(c=><button aria-pressed="false" data-filter={c}>{c}</button>)}</div><p class="filter-count" aria-live="polite">{projects.length} realizacji</p></>}<Projects/><p class="filter-empty" hidden>Nie ma jeszcze realizacji w tej kategorii.</p></section><CTA/>
+<script>
+const buttons=document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+buttons.forEach(button=>button.addEventListener('click',()=>{buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));let count=0;document.querySelectorAll<HTMLElement>('[data-category]').forEach(p=>{p.hidden=button.dataset.filter!=='all'&&p.dataset.category!==button.dataset.filter;if(!p.hidden)count++;});const status=document.querySelector('.filter-count');if(status)status.textContent=`Widoczne realizacje: ${count}`;const empty=document.querySelector<HTMLElement>('.filter-empty');if(empty)empty.hidden=count>0;}));
+</script>
+</Layout>

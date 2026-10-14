@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Zaczynam działalność",
+    "text": "Potrzebujesz wyraźnego początku i spójnych materiałów na start.",
+    "items": [
+      "Logo i podstawowa identyfikacja",
+      "Wizytówki",
+      "Materiały startowe"
+    ],
+    "serviceSlug": "logo-i-identyfikacja",
+    "price": null
+  },
+  {
+    "title": "Chcę odświeżyć markę",
+    "text": "Twoja firma się zmienia. Wizerunek powinien za nią nadążyć.",
+    "items": [
+      "Odświeżenie identyfikacji",
+      "Uporządkowanie materiałów",
+      "Spójny kierunek wizualny"
+    ],
+    "serviceSlug": "logo-i-identyfikacja",
+    "price": null
+  },
+  {
+    "title": "Chcę promować firmę",
+    "text": "Chcesz pokazać ofertę w ruchu i dotrzeć z nią do odbiorców.",
+    "items": [
+      "Montaż i filmy reklamowe w ustalonym zakresie",
+      "Grafiki do social mediów",
+      "Materiały reklamowe"
+    ],
+    "serviceSlug": "film-i-social-media",
+    "price": null
+  },
+  {
+    "title": "Potrzebuję druku lub odzieży",
+    "text": "Potrzebujesz projektu, który będzie działał w fizycznej produkcji.",
+    "items": [
+      "Projekt materiałów lub nadruku",
+      "Przygotowanie plików produkcyjnych",
+      "Zakres wykonania potwierdzany indywidualnie"
+    ],
+    "serviceSlug": "odziez-i-nadruki",
+    "price": null
+  }
+]

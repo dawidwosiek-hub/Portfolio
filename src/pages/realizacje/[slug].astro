@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import {projects, type Project} from '../../lib/content';
+export function getStaticPaths(){return projects.map(project=>({params:{slug:project.slug},props:{project}}));}
+export const prerender=true;
+interface Props {project:Project}
+const {project:p}=Astro.props;
+---
+<Layout title={`${p.name} — realizacja | NADX`} description={p.scope}>
+<section class="page-intro section"><a class="breadcrumb" href="/realizacje">← Wszystkie realizacje</a><span class="eyebrow">{p.category}</span><h1>{p.name}<em>.</em></h1><p>{p.scope}</p></section>
+<div class="project-cover"><img src={p.image} alt={p.alt} width="1600" height="1000" fetchpriority="high"/></div>
+<section class="section case-details"><div><span class="eyebrow">KLIENT I POTRZEBA</span><h2>{p.client}</h2><p>{p.need}</p></div><div><span class="eyebrow">POMYSŁ I ROZWIĄZANIE</span><h2>Od celu do formy.</h2><p>{p.solution}</p><h3>Zakres mojej pracy</h3><p>{p.scope}</p></div></section>
+<section class="case-gallery">{p.gallery.map(image=><img src={image.src} alt={image.alt} loading="lazy" width="1600" height="1000"/>)}{p.video&&<video controls preload="none" poster={p.video.poster} playsinline aria-label={`Film: ${p.name}`}><source src={p.video.src} type="video/mp4"/>Twoja przeglądarka nie obsługuje tego filmu.</video>}</section>
+{p.result&&<section class="section"><span class="eyebrow">EFEKT / POTWIERDZONE INFORMACJE</span><h2>Rezultat.</h2><p>{p.result}</p></section>}
+<section class="section cta"><h2>Twój projekt<br/>może być <em>następny.</em></h2><a class="button yellow" href={`/kontakt?projekt=${encodeURIComponent(p.name)}`} data-track="portfolio_contact" data-project={p.slug}>Chcę podobny projekt <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></section>
+</Layout>

@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTA from '../../components/CTA.astro';
+import {services,projects} from '../../lib/content';
+import rawPackages from '../../content/packages.json';
+const packages=rawPackages.map(p=>({...p,service:services.find(s=>s.slug===p.serviceSlug)!}));
+---
+<Layout title="Oferta — logo, grafika, film i nadruki | NADX" description="Znajdź zakres współpracy dla swojej firmy: identyfikacja wizualna, druk, wideo i projekty nadruków. Kraków i zdalnie. Wycena indywidualna.">
+<section class="page-intro section"><span class="eyebrow">OFERTA / DOPASOWANA DO POTRZEB</span><h1>Czego potrzebuje<br/>Twoja <em>marka?</em></h1><p>Nie każda firma potrzebuje wszystkiego. Zacznijmy od celu i dobierzmy materiały, które mają dla Ciebie sens.</p></section>
+<section class="section packages">{packages.map((p,i)=><article class="package"><span class="eyebrow">0{i+1} / TWÓJ CEL</span><h2>{p.title}</h2><p>{p.text}</p><ul>{p.items.map(item=><li>{item}</li>)}</ul><div class="package-bottom"><span>{p.price || 'Wycena indywidualna'}</span><a class="text-link" href={`/kontakt?usluga=${p.service.slug}`} data-track="service_select" data-service={p.service.slug}>Zapytaj o zakres <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></div>{projects.filter(pr=>pr.category===p.service.category).slice(0,2).map(pr=><a href={`/realizacje/${pr.slug}`}>Realizacja: {pr.name} <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a>)}</article>)}</section>
+<section class="section dark"><div class="section-heading"><span class="eyebrow">POZNAJ SZCZEGÓŁY</span><h2>Dobierzmy<br/>właściwe narzędzia.</h2></div><div class="service-list">{services.map(s=><a class="service-row" href={`/oferta/${s.slug}`}><span>{s.number}</span><div><h3>{s.title}</h3><p>{s.short}</p></div><span aria-hidden="true"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span></a>)}</div></section><CTA/>
+</Layout>

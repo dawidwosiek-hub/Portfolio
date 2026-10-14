@@ -1,0 +1,24 @@
+# Review pricing in Render before creating any service. This file does not buy a plan.
+services:
+  - type: web
+    name: nadx
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: HOST
+        value: 0.0.0.0
+      - key: SITE_URL
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: CONTACT_FROM
+        sync: false
+      - key: CONTACT_TO
+        sync: false
+      - key: FORM_SECRET
+        sync: false

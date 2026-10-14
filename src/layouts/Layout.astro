@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import {site} from '../lib/content';
+const { title = 'NADX — Grafika, film i produkcja', description = 'Logo, identyfikacja wizualna, materiały reklamowe i montaż wideo. NADX — Kraków i okolice, współpraca zdalna w całej Polsce.', noindex = false } = Astro.props;
+const configuredURL = import.meta.env.SITE_URL || process.env.SITE_URL;
+const canonical = configuredURL ? new URL(Astro.url.pathname, configuredURL).href : undefined;
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>{title}</title><meta name="description" content={description}/>
+{canonical && <link rel="canonical" href={canonical}/>}
+{(noindex || !configuredURL) && <meta name="robots" content="noindex,follow"/>}
+<meta name="theme-color" content="#101010"/>
+<meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:locale" content="pl_PL"/>
+{canonical && <><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL('/og.png',configuredURL).href}/></>}
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+{configuredURL && <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'NADX',url:configuredURL,description:'Projektowanie graficzne, film i przygotowanie do produkcji',areaServed:'Polska',...(site.email?{email:site.email}:{})}).replace(/</g,'\\u003c')}/>}
+</head>
+<body>
+<a class="skip" href="#main">Przejdź do treści</a>
+<header class="header"><a class="wordmark" href="/" aria-label="NADX — strona główna">NADX<span><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span></a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">+</span></button>
+<nav id="navigation" aria-label="Nawigacja główna">
+<a href="/realizacje" aria-current={path.startsWith('/realizacje')?'page':undefined}>Realizacje</a><a href="/oferta" aria-current={path.startsWith('/oferta')?'page':undefined}>Oferta</a><a href="/o-mnie" aria-current={path==='/o-mnie'?'page':undefined}>O mnie</a><a href="/kontakt" aria-current={path==='/kontakt'?'page':undefined}>Kontakt</a>
+<a class="button small yellow" href="/kontakt" data-track="quote_click">Wyceń projekt <span aria-hidden="true"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span></a>
+</nav></header>
+<main id="main" tabindex="-1"><slot/></main>
+<footer class="footer"><div class="footer-top"><a class="wordmark" href="/">NADX<span><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span></a><p>Dobry pomysł.<br/>Jeszcze lepsza forma.</p><div><span class="eyebrow">MASZ COŚ W PLANACH?</span><a class="footer-link" href="/kontakt" data-track="quote_click">Porozmawiajmy <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} NADX</span><span>Kraków i okolice · Zdalnie w całej Polsce</span><a href="/prywatnosc">Prywatność</a></div></footer>
+<script>
+const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+const nav = document.querySelector('#navigation');
+toggle?.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); nav?.classList.toggle('open',open); });
+document.addEventListener('keydown', e => { if(e.key==='Escape' && toggle?.getAttribute('aria-expanded')==='true'){toggle?.setAttribute('aria-expanded','false');nav?.classList.remove('open');toggle?.focus();} });
+// Local events only. No analytics vendor, storage or personal data.
+document.addEventListener('click', e => { const a=(e.target as Element).closest<HTMLElement>('[data-track]'); if(a) window.dispatchEvent(new CustomEvent('nadx:analytics',{detail:{event:a.dataset.track,service:a.dataset.service || null,project:a.dataset.project || null}})); });
+</script>
+</body></html>

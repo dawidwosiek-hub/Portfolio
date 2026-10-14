@@ -1,0 +1,12 @@
+import raw from '../content/site.json';
+import rawServices from '../content/services.json';
+export type Service={slug:string;number:string;title:string;short:string;intro:string;deliverables:string[];detail:string;category:string;price:string|null};
+const services:Service[]=rawServices;
+export type Project = { slug:string; name:string; category:string; scope:string; image:string; alt:string; client:string; need:string; solution:string; gallery:{src:string;alt:string}[]; result?:string; video?:{src:string;poster:string}; published:boolean; featured?:boolean };
+export type Stat = { label:string; value:string; confirmed:boolean; context?:string };
+export type Testimonial = { quote:string; author:string; role?:string; consent:boolean };
+export type Comparison = { title:string; before:string; after:string; beforeAlt:string; afterAlt:string; published:boolean };
+export const site = raw as Omit<typeof raw,'projects'|'statistics'|'testimonials'|'comparisons'|'clientLogos'> & {projects:Project[];statistics:Stat[];testimonials:Testimonial[];comparisons:Comparison[];clientLogos:{src:string;name:string;consent:boolean}[]};
+export const projects = site.projects.filter(p => p.published);
+export const categories = ['logo i identyfikacja','druk i reklama','filmy i social media','odzież i nadruki','oklejenia'];
+export {services};
