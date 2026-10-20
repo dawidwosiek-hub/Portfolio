@@ -1,0 +1,6 @@
+---
+import type {ProjectMedia} from '../lib/content';
+interface Props {media:ProjectMedia;priority?:boolean;sizes?:string}
+const {media,priority=false,sizes='(max-width: 760px) 88vw, 90vw'}=Astro.props;
+---
+<img src={media.src} srcset={media.smallSrc?`${media.smallSrc} 768w, ${media.src} ${media.width || 1536}w`:undefined} sizes={media.smallSrc?sizes:undefined} alt={media.alt} width={media.width || 1600} height={media.height || 1000} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':undefined} decoding="async"/>

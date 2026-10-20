@@ -12,5 +12,70 @@
   "testimonials": [],
   "clientLogos": [],
   "comparisons": [],
-  "projects": []
+  "projects": [
+    {
+      "slug": "shiro-logo-i-wizytowki",
+      "name": "SHIRO",
+      "category": "logo i identyfikacja",
+      "categories": [
+        "druk i reklama"
+      ],
+      "scope": "Autorski projekt logo, dwa warianty wizytówek i przygotowanie materiałów do druku.",
+      "scopeItems": [
+        "Projekt logo SHIRO",
+        "Wizytówki Mechanic & Chiptuning i Car Rental",
+        "Przygotowanie plików do druku"
+      ],
+      "image": "/media/shiro/wizytowki-1536.webp",
+      "imageSmall": "/media/shiro/wizytowki-768.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1024,
+      "imageCaption": "Wizytówki SHIRO · wizualizacja AI na podstawie oryginalnych projektów.",
+      "alt": "Wizualizacja dwóch czarno-czerwonych wizytówek SHIRO na białym tle.",
+      "client": "SHIRO — motoryzacja.",
+      "need": "Materiały dla dwóch obszarów działalności: mechaniki i chiptuningu oraz wynajmu samochodów. Każdy wariant wizytówki przedstawia właściwy zakres i dane kontaktowe.",
+      "solution": "Zaprojektowałem logo z wyrazistym liternictwem i motywem bieżnika. Czerwony akcent w znaku, ciemne tło i czytelne pola kontaktowe łączą oba projekty wizytówek. Układy różnią się kompozycją, zachowując wspólny charakter marki.",
+      "logo": {
+        "src": "/media/shiro/logo.webp",
+        "alt": "Logo SHIRO: autorskie liternictwo otoczone motywem bieżnika opony.",
+        "width": 1871,
+        "height": 821,
+        "invert": true,
+        "caption": "Logo SHIRO · wariant jednobarwny."
+      },
+      "galleryTitle": "Jedna marka. Dwa zastosowania.",
+      "galleryIntro": "Dwa osobne projekty wizytówek. Oryginalne materiały pokazane bez perspektywy mockupu, z zachowaniem ich kompozycji i typografii.",
+      "gallery": [
+        {
+          "src": "/media/shiro/mechanic-1536.webp",
+          "smallSrc": "/media/shiro/mechanic-768.webp",
+          "width": 1536,
+          "height": 854,
+          "alt": "Oryginalny projekt wizytówki SHIRO Mechanic & Chiptuning z logo po lewej i czerwonymi polami kontaktowymi po prawej.",
+          "caption": "Mechanic & Chiptuning · oryginalny projekt wizytówki",
+          "kind": "original"
+        },
+        {
+          "src": "/media/shiro/car-rental-1536.webp",
+          "smallSrc": "/media/shiro/car-rental-768.webp",
+          "width": 1536,
+          "height": 854,
+          "alt": "Oryginalny projekt wizytówki SHIRO Car Rental z logo nad trzema czerwonymi polami kontaktowymi.",
+          "caption": "Car Rental · oryginalny projekt wizytówki",
+          "kind": "original"
+        },
+        {
+          "src": "/media/shiro/detal-1536.webp",
+          "smallSrc": "/media/shiro/detal-768.webp",
+          "width": 1536,
+          "height": 1024,
+          "alt": "Wizualizacja zbliżenia wizytówki SHIRO na białym tle, pokazująca logo i czerwone pola kontaktowe.",
+          "caption": "Zbliżenie projektu · wizualizacja AI.",
+          "kind": "visualization"
+        }
+      ],
+      "published": true,
+      "featured": true
+    }
+  ]
 }

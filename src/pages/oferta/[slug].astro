@@ -1,12 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Process from '../../components/Process.astro';
-import {services,projects} from '../../lib/content';
+import {services,projects,projectInCategory} from '../../lib/content';
 export function getStaticPaths(){return services.map(s=>({params:{slug:s.slug},props:{service:s}}));}
 export const prerender=true;
 interface Props {service: (typeof services)[number]}
 const {service:s}=Astro.props;
-const related=projects.filter(p=>p.category===s.category);
+const related=projects.filter(p=>projectInCategory(p,s.category));
 ---
 <Layout title={`${s.title} — Kraków i zdalnie | NADX`} description={s.intro}>
 <section class="page-intro section"><a class="breadcrumb" href="/oferta">← Wszystkie usługi</a><span class="eyebrow">USŁUGA / {s.number}</span><h1>{s.title}<em>.</em></h1><p>{s.intro}</p><a class="button yellow" href={`/kontakt?usluga=${s.slug}`} data-track="service_select" data-service={s.slug}>Zapytaj o ten projekt <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></section>

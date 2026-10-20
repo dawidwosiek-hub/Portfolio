@@ -2,7 +2,8 @@ import raw from '../content/site.json';
 import rawServices from '../content/services.json';
 export type Service={slug:string;number:string;title:string;short:string;intro:string;deliverables:string[];detail:string;category:string;price:string|null};
 const services:Service[]=rawServices;
-export type Project = { slug:string; name:string; category:string; scope:string; image:string; alt:string; client:string; need:string; solution:string; gallery:{src:string;alt:string}[]; result?:string; video?:{src:string;poster:string}; published:boolean; featured?:boolean };
+export type ProjectMedia = {src:string;smallSrc?:string;alt:string;width?:number;height?:number;caption?:string;kind?:'original'|'visualization'};
+export type Project = { slug:string; name:string; category:string; categories?:string[]; scope:string; scopeItems?:string[]; image:string; imageSmall?:string; imageWidth?:number; imageHeight?:number; imageCaption?:string; alt:string; client:string; need:string; solution:string; logo?:{src:string;alt:string;width:number;height:number;invert?:boolean;caption:string}; galleryTitle?:string; galleryIntro?:string; gallery:ProjectMedia[]; result?:string; video?:{src:string;poster:string}; published:boolean; featured?:boolean };
 export type Stat = { label:string; value:string; confirmed:boolean; context?:string };
 export type Testimonial = { quote:string; author:string; role?:string; consent:boolean };
 export type Comparison = { title:string; before:string; after:string; beforeAlt:string; afterAlt:string; published:boolean };
@@ -10,5 +11,7 @@ export const site = raw as Omit<typeof raw,'projects'|'statistics'|'testimonials
 const dialNumber = site.phone.replace(/[^\d+]/g,'');
 export const phoneHref = `tel:${/^\d{9}$/.test(dialNumber)?'+48'+dialNumber:dialNumber}`;
 export const projects = site.projects.filter(p => p.published);
+export const projectCategories = (project:Project) => [...new Set([project.category,...(project.categories || [])])];
+export const projectInCategory = (project:Project, category:string) => projectCategories(project).includes(category);
 export const categories = ['logo i identyfikacja','druk i reklama','filmy i social media','odzież i nadruki','oklejenia'];
 export {services};

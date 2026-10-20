@@ -2,9 +2,9 @@
 import '../styles/global.css';
 import BrandLogo from '../components/BrandLogo.astro';
 import {site,phoneHref} from '../lib/content';
-const { title = 'NADX — Grafika, film i produkcja', description = 'Logo, identyfikacja wizualna, materiały reklamowe i montaż wideo. NADX — Kraków i okolice, współpraca zdalna w całej Polsce.', noindex = false } = Astro.props;
+const { title = 'NADX — Grafika, film i produkcja', description = 'Logo, identyfikacja wizualna, materiały reklamowe i montaż wideo. NADX — Kraków i okolice, współpraca zdalna w całej Polsce.', noindex = false, bodyClass = '', image = '/og.png?v=nadx-logo-1' } = Astro.props;
 const configuredURL = import.meta.env.SITE_URL || process.env.SITE_URL;
-const canonical = configuredURL ? new URL(Astro.url.pathname, configuredURL).href : undefined;
+const canonical = configuredURL ? new URL(Astro.url.pathname.replace(/\/+$/, '') || '/', configuredURL).href : undefined;
 const path = Astro.url.pathname;
 ---
 <!doctype html>
@@ -16,13 +16,13 @@ const path = Astro.url.pathname;
 {(noindex || !configuredURL) && <meta name="robots" content="noindex,follow"/>}
 <meta name="theme-color" content="#101010"/>
 <meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:locale" content="pl_PL"/>
-{canonical && <><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL('/og.png?v=nadx-logo-1',configuredURL).href}/></>}
+{canonical && <><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL(image,configuredURL).href}/></>}
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=nadx-logo-1"/>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=nadx-logo-1"/>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=nadx-logo-1"/>
 {configuredURL && <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'NADX',url:configuredURL,description:'Projektowanie graficzne, film i przygotowanie do produkcji',areaServed:'Polska',...(site.email?{email:site.email}:{}),...(site.phone?{telephone:phoneHref.slice(4)}:{})}).replace(/</g,'\\u003c')}/>}
 </head>
-<body>
+<body class={bodyClass || undefined}>
 <a class="skip" href="#main">Przejdź do treści</a>
 <header class="header"><BrandLogo/>
 <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">+</span></button>

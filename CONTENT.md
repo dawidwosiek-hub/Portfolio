@@ -29,6 +29,16 @@ Opcjonalne `result`: wyłącznie potwierdzony rezultat, z kontekstem platformy i
 
 Przycisk projektu przekazuje jego nazwę do kontaktu. Przy linku z nieznaną nazwą strona nie dodaje fikcyjnej realizacji.
 
+### SHIRO i prezentacja logo
+
+Pierwsza realizacja jest wpisana w `site.json` jako `shiro-logo-i-wizytowki`. Materiały internetowe znajdują się w `public/media/shiro/`. Wpis jest widoczny na stronie głównej, w portfolio oraz przy usługach logo i druku. Opcjonalna tablica `categories` dodaje kolejne kategorie, zachowując główną `category`.
+
+`logo` zawiera `src`, `alt`, rzeczywiste `width` i `height` oraz `caption`. Obecny znak to oryginalny raster z przezroczystością wyodrębniony z obiektu osadzonego w dostarczonym `sh1.psd`. Nie został odtworzony przez AI ani zwektoryzowany. `invert: true` wyświetla biały znak w czerni na białym tle; plik źródłowy pozostaje biały. Po dostarczeniu docelowego kolorowego SVG można zastąpić `src`, wymiary i wyłączyć `invert`.
+
+`scopeItems` to lista rzeczywiście wykonanych prac. `galleryTitle` i `galleryIntro` opisują galerię. Wpisy `gallery` mogą mieć `width`, `height`, `smallSrc`, `caption` i `kind`. `original` prezentuje oryginał w siatce, `visualization` — mockup w części z zakresem pracy. Brak `kind` traktowany jest jak zwykła galeria. Dla obrazu głównego istnieją analogiczne `imageSmall`, `imageWidth`, `imageHeight` i `imageCaption`. Małe wersje powinny mieć 768 px szerokości; duże — podaną szerokość. Przeglądarka dobiera plik do ekranu.
+
+Mockupy SHIRO powstały z użyciem AI i są tak podpisane. Nie są dokumentacją fizycznego wydruku; oryginalne wizytówki są pokazane obok. Autorstwo logo i projektów wizytówek potwierdził Dawid Wosiek. Wpis nie przypisuje autorstwa znaku COMPSPORT ani fotografii samochodu, nie podaje niepotwierdzonych wyników ani wykonania nakładu.
+
 ## Kontakt i prywatność
 
 `email`, `phone`, `portrait`: puste pola są ukryte. `socials`: obiekty `{"label":"Nazwa profilu","url":"https://prawdziwy-adres"}`. `about`: naturalny opis w pierwszej osobie. `administrator`: pełna prawdziwa tożsamość administratora i dane adresowe, `privacyContact`: rzeczywisty kontakt do spraw danych, `hostingProvider`: faktyczny hosting. Samo uzupełnienie e-maila w JSON nie konfiguruje wysyłania formularza.

@@ -20,3 +20,6 @@
 @media(max-width:760px){.brand-logo-link img{height:50px}.footer .brand-logo-link img{height:64px}}
 
 .footer-contact{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:22px;font-size:.88rem;line-height:1.5}.footer-contact a{max-width:100%;overflow-wrap:anywhere;border-bottom:1px solid #ffffff50}.footer-contact a:hover{color:var(--yellow)}
+
+.project.with-logo .project-image img{object-fit:contain;background:#fff}
+.project-visualization-note{display:block;margin-top:10px;font-size:.68rem;color:var(--muted)}
