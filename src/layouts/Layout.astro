@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import BrandLogo from '../components/BrandLogo.astro';
-import {site} from '../lib/content';
+import {site,phoneHref} from '../lib/content';
 const { title = 'NADX — Grafika, film i produkcja', description = 'Logo, identyfikacja wizualna, materiały reklamowe i montaż wideo. NADX — Kraków i okolice, współpraca zdalna w całej Polsce.', noindex = false } = Astro.props;
 const configuredURL = import.meta.env.SITE_URL || process.env.SITE_URL;
 const canonical = configuredURL ? new URL(Astro.url.pathname, configuredURL).href : undefined;
@@ -20,7 +20,7 @@ const path = Astro.url.pathname;
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=nadx-logo-1"/>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=nadx-logo-1"/>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=nadx-logo-1"/>
-{configuredURL && <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'NADX',url:configuredURL,description:'Projektowanie graficzne, film i przygotowanie do produkcji',areaServed:'Polska',...(site.email?{email:site.email}:{})}).replace(/</g,'\\u003c')}/>}
+{configuredURL && <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'NADX',url:configuredURL,description:'Projektowanie graficzne, film i przygotowanie do produkcji',areaServed:'Polska',...(site.email?{email:site.email}:{}),...(site.phone?{telephone:phoneHref.slice(4)}:{})}).replace(/</g,'\\u003c')}/>}
 </head>
 <body>
 <a class="skip" href="#main">Przejdź do treści</a>
@@ -31,7 +31,7 @@ const path = Astro.url.pathname;
 <a class="button small yellow" href="/kontakt" data-track="quote_click">Wyceń projekt <span aria-hidden="true"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span></a>
 </nav></header>
 <main id="main" tabindex="-1"><slot/></main>
-<footer class="footer"><div class="footer-top"><BrandLogo/><p>Dobry pomysł.<br/>Jeszcze lepsza forma.</p><div><span class="eyebrow">MASZ COŚ W PLANACH?</span><a class="footer-link" href="/kontakt" data-track="quote_click">Porozmawiajmy <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} NADX</span><span>Kraków i okolice · Zdalnie w całej Polsce</span><a href="/prywatnosc">Prywatność</a></div></footer>
+<footer class="footer"><div class="footer-top"><BrandLogo/><p>Dobry pomysł.<br/>Jeszcze lepsza forma.</p><div><span class="eyebrow">MASZ COŚ W PLANACH?</span><a class="footer-link" href="/kontakt" data-track="quote_click">Porozmawiajmy <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a>{(site.email||site.phone)&&<div class="footer-contact">{site.email&&<a href={`mailto:${site.email}`}>{site.email}</a>}{site.phone&&<a href={phoneHref}>{site.phone}</a>}</div>}</div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} NADX</span><span>Kraków i okolice · Zdalnie w całej Polsce</span><a href="/prywatnosc">Prywatność</a></div></footer>
 <script>
 const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
 const nav = document.querySelector('#navigation');

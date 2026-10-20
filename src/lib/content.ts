@@ -7,6 +7,8 @@ export type Stat = { label:string; value:string; confirmed:boolean; context?:str
 export type Testimonial = { quote:string; author:string; role?:string; consent:boolean };
 export type Comparison = { title:string; before:string; after:string; beforeAlt:string; afterAlt:string; published:boolean };
 export const site = raw as Omit<typeof raw,'projects'|'statistics'|'testimonials'|'comparisons'|'clientLogos'> & {projects:Project[];statistics:Stat[];testimonials:Testimonial[];comparisons:Comparison[];clientLogos:{src:string;name:string;consent:boolean}[]};
+const dialNumber = site.phone.replace(/[^\d+]/g,'');
+export const phoneHref = `tel:${/^\d{9}$/.test(dialNumber)?'+48'+dialNumber:dialNumber}`;
 export const projects = site.projects.filter(p => p.published);
 export const categories = ['logo i identyfikacja','druk i reklama','filmy i social media','odzież i nadruki','oklejenia'];
 export {services};
