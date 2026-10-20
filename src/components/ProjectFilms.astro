@@ -1,0 +1,51 @@
+---
+import ProjectImage from './ProjectImage.astro';
+import type {ApplicationVideo} from '../lib/content';
+interface Props {videos:ApplicationVideo[];section:string}
+const {videos,section}=Astro.props;
+---
+<div class="film-grid">{videos.map((video,index)=>{
+ const id=`film-${section}-${index}`;
+ return <figure class="film-preview">
+  <button class="film-open" type="button" data-film-open={id} aria-label={`Obejrzyj film: ${video.title}`} aria-haspopup="dialog" aria-controls={id}>
+   <div class="film-image">{video.preview?<ProjectImage media={video.preview} sizes="(max-width: 760px) 88vw, 44vw"/>:<img src={video.poster} alt={video.title} loading="lazy" width={video.width} height={video.height}/>}</div>
+   <span class="film-action"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7z" fill="currentColor"/></svg>Obejrzyj animację</span>
+  </button>
+  <figcaption><h3>{video.title}</h3><p>{video.preview?'Podgląd projektu · wizualizacja AI.':video.caption}</p></figcaption>
+  <dialog id={id} class="film-dialog" aria-labelledby={`${id}-title`}>
+   <div class="film-toolbar"><h3 id={`${id}-title`}>{video.title}</h3><button type="button" data-film-close aria-label="Zamknij film" autofocus>×</button></div>
+   <video controls playsinline muted preload="none" poster={video.poster} width={video.width} height={video.height} aria-label={video.title}><source src={video.src} type="video/mp4"/>Twoja przeglądarka nie obsługuje tego filmu. <a href={video.src}>Otwórz film: {video.title}</a></video>
+  </dialog>
+ </figure>
+})}</div>
+<script>
+document.querySelectorAll<HTMLButtonElement>('[data-film-open]').forEach(button=>{
+ const dialog=document.getElementById(button.dataset.filmOpen!) as HTMLDialogElement|null;
+ if(!dialog)return;
+ const video=dialog.querySelector('video');
+ button.addEventListener('click',()=>{dialog.showModal();void video?.play().catch(()=>{});});
+ dialog.querySelector('[data-film-close]')?.addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('close',()=>{video?.pause();button.focus({preventScroll:true});});
+ dialog.addEventListener('click',event=>{const rect=dialog.getBoundingClientRect();if(event.target===dialog&&(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom))dialog.close();});
+});
+</script>
+<style>
+ .film-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+ figure{margin:0;min-width:0}
+ .film-open{display:block;padding:0;border:0;background:transparent;width:100%;color:var(--ink);text-align:left}
+ .film-image{display:grid;place-items:center;aspect-ratio:1.15;overflow:hidden}
+ .film-image :global(img){width:100%;height:100%;max-height:540px;object-fit:contain}
+ .film-action{display:flex;align-items:center;gap:10px;width:fit-content;padding:10px 0;border-bottom:1px solid var(--ink);font-size:.76rem;font-weight:550}
+ .film-action svg{width:19px;height:19px}
+ .film-open:hover .film-action{color:var(--accent,#bd1014);border-color:currentColor}
+ figcaption{padding-top:20px}
+ figcaption h3{font-size:1rem;line-height:1.4;letter-spacing:-.025em}
+ figcaption p{margin-top:7px;font-size:.68rem;line-height:1.6}
+ .film-dialog{width:min(470px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:16px;border:0;background:white;color:var(--ink);overflow:auto}
+ .film-dialog::backdrop{background:rgb(0 0 0 / .68)}
+ .film-toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:12px}
+ .film-toolbar h3{font-size:.9rem;letter-spacing:-.02em}
+ .film-toolbar button{width:40px;height:40px;background:white;border:1px solid var(--line);font-size:1.5rem;line-height:1}
+ .film-dialog video{display:block;width:100%;height:auto;max-height:calc(100dvh - 128px);aspect-ratio:9/16;background:#000;object-fit:contain}
+ @media(max-width:760px){.film-grid{grid-template-columns:1fr;gap:44px}.film-image{aspect-ratio:1.15}.film-image :global(img){max-height:420px}.film-action{font-size:.74rem}figcaption{padding-top:16px}}
+</style>

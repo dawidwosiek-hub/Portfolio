@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 const routes=['/','/realizacje','/realizacje/shiro-logo-i-wizytowki','/oferta','/o-mnie','/kontakt','/prywatnosc','/oferta/logo-i-identyfikacja','/oferta/druk-i-reklama','/oferta/film-i-social-media','/oferta/odziez-i-nadruki'];
-for(const width of [375,768,1440])test(`navigation and responsive layout ${width}px`,async({page})=>{await page.setViewportSize({width,height:1000});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',e=>{if(e.type()==='error')errors.push(e.text());});for(const route of routes){const r=await page.goto(route);expect(r?.status()).toBe(200);await expect(page.locator('h1')).toHaveCount(1);await expect(page.locator('body')).toHaveCSS('background-color','rgb(255, 255, 255)');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();for(const img of await page.locator('img').all()){await img.scrollIntoViewIfNeeded();await expect.poll(()=>img.evaluate((i:HTMLImageElement)=>i.complete&&i.naturalWidth>0),{message:`Image must load on ${route}: ${await img.getAttribute('src')}`}).toBe(true);}}expect(errors).toEqual([]);await page.goto('/');if(width<760){await page.getByRole('button',{name:'Menu'}).click();await expect(page.getByRole('navigation')).toBeVisible();await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Menu'})).toBeFocused();}await page.locator('.hero-actions a').first().click();await expect(page).toHaveURL(/realizacje/);});
+for(const width of [375,768,1440])test(`navigation and responsive layout ${width}px`,async({page})=>{await page.setViewportSize({width,height:1000});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',e=>{if(e.type()==='error')errors.push(e.text());});for(const route of routes){const r=await page.goto(route);expect(r?.status()).toBe(200);await expect(page.locator('h1')).toHaveCount(1);await expect(page.locator('body')).toHaveCSS('background-color','rgb(255, 255, 255)');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();for(const img of await page.locator('img').all()){if(!await img.isVisible())continue;await img.scrollIntoViewIfNeeded();await expect.poll(()=>img.evaluate((i:HTMLImageElement)=>i.complete&&i.naturalWidth>0),{message:`Image must load on ${route}: ${await img.getAttribute('src')}`}).toBe(true);}}expect(errors).toEqual([]);await page.goto('/');if(width<760){await page.getByRole('button',{name:'Menu'}).click();await expect(page.getByRole('navigation')).toBeVisible();await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Menu'})).toBeFocused();}await page.locator('.hero-actions a').first().click();await expect(page).toHaveURL(/realizacje/);});
 test('service selection, validation, unavailable mail preserves text',async({page})=>{await page.goto('/oferta/film-i-social-media');await page.getByRole('link',{name:'Zapytaj o ten projekt'}).click();await expect(page.locator('#service')).toHaveValue('film-i-social-media');await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('#description')).toBeFocused();await page.locator('#description').fill('Potrzebuję montażu filmu reklamowego dla swojej firmy.');await page.locator('#deadline').fill('Do ustalenia');await page.locator('#name').fill('Test');await page.locator('#email').fill('test@example.com');await page.locator('#privacy').check();await page.waitForTimeout(1600);await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('.form-status')).toContainText('nie jest jeszcze skonfigurowane');await expect(page.locator('#description')).toHaveValue('Potrzebuję montażu filmu reklamowego dla swojej firmy.');await expect(page.getByRole('button',{name:'Wyślij zapytanie'})).toBeEnabled();});
 test('confirmed success UX (mocked API, not email delivery)',async({page})=>{await page.route('**/api/inquiry',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify({message:'Zapytanie zostało przyjęte przez usługę pocztową.'})}));await page.goto('/kontakt?usluga=druk-i-reklama');await page.locator('#description').fill('Potrzebuję projektu wizytówek do drukarni.');await page.locator('#deadline').fill('Do ustalenia');await page.locator('#name').fill('Test');await page.locator('#email').fill('test@example.com');await page.locator('#privacy').check();await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('.form-status')).toContainText('zostało przyjęte');await expect(page.locator('#description')).toHaveValue('');});
 test('404, SEO, keyboard and reduced motion',async({page,request})=>{expect((await request.get('/nie-ma-takiej-strony')).status()).toBe(404);await page.goto('/nie-ma-takiej-strony');await expect(page.locator('h1')).toContainText('wypadł z kadru');await page.goto('/');await page.keyboard.press('Tab');await expect(page.locator('.skip')).toBeFocused();await page.keyboard.press('Enter');await expect(page.locator('#main')).toBeFocused();await page.emulateMedia({reducedMotion:'reduce'});expect(await page.evaluate(()=>getComputedStyle(document.documentElement).scrollBehavior)).toBe('auto');await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','http://127.0.0.1:4321/');expect((await request.get('/sitemap.xml')).status()).toBe(200);expect(await(await request.get('/robots.txt')).text()).toContain('Sitemap:');});
@@ -14,33 +14,48 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
  await expect(logo).toBeVisible();
  expect(await logo.evaluate((i:HTMLImageElement)=>i.naturalWidth)).toBe(1871);
  await expect(page.locator('.case-hero figcaption')).toContainText(/wizualizacja AI/i);
- await expect(page.locator('.original-grid img')).toHaveCount(2);
+ await expect(page.locator('.case-print .source-item[data-kind="original"] img')).toHaveCount(2);
  await expect(page.getByRole('heading',{name:'Red Hat Display',exact:true})).toBeVisible();
  await expect(page.locator('.application-section')).toHaveCount(6);
  await page.getByRole('navigation',{name:'W tej realizacji'}).getByRole('link',{name:'Flagi',exact:true}).click();
  await expect(page).toHaveURL(/#application-flagi$/);
  await expect(page.locator('#application-flagi img')).toBeVisible();
  await expect(page.locator('#application-obuwie .application-rule')).toContainText('Projekt koncepcyjny');
- await expect(page.locator('.application-original img')).toHaveCount(4);
- await expect(page.locator('#application-vouchery .application-original img')).toHaveCount(2);
+ await expect(page.locator('.application-section .source-item img')).toHaveCount(4);
+ await expect(page.locator('#application-vouchery .source-item img')).toHaveCount(2);
  await expect(page.locator('#application-baner figcaption')).toContainText(/wizualizacja AI/i);
  const garmentVideos=page.locator('#application-odziez video');
  await expect(garmentVideos).toHaveCount(2);
- for(const video of await garmentVideos.all()){
+ for(const dialog of await page.locator('.film-dialog').all())await expect(dialog).not.toBeVisible();
+ for(const title of ['Koszulka SHIRO','Bluza SHIRO']){
+  const button=page.getByRole('button',{name:`Obejrzyj film: ${title}`,exact:true});
+  const dialog=page.locator(`#${await button.getAttribute('aria-controls')}`);
+  await button.click();
+  await expect(dialog).toBeVisible();
+  const video=dialog.locator('video');
   await expect(video).toHaveAttribute('controls','');
   await expect(video).toHaveAttribute('preload','none');
   expect(await video.getAttribute('autoplay')).toBeNull();
-  expect(await video.evaluate((v:HTMLVideoElement)=>v.paused)).toBe(true);
-  const poster=await video.getAttribute('poster');
-  expect((await request.get(poster!)).status()).toBe(200);
-  await video.scrollIntoViewIfNeeded();
-  await video.evaluate((v:HTMLVideoElement)=>v.play());
   await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.currentTime)).toBeGreaterThan(0);
   expect(await video.evaluate((v:HTMLVideoElement)=>v.duration)).toBeGreaterThan(8);
-  await video.evaluate((v:HTMLVideoElement)=>v.pause());
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+  await expect(button).toBeFocused();
+  expect(await video.evaluate((v:HTMLVideoElement)=>v.paused)).toBe(true);
+  await button.click();
+  await dialog.getByRole('button',{name:'Zamknij film'}).click();
+  await expect(dialog).not.toBeVisible();
  }
- for(const link of await page.locator('.application-original a').all()){
-  expect((await request.get((await link.getAttribute('href'))!)).status()).toBe(200);
+ for(const details of await page.locator('.source-disclosure').all()){
+  await expect(details).not.toHaveAttribute('open','');
+  const summary=details.locator('summary');await summary.focus();await page.keyboard.press('Enter');
+  await expect(details).toHaveAttribute('open','');
+  for(const img of await details.locator('img').all()){
+   await img.scrollIntoViewIfNeeded();
+   await expect.poll(()=>img.evaluate((i:HTMLImageElement)=>i.complete&&i.naturalWidth>0)).toBe(true);
+  }
+  for(const link of await details.locator('a').all())expect((await request.get((await link.getAttribute('href'))!)).status()).toBe(200);
+  await summary.focus();await page.keyboard.press('Enter');await expect(details).not.toHaveAttribute('open','');
  }
  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/\/media\/shiro\/wizytowki-1536.webp$/);
  await page.getByRole('link',{name:'Chcę podobny projekt'}).click();

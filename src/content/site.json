@@ -30,8 +30,8 @@
         "Koncepcja graficzna obuwia",
         "Przygotowanie materiałów do druku"
       ],
-      "image": "/media/shiro/wizytowki-1536.webp",
-      "imageSmall": "/media/shiro/wizytowki-768.webp",
+      "image": "/media/shiro/wizytowki-cutout-1536.webp",
+      "imageSmall": "/media/shiro/wizytowki-cutout-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
       "imageCaption": "Wizytówki SHIRO · wizualizacja AI na podstawie oryginalnych projektów.",
@@ -47,8 +47,8 @@
         "invert": true,
         "caption": "Logo SHIRO · wariant jednobarwny."
       },
-      "galleryTitle": "Jedna marka. Dwa zastosowania.",
-      "galleryIntro": "Dwa osobne projekty wizytówek. Oryginalne materiały pokazane bez perspektywy mockupu, z zachowaniem ich kompozycji i typografii.",
+      "galleryTitle": "Wizytówki.",
+      "galleryIntro": "Dwa warianty dla mechaniki i chiptuningu oraz wynajmu samochodów. Wspólna identyfikacja, układ dopasowany do zakresu działalności.",
       "gallery": [
         {
           "src": "/media/shiro/mechanic-1536.webp",
@@ -69,8 +69,8 @@
           "kind": "original"
         },
         {
-          "src": "/media/shiro/detal-1536.webp",
-          "smallSrc": "/media/shiro/detal-768.webp",
+          "src": "/media/shiro/detal-cutout-1536.webp",
+          "smallSrc": "/media/shiro/detal-cutout-768.webp",
           "width": 1536,
           "height": 1024,
           "alt": "Wizualizacja zbliżenia wizytówki SHIRO na białym tle, pokazująca logo i czerwone pola kontaktowe.",
@@ -102,11 +102,11 @@
         {
           "slug": "vouchery",
           "label": "Vouchery",
-          "title": "Prezent zaczyna się\nod projektu.",
+          "title": "Vouchery podarunkowe.",
           "description": "Dwustronny voucher podarunkowy SHIRO Car Rental. Strona z logo buduje charakter materiału, a rewers porządkuje pola na odbiorcę, osobę obdarowującą oraz wartość lub liczbę dni.",
           "image": {
-            "src": "/media/shiro/voucher-mockup-1536.webp",
-            "smallSrc": "/media/shiro/voucher-mockup-768.webp",
+            "src": "/media/shiro/voucher-cutout-1536.webp",
+            "smallSrc": "/media/shiro/voucher-cutout-768.webp",
             "width": 1536,
             "height": 1024,
             "alt": "Wizualizacja awersu i rewersu czarno-czerwonego vouchera podarunkowego SHIRO na białym tle.",
@@ -137,11 +137,11 @@
         {
           "slug": "naklejki",
           "label": "Naklejki",
-          "title": "Mały format.\nTen sam charakter.",
+          "title": "Naklejki Car Rental.",
           "description": "Projekt naklejki SHIRO Car Rental łączy znak z ciemnym, geometrycznym tłem. Sześciokąty i czerwone akcenty rozwijają motoryzacyjny charakter marki.",
           "image": {
-            "src": "/media/shiro/naklejki-mockup-1536.webp",
-            "smallSrc": "/media/shiro/naklejki-mockup-768.webp",
+            "src": "/media/shiro/naklejki-cutout-1536.webp",
+            "smallSrc": "/media/shiro/naklejki-cutout-768.webp",
             "width": 1536,
             "height": 1024,
             "alt": "Wizualizacja dwóch naklejek SHIRO Car Rental z czarno-czerwonym wzorem sześciokątów na białym tle.",
@@ -161,11 +161,11 @@
         {
           "slug": "baner",
           "label": "Baner",
-          "title": "Oferta w większym\nformacie.",
+          "title": "Reklama w dużym formacie.",
           "description": "Grafika reklamowa SHIRO Mechanic & Chiptuning zestawia motoryzacyjne fotografie z listą usług i danymi kontaktowymi. Wyraźna hierarchia prowadzi od znaku do oferty.",
           "image": {
-            "src": "/media/shiro/baner-mockup-1536.webp",
-            "smallSrc": "/media/shiro/baner-mockup-768.webp",
+            "src": "/media/shiro/baner-cutout-1536.webp",
+            "smallSrc": "/media/shiro/baner-cutout-768.webp",
             "width": 1536,
             "height": 1024,
             "alt": "Wizualizacja poziomego banera SHIRO z samochodami, logo i listą usług warsztatu na jasnym tle.",
@@ -176,11 +176,11 @@
         {
           "slug": "flagi",
           "label": "Flagi",
-          "title": "Marka widoczna\nz daleka.",
+          "title": "Flagi reklamowe.",
           "description": "Dwa projekty flag: Wulkanizacja i Mechanika. Pionowy układ komunikatów, logo przy podstawie i geometryczny motyw u góry zachowują wspólny styl materiałów SHIRO.",
           "image": {
-            "src": "/media/shiro/flagi-mockup-1536.webp",
-            "smallSrc": "/media/shiro/flagi-mockup-768.webp",
+            "src": "/media/shiro/flagi-cutout-1536.webp",
+            "smallSrc": "/media/shiro/flagi-cutout-768.webp",
             "width": 1536,
             "height": 1024,
             "alt": "Wizualizacja dwóch czarnych flag SHIRO z napisami WULKANIZACJA i MECHANIKA na białym tle.",
@@ -191,7 +191,7 @@
         {
           "slug": "odziez",
           "label": "Odzież",
-          "title": "Znak w ruchu.\nNa odzieży.",
+          "title": "Odzież z charakterem marki.",
           "description": "Dwie animowane prezentacje zastosowania logo SHIRO: koszulka i bluza. Wizualizacje pozwalają obejrzeć projekt na odzieży z różnych stron.",
           "videos": [
             {
@@ -200,7 +200,15 @@
               "title": "Koszulka SHIRO",
               "caption": "Animowana wizualizacja projektu koszulki. Odtwarzanie po kliknięciu.",
               "width": 720,
-              "height": 1280
+              "height": 1280,
+              "preview": {
+                "width": 1536,
+                "height": 1024,
+                "src": "/media/shiro/koszulka-cutout-1536.webp",
+                "smallSrc": "/media/shiro/koszulka-cutout-768.webp",
+                "alt": "Podgląd projektu: Koszulka SHIRO na przezroczystym tle.",
+                "kind": "visualization"
+              }
             },
             {
               "src": "/media/shiro/bluza.mp4",
@@ -208,19 +216,27 @@
               "title": "Bluza SHIRO",
               "caption": "Animowana wizualizacja projektu bluzy. Odtwarzanie po kliknięciu.",
               "width": 720,
-              "height": 1280
+              "height": 1280,
+              "preview": {
+                "width": 1536,
+                "height": 1024,
+                "src": "/media/shiro/bluza-cutout-1536.webp",
+                "smallSrc": "/media/shiro/bluza-cutout-768.webp",
+                "alt": "Podgląd projektu: Bluza SHIRO na przezroczystym tle.",
+                "kind": "visualization"
+              }
             }
           ]
         },
         {
           "slug": "obuwie",
           "label": "Obuwie",
-          "title": "Ten sam język.\nInna forma.",
+          "title": "Koncepcja obuwia.",
           "concept": true,
           "description": "Koncepcja graficzna obuwia przenosi czerwień, znak i motyw sześciokątów na nowy nośnik. To autorski projekt koncepcyjny, pokazany jako oryginalna plansza i wizualizacja.",
           "image": {
-            "src": "/media/shiro/obuwie-mockup-1536.webp",
-            "smallSrc": "/media/shiro/obuwie-mockup-768.webp",
+            "src": "/media/shiro/obuwie-cutout-1536.webp",
+            "smallSrc": "/media/shiro/obuwie-cutout-768.webp",
             "width": 1536,
             "height": 1024,
             "alt": "Wizualizacja koncepcyjnego czarnego buta SHIRO z czerwonymi sznurówkami, czerwonym znakiem H i wzorem sześciokątów.",
@@ -237,7 +253,8 @@
             "kind": "original"
           }
         }
-      ]
+      ],
+      "shareImage": "/media/shiro/wizytowki-1536.webp"
     }
   ]
 }

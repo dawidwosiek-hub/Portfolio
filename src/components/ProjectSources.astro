@@ -1,0 +1,24 @@
+---
+import ProjectImage from './ProjectImage.astro';
+import type {ProjectMedia} from '../lib/content';
+interface Props {media:ProjectMedia[];label?:string}
+const {media,label='Zobacz oryginalne projekty'}=Astro.props;
+---
+<details class="source-disclosure">
+ <summary><span>{label}</span><span class="source-toggle" aria-hidden="true">+</span></summary>
+ <div class="source-grid">{media.map(item=><figure class="source-item" data-kind={item.kind || 'original'}><a href={item.src} target="_blank" rel="noopener noreferrer" aria-label={`Powiększ: ${item.alt}`}><ProjectImage media={item} sizes="(max-width: 760px) 88vw, 44vw"/></a>{item.caption&&<figcaption>{item.caption}</figcaption>}</figure>)}</div>
+</details>
+<style>
+ .source-disclosure{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:30px}
+ summary{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;list-style:none;min-height:56px;font-size:.76rem;font-weight:550;padding:14px 0}
+ summary::-webkit-details-marker{display:none}
+ summary:hover{color:var(--accent,#bd1014)}
+ .source-toggle{font-size:1.35rem;line-height:1;font-weight:400;transition:transform .15s}
+ [open] .source-toggle{transform:rotate(45deg)}
+ .source-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:18px 0 30px;align-items:start}
+ figure{margin:0;min-width:0}
+ .source-grid a{display:block}
+ .source-grid :global(img){width:100%;height:auto;max-height:400px;object-fit:contain}
+ figcaption{font-size:.7rem;line-height:1.65;color:var(--muted);margin-top:12px}
+ @media(max-width:760px){.source-grid{grid-template-columns:1fr;gap:28px;padding:12px 0 24px}.source-disclosure{margin-top:24px}summary{font-size:.74rem}figcaption{font-size:.68rem}}
+</style>

@@ -23,3 +23,7 @@
 
 .project.with-logo .project-image img{object-fit:contain;background:#fff}
 .project-visualization-note{display:block;margin-top:10px;font-size:.68rem;color:var(--muted)}
+
+/* Brand objects sit directly on the white page, without a separate studio panel. */
+.brand-art,.art-grid{background:transparent}
+.art-grid:after{display:none}
