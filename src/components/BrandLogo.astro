@@ -1,0 +1,5 @@
+---
+interface Props { class?: string }
+const {class:className}=Astro.props;
+---
+<a class:list={['brand-logo-link',className]} href="/" aria-label="NADX — strona główna"><img src="/brand/nadx-logo.svg" alt="NADX" width="812" height="820" decoding="async"/></a>

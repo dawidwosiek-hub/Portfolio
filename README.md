@@ -67,4 +67,4 @@ Playwright używa `/usr/bin/chromium` w tym środowisku. Na innym komputerze wsk
 
 Analityka: lokalne zdarzenia `nadx:analytics` dla `quote_click`, `service_select`, `portfolio_contact`, `inquiry_accepted`. Brak zewnętrznego odbiorcy, cookies i wysyłania danych osobowych. Integrując faktyczny system, zaktualizuj prywatność i wymagane zgody; nie wysyłaj treści formularza.
 
-Font Inter jest przechowywany lokalnie na licencji SIL OFL (`public/fonts/OFL.txt`). Kompozycja pierwszego ekranu to grafika strony NADX, nie portfolio klienta i nie oficjalny plik logo.
+Font Inter jest przechowywany lokalnie na licencji SIL OFL (`public/fonts/OFL.txt`). Kompozycja pierwszego ekranu to grafika strony NADX, nie portfolio klienta. Oficjalne logo przekazane przez właściciela jest zachowane w oryginalnym SVG (`public/brand/nadx-logo.svg`). Kolor marki: `#FFCC00`. Po zmianie pliku logo uruchom `npm run brand:assets`, aby odświeżyć favicony i podgląd udostępniania, a następnie przebuduj stronę.

@@ -10,7 +10,8 @@
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "test": "playwright test",
     "test:api": "node --import tsx --test tests/api.test.ts",
-    "test:portfolio": "node --test tests/portfolio.test.mjs"
+    "test:portfolio": "node --test tests/portfolio.test.mjs",
+    "brand:assets": "node scripts/generate-brand-assets.mjs"
   },
   "repository": {
     "type": "git",

@@ -41,3 +41,7 @@ Przycisk projektu przekazuje jego nazwę do kontaktu. Przy linku z nieznaną naz
 - `comparisons`: `{"title":"Opis porównania","before":"/media/przed.webp","after":"/media/po.webp","beforeAlt":"Opis przed","afterAlt":"Opis po","published":true}`. Identyczne proporcje i porównywalne kadry. Suwak obsługuje dotyk i klawiaturę. Pusta tablica ukrywa całą sekcję.
 
 Nie dodawaj danych wrażliwych ani sekretów do publicznych treści. Podglądy, prace koncepcyjne i demonstracyjne powinny pozostać oddzielone od prawdziwego portfolio.
+
+## Logo i ikony
+
+Oryginał marki: `public/brand/nadx-logo.svg`. Nagłówek, stopka i kompozycje strony korzystają z tego pliku bez odtwarzania kształtu znaku. Po jego zmianie uruchom `npm run brand:assets` (wymaga Chromium wskazanego w README), a następnie build. Skrypt eksportuje SVG, PNG 32×32 i ikonę Apple 180×180 oraz obraz Open Graph 1200×630. Nową wersję favicony można wymusić przez zmianę parametru wersji w `src/layouts/Layout.astro`.
