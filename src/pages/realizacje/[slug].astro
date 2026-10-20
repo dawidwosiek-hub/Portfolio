@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ProjectImage from '../../components/ProjectImage.astro';
+import BusinessCards from '../../components/BusinessCards.astro';
 import ProjectIdentity from '../../components/ProjectIdentity.astro';
 import ProjectApplications from '../../components/ProjectApplications.astro';
 import ProjectSources from '../../components/ProjectSources.astro';
@@ -25,7 +26,7 @@ const galleryNumber=(p.logo?1:0)+(p.identity?1:0)+1;
 </section>}
 {p.identity&&<div class="case-container"><ProjectIdentity identity={p.identity} number={p.logo?2:1}/></div>}
 <section class="case-context case-container" aria-labelledby="context-title"><div><span class="eyebrow">MARKA / KONTEKST</span><h2 id="context-title">{p.client}</h2><p>{p.need}</p></div><div><span class="eyebrow">POMYSŁ I ROZWIĄZANIE</span><p>{p.solution}</p></div></section>
-<section class="case-print case-container" aria-labelledby="gallery-title"><div class="case-rule"><span class="case-rule-label">{String(galleryNumber).padStart(2,'0')} / {p.logo?'Materiały drukowane':'Prezentacja projektu'}</span></div><div class="case-print-heading"><h2 id="gallery-title">{p.galleryTitle || 'Projekt w szczegółach.'}</h2>{p.galleryIntro&&<p>{p.galleryIntro}</p>}</div><figure class="case-hero"><ProjectImage media={{src:p.image,smallSrc:p.imageSmall,alt:p.alt,width:p.imageWidth,height:p.imageHeight}} priority={!p.logo} sizes="(max-width: 760px) 88vw, min(85vw, 1120px)"/>{p.imageCaption&&<figcaption>{p.imageCaption}</figcaption>}</figure>{p.gallery.length>0&&<ProjectSources media={p.gallery} label={details.length>0?'Zobacz projekty i detale':'Zobacz oryginalne projekty'}/>}</section>
+<section class="case-print case-container" aria-labelledby="gallery-title"><div class="case-rule"><span class="case-rule-label">{String(galleryNumber).padStart(2,'0')} / {p.logo?'Materiały drukowane':'Prezentacja projektu'}</span></div><div class="case-print-heading"><h2 id="gallery-title">{p.galleryTitle || 'Projekt w szczegółach.'}</h2>{p.galleryIntro&&<p>{p.galleryIntro}</p>}</div><figure class:list={["case-hero",{"case-cards":p.presentation==='business-cards'}]}>{p.presentation==='business-cards'?<BusinessCards cards={p.gallery.filter(image=>image.kind==='original')}/>:<ProjectImage media={{src:p.image,smallSrc:p.imageSmall,alt:p.alt,width:p.imageWidth,height:p.imageHeight}} priority={!p.logo} sizes="(max-width: 760px) 88vw, min(85vw, 1120px)"/>}{p.imageCaption&&<figcaption>{p.imageCaption}</figcaption>}</figure>{p.gallery.length>0&&<ProjectSources media={p.gallery} label={details.length>0?'Zobacz projekty i detale':'Zobacz oryginalne projekty'}/>}</section>
 {p.applications&&p.applications.length>0&&<div class="case-container"><ProjectApplications applications={p.applications} startNumber={galleryNumber+1}/></div>}
 <section class="case-scope case-container" aria-labelledby="scope-title">
  <div><span class="eyebrow">ZAKRES MOJEJ PRACY</span><h2 id="scope-title">{p.logo?<>Od znaku.<br/>Do materiałów.</>:'Zakres projektu.'}</h2></div>
@@ -66,6 +67,7 @@ const galleryNumber=(p.logo?1:0)+(p.identity?1:0)+1;
  .case-hero{max-width:1120px;padding-top:30px;margin-inline:auto}
  .case-hero :global(img){width:100%;max-height:760px;object-fit:contain}
  .case-hero figcaption{text-align:center}
+ .case-cards :global(.print-card img){max-height:none}
  .case-context{display:grid;grid-template-columns:1fr 1fr;gap:10%;padding-block:0 var(--section-space)}
  .case-context h2{font-size:clamp(2rem,3.5vw,3.5rem);max-width:490px}
  .case-context p{font-size:.95rem}

@@ -1,0 +1,22 @@
+---
+import ProjectImage from './ProjectImage.astro';
+import type {ProjectMedia} from '../lib/content';
+interface Props {cards:ProjectMedia[]}
+const {cards}=Astro.props;
+---
+<div class="card-stage" aria-label="Prezentacja oryginalnych projektów wizytówek">
+ {cards.slice(0,2).map((card,index)=><div class:list={['print-card',index===0?'mechanic-card':'rental-card']}><ProjectImage media={card} sizes="(max-width: 600px) 78vw, min(48vw, 590px)"/></div>)}
+</div>
+<style>
+ .card-stage{position:relative;isolation:isolate;aspect-ratio:1.5;width:100%;background:transparent}
+ .print-card{position:absolute;width:52%;line-height:0;border-radius:1px;background:#161616;box-shadow:0 1px 0 #333,0 2px 0 #242424,0 7px 9px -6px rgb(0 0 0 / .24),0 18px 30px -15px rgb(0 0 0 / .2)}
+ .print-card :global(img){display:block;width:100%;height:auto;border-radius:inherit}
+ .mechanic-card{left:5%;top:50%;transform:rotate(-5deg)}
+ .rental-card{right:5%;top:8%;transform:rotate(5deg)}
+ @media(max-width:600px){
+  .card-stage{aspect-ratio:1 / 1.25}
+  .print-card{width:87%}
+  .mechanic-card{left:6.5%;top:54%;transform:rotate(-3deg)}
+  .rental-card{right:6.5%;top:7%;transform:rotate(3deg)}
+ }
+</style>

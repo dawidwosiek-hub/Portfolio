@@ -37,7 +37,7 @@ Pierwsza realizacja jest wpisana w `site.json` jako `shiro-logo-i-wizytowki`. Ma
 
 `scopeItems` to lista rzeczywiście wykonanych prac. `galleryTitle` i `galleryIntro` opisują galerię. Wpisy `gallery` mogą mieć `width`, `height`, `smallSrc`, `caption` i `kind`. `original` opisuje oryginał, a `visualization` — wizualizację. Źródła i dodatkowe detale są dostępne w rozwijanym podglądzie. Brak `kind` traktowany jest jak zwykła galeria. Dla obrazu głównego istnieją analogiczne `imageSmall`, `imageWidth`, `imageHeight` i `imageCaption`. Małe wersje powinny mieć 768 px szerokości; duże — podaną szerokość. Przeglądarka dobiera plik do ekranu.
 
-Mockupy SHIRO powstały z użyciem AI i są tak podpisane. Nie są dokumentacją fizycznego wydruku; oryginalne wizytówki są dostępne w rozwijanym podglądzie. Autorstwo logo i projektów wizytówek potwierdził Dawid Wosiek. Wpis nie przypisuje autorstwa znaku COMPSPORT ani fotografii samochodu, nie podaje niepotwierdzonych wyników ani wykonania nakładu.
+Mockupy zastosowań SHIRO powstały z użyciem AI i są tak podpisane. Nie są dokumentacją fizycznego wydruku. Wizytówki korzystają z osobnej prezentacji opisanej poniżej, która zachowuje oryginalne projekty bez generowania ich zawartości. Autorstwo logo i projektów wizytówek potwierdził Dawid Wosiek. Wpis nie przypisuje autorstwa znaku COMPSPORT ani fotografii samochodu, nie podaje niepotwierdzonych wyników ani wykonania nakładu.
 
 `identity` opisuje typografię i kolory prezentowanych materiałów. SHIRO korzysta z Red Hat Display wskazanego w dostarczonej planszy identyfikacji. Font jest lokalny (`public/fonts/red-hat-display.woff2`), z licencją SIL OFL w pliku `red-hat-display-OFL.txt`; źródło: Google Fonts / Red Hat. Kolory służą prezentacji materiałów; nie są opisane jako ustalone specyfikacje produkcyjne.
 
@@ -53,7 +53,7 @@ Główne tło całej witryny jest białe (`--paper: #ffffff` w `src/styles/globa
 
 ### Spójna prezentacja na bieli
 
-Mockupy SHIRO używają plików `*-cutout-*.webp` z rzeczywistym kanałem alfa. Przezroczystość dotyczy otoczenia obiektów; kolory druku i projekty pozostają częścią wizualizacji. Pliki przygotowano narzędziem imagegen i wyeksportowano w dwóch szerokościach. Nie dodawaj pod nimi szarego tła ani obramowania — kompozycja ma łączyć się bezpośrednio z bielą strony. Zdjęcia i oryginalne projekty produkcyjne zachowują własną zawartość.
+Mockupy zastosowań SHIRO używają plików `*-cutout-*.webp` oraz `*-studio-*.webp` z rzeczywistym kanałem alfa. Przezroczystość dotyczy otoczenia obiektów; kolory druku i projekty pozostają częścią wizualizacji. Pliki przygotowano narzędziem imagegen i wyeksportowano w dwóch szerokościach. Nie dodawaj pod nimi szarego tła ani obramowania — kompozycja ma łączyć się bezpośrednio z bielą strony. Zdjęcia i oryginalne projekty produkcyjne zachowują własną zawartość.
 
 Każde zastosowanie ma teraz jedną dużą prezentację, wspólną maksymalną szerokość i tę samą hierarchię opisu. Komponent `ProjectSources.astro` udostępnia oryginały w natywnym rozwijanym podglądzie; pliki źródłowe można nadal otworzyć w pełnym rozmiarze. Dodatkowe zbliżenie wizytówki jest w tym podglądzie, zamiast powtarzać materiał na końcu strony.
 
@@ -77,3 +77,17 @@ Nie dodawaj danych wrażliwych ani sekretów do publicznych treści. Podglądy, 
 ## Logo i ikony
 
 Oryginał marki: `public/brand/nadx-logo.svg`. Nagłówek, stopka i kompozycje strony korzystają z tego pliku bez odtwarzania kształtu znaku. Po jego zmianie uruchom `npm run brand:assets` (wymaga Chromium wskazanego w README), a następnie build. Skrypt eksportuje SVG, PNG 32×32 i ikonę Apple 180×180 oraz obraz Open Graph 1200×630. Nową wersję favicony można wymusić przez zmianę parametru wersji w `src/layouts/Layout.astro`.
+
+### Wierne wizytówki i mockupy odzieży
+
+`presentation: "business-cards"` włącza komponent `BusinessCards.astro`. Pobiera pierwsze dwa oryginały z `gallery` i pokazuje je z delikatnym obrotem i cieniem CSS, bez zmieniania logo, tekstów ani układu. Odrzucone wizualizacje AI wizytówek i zbliżenia nie są używane. Sekcja źródeł pozwala powiększyć oba płaskie projekty.
+
+Miniatury i obraz udostępniania `wizytowki-original-*.webp` są eksportem tego samego komponentu, a nie generowaną interpretacją. Po zmianie źródeł lub stylu uruchom lokalną stronę na porcie 4322 (`npm run dev -- --port 4322`), a w drugim terminalu:
+
+```sh
+node scripts/render-business-card-preview.mjs http://localhost:4322 shiro-logo-i-wizytowki public/media/shiro/wizytowki-original
+```
+
+Skrypt wymaga Chromium dostępnego w tym środowisku (inny plik wykonywalny można wskazać przez `PLAYWRIGHT_CHROMIUM_EXECUTABLE`). Generuje przezroczyste miniatury 768/1536 px i nieprzezroczysty obraz udostępniania. Wszystkie trzy ścieżki są zapisane w `site.json`.
+
+Podglądy koszulki i bluzy `*-studio-*.webp` to nowe, spójne mockupy AI na przezroczystym tle: odzież ułożona na płasko, naturalne fałdy i faktura bawełny, niewielki znak na środku klatki piersiowej zgodnie z dostarczonymi animacjami. Oryginalne filmy pozostały dostępne po kliknięciu. Ich zawartość nie została zmieniona.

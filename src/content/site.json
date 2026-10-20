@@ -30,12 +30,12 @@
         "Koncepcja graficzna obuwia",
         "Przygotowanie materiałów do druku"
       ],
-      "image": "/media/shiro/wizytowki-cutout-1536.webp",
-      "imageSmall": "/media/shiro/wizytowki-cutout-768.webp",
+      "image": "/media/shiro/wizytowki-original-1536.webp",
+      "imageSmall": "/media/shiro/wizytowki-original-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "imageCaption": "Wizytówki SHIRO · wizualizacja AI na podstawie oryginalnych projektów.",
-      "alt": "Wizualizacja dwóch czarno-czerwonych wizytówek SHIRO na białym tle.",
+      "imageCaption": "Wizytówki SHIRO · prezentacja oryginalnych projektów.",
+      "alt": "Oryginalne projekty wizytówek SHIRO: Mechanic & Chiptuning oraz Car Rental, zaprezentowane na białym tle.",
       "client": "SHIRO — motoryzacja.",
       "need": "Materiały marki dla mechaniki i chiptuningu oraz wynajmu samochodów: wizytówki, voucher podarunkowy, naklejka, baner i projekty flag. Wizualizacje koszulki i bluzy oraz koncepcja obuwia rozwijają zastosowania znaku.",
       "solution": "Zaprojektowałem znak z wyrazistym liternictwem i motywem bieżnika. Czerń, czerwony akcent i geometria sześciokątów wracają w kolejnych materiałach. Różne formaty zachowują wspólny charakter, a typografia Red Hat Display porządkuje komunikację marki.",
@@ -67,15 +67,6 @@
           "alt": "Oryginalny projekt wizytówki SHIRO Car Rental z logo nad trzema czerwonymi polami kontaktowymi.",
           "caption": "Car Rental · oryginalny projekt wizytówki",
           "kind": "original"
-        },
-        {
-          "src": "/media/shiro/detal-cutout-1536.webp",
-          "smallSrc": "/media/shiro/detal-cutout-768.webp",
-          "width": 1536,
-          "height": 1024,
-          "alt": "Wizualizacja zbliżenia wizytówki SHIRO na białym tle, pokazująca logo i czerwone pola kontaktowe.",
-          "caption": "Zbliżenie projektu · wizualizacja AI.",
-          "kind": "visualization"
         }
       ],
       "published": true,
@@ -202,11 +193,11 @@
               "width": 720,
               "height": 1280,
               "preview": {
-                "width": 1536,
-                "height": 1024,
-                "src": "/media/shiro/koszulka-cutout-1536.webp",
-                "smallSrc": "/media/shiro/koszulka-cutout-768.webp",
-                "alt": "Podgląd projektu: Koszulka SHIRO na przezroczystym tle.",
+                "width": 1145,
+                "height": 1374,
+                "src": "/media/shiro/koszulka-studio-1145.webp",
+                "smallSrc": "/media/shiro/koszulka-studio-768.webp",
+                "alt": "Koszulka SHIRO: czarna bawełna z niewielkim logo na środku klatki piersiowej; mockup ułożony na płasko na białym tle.",
                 "kind": "visualization"
               }
             },
@@ -218,11 +209,11 @@
               "width": 720,
               "height": 1280,
               "preview": {
-                "width": 1536,
-                "height": 1024,
-                "src": "/media/shiro/bluza-cutout-1536.webp",
-                "smallSrc": "/media/shiro/bluza-cutout-768.webp",
-                "alt": "Podgląd projektu: Bluza SHIRO na przezroczystym tle.",
+                "width": 1131,
+                "height": 1391,
+                "src": "/media/shiro/bluza-studio-1131.webp",
+                "smallSrc": "/media/shiro/bluza-studio-768.webp",
+                "alt": "Bluza SHIRO: czarna bawełna z niewielkim logo na środku klatki piersiowej; mockup ułożony na płasko na białym tle.",
                 "kind": "visualization"
               }
             }
@@ -254,7 +245,8 @@
           }
         }
       ],
-      "shareImage": "/media/shiro/wizytowki-1536.webp"
+      "shareImage": "/media/shiro/wizytowki-original-share-1536.webp",
+      "presentation": "business-cards"
     }
   ]
 }

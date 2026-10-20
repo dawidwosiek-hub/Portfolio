@@ -13,7 +13,10 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
  const logo=page.getByRole('img',{name:/Logo SHIRO: autorskie/});
  await expect(logo).toBeVisible();
  expect(await logo.evaluate((i:HTMLImageElement)=>i.naturalWidth)).toBe(1871);
- await expect(page.locator('.case-hero figcaption')).toContainText(/wizualizacja AI/i);
+ await expect(page.locator('.case-hero figcaption')).toContainText('prezentacja oryginalnych projektów');
+ await expect(page.locator('.case-hero .print-card img')).toHaveCount(2);
+ await expect(page.locator('.case-hero .mechanic-card img')).toHaveAttribute('src','/media/shiro/mechanic-1536.webp');
+ await expect(page.locator('.case-hero .rental-card img')).toHaveAttribute('src','/media/shiro/car-rental-1536.webp');
  await expect(page.locator('.case-print .source-item[data-kind="original"] img')).toHaveCount(2);
  await expect(page.getByRole('heading',{name:'Red Hat Display',exact:true})).toBeVisible();
  await expect(page.locator('.application-section')).toHaveCount(6);
@@ -57,7 +60,7 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
   for(const link of await details.locator('a').all())expect((await request.get((await link.getAttribute('href'))!)).status()).toBe(200);
   await summary.focus();await page.keyboard.press('Enter');await expect(details).not.toHaveAttribute('open','');
  }
- await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/\/media\/shiro\/wizytowki-1536.webp$/);
+ await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/\/media\/shiro\/wizytowki-original-share-1536.webp$/);
  await page.getByRole('link',{name:'Chcę podobny projekt'}).click();
  await expect(page.locator('[name="project"]')).toHaveValue('SHIRO');
  await expect(page.locator('#service')).toHaveValue('logo-i-identyfikacja');

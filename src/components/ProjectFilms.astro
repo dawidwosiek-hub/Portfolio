@@ -33,8 +33,8 @@ document.querySelectorAll<HTMLButtonElement>('[data-film-open]').forEach(button=
  .film-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
  figure{margin:0;min-width:0}
  .film-open{display:block;padding:0;border:0;background:transparent;width:100%;color:var(--ink);text-align:left}
- .film-image{display:grid;place-items:center;aspect-ratio:1.15;overflow:hidden}
- .film-image :global(img){width:100%;height:100%;max-height:540px;object-fit:contain}
+ .film-image{display:grid;place-items:center;aspect-ratio:4/5;padding:12px 22px 24px;overflow:hidden}
+ .film-image :global(img){width:100%;height:100%;object-fit:contain}
  .film-action{display:flex;align-items:center;gap:10px;width:fit-content;padding:10px 0;border-bottom:1px solid var(--ink);font-size:.76rem;font-weight:550}
  .film-action svg{width:19px;height:19px}
  .film-open:hover .film-action{color:var(--accent,#bd1014);border-color:currentColor}
@@ -47,5 +47,5 @@ document.querySelectorAll<HTMLButtonElement>('[data-film-open]').forEach(button=
  .film-toolbar h3{font-size:.9rem;letter-spacing:-.02em}
  .film-toolbar button{width:40px;height:40px;background:white;border:1px solid var(--line);font-size:1.5rem;line-height:1}
  .film-dialog video{display:block;width:100%;height:auto;max-height:calc(100dvh - 128px);aspect-ratio:9/16;background:#000;object-fit:contain}
- @media(max-width:760px){.film-grid{grid-template-columns:1fr;gap:44px}.film-image{aspect-ratio:1.15}.film-image :global(img){max-height:420px}.film-action{font-size:.74rem}figcaption{padding-top:16px}}
+ @media(max-width:760px){.film-grid{grid-template-columns:1fr;gap:44px}.film-image{padding:8px 10px 18px}.film-action{font-size:.74rem}figcaption{padding-top:16px}}
 </style>
