@@ -82,12 +82,38 @@ Oryginał marki: `public/brand/nadx-logo.svg`. Nagłówek, stopka i kompozycje s
 
 `presentation: "business-cards"` włącza komponent `BusinessCards.astro`. Pobiera pierwsze dwa oryginały z `gallery` i pokazuje je z delikatnym obrotem i cieniem CSS, bez zmieniania logo, tekstów ani układu. Odrzucone wizualizacje AI wizytówek i zbliżenia nie są używane. Sekcja źródeł pozwala powiększyć oba płaskie projekty.
 
-Miniatury i obraz udostępniania `wizytowki-original-*.webp` są eksportem tego samego komponentu, a nie generowaną interpretacją. Po zmianie źródeł lub stylu uruchom lokalną stronę na porcie 4322 (`npm run dev -- --port 4322`), a w drugim terminalu:
+Miniatury i obraz udostępniania `wizytowki-native-*.webp` są eksportem tego samego komponentu, a nie generowaną interpretacją. Po zmianie źródeł lub stylu uruchom lokalną stronę na porcie 4322 (`npm run dev -- --port 4322`), a w drugim terminalu:
 
 ```sh
-node scripts/render-business-card-preview.mjs http://localhost:4322 shiro-logo-i-wizytowki public/media/shiro/wizytowki-original
+node scripts/render-business-card-preview.mjs http://localhost:4322 shiro-logo-i-wizytowki public/media/shiro/wizytowki-native
 ```
 
-Skrypt wymaga Chromium dostępnego w tym środowisku (inny plik wykonywalny można wskazać przez `PLAYWRIGHT_CHROMIUM_EXECUTABLE`). Generuje przezroczyste miniatury 768/1536 px i nieprzezroczysty obraz udostępniania. Wszystkie trzy ścieżki są zapisane w `site.json`.
+Skrypt wymaga Chromium dostępnego w tym środowisku (inny plik wykonywalny można wskazać przez `PLAYWRIGHT_CHROMIUM_EXECUTABLE`). Generuje przezroczyste miniatury 768/1536/3072 px i nieprzezroczysty obraz udostępniania. Wszystkie trzy ścieżki są zapisane w `site.json`.
 
 Podglądy koszulki i bluzy `*-studio-*.webp` to nowe, spójne mockupy AI na przezroczystym tle: odzież ułożona na płasko, naturalne fałdy i faktura bawełny, niewielki znak na środku klatki piersiowej zgodnie z dostarczonymi animacjami. Oryginalne filmy pozostały dostępne po kliknięciu. Ich zawartość nie została zmieniona.
+
+### Diverto — materiały promocyjne
+
+Realizacja `diverto-materialy-promocyjne` obejmuje wyłącznie dostarczoną oprawę CD i roll-up. Jest widoczna na stronie głównej, w kategorii `druk i reklama`, przy odpowiedniej usłudze i w sitemapie. Przycisk kontaktowy przekazuje nazwę Diverto i wybiera usługę druku. Ulotka nie została dodana, ponieważ przesłany PDF przekracza limit transferu 32 MiB; potrzebny jest lżejszy eksport.
+
+Pliki `public/media/diverto/` są renderami oryginalnych PDF-ów. Usunięto marginesy techniczne i znaczniki cięcia zgodnie z formatem projektu; nie generowano ponownie zdjęć, napisów ani znaków. Okładka, trzy wkładki i nadruk na płytę pochodzą z pięciu stron `Diverto_płyta1_v1.pdf`; roll-up z `Diverto_rollup.pdf`. Źródłowych PDF-ów nie udostępnia się publicznie. Duże obrazy mają 1536 px szerokości, a pionowy roll-up 1024 px; wersje mobilne mają 768 px.
+
+`mockup` w projekcie lub zastosowaniu pozwala wyświetlić oryginalne grafiki w komponencie `PrintMockup.astro`. `kind: "cd"` przyjmuje `cover` i `disc`, a `kind: "rollup"` — `artwork` (każdy obraz ma standardowy schemat `ProjectMedia`). Opakowanie, obrót, cienie i podstawa roll-upu są elementami CSS. To prezentacja projektów, nie zdjęcia fizycznej produkcji. Strona nie przypisuje NADX autorstwa fotografii ani logo zespołu i nie podaje niepotwierdzonych wyników.
+
+`galleryLabel` ustala nazwę skrótu w nawigacji realizacji, a `accent` lokalny kolor akcentu. Diverto korzysta z bordo `#a51e3c` dopasowanego do oprawy płyty. Białe tło strony pozostaje wspólne dla portfolio.
+
+Miniaturę i podgląd udostępniania wygenerujesz z działającej strony lokalnej:
+
+```sh
+node scripts/render-business-card-preview.mjs http://localhost:4322 diverto-materialy-promocyjne public/media/diverto/album-preview .album-stage
+```
+
+Opcjonalny czwarty argument skryptu wskazuje komponent do eksportu; domyślnie jest to `.card-stage` dla wizytówek SHIRO. Miniatury są eksportem tego samego układu, który widnieje na stronie projektu.
+
+### Jakość źródeł wizytówek SHIRO
+
+PDF-y wizytówek zawierają pojedyncze rastry 1110×638 px w CMYK, bez wektorów i warstw tekstowych. Bezstratne PNG `mechanic-source.png` i `car-rental-source.png` zostały wyodrębnione z osadzonych obrazów i przekonwertowane do RGB na potrzeby przeglądarki. Są używane bez pośredniego skalowania i kompresji stratnej, zarówno w mockupie, jak i przy powiększaniu źródeł. Maksymalna szerokość kompozycji na stronie jest ograniczona do 960 px. Wcześniejsze powiększone i skompresowane obrazy nie są już używane.
+
+Eksporter miniatur renderuje komponent przy skali urządzenia 2× i zapisuje również obraz 3072 px. Większy rozmiar miniatury poprawia krawędzie kompozycji, ale nie zwiększa ilości szczegółów w oryginalnej grafice. Idealnie ostre większe zbliżenia wymagają źródłowego PSD albo PDF/SVG z zachowanym tekstem i wektorami. Nie należy odtwarzać napisów ani logo przez generowanie AI i przedstawiać tego jako niezmieniony oryginał.
+
+Opcjonalne `imageMedium` (lub `mediumSrc` wewnątrz `ProjectMedia`) wskazuje wariant 1536 px, gdy duży plik ma 3072 px. Dzięki temu przeglądarka wybiera 768, 1536 albo 3072 px zależnie od wielkości obrazu i gęstości ekranu. Warianty 3072 px służą ostrzejszym miniaturom obu realizacji; oryginały SHIRO pozostają bezstratnymi obrazami 1110 px.

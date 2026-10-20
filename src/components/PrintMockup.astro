@@ -1,0 +1,40 @@
+---
+import ProjectImage from './ProjectImage.astro';
+import type {PrintMockup} from '../lib/content';
+interface Props {mockup:PrintMockup;priority?:boolean}
+const {mockup,priority=false}=Astro.props;
+---
+{mockup.kind==='cd'?<div class="album-stage" aria-label="Prezentacja okładki i nadruku płyty CD">
+ <div class="compact-disc"><div class="disc-face"><ProjectImage media={mockup.disc} sizes="(max-width: 760px) 45vw, 34vw"/><span class="disc-hub" aria-hidden="true"></span></div></div>
+ <div class="jewel-case"><div class="jewel-spine" aria-hidden="true"></div><div class="jewel-art"><ProjectImage media={mockup.cover} priority={priority} sizes="(max-width: 760px) 66vw, min(50vw, 600px)"/></div><span class="jewel-edge" aria-hidden="true"></span></div>
+</div>:<div class="rollup-stage" aria-label="Prezentacja oryginalnego projektu roll-upu">
+ <div class="rollup-object"><div class="rollup-print"><ProjectImage media={mockup.artwork} sizes="(max-width: 760px) 57vw, 30vw"/></div><div class="rollup-base" aria-hidden="true"></div><div class="rollup-foot" aria-hidden="true"></div></div>
+</div>}
+<style>
+ .album-stage{position:relative;isolation:isolate;aspect-ratio:1.5;width:100%;background:transparent}
+ .jewel-case{position:absolute;left:6%;top:12%;width:55%;aspect-ratio:1.1;transform:perspective(1600px) rotateY(-8deg) rotateZ(-7deg);border:1px solid #c1c4c5;border-radius:3px;background:rgb(243 246 246 / .5);box-shadow:1px 2px 0 #9a9d9e,2px 4px 0 #ced0d1,0 14px 18px -13px rgb(0 0 0 / .4),0 30px 45px -25px rgb(0 0 0 / .22);z-index:2}
+ .jewel-art{position:absolute;inset:2% 2% 2% 10%;overflow:hidden;box-shadow:0 0 0 1px rgb(255 255 255 / .7)}
+ .jewel-art :global(img){width:100%;height:100%;object-fit:cover}
+ .jewel-spine{position:absolute;left:1%;top:1%;bottom:1%;width:7%;background:repeating-linear-gradient(90deg,#252627 0 1px,#454647 1px 2px,#222324 2px 4px);border-inline:1px solid #959798;box-shadow:inset 1px 0 1px rgb(255 255 255 / .55)}
+ .jewel-edge{position:absolute;inset:0;border:2px solid rgb(255 255 255 / .37);border-radius:inherit;pointer-events:none}
+ .jewel-edge:before,.jewel-edge:after{content:'';position:absolute;right:1%;width:2%;height:7%;border:1px solid rgb(255 255 255 / .5);background:rgb(180 185 186 / .2)}
+ .jewel-edge:before{top:12%}.jewel-edge:after{bottom:12%}
+ .compact-disc{position:absolute;left:58%;top:34%;width:36%;aspect-ratio:1;transform:rotate(8deg);filter:drop-shadow(0 7px 6px rgb(0 0 0 / .15))}
+ .disc-face{width:100%;height:100%;position:relative;border-radius:50%;overflow:hidden;border:2px solid #c8c9ca;mask-image:radial-gradient(circle,transparent 8.2%,#000 8.7%);background:transparent}
+ .disc-face :global(img){width:100%;height:100%;object-fit:cover}
+ .disc-hub{position:absolute;width:19%;height:19%;left:40.5%;top:40.5%;border-radius:50%;border:1px solid rgb(255 255 255 / .5);box-shadow:0 0 0 7px rgb(180 180 180 / .15),inset 0 0 0 3px rgb(230 230 230 / .2)}
+ .rollup-stage{position:relative;isolation:isolate;aspect-ratio:1.45;width:100%;background:transparent}
+ .rollup-object{position:absolute;left:37%;top:5%;width:26%;transform:perspective(1800px) rotateY(-9deg)}
+ .rollup-print{position:relative;border-inline:1px solid #6b6b6b;border-top:4px solid #bdbdbd;box-shadow:3px 1px 3px rgb(0 0 0 / .1)}
+ .rollup-print :global(img){display:block;width:100%;height:auto}
+ .rollup-base{position:relative;z-index:2;height:15px;margin:-1px -3% 0;background:linear-gradient(#f1f2f2,#b9bbbc 45%,#eceeee 57%,#9c9e9f);border:1px solid #999c9e;border-radius:4px 4px 40% 40%;box-shadow:0 8px 10px -7px rgb(0 0 0 / .4)}
+ .rollup-foot{position:absolute;z-index:-1;bottom:-11px;left:47%;width:6%;height:38px;border-radius:4px;background:linear-gradient(90deg,#aaa,#e6e6e6,#aaa);transform:skewX(-28deg);box-shadow:3px 5px 6px rgb(0 0 0 / .12)}
+ @media(max-width:760px){
+  .album-stage{aspect-ratio:.85}
+  .jewel-case{left:4%;top:6%;width:70%;transform:rotate(-6deg)}
+  .compact-disc{left:47%;top:55%;width:49%}
+  .rollup-stage{aspect-ratio:.7}
+  .rollup-object{width:59%;left:20.5%;top:4%}
+  .rollup-base{height:12px}.rollup-foot{height:28px;bottom:-8px}
+ }
+</style>

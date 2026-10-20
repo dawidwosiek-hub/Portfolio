@@ -1,17 +1,19 @@
 // Render the actual website component, preserving the original artwork.
-// Usage: node scripts/render-business-card-preview.mjs BASE_URL PROJECT_SLUG OUTPUT_PREFIX
+// Usage: node scripts/render-business-card-preview.mjs BASE_URL PROJECT_SLUG OUTPUT_PREFIX [STAGE_SELECTOR]
 import {chromium} from '@playwright/test';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {dirname} from 'node:path';
 
-const [baseURL,slug,prefix]=process.argv.slice(2);
+const [baseURL,slug,prefix,selector='.card-stage']=process.argv.slice(2);
 if(!baseURL||!slug||!prefix)throw new Error('Provide BASE_URL, PROJECT_SLUG and OUTPUT_PREFIX.');
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE||'/usr/bin/chromium',args:['--no-sandbox']});
 try{
- const page=await browser.newPage({viewport:{width:1536,height:1024}});
+ const page=await browser.newPage({viewport:{width:1536,height:1024},deviceScaleFactor:2});
  await page.goto(new URL(`/realizacje/${encodeURIComponent(slug)}`,baseURL).href);
- const stage=page.locator('.card-stage');
+ const stage=page.locator(selector);
  await stage.scrollIntoViewIfNeeded();
+ await stage.locator('img').evaluateAll(images=>images.forEach(image=>{image.loading='eager';}));
+ await page.waitForFunction(selector=>[...document.querySelectorAll(`${selector} img`)].every(image=>image instanceof HTMLImageElement&&image.complete&&image.naturalWidth>0),selector);
  for(const img of await stage.locator('img').all())await img.evaluate(i=>i.decode());
  await stage.evaluate(node=>{
   document.body.replaceChildren(node);
@@ -23,7 +25,7 @@ try{
  for(const opaque of [false,true]){
   await page.evaluate(white=>{document.body.style.background=white?'#fff':'transparent'},opaque);
   const png=await stage.screenshot({omitBackground:!opaque});
-  for(const width of opaque?[1536]:[768,1536]){
+  for(const width of opaque?[1536]:[768,1536,3072]){
    const url=await page.evaluate(async({data,width,opaque})=>{
     const bitmap=await createImageBitmap(await(await fetch(`data:image/png;base64,${data}`)).blob());
     const canvas=document.createElement('canvas');canvas.width=width;canvas.height=Math.round(width/1.5);
@@ -31,7 +33,7 @@ try{
     if(opaque){ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);}
     ctx.drawImage(bitmap,0,0,canvas.width,canvas.height);
     bitmap.close();
-    return canvas.toDataURL('image/webp',.96);
+    return canvas.toDataURL('image/webp',.98);
    },{data:png.toString('base64'),width,opaque});
    const path=`${prefix}${opaque?'-share':''}-${width}.webp`;
    await writeFile(path,Buffer.from(url.split(',')[1],'base64'));

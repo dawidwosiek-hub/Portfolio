@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-const routes=['/','/realizacje','/realizacje/shiro-logo-i-wizytowki','/oferta','/o-mnie','/kontakt','/prywatnosc','/oferta/logo-i-identyfikacja','/oferta/druk-i-reklama','/oferta/film-i-social-media','/oferta/odziez-i-nadruki'];
+const routes=['/','/realizacje','/realizacje/shiro-logo-i-wizytowki','/realizacje/diverto-materialy-promocyjne','/oferta','/o-mnie','/kontakt','/prywatnosc','/oferta/logo-i-identyfikacja','/oferta/druk-i-reklama','/oferta/film-i-social-media','/oferta/odziez-i-nadruki'];
 for(const width of [375,768,1440])test(`navigation and responsive layout ${width}px`,async({page})=>{await page.setViewportSize({width,height:1000});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',e=>{if(e.type()==='error')errors.push(e.text());});for(const route of routes){const r=await page.goto(route);expect(r?.status()).toBe(200);await expect(page.locator('h1')).toHaveCount(1);await expect(page.locator('body')).toHaveCSS('background-color','rgb(255, 255, 255)');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();for(const img of await page.locator('img').all()){if(!await img.isVisible())continue;await img.scrollIntoViewIfNeeded();await expect.poll(()=>img.evaluate((i:HTMLImageElement)=>i.complete&&i.naturalWidth>0),{message:`Image must load on ${route}: ${await img.getAttribute('src')}`}).toBe(true);}}expect(errors).toEqual([]);await page.goto('/');if(width<760){await page.getByRole('button',{name:'Menu'}).click();await expect(page.getByRole('navigation')).toBeVisible();await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Menu'})).toBeFocused();}await page.locator('.hero-actions a').first().click();await expect(page).toHaveURL(/realizacje/);});
 test('service selection, validation, unavailable mail preserves text',async({page})=>{await page.goto('/oferta/film-i-social-media');await page.getByRole('link',{name:'Zapytaj o ten projekt'}).click();await expect(page.locator('#service')).toHaveValue('film-i-social-media');await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('#description')).toBeFocused();await page.locator('#description').fill('Potrzebuję montażu filmu reklamowego dla swojej firmy.');await page.locator('#deadline').fill('Do ustalenia');await page.locator('#name').fill('Test');await page.locator('#email').fill('test@example.com');await page.locator('#privacy').check();await page.waitForTimeout(1600);await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('.form-status')).toContainText('nie jest jeszcze skonfigurowane');await expect(page.locator('#description')).toHaveValue('Potrzebuję montażu filmu reklamowego dla swojej firmy.');await expect(page.getByRole('button',{name:'Wyślij zapytanie'})).toBeEnabled();});
 test('confirmed success UX (mocked API, not email delivery)',async({page})=>{await page.route('**/api/inquiry',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify({message:'Zapytanie zostało przyjęte przez usługę pocztową.'})}));await page.goto('/kontakt?usluga=druk-i-reklama');await page.locator('#description').fill('Potrzebuję projektu wizytówek do drukarni.');await page.locator('#deadline').fill('Do ustalenia');await page.locator('#name').fill('Test');await page.locator('#email').fill('test@example.com');await page.locator('#privacy').check();await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('.form-status')).toContainText('zostało przyjęte');await expect(page.locator('#description')).toHaveValue('');});
@@ -15,8 +15,8 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
  expect(await logo.evaluate((i:HTMLImageElement)=>i.naturalWidth)).toBe(1871);
  await expect(page.locator('.case-hero figcaption')).toContainText('prezentacja oryginalnych projektów');
  await expect(page.locator('.case-hero .print-card img')).toHaveCount(2);
- await expect(page.locator('.case-hero .mechanic-card img')).toHaveAttribute('src','/media/shiro/mechanic-1536.webp');
- await expect(page.locator('.case-hero .rental-card img')).toHaveAttribute('src','/media/shiro/car-rental-1536.webp');
+ await expect(page.locator('.case-hero .mechanic-card img')).toHaveAttribute('src','/media/shiro/mechanic-source.png');
+ await expect(page.locator('.case-hero .rental-card img')).toHaveAttribute('src','/media/shiro/car-rental-source.png');
  await expect(page.locator('.case-print .source-item[data-kind="original"] img')).toHaveCount(2);
  await expect(page.getByRole('heading',{name:'Red Hat Display',exact:true})).toBeVisible();
  await expect(page.locator('.application-section')).toHaveCount(6);
@@ -60,15 +60,14 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
   for(const link of await details.locator('a').all())expect((await request.get((await link.getAttribute('href'))!)).status()).toBe(200);
   await summary.focus();await page.keyboard.press('Enter');await expect(details).not.toHaveAttribute('open','');
  }
- await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/\/media\/shiro\/wizytowki-original-share-1536.webp$/);
+ await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/\/media\/shiro\/wizytowki-native-share-1536.webp$/);
  await page.getByRole('link',{name:'Chcę podobny projekt'}).click();
  await expect(page.locator('[name="project"]')).toHaveValue('SHIRO');
  await expect(page.locator('#service')).toHaveValue('logo-i-identyfikacja');
  await page.goto('/realizacje');
  for(const category of ['logo i identyfikacja','druk i reklama','odzież i nadruki']){
   await page.getByRole('button',{name:category,exact:true}).click();
-  await expect(page.locator('.project:visible')).toHaveCount(1);
-  await expect(page.locator('.project:visible h3')).toHaveText('SHIRO');
+  await expect(page.locator('.project:visible h3')).toHaveText(category==='druk i reklama'?['SHIRO','Diverto']:['SHIRO']);
  }
  await page.getByRole('button',{name:'oklejenia',exact:true}).click();
  await expect(page.locator('.project:visible')).toHaveCount(0);
@@ -78,4 +77,31 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
   await expect(page.getByRole('link',{name:/SHIRO/})).toBeVisible();
  }
  expect(await(await request.get('/sitemap.xml')).text()).toContain('/realizacje/shiro-logo-i-wizytowki');
+});
+
+test('Diverto appears in print portfolio and preserves project and service in inquiry',async({page,request})=>{
+ await page.goto('/realizacje');
+ await page.getByRole('button',{name:'druk i reklama',exact:true}).click();
+ await page.getByRole('link',{name:/Diverto/}).click();
+ await expect(page).toHaveURL(/\/realizacje\/diverto-materialy-promocyjne$/);
+ await expect(page.locator('h1')).toHaveText('Diverto.');
+ await expect(page.locator('body')).toHaveCSS('background-color','rgb(255, 255, 255)');
+ await page.getByRole('navigation',{name:'W tej realizacji'}).getByRole('link',{name:'Roll-up',exact:true}).click();
+ await expect(page).toHaveURL(/#application-rollup$/);
+ await expect(page.locator('#application-rollup .rollup-print img')).toBeVisible();
+ for(const details of await page.locator('.source-disclosure').all()){
+  await details.locator('summary').focus();await page.keyboard.press('Enter');
+  for(const image of await details.locator('img').all()){
+   await image.scrollIntoViewIfNeeded();await expect.poll(()=>image.evaluate((i:HTMLImageElement)=>i.complete&&i.naturalWidth>0)).toBe(true);
+  }
+ }
+ await expect(page.locator('.case-print .source-item')).toHaveCount(5);
+ await expect(page.locator('#application-rollup .source-item')).toHaveCount(1);
+ await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/album-preview-share-1536.webp$/);
+ await page.getByRole('link',{name:'Chcę podobny projekt'}).click();
+ await expect(page.locator('[name="project"]')).toHaveValue('Diverto');
+ await expect(page.locator('#service')).toHaveValue('druk-i-reklama');
+ await page.goto('/oferta/druk-i-reklama');
+ await expect(page.getByRole('link',{name:/Diverto/})).toBeVisible();
+ expect(await(await request.get('/sitemap.xml')).text()).toContain('/realizacje/diverto-materialy-promocyjne');
 });

@@ -30,10 +30,10 @@
         "Koncepcja graficzna obuwia",
         "Przygotowanie materiałów do druku"
       ],
-      "image": "/media/shiro/wizytowki-original-1536.webp",
-      "imageSmall": "/media/shiro/wizytowki-original-768.webp",
-      "imageWidth": 1536,
-      "imageHeight": 1024,
+      "image": "/media/shiro/wizytowki-native-3072.webp",
+      "imageSmall": "/media/shiro/wizytowki-native-768.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
       "imageCaption": "Wizytówki SHIRO · prezentacja oryginalnych projektów.",
       "alt": "Oryginalne projekty wizytówek SHIRO: Mechanic & Chiptuning oraz Car Rental, zaprezentowane na białym tle.",
       "client": "SHIRO — motoryzacja.",
@@ -51,19 +51,17 @@
       "galleryIntro": "Dwa warianty dla mechaniki i chiptuningu oraz wynajmu samochodów. Wspólna identyfikacja, układ dopasowany do zakresu działalności.",
       "gallery": [
         {
-          "src": "/media/shiro/mechanic-1536.webp",
-          "smallSrc": "/media/shiro/mechanic-768.webp",
-          "width": 1536,
-          "height": 854,
+          "src": "/media/shiro/mechanic-source.png",
+          "width": 1110,
+          "height": 638,
           "alt": "Oryginalny projekt wizytówki SHIRO Mechanic & Chiptuning z logo po lewej i czerwonymi polami kontaktowymi po prawej.",
           "caption": "Mechanic & Chiptuning · oryginalny projekt wizytówki",
           "kind": "original"
         },
         {
-          "src": "/media/shiro/car-rental-1536.webp",
-          "smallSrc": "/media/shiro/car-rental-768.webp",
-          "width": 1536,
-          "height": 854,
+          "src": "/media/shiro/car-rental-source.png",
+          "width": 1110,
+          "height": 638,
           "alt": "Oryginalny projekt wizytówki SHIRO Car Rental z logo nad trzema czerwonymi polami kontaktowymi.",
           "caption": "Car Rental · oryginalny projekt wizytówki",
           "kind": "original"
@@ -245,8 +243,138 @@
           }
         }
       ],
-      "shareImage": "/media/shiro/wizytowki-original-share-1536.webp",
-      "presentation": "business-cards"
+      "shareImage": "/media/shiro/wizytowki-native-share-1536.webp",
+      "presentation": "business-cards",
+      "imageMedium": "/media/shiro/wizytowki-native-1536.webp"
+    },
+    {
+      "slug": "diverto-materialy-promocyjne",
+      "name": "Diverto",
+      "category": "druk i reklama",
+      "scope": "Oprawa graficzna płyty CD i roll-up dla zespołu muzycznego Diverto. Projekty dopasowane do różnych formatów druku.",
+      "scopeItems": [
+        "Projekt okładki płyty CD",
+        "Wkładki do opakowania i lista utworów",
+        "Projekt nadruku na płytę",
+        "Projekt roll-upu reklamowego",
+        "Przygotowanie materiałów do druku"
+      ],
+      "image": "/media/diverto/album-preview-3072.webp",
+      "imageSmall": "/media/diverto/album-preview-768.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/diverto/album-preview-share-1536.webp",
+      "imageCaption": "Oprawa płyty Diverto · prezentacja oryginalnych projektów.",
+      "alt": "Prezentacja oryginalnej okładki i nadruku płyty Diverto na białym tle.",
+      "accent": "#a51e3c",
+      "client": "Diverto — zespół muzyczny.",
+      "need": "Materiały promujące oprawę muzyczną wydarzeń: wydawnictwo CD prezentujące zespół i repertuar oraz roll-up z ofertą i danymi kontaktowymi.",
+      "solution": "Fotografie zespołu i czerwone światło sceniczne budują oprawę płyty. Białe liternictwo kontrastuje z ciemnym tłem, a powracające czerwone akcenty łączą kolejne elementy. W roll-upie większy nacisk położyłem na czytelną ofertę, uzupełnioną motywem klawiatury i nut.",
+      "galleryLabel": "Płyta CD",
+      "galleryTitle": "Muzyka ma swoją oprawę.",
+      "galleryIntro": "Okładka, wkładki i nadruk na płytę tworzą jeden zestaw. Fotografie zespołu, sceniczna czerwień i wyraziste liternictwo wracają w każdym jego elemencie.",
+      "mockup": {
+        "kind": "cd",
+        "cover": {
+          "src": "/media/diverto/okladka-1536.webp",
+          "smallSrc": "/media/diverto/okladka-768.webp",
+          "width": 1536,
+          "height": 1536,
+          "kind": "original",
+          "alt": "Oryginalna okładka płyty Diverto: zdjęcie trzech muzyków na scenie, białe liternictwo i czerwone światło.",
+          "caption": "Okładka · oryginalny projekt"
+        },
+        "disc": {
+          "src": "/media/diverto/nadruk-plyty-1536.webp",
+          "smallSrc": "/media/diverto/nadruk-plyty-768.webp",
+          "width": 1536,
+          "height": 1536,
+          "kind": "original",
+          "alt": "Oryginalny projekt nadruku na płytę Diverto: biała nazwa zespołu na czarno-bordowym tle.",
+          "caption": "Nadruk na płytę · oryginalny projekt"
+        }
+      },
+      "gallery": [
+        {
+          "src": "/media/diverto/okladka-1536.webp",
+          "smallSrc": "/media/diverto/okladka-768.webp",
+          "width": 1536,
+          "height": 1536,
+          "kind": "original",
+          "alt": "Oryginalna okładka płyty Diverto: zdjęcie trzech muzyków na scenie, białe liternictwo i czerwone światło.",
+          "caption": "Okładka · oryginalny projekt"
+        },
+        {
+          "src": "/media/diverto/wkladka-1536.webp",
+          "smallSrc": "/media/diverto/wkladka-768.webp",
+          "width": 1536,
+          "height": 1536,
+          "kind": "original",
+          "alt": "Wkładka płyty Diverto: oferta oprawy muzycznej na tle sceny w odcieniach czerni i bordo.",
+          "caption": "Wkładka informacyjna · oryginalny projekt"
+        },
+        {
+          "src": "/media/diverto/wkladka-foto-1536.webp",
+          "smallSrc": "/media/diverto/wkladka-foto-768.webp",
+          "width": 1536,
+          "height": 1198,
+          "kind": "original",
+          "alt": "Projekt wkładki ze zdjęciem zespołu Diverto i czerwonym motywem graficznym.",
+          "caption": "Wkładka ze zdjęciem zespołu · oryginalny projekt"
+        },
+        {
+          "src": "/media/diverto/tyl-1536.webp",
+          "smallSrc": "/media/diverto/tyl-768.webp",
+          "width": 1536,
+          "height": 1198,
+          "kind": "original",
+          "alt": "Tylna wkładka opakowania płyty Diverto z listą szesnastu utworów na tle sceny.",
+          "caption": "Wkładka z listą utworów · oryginalny projekt"
+        },
+        {
+          "src": "/media/diverto/nadruk-plyty-1536.webp",
+          "smallSrc": "/media/diverto/nadruk-plyty-768.webp",
+          "width": 1536,
+          "height": 1536,
+          "kind": "original",
+          "alt": "Oryginalny projekt nadruku na płytę Diverto: biała nazwa zespołu na czarno-bordowym tle.",
+          "caption": "Nadruk na płytę · oryginalny projekt"
+        }
+      ],
+      "applications": [
+        {
+          "slug": "rollup",
+          "label": "Roll-up",
+          "title": "Oferta widoczna z daleka.",
+          "description": "Pionowy format porządkuje ofertę zespołu: nazwa, rodzaje wydarzeń i kontakt. Czerwień oraz motyw klawiatury i nut nawiązują do muzycznego charakteru materiałów.",
+          "mockup": {
+            "kind": "rollup",
+            "artwork": {
+              "src": "/media/diverto/rollup-1024.webp",
+              "smallSrc": "/media/diverto/rollup-768.webp",
+              "width": 1024,
+              "height": 2047,
+              "kind": "original",
+              "alt": "Projekt roll-upu Diverto z ofertą zespołu, motywem klawiatury, czerwonych nut i polem kontaktowym.",
+              "caption": "Roll-up · oryginalny projekt"
+            }
+          },
+          "originals": [
+            {
+              "src": "/media/diverto/rollup-1024.webp",
+              "smallSrc": "/media/diverto/rollup-768.webp",
+              "width": 1024,
+              "height": 2047,
+              "kind": "original",
+              "alt": "Projekt roll-upu Diverto z ofertą zespołu, motywem klawiatury, czerwonych nut i polem kontaktowym.",
+              "caption": "Roll-up · oryginalny projekt"
+            }
+          ]
+        }
+      ],
+      "published": true,
+      "featured": true,
+      "imageMedium": "/media/diverto/album-preview-1536.webp"
     }
   ]
 }

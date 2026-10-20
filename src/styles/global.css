@@ -27,3 +27,6 @@
 /* Brand objects sit directly on the white page, without a separate studio panel. */
 .brand-art,.art-grid{background:transparent}
 .art-grid:after{display:none}
+
+.project.with-print-mockup .project-image{background:transparent}
+.project.with-print-mockup .project-image img{object-fit:contain;background:#fff}

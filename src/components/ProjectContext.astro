@@ -1,0 +1,14 @@
+---
+import type {Project} from '../lib/content';
+interface Props {project:Project}
+const {project}=Astro.props;
+---
+<section class="case-context" aria-labelledby="context-title"><div><span class="eyebrow">MARKA / KONTEKST</span><h2 id="context-title">{project.client}</h2><p>{project.need}</p></div><div><span class="eyebrow">POMYSŁ I ROZWIĄZANIE</span><p>{project.solution}</p></div></section>
+<style>
+ .case-context{display:grid;grid-template-columns:1fr 1fr;gap:10%;padding-block:0 var(--section-space)}
+ h2{font-size:clamp(2rem,3.5vw,3.5rem);max-width:490px}
+ p{font-size:.95rem}
+ h2+p{margin-top:24px}
+ .eyebrow{margin-bottom:24px}
+ @media(max-width:760px){.case-context{grid-template-columns:1fr;gap:32px;padding-block:0 48px}.eyebrow{margin-bottom:18px}h2{font-size:2.2rem}p{font-size:.9rem}}
+</style>
