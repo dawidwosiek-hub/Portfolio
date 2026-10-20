@@ -15,12 +15,22 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
  expect(await logo.evaluate((i:HTMLImageElement)=>i.naturalWidth)).toBe(1871);
  await expect(page.locator('.case-hero figcaption')).toContainText(/wizualizacja AI/i);
  await expect(page.locator('.original-grid img')).toHaveCount(2);
+ await expect(page.getByRole('heading',{name:'Red Hat Display',exact:true})).toBeVisible();
+ await expect(page.locator('.application-section')).toHaveCount(3);
+ await page.getByRole('navigation',{name:'W tej realizacji'}).getByRole('link',{name:'Flagi',exact:true}).click();
+ await expect(page).toHaveURL(/#application-flagi$/);
+ await expect(page.locator('#application-flagi img')).toBeVisible();
+ await expect(page.locator('#application-obuwie .application-rule')).toContainText('Projekt koncepcyjny');
+ await expect(page.locator('.application-original img')).toHaveCount(2);
+ for(const link of await page.locator('.application-original a').all()){
+  expect((await request.get((await link.getAttribute('href'))!)).status()).toBe(200);
+ }
  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/\/media\/shiro\/wizytowki-1536.webp$/);
  await page.getByRole('link',{name:'Chcę podobny projekt'}).click();
  await expect(page.locator('[name="project"]')).toHaveValue('SHIRO');
  await expect(page.locator('#service')).toHaveValue('logo-i-identyfikacja');
  await page.goto('/realizacje');
- for(const category of ['logo i identyfikacja','druk i reklama']){
+ for(const category of ['logo i identyfikacja','druk i reklama','odzież i nadruki']){
   await page.getByRole('button',{name:category,exact:true}).click();
   await expect(page.locator('.project:visible')).toHaveCount(1);
   await expect(page.locator('.project:visible h3')).toHaveText('SHIRO');
@@ -28,7 +38,7 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
  await page.getByRole('button',{name:'oklejenia',exact:true}).click();
  await expect(page.locator('.project:visible')).toHaveCount(0);
  await expect(page.locator('.filter-empty')).toBeVisible();
- for(const service of ['logo-i-identyfikacja','druk-i-reklama']){
+ for(const service of ['logo-i-identyfikacja','druk-i-reklama','odziez-i-nadruki']){
   await page.goto(`/oferta/${service}`);
   await expect(page.getByRole('link',{name:/SHIRO/})).toBeVisible();
  }

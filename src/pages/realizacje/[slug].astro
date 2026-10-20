@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ProjectImage from '../../components/ProjectImage.astro';
+import ProjectIdentity from '../../components/ProjectIdentity.astro';
+import ProjectApplications from '../../components/ProjectApplications.astro';
 import {projects, projectCategories, type Project} from '../../lib/content';
 export function getStaticPaths(){return projects.map(project=>({params:{slug:project.slug},props:{project}}));}
 export const prerender=true;
@@ -8,20 +10,24 @@ interface Props {project:Project}
 const {project:p}=Astro.props;
 const originals=p.gallery.filter(image=>image.kind!=='visualization');
 const details=p.gallery.filter(image=>image.kind==='visualization');
+const galleryNumber=(p.logo?1:0)+(p.identity?1:0)+1;
 ---
-<Layout title={`${p.name} — ${p.logo?'logo i wizytówki':'realizacja'} | NADX`} description={p.scope} bodyClass="project-page" image={p.image}>
+<Layout title={`${p.name} — ${p.logo?'logo i identyfikacja marki':'realizacja'} | NADX`} description={p.scope} bodyClass="project-page" image={p.image}>
 <article class="case-study">
 <header class="case-intro case-container">
  <a class="breadcrumb" href="/realizacje">← Wszystkie realizacje</a>
  <div class="case-intro-grid"><div><span class="eyebrow">{projectCategories(p).join(' / ')}</span><h1>{p.name}<span aria-hidden="true">.</span></h1></div><div class="case-intro-copy"><p>{p.scope}</p><span class="case-credit">Projekt: Dawid Wosiek / NADX</span></div></div>
+ {p.applications&&p.applications.length>0&&<nav class="case-nav" aria-label="W tej realizacji">{p.logo&&<a href="#logo-title">Logo</a>}{p.identity&&<a href="#identity-title">Typografia</a>}<a href="#gallery-title">Wizytówki</a>{p.applications.map(application=><a href={`#application-${application.slug}`}>{application.label}</a>)}</nav>}
 </header>
 {p.logo&&<section class="case-logo case-container" aria-labelledby="logo-title">
  <div class="case-rule"><h2 id="logo-title">01 / Znak</h2><span>Projekt logo</span></div>
  <figure><div class="logo-stage"><img src={p.logo.src} alt={p.logo.alt} width={p.logo.width} height={p.logo.height} class:list={{'logo-inverted':p.logo.invert}} fetchpriority="high"/></div><figcaption>{p.logo.caption}</figcaption></figure>
 </section>}
+{p.identity&&<div class="case-container"><ProjectIdentity identity={p.identity} number={p.logo?2:1}/></div>}
 <figure class="case-hero case-container"><ProjectImage media={{src:p.image,smallSrc:p.imageSmall,alt:p.alt,width:p.imageWidth,height:p.imageHeight}} priority={!p.logo}/>{p.imageCaption&&<figcaption>{p.imageCaption}</figcaption>}</figure>
 <section class="case-context case-container" aria-labelledby="context-title"><div><span class="eyebrow">MARKA / KONTEKST</span><h2 id="context-title">{p.client}</h2><p>{p.need}</p></div><div><span class="eyebrow">POMYSŁ I ROZWIĄZANIE</span><p>{p.solution}</p></div></section>
-{originals.length>0&&<section class="case-originals case-container" aria-labelledby="gallery-title"><div class="case-rule"><h2 id="gallery-title">{p.logo?'02':'01'} / {p.galleryTitle || 'Projekt w szczegółach'}</h2><span>Oryginalne materiały</span></div>{p.galleryIntro&&<p class="case-gallery-intro">{p.galleryIntro}</p>}<div class="original-grid">{originals.map(image=><figure><ProjectImage media={image} sizes="(max-width: 760px) 88vw, 44vw"/>{image.caption&&<figcaption>{image.caption}</figcaption>}</figure>)}</div></section>}
+{originals.length>0&&<section class="case-originals case-container" aria-labelledby="gallery-title"><div class="case-rule"><h2 id="gallery-title">{String(galleryNumber).padStart(2,'0')} / {p.galleryTitle || 'Projekt w szczegółach'}</h2><span>Oryginalne materiały</span></div>{p.galleryIntro&&<p class="case-gallery-intro">{p.galleryIntro}</p>}<div class="original-grid">{originals.map(image=><figure><ProjectImage media={image} sizes="(max-width: 760px) 88vw, 44vw"/>{image.caption&&<figcaption>{image.caption}</figcaption>}</figure>)}</div></section>}
+{p.applications&&p.applications.length>0&&<div class="case-container"><ProjectApplications applications={p.applications} startNumber={galleryNumber+1}/></div>}
 <section class:list={['case-scope','case-container',{'with-detail':details.length>0}]} aria-labelledby="scope-title">
  {details.length>0&&<div class="case-detail-images">{details.map(image=><figure><ProjectImage media={image} sizes="(max-width: 760px) 88vw, 52vw"/>{image.caption&&<figcaption>{image.caption}</figcaption>}</figure>)}</div>}
  <div class="case-scope-copy"><span class="eyebrow">ZAKRES MOJEJ PRACY</span><h2 id="scope-title">{p.logo?<>Od znaku.<br/>Do materiałów.</>:'Zakres projektu.'}</h2>{p.scopeItems?.length?<ul>{p.scopeItems.map((item,index)=><li><span aria-hidden="true">{String(index+1).padStart(2,'0')}</span>{item}</li>)}</ul>:<p>{p.scope}</p>}</div>
@@ -43,6 +49,9 @@ const details=p.gallery.filter(image=>image.kind==='visualization');
  .case-intro .eyebrow{font-size:.63rem;margin-bottom:24px}
  .case-intro-copy p{font-size:1.05rem;max-width:440px;line-height:1.6}
  .case-credit{display:block;margin-top:22px;color:var(--muted);font-size:.7rem}
+ .case-nav{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:38px;font-size:.72rem}
+ .case-nav a{border-bottom:1px solid var(--line);padding-bottom:4px}
+ .case-nav a:hover{border-color:var(--ink)}
  .case-logo{padding-bottom:64px}
  .case-rule{display:flex;justify-content:space-between;gap:24px;align-items:center;border-top:1px solid var(--line);padding-top:24px}
  .case-rule h2,.case-rule>span{font-size:.65rem;line-height:1.6;letter-spacing:.12em;text-transform:uppercase;font-weight:600}

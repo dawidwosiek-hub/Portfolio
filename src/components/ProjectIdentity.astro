@@ -1,0 +1,33 @@
+---
+import type {ProjectIdentity} from '../lib/content';
+interface Props {identity:ProjectIdentity;number:number}
+const {identity,number}=Astro.props;
+---
+<section class="project-identity" aria-labelledby="identity-title">
+ <div class="identity-rule"><h2 id="identity-title">{String(number).padStart(2,'0')} / Język marki</h2><span>Typografia i kolor</span></div>
+ <div class="type-layout">
+  <div class="type-description"><span class="type-label">TYPOGRAFIA</span><h3>{identity.typeface}<span aria-hidden="true">.</span></h3><p>{identity.description}</p></div>
+  <div class="type-specimen" style={{'--typeface':`"${identity.typeface}"`}} aria-label={`Przykłady znaków fontu ${identity.typeface}`}><span class="type-large" aria-hidden="true">Aa</span><p class="type-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>abcdefghijklmnopqrstuvwxyz<br/>0123456789</p></div>
+ </div>
+ <ul class="identity-colors" aria-label="Kolorystyka prezentowanych materiałów">{identity.colors.map(color=><li><div class="color-swatch" style={{background:color.value}} aria-hidden="true"></div><span>{color.name}</span></li>)}</ul>
+</section>
+<style>
+ @font-face{font-family:'Red Hat Display';src:url('/fonts/red-hat-display.woff2') format('woff2');font-weight:300 900;font-style:normal;font-display:swap}
+ .project-identity{padding-bottom:75px}
+ .identity-rule{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:24px;align-items:start}
+ .identity-rule h2,.identity-rule>span{font-size:.65rem;line-height:1.6;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+ .identity-rule h2{display:flex;align-items:center;gap:14px}
+ .identity-rule h2:before{content:'';width:24px;height:3px;background:var(--accent,#bd1014);flex-shrink:0}
+ .identity-rule>span{color:var(--muted);font-weight:400;text-align:right}
+ .type-layout{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:center;padding:54px 0 48px}
+ .type-label{font-size:.62rem;letter-spacing:.12em;color:var(--muted)}
+ .type-description h3{font-size:clamp(2.5rem,4.6vw,5rem);max-width:380px;margin:20px 0 24px;line-height:1.04}
+ .type-description p{font-size:.9rem;max-width:390px}
+ .type-specimen{font-family:var(--typeface),var(--font);min-width:0}
+ .type-large{display:block;font-size:clamp(7rem,12vw,12rem);font-weight:500;letter-spacing:-.065em;line-height:1;margin-bottom:24px}
+ .type-alphabet{font-size:clamp(.85rem,1.5vw,1.6rem);line-height:1.9;letter-spacing:.06em;color:var(--ink);overflow-wrap:anywhere}
+ .identity-colors{display:grid;grid-template-columns:1fr 1fr 1fr;list-style:none;padding:0;margin:0;gap:20px}
+ .color-swatch{height:46px;border:1px solid #e2e2e2}
+ .identity-colors span{display:block;padding-top:12px;font-size:.67rem;color:var(--muted)}
+ @media(max-width:760px){.project-identity{padding-bottom:48px}.identity-rule{gap:16px;padding-top:18px}.identity-rule h2,.identity-rule>span{font-size:.57rem;letter-spacing:.07em}.identity-rule h2{gap:8px}.identity-rule h2:before{width:16px}.type-layout{grid-template-columns:1fr;gap:30px;padding:32px 0}.type-description h3{font-size:3.3rem;max-width:300px;margin:14px 0 20px}.type-description p{font-size:.88rem}.type-large{font-size:8rem;margin-bottom:20px}.type-alphabet{font-size:.9rem;letter-spacing:.04em}.identity-colors{gap:12px}.color-swatch{height:32px}.identity-colors span{font-size:.61rem}}
+</style>

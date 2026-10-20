@@ -18,13 +18,17 @@
       "name": "SHIRO",
       "category": "logo i identyfikacja",
       "categories": [
-        "druk i reklama"
+        "druk i reklama",
+        "odzież i nadruki"
       ],
-      "scope": "Autorski projekt logo, dwa warianty wizytówek i przygotowanie materiałów do druku.",
+      "scope": "Projekt logo i spójnych materiałów SHIRO: wizytówki, naklejki, flagi oraz koncepcja graficzna obuwia.",
       "scopeItems": [
-        "Projekt logo SHIRO",
+        "Autorski projekt logo SHIRO",
         "Wizytówki Mechanic & Chiptuning i Car Rental",
-        "Przygotowanie plików do druku"
+        "Projekt naklejki Car Rental",
+        "Projekty flag Wulkanizacja i Mechanika",
+        "Koncepcja graficzna obuwia",
+        "Przygotowanie materiałów do druku"
       ],
       "image": "/media/shiro/wizytowki-1536.webp",
       "imageSmall": "/media/shiro/wizytowki-768.webp",
@@ -33,8 +37,8 @@
       "imageCaption": "Wizytówki SHIRO · wizualizacja AI na podstawie oryginalnych projektów.",
       "alt": "Wizualizacja dwóch czarno-czerwonych wizytówek SHIRO na białym tle.",
       "client": "SHIRO — motoryzacja.",
-      "need": "Materiały dla dwóch obszarów działalności: mechaniki i chiptuningu oraz wynajmu samochodów. Każdy wariant wizytówki przedstawia właściwy zakres i dane kontaktowe.",
-      "solution": "Zaprojektowałem logo z wyrazistym liternictwem i motywem bieżnika. Czerwony akcent w znaku, ciemne tło i czytelne pola kontaktowe łączą oba projekty wizytówek. Układy różnią się kompozycją, zachowując wspólny charakter marki.",
+      "need": "Materiały marki dla mechaniki i chiptuningu oraz wynajmu samochodów. Logo pojawia się na wizytówkach, naklejce i projektach flag; koncepcja obuwia rozwija ten sam kierunek graficzny.",
+      "solution": "Zaprojektowałem znak z wyrazistym liternictwem i motywem bieżnika. Czerń, czerwony akcent i geometria sześciokątów wracają w kolejnych materiałach. Różne formaty zachowują wspólny charakter, a typografia Red Hat Display porządkuje komunikację marki.",
       "logo": {
         "src": "/media/shiro/logo.webp",
         "alt": "Logo SHIRO: autorskie liternictwo otoczone motywem bieżnika opony.",
@@ -75,7 +79,91 @@
         }
       ],
       "published": true,
-      "featured": true
+      "featured": true,
+      "identity": {
+        "typeface": "Red Hat Display",
+        "description": "Czytelne liternictwo uzupełnia charakterystyczny znak SHIRO. Wspólna typografia, czerń i czerwień łączą materiały marki w jeden język wizualny.",
+        "colors": [
+          {
+            "name": "Czerń",
+            "value": "#101010"
+          },
+          {
+            "name": "Czerwień",
+            "value": "#ed151c"
+          },
+          {
+            "name": "Biel",
+            "value": "#ffffff"
+          }
+        ]
+      },
+      "applications": [
+        {
+          "slug": "naklejki",
+          "label": "Naklejki",
+          "title": "Mały format.\nTen sam charakter.",
+          "description": "Projekt naklejki SHIRO Car Rental łączy znak z ciemnym, geometrycznym tłem. Sześciokąty i czerwone akcenty rozwijają motoryzacyjny charakter marki.",
+          "image": {
+            "src": "/media/shiro/naklejki-mockup-1536.webp",
+            "smallSrc": "/media/shiro/naklejki-mockup-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Wizualizacja dwóch naklejek SHIRO Car Rental z czarno-czerwonym wzorem sześciokątów na białym tle.",
+            "caption": "Naklejki SHIRO Car Rental · wizualizacja AI na podstawie projektu.",
+            "kind": "visualization"
+          },
+          "original": {
+            "src": "/media/shiro/naklejka-projekt-1536.webp",
+            "smallSrc": "/media/shiro/naklejka-projekt-768.webp",
+            "width": 1181,
+            "height": 591,
+            "alt": "Oryginalny projekt prostokątnej naklejki SHIRO Car Rental z zaokrąglonymi rogami.",
+            "caption": "Oryginalny projekt naklejki · powiększ, aby obejrzeć szczegóły.",
+            "kind": "original"
+          }
+        },
+        {
+          "slug": "flagi",
+          "label": "Flagi",
+          "title": "Marka widoczna\nz daleka.",
+          "description": "Dwa projekty flag: Wulkanizacja i Mechanika. Pionowy układ komunikatów, logo przy podstawie i geometryczny motyw u góry zachowują wspólny styl materiałów SHIRO.",
+          "image": {
+            "src": "/media/shiro/flagi-mockup-1536.webp",
+            "smallSrc": "/media/shiro/flagi-mockup-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Wizualizacja dwóch czarnych flag SHIRO z napisami WULKANIZACJA i MECHANIKA na białym tle.",
+            "caption": "Flagi Wulkanizacja / Mechanika · wizualizacja AI na podstawie dostarczonych projektów.",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "obuwie",
+          "label": "Obuwie",
+          "title": "Ten sam język.\nInna forma.",
+          "concept": true,
+          "description": "Koncepcja graficzna obuwia przenosi czerwień, znak i motyw sześciokątów na nowy nośnik. To autorski projekt koncepcyjny, pokazany jako oryginalna plansza i wizualizacja.",
+          "image": {
+            "src": "/media/shiro/obuwie-mockup-1536.webp",
+            "smallSrc": "/media/shiro/obuwie-mockup-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Wizualizacja koncepcyjnego czarnego buta SHIRO z czerwonymi sznurówkami, czerwonym znakiem H i wzorem sześciokątów.",
+            "caption": "Koncepcja graficzna obuwia · wizualizacja AI.",
+            "kind": "visualization"
+          },
+          "original": {
+            "src": "/media/shiro/obuwie-projekt-1536.webp",
+            "smallSrc": "/media/shiro/obuwie-projekt-768.webp",
+            "width": 1300,
+            "height": 836,
+            "alt": "Oryginalna plansza koncepcji graficznej obuwia SHIRO: widok z boku, z tyłu i z góry.",
+            "caption": "Oryginalny projekt koncepcyjny · trzy widoki obuwia.",
+            "kind": "original"
+          }
+        }
+      ]
     }
   ]
 }

@@ -39,6 +39,12 @@ Pierwsza realizacja jest wpisana w `site.json` jako `shiro-logo-i-wizytowki`. Ma
 
 Mockupy SHIRO powstały z użyciem AI i są tak podpisane. Nie są dokumentacją fizycznego wydruku; oryginalne wizytówki są pokazane obok. Autorstwo logo i projektów wizytówek potwierdził Dawid Wosiek. Wpis nie przypisuje autorstwa znaku COMPSPORT ani fotografii samochodu, nie podaje niepotwierdzonych wyników ani wykonania nakładu.
 
+`identity` opisuje typografię i kolory prezentowanych materiałów. SHIRO korzysta z Red Hat Display wskazanego w dostarczonej planszy identyfikacji. Font jest lokalny (`public/fonts/red-hat-display.woff2`), z licencją SIL OFL w pliku `red-hat-display-OFL.txt`; źródło: Google Fonts / Red Hat. Kolory służą prezentacji materiałów; nie są opisane jako ustalone specyfikacje produkcyjne.
+
+`applications` to uporządkowane zastosowania marki. Każdy wpis ma `slug`, `label`, `title`, `description` oraz obraz `image` zgodny ze schematem galerii. Opcjonalny `original` pokazuje obok projekt źródłowy i pozwala go powiększyć. `concept: true` oznacza pracę koncepcyjną. Strona automatycznie tworzy skróty do zastosowań i numery rozdziałów.
+
+Naklejkę wyeksportowano z `Shiro_WLEPY.psd`, a planszę obuwia z `sh1.psd`. Wizualizacja flag opiera się na dostarczonej planszy Wulkanizacja / Mechanika. Wszystkie nowe mockupy mają białe tło i podpis AI. Koncepcja obuwia nie jest oferowana jako wyprodukowany model ani jako usługa produkcji obuwia. Adres realizacji pozostaje bez zmian, aby zachować istniejące linki.
+
 ## Kontakt i prywatność
 
 `email`, `phone`, `portrait`: puste pola są ukryte. `socials`: obiekty `{"label":"Nazwa profilu","url":"https://prawdziwy-adres"}`. `about`: naturalny opis w pierwszej osobie. `administrator`: pełna prawdziwa tożsamość administratora i dane adresowe, `privacyContact`: rzeczywisty kontakt do spraw danych, `hostingProvider`: faktyczny hosting. Samo uzupełnienie e-maila w JSON nie konfiguruje wysyłania formularza.
