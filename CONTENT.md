@@ -45,6 +45,12 @@ Mockupy SHIRO powstały z użyciem AI i są tak podpisane. Nie są dokumentacją
 
 Naklejkę wyeksportowano z `Shiro_WLEPY.psd`, a planszę obuwia z `sh1.psd`. Wizualizacja flag opiera się na dostarczonej planszy Wulkanizacja / Mechanika. Wszystkie nowe mockupy mają białe tło i podpis AI. Koncepcja obuwia nie jest oferowana jako wyprodukowany model ani jako usługa produkcji obuwia. Adres realizacji pozostaje bez zmian, aby zachować istniejące linki.
 
+Vouchery: `SHIRO_VOUCHER_FRONT.pdf` i `voucher_2_poprawka1.pdf` zawierają awers i rewers tego samego materiału. Oba oryginały wyeksportowano do WebP; w `originals` można dodać wiele obrazów źródłowych do jednego zastosowania. Mockup pokazuje oba projekty na białym tle. Wizualizacja banera opiera się na dosłanej grafice SHIRO Mechanic & Chiptuning. Zdjęcia samochodów nie są przypisane jako autorstwo fotograficzne NADX.
+
+`applications[].videos` obsługuje listę filmów z `src`, `poster`, `title`, `caption`, `width` i `height`. Zastosowanie może zawierać same filmy, bez `image`. Oryginalne `TS_BLACK.mp4` i `Bluza.mp4` to animowane wizualizacje odzieży SHIRO. Eksporty H.264/AAC mają 720×1280 px, około 8,3 s, zachowaną ścieżkę audio i metadane usunięte z plików. Odtwarzacze mają sterowanie, `preload="none"`, `playsinline` i domyślne wyciszenie; nie używają autoplay. Plakat jest kadrem z odpowiedniego filmu. Prezentacje nie są opisane jako zdjęcia wykonanych nadruków.
+
+Główne tło całej witryny jest białe (`--paper: #ffffff` w `src/styles/global.css`). Pomocnicze panele mają neutralne szarości, a sekcje czarne i żółte zachowują kolory NADX.
+
 ## Kontakt i prywatność
 
 `email`, `phone`, `portrait`: puste pola są ukryte. `socials`: obiekty `{"label":"Nazwa profilu","url":"https://prawdziwy-adres"}`. `about`: naturalny opis w pierwszej osobie. `administrator`: pełna prawdziwa tożsamość administratora i dane adresowe, `privacyContact`: rzeczywisty kontakt do spraw danych, `hostingProvider`: faktyczny hosting. Samo uzupełnienie e-maila w JSON nie konfiguruje wysyłania formularza.

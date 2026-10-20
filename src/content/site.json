@@ -21,12 +21,12 @@
         "druk i reklama",
         "odzież i nadruki"
       ],
-      "scope": "Projekt logo i spójnych materiałów SHIRO: wizytówki, naklejki, flagi oraz koncepcja graficzna obuwia.",
+      "scope": "Projekt logo i materiałów SHIRO — od wizytówek i voucherów po reklamę, wizualizacje odzieży i koncepcję obuwia.",
       "scopeItems": [
         "Autorski projekt logo SHIRO",
-        "Wizytówki Mechanic & Chiptuning i Car Rental",
-        "Projekt naklejki Car Rental",
-        "Projekty flag Wulkanizacja i Mechanika",
+        "Wizytówki i voucher podarunkowy",
+        "Naklejka, baner oraz projekty flag",
+        "Animowane wizualizacje odzieży",
         "Koncepcja graficzna obuwia",
         "Przygotowanie materiałów do druku"
       ],
@@ -37,7 +37,7 @@
       "imageCaption": "Wizytówki SHIRO · wizualizacja AI na podstawie oryginalnych projektów.",
       "alt": "Wizualizacja dwóch czarno-czerwonych wizytówek SHIRO na białym tle.",
       "client": "SHIRO — motoryzacja.",
-      "need": "Materiały marki dla mechaniki i chiptuningu oraz wynajmu samochodów. Logo pojawia się na wizytówkach, naklejce i projektach flag; koncepcja obuwia rozwija ten sam kierunek graficzny.",
+      "need": "Materiały marki dla mechaniki i chiptuningu oraz wynajmu samochodów: wizytówki, voucher podarunkowy, naklejka, baner i projekty flag. Wizualizacje koszulki i bluzy oraz koncepcja obuwia rozwijają zastosowania znaku.",
       "solution": "Zaprojektowałem znak z wyrazistym liternictwem i motywem bieżnika. Czerń, czerwony akcent i geometria sześciokątów wracają w kolejnych materiałach. Różne formaty zachowują wspólny charakter, a typografia Red Hat Display porządkuje komunikację marki.",
       "logo": {
         "src": "/media/shiro/logo.webp",
@@ -100,6 +100,41 @@
       },
       "applications": [
         {
+          "slug": "vouchery",
+          "label": "Vouchery",
+          "title": "Prezent zaczyna się\nod projektu.",
+          "description": "Dwustronny voucher podarunkowy SHIRO Car Rental. Strona z logo buduje charakter materiału, a rewers porządkuje pola na odbiorcę, osobę obdarowującą oraz wartość lub liczbę dni.",
+          "image": {
+            "src": "/media/shiro/voucher-mockup-1536.webp",
+            "smallSrc": "/media/shiro/voucher-mockup-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Wizualizacja awersu i rewersu czarno-czerwonego vouchera podarunkowego SHIRO na białym tle.",
+            "caption": "Voucher podarunkowy SHIRO · wizualizacja AI na podstawie obu projektów.",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/shiro/voucher-front-1536.webp",
+              "smallSrc": "/media/shiro/voucher-front-768.webp",
+              "width": 1536,
+              "height": 710,
+              "alt": "Oryginalny awers vouchera SHIRO Car Rental: logo i napis Voucher podarunkowy na tle czerwonych linii.",
+              "caption": "Awers vouchera · oryginalny projekt.",
+              "kind": "original"
+            },
+            {
+              "src": "/media/shiro/voucher-rewers-1536.webp",
+              "smallSrc": "/media/shiro/voucher-rewers-768.webp",
+              "width": 1536,
+              "height": 710,
+              "alt": "Oryginalny rewers vouchera SHIRO: czerwony samochód i puste pola do uzupełnienia.",
+              "caption": "Rewers vouchera · oryginalny projekt.",
+              "kind": "original"
+            }
+          ]
+        },
+        {
           "slug": "naklejki",
           "label": "Naklejki",
           "title": "Mały format.\nTen sam charakter.",
@@ -124,6 +159,21 @@
           }
         },
         {
+          "slug": "baner",
+          "label": "Baner",
+          "title": "Oferta w większym\nformacie.",
+          "description": "Grafika reklamowa SHIRO Mechanic & Chiptuning zestawia motoryzacyjne fotografie z listą usług i danymi kontaktowymi. Wyraźna hierarchia prowadzi od znaku do oferty.",
+          "image": {
+            "src": "/media/shiro/baner-mockup-1536.webp",
+            "smallSrc": "/media/shiro/baner-mockup-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Wizualizacja poziomego banera SHIRO z samochodami, logo i listą usług warsztatu na jasnym tle.",
+            "caption": "Baner SHIRO Mechanic & Chiptuning · wizualizacja AI na podstawie dostarczonej grafiki.",
+            "kind": "visualization"
+          }
+        },
+        {
           "slug": "flagi",
           "label": "Flagi",
           "title": "Marka widoczna\nz daleka.",
@@ -137,6 +187,30 @@
             "caption": "Flagi Wulkanizacja / Mechanika · wizualizacja AI na podstawie dostarczonych projektów.",
             "kind": "visualization"
           }
+        },
+        {
+          "slug": "odziez",
+          "label": "Odzież",
+          "title": "Znak w ruchu.\nNa odzieży.",
+          "description": "Dwie animowane prezentacje zastosowania logo SHIRO: koszulka i bluza. Wizualizacje pozwalają obejrzeć projekt na odzieży z różnych stron.",
+          "videos": [
+            {
+              "src": "/media/shiro/koszulka.mp4",
+              "poster": "/media/shiro/koszulka-poster.webp",
+              "title": "Koszulka SHIRO",
+              "caption": "Animowana wizualizacja projektu koszulki. Odtwarzanie po kliknięciu.",
+              "width": 720,
+              "height": 1280
+            },
+            {
+              "src": "/media/shiro/bluza.mp4",
+              "poster": "/media/shiro/bluza-poster.webp",
+              "title": "Bluza SHIRO",
+              "caption": "Animowana wizualizacja projektu bluzy. Odtwarzanie po kliknięciu.",
+              "width": 720,
+              "height": 1280
+            }
+          ]
         },
         {
           "slug": "obuwie",
