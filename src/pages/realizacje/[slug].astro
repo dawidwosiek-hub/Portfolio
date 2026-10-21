@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import ProjectImage from '../../components/ProjectImage.astro';
 import BusinessCards from '../../components/BusinessCards.astro';
 import PrintMockup from '../../components/PrintMockup.astro';
+import ApparelPresentation from '../../components/ApparelPresentation.astro';
 import ProjectContext from '../../components/ProjectContext.astro';
 import ProjectIdentity from '../../components/ProjectIdentity.astro';
 import ProjectApplications from '../../components/ProjectApplications.astro';
@@ -28,7 +29,7 @@ const galleryNumber=(p.logo?1:0)+(p.identity?1:0)+1;
 </section>}
 {p.identity&&<div class="case-container"><ProjectIdentity identity={p.identity} number={p.logo?2:1}/></div>}
 {p.logo&&<div class="case-container"><ProjectContext project={p}/></div>}
-<section class="case-print case-container" aria-labelledby="gallery-title"><div class="case-rule"><span class="case-rule-label">{String(galleryNumber).padStart(2,'0')} / {p.logo?'Materiały drukowane':'Prezentacja projektu'}</span></div><div class="case-print-heading"><h2 id="gallery-title">{p.galleryTitle || 'Projekt w szczegółach.'}</h2>{p.galleryIntro&&<p>{p.galleryIntro}</p>}</div><figure class:list={["case-hero",{"case-cards":p.presentation==='business-cards'}]}>{p.presentation==='business-cards'?<BusinessCards cards={p.gallery.filter(image=>image.kind==='original')}/>:p.mockup?<PrintMockup mockup={p.mockup} priority={!p.logo}/>:<ProjectImage media={{src:p.image,smallSrc:p.imageSmall,mediumSrc:p.imageMedium,alt:p.alt,width:p.imageWidth,height:p.imageHeight}} priority={!p.logo} sizes="(max-width: 760px) 88vw, min(85vw, 1120px)"/>}{p.imageCaption&&<figcaption>{p.imageCaption}</figcaption>}</figure>{p.gallery.length>0&&<ProjectSources media={p.gallery} label={details.length>0?'Zobacz projekty i detale':'Zobacz oryginalne projekty'}/>}</section>
+<section class="case-print case-container" aria-labelledby="gallery-title"><div class="case-rule"><span class="case-rule-label">{String(galleryNumber).padStart(2,'0')} / {p.logo?'Materiały drukowane':'Prezentacja projektu'}</span></div><div class="case-print-heading"><h2 id="gallery-title">{p.galleryTitle || 'Projekt w szczegółach.'}</h2>{p.galleryIntro&&<p>{p.galleryIntro}</p>}</div><figure class:list={["case-hero",{"case-cards":p.presentation==='business-cards'}]}>{p.presentation==='business-cards'?<BusinessCards cards={p.gallery.filter(image=>image.kind==='original')}/>:p.apparel?<ApparelPresentation presentation={p.apparel} priority={!p.logo}/>:p.mockup?<PrintMockup mockup={p.mockup} priority={!p.logo}/>:<ProjectImage media={{src:p.image,smallSrc:p.imageSmall,mediumSrc:p.imageMedium,alt:p.alt,width:p.imageWidth,height:p.imageHeight}} priority={!p.logo} sizes="(max-width: 760px) 88vw, min(85vw, 1120px)"/>}{p.imageCaption&&<figcaption>{p.imageCaption}</figcaption>}</figure>{p.gallery.length>0&&<ProjectSources media={p.gallery} label={details.length>0?'Zobacz projekty i detale':'Zobacz oryginalne projekty'}/>}</section>
 {!p.logo&&<div class="case-container"><ProjectContext project={p}/></div>}
 {p.applications&&p.applications.length>0&&<div class="case-container"><ProjectApplications applications={p.applications} startNumber={galleryNumber+1}/></div>}
 <section class="case-scope case-container" aria-labelledby="scope-title">

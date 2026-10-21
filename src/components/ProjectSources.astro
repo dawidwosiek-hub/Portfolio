@@ -6,7 +6,7 @@ const {media,label='Zobacz oryginalne projekty'}=Astro.props;
 ---
 <details class="source-disclosure">
  <summary><span>{label}</span><span class="source-toggle" aria-hidden="true">+</span></summary>
- <div class="source-grid">{media.map(item=><figure class="source-item" data-kind={item.kind || 'original'}><a href={item.src} target="_blank" rel="noopener noreferrer" aria-label={`Powiększ: ${item.alt}`}><ProjectImage media={item} sizes="(max-width: 760px) 88vw, 44vw"/></a>{item.caption&&<figcaption>{item.caption}</figcaption>}</figure>)}</div>
+ <div class="source-grid">{media.map(item=><figure class="source-item" data-kind={item.kind || 'original'}><a href={item.fullSrc || item.src} target="_blank" rel="noopener noreferrer" aria-label={`Powiększ: ${item.alt}`}><ProjectImage media={item} sizes="(max-width: 760px) 88vw, 44vw"/></a>{item.caption&&<figcaption>{item.caption}</figcaption>}</figure>)}</div>
 </details>
 <style>
  .source-disclosure{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:30px}

@@ -117,3 +117,21 @@ PDF-y wizytówek zawierają pojedyncze rastry 1110×638 px w CMYK, bez wektorów
 Eksporter miniatur renderuje komponent przy skali urządzenia 2× i zapisuje również obraz 3072 px. Większy rozmiar miniatury poprawia krawędzie kompozycji, ale nie zwiększa ilości szczegółów w oryginalnej grafice. Idealnie ostre większe zbliżenia wymagają źródłowego PSD albo PDF/SVG z zachowanym tekstem i wektorami. Nie należy odtwarzać napisów ani logo przez generowanie AI i przedstawiać tego jako niezmieniony oryginał.
 
 Opcjonalne `imageMedium` (lub `mediumSrc` wewnątrz `ProjectMedia`) wskazuje wariant 1536 px, gdy duży plik ma 3072 px. Dzięki temu przeglądarka wybiera 768, 1536 albo 3072 px zależnie od wielkości obrazu i gęstości ekranu. Warianty 3072 px służą ostrzejszym miniaturom obu realizacji; oryginały SHIRO pozostają bezstratnymi obrazami 1110 px.
+
+### OLSEN — odzież firmowa
+
+Realizacja `olsen-odziez-firmowa` wykorzystuje pięć stron dostarczonego `olsen_wizu2.pdf`: kurtkę, bluzę z kapturem i czapkę z wizualizacjami haftu oraz dwa warianty koszulki DTF. Jest widoczna w portfolio, na stronie głównej i przy usłudze odzieży; kontakt zachowuje nazwę OLSEN i wybiera `odziez-i-nadruki`. Zakres opisuje projektowanie oznakowania i dokumentację. Nie potwierdza fizycznej produkcji ani autorstwa samego logo.
+
+`public/media/olsen/` zawiera obrazy WebP plansz i eksporty SVG z oryginalnego PDF-a. Usunięto z kadru nagłówki akceptacyjne i stopki dokumentu; układ odzieży, znaków oraz wymiarowanie zachowano. Wektory z oryginału pozostają wektorami, a osadzone rastry nie zostały odrysowane. Opcjonalne `fullSrc` w `ProjectMedia` kieruje przy powiększeniu do SVG; na stronie ładowane są mniejsze WebP. Oryginalny PDF pozostaje poza publicznym katalogiem.
+
+Bazy mockupów odzieży wygenerowano narzędziem imagegen z prawdziwym kanałem alfa i bez znaków. Komponent `ApparelPresentation.astro` nakłada na nie niezmienione grafiki PNG wyodrębnione z PDF-a. Nazwy, telefon i e-mail nie są generowane przez AI. `screen: true` usuwa optycznie czarny podkład wizualizacji haftu przez tryb mieszania CSS; oryginalny plik pozostaje niezmieniony. Mockupy mają podpis AI i nie są zdjęciami wykonanych produktów.
+
+Pole `apparel` w projekcie lub zastosowaniu zawiera: `base` (standardowy `ProjectMedia`), `layout` (`pair` lub `single`), dostępny opis `label`, podpis `caption` oraz listę `marks`. Każdy znak ma `image`, pozycje `left`/`top` i `width` w procentach całej bazy 1536×1024 px. Dla par baza zawiera przód po lewej i tył po prawej; na telefonie oba ujęcia pokazują się jedno pod drugim, a rozmieszczenie znaków zostaje zachowane. Nie dodawaj pod mockupami szarych paneli ani obramowań.
+
+Po zmianie układu kurtki zaktualizuj miniatury z działającej strony lokalnej:
+
+```sh
+node scripts/render-business-card-preview.mjs http://localhost:4322 olsen-odziez-firmowa public/media/olsen/prezentacja '.case-hero .apparel-stage'
+```
+
+Wizualizacja koszulki pokazuje pierwszy wariant DTF. Oba oryginały dostępne są pod wspólnym podglądem w sekcji koszulek. Projekt czapki zachowuje źródłową grafikę; wymiarów z dokumentacji nie przepisano do publicznego opisu jako specyfikacji produkcyjnej.

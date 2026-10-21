@@ -375,6 +375,258 @@
       "published": true,
       "featured": true,
       "imageMedium": "/media/diverto/album-preview-1536.webp"
+    },
+    {
+      "slug": "olsen-odziez-firmowa",
+      "name": "OLSEN",
+      "category": "odzież i nadruki",
+      "scope": "Oznakowanie odzieży firmowej OLSEN — kurtka, bluza, czapka i koszulki. Rozmieszczenie znaków oraz wizualizacje haftu i nadruku DTF.",
+      "scopeItems": [
+        "Rozmieszczenie znaku i informacji kontaktowych na odzieży",
+        "Wizualizacje haftu na kurtce, bluzie i czapce",
+        "Dwa warianty nadruku DTF na koszulkach",
+        "Dokumentacja położenia i wielkości oznakowania"
+      ],
+      "image": "/media/olsen/prezentacja-3072.webp",
+      "imageSmall": "/media/olsen/prezentacja-768.webp",
+      "imageMedium": "/media/olsen/prezentacja-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/olsen/prezentacja-share-1536.webp",
+      "imageCaption": "Kurtka OLSEN · wizualizacja AI z oryginalnymi grafikami oznakowania.",
+      "alt": "Kurtka firmowa OLSEN na białym tle: przód z małym znakiem i tył z większym oznakowaniem.",
+      "accent": "#c42128",
+      "galleryLabel": "Kurtka / haft",
+      "galleryTitle": "Marka widoczna w pracy.",
+      "galleryIntro": "Subtelny znak z przodu, pełne oznakowanie na plecach. Rozmieszczenie przygotowane dla różnych elementów firmowej odzieży.",
+      "client": "OLSEN — wentylacja i klimatyzacja.",
+      "need": "Oznakowanie odzieży dla firmy zajmującej się wentylacją, rekuperacją i klimatyzacją. Projekt obejmuje kurtkę, bluzę z kapturem, czapkę oraz dwa warianty koszulki.",
+      "solution": "Z przodu umieściłem niewielki znak na lewej piersi. Większe oznakowanie na plecach łączy nazwę firmy z zakresem usług i kontaktem. Układ dopasowałem do kroju odzieży i wskazanej techniki zdobienia: haftu lub nadruku DTF.",
+      "apparel": {
+        "base": {
+          "src": "/media/olsen/kurtka-baza-1536.webp",
+          "smallSrc": "/media/olsen/kurtka-baza-768.webp",
+          "width": 1536,
+          "height": 1024,
+          "alt": ""
+        },
+        "layout": "pair",
+        "label": "Kurtka firmowa OLSEN: mały haft na lewej piersi i większe oznakowanie na plecach.",
+        "caption": "Wizualizacja AI z oryginalnymi grafikami oznakowania.",
+        "marks": [
+          {
+            "image": {
+              "src": "/media/olsen/haft-przod.png",
+              "width": 377,
+              "height": 118,
+              "alt": "Oryginalny znak OLSEN w wizualizacji haftu."
+            },
+            "left": 34,
+            "top": 32.5,
+            "width": 6.8,
+            "screen": true
+          },
+          {
+            "image": {
+              "src": "/media/olsen/haft-tyl.png",
+              "width": 1020,
+              "height": 538,
+              "alt": "Oryginalny projekt haftu OLSEN z opisem usług i kontaktem."
+            },
+            "left": 66.5,
+            "top": 28.5,
+            "width": 17,
+            "screen": true
+          }
+        ]
+      },
+      "gallery": [
+        {
+          "src": "/media/olsen/kurtka-projekt-2048.webp",
+          "smallSrc": "/media/olsen/kurtka-projekt-768.webp",
+          "mediumSrc": "/media/olsen/kurtka-projekt-1536.webp",
+          "fullSrc": "/media/olsen/kurtka-projekt.svg",
+          "width": 2048,
+          "height": 1079,
+          "kind": "original",
+          "alt": "Oryginalny projekt oznakowania kurtki OLSEN z przodu i z tyłu, z rozmieszczeniem haftu.",
+          "caption": "Kurtka · projekt rozmieszczenia haftu"
+        }
+      ],
+      "applications": [
+        {
+          "slug": "bluza",
+          "label": "Bluza / haft",
+          "title": "Ten sam znak. Inny krój.",
+          "description": "Rozmieszczenie na bluzie z kapturem zachowuje podział na niewielki znak z przodu i czytelne oznakowanie na plecach.",
+          "apparel": {
+            "base": {
+              "src": "/media/olsen/bluza-baza-1536.webp",
+              "smallSrc": "/media/olsen/bluza-baza-768.webp",
+              "width": 1536,
+              "height": 1024,
+              "alt": ""
+            },
+            "layout": "pair",
+            "label": "Bluza OLSEN z kapturem: haft z przodu i na plecach.",
+            "caption": "Wizualizacja AI z oryginalnymi grafikami oznakowania.",
+            "marks": [
+              {
+                "image": {
+                  "src": "/media/olsen/haft-przod.png",
+                  "width": 377,
+                  "height": 118,
+                  "alt": "Oryginalny znak OLSEN w wizualizacji haftu."
+                },
+                "left": 33.5,
+                "top": 33.5,
+                "width": 6.8,
+                "screen": true
+              },
+              {
+                "image": {
+                  "src": "/media/olsen/haft-tyl.png",
+                  "width": 1020,
+                  "height": 538,
+                  "alt": "Oryginalny projekt haftu OLSEN z opisem usług i kontaktem."
+                },
+                "left": 66.3,
+                "top": 35,
+                "width": 17,
+                "screen": true
+              }
+            ]
+          },
+          "originals": [
+            {
+              "src": "/media/olsen/bluza-projekt-2048.webp",
+              "smallSrc": "/media/olsen/bluza-projekt-768.webp",
+              "mediumSrc": "/media/olsen/bluza-projekt-1536.webp",
+              "fullSrc": "/media/olsen/bluza-projekt.svg",
+              "width": 2048,
+              "height": 912,
+              "kind": "original",
+              "alt": "Oryginalny projekt bluzy z kapturem OLSEN: mały znak z przodu i większe oznakowanie na plecach.",
+              "caption": "Bluza z kapturem · projekt rozmieszczenia haftu"
+            }
+          ]
+        },
+        {
+          "slug": "koszulki",
+          "label": "Koszulki / DTF",
+          "title": "Oznakowanie w wersji DTF.",
+          "description": "Dwa warianty projektu koszulki różnią się opracowaniem pola kontaktowego na plecach. Mały znak z przodu pozostaje wspólnym elementem zestawu. Poniżej można porównać oba oryginalne projekty.",
+          "apparel": {
+            "base": {
+              "src": "/media/olsen/koszulka-baza-1536.webp",
+              "smallSrc": "/media/olsen/koszulka-baza-768.webp",
+              "width": 1536,
+              "height": 1024,
+              "alt": ""
+            },
+            "layout": "pair",
+            "label": "Koszulka OLSEN: mały nadruk z przodu i pełne oznakowanie DTF na plecach.",
+            "caption": "Wizualizacja AI z oryginalnymi grafikami oznakowania.",
+            "marks": [
+              {
+                "image": {
+                  "src": "/media/olsen/dtf-przod.png",
+                  "width": 377,
+                  "height": 117,
+                  "alt": "Oryginalny znak OLSEN w wersji do nadruku DTF."
+                },
+                "left": 34,
+                "top": 32.5,
+                "width": 6.8,
+                "screen": false
+              },
+              {
+                "image": {
+                  "src": "/media/olsen/dtf-tyl.png",
+                  "width": 1096,
+                  "height": 573,
+                  "alt": "Oryginalny projekt nadruku DTF OLSEN: znak, zakres usług, telefon i e-mail."
+                },
+                "left": 66.7,
+                "top": 28,
+                "width": 17,
+                "screen": false
+              }
+            ]
+          },
+          "originals": [
+            {
+              "src": "/media/olsen/koszulka-dtf-projekt-2048.webp",
+              "smallSrc": "/media/olsen/koszulka-dtf-projekt-768.webp",
+              "mediumSrc": "/media/olsen/koszulka-dtf-projekt-1536.webp",
+              "fullSrc": "/media/olsen/koszulka-dtf-projekt.svg",
+              "width": 2048,
+              "height": 900,
+              "kind": "original",
+              "alt": "Oryginalny pierwszy wariant koszulki OLSEN z nadrukiem DTF, ze znakiem z przodu i danymi kontaktowymi na plecach.",
+              "caption": "Koszulka DTF · wariant 01"
+            },
+            {
+              "src": "/media/olsen/koszulka-dtf-alternatywa-projekt-2048.webp",
+              "smallSrc": "/media/olsen/koszulka-dtf-alternatywa-projekt-768.webp",
+              "mediumSrc": "/media/olsen/koszulka-dtf-alternatywa-projekt-1536.webp",
+              "fullSrc": "/media/olsen/koszulka-dtf-alternatywa-projekt.svg",
+              "width": 2048,
+              "height": 900,
+              "kind": "original",
+              "alt": "Oryginalny drugi wariant koszulki OLSEN z innym opracowaniem pola kontaktowego na plecach.",
+              "caption": "Koszulka DTF · wariant 02"
+            }
+          ]
+        },
+        {
+          "slug": "czapka",
+          "label": "Czapka / haft",
+          "title": "Znak w mniejszym formacie.",
+          "description": "Na czapce pozostaje sam znak firmy. Czerwono-srebrne oznakowanie kontrastuje z czarną tkaniną i nawiązuje do pozostałych elementów odzieży.",
+          "apparel": {
+            "base": {
+              "src": "/media/olsen/czapka-baza-1536.webp",
+              "smallSrc": "/media/olsen/czapka-baza-768.webp",
+              "width": 1536,
+              "height": 1024,
+              "alt": ""
+            },
+            "layout": "single",
+            "label": "Czarna czapka z oryginalnym znakiem OLSEN na przednim panelu.",
+            "caption": "Wizualizacja AI z oryginalnymi grafikami oznakowania.",
+            "marks": [
+              {
+                "image": {
+                  "src": "/media/olsen/haft-czapka.png",
+                  "width": 391,
+                  "height": 123,
+                  "alt": "Oryginalny znak OLSEN do wizualizacji haftu na czapce."
+                },
+                "left": 34,
+                "top": 40,
+                "width": 32,
+                "screen": true
+              }
+            ]
+          },
+          "originals": [
+            {
+              "src": "/media/olsen/czapka-projekt-2048.webp",
+              "smallSrc": "/media/olsen/czapka-projekt-768.webp",
+              "mediumSrc": "/media/olsen/czapka-projekt-1536.webp",
+              "fullSrc": "/media/olsen/czapka-projekt.svg",
+              "width": 2048,
+              "height": 1640,
+              "kind": "original",
+              "alt": "Oryginalny projekt czapki OLSEN z oznakowaniem haftowanym z przodu.",
+              "caption": "Czapka · projekt rozmieszczenia haftu"
+            }
+          ]
+        }
+      ],
+      "published": true,
+      "featured": true
     }
   ]
 }

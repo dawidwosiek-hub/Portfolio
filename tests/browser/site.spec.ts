@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-const routes=['/','/realizacje','/realizacje/shiro-logo-i-wizytowki','/realizacje/diverto-materialy-promocyjne','/oferta','/o-mnie','/kontakt','/prywatnosc','/oferta/logo-i-identyfikacja','/oferta/druk-i-reklama','/oferta/film-i-social-media','/oferta/odziez-i-nadruki'];
+const routes=['/','/realizacje','/realizacje/shiro-logo-i-wizytowki','/realizacje/diverto-materialy-promocyjne','/realizacje/olsen-odziez-firmowa','/oferta','/o-mnie','/kontakt','/prywatnosc','/oferta/logo-i-identyfikacja','/oferta/druk-i-reklama','/oferta/film-i-social-media','/oferta/odziez-i-nadruki'];
 for(const width of [375,768,1440])test(`navigation and responsive layout ${width}px`,async({page})=>{await page.setViewportSize({width,height:1000});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',e=>{if(e.type()==='error')errors.push(e.text());});for(const route of routes){const r=await page.goto(route);expect(r?.status()).toBe(200);await expect(page.locator('h1')).toHaveCount(1);await expect(page.locator('body')).toHaveCSS('background-color','rgb(255, 255, 255)');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();for(const img of await page.locator('img').all()){if(!await img.isVisible())continue;await img.scrollIntoViewIfNeeded();await expect.poll(()=>img.evaluate((i:HTMLImageElement)=>i.complete&&i.naturalWidth>0),{message:`Image must load on ${route}: ${await img.getAttribute('src')}`}).toBe(true);}}expect(errors).toEqual([]);await page.goto('/');if(width<760){await page.getByRole('button',{name:'Menu'}).click();await expect(page.getByRole('navigation')).toBeVisible();await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Menu'})).toBeFocused();}await page.locator('.hero-actions a').first().click();await expect(page).toHaveURL(/realizacje/);});
 test('service selection, validation, unavailable mail preserves text',async({page})=>{await page.goto('/oferta/film-i-social-media');await page.getByRole('link',{name:'Zapytaj o ten projekt'}).click();await expect(page.locator('#service')).toHaveValue('film-i-social-media');await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('#description')).toBeFocused();await page.locator('#description').fill('Potrzebuję montażu filmu reklamowego dla swojej firmy.');await page.locator('#deadline').fill('Do ustalenia');await page.locator('#name').fill('Test');await page.locator('#email').fill('test@example.com');await page.locator('#privacy').check();await page.waitForTimeout(1600);await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('.form-status')).toContainText('nie jest jeszcze skonfigurowane');await expect(page.locator('#description')).toHaveValue('Potrzebuję montażu filmu reklamowego dla swojej firmy.');await expect(page.getByRole('button',{name:'Wyślij zapytanie'})).toBeEnabled();});
 test('confirmed success UX (mocked API, not email delivery)',async({page})=>{await page.route('**/api/inquiry',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify({message:'Zapytanie zostało przyjęte przez usługę pocztową.'})}));await page.goto('/kontakt?usluga=druk-i-reklama');await page.locator('#description').fill('Potrzebuję projektu wizytówek do drukarni.');await page.locator('#deadline').fill('Do ustalenia');await page.locator('#name').fill('Test');await page.locator('#email').fill('test@example.com');await page.locator('#privacy').check();await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('.form-status')).toContainText('zostało przyjęte');await expect(page.locator('#description')).toHaveValue('');});
@@ -67,7 +67,7 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
  await page.goto('/realizacje');
  for(const category of ['logo i identyfikacja','druk i reklama','odzież i nadruki']){
   await page.getByRole('button',{name:category,exact:true}).click();
-  await expect(page.locator('.project:visible h3')).toHaveText(category==='druk i reklama'?['SHIRO','Diverto']:['SHIRO']);
+  await expect(page.locator('.project:visible h3')).toHaveText(category==='druk i reklama'?['SHIRO','Diverto']:category==='odzież i nadruki'?['SHIRO','OLSEN']:['SHIRO']);
  }
  await page.getByRole('button',{name:'oklejenia',exact:true}).click();
  await expect(page.locator('.project:visible')).toHaveCount(0);
@@ -104,4 +104,34 @@ test('Diverto appears in print portfolio and preserves project and service in in
  await page.goto('/oferta/druk-i-reklama');
  await expect(page.getByRole('link',{name:/Diverto/})).toBeVisible();
  expect(await(await request.get('/sitemap.xml')).text()).toContain('/realizacje/diverto-materialy-promocyjne');
+});
+
+test('OLSEN apparel preserves original artwork, source sheets and inquiry context',async({page,request})=>{
+ await page.goto('/realizacje');
+ await page.getByRole('button',{name:'odzież i nadruki',exact:true}).click();
+ await expect(page.locator('.project:visible h3')).toHaveText(['SHIRO','OLSEN']);
+ await page.getByRole('link',{name:/OLSEN/}).click();
+ await expect(page).toHaveURL(/\/realizacje\/olsen-odziez-firmowa$/);
+ await expect(page.locator('h1')).toHaveText('OLSEN.');
+ await expect(page.locator('.case-hero figcaption')).toContainText('wizualizacja AI');
+ await expect(page.locator('.application-section')).toHaveCount(3);
+ for(const name of ['Bluza / haft','Koszulki / DTF','Czapka / haft']){
+  await page.getByRole('navigation',{name:'W tej realizacji'}).getByRole('link',{name,exact:true}).click();
+ }
+ for(const details of await page.locator('.source-disclosure').all()){
+  await details.locator('summary').focus();await page.keyboard.press('Enter');
+  for(const link of await details.locator('a').all()){
+   const response=await request.get((await link.getAttribute('href'))!);
+   expect(response.status()).toBe(200);expect(response.headers()['content-type']).toContain('image/svg+xml');
+   const svg=await response.text();expect(svg).toContain('<svg');expect(svg).not.toMatch(/<script|javascript:/i);
+  }
+ }
+ await expect(page.locator('.source-item')).toHaveCount(5);
+ await expect(page.locator('#application-koszulki .source-item')).toHaveCount(2);
+ await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/prezentacja-share-1536.webp$/);
+ await page.getByRole('link',{name:'Chcę podobny projekt'}).click();
+ await expect(page.locator('[name="project"]')).toHaveValue('OLSEN');
+ await expect(page.locator('#service')).toHaveValue('odziez-i-nadruki');
+ await page.goto('/oferta/odziez-i-nadruki');await expect(page.getByRole('link',{name:/OLSEN/})).toBeVisible();
+ expect(await(await request.get('/sitemap.xml')).text()).toContain('/realizacje/olsen-odziez-firmowa');
 });

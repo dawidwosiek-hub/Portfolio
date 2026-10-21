@@ -1,6 +1,7 @@
 ---
 import ProjectImage from './ProjectImage.astro';
 import PrintMockup from './PrintMockup.astro';
+import ApparelPresentation from './ApparelPresentation.astro';
 import ProjectSources from './ProjectSources.astro';
 import ProjectFilms from './ProjectFilms.astro';
 import type {ProjectApplication} from '../lib/content';
@@ -12,6 +13,7 @@ const {applications,startNumber}=Astro.props;
  return <section class="application-section" id={`application-${application.slug}`} aria-labelledby={`title-${application.slug}`}>
   <div class="application-rule"><span>{String(startNumber+index).padStart(2,'0')} / {application.label}</span>{application.concept&&<strong>Projekt koncepcyjny</strong>}</div>
   <div class="application-heading"><h2 id={`title-${application.slug}`}>{application.title}</h2><p>{application.description}</p></div>
+  {application.apparel&&<figure class="application-mockup"><div class="application-visual"><ApparelPresentation presentation={application.apparel}/></div><figcaption>{application.apparel.caption}</figcaption></figure>}
   {application.mockup&&<figure class="application-mockup"><div class="application-visual"><PrintMockup mockup={application.mockup}/></div><figcaption>Prezentacja z wykorzystaniem oryginalnego projektu.</figcaption></figure>}
   {application.image&&<figure class="application-mockup"><div class="application-visual"><ProjectImage media={application.image} sizes="(max-width: 760px) 88vw, min(85vw, 1120px)"/></div>{application.image.caption&&<figcaption>{application.image.caption}</figcaption>}</figure>}
   {application.videos&&application.videos.length>0&&<ProjectFilms videos={application.videos} section={application.slug}/>}

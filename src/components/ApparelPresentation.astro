@@ -1,0 +1,29 @@
+---
+import ProjectImage from './ProjectImage.astro';
+import type {ApparelPresentation} from '../lib/content';
+interface Props {presentation:ApparelPresentation;priority?:boolean}
+const {presentation:p,priority=false}=Astro.props;
+const pair=p.layout!=='single';
+const views=pair?['front','back']:['single'];
+---
+<div class:list={['apparel-stage',{'apparel-pair':pair,'apparel-single':!pair}]} role="img" aria-label={p.label}>
+ {views.map((view,index)=><div class:list={['apparel-view',view]} aria-hidden="true">
+  <div class="apparel-base"><ProjectImage media={p.base} priority={priority&&index===0} sizes="(max-width: 760px) 176vw, min(90vw, 1120px)"/></div>
+  {p.marks.filter(mark=>!pair||(view==='front'?mark.left<50:mark.left>=50)).map(mark=><div class:list={['apparel-mark',{'screen-mark':mark.screen}]} style={{left:`${pair?(view==='back'?mark.left-50:mark.left)*2:mark.left}%`,top:`${mark.top}%`,width:`${pair?mark.width*2:mark.width}%`}}><ProjectImage media={mark.image} sizes="(max-width: 760px) 35vw, 22vw"/></div>)}
+ </div>)}
+</div>
+<style>
+ .apparel-stage{width:100%;position:relative;isolation:isolate;background:transparent}
+ .apparel-pair{display:grid;grid-template-columns:1fr 1fr}
+ .apparel-view{position:relative;overflow:clip;aspect-ratio:1.5}
+ .apparel-pair .apparel-view{aspect-ratio:.75}
+ .apparel-base{position:absolute;inset:0}
+ .apparel-base :global(img){display:block;width:100%;height:100%!important;max-height:none!important;object-fit:cover!important}
+ .front .apparel-base :global(img){object-position:left center}
+ .back .apparel-base :global(img){object-position:right center}
+ .apparel-mark{position:absolute;line-height:0}
+ .apparel-mark :global(img){display:block;width:100%;height:auto;max-height:none!important}
+ .screen-mark{mix-blend-mode:screen}
+ .apparel-single{max-width:650px;margin-inline:auto}
+ @media(max-width:760px){.apparel-pair{grid-template-columns:1fr;max-width:430px;margin-inline:auto}}
+</style>

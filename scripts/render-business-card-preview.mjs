@@ -10,13 +10,14 @@ const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROM
 try{
  const page=await browser.newPage({viewport:{width:1536,height:1024},deviceScaleFactor:2});
  await page.goto(new URL(`/realizacje/${encodeURIComponent(slug)}`,baseURL).href);
- const stage=page.locator(selector);
+ const stage=page.locator(selector).first();
  await stage.scrollIntoViewIfNeeded();
  await stage.locator('img').evaluateAll(images=>images.forEach(image=>{image.loading='eager';}));
  await page.waitForFunction(selector=>[...document.querySelectorAll(`${selector} img`)].every(image=>image instanceof HTMLImageElement&&image.complete&&image.naturalWidth>0),selector);
  for(const img of await stage.locator('img').all())await img.evaluate(i=>i.decode());
  await stage.evaluate(node=>{
   document.body.replaceChildren(node);
+  node.setAttribute('data-preview-export','true');
   document.documentElement.style.cssText='background:transparent!important;scroll-behavior:auto';
   document.body.style.cssText='margin:0;padding:0;background:transparent!important;width:1536px';
   node.style.cssText='width:1536px;aspect-ratio:1.5;margin:0';
@@ -24,7 +25,7 @@ try{
  await mkdir(dirname(prefix),{recursive:true});
  for(const opaque of [false,true]){
   await page.evaluate(white=>{document.body.style.background=white?'#fff':'transparent'},opaque);
-  const png=await stage.screenshot({omitBackground:!opaque});
+  const png=await page.locator('[data-preview-export]').screenshot({omitBackground:!opaque});
   for(const width of opaque?[1536]:[768,1536,3072]){
    const url=await page.evaluate(async({data,width,opaque})=>{
     const bitmap=await createImageBitmap(await(await fetch(`data:image/png;base64,${data}`)).blob());
