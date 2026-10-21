@@ -3,7 +3,7 @@ import rawServices from '../content/services.json';
 export type Service={slug:string;number:string;title:string;short:string;intro:string;deliverables:string[];detail:string;category:string;price:string|null};
 const services:Service[]=rawServices;
 export type ProjectMedia = {src:string;smallSrc?:string;mediumSrc?:string;fullSrc?:string;alt:string;width?:number;height?:number;caption?:string;kind?:'original'|'visualization'};
-export type ApparelPresentation = {base:ProjectMedia;layout?:'pair'|'single';label:string;caption:string;marks:{image:ProjectMedia;left:number;top:number;width:number;screen?:boolean}[]};
+export type ApparelPresentation = {base:ProjectMedia;layout?:'pair'|'single';label:string;caption:string;marks:{image:ProjectMedia;view:'front'|'back'|'single';centerX:number;top:number;width:number;screen?:boolean}[]};
 export type PrintMockup = {kind:'cd';cover:ProjectMedia;disc:ProjectMedia}|{kind:'rollup';artwork:ProjectMedia};
 export type ProjectIdentity = {typeface:string;description:string;colors:{name:string;value:string}[]};
 export type ApplicationVideo = {src:string;poster:string;title:string;caption:string;width:number;height:number;preview?:ProjectMedia};

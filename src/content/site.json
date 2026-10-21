@@ -387,12 +387,12 @@
         "Dwa warianty nadruku DTF na koszulkach",
         "Dokumentacja położenia i wielkości oznakowania"
       ],
-      "image": "/media/olsen/prezentacja-3072.webp",
-      "imageSmall": "/media/olsen/prezentacja-768.webp",
-      "imageMedium": "/media/olsen/prezentacja-1536.webp",
+      "image": "/media/olsen/ulozenie-3072.webp",
+      "imageSmall": "/media/olsen/ulozenie-768.webp",
+      "imageMedium": "/media/olsen/ulozenie-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2048,
-      "shareImage": "/media/olsen/prezentacja-share-1536.webp",
+      "shareImage": "/media/olsen/ulozenie-share-1536.webp",
       "imageCaption": "Kurtka OLSEN · wizualizacja AI z oryginalnymi grafikami oznakowania.",
       "alt": "Kurtka firmowa OLSEN na białym tle: przód z małym znakiem i tył z większym oznakowaniem.",
       "accent": "#c42128",
@@ -421,10 +421,11 @@
               "height": 118,
               "alt": "Oryginalny znak OLSEN w wizualizacji haftu."
             },
-            "left": 34,
-            "top": 32.5,
-            "width": 6.8,
-            "screen": true
+            "top": 32.3,
+            "width": 14.7,
+            "screen": true,
+            "view": "front",
+            "centerX": 67.3
           },
           {
             "image": {
@@ -433,10 +434,11 @@
               "height": 538,
               "alt": "Oryginalny projekt haftu OLSEN z opisem usług i kontaktem."
             },
-            "left": 66.5,
-            "top": 28.5,
-            "width": 17,
-            "screen": true
+            "top": 28.1,
+            "width": 39.3,
+            "screen": true,
+            "view": "back",
+            "centerX": 48.4
           }
         ]
       },
@@ -478,10 +480,11 @@
                   "height": 118,
                   "alt": "Oryginalny znak OLSEN w wizualizacji haftu."
                 },
-                "left": 33.5,
-                "top": 33.5,
-                "width": 6.8,
-                "screen": true
+                "top": 34.8,
+                "width": 12.0,
+                "screen": true,
+                "view": "front",
+                "centerX": 65.8
               },
               {
                 "image": {
@@ -490,10 +493,11 @@
                   "height": 538,
                   "alt": "Oryginalny projekt haftu OLSEN z opisem usług i kontaktem."
                 },
-                "left": 66.3,
-                "top": 35,
-                "width": 17,
-                "screen": true
+                "top": 32.5,
+                "width": 32.5,
+                "screen": true,
+                "view": "back",
+                "centerX": 49.1
               }
             ]
           },
@@ -535,10 +539,11 @@
                   "height": 117,
                   "alt": "Oryginalny znak OLSEN w wersji do nadruku DTF."
                 },
-                "left": 34,
-                "top": 32.5,
-                "width": 6.8,
-                "screen": false
+                "top": 31.5,
+                "width": 12.1,
+                "screen": false,
+                "view": "front",
+                "centerX": 66.3
               },
               {
                 "image": {
@@ -547,10 +552,11 @@
                   "height": 573,
                   "alt": "Oryginalny projekt nadruku DTF OLSEN: znak, zakres usług, telefon i e-mail."
                 },
-                "left": 66.7,
-                "top": 28,
-                "width": 17,
-                "screen": false
+                "top": 26.0,
+                "width": 35.2,
+                "screen": false,
+                "view": "back",
+                "centerX": 48.0
               }
             ]
           },
@@ -603,10 +609,11 @@
                   "height": 123,
                   "alt": "Oryginalny znak OLSEN do wizualizacji haftu na czapce."
                 },
-                "left": 34,
-                "top": 40,
-                "width": 32,
-                "screen": true
+                "top": 35.0,
+                "width": 34.0,
+                "screen": true,
+                "view": "single",
+                "centerX": 50
               }
             ]
           },

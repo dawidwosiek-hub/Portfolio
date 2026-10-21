@@ -126,12 +126,14 @@ Realizacja `olsen-odziez-firmowa` wykorzystuje pięć stron dostarczonego `olsen
 
 Bazy mockupów odzieży wygenerowano narzędziem imagegen z prawdziwym kanałem alfa i bez znaków. Komponent `ApparelPresentation.astro` nakłada na nie niezmienione grafiki PNG wyodrębnione z PDF-a. Nazwy, telefon i e-mail nie są generowane przez AI. `screen: true` usuwa optycznie czarny podkład wizualizacji haftu przez tryb mieszania CSS; oryginalny plik pozostaje niezmieniony. Mockupy mają podpis AI i nie są zdjęciami wykonanych produktów.
 
-Pole `apparel` w projekcie lub zastosowaniu zawiera: `base` (standardowy `ProjectMedia`), `layout` (`pair` lub `single`), dostępny opis `label`, podpis `caption` oraz listę `marks`. Każdy znak ma `image`, pozycje `left`/`top` i `width` w procentach całej bazy 1536×1024 px. Dla par baza zawiera przód po lewej i tył po prawej; na telefonie oba ujęcia pokazują się jedno pod drugim, a rozmieszczenie znaków zostaje zachowane. Nie dodawaj pod mockupami szarych paneli ani obramowań.
+Pole `apparel` w projekcie lub zastosowaniu zawiera: `base` (standardowy `ProjectMedia`), `layout` (`pair` lub `single`), dostępny opis `label`, podpis `caption` oraz listę `marks`. Każdy znak ma `image`, pole `view` (`front`, `back` lub `single`), `centerX` (pozioma oś znaku), `top` i `width` w procentach konkretnego ujęcia. Dla par baza zawiera przód po lewej i tył po prawej; na telefonie oba ujęcia pokazują się jedno pod drugim, a rozmieszczenie znaków zostaje zachowane. Nie dodawaj pod mockupami szarych paneli ani obramowań.
 
 Po zmianie układu kurtki zaktualizuj miniatury z działającej strony lokalnej:
 
 ```sh
-node scripts/render-business-card-preview.mjs http://localhost:4322 olsen-odziez-firmowa public/media/olsen/prezentacja '.case-hero .apparel-stage'
+node scripts/render-business-card-preview.mjs http://localhost:4322 olsen-odziez-firmowa public/media/olsen/ulozenie '.case-hero .apparel-stage'
 ```
 
 Wizualizacja koszulki pokazuje pierwszy wariant DTF. Oba oryginały dostępne są pod wspólnym podglądem w sekcji koszulek. Projekt czapki zachowuje źródłową grafikę; wymiarów z dokumentacji nie przepisano do publicznego opisu jako specyfikacji produkcyjnej.
+
+Rozmieszczenie OLSEN skorygowano względem oryginalnych plansz i osi odzieży. Przednie znaki są osadzone na panelu klatki piersiowej, a tylne na środku pleców; na bluzie uwzględniono dolną krawędź kaptura. Współrzędne dotyczą każdego ujęcia osobno. Znaki są pozycjonowane względem własnego środka, dzięki czemu zmiana szerokości nie przesuwa ich w bok. Aktualne miniatury mają prefiks `ulozenie-`, żeby przeglądarki nie wyświetlały z pamięci wcześniejszych wersji.

@@ -128,7 +128,7 @@ test('OLSEN apparel preserves original artwork, source sheets and inquiry contex
  }
  await expect(page.locator('.source-item')).toHaveCount(5);
  await expect(page.locator('#application-koszulki .source-item')).toHaveCount(2);
- await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/prezentacja-share-1536.webp$/);
+ await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/ulozenie-share-1536.webp$/);
  await page.getByRole('link',{name:'Chcę podobny projekt'}).click();
  await expect(page.locator('[name="project"]')).toHaveValue('OLSEN');
  await expect(page.locator('#service')).toHaveValue('odziez-i-nadruki');
