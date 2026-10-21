@@ -99,7 +99,7 @@
             "width": 1536,
             "height": 1024,
             "alt": "Wizualizacja awersu i rewersu czarno-czerwonego vouchera podarunkowego SHIRO na białym tle.",
-            "caption": "Voucher podarunkowy SHIRO · wizualizacja AI na podstawie obu projektów.",
+            "caption": "Voucher podarunkowy SHIRO · wizualizacja projektu.",
             "kind": "visualization"
           },
           "originals": [
@@ -134,7 +134,7 @@
             "width": 1536,
             "height": 1024,
             "alt": "Wizualizacja dwóch naklejek SHIRO Car Rental z czarno-czerwonym wzorem sześciokątów na białym tle.",
-            "caption": "Naklejki SHIRO Car Rental · wizualizacja AI na podstawie projektu.",
+            "caption": "Naklejki SHIRO Car Rental · wizualizacja projektu.",
             "kind": "visualization"
           },
           "original": {
@@ -158,7 +158,7 @@
             "width": 1536,
             "height": 1024,
             "alt": "Wizualizacja poziomego banera SHIRO z samochodami, logo i listą usług warsztatu na jasnym tle.",
-            "caption": "Baner SHIRO Mechanic & Chiptuning · wizualizacja AI na podstawie dostarczonej grafiki.",
+            "caption": "Baner SHIRO Mechanic & Chiptuning · wizualizacja projektu.",
             "kind": "visualization"
           }
         },
@@ -173,7 +173,7 @@
             "width": 1536,
             "height": 1024,
             "alt": "Wizualizacja dwóch czarnych flag SHIRO z napisami WULKANIZACJA i MECHANIKA na białym tle.",
-            "caption": "Flagi Wulkanizacja / Mechanika · wizualizacja AI na podstawie dostarczonych projektów.",
+            "caption": "Flagi Wulkanizacja / Mechanika · wizualizacja projektu.",
             "kind": "visualization"
           }
         },
@@ -229,7 +229,7 @@
             "width": 1536,
             "height": 1024,
             "alt": "Wizualizacja koncepcyjnego czarnego buta SHIRO z czerwonymi sznurówkami, czerwonym znakiem H i wzorem sześciokątów.",
-            "caption": "Koncepcja graficzna obuwia · wizualizacja AI.",
+            "caption": "Koncepcja graficzna obuwia · wizualizacja projektu.",
             "kind": "visualization"
           },
           "original": {
@@ -393,7 +393,7 @@
       "imageWidth": 3072,
       "imageHeight": 2048,
       "shareImage": "/media/olsen/ulozenie-share-1536.webp",
-      "imageCaption": "Kurtka OLSEN · wizualizacja AI z oryginalnymi grafikami oznakowania.",
+      "imageCaption": "Kurtka OLSEN · wizualizacja projektu z oryginalnymi grafikami oznakowania.",
       "alt": "Kurtka firmowa OLSEN na białym tle: przód z małym znakiem i tył z większym oznakowaniem.",
       "accent": "#c42128",
       "galleryLabel": "Kurtka / haft",
@@ -412,7 +412,7 @@
         },
         "layout": "pair",
         "label": "Kurtka firmowa OLSEN: mały haft na lewej piersi i większe oznakowanie na plecach.",
-        "caption": "Wizualizacja AI z oryginalnymi grafikami oznakowania.",
+        "caption": "Wizualizacja projektu z oryginalnymi grafikami oznakowania.",
         "marks": [
           {
             "image": {
@@ -471,7 +471,7 @@
             },
             "layout": "pair",
             "label": "Bluza OLSEN z kapturem: haft z przodu i na plecach.",
-            "caption": "Wizualizacja AI z oryginalnymi grafikami oznakowania.",
+            "caption": "Wizualizacja projektu z oryginalnymi grafikami oznakowania.",
             "marks": [
               {
                 "image": {
@@ -530,7 +530,7 @@
             },
             "layout": "pair",
             "label": "Koszulka OLSEN: mały nadruk z przodu i pełne oznakowanie DTF na plecach.",
-            "caption": "Wizualizacja AI z oryginalnymi grafikami oznakowania.",
+            "caption": "Wizualizacja projektu z oryginalnymi grafikami oznakowania.",
             "marks": [
               {
                 "image": {
@@ -600,7 +600,7 @@
             },
             "layout": "single",
             "label": "Czarna czapka z oryginalnym znakiem OLSEN na przednim panelu.",
-            "caption": "Wizualizacja AI z oryginalnymi grafikami oznakowania.",
+            "caption": "Wizualizacja projektu z oryginalnymi grafikami oznakowania.",
             "marks": [
               {
                 "image": {

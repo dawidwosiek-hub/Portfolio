@@ -11,7 +11,7 @@ const {videos,section}=Astro.props;
    <div class="film-image">{video.preview?<ProjectImage media={video.preview} sizes="(max-width: 760px) 88vw, 44vw"/>:<img src={video.poster} alt={video.title} loading="lazy" width={video.width} height={video.height}/>}</div>
    <span class="film-action"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7z" fill="currentColor"/></svg>Obejrzyj animację</span>
   </button>
-  <figcaption><h3>{video.title}</h3><p>{video.preview?'Podgląd projektu · wizualizacja AI.':video.caption}</p></figcaption>
+  <figcaption><h3>{video.title}</h3><p>{video.preview?'Wizualizacja projektu.':video.caption}</p></figcaption>
   <dialog id={id} class="film-dialog" aria-labelledby={`${id}-title`}>
    <div class="film-toolbar"><h3 id={`${id}-title`}>{video.title}</h3><button type="button" data-film-close aria-label="Zamknij film" autofocus>×</button></div>
    <video controls playsinline muted preload="none" poster={video.poster} width={video.width} height={video.height} aria-label={video.title}><source src={video.src} type="video/mp4"/>Twoja przeglądarka nie obsługuje tego filmu. <a href={video.src}>Otwórz film: {video.title}</a></video>

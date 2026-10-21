@@ -26,7 +26,7 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
  await expect(page.locator('#application-obuwie .application-rule')).toContainText('Projekt koncepcyjny');
  await expect(page.locator('.application-section .source-item img')).toHaveCount(4);
  await expect(page.locator('#application-vouchery .source-item img')).toHaveCount(2);
- await expect(page.locator('#application-baner figcaption')).toContainText(/wizualizacja AI/i);
+ await expect(page.locator('#application-baner figcaption')).toContainText(/wizualizacja projektu/i);
  const garmentVideos=page.locator('#application-odziez video');
  await expect(garmentVideos).toHaveCount(2);
  for(const dialog of await page.locator('.film-dialog').all())await expect(dialog).not.toBeVisible();
@@ -113,7 +113,7 @@ test('OLSEN apparel preserves original artwork, source sheets and inquiry contex
  await page.getByRole('link',{name:/OLSEN/}).click();
  await expect(page).toHaveURL(/\/realizacje\/olsen-odziez-firmowa$/);
  await expect(page.locator('h1')).toHaveText('OLSEN.');
- await expect(page.locator('.case-hero figcaption')).toContainText('wizualizacja AI');
+ await expect(page.locator('.case-hero figcaption')).toContainText('wizualizacja projektu');
  await expect(page.locator('.application-section')).toHaveCount(3);
  for(const name of ['Bluza / haft','Koszulki / DTF','Czapka / haft']){
   await page.getByRole('navigation',{name:'W tej realizacji'}).getByRole('link',{name,exact:true}).click();
