@@ -9,7 +9,7 @@
     "start": "node --env-file-if-exists=.env dist/server/entry.mjs",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "test": "playwright test",
-    "test:api": "node --import tsx --test tests/api.test.ts",
+    "test:api": "node --import tsx --test tests/api.test.ts tests/drive-library.test.ts",
     "test:portfolio": "node --test tests/portfolio.test.mjs",
     "brand:assets": "node scripts/generate-brand-assets.mjs"
   },

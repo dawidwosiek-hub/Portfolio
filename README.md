@@ -51,6 +51,8 @@ Przed uruchomieniem zapytań uzupełnij administratora, kontakt prywatności, ho
 
 ## Wdrożenie
 
+Opcjonalny prywatny odczyt materiałów z Google Drive przez istniejący serwer Render: [DRIVE-LIBRARY.md](DRIVE-LIBRARY.md). Integracja jest domyślnie wyłączona i nie publikuje automatycznie zawartości Dysku.
+
 Konfiguracja Render w `render.yaml`; alternatywnie kontener w `Dockerfile`. Instrukcja domeny, HTTPS, aktualizacji i cofnięcia: [DEPLOYMENT.md](DEPLOYMENT.md). Sam plik konfiguracyjny nie publikuje strony. Nie skonfigurowano żadnego płatnego planu.
 
 ## Testy
