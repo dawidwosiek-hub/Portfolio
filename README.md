@@ -53,6 +53,8 @@ Przed uruchomieniem zapytań uzupełnij administratora, kontakt prywatności, ho
 
 Opcjonalny prywatny odczyt materiałów z Google Drive przez istniejący serwer Render: [DRIVE-LIBRARY.md](DRIVE-LIBRARY.md). Integracja jest domyślnie wyłączona i nie publikuje automatycznie zawartości Dysku.
 
+Prywatny dostęp do Vertex AI przez serwer Render: [VERTEX-STUDIO.md](VERTEX-STUDIO.md). Wymaga klucza konta usługi w Secret Files i prywatnego klucza mostu. Generowanie jest domyślnie wyłączone; sprawdzenie połączenia nie wywołuje modelu generatywnego.
+
 Konfiguracja Render w `render.yaml`; alternatywnie kontener w `Dockerfile`. Instrukcja domeny, HTTPS, aktualizacji i cofnięcia: [DEPLOYMENT.md](DEPLOYMENT.md). Sam plik konfiguracyjny nie publikuje strony. Nie skonfigurowano żadnego płatnego planu.
 
 ## Testy
