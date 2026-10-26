@@ -1,6 +1,8 @@
-// Original web exports supplied for review; artwork itself is never redrawn.
+// Original plans, photographs and supplied films, plus additional scene visualizations.
 const base='/media/podglad/odwroceni-c0ec4c60be97/';
 export const media={
+  carScene:base+'car-editorial.webp',
+  boatScene:base+'boat-editorial.webp',
   carSide1:base+'291471adb95d004b.webp',
   carSide2:base+'34466a320568d7f2.webp',
   carRear:base+'5803fdff66dfeb7a.webp',

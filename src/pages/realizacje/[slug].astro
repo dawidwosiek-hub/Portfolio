@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import ProjectImage from '../../components/ProjectImage.astro';
 import BusinessCards from '../../components/BusinessCards.astro';
+import ShiroCase from '../../components/ShiroCase.astro';
 import PrintMockup from '../../components/PrintMockup.astro';
 import ApparelPresentation from '../../components/ApparelPresentation.astro';
 import ProjectContext from '../../components/ProjectContext.astro';
@@ -17,6 +18,7 @@ const details=p.gallery.filter(image=>image.kind==='visualization');
 const galleryNumber=(p.logo?1:0)+(p.identity?1:0)+1;
 ---
 <Layout title={`${p.name} — ${p.logo?'logo i identyfikacja marki':p.category} | NADX`} description={p.scope} bodyClass="project-page" image={p.shareImage || p.image}>
+{p.slug==='shiro-logo-i-wizytowki'?<ShiroCase project={p}/>:<>
 <article class="case-study" style={p.accent?{"--accent":p.accent}:undefined}>
 <header class="case-intro case-container">
  <a class="breadcrumb" href="/realizacje">← Wszystkie realizacje</a>
@@ -40,6 +42,7 @@ const galleryNumber=(p.logo?1:0)+(p.identity?1:0)+1;
 {p.result&&<section class="section"><span class="eyebrow">EFEKT / POTWIERDZONE INFORMACJE</span><h2>Rezultat.</h2><p>{p.result}</p></section>}
 </article>
 <section class="section cta"><h2>Twój projekt<br/>może być <em>następny.</em></h2><a class="button yellow" href={`/kontakt?projekt=${encodeURIComponent(p.name)}`} data-track="portfolio_contact" data-project={p.slug}>Chcę podobny projekt <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></section>
+</>}
 </Layout>
 
 <style>

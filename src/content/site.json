@@ -30,12 +30,12 @@
         "Koncepcja graficzna obuwia",
         "Przygotowanie materiałów do druku"
       ],
-      "image": "/media/shiro/wizytowki-native-3072.webp",
-      "imageSmall": "/media/shiro/wizytowki-native-768.webp",
-      "imageWidth": 3072,
-      "imageHeight": 2048,
-      "imageCaption": "Wizytówki SHIRO · prezentacja oryginalnych projektów.",
-      "alt": "Oryginalne projekty wizytówek SHIRO: Mechanic & Chiptuning oraz Car Rental, zaprezentowane na białym tle.",
+      "image": "/media/shiro/shiro-brand-scene.webp",
+      "imageSmall": "/media/shiro/shiro-brand-scene-768.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1024,
+      "imageCaption": "Wizytówki i voucher SHIRO · wizualizacja materiałów marki.",
+      "alt": "Fotograficzna wizualizacja dwóch stosów wizytówek oraz vouchera SHIRO na białym tle.",
       "client": "SHIRO — motoryzacja.",
       "need": "Materiały marki dla mechaniki i chiptuningu oraz wynajmu samochodów: wizytówki, voucher podarunkowy, naklejka, baner i projekty flag. Wizualizacje koszulki i bluzy oraz koncepcja obuwia rozwijają zastosowania znaku.",
       "solution": "Zaprojektowałem znak z wyrazistym liternictwem i motywem bieżnika. Czerń, czerwony akcent i geometria sześciokątów wracają w kolejnych materiałach. Różne formaty zachowują wspólny charakter, a typografia Red Hat Display porządkuje komunikację marki.",
@@ -243,9 +243,8 @@
           }
         }
       ],
-      "shareImage": "/media/shiro/wizytowki-native-share-1536.webp",
-      "presentation": "business-cards",
-      "imageMedium": "/media/shiro/wizytowki-native-1536.webp"
+      "shareImage": "/media/shiro/shiro-brand-scene.webp",
+      "presentation": "business-cards"
     },
     {
       "slug": "diverto-materialy-promocyjne",

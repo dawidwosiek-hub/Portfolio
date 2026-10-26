@@ -21,7 +21,7 @@ for (const width of [390, 768, 1440]) test(`process review keeps artwork visible
   page.on('pageerror', error => errors.push(error.message));
   await page.setViewportSize({width, height:1000});
   await page.goto(preview);
-  await expect(page.locator('h1')).toContainText('Wyrazisty projekt.');
+  await expect(page.locator('h1')).toContainText('Odwróceni.');
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
   await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(255, 255, 255)');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -33,7 +33,7 @@ for (const width of [390, 768, 1440]) test(`process review keeps artwork visible
   // Every supplied design view is already visible in the story, without expanding a disclosure.
   await expect(page.locator('.process-case details')).toHaveCount(0);
   const artworks = page.locator('.process-case [data-artwork]');
-  await expect(artworks).toHaveCount(10);
+  await expect(artworks).toHaveCount(9);
   for (const artwork of await artworks.all()) {
     await artwork.scrollIntoViewIfNeeded();
     await expect(artwork).toBeVisible();
@@ -50,6 +50,24 @@ for (const width of [390, 768, 1440]) test(`process review keeps artwork visible
     expect(resource.status()).toBe(200);
     expect(resource.headers()['content-type']).toContain('image/');
   }
+
+  // New scene compositions stay fully visible in their original 3:2 aspect ratio.
+  const scenes = page.locator('.process-case [data-scene]');
+  await expect(scenes).toHaveCount(2);
+  for (const scene of await scenes.all()) {
+    await scene.scrollIntoViewIfNeeded();
+    await expect(scene).toBeVisible();
+    const image = scene.locator('img');
+    await expect.poll(() => image.evaluate((i:HTMLImageElement) => i.complete && i.naturalWidth > 0)).toBe(true);
+    const dimensions = await image.evaluate((i:HTMLImageElement) => {
+      const box=i.getBoundingClientRect();
+      return {natural:i.naturalWidth/i.naturalHeight, displayed:box.width/box.height, fit:getComputedStyle(i).objectFit};
+    });
+    expect(dimensions.natural).toBeCloseTo(1.5, 2);
+    expect(dimensions.displayed).toBeCloseTo(dimensions.natural, 2);
+    expect(dimensions.fit).not.toBe('cover');
+  }
+  await expect(page.locator('#boat-detail')).toHaveCount(0);
 
   // Stage links must reach the matching, visible content, including the last link on small screens.
   const navigation = page.getByRole('navigation', {name:'Etapy projektu'});
@@ -97,5 +115,15 @@ for (const width of [390, 768, 1440]) test(`process review keeps artwork visible
   await expect(dialog).not.toBeVisible();
   await expect(trigger).toBeFocused();
   await expect.poll(() => page.evaluate(() => document.body.style.overflow)).not.toBe('hidden');
+  // The new scene enlarges as an image, not as a blank SVG-only viewer.
+  const scene = scenes.first();
+  await scene.click();
+  await expect(dialog).toBeVisible();
+  const zoomImage = dialog.locator('.dialog-artwork img');
+  await expect(zoomImage).toHaveAttribute('src', (await scene.locator('img').getAttribute('src'))!);
+  await zoomImage.evaluate((image:HTMLImageElement) => image.decode());
+  await dialog.getByRole('button', {name:/Zamknij/}).click();
+  await expect(dialog).not.toBeVisible();
+  await expect(scene).toBeFocused();
   expect(errors).toEqual([]);
 });
