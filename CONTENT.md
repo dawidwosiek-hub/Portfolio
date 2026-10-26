@@ -1,5 +1,11 @@
 # Uzupełnianie treści NADX
 
+## Podgląd Odwróceni przed akceptacją
+
+Osobna strona `/podglad/odwroceni-c0ec4c60be97` udostępnia przygotowaną prezentację do oceny w zwykłej przeglądarce. Nie dodaje wpisu do `site.json`, listy realizacji, strony głównej ani mapy witryny. Odpowiedź ma `X-Robots-Tag: noindex, nofollow, noarchive`, analogiczny znacznik w HTML i wyłączone przechowywanie odpowiedzi w pamięci podręcznej. Jest dostępna dla osób posiadających link; nie wymaga logowania.
+
+HTML w `src/previews/odwroceni.html` jest eksportem ocenianego układu. Obrazy, lokalny font i dwa dostarczone filmy są w `public/media/podglad/odwroceni-c0ec4c60be97/`. Filmy pobierają się po uruchomieniu odtwarzacza, z własnym sterowaniem i domyślnym wyciszeniem. Plansze można rozwinąć i powiększyć. Prezentacja rozróżnia wizualizacje samochodu od zdjęć łodzi; zakres pracy obejmuje projektowanie grafiki i materiały wizualne. Nie przypisuje NADX oklejania ani produkcji. Po akceptacji należy przenieść właściwy projekt do docelowej realizacji i usunąć tę tymczasową stronę oraz nieużywane zasoby.
+
 `src/content/site.json` jest plikiem JSON — zachowaj cudzysłowy i przecinki. Po każdej zmianie uruchom build. Kopia przed edycją pozwala łatwo cofnąć zmianę.
 
 ## Prawdziwe realizacje
