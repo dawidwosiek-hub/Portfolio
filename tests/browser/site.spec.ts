@@ -1,8 +1,34 @@
 import {test,expect} from '@playwright/test';
 const routes=['/','/realizacje','/realizacje/shiro-logo-i-wizytowki','/realizacje/diverto-materialy-promocyjne','/realizacje/olsen-odziez-firmowa','/oferta','/o-mnie','/kontakt','/prywatnosc','/oferta/logo-i-identyfikacja','/oferta/druk-i-reklama','/oferta/film-i-social-media','/oferta/odziez-i-nadruki'];
 for(const width of [375,768,1440])test(`navigation and responsive layout ${width}px`,async({page})=>{await page.setViewportSize({width,height:1000});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',e=>{if(e.type()==='error')errors.push(e.text());});for(const route of routes){const r=await page.goto(route);expect(r?.status()).toBe(200);await expect(page.locator('h1')).toHaveCount(1);await expect(page.locator('body')).toHaveCSS('background-color','rgb(255, 255, 255)');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();for(const img of await page.locator('img').all()){if(!await img.isVisible())continue;await img.scrollIntoViewIfNeeded();await expect.poll(()=>img.evaluate((i:HTMLImageElement)=>i.complete&&i.naturalWidth>0),{message:`Image must load on ${route}: ${await img.getAttribute('src')}`}).toBe(true);}}expect(errors).toEqual([]);await page.goto('/');if(width<760){await page.getByRole('button',{name:'Menu'}).click();await expect(page.getByRole('navigation')).toBeVisible();await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Menu'})).toBeFocused();}await page.locator('.hero-actions a').first().click();await expect(page).toHaveURL(/realizacje/);});
-test('service selection, validation, unavailable mail preserves text',async({page})=>{await page.goto('/oferta/film-i-social-media');await page.getByRole('link',{name:'Zapytaj o ten projekt'}).click();await expect(page.locator('#service')).toHaveValue('film-i-social-media');await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('#description')).toBeFocused();await page.locator('#description').fill('Potrzebuję montażu filmu reklamowego dla swojej firmy.');await page.locator('#deadline').fill('Do ustalenia');await page.locator('#name').fill('Test');await page.locator('#email').fill('test@example.com');await page.locator('#privacy').check();await page.waitForTimeout(1600);await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('.form-status')).toContainText('nie jest jeszcze skonfigurowane');await expect(page.locator('#description')).toHaveValue('Potrzebuję montażu filmu reklamowego dla swojej firmy.');await expect(page.getByRole('button',{name:'Wyślij zapytanie'})).toBeEnabled();});
-test('confirmed success UX (mocked API, not email delivery)',async({page})=>{await page.route('**/api/inquiry',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify({message:'Zapytanie zostało przyjęte przez usługę pocztową.'})}));await page.goto('/kontakt?usluga=druk-i-reklama');await page.locator('#description').fill('Potrzebuję projektu wizytówek do drukarni.');await page.locator('#deadline').fill('Do ustalenia');await page.locator('#name').fill('Test');await page.locator('#email').fill('test@example.com');await page.locator('#privacy').check();await page.getByRole('button',{name:'Wyślij zapytanie'}).click();await expect(page.locator('.form-status')).toContainText('zostało przyjęte');await expect(page.locator('#description')).toHaveValue('');});
+test('contact prepares a real email brief without pretending it was sent',async({page,context})=>{
+ await context.grantPermissions(['clipboard-read','clipboard-write']);
+ let posts=0;page.on('request',r=>{if(r.url().endsWith('/api/inquiry')&&r.method()==='POST')posts++;});
+ await page.goto('/oferta/film-i-social-media');await page.getByRole('link',{name:'Zapytaj o ten projekt'}).click();
+ await expect(page.locator('#service')).toHaveValue('film-i-social-media');
+ const submit=page.locator('#inquiry button[type=submit]');await expect(submit).toContainText('Przygotuj wiadomość');await submit.click();await expect(page.locator('#description')).toBeFocused();
+ const text='Potrzebuję montażu filmu reklamowego dla swojej firmy.';
+ await page.locator('#description').fill(text);await page.locator('#name').fill('Test');await page.locator('#email').fill('test@example.com');await page.locator('#privacy').check();
+ await submit.click();await expect(page.locator('.mail-draft')).toBeVisible();await expect(page.locator('#description')).toHaveValue(text);
+ const draft=await page.locator('#mail-text').inputValue();expect(draft).toContain(text);expect(draft).toContain('Termin: Do ustalenia');expect(draft).toContain('test@example.com');
+ const mail=new URL((await page.locator('#mail-open').getAttribute('href'))!);expect(mail.protocol).toBe('mailto:');expect(mail.pathname).toBe('DawidWosiek@gmail.com');expect(mail.searchParams.get('body')).toBe(draft);
+ await expect(page.locator('.mail-draft')).toContainText('nie została jeszcze wysłana');expect(posts).toBe(0);
+ await page.getByRole('button',{name:'Skopiuj treść',exact:true}).click();await expect(page.locator('.copy-status')).toContainText('Skopiowano');expect(await page.evaluate(()=>navigator.clipboard.readText())).toBe(draft);
+ await page.locator('#description').fill(text+' Nowa wersja.');await expect(page.locator('.mail-draft')).toBeHidden();
+ await page.locator('.contact-extra summary').click();await page.locator('#reference').fill('http://example.com/brief');await page.locator('.contact-extra summary').click();await submit.click();await expect(page.locator('.contact-extra')).toHaveAttribute('open','');await expect(page.locator('#reference')).toBeFocused();await expect(page.locator('#error-reference')).toContainText('HTTPS');
+});
+test('configured API success UX (mocked configuration and API, not email delivery)',async({page})=>{
+ await page.route('**/api/inquiry',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify({message:'Zapytanie zostało przyjęte przez usługę pocztową.'})}));
+ await page.goto('/kontakt?usluga=druk-i-reklama');await page.locator('#inquiry').evaluate(f=>{(f as HTMLFormElement).dataset.delivery='api';});
+ await page.locator('#description').fill('Potrzebuję projektu wizytówek do drukarni.');await page.locator('#name').fill('Test');await page.locator('#email').fill('test@example.com');await page.locator('#privacy').check();await page.locator('#inquiry button[type=submit]').click();
+ await expect(page.locator('.form-status')).toContainText('zostało przyjęte');await expect(page.locator('#description')).toHaveValue('');
+});
+test('API outage preserves the brief and offers email instead',async({page})=>{
+ await page.route('**/api/inquiry',r=>r.fulfill({status:503,contentType:'application/json',body:JSON.stringify({message:'Chwilowy brak usługi.'})}));
+ await page.goto('/kontakt?temat=oklejenia');await expect(page.locator('#service')).toHaveValue('druk-i-reklama');await expect(page.locator('.project-selection')).toContainText('Projekt oklejenia');
+ await page.locator('#inquiry').evaluate(f=>{(f as HTMLFormElement).dataset.delivery='api';});await page.locator('#description').fill('Projekt oklejenia samochodu dla mojej firmy.');await page.locator('#name').fill('Test');await page.locator('#email').fill('test@example.com');await page.locator('#privacy').check();await page.locator('#inquiry button[type=submit]').click();
+ await expect(page.locator('.mail-draft')).toBeVisible();await expect(page.locator('#description')).toHaveValue('Projekt oklejenia samochodu dla mojej firmy.');await expect(page.locator('.form-status')).toContainText('nie przekazał wiadomości');
+});
 test('404, SEO, keyboard and reduced motion',async({page,request})=>{expect((await request.get('/nie-ma-takiej-strony')).status()).toBe(404);await page.goto('/nie-ma-takiej-strony');await expect(page.locator('h1')).toContainText('wypadł z kadru');await page.goto('/');await page.keyboard.press('Tab');await expect(page.locator('.skip')).toBeFocused();await page.keyboard.press('Enter');await expect(page.locator('#main')).toBeFocused();await page.emulateMedia({reducedMotion:'reduce'});expect(await page.evaluate(()=>getComputedStyle(document.documentElement).scrollBehavior)).toBe('auto');await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','http://127.0.0.1:4321/');expect((await request.get('/sitemap.xml')).status()).toBe(200);expect(await(await request.get('/robots.txt')).text()).toContain('Sitemap:');});
 test('API rejects origin, malformed body, untrusted token',async({request})=>{expect((await request.post('/api/inquiry',{data:{}})).status()).toBe(403);expect((await request.post('/api/inquiry',{headers:{Origin:'http://127.0.0.1:4321'},data:{}})).status()).toBe(400);expect((await request.post('/api/inquiry',{headers:{Origin:'http://127.0.0.1:4321','Content-Type':'application/json'},data:'x'.repeat(17000)})).status()).toBe(413);});
 test('SHIRO spans logo and print filters, shows source logo and preserves inquiry context',async({page,request})=>{
@@ -13,10 +39,8 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
  const logo=page.getByRole('img',{name:/Logo SHIRO: autorskie/});
  await expect(logo).toBeVisible();
  expect(await logo.evaluate((i:HTMLImageElement)=>i.naturalWidth)).toBe(1871);
- await expect(page.locator('.case-hero figcaption')).toContainText('prezentacja oryginalnych projektów');
- await expect(page.locator('.case-hero .print-card img')).toHaveCount(2);
- await expect(page.locator('.case-hero .mechanic-card img')).toHaveAttribute('src','/media/shiro/mechanic-source.png');
- await expect(page.locator('.case-hero .rental-card img')).toHaveAttribute('src','/media/shiro/car-rental-source.png');
+ await expect(page.locator('.shiro-case .card-stage')).toHaveCount(0);
+ for(const source of ['/media/shiro/mechanic-source.png','/media/shiro/car-rental-source.png'])await expect(page.locator(`.case-print img[src="${source}"]`)).toBeVisible();
  await expect(page.locator('.case-print .source-item[data-kind="original"] img')).toHaveCount(2);
  await expect(page.getByRole('heading',{name:'Red Hat Display',exact:true})).toBeVisible();
  await expect(page.locator('.application-section')).toHaveCount(6);
@@ -30,25 +54,11 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
  await expect(page.locator('#application-baner figcaption')).toContainText(/wizualizacja projektu/i);
  const garmentVideos=page.locator('#application-odziez video');
  await expect(garmentVideos).toHaveCount(2);
- for(const dialog of await page.locator('.film-dialog').all())await expect(dialog).not.toBeVisible();
  for(const title of ['Koszulka SHIRO','Bluza SHIRO']){
-  const button=page.getByRole('button',{name:`Obejrzyj film: ${title}`,exact:true});
-  const dialog=page.locator(`#${await button.getAttribute('aria-controls')}`);
-  await button.click();
-  await expect(dialog).toBeVisible();
-  const video=dialog.locator('video');
-  await expect(video).toHaveAttribute('controls','');
-  await expect(video).toHaveAttribute('preload','none');
-  expect(await video.getAttribute('autoplay')).toBeNull();
-  await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.currentTime)).toBeGreaterThan(0);
-  expect(await video.evaluate((v:HTMLVideoElement)=>v.duration)).toBeGreaterThan(8);
-  await page.keyboard.press('Escape');
-  await expect(dialog).not.toBeVisible();
-  await expect(button).toBeFocused();
-  expect(await video.evaluate((v:HTMLVideoElement)=>v.paused)).toBe(true);
-  await button.click();
-  await dialog.getByRole('button',{name:'Zamknij film'}).click();
-  await expect(dialog).not.toBeVisible();
+  const video=page.getByLabel(title,{exact:true});await video.scrollIntoViewIfNeeded();await expect(video).toBeVisible();
+  const box=await video.boundingBox();expect(box?.height).toBeGreaterThan(200);expect(await video.getAttribute('autoplay')).toBeNull();expect(await video.evaluate((v:HTMLVideoElement)=>v.muted&&v.controls)).toBe(true);
+  await video.evaluate((v:HTMLVideoElement)=>v.play());await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.currentTime)).toBeGreaterThan(.1);
+  await page.locator('#scope-title').scrollIntoViewIfNeeded();await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.paused)).toBe(true);
  }
  // Original source artwork is part of the page, with optional enlargement rather than hidden disclosures.
  await expect(page.locator('.shiro-case .source-disclosure')).toHaveCount(0);

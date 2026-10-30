@@ -8,9 +8,9 @@ Osobna strona `/podglad/odwroceni-c0ec4c60be97` udostępnia przygotowaną prezen
 
 `ProcessArtwork.astro` kadruje oryginalne plansze za pomocą widoków i masek SVG, usuwając z prezentacji wyłącznie zewnętrzne tło planszy. Nie zmienia pikseli grafiki, napisów, znaków, kolorów, kół ani szyb. Każdy bok, tył i góra mają własne miejsce na białej stronie i powiększenie dostępne myszką oraz klawiaturą. Dwa warianty samochodu i trzy widoki łodzi są wydzielone z dostarczonych zbiorczych plansz. Mały, osobny detal oznaczenia łodzi został usunięty na prośbę autora. Zdjęcia zachowują oryginalną zawartość; ich kadry na stronie określa CSS.
 
-Nowe sceny `car-editorial.webp` i `boat-editorial.webp` przygotowano narzędziem imagegen na podstawie oryginalnych plansz i dostarczonych materiałów. Pokazują samochód w jasnej scenie studyjnej oraz łódź na jeziorze. Są opisane publicznie jako wizualizacje projektu, a oryginały i zdjęcia zastosowania pozostają osobnymi materiałami. Nie są dowodem wykonania fizycznego oklejenia samochodu ani sesji fotograficznej na wodzie. Nowe sceny mają 1536×1024 px, warianty 768 px i zachowują cały kadr również na telefonie. Powiązane plansze, filmy i zdjęcia zestawiono w zwarte kompozycje.
+Nowe sceny `car-editorial-v2.webp` i `boat-editorial.webp` przygotowano narzędziem imagegen na podstawie oryginalnych plansz i dostarczonych materiałów. Pokazują samochód w jasnej scenie studyjnej oraz łódź na jeziorze. W poprawionej scenie samochodu przywrócono małe oznaczenie ODWROCENI.KLINIKA przy tylnej szybie na podstawie górnego wariantu oryginalnej planszy. Są opisane publicznie jako wizualizacje projektu, a oryginały i zdjęcia zastosowania pozostają osobnymi materiałami. Nie są dowodem wykonania fizycznego oklejenia samochodu ani sesji fotograficznej na wodzie. Nowe sceny mają 1536×1024 px, warianty 768 px i zachowują cały kadr również na telefonie. Powiązane plansze, filmy i zdjęcia zestawiono w zwarte kompozycje.
 
-Mapa materiałów jest w `src/previews/odwroceni.ts`, a eksporty internetowe w `public/media/podglad/odwroceni-c0ec4c60be97/`. Dwa dostarczone filmy mają własne sterowanie, domyślne wyciszenie i nie używają autoplay. Prezentacja rozróżnia wizualizacje samochodu od zdjęć łodzi; zakres pracy obejmuje projektowanie grafiki i materiały wizualne. Nie przypisuje NADX oklejania ani produkcji. Po akceptacji należy przenieść właściwy projekt do docelowej realizacji i usunąć tę tymczasową stronę oraz nieużywane zasoby.
+Mapa materiałów jest w `src/previews/odwroceni.ts`, a eksporty internetowe w `public/media/podglad/odwroceni-c0ec4c60be97/`. Otwarcie zawiera `odwroceni-story.mp4`: około 22 sekundy, najpierw plansza oryginalnego wariantu, następnie oba dostarczone filmy. Sekwencja zachowuje całe kadry klipów, ma 1280×720 px, H.264 i wyłączony dźwięk. Jest montażem materiałów prezentacyjnych, nie nagraniem fizycznej realizacji. Odtwarzacz nie używa autoplay; przyciski etapów przewijają do planszy, detali i kolejnych widoków bryły. Pełne klipy źródłowe pozostają dostępne z podpisanych linków pod odtwarzaczem. Główna scena samochodu ma osobny przycisk powiększenia. Prezentacja rozróżnia wizualizacje samochodu od zdjęć łodzi; zakres pracy obejmuje projektowanie grafiki i materiały wizualne. Nie przypisuje NADX oklejania ani produkcji. Po akceptacji należy przenieść właściwy projekt do docelowej realizacji i usunąć tę tymczasową stronę oraz nieużywane zasoby.
 
 `src/content/site.json` jest plikiem JSON — zachowaj cudzysłowy i przecinki. Po każdej zmianie uruchom build. Kopia przed edycją pozwala łatwo cofnąć zmianę.
 
@@ -43,7 +43,7 @@ Przycisk projektu przekazuje jego nazwę do kontaktu. Przy linku z nieznaną naz
 
 ### SHIRO i prezentacja logo
 
-Aktualna strona SHIRO korzysta z własnego komponentu `ShiroCase.astro`; pozostałe realizacje zachowują układ ogólny. Nowa fotograficzna wizualizacja wizytówek i vouchera (`shiro-brand-scene.webp`) otwiera prezentację i służy też jako miniatura portfolio oraz obraz udostępniania. Nowa scena koszulki i bluzy (`shiro-apparel-scene.webp`) otwiera część odzieżową. Obie przygotowano narzędziem imagegen na podstawie istniejących projektów i podglądów; są podpisane jako wizualizacje. Eksporty mają 1536×1024 px i wersje mobilne 768 px. Oryginalne logo, bezstratne projekty wizytówek, awers i rewers vouchera oraz naklejka pozostają widoczne jako osobne materiały; oryginalne animacje odzieży wciąż odtwarzają się w dostępnych oknach dialogowych. Zmiana nie jest deklaracją wyprodukowania prezentowanych przedmiotów.
+Aktualna strona SHIRO korzysta z własnego komponentu `ShiroCase.astro`; pozostałe realizacje zachowują układ ogólny. Nowa fotograficzna wizualizacja wizytówek i vouchera (`shiro-brand-scene.webp`) otwiera prezentację i służy też jako miniatura portfolio oraz obraz udostępniania. Nowa scena koszulki i bluzy (`shiro-apparel-scene.webp`) otwiera część odzieżową. Obie przygotowano narzędziem imagegen na podstawie istniejących projektów i podglądów; są podpisane jako wizualizacje. Eksporty mają 1536×1024 px i wersje mobilne 768 px. Oryginalne logo, bezstratne projekty wizytówek, awers i rewers vouchera oraz naklejka pozostają widoczne jako osobne materiały; oryginalne animacje odzieży są widoczne jako dwa duże odtwarzacze obok sceny produktowej, z własnym sterowaniem i wyciszeniem. Powtarzany mockup wizytówek został zastąpiony jednym zestawieniem obu oryginałów; naklejka, baner i flagi tworzą wspólną kompozycję. Zmiana nie jest deklaracją wyprodukowania prezentowanych przedmiotów.
 
 Pierwsza realizacja jest wpisana w `site.json` jako `shiro-logo-i-wizytowki`. Materiały internetowe znajdują się w `public/media/shiro/`. Wpis jest widoczny na stronie głównej, w portfolio oraz przy usługach logo i druku. Opcjonalna tablica `categories` dodaje kolejne kategorie, zachowując główną `category`.
 
@@ -77,7 +77,7 @@ Każde zastosowanie ma teraz jedną dużą prezentację, wspólną maksymalną s
 
 ## Kontakt i prywatność
 
-`email`, `phone`, `portrait`: puste pola są ukryte. `socials`: obiekty `{"label":"Nazwa profilu","url":"https://prawdziwy-adres"}`. `about`: naturalny opis w pierwszej osobie. `administrator`: pełna prawdziwa tożsamość administratora i dane adresowe, `privacyContact`: rzeczywisty kontakt do spraw danych, `hostingProvider`: faktyczny hosting. Samo uzupełnienie e-maila w JSON nie konfiguruje wysyłania formularza.
+`email`, `phone`, `portrait`: puste pola są ukryte. `socials`: obiekty `{"label":"Nazwa profilu","url":"https://prawdziwy-adres"}`. `about`: naturalny opis w pierwszej osobie. `administrator`: pełna prawdziwa tożsamość administratora i dane adresowe, `privacyContact`: rzeczywisty kontakt do spraw danych, `hostingProvider`: faktyczny hosting. Samo uzupełnienie e-maila w JSON nie konfiguruje wysyłania serwerowego. Bez niej strona przygotowuje lokalny szkic wiadomości z adresem odbiorcy, tematem i treścią. Użytkownik otwiera swoją pocztę lub kopiuje treść; interfejs nie ogłasza wysłania wiadomości. Przy awarii skonfigurowanego API oferuje ten sam wariant bez utraty danych. Termin jest opcjonalny; pusty trafia do wiadomości jako „Do ustalenia”. Dane administratora i kontakt prywatności uzupełniono istniejącymi publicznymi danymi Dawida Wośka, a hosting wskazuje faktyczny Render.
 
 ## Statystyki, opinie i zgody
 
@@ -96,10 +96,10 @@ Oryginał marki: `public/brand/nadx-logo.svg`. Nagłówek, stopka i kompozycje s
 
 `presentation: "business-cards"` włącza komponent `BusinessCards.astro`. Pobiera pierwsze dwa oryginały z `gallery` i pokazuje je z delikatnym obrotem i cieniem CSS, bez zmieniania logo, tekstów ani układu. Odrzucone wizualizacje AI wizytówek i zbliżenia nie są używane. Sekcja źródeł pozwala powiększyć oba płaskie projekty.
 
-Miniatury i obraz udostępniania `wizytowki-native-*.webp` są eksportem tego samego komponentu, a nie generowaną interpretacją. Po zmianie źródeł lub stylu uruchom lokalną stronę na porcie 4322 (`npm run dev -- --port 4322`), a w drugim terminalu:
+Pomocnicze eksporty `wizytowki-native-*.webp` pozostają w zasobach; aktualną miniaturą i obrazem udostępniania SHIRO jest scena fotograficzna opisana wyżej. Do eksportu aktualnego zestawienia oryginalnych wizytówek można użyć selektora `.print-pair`. Uruchom lokalną stronę na porcie 4322, a w drugim terminalu:
 
 ```sh
-node scripts/render-business-card-preview.mjs http://localhost:4322 shiro-logo-i-wizytowki public/media/shiro/wizytowki-native
+node scripts/render-business-card-preview.mjs http://localhost:4322 shiro-logo-i-wizytowki public/media/shiro/wizytowki-native .print-pair
 ```
 
 Skrypt wymaga Chromium dostępnego w tym środowisku (inny plik wykonywalny można wskazać przez `PLAYWRIGHT_CHROMIUM_EXECUTABLE`). Generuje przezroczyste miniatury 768/1536/3072 px i nieprzezroczysty obraz udostępniania. Wszystkie trzy ścieżki są zapisane w `site.json`.
@@ -151,3 +151,7 @@ node scripts/render-business-card-preview.mjs http://localhost:4322 olsen-odziez
 Wizualizacja koszulki pokazuje pierwszy wariant DTF. Oba oryginały dostępne są pod wspólnym podglądem w sekcji koszulek. Projekt czapki zachowuje źródłową grafikę; wymiarów z dokumentacji nie przepisano do publicznego opisu jako specyfikacji produkcyjnej.
 
 Rozmieszczenie OLSEN skorygowano względem oryginalnych plansz i osi odzieży. Przednie znaki są osadzone na panelu klatki piersiowej, a tylne na środku pleców; na bluzie uwzględniono dolną krawędź kaptura. Współrzędne dotyczą każdego ujęcia osobno. Znaki są pozycjonowane względem własnego środka, dzięki czemu zmiana szerokości nie przesuwa ich w bok. Aktualne miniatury mają prefiks `ulozenie-`, żeby przeglądarki nie wyświetlały z pamięci wcześniejszych wersji.
+
+## Przejście od realizacji do zapytania
+
+`ProjectInquiry.astro` kończy obie prezentacje konkretnym zakresem i linkiem do kontaktu. Dla opublikowanego SHIRO przekazuje nazwę oraz usługę; dla podglądu Odwróconych przekazuje wyłącznie temat oklejenia i usługę druku, bez tworzenia fikcyjnego opublikowanego projektu. Są też bezpośrednie linki e-mail i telefonu. Tematy kontaktu są wybierane z jawnej listy. Nie podano niepotwierdzonych terminów odpowiedzi, cen ani wyników sprzedaży.

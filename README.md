@@ -33,7 +33,9 @@ Domyślny port: 4321. Ustaw `SITE_URL` na finalny adres HTTPS **przed buildem or
 
 ## Formularz
 
-Formularz wysyła tekst wiadomości do **Resend**. Wymaga:
+Kontakt ma dwa tryby. Bez konfiguracji wysyłki klient przygotowuje wiadomość lokalnie, otwiera ją w swojej poczcie lub kopiuje treść. Formularz nie wywołuje wtedy API i jasno informuje, że wiadomość nie została jeszcze wysłana. Podstawowe pola to usługa, opis, imię i e-mail; termin, budżet i materiały są opcjonalne.
+
+Po skonfigurowaniu wszystkich poniższych wartości formularz wysyła tekst do **Resend**:
 
 - `RESEND_API_KEY` — klucz z prawem wysyłki, tylko na serwerze;
 - `CONTACT_FROM` — zweryfikowany nadawca w Resend;
@@ -43,7 +45,7 @@ Formularz wysyła tekst wiadomości do **Resend**. Wymaga:
 
 Wartości wprowadź w ustawieniach sekretów hostingu. Nie umieszczaj ich w JSON ani repozytorium. W Resend zweryfikuj domenę i wymagane rekordy SPF/DKIM zgodnie z instrukcją dostawcy. Sprawdź istniejące rekordy poczty przed zmianą DNS. Darmowy adres testowy dostawcy może pozwalać tylko na wysyłkę do właściciela konta.
 
-Ochrona: podpisany token ważny 2 godziny, minimum 1,5 sekundy od otwarcia, honeypot, kontrola Origin, maks. 16 KB body, walidacja serwerowa, limit 5 prób / 15 minut i klucz idempotencji Resend. Przy ponowieniu bez zmiany treści token zapobiega powtórnemu wysłaniu. Nie edytuj treści po niepewnym wyniku wysyłki; przy nowym zapytaniu odśwież formularz. Przy braku konfiguracji zwraca 503 i zachowuje wpisane dane. Przyjęcie przez Resend nie oznacza potwierdzenia dostarczenia do skrzynki — sprawdź logi dostawcy i folder spam. Formularz nie przyjmuje załączników; pole linku nie powoduje automatycznego pobierania plików.
+Ochrona: podpisany token ważny 2 godziny, minimum 1,5 sekundy od otwarcia, honeypot, kontrola Origin, maks. 16 KB body, walidacja serwerowa, limit 5 prób / 15 minut i klucz idempotencji Resend. Przy ponowieniu bez zmiany treści token zapobiega powtórnemu wysłaniu. Nie edytuj treści po niepewnym wyniku wysyłki; przy nowym zapytaniu odśwież formularz. Sam endpoint przy braku konfiguracji zwraca 503. Interfejs korzysta wtedy z przygotowania wiadomości do własnej poczty; przy awarii skonfigurowanej wysyłki również proponuje tę ścieżkę, zachowując wpisane dane. Treść nie jest usuwana, a zmiana danych unieważnia wcześniejszy szkic. Przyjęcie przez Resend nie oznacza potwierdzenia dostarczenia do skrzynki — sprawdź logi dostawcy i folder spam. Formularz nie przyjmuje załączników; pole linku nie powoduje automatycznego pobierania plików.
 
 Domyślny limit działa w pamięci jednego procesu. W środowisku z proxy bez zaufanego nagłówka wszyscy użytkownicy mogą dzielić limit adresu proxy. Dla wielu instancji skonfiguruj `UPSTASH_REDIS_REST_URL` i `UPSTASH_REDIS_REST_TOKEN` (HTTPS, sekret na serwerze). `TRUSTED_IP_HEADER` ustaw tylko, jeśli dostawca potwierdza nadpisywanie nagłówka IP; nie ufaj dowolnemu nagłówkowi klienta. Uzupełnij politykę prywatności o dostawcę Redis, jeśli go użyjesz. Awaria zewnętrznego limitera blokuje wysyłkę zamiast omijać ochronę.
 
@@ -71,4 +73,4 @@ Playwright używa `/usr/bin/chromium` w tym środowisku. Na innym komputerze wsk
 
 Analityka: lokalne zdarzenia `nadx:analytics` dla `quote_click`, `service_select`, `portfolio_contact`, `inquiry_accepted`. Brak zewnętrznego odbiorcy, cookies i wysyłania danych osobowych. Integrując faktyczny system, zaktualizuj prywatność i wymagane zgody; nie wysyłaj treści formularza.
 
-Font Inter jest przechowywany lokalnie na licencji SIL OFL (`public/fonts/OFL.txt`). Kompozycja pierwszego ekranu to grafika strony NADX, nie portfolio klienta. Oficjalne logo przekazane przez właściciela jest zachowane w oryginalnym SVG (`public/brand/nadx-logo.svg`). Kolor marki: `#FFCC00`. Po zmianie pliku logo uruchom `npm run brand:assets`, aby odświeżyć favicony i podgląd udostępniania, a następnie przebuduj stronę.
+Font Inter jest przechowywany lokalnie na licencji SIL OFL (`public/fonts/OFL.txt`). Pierwszy ekran przedstawia rzeczywistą opublikowaną realizację z portfolio; sekcja pozostałych prac używa zwartego układu trzech kart. Oficjalne logo przekazane przez właściciela jest zachowane w oryginalnym SVG (`public/brand/nadx-logo.svg`). Kolor marki: `#FFCC00`. Po zmianie pliku logo uruchom `npm run brand:assets`, aby odświeżyć favicony i podgląd udostępniania, a następnie przebuduj stronę.

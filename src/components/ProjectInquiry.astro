@@ -1,0 +1,13 @@
+---
+import {site,phoneHref} from '../lib/content';
+interface Props {project?:string;service:string;topic?:string;title:string;description:string}
+const {project='',service,topic='',title,description}=Astro.props;
+const query=new URLSearchParams({usluga:service,...(project?{projekt:project}:{}),...(topic?{temat:topic}:{})});
+const email=`mailto:${site.email}?subject=${encodeURIComponent('Zapytanie o projekt — NADX')}`;
+---
+<section class="project-inquiry" aria-label="Porozmawiajmy o Twoim projekcie">
+  <div class="inquiry-inner"><div><span class="eyebrow">TERAZ TWOJA FIRMA</span><h2>{title}</h2><p>{description}</p></div><div class="inquiry-actions"><a class="button" href={`/kontakt?${query}`} data-track="portfolio_contact" data-project={project||topic}>Chcę podobny projekt <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a><div class="direct"><a href={email}>Napisz e-mail</a><a href={phoneHref}>{site.phone}</a></div><small>Najpierw ustalimy zakres i wycenę. Zapytanie nie zobowiązuje do zamówienia.</small></div></div>
+</section>
+<style>
+ .project-inquiry{background:#ffcc00;padding:48px 0}.inquiry-inner{width:90%;max-width:1280px;margin:auto;display:grid;grid-template-columns:1.2fr 1fr;gap:12%;align-items:center}.eyebrow{font-size:.64rem;margin-bottom:16px}.project-inquiry h2{font-size:clamp(2rem,3.8vw,3.9rem);line-height:1.05;letter-spacing:-.055em;max-width:680px}.project-inquiry p{font-size:.91rem;line-height:1.75;color:#302800;max-width:510px;margin-top:21px}.inquiry-actions .button{background:#101010;color:#fff;border-color:#101010;min-height:58px}.inquiry-actions .button:hover{background:#fff;color:#101010}.direct{display:flex;gap:23px;flex-wrap:wrap;margin-top:23px;font-size:.85rem}.direct a{border-bottom:1px solid #10101070}.inquiry-actions small{display:block;max-width:370px;font-size:.69rem;line-height:1.7;margin-top:16px;color:#302800}@media(max-width:760px){.project-inquiry{padding:36px 0}.inquiry-inner{width:88%;grid-template-columns:1fr;gap:26px}.project-inquiry h2{font-size:2.25rem}.project-inquiry p{font-size:.85rem;margin-top:17px}.eyebrow{font-size:.58rem}.inquiry-actions .button{font-size:.84rem;gap:24px}.direct{font-size:.8rem;margin-top:20px}.inquiry-actions small{font-size:.65rem}}
+</style>

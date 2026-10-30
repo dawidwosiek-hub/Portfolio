@@ -1,7 +1,8 @@
 // Original plans, photographs and supplied films, plus additional scene visualizations.
 const base='/media/podglad/odwroceni-c0ec4c60be97/';
 export const media={
-  carScene:base+'car-editorial.webp',
+  storyFilm:base+'odwroceni-story.mp4',
+  carScene:base+'car-editorial-v2.webp',
   boatScene:base+'boat-editorial.webp',
   carSide1:base+'291471adb95d004b.webp',
   carSide2:base+'34466a320568d7f2.webp',
