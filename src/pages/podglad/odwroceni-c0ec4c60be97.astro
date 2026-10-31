@@ -1,11 +1,4 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import WrapProcess from '../../components/WrapProcess.astro';
-
-Astro.response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
-Astro.response.headers.set('Cache-Control', 'private, no-store');
-Astro.response.headers.set('Referrer-Policy', 'no-referrer');
+// Keep the previously shared review link useful after the approved publication.
+return Astro.redirect('/realizacje/odwroceni-projekty-oklejen', 301);
 ---
-<Layout title="Odwróceni — od koncepcji do pełnej formy | NADX" description="Projektowanie grafiki samochodu i łodzi. Zobacz kierunki, warianty, rozmieszczenie i wizualizacje projektu Odwróceni." noindex={true} bodyClass="project-page">
-  <WrapProcess/>
-</Layout>

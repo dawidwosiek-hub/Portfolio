@@ -1,17 +1,15 @@
-# Weryfikacja wykonanej wersji
+# Weryfikacja aktualnej wersji — 31.10.2026
 
-Sprawdzono lokalnie w środowisku chmurowym:
+Sprawdzono lokalnie:
 
-- instalacja `npm ci` z lockfile, kontrola typów: 0 błędów i ostrzeżeń;
-- produkcyjny build Astro i uruchomienie serwera Node;
-- serwer deweloperski: odpowiedź zawiera właściwą stronę NADX;
-- 7 testów Playwright: wszystkie podstrony na 375, 768 i 1440 px, brak poziomego przewijania i błędów konsoli, menu mobilne, obrazy, wybrana usługa, walidacja, zachowanie treści przy 503, symulowany sukces, 404, fokus, reduced motion, canonical i sitemap przy domenie testowej, odrzucenie złego Origin/body/tokena;
-- test serwerowego API: błędne pola, honeypot, limit prób, klucz idempotencji oraz reakcje na symulowane przyjęcie, błąd dostawcy i błąd połączenia;
-- test portfolio na odizolowanej kopii: filtry, pusty wynik, strony projektów, przekazanie projektu do formularza, porównanie z klawiatury i odtwarzanie wygenerowanego klipu;
-- obrazy gotowych ekranów obejrzano i poprawiono fokus linku pomijającego nawigację oraz strzałki wymagające brakującego znaku fontu;
-- `npm audit --omit=dev`: 0 podatności w momencie wykonania;
-- publiczne pliki nie zawierają kluczy poczty ani sekretu formularza.
+- `npm run check`: 48 plików, 0 błędów i ostrzeżeń.
+- Produkcyjny build Astro: cztery publiczne realizacje, w tym Odwróceni.
+- 19 testów Playwright: nawigacja, białe tło, brak poziomego przewijania, obrazy, klawiatura i filmy na telefonie, tablecie i komputerze; filtry, kontekst zapytania, canonical, sitemap oraz obsługa błędów formularza.
+- Publikacja Odwróconych w portfolio, na stronie głównej i przy ofercie druku; przekierowanie 301 z dawnego podglądu; zachowanie dziewięciu widoków oryginalnych grafik oraz powiększenie nowego szkicu z podpisem wyjaśniającym jego pochodzenie.
+- Zastąpienie odrzuconego otwarcia SHIRO planszą opartą na oryginalnym logo, również w miniaturach i metadanych udostępniania.
+- Kontrola wizualna nowego otwarcia SHIRO, szkicu Odwróconych i układu czterech realizacji. Kadry sprawdzono na 390 i 1440 px; testy obejmują także 768 px.
+- Formularz bez konfiguracji pocztowej przygotowuje wiadomość w programie pocztowym. Scenariusze API są symulowane; testy nie potwierdzają rzeczywistego doręczenia poczty.
 
-Nie wykonano: publikacji publicznej, weryfikacji HTTPS na hostingu, rzeczywistego doręczenia wiadomości, testów rzeczywistych filmów i realizacji (nie zostały dostarczone). Próby poczty były symulowane. Konfiguracja Render i Docker została przygotowana; nie uruchamiano wdrożenia ani builda Docker.
+Końcowy build używa `SITE_URL=https://nadx.pl`. Zmiany są przeznaczone do gałęzi wdrożeniowej `nadx-site`. Bezpośrednia kontrola strony produkcyjnej w tym środowisku jest blokowana przez proxy (403 przy zestawianiu tunelu HTTPS); wynik lokalnych testów nie potwierdza zakończenia wdrożenia na Render.
 
-Prawdziwe portfolio pozostaje puste. Statystyki, opinie, logotypy klientów i porównania są ukryte do czasu dostarczenia potwierdzonych treści. Instrukcje środowiska i wymagania poczty zapisano w wersji roboczej konfiguracji; zapis nie publikuje środowiska ani strony.
+Statystyki, opinie, logotypy klientów i porównania nadal pojawiają się wyłącznie po uzupełnieniu potwierdzonych treści.

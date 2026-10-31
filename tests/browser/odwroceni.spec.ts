@@ -1,28 +1,48 @@
 import {test, expect} from '@playwright/test';
 
-const preview = '/podglad/odwroceni-c0ec4c60be97';
+const previousPreview = '/podglad/odwroceni-c0ec4c60be97';
+const projectPath = '/realizacje/odwroceni-projekty-oklejen';
 
-test('review stays outside published portfolio and search indexes', async ({request}) => {
-  const response = await request.get(preview);
+test('approved Odwróceni is published, discoverable and keeps the old shared link', async ({page, request}) => {
+  const redirect = await request.get(previousPreview, {maxRedirects:0});
+  expect(redirect.status()).toBe(301);
+  expect(redirect.headers()['location']).toBe(projectPath);
+  const response = await request.get(projectPath);
   expect(response.status()).toBe(200);
-  expect(response.headers()['content-type']).toContain('text/html');
-  expect(response.headers()['x-robots-tag']).toContain('noindex');
-  expect(response.headers()['cache-control']).toContain('no-store');
-  for (const path of ['/', '/realizacje', '/sitemap.xml']) {
+  expect(response.headers()['x-robots-tag'] || '').not.toContain('noindex');
+  const html = await response.text();
+  expect(html).not.toContain('PODGLĄD DO OCENY');
+  for (const path of ['/', '/realizacje', '/sitemap.xml', '/oferta/druk-i-reklama']) {
     const html = await (await request.get(path)).text();
-    expect(html).not.toContain(preview);
-    expect(html).not.toContain('odwroceni-projekty-oklejen');
+    expect(html).toContain(projectPath);
+    expect(html).not.toContain('href="'+previousPreview+'"');
   }
-  expect((await request.get('/realizacje/odwroceni-projekty-oklejen')).status()).toBe(404);
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto('/');
+  await expect(page.locator('.hero-work a')).toHaveAttribute('href',projectPath);
+  const cards = page.locator('.work-section .project');
+  await expect(cards).toHaveCount(4);
+  const boxes = await cards.evaluateAll(cards=>cards.map(card=>{const r=card.getBoundingClientRect();return {x:r.x,y:r.y};}));
+  expect(boxes[0].y).toBeCloseTo(boxes[1].y,0);
+  expect(boxes[2].y).toBeCloseTo(boxes[3].y,0);
+  expect(boxes[0].x).toBeCloseTo(boxes[2].x,0);
+  await page.goto('/realizacje');
+  await page.getByRole('button',{name:'oklejenia',exact:true}).click();
+  await expect(page.locator('.project:visible h3')).toHaveText(['Odwróceni']);
+  await page.locator('.project:visible').click();
+  await page.getByRole('link',{name:'Chcę podobny projekt'}).click();
+  await expect(page.locator('[name="project"]')).toHaveValue('Odwróceni');
+  await expect(page.locator('#service')).toHaveValue('druk-i-reklama');
 });
 
-for (const width of [390, 768, 1440]) test(`process review keeps artwork visible and usable at ${width}px`, async ({page, request}) => {
+for (const width of [390, 768, 1440]) test(`published process keeps artwork visible and usable at ${width}px`, async ({page, request}) => {
   const errors:string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.setViewportSize({width, height:1000});
-  await page.goto(preview);
+  await page.goto(projectPath);
   await expect(page.locator('h1')).toContainText('Odwróceni.');
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+  await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','http://127.0.0.1:4321'+projectPath);
   await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(255, 255, 255)');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.evaluate(async () => {
@@ -53,7 +73,7 @@ for (const width of [390, 768, 1440]) test(`process review keeps artwork visible
 
   // New scene compositions stay fully visible in their original 3:2 aspect ratio.
   const scenes = page.locator('.process-case [data-scene],.process-case [data-scene-src]');
-  await expect(scenes).toHaveCount(2);
+  await expect(scenes).toHaveCount(3);
   for (const scene of await scenes.all()) {
     await scene.scrollIntoViewIfNeeded();
     await expect(scene).toBeVisible();
@@ -65,6 +85,12 @@ for (const width of [390, 768, 1440]) test(`process review keeps artwork visible
 
   }
   await expect(page.locator('#boat-detail')).toHaveCount(0);
+  await expect(page.locator('.composition-study figcaption')).toContainText('Szkic poglądowy przygotowany na potrzeby prezentacji projektu.');
+  const study = page.getByRole('button',{name:'Powiększ: szkic poglądowy kompozycji oklejenia',exact:true});
+  await study.click();
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await expect(page.locator('.dialog-artwork img')).toHaveAttribute('src','/media/odwroceni/studium-kompozycji.webp');
+  await page.keyboard.press('Escape');await expect(study).toBeFocused();
 
   // Stage links must reach the matching, visible content, including the last link on small screens.
   const navigation = page.getByRole('navigation', {name:'Etapy projektu'});
@@ -74,7 +100,7 @@ for (const width of [390, 768, 1440]) test(`process review keeps artwork visible
     await expect(page.locator(`#${id} h2`)).toBeVisible();
   }
 
-  // Both films are visible and playable without opening anything or starting sound automatically.
+  // The combined presentation is visible and playable without opening anything or starting sound automatically.
   const videos = page.locator('.process-case video');
   await expect(videos).toHaveCount(1);
   for (const video of await videos.all()) {

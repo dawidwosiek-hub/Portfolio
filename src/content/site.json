@@ -14,6 +14,34 @@
   "comparisons": [],
   "projects": [
     {
+      "slug": "odwroceni-projekty-oklejen",
+      "name": "Odwróceni",
+      "category": "oklejenia",
+      "categories": [
+        "druk i reklama"
+      ],
+      "scope": "Projekty oklejenia samochodu i łodzi — od wariantów kompozycji po rozmieszczenie grafiki i wizualizacje.",
+      "scopeItems": [
+        "Koncepcje graficzne samochodu i łodzi",
+        "Warianty kompozycji i hierarchii znaku",
+        "Dopasowanie grafiki do poszczególnych widoków",
+        "Plansze i materiały wizualne projektu"
+      ],
+      "image": "/media/podglad/odwroceni-c0ec4c60be97/car-editorial-v2.webp",
+      "imageSmall": "/media/podglad/odwroceni-c0ec4c60be97/car-editorial-v2-768.webp",
+      "shareImage": "/media/podglad/odwroceni-c0ec4c60be97/car-editorial-v2.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1024,
+      "imageCaption": "Samochód Odwróceni · wizualizacja projektu oklejenia.",
+      "alt": "Żółty samochód z czarno-biało-złotą grafiką Odwróceni przed nowoczesnym budynkiem — wizualizacja projektu.",
+      "client": "Odwróceni — projekty graficzne oklejeń.",
+      "need": "Grafika dopasowana do dwóch różnych brył: samochodu oraz łodzi. Duża nazwa, rozpoznawalny motyw i spójne rozmieszczenie na poszczególnych powierzchniach.",
+      "solution": "Dwa warianty samochodu wykorzystują czarne pola, ostre cięcia i złoty akcent. Na łodzi ten sam język graficzny rozwija się w limonkowo-różowej kompozycji. Prezentacja zestawia oryginalne plansze, wizualizacje i zdjęcia gotowego oklejenia.",
+      "gallery": [],
+      "published": true,
+      "featured": true
+    },
+    {
       "slug": "shiro-logo-i-wizytowki",
       "name": "SHIRO",
       "category": "logo i identyfikacja",
@@ -30,12 +58,12 @@
         "Koncepcja graficzna obuwia",
         "Przygotowanie materiałów do druku"
       ],
-      "image": "/media/shiro/shiro-brand-scene.webp",
-      "imageSmall": "/media/shiro/shiro-brand-scene-768.webp",
+      "image": "/media/shiro/shiro-mark-presentation-1536.webp",
+      "imageSmall": "/media/shiro/shiro-mark-presentation-768.webp",
       "imageWidth": 1536,
-      "imageHeight": 1024,
-      "imageCaption": "Wizytówki i voucher SHIRO · wizualizacja materiałów marki.",
-      "alt": "Fotograficzna wizualizacja dwóch stosów wizytówek oraz vouchera SHIRO na białym tle.",
+      "imageHeight": 830,
+      "imageCaption": "Logo SHIRO · autorskie liternictwo, motyw bieżnika i czerwony akcent.",
+      "alt": "Oryginalne logo SHIRO na bieli z czerwonym akcentem H oraz detal litery na czerwonym polu.",
       "client": "SHIRO — motoryzacja.",
       "need": "Materiały marki dla mechaniki i chiptuningu oraz wynajmu samochodów: wizytówki, voucher podarunkowy, naklejka, baner i projekty flag. Wizualizacje koszulki i bluzy oraz koncepcja obuwia rozwijają zastosowania znaku.",
       "solution": "Zaprojektowałem znak z wyrazistym liternictwem i motywem bieżnika. Czerń, czerwony akcent i geometria sześciokątów wracają w kolejnych materiałach. Różne formaty zachowują wspólny charakter, a typografia Red Hat Display porządkuje komunikację marki.",
@@ -243,7 +271,7 @@
           }
         }
       ],
-      "shareImage": "/media/shiro/shiro-brand-scene.webp",
+      "shareImage": "/media/shiro/shiro-mark-presentation-share-1536.webp",
       "presentation": "business-cards"
     },
     {

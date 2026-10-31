@@ -12,7 +12,6 @@ const flags=applications.find(a=>a.slug==='flagi')!;
 const apparel=applications.find(a=>a.slug==='odziez')!;
 const shoes=applications.find(a=>a.slug==='obuwie')!;
 const cards=p.gallery.filter(i=>i.kind==='original');
-const hero='/media/shiro/shiro-brand-scene.webp';
 ---
 <article class="shiro-case case-study">
   <header class="shiro-intro frame">
@@ -22,12 +21,29 @@ const hero='/media/shiro/shiro-brand-scene.webp';
     <nav class="case-nav" aria-label="W tej realizacji"><a href="#logo-title">Logo</a><a href="#identity-title">Typografia</a><a href="#gallery-title">Wizytówki</a>{applications.map(a=><a href={`#application-${a.slug}`}>{a.label}</a>)}</nav>
   </header>
 
-  <figure class="shiro-hero frame"><img src={hero} srcset="/media/shiro/shiro-brand-scene-768.webp 768w, /media/shiro/shiro-brand-scene.webp 1536w" sizes="(max-width: 600px) 100vw, min(90vw, 1280px)" alt="Wizualizacja materiałów marki SHIRO: dwa stosy wizytówek i voucher w kompozycji fotograficznej na bieli." width="1536" height="1024" fetchpriority="high"/><figcaption><span>SHIRO / rodzina materiałów</span><span>Wizualizacja projektu</span></figcaption></figure>
+  <figure class="shiro-hero frame">
+    <div class="shiro-brand-board">
+      <div class="brand-primary">
+        <span class="brand-board-label">SHIRO / AUTORSKI ZNAK</span>
+        <div class="brand-mark">
+          <img src={p.logo!.src} alt={p.logo!.alt} width={p.logo!.width} height={p.logo!.height} class="logo-inverted" fetchpriority="high"/>
+          <span class="brand-red-letter" style={`--shiro-mark:url('${p.logo!.src}')`} aria-hidden="true"></span>
+        </div>
+        <div class="brand-board-footer"><span>CAR RENTAL</span><span>MECHANIC &amp; CHIPTUNING</span></div>
+      </div>
+      <div class="brand-detail" aria-hidden="true">
+        <span class="brand-board-label">DETAL / LITERA H</span>
+        <svg viewBox="455 240 340 340"><image href={p.logo!.src} width="1871" height="821"/></svg>
+        <span class="brand-board-label">JEDEN ZNAK. WSPÓLNY CHARAKTER.</span>
+      </div>
+    </div>
+    <figcaption><span>Logo SHIRO / oryginalny projekt</span><span>Liternictwo · motyw bieżnika · czerwony akcent</span></figcaption>
+  </figure>
 
   <section class="identity-section frame" aria-labelledby="logo-title">
     <div class="section-rule"><span class="label">01 / PODSTAWA IDENTYFIKACJI</span><span class="label muted">LOGO · TYPOGRAFIA · KOLOR</span></div>
     <div class="section-heading"><h2 id="logo-title">Znak, od którego<br/>zaczyna się całość.</h2><p>Znak SHIRO łączy autorskie litery z motywem bieżnika. Czerń, czerwień i geometryczne detale wracają w kolejnych materiałach.</p></div>
-    <div class="identity-grid"><figure class="logo-stage"><img src={p.logo!.src} alt={p.logo!.alt} width={p.logo!.width} height={p.logo!.height} class="logo-inverted"/><figcaption>Autorski projekt logo / wariant jednobarwny</figcaption></figure><div class="type-panel"><span class="label muted">TYPOGRAFIA</span><h3 id="identity-title">Red Hat Display</h3><p class="type-sample">Aa Bb Cc<br/>0123456789</p><div class="colors" aria-label="Kolory prezentowanych materiałów"><span style="--color:#101010">Czerń</span><span style="--color:#ed151c">Czerwień</span><span style="--color:#fff">Biel</span></div></div></div>
+    <div class="identity-foundation"><div><span class="label muted">TYPOGRAFIA</span><h3 id="identity-title">Red Hat Display</h3><p>Geometryczne litery w nagłówkach i prosta hierarchia informacji w materiałach marki.</p></div><div><p class="type-sample">Aa Bb Cc <span>0123456789</span></p><div class="colors" aria-label="Kolory prezentowanych materiałów"><span style="--color:#101010">Czerń</span><span style="--color:#ed151c">Czerwień</span><span style="--color:#fff">Biel</span></div></div></div>
   </section>
 
   <section class="case-print frame" aria-labelledby="gallery-title">
@@ -69,8 +85,7 @@ zoom?.querySelector('.zoom-close')?.addEventListener('click',()=>zoom.close());
 zoom?.addEventListener('close',()=>trigger?.focus({preventScroll:true}));
 zoom?.addEventListener('click',event=>{if(event.target!==zoom)return;const b=zoom.getBoundingClientRect();if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom)zoom.close();});
 </script>
-<style>
- @font-face{font-family:'Shiro Red Hat';src:url('/fonts/red-hat-display.woff2') format('woff2');font-weight:300 900;font-style:normal;font-display:swap}
+<style> @font-face{font-family:'Shiro Red Hat';src:url('/fonts/red-hat-display.woff2') format('woff2');font-weight:300 900;font-style:normal;font-display:swap}
  .shiro-case{--shiro-red:#ed151c;background:#fff;--accent:#ed151c}
  .frame{width:90%;max-width:1280px;margin-inline:auto}figure{margin:0}.label{font-size:.59rem;line-height:1.6;letter-spacing:.12em;font-weight:650}.muted{color:#626262}.breadcrumb{display:inline-block;font-size:.72rem;border-bottom:1px solid #dedede;padding-bottom:5px}.shiro-intro{padding:32px 0}.intro-grid{display:grid;grid-template-columns:1.6fr 1fr;align-items:end;gap:12%;margin:31px 0 25px}.intro-grid .label{display:block;margin-bottom:17px}h1{font-size:clamp(4.5rem,9vw,8.8rem);line-height:.9;letter-spacing:-.075em}h1 span{color:var(--shiro-red)}.intro-grid p{font-size:1.05rem;line-height:1.6}.credit{display:block;margin-top:17px;font-size:.66rem;color:#626262}.case-nav{display:flex;flex-wrap:wrap;gap:11px 24px;font-size:.66rem;padding-top:12px}.case-nav a{border-bottom:1px solid #dedede;padding-bottom:4px}.case-nav a:hover{border-color:#101010}
  .shiro-hero img{display:block;width:100%;height:auto;object-fit:contain}.shiro-hero figcaption{display:flex;justify-content:space-between;gap:15px}.shiro-hero figcaption span:first-child{color:#101010}.identity-section,.case-print,.application-section{margin-top:48px;scroll-margin-top:25px}.section-rule{display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid #dedede;padding-top:20px}.section-rule>.label:first-child:before{content:'';display:inline-block;width:18px;height:3px;background:var(--shiro-red);vertical-align:.2em;margin-right:11px}.section-heading{display:grid;grid-template-columns:1.2fr 1fr;align-items:start;gap:12%;margin:27px 0}.section-heading h2{font-size:clamp(2rem,3.5vw,3.4rem);line-height:1.09;letter-spacing:-.055em}.section-heading p{grid-column:auto;font-size:.85rem;line-height:1.85;padding-top:4px}.identity-grid{display:grid;grid-template-columns:1.65fr 1fr;gap:8%;align-items:center;margin-top:30px}.logo-stage{padding:40px 0 20px;min-width:0}.logo-stage img{width:100%;max-width:750px}.logo-inverted{filter:invert(1)}figcaption{font-size:.65rem;line-height:1.7;color:#626262;padding-top:13px}.logo-stage figcaption{margin-top:15px}.type-panel{border-left:1px solid #dedede;padding-left:10%}.type-panel h3{font-family:'Shiro Red Hat',Arial,sans-serif;font-size:2rem;letter-spacing:-.04em;line-height:1.1;margin-top:12px}.type-sample{font-family:'Shiro Red Hat',Arial,sans-serif;font-size:2.4rem;line-height:1.2;letter-spacing:.015em;color:#101010;margin:15px 0 20px}.colors{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}.colors span{font-size:.58rem;color:#626262}.colors span:before{content:'';display:block;height:12px;background:var(--color);border:1px solid #10101012;margin-bottom:7px}
@@ -84,4 +99,25 @@ zoom?.addEventListener('click',event=>{if(event.target!==zoom)return;const b=zoo
 
  .intro-action{display:flex;align-items:center;gap:28px;margin:25px 0 16px}.intro-action .text-link{font-size:.82rem;gap:20px;min-height:44px}.intro-action>span{font-size:.65rem;color:#626262}.case-nav{font-size:.72rem}.print-pair{display:grid;grid-template-columns:1fr 1fr;gap:4%;margin-top:26px}.print-pair figcaption{display:flex;justify-content:space-between;gap:15px;font-size:.68rem}.print-pair figcaption strong{font-weight:550;color:#101010}.print-pair .source-item{min-width:0}.voucher-section{margin-top:30px}.print-subheading{display:grid;grid-template-columns:1fr 1fr;gap:12%;align-items:start;margin:21px 0}.print-subheading h3{font-size:1.6rem;line-height:1.2}.print-subheading p{font-size:.83rem;line-height:1.8}.voucher-pair .source-item:first-child,.voucher-pair .source-item:last-child{transform:none;padding:0}.field-group{margin-top:46px}.field-grid{display:grid;grid-template-columns:1.5fr 1fr;grid-template-areas:'sticker flags' 'banner flags';gap:24px 6%;align-items:start}.field-grid .application-section{margin:0;padding:0;border:0;display:block}.field-grid h3{font-size:.76rem;letter-spacing:0;font-weight:550;margin:0 0 17px}.field-grid .sticker-section{grid-area:sticker}.field-grid .flags-section{grid-area:flags}.field-grid .banner-section{grid-area:banner}.field-grid .sticker-section figure{padding:0;max-width:460px}.field-grid .flags-crop{max-width:450px;margin:auto}.field-grid .banner-crop{margin:0}.field-grid .banner-section figcaption{padding-top:13px}.apparel-led{display:grid;grid-template-columns:1.2fr 1fr;gap:4%;align-items:center}.apparel-films{display:grid;grid-template-columns:1fr 1fr;gap:18px;min-width:0}.inline-film{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#101010;max-height:510px;object-fit:contain}.apparel-films figcaption strong,.apparel-films figcaption span{display:block}.apparel-films figcaption strong{font-size:.78rem;color:#101010;font-weight:550}.apparel-films figcaption span{font-size:.66rem;margin-top:4px}.section-heading h2{font-size:clamp(1.9rem,3vw,3rem)}.section-heading p{font-size:.88rem}.label{font-size:.64rem}figcaption{font-size:.71rem}.identity-section,.case-print,.application-section{margin-top:40px}.case-scope{margin-top:40px;padding-bottom:42px}
  @media(max-width:760px){.intro-action{align-items:start;flex-direction:column;gap:10px;margin-top:22px}.intro-action .text-link{font-size:.8rem}.intro-action>span{font-size:.62rem}.case-nav{font-size:.68rem;gap:12px 19px}.section-heading h2{font-size:2rem}.section-heading p{font-size:.86rem}.print-pair{grid-template-columns:1fr;gap:25px}.print-pair figcaption{font-size:.65rem}.print-subheading{grid-template-columns:1fr;gap:14px}.print-subheading h3{font-size:1.4rem}.print-subheading p{font-size:.83rem}.voucher-pair{grid-template-columns:1fr;gap:22px}.field-group{margin-top:34px}.field-grid{grid-template-columns:1fr;grid-template-areas:'sticker' 'banner' 'flags';gap:28px}.field-grid .flags-crop{max-width:320px}.field-grid h3{font-size:.76rem}.apparel-led{grid-template-columns:1fr;gap:24px}.apparel-films{gap:16px}.inline-film{max-height:none}.apparel-films figcaption strong{font-size:.75rem}.apparel-films figcaption span{font-size:.63rem}.case-scope{margin-top:32px}.identity-section,.case-print,.application-section{margin-top:32px}.field-grid .application-section{margin:0}}
+
+ .shiro-brand-board{display:grid;grid-template-columns:2.05fr 1fr;aspect-ratio:1.85;background:#fff;border-block:1px solid #dedede;overflow:hidden}
+ .brand-primary,.brand-detail{display:flex;flex-direction:column;justify-content:space-between;padding:32px;min-width:0}
+ .brand-primary{padding:32px 42px 28px 32px}
+ .brand-board-label{font-size:.6rem;letter-spacing:.09em;line-height:1.6;font-weight:550}
+ .brand-mark{position:relative;width:100%;margin-block:40px}
+ .brand-mark img{display:block;width:100%;height:auto;filter:invert(1)}
+ .brand-red-letter{position:absolute;inset:0;background:#ed151c;mask:var(--shiro-mark) center/contain no-repeat;clip-path:inset(29% 57% 28% 24%)}
+ .brand-board-footer{display:flex;justify-content:space-between;gap:20px;font-size:.54rem;letter-spacing:.1em;font-weight:550;line-height:1.7}
+ .brand-detail{background:#ed151c;color:#fff}
+ .brand-detail svg{width:min(76%,230px);height:auto;align-self:center;overflow:hidden}
+ .identity-foundation{display:grid;grid-template-columns:1fr 1fr;gap:12%;padding-top:24px;border-top:1px solid #dedede}
+ .identity-foundation h3{font-size:1.9rem;margin-top:13px;letter-spacing:-.045em}
+ .identity-foundation>div>p:not(.type-sample){font-size:.77rem;line-height:1.8;margin-top:14px;max-width:350px}
+ .identity-foundation .type-sample{font-size:2.9rem;line-height:1.25;margin:0 0 21px;letter-spacing:-.04em;color:#101010}
+ .identity-foundation .type-sample span{display:block;font-size:1.7rem;letter-spacing:.02em;margin-top:5px}
+ .identity-foundation .colors{margin:0}
+ @media(max-width:760px){.shiro-brand-board{aspect-ratio:1.6;grid-template-columns:1.9fr 1fr}.brand-primary{padding:17px 18px 16px 17px}.brand-detail{padding:17px 13px 16px}.brand-board-label{font-size:.48rem;letter-spacing:.05em}.brand-mark{margin-block:25px}.brand-board-footer{font-size:.44rem;gap:12px;flex-wrap:wrap}.brand-detail>.brand-board-label:last-child{max-width:110px}.identity-foundation{gap:8%}.identity-foundation .type-sample{font-size:2.2rem}}
+ @media(max-width:600px){.shiro-hero.frame{width:88%}.shiro-brand-board{grid-template-columns:1.8fr 1fr;aspect-ratio:1.35}.brand-primary{padding:15px 17px 14px 15px}.brand-detail{padding:15px 12px 14px}.brand-board-label{font-size:.43rem}.brand-board-footer{display:block;font-size:.4rem;line-height:1.8}.brand-board-footer span{display:block}.brand-detail svg{width:86%}.identity-foundation{grid-template-columns:1fr;gap:22px;padding-top:20px}.identity-foundation h3{font-size:1.75rem}.identity-foundation .type-sample{font-size:2.5rem}.identity-foundation .type-sample span{font-size:1.5rem}.shiro-hero figcaption{display:block;width:100%}.shiro-hero figcaption>span{display:block}.shiro-hero figcaption>span+span{margin-top:4px}}
+
+
 </style>

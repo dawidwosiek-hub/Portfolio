@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import ProjectImage from '../../components/ProjectImage.astro';
 import BusinessCards from '../../components/BusinessCards.astro';
 import ShiroCase from '../../components/ShiroCase.astro';
+import WrapProcess from '../../components/WrapProcess.astro';
 import PrintMockup from '../../components/PrintMockup.astro';
 import ApparelPresentation from '../../components/ApparelPresentation.astro';
 import ProjectContext from '../../components/ProjectContext.astro';
@@ -18,7 +19,7 @@ const details=p.gallery.filter(image=>image.kind==='visualization');
 const galleryNumber=(p.logo?1:0)+(p.identity?1:0)+1;
 ---
 <Layout title={`${p.name} — ${p.logo?'logo i identyfikacja marki':p.category} | NADX`} description={p.scope} bodyClass="project-page" image={p.shareImage || p.image}>
-{p.slug==='shiro-logo-i-wizytowki'?<ShiroCase project={p}/>:<>
+{p.slug==='shiro-logo-i-wizytowki'?<ShiroCase project={p}/>:p.slug==='odwroceni-projekty-oklejen'?<WrapProcess/>:<>
 <article class="case-study" style={p.accent?{"--accent":p.accent}:undefined}>
 <header class="case-intro case-container">
  <a class="breadcrumb" href="/realizacje">← Wszystkie realizacje</a>

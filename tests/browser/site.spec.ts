@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-const routes=['/','/realizacje','/realizacje/shiro-logo-i-wizytowki','/realizacje/diverto-materialy-promocyjne','/realizacje/olsen-odziez-firmowa','/oferta','/o-mnie','/kontakt','/prywatnosc','/oferta/logo-i-identyfikacja','/oferta/druk-i-reklama','/oferta/film-i-social-media','/oferta/odziez-i-nadruki'];
+const routes=['/','/realizacje','/realizacje/odwroceni-projekty-oklejen','/realizacje/shiro-logo-i-wizytowki','/realizacje/diverto-materialy-promocyjne','/realizacje/olsen-odziez-firmowa','/oferta','/o-mnie','/kontakt','/prywatnosc','/oferta/logo-i-identyfikacja','/oferta/druk-i-reklama','/oferta/film-i-social-media','/oferta/odziez-i-nadruki'];
 for(const width of [375,768,1440])test(`navigation and responsive layout ${width}px`,async({page})=>{await page.setViewportSize({width,height:1000});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',e=>{if(e.type()==='error')errors.push(e.text());});for(const route of routes){const r=await page.goto(route);expect(r?.status()).toBe(200);await expect(page.locator('h1')).toHaveCount(1);await expect(page.locator('body')).toHaveCSS('background-color','rgb(255, 255, 255)');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();for(const img of await page.locator('img').all()){if(!await img.isVisible())continue;await img.scrollIntoViewIfNeeded();await expect.poll(()=>img.evaluate((i:HTMLImageElement)=>i.complete&&i.naturalWidth>0),{message:`Image must load on ${route}: ${await img.getAttribute('src')}`}).toBe(true);}}expect(errors).toEqual([]);await page.goto('/');if(width<760){await page.getByRole('button',{name:'Menu'}).click();await expect(page.getByRole('navigation')).toBeVisible();await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Menu'})).toBeFocused();}await page.locator('.hero-actions a').first().click();await expect(page).toHaveURL(/realizacje/);});
 test('contact prepares a real email brief without pretending it was sent',async({page,context})=>{
  await context.grantPermissions(['clipboard-read','clipboard-write']);
@@ -76,16 +76,18 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
   const resource=await request.get((await image.getAttribute('href'))!);
   expect(resource.status()).toBe(200);expect(resource.headers()['content-type']).toContain('image/');
  }
- await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/\/media\/shiro\/shiro-brand-scene.webp$/);
+ await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/\/media\/shiro\/shiro-mark-presentation-share-1536.webp$/);
  await page.getByRole('link',{name:'Chcę podobny projekt'}).click();
  await expect(page.locator('[name="project"]')).toHaveValue('SHIRO');
  await expect(page.locator('#service')).toHaveValue('logo-i-identyfikacja');
  await page.goto('/realizacje');
  for(const category of ['logo i identyfikacja','druk i reklama','odzież i nadruki']){
   await page.getByRole('button',{name:category,exact:true}).click();
-  await expect(page.locator('.project:visible h3')).toHaveText(category==='druk i reklama'?['SHIRO','Diverto']:category==='odzież i nadruki'?['SHIRO','OLSEN']:['SHIRO']);
+  await expect(page.locator('.project:visible h3')).toHaveText(category==='druk i reklama'?['Odwróceni','SHIRO','Diverto']:category==='odzież i nadruki'?['SHIRO','OLSEN']:['SHIRO']);
  }
  await page.getByRole('button',{name:'oklejenia',exact:true}).click();
+ await expect(page.locator('.project:visible h3')).toHaveText(['Odwróceni']);
+ await page.getByRole('button',{name:'filmy i social media',exact:true}).click();
  await expect(page.locator('.project:visible')).toHaveCount(0);
  await expect(page.locator('.filter-empty')).toBeVisible();
  for(const service of ['logo-i-identyfikacja','druk-i-reklama','odziez-i-nadruki']){
@@ -158,15 +160,24 @@ for(const width of [390,768,1440])test(`SHIRO scene images and source artwork re
  await expect(page.locator('h1')).toHaveText('SHIRO.');
  await expect(page.locator('body')).toHaveCSS('background-color','rgb(255, 255, 255)');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
- for(const selector of ['.shiro-hero img','.apparel-scene img']){
+ for(const selector of ['.brand-mark img','.apparel-scene img']){
   const image=page.locator(selector);
   await image.scrollIntoViewIfNeeded();await expect(image).toBeVisible();
   await image.evaluate((i:HTMLImageElement)=>i.decode());
   const size=await image.evaluate(async(i:HTMLImageElement)=>{const source=new Image();source.src=i.currentSrc;await source.decode();return {width:source.naturalWidth,height:source.naturalHeight};});
-  expect(size.width).toBeGreaterThanOrEqual(768);expect(size.width/size.height).toBeCloseTo(1.5,2);
+  expect(size.width).toBeGreaterThanOrEqual(768);expect(size.width/size.height).toBeCloseTo(selector==='.brand-mark img'?1871/821:1.5,2);
  }
  for(const selector of ['#application-vouchery','#application-naklejki','#application-baner','#application-flagi','#application-obuwie']){
   await page.locator(selector).scrollIntoViewIfNeeded();await expect(page.locator(selector)).toBeVisible();
  }
  await expect(page.locator('.shiro-case details')).toHaveCount(0);
+});
+
+
+test('rejected SHIRO stationery hero is replaced throughout the public portfolio',async({request})=>{
+ for(const path of ['/', '/realizacje', '/realizacje/shiro-logo-i-wizytowki']){
+  const html=await(await request.get(path)).text();
+  expect(html).not.toContain('shiro-brand-scene');
+  expect(html).toContain('shiro-mark-presentation');
+ }
 });
