@@ -178,6 +178,6 @@ test('rejected SHIRO stationery hero is replaced throughout the public portfolio
  for(const path of ['/', '/realizacje', '/realizacje/shiro-logo-i-wizytowki']){
   const html=await(await request.get(path)).text();
   expect(html).not.toContain('shiro-brand-scene');
-  expect(html).toContain('shiro-mark-presentation');
+  expect(html).toContain('/media/shiro/logo.webp');
  }
 });

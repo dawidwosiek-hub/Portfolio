@@ -39,7 +39,8 @@
       "solution": "Dwa warianty samochodu wykorzystują czarne pola, ostre cięcia i złoty akcent. Na łodzi ten sam język graficzny rozwija się w limonkowo-różowej kompozycji. Prezentacja zestawia oryginalne plansze, wizualizacje i zdjęcia gotowego oklejenia.",
       "gallery": [],
       "published": true,
-      "featured": true
+      "featured": true,
+      "teaser": "Grafika oklejenia samochodu i łodzi, dopasowana do kształtu każdego nośnika."
     },
     {
       "slug": "shiro-logo-i-wizytowki",
@@ -272,7 +273,8 @@
         }
       ],
       "shareImage": "/media/shiro/shiro-mark-presentation-share-1536.webp",
-      "presentation": "business-cards"
+      "presentation": "business-cards",
+      "teaser": "Identyfikacja warsztatu i wypożyczalni: od autorskiego znaku po druk i odzież."
     },
     {
       "slug": "diverto-materialy-promocyjne",
@@ -401,7 +403,8 @@
       ],
       "published": true,
       "featured": true,
-      "imageMedium": "/media/diverto/album-preview-1536.webp"
+      "imageMedium": "/media/diverto/album-preview-1536.webp",
+      "teaser": "Oprawa graficzna płyty i materiałów promocyjnych zespołu muzycznego."
     },
     {
       "slug": "olsen-odziez-firmowa",
@@ -660,7 +663,8 @@
         }
       ],
       "published": true,
-      "featured": true
+      "featured": true,
+      "teaser": "Oznakowanie kurtek, bluz i koszulek. Mały znak z przodu, pełna informacja na plecach."
     }
   ]
 }

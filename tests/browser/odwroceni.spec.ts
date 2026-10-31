@@ -22,10 +22,11 @@ test('approved Odwróceni is published, discoverable and keeps the old shared li
   await expect(page.locator('.hero-work a')).toHaveAttribute('href',projectPath);
   const cards = page.locator('.work-section .project');
   await expect(cards).toHaveCount(4);
-  const boxes = await cards.evaluateAll(cards=>cards.map(card=>{const r=card.getBoundingClientRect();return {x:r.x,y:r.y};}));
-  expect(boxes[0].y).toBeCloseTo(boxes[1].y,0);
-  expect(boxes[2].y).toBeCloseTo(boxes[3].y,0);
-  expect(boxes[0].x).toBeCloseTo(boxes[2].x,0);
+  const boxes = await cards.evaluateAll(cards=>cards.map(card=>{const r=card.getBoundingClientRect();return {x:r.x,y:r.y,bottom:r.bottom};}));
+  for(let i=1;i<boxes.length;i++){
+    expect(boxes[i].x).toBeCloseTo(boxes[0].x,0);
+    expect(boxes[i].y).toBeGreaterThanOrEqual(boxes[i-1].bottom);
+  }
   await page.goto('/realizacje');
   await page.getByRole('button',{name:'oklejenia',exact:true}).click();
   await expect(page.locator('.project:visible h3')).toHaveText(['Odwróceni']);

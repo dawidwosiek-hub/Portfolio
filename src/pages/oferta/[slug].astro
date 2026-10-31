@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Process from '../../components/Process.astro';
-import ProjectImage from '../../components/ProjectImage.astro';
+import ProjectCover from '../../components/ProjectCover.astro';
 import {services,projects,projectInCategory} from '../../lib/content';
 export function getStaticPaths(){return services.map(s=>({params:{slug:s.slug},props:{service:s}}));}
 export const prerender=true;
@@ -12,6 +12,10 @@ const related=projects.filter(p=>projectInCategory(p,s.category));
 <Layout title={`${s.title} — Kraków i zdalnie | NADX`} description={s.intro}>
 <section class="page-intro section"><a class="breadcrumb" href="/oferta">← Wszystkie usługi</a><span class="eyebrow">USŁUGA / {s.number}</span><h1>{s.title}<em>.</em></h1><p>{s.intro}</p><a class="button yellow" href={`/kontakt?usluga=${s.slug}`} data-track="service_select" data-service={s.slug}>Zapytaj o ten projekt <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></section>
 <section class="section service-detail"><div><span class="eyebrow">ZAKRES WSPÓŁPRACY</span><h2>Co możesz<br/>otrzymać?</h2></div><div><ul class="deliverables">{s.deliverables.map(d=><li>{d}</li>)}</ul><p>{s.detail}</p><div class="price-note"><strong>{s.price || 'Wycena indywidualna'}</strong><p>Ostateczny zakres, termin i warunki współpracy ustalamy na podstawie Twojego zapytania. Kraków i okolice oraz praca zdalna w całej Polsce.</p></div></div></section>
-{related.length>0&&<section class="section"><h2>W praktyce.</h2><div class="project-grid">{related.map(p=><a class="project" href={`/realizacje/${p.slug}`}><ProjectImage media={{src:p.image,smallSrc:p.imageSmall,mediumSrc:p.imageMedium,alt:p.alt,width:p.imageWidth,height:p.imageHeight}} sizes="(max-width: 760px) 88vw, 44vw"/><h3>{p.name}</h3><p>{p.scope}</p></a>)}</div></section>}
+{related.length>0&&<section class="section related-projects"><h2>W praktyce.</h2><div class="project-grid">{related.map(p=><a class="project" href={`/realizacje/${p.slug}`}><ProjectCover project={p} sizes="(max-width: 760px) 88vw, 44vw"/><h3>{p.name}</h3><p>{p.teaser||p.scope}</p></a>)}</div></section>}
 <Process/>
 </Layout>
+
+<style>
+ .related-projects .project-grid{margin-top:35px}.related-projects h3{font-size:1.8rem;margin-top:20px}.related-projects .project>p{font-size:.85rem;line-height:1.8}
+</style>
