@@ -8,6 +8,13 @@ for(const width of [390,768,1440])test(`project index keeps consistent covers an
     await expect(rows).toHaveCount(4);
     await rows.locator('img').evaluateAll(images=>images.forEach(image=>(image as HTMLImageElement).loading='eager'));
     await rows.locator('img').evaluateAll(images=>Promise.all(images.map(image=>(image as HTMLImageElement).decode())));
+    // A shared NADX presentation surrounds the original artwork on every project.
+    for(const cover of await rows.locator('[data-project-cover]').all()){
+      await expect(cover).toHaveCSS('background-color','rgb(255, 255, 255)');
+      await expect(cover).toHaveCSS('color','rgb(16, 16, 16)');
+      await expect(cover.locator('.cover-label i')).toHaveCSS('background-color','rgb(255, 204, 0)');
+      for(const image of await cover.locator('.cover-photograph img,.cover-album-art img,.cover-disc img,.cover-garments img').all())await expect(image).toHaveCSS('filter','none');
+    }
     const geometry=await rows.evaluateAll(rows=>rows.map(row=>{
       const cover=row.querySelector<HTMLElement>('[data-project-cover]')!.getBoundingClientRect();
       const link=row.querySelector('.project-action')!.getBoundingClientRect();

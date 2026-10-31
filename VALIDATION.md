@@ -1,6 +1,8 @@
 # Weryfikacja aktualnej wersji — 31.10.2026
 
-Sprawdzono lokalnie:
+Po ujednoliceniu kolorystyki sprawdzono lokalnie 6 testów galerii i responsywności (375/390, 768 i 1440 px), kontrolę typów oraz build. Potwierdzono białe plansze, czarne podpisy i żółty akcent NADX we wszystkich okładkach. Kolory samych projektów nie są zmieniane filtrami.
+
+Zakres wcześniejszej pełnej weryfikacji:
 
 - `npm run check`: 49 plików, 0 błędów i ostrzeżeń.
 - Produkcyjny build Astro: cztery publiczne realizacje, w tym Odwróceni.

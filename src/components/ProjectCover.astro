@@ -6,38 +6,37 @@ const {project:p,priority=false,sizes='(max-width: 760px) 88vw, 55vw'}=Astro.pro
 const isShiro=p.slug==='shiro-logo-i-wizytowki'&&p.logo;
 const isAlbum=p.slug==='diverto-materialy-promocyjne'&&p.mockup?.kind==='cd';
 const isApparel=p.slug==='olsen-odziez-firmowa';
+const isWrap=p.slug==='odwroceni-projekty-oklejen';
+const medium=isShiro?'IDENTYFIKACJA':isAlbum?'DRUK':isApparel?'ODZIEŻ':p.category.toLocaleUpperCase('pl');
+const detail=isShiro?'CAR RENTAL / MECHANIC & CHIPTUNING':isAlbum?'OKŁADKA / NADRUK CD':isApparel?'PRZÓD / TYŁ':isWrap?'SAMOCHÓD / ŁÓDŹ':'PREZENTACJA PROJEKTU';
 ---
 <div class:list={['project-cover',{'cover-shiro':isShiro,'cover-album':isAlbum,'cover-apparel':isApparel}]} data-project-cover={p.slug}>
-  {isShiro?<>
-    <span class="cover-corner" aria-hidden="true">CAR RENTAL / MECHANIC &amp; CHIPTUNING</span>
-    <div class="cover-brandmark"><img src={p.logo!.src} alt="Oryginalne logo SHIRO w białym wariancie na czerwieni." width={p.logo!.width} height={p.logo!.height} loading={priority?'eager':'lazy'} decoding="async"/></div>
-    <span class="cover-colophon" aria-hidden="true">SHIRO / IDENTYFIKACJA MARKI</span>
-  </>:isAlbum&&p.mockup?.kind==='cd'?<>
-    <span class="cover-corner" aria-hidden="true">DIVERTO / OPRAWA PŁYTY</span>
-    <div class="cover-album-art"><ProjectImage media={p.mockup.cover} priority={priority} sizes="(max-width: 760px) 46vw, 28vw"/></div>
-    <div class="cover-disc"><ProjectImage media={p.mockup.disc} sizes="(max-width: 760px) 34vw, 21vw"/><span aria-hidden="true"></span></div>
-    <span class="cover-colophon" aria-hidden="true">OKŁADKA + NADRUK CD</span>
-  </>:isApparel?<>
-    <span class="cover-corner" aria-hidden="true">OLSEN / ODZIEŻ FIRMOWA</span>
-    <div class="cover-garments"><ProjectImage media={{src:p.image,smallSrc:p.imageSmall,mediumSrc:p.imageMedium,alt:p.alt,width:p.imageWidth,height:p.imageHeight}} priority={priority} sizes={sizes}/></div>
-    <span class="cover-colophon" aria-hidden="true">PRZÓD / TYŁ · PROJEKT OZNACZENIA</span>
-  </>:<div class="cover-photograph"><ProjectImage media={{src:p.image,smallSrc:p.imageSmall,mediumSrc:p.imageMedium,alt:p.alt,width:p.imageWidth,height:p.imageHeight}} priority={priority} sizes={sizes}/></div>}
+  <div class="cover-heading" aria-hidden="true"><span class="cover-label"><i></i>{p.name}</span><span>{medium}</span></div>
+  <div class="cover-canvas">
+    {isShiro?<div class="cover-brandmark"><img src={p.logo!.src} alt="Oryginalne logo SHIRO w czarnym wariancie na bieli." width={p.logo!.width} height={p.logo!.height} loading={priority?'eager':'lazy'} decoding="async"/></div>
+    :isAlbum&&p.mockup?.kind==='cd'?<>
+      <div class="cover-album-art"><ProjectImage media={p.mockup.cover} priority={priority} sizes="(max-width: 760px) 40vw, 24vw"/></div>
+      <div class="cover-disc"><ProjectImage media={p.mockup.disc} sizes="(max-width: 760px) 29vw, 18vw"/><span aria-hidden="true"></span></div>
+    </>:isApparel?<div class="cover-garments"><ProjectImage media={{src:p.image,smallSrc:p.imageSmall,mediumSrc:p.imageMedium,alt:p.alt,width:p.imageWidth,height:p.imageHeight}} priority={priority} sizes={sizes}/></div>
+    :<div class="cover-photograph"><ProjectImage media={{src:p.image,smallSrc:p.imageSmall,mediumSrc:p.imageMedium,alt:p.alt,width:p.imageWidth,height:p.imageHeight}} priority={priority} sizes={sizes}/></div>}
+  </div>
+  <div class="cover-footer" aria-hidden="true"><span>{detail}</span><span>NADX / PROJEKT</span></div>
 </div>
 
 <style>
-  .project-cover{position:relative;isolation:isolate;width:100%;aspect-ratio:3/2;overflow:hidden;background:#fff;border:1px solid #10101014}
+  .project-cover{position:relative;isolation:isolate;width:100%;aspect-ratio:3/2;overflow:hidden;background:#fff;color:#101010;border:1px solid #dedede}
   .project-cover :global(img){display:block;width:100%;height:100%;max-height:none;aspect-ratio:auto;object-fit:contain;transform:none!important;transition:none}
-  .cover-photograph{position:absolute;inset:0}
-  .cover-photograph :global(img){object-fit:cover}
-  .cover-shiro{background:#ed151c;color:#fff;border-color:#ed151c}
-  .cover-corner,.cover-colophon{position:absolute;left:6%;right:6%;font-size:clamp(.45rem,.62vw,.65rem);font-weight:550;letter-spacing:.1em;line-height:1.5}
-  .cover-corner{top:6%}.cover-colophon{bottom:6%}
-  .cover-brandmark{position:absolute;inset:25% 12%}
-  .cover-album{background:#1c0a10;color:#fff;border-color:#1c0a10}
-  .cover-album-art{position:absolute;left:6%;top:16%;width:47%;aspect-ratio:1;border:1px solid #ffffff40;box-shadow:0 15px 30px #0006;z-index:2}
-  .cover-disc{position:absolute;right:6%;top:25%;width:35%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:1px solid #ffffff50;box-shadow:0 10px 30px #0006}
-  .cover-disc>span{position:absolute;inset:44%;border-radius:50%;background:#1c0a10;border:2px solid #a5a0a2;box-shadow:0 0 0 6px #ffffff20}
-  .cover-apparel{background:#c42128;color:#fff;border-color:#c42128}
-  .cover-garments{position:absolute;inset:10% 4%;}
-  @media(max-width:760px){.cover-corner,.cover-colophon{font-size:clamp(.42rem,1.5vw,.65rem)}.cover-disc>span{box-shadow:0 0 0 3px #ffffff20}}
+  .cover-heading,.cover-footer{position:absolute;left:6%;right:6%;display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:clamp(.45rem,.62vw,.65rem);font-weight:550;letter-spacing:.08em;line-height:1.5}
+  .cover-heading{top:5%;padding-bottom:2.5%;border-bottom:1px solid #dedede;text-transform:uppercase}
+  .cover-label{display:flex;align-items:center;gap:9px}
+  .cover-label i{width:7px;height:7px;flex-shrink:0;background:#ffcc00}
+  .cover-footer{bottom:5%;color:#626262;font-size:clamp(.4rem,.55vw,.58rem);letter-spacing:.06em}
+  .cover-canvas{position:absolute;inset:16% 6% 14%}
+  .cover-photograph,.cover-garments{position:absolute;inset:0}
+  .cover-brandmark{position:absolute;inset:15% 8%}
+  .cover-brandmark img{filter:invert(1)}
+  .cover-album-art{position:absolute;left:6%;top:50%;width:47%;aspect-ratio:1;transform:translateY(-50%);border:1px solid #10101020;box-shadow:0 10px 20px #10101012;z-index:2}
+  .cover-disc{position:absolute;right:6%;top:50%;width:35%;aspect-ratio:1;transform:translateY(-50%);border-radius:50%;overflow:hidden;border:1px solid #10101030;box-shadow:0 8px 15px #10101012}
+  .cover-disc>span{position:absolute;inset:44%;border-radius:50%;background:#fff;border:2px solid #a5a0a2;box-shadow:0 0 0 6px #ffffff40}
+  @media(max-width:760px){.cover-heading{font-size:clamp(.42rem,1.5vw,.65rem)}.cover-footer{font-size:clamp(.38rem,1.3vw,.58rem)}.cover-label{gap:7px}.cover-label i{width:6px;height:6px}.cover-disc>span{box-shadow:0 0 0 3px #ffffff40}}
 </style>
