@@ -11,7 +11,8 @@
     "test": "playwright test",
     "test:api": "node --import tsx --test tests/api.test.ts tests/drive-library.test.ts tests/vertex-studio.test.ts",
     "test:portfolio": "node --test tests/portfolio.test.mjs",
-    "brand:assets": "node scripts/generate-brand-assets.mjs"
+    "brand:assets": "node scripts/generate-brand-assets.mjs",
+    "mockups:render": "node scripts/render-portfolio-mockups.mjs"
   },
   "repository": {
     "type": "git",

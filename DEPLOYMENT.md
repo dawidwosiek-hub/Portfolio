@@ -2,7 +2,7 @@
 
 ## Render (Node.js)
 
-1. Kod udostępniono w repozytorium `dawidwosiek-hub/Portfolio` na gałęzi `nadx-site`. W Render wybierz tę gałąź. Nie wykonano publikacji strony na hostingu.
+1. Kod produkcyjny jest w repozytorium `dawidwosiek-hub/Portfolio` na gałęzi `nadx-site`. Dla domeny nadx.pl ustaw `SITE_URL=https://nadx.pl` podczas builda i w runtime.
 2. W Render wybierz nowy Web Service z repozytorium lub użyj Blueprint z `render.yaml`. Sprawdź aktualne warunki darmowego planu. Jeśli darmowy plan nie jest dostępny, nie przechodź na płatny bez decyzji właściciela.
 3. Build: `npm ci && npm run build`. Start: `npm start`. Node 24. Health check: `/`. Render przekazuje `PORT`, aplikacja go respektuje.
 4. Po przydzieleniu adresu `https://nazwa.onrender.com` ustaw `SITE_URL` na ten rzeczywisty adres. Ustaw go dla **builda i runtime**, potem wykonaj ponowny deploy. Dla podglądu bez indeksowania nie ustawiaj domeny do czasu finalizacji treści; formularz pozostanie nieaktywny.
@@ -31,3 +31,12 @@ Edytuj treści, wykonaj build i testy, zapisz commit i wdrażaj wersję z tego c
 ## Braki przed finalną publikacją
 
 Prawdziwe realizacje i zgody, dane kontaktowe, potwierdzony zakres wykonania nadruków, dane administratora i hostingu, finalna polityka retencji i dostawców, domena/adres usługi, konfiguracja Resend. Ceny i statystyki są opcjonalne; puste wartości nie tworzą fikcyjnych informacji.
+
+
+## Ekran uruchamiania Render — 11.11.2026
+
+W `render.yaml` skonfigurowano Node Web Service z `plan: free`. Darmowa usługa jest usypiana po bezczynności, a pierwsza osoba odwiedzająca stronę może zobaczyć ekran uruchamiania Render. Ten ekran powstaje przed uruchomieniem aplikacji.
+
+Najmniejsza zmiana zachowująca obecne API, formularz i strony to przejście istniejącej usługi na instancję bez usypiania. Proponowaną zmianę `free` na `starter` zapisano jako nieaplikowany plik `deploy/render-always-on.patch`. Aktualny koszt trzeba sprawdzić w panelu Render, w ustawieniach typu instancji usługi obsługującej nadx.pl. Aktywny plik konfiguracyjny pozostaje na dotychczasowym planie; zmiana planu jest oddzielną decyzją właściciela konta.
+
+Alternatywą jest przeniesienie publicznej części portfolio na hosting statyczny z CDN. Wymaga to osobnego przygotowania wdrożenia i obsługi dynamicznych zapytań; obecna aplikacja ma serwerowe API i formularz, więc sama zmiana hostingu bez dostosowania tych tras nie wystarczy.

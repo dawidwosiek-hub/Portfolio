@@ -272,9 +272,18 @@
           }
         }
       ],
-      "shareImage": "/media/shiro/shiro-mark-presentation-share-1536.webp",
+      "shareImage": "/media/mockups/shiro-studio-v1.webp",
       "presentation": "business-cards",
-      "teaser": "Identyfikacja warsztatu i wypożyczalni: od autorskiego znaku po druk i odzież."
+      "teaser": "Identyfikacja warsztatu i wypożyczalni: od autorskiego znaku po druk i odzież.",
+      "cover": {
+        "src": "/media/mockups/shiro-studio-v1.webp",
+        "smallSrc": "/media/mockups/shiro-studio-v1-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Wizualizacja dwóch oryginalnych wizytówek SHIRO na białej powierzchni, obok czarnego kluczyka samochodowego.",
+        "kind": "visualization",
+        "caption": "Wizualizacja projektu"
+      }
     },
     {
       "slug": "diverto-materialy-promocyjne",
@@ -292,7 +301,7 @@
       "imageSmall": "/media/diverto/album-preview-768.webp",
       "imageWidth": 3072,
       "imageHeight": 2048,
-      "shareImage": "/media/diverto/album-preview-share-1536.webp",
+      "shareImage": "/media/mockups/diverto-studio-v1.webp",
       "imageCaption": "Oprawa płyty Diverto · prezentacja oryginalnych projektów.",
       "alt": "Prezentacja oryginalnej okładki i nadruku płyty Diverto na białym tle.",
       "accent": "#a51e3c",
@@ -404,7 +413,16 @@
       "published": true,
       "featured": true,
       "imageMedium": "/media/diverto/album-preview-1536.webp",
-      "teaser": "Oprawa graficzna płyty i materiałów promocyjnych zespołu muzycznego."
+      "teaser": "Oprawa graficzna płyty i materiałów promocyjnych zespołu muzycznego.",
+      "cover": {
+        "src": "/media/mockups/diverto-studio-v1.webp",
+        "smallSrc": "/media/mockups/diverto-studio-v1-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Wizualizacja fizycznego opakowania płyty Diverto z oryginalną okładką i nadrukiem na CD, w jasnym studiu.",
+        "kind": "visualization",
+        "caption": "Wizualizacja projektu"
+      }
     },
     {
       "slug": "olsen-odziez-firmowa",
@@ -422,7 +440,7 @@
       "imageMedium": "/media/olsen/ulozenie-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2048,
-      "shareImage": "/media/olsen/ulozenie-share-1536.webp",
+      "shareImage": "/media/mockups/olsen-studio-v1.webp",
       "imageCaption": "Kurtka OLSEN · wizualizacja projektu z oryginalnymi grafikami oznakowania.",
       "alt": "Kurtka firmowa OLSEN na białym tle: przód z małym znakiem i tył z większym oznakowaniem.",
       "accent": "#c42128",
@@ -664,7 +682,16 @@
       ],
       "published": true,
       "featured": true,
-      "teaser": "Oznakowanie kurtek, bluz i koszulek. Mały znak z przodu, pełna informacja na plecach."
+      "teaser": "Oznakowanie kurtek, bluz i koszulek. Mały znak z przodu, pełna informacja na plecach.",
+      "cover": {
+        "src": "/media/mockups/olsen-studio-v1.webp",
+        "smallSrc": "/media/mockups/olsen-studio-v1-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Wizualizacja czarnej kurtki OLSEN na białym podeście, z oryginalnym projektem haftu na plecach.",
+        "kind": "visualization",
+        "caption": "Wizualizacja projektu"
+      }
     }
   ]
 }

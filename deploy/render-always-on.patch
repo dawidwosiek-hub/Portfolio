@@ -1,0 +1,12 @@
+diff --git a/render.yaml b/render.yaml
+--- a/render.yaml
++++ b/render.yaml
+@@ -4,7 +4,7 @@ services:
+     name: nadx
+     branch: nadx-site
+     runtime: node
+-    plan: free
++    plan: starter
+     buildCommand: npm ci && npm run build
+     startCommand: npm start
+     healthCheckPath: /

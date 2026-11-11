@@ -1,0 +1,25 @@
+---
+import {portfolioMockups} from '../lib/portfolio-mockups';
+import {artworkTransform} from '../lib/mockup-projection';
+interface Props {scene:string}
+const {scene}=Astro.props;
+const mockup=portfolioMockups[scene];
+if(!mockup)throw new Error('Unknown portfolio studio scene.');
+---
+<svg class="portfolio-mockup" viewBox="0 0 1536 1024" role="img" aria-label={mockup.alt}>
+  <foreignObject width="1536" height="1024">
+    <div class="scene-space">
+      <img class="scene-base" src={mockup.base} alt="" width="1536" height="1024"/>
+      {mockup.layers.map(layer=><div class="scene-layer" style={{mixBlendMode:layer.blend,...(layer.occlusion?{maskImage:`url('${layer.occlusion}')`}: {})}}><div class:list={['artwork-plane',{'disc-plane':layer.disc}]} style={{width:`${layer.width}px`,height:`${layer.height}px`,transform:artworkTransform(layer.width,layer.height,layer.quad)}}><img src={layer.src} alt="" width={layer.width} height={layer.height}/></div></div>)}
+    </div>
+  </foreignObject>
+</svg>
+<style>
+ .portfolio-mockup{display:block;width:100%;height:auto;aspect-ratio:3/2;background:#fff}
+ .scene-space{position:relative;isolation:isolate;width:1536px;height:1024px;background:#fff;overflow:hidden}
+ .scene-base{position:absolute;inset:0;width:1536px;height:1024px;max-width:none}
+ .scene-layer{position:absolute;inset:0;width:1536px;height:1024px;mask-size:1536px 1024px;mask-repeat:no-repeat}
+ .artwork-plane{position:absolute;top:0;left:0;transform-origin:0 0;line-height:0}
+ .artwork-plane img{display:block;width:100%;height:100%;max-width:none}
+ .disc-plane{border-radius:50%;overflow:hidden;mask-image:radial-gradient(circle closest-side,transparent 12.5%,#000 13%)}
+</style>

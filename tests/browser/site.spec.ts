@@ -76,7 +76,7 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
   const resource=await request.get((await image.getAttribute('href'))!);
   expect(resource.status()).toBe(200);expect(resource.headers()['content-type']).toContain('image/');
  }
- await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/\/media\/shiro\/shiro-mark-presentation-share-1536.webp$/);
+ await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/\/media\/mockups\/shiro-studio-v1.webp$/);
  await page.getByRole('link',{name:'Chcę podobny projekt'}).click();
  await expect(page.locator('[name="project"]')).toHaveValue('SHIRO');
  await expect(page.locator('#service')).toHaveValue('logo-i-identyfikacja');
@@ -115,7 +115,7 @@ test('Diverto appears in print portfolio and preserves project and service in in
  }
  await expect(page.locator('.case-print .source-item')).toHaveCount(5);
  await expect(page.locator('#application-rollup .source-item')).toHaveCount(1);
- await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/album-preview-share-1536.webp$/);
+ await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/diverto-studio-v1.webp$/);
  await page.getByRole('link',{name:'Chcę podobny projekt'}).click();
  await expect(page.locator('[name="project"]')).toHaveValue('Diverto');
  await expect(page.locator('#service')).toHaveValue('druk-i-reklama');
@@ -146,7 +146,7 @@ test('OLSEN apparel preserves original artwork, source sheets and inquiry contex
  }
  await expect(page.locator('.source-item')).toHaveCount(5);
  await expect(page.locator('#application-koszulki .source-item')).toHaveCount(2);
- await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/ulozenie-share-1536.webp$/);
+ await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content',/olsen-studio-v1.webp$/);
  await page.getByRole('link',{name:'Chcę podobny projekt'}).click();
  await expect(page.locator('[name="project"]')).toHaveValue('OLSEN');
  await expect(page.locator('#service')).toHaveValue('odziez-i-nadruki');
@@ -178,6 +178,11 @@ test('rejected SHIRO stationery hero is replaced throughout the public portfolio
  for(const path of ['/', '/realizacje', '/realizacje/shiro-logo-i-wizytowki']){
   const html=await(await request.get(path)).text();
   expect(html).not.toContain('shiro-brand-scene');
-  expect(html).toContain('/media/shiro/logo.webp');
+  expect(html).toContain('/media/mockups/shiro-studio-v1.webp');
  }
+});
+
+
+test('studio assembly previews are not published as public product pages',async({request})=>{
+ for(const scene of ['shiro','diverto','olsen'])expect((await request.get('/podglad-studio/'+scene)).status()).toBe(404);
 });

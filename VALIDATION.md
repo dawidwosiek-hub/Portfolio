@@ -1,18 +1,17 @@
-# Weryfikacja aktualnej wersji — 31.10.2026
+# Weryfikacja aktualnej wersji — 11.11.2026
 
-Po ujednoliceniu kolorystyki sprawdzono lokalnie 6 testów galerii i responsywności (375/390, 768 i 1440 px), kontrolę typów oraz build. Potwierdzono białe plansze, czarne podpisy i żółty akcent NADX we wszystkich okładkach. Kolory samych projektów nie są zmieniane filtrami.
+Sprawdzono lokalnie:
 
-Zakres wcześniejszej pełnej weryfikacji:
-
-- `npm run check`: 49 plików, 0 błędów i ostrzeżeń.
-- Produkcyjny build Astro: cztery publiczne realizacje, w tym Odwróceni.
-- 22 testy Playwright: nawigacja, białe tło, brak poziomego przewijania, obrazy, klawiatura i filmy na telefonie, tablecie i komputerze; filtry, kontekst zapytania, canonical, sitemap oraz obsługa błędów formularza.
-- Publikacja Odwróconych w portfolio, na stronie głównej i przy ofercie druku; przekierowanie 301 z dawnego podglądu; zachowanie dziewięciu widoków oryginalnych grafik oraz powiększenie nowego szkicu z podpisem wyjaśniającym jego pochodzenie.
-- Spójne okładki na stronie głównej, w portfolio i przy usługach; oryginalne logo, okładka CD i oznakowanie odzieży pozostają czytelne oraz mieszczą się w kadrze. Trzy testy galerii sprawdzają wymiary okładek, brak kolizji tytułu z linkiem, filtry i przejście do realizacji z klawiatury.
-- Zastąpienie odrzuconego otwarcia SHIRO planszą opartą na oryginalnym logo, również w miniaturach i metadanych udostępniania.
-- Kontrola wizualna nowego otwarcia SHIRO, szkicu Odwróconych i nowego indeksu prac: jednakowe okładki 3:2, czytelne linki i układ osobnych wierszy. Kadry sprawdzono na 390 i 1440 px; testy obejmują także 768 px.
+- `npm run check`: 54 pliki, 0 błędów i ostrzeżeń.
+- Produkcyjny build Astro i cztery publiczne realizacje; finalny build korzysta z `SITE_URL=https://nadx.pl`.
+- 23 testy Playwright: galeria, nawigacja, filtry, białe tło, brak poziomego przewijania, wczytywanie obrazów, klawiatura i filmy na telefonie, tablecie i komputerze; kontekst zapytań, canonical, sitemap i obsługa błędów formularza.
+- Test projekcji oryginalnych grafik: wszystkie cztery rogi każdej grafiki trafiają w wskazane narożniki powierzchni zdjęcia z dokładnością poniżej 0,001 px.
+- Wizualna kontrola nowych mockupów SHIRO, Diverto i OLSEN, w tym liternictwa, danych kontaktowych i położenia haftu. Oryginalne pliki źródłowe pozostają niezmienione.
+- Kontrola całej galerii w wersji produkcyjnej na 390, 768 i 1440 px. Duże kadry 3:2, wspólna biała stylistyka i żółty detal NADX; wszystkie sceny są podpisane jako wizualizacje projektu.
+- Eksporty 1536×1024 px i 768×512 px są używane na stronie głównej, w portfolio, przy usługach i w metadanych udostępniania. Dotychczasowe szczegóły projektów i oryginalne materiały są zachowane.
+- Techniczne podglądy składania scen `/podglad-studio/:scene` zwracają 404 na produkcji i nie wchodzą do mapy witryny.
 - Formularz bez konfiguracji pocztowej przygotowuje wiadomość w programie pocztowym. Scenariusze API są symulowane; testy nie potwierdzają rzeczywistego doręczenia poczty.
 
-Końcowy build używa `SITE_URL=https://nadx.pl`. Zmiany są przeznaczone do gałęzi wdrożeniowej `nadx-site`. Bezpośrednia kontrola strony produkcyjnej w tym środowisku jest blokowana przez proxy (403 przy zestawianiu tunelu HTTPS); wynik lokalnych testów nie potwierdza zakończenia wdrożenia na Render.
+W `render.yaml` pozostaje `plan: free`. Przygotowany, nieaplikowany plik `deploy/render-always-on.patch` przechodzi `git apply --check` i pokazuje zmianę na instancję bez usypiania. Nie zmieniono aktywnego planu ani ustawień konta Render. Alternatywa statyczna wymaga osobnego dostosowania tras serwerowych.
 
-Statystyki, opinie, logotypy klientów i porównania nadal pojawiają się wyłącznie po uzupełnieniu potwierdzonych treści.
+Bezpośrednia kontrola domeny nadx.pl w tym środowisku jest blokowana przez proxy (403 przy zestawianiu tunelu HTTPS). Wynik lokalnych testów i wysłanie zmian do repozytorium nie potwierdzają zakończenia wdrożenia na Render.

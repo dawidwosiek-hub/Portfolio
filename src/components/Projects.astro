@@ -11,7 +11,7 @@ const selected = featured ? projects.filter(p=>p.featured).slice(0,6) : projects
     <h3>{p.name}</h3>
     <p>{p.teaser||p.scope}</p>
     <span class="project-action">Zobacz projekt <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span>
-    {p.imageCaption&&<small class="project-note">{p.slug==='shiro-logo-i-wizytowki'||p.slug==='diverto-materialy-promocyjne'?'Oryginalne projekty':'Wizualizacja projektu'}</small>}
+    {(p.cover?.caption||p.imageCaption)&&<small class="project-note">{p.cover?.caption||(p.slug==='shiro-logo-i-wizytowki'||p.slug==='diverto-materialy-promocyjne'?'Oryginalne projekty':'Wizualizacja projektu')}</small>}
   </div>
 </a>)}</div> : <div class="portfolio-empty"><span class="empty-index">[ WKRÓTCE ]</span><h3>Prace mówią<br/>najwięcej.</h3><p>Wybrane realizacje pojawią się tutaj po uzupełnieniu materiałów. W tym czasie poznaj zakres usług i opowiedz mi o swoim projekcie.</p><a class="text-link" href="/oferta">Poznaj ofertę <span aria-hidden="true"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span></a></div>}
 

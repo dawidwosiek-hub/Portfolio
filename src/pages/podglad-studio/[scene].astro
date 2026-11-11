@@ -1,0 +1,8 @@
+---
+import PortfolioMockup from '../../components/PortfolioMockup.astro';
+import {portfolioMockups} from '../../lib/portfolio-mockups';
+if(!import.meta.env.DEV||!portfolioMockups[Astro.params.scene||''])return new Response('Not found',{status:404});
+Astro.response.headers.set('X-Robots-Tag','noindex, nofollow');
+---
+<!doctype html><html lang="pl"><head><meta charset="utf-8"/><meta name="robots" content="noindex,nofollow"/><meta name="viewport" content="width=device-width"/><title>Podgląd sceny studyjnej</title></head><body><PortfolioMockup scene={Astro.params.scene!}/></body></html>
+<style is:global>html,body{margin:0;background:#fff}body{width:100%;}astro-dev-toolbar{display:none}</style>

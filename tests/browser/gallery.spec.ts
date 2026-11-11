@@ -10,10 +10,11 @@ for(const width of [390,768,1440])test(`project index keeps consistent covers an
     await rows.locator('img').evaluateAll(images=>Promise.all(images.map(image=>(image as HTMLImageElement).decode())));
     // A shared NADX presentation surrounds the original artwork on every project.
     for(const cover of await rows.locator('[data-project-cover]').all()){
+      await expect(cover.locator('img')).toHaveCount(1);
       await expect(cover).toHaveCSS('background-color','rgb(255, 255, 255)');
       await expect(cover).toHaveCSS('color','rgb(16, 16, 16)');
       await expect(cover.locator('.cover-label i')).toHaveCSS('background-color','rgb(255, 204, 0)');
-      for(const image of await cover.locator('.cover-photograph img,.cover-album-art img,.cover-disc img,.cover-garments img').all())await expect(image).toHaveCSS('filter','none');
+      for(const image of await cover.locator('img').all())await expect(image).toHaveCSS('filter','none');
     }
     const geometry=await rows.evaluateAll(rows=>rows.map(row=>{
       const cover=row.querySelector<HTMLElement>('[data-project-cover]')!.getBoundingClientRect();
@@ -30,7 +31,7 @@ for(const width of [390,768,1440])test(`project index keeps consistent covers an
     }
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
     // Keep each complete original within its cover, including during pointer interaction.
-    for(const image of await rows.locator('.cover-brandmark img,.cover-album-art img,.cover-disc img,.cover-garments img').all()){
+    for(const image of await rows.locator('img').all()){
       await image.scrollIntoViewIfNeeded();await expect(image).toBeVisible();
       await expect(image).toHaveCSS('object-fit','contain');
       const fits=await image.evaluate(image=>{const r=image.getBoundingClientRect(),cover=image.closest('[data-project-cover]')!.getBoundingClientRect();return r.left>=cover.left&&r.top>=cover.top&&r.right<=cover.right&&r.bottom<=cover.bottom;});
@@ -39,6 +40,7 @@ for(const width of [390,768,1440])test(`project index keeps consistent covers an
     await rows.first().hover();
     await expect(rows.first().locator('img')).toHaveCSS('transform','none');
   }
+  for(const scene of ['shiro','diverto','olsen'])await expect(page.locator(`img[src="/media/mockups/${scene}-studio-v1.webp"]`)).toHaveCount(1);
   await page.getByRole('button',{name:'druk i reklama',exact:true}).click();
   await expect(page.locator('.project:visible h3')).toHaveText(['Odwróceni','SHIRO','Diverto']);
   const shiro=page.locator('.project:visible').filter({has:page.getByRole('heading',{name:'SHIRO',exact:true})});
