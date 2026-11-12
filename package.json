@@ -12,7 +12,10 @@
     "test:api": "node --import tsx --test tests/api.test.ts tests/drive-library.test.ts tests/vertex-studio.test.ts",
     "test:portfolio": "node --test tests/portfolio.test.mjs",
     "brand:assets": "node scripts/generate-brand-assets.mjs",
-    "mockups:render": "node scripts/render-portfolio-mockups.mjs"
+    "mockups:render": "node scripts/render-portfolio-mockups.mjs",
+    "motion:render": "blender -b --factory-startup --python scripts/render-nadx-motion.py --",
+    "motion:poster": "blender -b --factory-startup --python scripts/render-nadx-motion.py -- --preview --output /tmp/nadx-motion-poster --width 1120 --height 980 --samples 32",
+    "motion:encode": "bash scripts/encode-nadx-motion.sh"
   },
   "repository": {
     "type": "git",

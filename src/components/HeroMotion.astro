@@ -1,0 +1,73 @@
+---
+const base='/media/nadx/identity-motion-v1';
+---
+<figure class="hero-motion" data-hero-motion>
+  <div class="motion-stage">
+    <img class="motion-poster" src={`${base}-poster.webp`} srcset={`${base}-poster-768.webp 768w, ${base}-poster.webp 1120w`} sizes="(max-width:760px) 88vw, 46vw" alt="Przestrzenne logo NADX: wypukłe czarne litery na żółtej bryle." width="1120" height="980" fetchpriority="high" decoding="async"/>
+    <video id="nadx-hero-video" class="motion-video" data-desktop-src={`${base}.mp4`} data-mobile-src={`${base}-mobile.mp4`} width="1120" height="980" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <figcaption><span>NADX w ruchu.</span><button class="motion-toggle" type="button" data-motion-toggle data-paused="true" aria-controls="nadx-hero-video" aria-label="Odtwórz animację 3D" hidden><svg class="play-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m5 3 8 5-8 5V3Z" fill="currentColor"/></svg><svg class="pause-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="2"/></svg><span data-motion-label>Odtwórz</span></button></figcaption>
+</figure>
+
+<script>
+type MotionConnection=EventTarget&{saveData?:boolean};
+document.querySelectorAll<HTMLElement>('[data-hero-motion]').forEach(root=>{
+  const video=root.querySelector<HTMLVideoElement>('video')!;
+  const toggle=root.querySelector<HTMLButtonElement>('[data-motion-toggle]')!;
+  const label=toggle.querySelector<HTMLElement>('[data-motion-label]')!;
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const connection=(navigator as Navigator&{connection?:MotionConnection}).connection;
+  let inView=false,userPaused=false,userRequested=false,blocked=false,failed=false;
+  const shouldPlay=()=>!failed&&inView&&!document.hidden&&!userPaused&&(userRequested||(!reduced.matches&&!connection?.saveData&&!blocked));
+  const updateToggle=()=>{
+    const paused=video.paused;
+    toggle.dataset.paused=String(paused);
+    toggle.setAttribute('aria-label',paused?'Odtwórz animację 3D':'Wstrzymaj animację 3D');
+    label.textContent=paused?'Odtwórz':'Wstrzymaj';
+  };
+  const prepare=()=>{
+    if(video.hasAttribute('src'))return;
+    video.muted=true;
+    video.src=window.matchMedia('(max-width:760px)').matches?video.dataset.mobileSrc!:video.dataset.desktopSrc!;
+  };
+  const sync=async()=>{
+    if(!shouldPlay()){video.pause();updateToggle();return;}
+    prepare();
+    try{await video.play();if(!shouldPlay())video.pause();}
+    catch(error){if(shouldPlay()&&(!(error instanceof DOMException)||error.name!=='AbortError'))blocked=true;}
+    updateToggle();
+  };
+  toggle.addEventListener('click',()=>{
+    if(video.paused){userPaused=false;userRequested=true;blocked=false;}
+    else{userPaused=true;userRequested=false;}
+    void sync();
+  });
+  video.addEventListener('loadeddata',()=>root.dataset.ready='true');
+  video.addEventListener('play',()=>{if(!shouldPlay())video.pause();updateToggle();});
+  video.addEventListener('pause',updateToggle);
+  video.addEventListener('error',()=>{failed=true;video.pause();root.dataset.ready='false';toggle.hidden=true;});
+  const observer=new IntersectionObserver(entries=>{inView=entries.some(entry=>entry.isIntersecting&&entry.intersectionRatio>=.15);void sync();},{threshold:[0,.15]});
+  observer.observe(root);
+  document.addEventListener('visibilitychange',()=>{void sync();});
+  reduced.addEventListener('change',()=>{userRequested=false;void sync();});
+  connection?.addEventListener('change',()=>{userRequested=false;void sync();});
+  toggle.hidden=false;
+  updateToggle();
+});
+</script>
+
+<style>
+ .hero-motion{margin:0;width:100%;min-width:0}
+ .motion-stage{position:relative;width:100%;aspect-ratio:8/7;background:#fff;overflow:hidden}
+ .motion-poster,.motion-video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+ .motion-video{opacity:0;transition:opacity .15s}
+ .hero-motion[data-ready=true] .motion-video{opacity:1}
+ .hero-motion figcaption{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:50px;font-size:.72rem;border-top:1px solid #dedede}
+ .hero-motion figcaption>span{font-weight:550}
+ .motion-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:7px 0 7px 10px;border:0;background:transparent;color:#101010;font-size:.68rem}
+ .motion-toggle svg{width:16px;height:16px;flex-shrink:0}
+ .motion-toggle[data-paused=true] .pause-icon,.motion-toggle[data-paused=false] .play-icon{display:none}
+ @media(max-width:760px){.hero-motion figcaption{font-size:.67rem}.motion-toggle{font-size:.65rem}}
+ @media(prefers-reduced-motion:reduce){.motion-video{transition:none}}
+ @media print{.motion-video,.motion-toggle{display:none}}
+</style>
