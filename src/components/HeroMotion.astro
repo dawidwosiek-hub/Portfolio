@@ -1,28 +1,36 @@
 ---
-const base='/media/nadx/identity-motion-v1';
+const base='/media/nadx/portfolio-cinematic-v2';
 ---
 <figure class="hero-motion" data-hero-motion>
   <div class="motion-stage">
-    <img class="motion-poster" src={`${base}-poster.webp`} srcset={`${base}-poster-768.webp 768w, ${base}-poster.webp 1120w`} sizes="(max-width:760px) 88vw, 46vw" alt="Przestrzenne logo NADX: wypukłe czarne litery na żółtej bryle." width="1120" height="980" fetchpriority="high" decoding="async"/>
-    <video id="nadx-hero-video" class="motion-video" data-desktop-src={`${base}.mp4`} data-mobile-src={`${base}-mobile.mp4`} width="1120" height="980" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+    <img class="motion-poster" src={`${base}-poster.webp`} srcset={`${base}-poster-768.webp 768w, ${base}-poster.webp 1280w`} sizes="(max-width:760px) 88vw, 46vw" alt="Filmowa prezentacja projektu Odwróceni: żółty samochód z autorską grafiką oklejenia." width="1280" height="720" fetchpriority="high" decoding="async"/>
+    <video id="nadx-hero-video" class="motion-video" data-motion-video data-desktop-src={`${base}.mp4`} data-mobile-src={`${base}-mobile.mp4`} width="1280" height="720" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
   </div>
-  <figcaption><span>NADX w ruchu.</span><button class="motion-toggle" type="button" data-motion-toggle data-paused="true" aria-controls="nadx-hero-video" aria-label="Odtwórz animację 3D" hidden><svg class="play-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m5 3 8 5-8 5V3Z" fill="currentColor"/></svg><svg class="pause-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="2"/></svg><span data-motion-label>Odtwórz</span></button></figcaption>
+  <figcaption><span>Od grafiki do formy.</span><div class="motion-actions"><button class="motion-expand" type="button" data-cinema-open aria-haspopup="dialog" aria-controls="nadx-cinema" hidden>Obejrzyj film <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M3 3h10v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><button class="motion-toggle" type="button" data-motion-toggle data-paused="true" aria-controls="nadx-hero-video" aria-label="Odtwórz film" hidden><svg class="play-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m5 3 8 5-8 5V3Z" fill="currentColor"/></svg><svg class="pause-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="2"/></svg><span data-motion-label>Odtwórz</span></button></div></figcaption>
+  <dialog id="nadx-cinema" class="cinema-dialog" aria-labelledby="nadx-cinema-title">
+    <div class="cinema-toolbar"><h2 id="nadx-cinema-title">Odwróceni — od grafiki do formy.</h2><button type="button" data-cinema-close aria-label="Zamknij film" autofocus>×</button></div>
+    <video data-cinema-player data-src={`${base}.mp4`} width="1280" height="720" controls playsinline muted preload="none" poster={`${base}-poster.webp`} aria-label="Film prezentujący kompozycję oklejenia, detale grafiki, samochód i łódź Odwróceni."><p><a href={`${base}.mp4`}>Otwórz film z projektem Odwróceni.</a></p></video>
+    <p>Projekty graficzne i wizualizacje oklejenia samochodu oraz łodzi. <a href="/realizacje/odwroceni-projekty-oklejen">Zobacz całą realizację <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M3 3h10v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></p>
+  </dialog>
 </figure>
 
 <script>
 type MotionConnection=EventTarget&{saveData?:boolean};
 document.querySelectorAll<HTMLElement>('[data-hero-motion]').forEach(root=>{
-  const video=root.querySelector<HTMLVideoElement>('video')!;
+  const video=root.querySelector<HTMLVideoElement>('[data-motion-video]')!;
   const toggle=root.querySelector<HTMLButtonElement>('[data-motion-toggle]')!;
   const label=toggle.querySelector<HTMLElement>('[data-motion-label]')!;
+  const expand=root.querySelector<HTMLButtonElement>('[data-cinema-open]')!;
+  const dialog=root.querySelector<HTMLDialogElement>('dialog')!;
+  const player=root.querySelector<HTMLVideoElement>('[data-cinema-player]')!;
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
   const connection=(navigator as Navigator&{connection?:MotionConnection}).connection;
   let inView=false,userPaused=false,userRequested=false,blocked=false,failed=false;
-  const shouldPlay=()=>!failed&&inView&&!document.hidden&&!userPaused&&(userRequested||(!reduced.matches&&!connection?.saveData&&!blocked));
+  const shouldPlay=()=>!failed&&inView&&!document.hidden&&!dialog.open&&!userPaused&&(userRequested||(!reduced.matches&&!connection?.saveData&&!blocked));
   const updateToggle=()=>{
     const paused=video.paused;
     toggle.dataset.paused=String(paused);
-    toggle.setAttribute('aria-label',paused?'Odtwórz animację 3D':'Wstrzymaj animację 3D');
+    toggle.setAttribute('aria-label',paused?'Odtwórz film':'Wstrzymaj film');
     label.textContent=paused?'Odtwórz':'Wstrzymaj';
   };
   const prepare=()=>{
@@ -42,32 +50,57 @@ document.querySelectorAll<HTMLElement>('[data-hero-motion]').forEach(root=>{
     else{userPaused=true;userRequested=false;}
     void sync();
   });
+  expand.addEventListener('click',()=>{
+    dialog.showModal();
+    video.pause();
+    if(!player.hasAttribute('src'))player.src=player.dataset.src!;
+    player.currentTime=0;
+    void player.play().catch(()=>{});
+  });
+  root.querySelector('[data-cinema-close]')?.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('close',()=>{player.pause();expand.focus({preventScroll:true});void sync();});
+  dialog.addEventListener('click',event=>{
+    const rect=dialog.getBoundingClientRect();
+    if(event.target===dialog&&(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom))dialog.close();
+  });
   video.addEventListener('loadeddata',()=>root.dataset.ready='true');
   video.addEventListener('play',()=>{if(!shouldPlay())video.pause();updateToggle();});
   video.addEventListener('pause',updateToggle);
   video.addEventListener('error',()=>{failed=true;video.pause();root.dataset.ready='false';toggle.hidden=true;});
   const observer=new IntersectionObserver(entries=>{inView=entries.some(entry=>entry.isIntersecting&&entry.intersectionRatio>=.15);void sync();},{threshold:[0,.15]});
   observer.observe(root);
-  document.addEventListener('visibilitychange',()=>{void sync();});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)player.pause();void sync();});
   reduced.addEventListener('change',()=>{userRequested=false;void sync();});
   connection?.addEventListener('change',()=>{userRequested=false;void sync();});
   toggle.hidden=false;
+  expand.hidden=false;
   updateToggle();
 });
 </script>
 
 <style>
  .hero-motion{margin:0;width:100%;min-width:0}
- .motion-stage{position:relative;width:100%;aspect-ratio:8/7;background:#fff;overflow:hidden}
+ .motion-stage{position:relative;width:100%;aspect-ratio:16/9;background:#111;overflow:hidden}
  .motion-poster,.motion-video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
  .motion-video{opacity:0;transition:opacity .15s}
  .hero-motion[data-ready=true] .motion-video{opacity:1}
- .hero-motion figcaption{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:50px;font-size:.72rem;border-top:1px solid #dedede}
+ .hero-motion figcaption{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px;min-height:56px;font-size:.72rem;border-bottom:1px solid #dedede}
  .hero-motion figcaption>span{font-weight:550}
- .motion-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:7px 0 7px 10px;border:0;background:transparent;color:#101010;font-size:.68rem}
- .motion-toggle svg{width:16px;height:16px;flex-shrink:0}
+ .motion-actions{display:flex;align-items:center;gap:18px}
+ .motion-toggle,.motion-expand{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:7px 0;border:0;background:transparent;color:#101010;font-size:.68rem;white-space:nowrap}
+ .motion-toggle svg,.motion-expand svg{width:15px;height:15px;flex-shrink:0}
  .motion-toggle[data-paused=true] .pause-icon,.motion-toggle[data-paused=false] .play-icon{display:none}
- @media(max-width:760px){.hero-motion figcaption{font-size:.67rem}.motion-toggle{font-size:.65rem}}
+ .cinema-dialog{width:min(1280px,calc(100vw - 40px));max-height:calc(100dvh - 32px);padding:20px;border:0;background:#111;color:white;overflow:auto}
+ .cinema-dialog::backdrop{background:rgb(0 0 0 / .85)}
+ .cinema-toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:16px}
+ .cinema-toolbar h2{font-size:.95rem;letter-spacing:-.02em;line-height:1.4}
+ .cinema-toolbar button{width:44px;height:44px;flex-shrink:0;border:1px solid #666;background:transparent;color:white;font-size:1.6rem;line-height:1}
+ .cinema-dialog video{width:100%;height:auto;max-height:calc(100dvh - 200px);aspect-ratio:16/9;object-fit:contain;background:#111}
+ .cinema-dialog>p{max-width:none;margin-top:14px;font-size:.72rem;color:#d4d4d4}
+ .cinema-dialog>p a{text-decoration:underline;text-underline-offset:4px;color:white}
+ .cinema-dialog>p a svg{display:inline-block;width:12px;height:12px;margin-left:4px;vertical-align:middle}
+ .cinema-dialog :focus-visible{outline-color:#fc0}
+ @media(max-width:760px){.hero-motion figcaption{font-size:.64rem}.motion-toggle,.motion-expand{font-size:.62rem;gap:5px}.motion-actions{gap:12px}.cinema-dialog{width:calc(100vw - 24px);padding:12px}.cinema-toolbar{gap:12px}.cinema-toolbar h2{font-size:.78rem}.cinema-dialog>p{font-size:.65rem}}
  @media(prefers-reduced-motion:reduce){.motion-video{transition:none}}
- @media print{.motion-video,.motion-toggle{display:none}}
+ @media print{.motion-video,.motion-actions,.cinema-dialog{display:none}}
 </style>

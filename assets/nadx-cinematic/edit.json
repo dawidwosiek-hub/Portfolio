@@ -1,0 +1,15 @@
+{
+  "version": "portfolio-cinematic-v2",
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "shots": [
+    {"id":"reveal","type":"video","source":"public/media/podglad/odwroceni-c0ec4c60be97/7c50e11d794032fc.mp4","start":8,"frames":48,"chapter":"ODWRÓCENI / PROJEKTY OKLEJENIA","overlap":0},
+    {"id":"composition","type":"still","source":"public/media/odwroceni/studium-kompozycji.webp","frames":48,"zoomFrom":1.14,"zoomTo":1.02,"chapter":"01 / KOMPOZYCJA","overlap":0},
+    {"id":"detail","type":"video","source":"public/media/podglad/odwroceni-c0ec4c60be97/7c50e11d794032fc.mp4","start":1.4,"frames":60,"chapter":"02 / DETAL","overlap":3,"transition":"fade"},
+    {"id":"space","type":"video","source":"public/media/podglad/odwroceni-c0ec4c60be97/963120ff2f667c01.mp4","start":1.4,"frames":72,"chapter":"03 / FORMA","overlap":0},
+    {"id":"boat","type":"still","source":"public/media/podglad/odwroceni-c0ec4c60be97/boat-editorial.webp","frames":96,"zoomFrom":1.52,"zoomTo":1.02,"chapter":"04 / CHARAKTER","overlap":3,"transition":"fadeblack"},
+    {"id":"signature","type":"signature","frames":48,"overlap":6,"transition":"fade"},
+    {"id":"return","type":"return","frames":36,"chapter":"ODWRÓCENI / PROJEKTY OKLEJENIA","overlap":12,"transition":"fade"}
+  ]
+}
