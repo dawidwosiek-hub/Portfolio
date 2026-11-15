@@ -1,7 +1,7 @@
 {
   "name": "nadx",
   "version": "1.0.0",
-  "description": "NADX \u2014 grafika, film i produkcja",
+  "description": "NADX — grafika, film i produkcja",
   "main": "index.js",
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
@@ -13,7 +13,11 @@
     "test:portfolio": "node --test tests/portfolio.test.mjs",
     "brand:assets": "node scripts/generate-brand-assets.mjs",
     "mockups:render": "node scripts/render-portfolio-mockups.mjs",
-    "motion:render": "node scripts/render-nadx-cinematic.mjs"
+    "motion:render": "node scripts/render-nadx-cinematic.mjs",
+    "studio:render": "python3 scripts/studio-session.py",
+    "studio:review": "python3 scripts/studio-session.py --finish-review",
+    "studio:apply": "python3 scripts/studio-session.py --apply",
+    "test:studio": "python3 tests/studio-session.test.py"
   },
   "repository": {
     "type": "git",

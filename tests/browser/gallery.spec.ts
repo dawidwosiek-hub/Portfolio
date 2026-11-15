@@ -22,13 +22,16 @@ for(const width of [390,768,1440])test(`project index keeps consistent covers an
       const title=row.querySelector('h3')!.getBoundingClientRect();
       return {x:cover.x,width:cover.width,height:cover.height,right:cover.right,link:{left:link.left,right:link.right,top:link.top,bottom:link.bottom},title:{left:title.left,right:title.right,top:title.top,bottom:title.bottom}};
     }));
-    for(const item of geometry){
+    for(const [index,item] of geometry.entries()){
       expect(item.width/item.height).toBeCloseTo(1.5,2);
-      expect(item.x).toBeCloseTo(geometry[0].x,0);
+      // PR #1 alternates image/text on desktop and tablet; keep the mirrored
+      // positions while requiring equal image sizes in every row.
+      expect(item.x).toBeCloseTo(geometry[width>760?index%2:0].x,0);
       expect(item.width).toBeCloseTo(geometry[0].width,0);
       expect(item.link.right).toBeLessThanOrEqual(width);
       expect(item.link.right<=item.title.left||item.link.left>=item.title.right||item.link.bottom<=item.title.top||item.link.top>=item.title.bottom).toBe(true);
     }
+    if(width>760)expect(geometry[1].x).toBeGreaterThan(geometry[0].x);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
     // Keep each complete original within its cover, including during pointer interaction.
     for(const image of await rows.locator('img').all()){

@@ -65,6 +65,7 @@ Konfiguracja Render w `render.yaml`; alternatywnie kontener w `Dockerfile`. Inst
 npm run check
 npm run build
 npm run test:api
+npm run test:studio
 npm test
 npm run test:portfolio
 ```
@@ -73,4 +74,4 @@ Playwright używa `/usr/bin/chromium` w tym środowisku. Na innym komputerze wsk
 
 Analityka: lokalne zdarzenia `nadx:analytics` dla `quote_click`, `service_select`, `portfolio_contact`, `inquiry_accepted`. Brak zewnętrznego odbiorcy, cookies i wysyłania danych osobowych. Integrując faktyczny system, zaktualizuj prywatność i wymagane zgody; nie wysyłaj treści formularza.
 
-Font Inter jest przechowywany lokalnie na licencji SIL OFL (`public/fonts/OFL.txt`). Pierwszy ekran pokazuje panoramiczny film o projekcie Odwróceni — od kompozycji grafiki po wizualizacje samochodu i łodzi — z możliwością obejrzenia w dużym odtwarzaczu. Portfolio korzysta z dużych, spójnych mockupów na bieli. Plan montażu, eksport i zachowanie filmu opisuje [MOTION.md](MOTION.md). Oficjalne logo przekazane przez właściciela jest zachowane w oryginalnym SVG (`public/brand/nadx-logo.svg`). Kolor marki: `#FFCC00`. Po zmianie pliku logo uruchom `npm run brand:assets`, aby odświeżyć favicony i podgląd udostępniania, a następnie przebuduj stronę. Gotowy film wymaga osobnego ponownego eksportu.
+Font Inter jest przechowywany lokalnie na licencji SIL OFL (`public/fonts/OFL.txt`). Pierwszy ekran pokazuje panoramiczny montaż czterech realizacji z możliwością obejrzenia w dużym odtwarzaczu. Portfolio korzysta ze wspólnej sesji produktowej w neutralnym, jasnoszarym studiu. Grafiki klienta są nakładane z niezmienionych źródeł; AI wykorzystano wyłącznie do pustych baz. Źródła, preset, kontrolę przed podmianą i odtwarzanie eksportów opisuje [STUDIO-SESSION.md](STUDIO-SESSION.md), a pełną listę wyników zawiera [STUDIO-FILES.md](STUDIO-FILES.md). Plan montażu i zachowanie filmów opisuje [MOTION.md](MOTION.md). Oficjalne logo przekazane przez właściciela jest zachowane w oryginalnym SVG (`public/brand/nadx-logo.svg`). Kolor marki: `#FFCC00`. Po zmianie pliku logo uruchom `npm run brand:assets`, aby odświeżyć favicony i podgląd udostępniania, a następnie przebuduj stronę. Gotowy film wymaga osobnego ponownego eksportu.

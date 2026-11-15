@@ -1,0 +1,77 @@
+{
+  "version": "odwroceni-story",
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "shots": [
+    {
+      "id": "reveal",
+      "type": "still",
+      "source": "public/media/podglad/odwroceni-c0ec4c60be97/boat-editorial.webp",
+      "frames": 48,
+      "chapter": "ODWRÓCENI / PROJEKT OKLEJENIA ŁODZI",
+      "overlap": 0,
+      "zoomFrom": 1.01,
+      "zoomTo": 1.03
+    },
+    {
+      "id": "composition",
+      "type": "still",
+      "source": "public/media/odwroceni/studium-kompozycji.webp",
+      "frames": 96,
+      "zoomFrom": 1.01,
+      "zoomTo": 1.03,
+      "chapter": "01 / KOMPOZYCJA",
+      "overlap": 0
+    },
+    {
+      "id": "detail",
+      "type": "still",
+      "source": "public/media/odwroceni/odwroceni-burta.webp",
+      "frames": 96,
+      "chapter": "02 / PIERWSZA BURTA",
+      "overlap": 3,
+      "transition": "fade",
+      "zoomFrom": 1.01,
+      "zoomTo": 1.03
+    },
+    {
+      "id": "space",
+      "type": "still",
+      "source": "public/media/odwroceni/odwroceni-druga-burta.webp",
+      "frames": 96,
+      "chapter": "03 / DRUGA BURTA",
+      "overlap": 0,
+      "zoomFrom": 1.01,
+      "zoomTo": 1.03
+    },
+    {
+      "id": "boat",
+      "type": "still",
+      "source": "public/media/odwroceni/odwroceni-rufa.webp",
+      "frames": 96,
+      "zoomFrom": 1.01,
+      "zoomTo": 1.03,
+      "chapter": "04 / RUFA",
+      "overlap": 3,
+      "transition": "fade"
+    },
+    {
+      "id": "signature",
+      "type": "signature",
+      "frames": 72,
+      "overlap": 6,
+      "transition": "fade"
+    },
+    {
+      "id": "return",
+      "type": "return",
+      "frames": 48,
+      "chapter": "ODWRÓCENI / PROJEKTY OKLEJENIA",
+      "overlap": 12,
+      "transition": "fade"
+    }
+  ],
+  "outputDirectory": "public/media/podglad/odwroceni-c0ec4c60be97",
+  "auxiliary": false
+}

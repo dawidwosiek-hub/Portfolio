@@ -29,6 +29,7 @@ const selected = featured ? projects.filter(p=>p.featured).slice(0,6) : projects
  .project:hover .project-action svg{transform:translate(3px,-3px)}
  .project-note{display:block;font-size:.72rem;letter-spacing:.02em;color:#555;margin-top:20px}
  @media(max-width:1050px){.project-index .project{gap:5%;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}.project-info h3{margin:18px 0 14px}.project-info>p{font-size:.83rem}.project-action{margin-top:22px}.project-note{margin-top:14px}}
+ @media(min-width:761px) and (max-width:1050px){.project-index .project:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.4fr)}}
  @media(max-width:760px){.project-index .project{grid-template-columns:minmax(0,1fr);gap:22px;padding:25px 0 29px}.project-info{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 20px;padding:0}.project-kicker{grid-column:1;font-size:.57rem;gap:14px}.project-info h3{font-size:clamp(2.2rem,8vw,3rem);margin:0;grid-column:1/-1}.project-info>p{grid-column:1/-1;max-width:500px;font-size:.83rem}.project-action{grid-column:2;grid-row:1;align-self:center;margin:0;font-size:.68rem;gap:16px;padding-bottom:6px;white-space:nowrap}.project-action svg{width:16px;height:16px}.project-note{grid-column:1/-1;margin:0;font-size:.58rem}}
  @media(max-width:380px){.project-info{gap:12px}.project-action{font-size:.64rem;gap:8px}.project-info h3{font-size:2rem}}
 </style>

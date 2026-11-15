@@ -20,11 +20,11 @@
       "categories": [
         "druk i reklama"
       ],
-      "scope": "Projekty oklejenia samochodu i łodzi — od wariantów kompozycji po rozmieszczenie grafiki i wizualizacje.",
+      "scope": "Projekt graficzny oklejenia łodzi — od kompozycji i rozmieszczenia motywu po plansze i wizualizacje.",
       "scopeItems": [
-        "Koncepcje graficzne samochodu i łodzi",
-        "Warianty kompozycji i hierarchii znaku",
-        "Dopasowanie grafiki do poszczególnych widoków",
+        "Koncepcja graficzna oklejenia łodzi",
+        "Hierarchia napisów oraz rytm kompozycji",
+        "Dopasowanie motywu do burt i rufy",
         "Plansze i materiały wizualne projektu"
       ],
       "image": "/media/podglad/odwroceni-c0ec4c60be97/car-editorial-v2.webp",
@@ -32,15 +32,15 @@
       "shareImage": "/media/podglad/odwroceni-c0ec4c60be97/car-editorial-v2.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "imageCaption": "Samochód Odwróceni · wizualizacja projektu oklejenia.",
-      "alt": "Żółty samochód z czarno-biało-złotą grafiką Odwróceni przed nowoczesnym budynkiem — wizualizacja projektu.",
-      "client": "Odwróceni — projekty graficzne oklejeń.",
-      "need": "Grafika dopasowana do dwóch różnych brył: samochodu oraz łodzi. Duża nazwa, rozpoznawalny motyw i spójne rozmieszczenie na poszczególnych powierzchniach.",
-      "solution": "Dwa warianty samochodu wykorzystują czarne pola, ostre cięcia i złoty akcent. Na łodzi ten sam język graficzny rozwija się w limonkowo-różowej kompozycji. Prezentacja zestawia oryginalne plansze, wizualizacje i zdjęcia gotowego oklejenia.",
+      "imageCaption": "Łódź Odwróceni · wizualizacja projektu oklejenia.",
+      "alt": "Łódź Odwróceni z oryginalną limonkowo-różową grafiką, na podporach w jasnoszarym studiu — wizualizacja projektu.",
+      "client": "Odwróceni — projekt graficzny oklejenia łodzi.",
+      "need": "Grafika wykorzystująca długość kadłuba, z dużym napisem i spójnym rozmieszczeniem motywu na burtach oraz rufie.",
+      "solution": "Limonkowo-różowa kompozycja łączy nazwę z ostrymi cięciami. Prezentacja wykorzystuje dostarczone widoki projektu i fotografie rzeczywistej łodzi.",
       "gallery": [],
       "published": true,
       "featured": true,
-      "teaser": "Grafika oklejenia samochodu i łodzi, dopasowana do kształtu każdego nośnika."
+      "teaser": "Wyrazista grafika oklejenia łodzi. Limonka, róż i motyw dopasowany do kadłuba."
     },
     {
       "slug": "shiro-logo-i-wizytowki",
@@ -139,7 +139,8 @@
               "height": 710,
               "alt": "Oryginalny awers vouchera SHIRO Car Rental: logo i napis Voucher podarunkowy na tle czerwonych linii.",
               "caption": "Awers vouchera · oryginalny projekt.",
-              "kind": "original"
+              "kind": "original",
+              "fullSrc": "/media/originals/shiro/voucher-front-1536.webp"
             },
             {
               "src": "/media/shiro/voucher-rewers-1536.webp",
@@ -148,7 +149,8 @@
               "height": 710,
               "alt": "Oryginalny rewers vouchera SHIRO: czerwony samochód i puste pola do uzupełnienia.",
               "caption": "Rewers vouchera · oryginalny projekt.",
-              "kind": "original"
+              "kind": "original",
+              "fullSrc": "/media/originals/shiro/voucher-rewers-1536.webp"
             }
           ]
         },
@@ -268,7 +270,8 @@
             "height": 836,
             "alt": "Oryginalna plansza koncepcji graficznej obuwia SHIRO: widok z boku, z tyłu i z góry.",
             "caption": "Oryginalny projekt koncepcyjny · trzy widoki obuwia.",
-            "kind": "original"
+            "kind": "original",
+            "fullSrc": "/media/originals/shiro/obuwie-projekt-1536.webp"
           }
         }
       ],
@@ -330,6 +333,15 @@
           "kind": "original",
           "alt": "Oryginalny projekt nadruku na płytę Diverto: biała nazwa zespołu na czarno-bordowym tle.",
           "caption": "Nadruk na płytę · oryginalny projekt"
+        },
+        "preview": {
+          "src": "/media/diverto/album-preview-3072.webp",
+          "smallSrc": "/media/diverto/album-preview-768.webp",
+          "mediumSrc": "/media/diverto/album-preview-1536.webp",
+          "width": 3072,
+          "height": 2048,
+          "alt": "Oryginalna okładka płyty Diverto: zdjęcie trzech muzyków na scenie, białe liternictwo i czerwone światło.",
+          "caption": "Oprawa płyty Diverto · prezentacja oryginalnych projektów."
         }
       },
       "gallery": [
@@ -340,7 +352,8 @@
           "height": 1536,
           "kind": "original",
           "alt": "Oryginalna okładka płyty Diverto: zdjęcie trzech muzyków na scenie, białe liternictwo i czerwone światło.",
-          "caption": "Okładka · oryginalny projekt"
+          "caption": "Okładka · oryginalny projekt",
+          "fullSrc": "/media/originals/diverto/okladka-1536.webp"
         },
         {
           "src": "/media/diverto/wkladka-1536.webp",
@@ -349,7 +362,8 @@
           "height": 1536,
           "kind": "original",
           "alt": "Wkładka płyty Diverto: oferta oprawy muzycznej na tle sceny w odcieniach czerni i bordo.",
-          "caption": "Wkładka informacyjna · oryginalny projekt"
+          "caption": "Wkładka informacyjna · oryginalny projekt",
+          "fullSrc": "/media/originals/diverto/wkladka-1536.webp"
         },
         {
           "src": "/media/diverto/wkladka-foto-1536.webp",
@@ -358,7 +372,8 @@
           "height": 1198,
           "kind": "original",
           "alt": "Projekt wkładki ze zdjęciem zespołu Diverto i czerwonym motywem graficznym.",
-          "caption": "Wkładka ze zdjęciem zespołu · oryginalny projekt"
+          "caption": "Wkładka ze zdjęciem zespołu · oryginalny projekt",
+          "fullSrc": "/media/originals/diverto/wkladka-foto-1536.webp"
         },
         {
           "src": "/media/diverto/tyl-1536.webp",
@@ -367,7 +382,8 @@
           "height": 1198,
           "kind": "original",
           "alt": "Tylna wkładka opakowania płyty Diverto z listą szesnastu utworów na tle sceny.",
-          "caption": "Wkładka z listą utworów · oryginalny projekt"
+          "caption": "Wkładka z listą utworów · oryginalny projekt",
+          "fullSrc": "/media/originals/diverto/tyl-1536.webp"
         },
         {
           "src": "/media/diverto/nadruk-plyty-1536.webp",
@@ -376,7 +392,8 @@
           "height": 1536,
           "kind": "original",
           "alt": "Oryginalny projekt nadruku na płytę Diverto: biała nazwa zespołu na czarno-bordowym tle.",
-          "caption": "Nadruk na płytę · oryginalny projekt"
+          "caption": "Nadruk na płytę · oryginalny projekt",
+          "fullSrc": "/media/originals/diverto/nadruk-plyty-1536.webp"
         }
       ],
       "applications": [
@@ -395,6 +412,15 @@
               "kind": "original",
               "alt": "Projekt roll-upu Diverto z ofertą zespołu, motywem klawiatury, czerwonych nut i polem kontaktowym.",
               "caption": "Roll-up · oryginalny projekt"
+            },
+            "preview": {
+              "src": "/media/diverto/rollup-1024.webp",
+              "smallSrc": "/media/diverto/rollup-768.webp",
+              "width": 1024,
+              "height": 2047,
+              "kind": "original",
+              "alt": "Projekt roll-upu Diverto z ofertą zespołu, motywem klawiatury, czerwonych nut i polem kontaktowym.",
+              "caption": "Roll-up · oryginalny projekt"
             }
           },
           "originals": [
@@ -405,7 +431,8 @@
               "height": 2047,
               "kind": "original",
               "alt": "Projekt roll-upu Diverto z ofertą zespołu, motywem klawiatury, czerwonych nut i polem kontaktowym.",
-              "caption": "Roll-up · oryginalny projekt"
+              "caption": "Roll-up · oryginalny projekt",
+              "fullSrc": "/media/originals/diverto/rollup-1024.webp"
             }
           ]
         }
@@ -488,7 +515,8 @@
             "view": "back",
             "centerX": 48.4
           }
-        ]
+        ],
+        "rendered": true
       },
       "gallery": [
         {
@@ -529,7 +557,7 @@
                   "alt": "Oryginalny znak OLSEN w wizualizacji haftu."
                 },
                 "top": 34.8,
-                "width": 12.0,
+                "width": 12,
                 "screen": true,
                 "view": "front",
                 "centerX": 65.8
@@ -547,7 +575,8 @@
                 "view": "back",
                 "centerX": 49.1
               }
-            ]
+            ],
+            "rendered": true
           },
           "originals": [
             {
@@ -600,13 +629,14 @@
                   "height": 573,
                   "alt": "Oryginalny projekt nadruku DTF OLSEN: znak, zakres usług, telefon i e-mail."
                 },
-                "top": 26.0,
+                "top": 26,
                 "width": 35.2,
                 "screen": false,
                 "view": "back",
-                "centerX": 48.0
+                "centerX": 48
               }
-            ]
+            ],
+            "rendered": true
           },
           "originals": [
             {
@@ -657,13 +687,14 @@
                   "height": 123,
                   "alt": "Oryginalny znak OLSEN do wizualizacji haftu na czapce."
                 },
-                "top": 35.0,
-                "width": 34.0,
+                "top": 35,
+                "width": 34,
                 "screen": true,
                 "view": "single",
                 "centerX": 50
               }
-            ]
+            ],
+            "rendered": true
           },
           "originals": [
             {
