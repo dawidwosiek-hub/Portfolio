@@ -4,7 +4,7 @@ import Projects from '../../components/Projects.astro';
 import CTA from '../../components/CTA.astro';
 import {categories,projects} from '../../lib/content';
 ---
-<Layout title="Realizacje — portfolio grafiki i wideo | NADX" description="Portfolio NADX. Logo i identyfikacja, druk i reklama, filmy, odzież i oklejenia — poznaj zakres projektów.">
+<Layout bodyClass="home" title="Realizacje — portfolio grafiki i wideo | NADX" description="Portfolio NADX. Logo i identyfikacja, druk i reklama, filmy, odzież i oklejenia — poznaj zakres projektów.">
 <section class="page-intro section"><h1>Realizacje</h1><p>Oklejenia, identyfikacja, druk i odzież. Przy każdym projekcie zobaczysz oryginalne pliki i to, jak wyglądają na nośniku.</p></section>
 <section class="section portfolio-section home-work">{projects.length>0&&<><div class="filters" role="group" aria-label="Filtruj realizacje"><button aria-pressed="true" data-filter="all">Wszystkie</button>{categories.map(c=><button aria-pressed="false" data-filter={c}>{c}</button>)}</div><p class="filter-count" aria-live="polite">Widoczne realizacje: {projects.length}</p></>}<Projects/><p class="filter-empty" hidden>Nie ma jeszcze realizacji w tej kategorii.</p></section><CTA/>
 <script>
