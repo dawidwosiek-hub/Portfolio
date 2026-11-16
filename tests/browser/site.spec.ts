@@ -38,18 +38,18 @@ test('SHIRO spans logo and print filters, shows source logo and preserves inquir
  await expect(page.locator('body')).toHaveCSS('background-color','rgb(255, 255, 255)');
  const logo=page.getByRole('img',{name:/Logo SHIRO: autorskie/});
  await expect(logo).toBeVisible();
- await logo.evaluate((i:HTMLImageElement)=>i.decode());expect(await logo.evaluate((i:HTMLImageElement)=>i.naturalWidth)).toBeGreaterThanOrEqual(768);await expect(logo).toHaveAttribute('src','/media/shiro/shiro-mark-presentation-1536.webp');
+ expect(await logo.evaluate((i:HTMLImageElement)=>i.naturalWidth)).toBe(1871);
  await expect(page.locator('.shiro-case .card-stage')).toHaveCount(0);
- for(const source of ['/media/shiro/mechanic-source.png','/media/shiro/car-rental-source.png'])await expect(page.locator(`.case-print button[data-shiro-src="${source}"] img`)).toBeVisible();
+ for(const source of ['/media/shiro/mechanic-source.png','/media/shiro/car-rental-source.png'])await expect(page.locator(`.case-print img[src="${source}"]`)).toBeVisible();
  await expect(page.locator('.case-print .source-item[data-kind="original"] img')).toHaveCount(2);
  await expect(page.getByRole('heading',{name:'Red Hat Display',exact:true})).toBeVisible();
  await expect(page.locator('.application-section')).toHaveCount(6);
  await page.getByRole('navigation',{name:'W tej realizacji'}).getByRole('link',{name:'Flagi',exact:true}).click();
  await expect(page).toHaveURL(/#application-flagi$/);
- await expect(page.locator('#application-flagi img')).toBeVisible();
+ await expect(page.locator('#application-flagi svg[role="img"]')).toBeVisible();
  await expect(page.locator('#application-obuwie .application-rule')).toContainText('Projekt koncepcyjny');
- await expect(page.locator('.application-section .source-item img')).toHaveCount(4);
- await expect(page.locator('#application-obuwie .shoe-original img')).toBeVisible();
+ await expect(page.locator('.application-section .source-item img')).toHaveCount(3);
+ await expect(page.locator('#application-obuwie .shoe-original svg[role="img"]')).toBeVisible();
  await expect(page.locator('#application-vouchery .source-item img')).toHaveCount(2);
  await expect(page.locator('#application-baner figcaption')).toContainText(/wizualizacja projektu/i);
  const garmentVideos=page.locator('#application-odziez video');
@@ -165,7 +165,7 @@ for(const width of [390,768,1440])test(`SHIRO scene images and source artwork re
   await image.scrollIntoViewIfNeeded();await expect(image).toBeVisible();
   await image.evaluate((i:HTMLImageElement)=>i.decode());
   const size=await image.evaluate(async(i:HTMLImageElement)=>{const source=new Image();source.src=i.currentSrc;await source.decode();return {width:source.naturalWidth,height:source.naturalHeight};});
-  expect(size.width).toBeGreaterThanOrEqual(768);expect(size.width/size.height).toBeCloseTo(selector==='.brand-mark img'?1536/830:1.5,2);
+  expect(size.width).toBeGreaterThanOrEqual(768);expect(size.width/size.height).toBeCloseTo(selector==='.brand-mark img'?1871/821:1.5,2);
  }
  for(const selector of ['#application-vouchery','#application-naklejki','#application-baner','#application-flagi','#application-obuwie']){
   await page.locator(selector).scrollIntoViewIfNeeded();await expect(page.locator(selector)).toBeVisible();

@@ -1,13 +1,1 @@
----
-const steps=[
- ['Zapytanie','Opisujesz projekt, termin i miejsce, w którym ma działać.'],
- ['Zakres i wycena','Ustalamy liczbę propozycji, poprawki, formaty plików i cenę, zanim zacznę.'],
- ['Projekt','Przygotowuję projekt i pokazuję go na nośniku, na którym będzie użyty.'],
- ['Poprawki','Dopracowuję projekt w uzgodnionym zakresie.'],
- ['Pliki','Dostajesz pliki gotowe do druku, haftu, oklejenia lub publikacji.'],
-];
----
-<section class="section process" aria-labelledby="process-title">
- <div class="section-head"><div><h2 id="process-title">Jak pracuję</h2><p>Od pierwszej wiadomości do plików, które możesz od razu przekazać do produkcji.</p></div></div>
- <ol class="steps">{steps.map(([label,text],i)=><li><b aria-hidden="true">{i+1}</b><h3>{label}</h3><p>{text}</p></li>)}</ol>
-</section>
+<section class="section process"><div class="section-heading"><span class="eyebrow">03 / JAK PRACUJĘ</span><h2>Jasny proces.<br/>Spójny efekt.</h2><p>Od pierwszej wiadomości do materiałów gotowych do użycia. Zakres i zasady ustalamy na początku.</p></div><ol class="process-list">{['Zapytanie','Zakres i wycena','Projekt','Ustalone poprawki','Przekazanie materiałów'].map((label,i)=><li><span>0{i+1}</span><h3>{label}</h3></li>)}</ol></section>

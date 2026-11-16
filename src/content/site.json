@@ -139,8 +139,7 @@
               "height": 710,
               "alt": "Oryginalny awers vouchera SHIRO Car Rental: logo i napis Voucher podarunkowy na tle czerwonych linii.",
               "caption": "Awers vouchera · oryginalny projekt.",
-              "kind": "original",
-              "fullSrc": "/media/originals/shiro/voucher-front-1536.webp"
+              "kind": "original"
             },
             {
               "src": "/media/shiro/voucher-rewers-1536.webp",
@@ -149,8 +148,7 @@
               "height": 710,
               "alt": "Oryginalny rewers vouchera SHIRO: czerwony samochód i puste pola do uzupełnienia.",
               "caption": "Rewers vouchera · oryginalny projekt.",
-              "kind": "original",
-              "fullSrc": "/media/originals/shiro/voucher-rewers-1536.webp"
+              "kind": "original"
             }
           ]
         },
@@ -226,7 +224,7 @@
                 "height": 1374,
                 "src": "/media/shiro/koszulka-studio-1145.webp",
                 "smallSrc": "/media/shiro/koszulka-studio-768.webp",
-                "alt": "Koszulka SHIRO: czarna bawełna z białym logo na klatce piersiowej, ułożona na płasko w jasnym studiu — wizualizacja projektu.",
+                "alt": "Koszulka SHIRO: czarna bawełna z niewielkim logo na środku klatki piersiowej; mockup ułożony na płasko na białym tle.",
                 "kind": "visualization"
               }
             },
@@ -242,7 +240,7 @@
                 "height": 1391,
                 "src": "/media/shiro/bluza-studio-1131.webp",
                 "smallSrc": "/media/shiro/bluza-studio-768.webp",
-                "alt": "Bluza SHIRO: czarna bawełna z białym logo na klatce piersiowej, ułożona na płasko w jasnym studiu — wizualizacja projektu.",
+                "alt": "Bluza SHIRO: czarna bawełna z niewielkim logo na środku klatki piersiowej; mockup ułożony na płasko na białym tle.",
                 "kind": "visualization"
               }
             }
@@ -270,8 +268,7 @@
             "height": 836,
             "alt": "Oryginalna plansza koncepcji graficznej obuwia SHIRO: widok z boku, z tyłu i z góry.",
             "caption": "Oryginalny projekt koncepcyjny · trzy widoki obuwia.",
-            "kind": "original",
-            "fullSrc": "/media/originals/shiro/obuwie-projekt-1536.webp"
+            "kind": "original"
           }
         }
       ],
@@ -333,15 +330,6 @@
           "kind": "original",
           "alt": "Oryginalny projekt nadruku na płytę Diverto: biała nazwa zespołu na czarno-bordowym tle.",
           "caption": "Nadruk na płytę · oryginalny projekt"
-        },
-        "preview": {
-          "src": "/media/diverto/album-preview-3072.webp",
-          "smallSrc": "/media/diverto/album-preview-768.webp",
-          "mediumSrc": "/media/diverto/album-preview-1536.webp",
-          "width": 3072,
-          "height": 2048,
-          "alt": "Oryginalna okładka płyty Diverto: zdjęcie trzech muzyków na scenie, białe liternictwo i czerwone światło.",
-          "caption": "Oprawa płyty Diverto · prezentacja oryginalnych projektów."
         }
       },
       "gallery": [
@@ -352,8 +340,7 @@
           "height": 1536,
           "kind": "original",
           "alt": "Oryginalna okładka płyty Diverto: zdjęcie trzech muzyków na scenie, białe liternictwo i czerwone światło.",
-          "caption": "Okładka · oryginalny projekt",
-          "fullSrc": "/media/originals/diverto/okladka-1536.webp"
+          "caption": "Okładka · oryginalny projekt"
         },
         {
           "src": "/media/diverto/wkladka-1536.webp",
@@ -362,8 +349,7 @@
           "height": 1536,
           "kind": "original",
           "alt": "Wkładka płyty Diverto: oferta oprawy muzycznej na tle sceny w odcieniach czerni i bordo.",
-          "caption": "Wkładka informacyjna · oryginalny projekt",
-          "fullSrc": "/media/originals/diverto/wkladka-1536.webp"
+          "caption": "Wkładka informacyjna · oryginalny projekt"
         },
         {
           "src": "/media/diverto/wkladka-foto-1536.webp",
@@ -372,8 +358,7 @@
           "height": 1198,
           "kind": "original",
           "alt": "Projekt wkładki ze zdjęciem zespołu Diverto i czerwonym motywem graficznym.",
-          "caption": "Wkładka ze zdjęciem zespołu · oryginalny projekt",
-          "fullSrc": "/media/originals/diverto/wkladka-foto-1536.webp"
+          "caption": "Wkładka ze zdjęciem zespołu · oryginalny projekt"
         },
         {
           "src": "/media/diverto/tyl-1536.webp",
@@ -382,8 +367,7 @@
           "height": 1198,
           "kind": "original",
           "alt": "Tylna wkładka opakowania płyty Diverto z listą szesnastu utworów na tle sceny.",
-          "caption": "Wkładka z listą utworów · oryginalny projekt",
-          "fullSrc": "/media/originals/diverto/tyl-1536.webp"
+          "caption": "Wkładka z listą utworów · oryginalny projekt"
         },
         {
           "src": "/media/diverto/nadruk-plyty-1536.webp",
@@ -392,8 +376,7 @@
           "height": 1536,
           "kind": "original",
           "alt": "Oryginalny projekt nadruku na płytę Diverto: biała nazwa zespołu na czarno-bordowym tle.",
-          "caption": "Nadruk na płytę · oryginalny projekt",
-          "fullSrc": "/media/originals/diverto/nadruk-plyty-1536.webp"
+          "caption": "Nadruk na płytę · oryginalny projekt"
         }
       ],
       "applications": [
@@ -412,15 +395,6 @@
               "kind": "original",
               "alt": "Projekt roll-upu Diverto z ofertą zespołu, motywem klawiatury, czerwonych nut i polem kontaktowym.",
               "caption": "Roll-up · oryginalny projekt"
-            },
-            "preview": {
-              "src": "/media/diverto/rollup-1024.webp",
-              "smallSrc": "/media/diverto/rollup-768.webp",
-              "width": 1024,
-              "height": 2047,
-              "kind": "original",
-              "alt": "Projekt roll-upu Diverto z ofertą zespołu, motywem klawiatury, czerwonych nut i polem kontaktowym.",
-              "caption": "Roll-up · oryginalny projekt"
             }
           },
           "originals": [
@@ -431,8 +405,7 @@
               "height": 2047,
               "kind": "original",
               "alt": "Projekt roll-upu Diverto z ofertą zespołu, motywem klawiatury, czerwonych nut i polem kontaktowym.",
-              "caption": "Roll-up · oryginalny projekt",
-              "fullSrc": "/media/originals/diverto/rollup-1024.webp"
+              "caption": "Roll-up · oryginalny projekt"
             }
           ]
         }
@@ -515,8 +488,7 @@
             "view": "back",
             "centerX": 48.4
           }
-        ],
-        "rendered": true
+        ]
       },
       "gallery": [
         {
@@ -557,7 +529,7 @@
                   "alt": "Oryginalny znak OLSEN w wizualizacji haftu."
                 },
                 "top": 34.8,
-                "width": 12,
+                "width": 12.0,
                 "screen": true,
                 "view": "front",
                 "centerX": 65.8
@@ -575,8 +547,7 @@
                 "view": "back",
                 "centerX": 49.1
               }
-            ],
-            "rendered": true
+            ]
           },
           "originals": [
             {
@@ -629,14 +600,13 @@
                   "height": 573,
                   "alt": "Oryginalny projekt nadruku DTF OLSEN: znak, zakres usług, telefon i e-mail."
                 },
-                "top": 26,
+                "top": 26.0,
                 "width": 35.2,
                 "screen": false,
                 "view": "back",
-                "centerX": 48
+                "centerX": 48.0
               }
-            ],
-            "rendered": true
+            ]
           },
           "originals": [
             {
@@ -687,14 +657,13 @@
                   "height": 123,
                   "alt": "Oryginalny znak OLSEN do wizualizacji haftu na czapce."
                 },
-                "top": 35,
-                "width": 34,
+                "top": 35.0,
+                "width": 34.0,
                 "screen": true,
                 "view": "single",
                 "centerX": 50
               }
-            ],
-            "rendered": true
+            ]
           },
           "originals": [
             {
