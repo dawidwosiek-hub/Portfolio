@@ -1,40 +1,64 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
 import Projects from '../components/Projects.astro';
-import HeroMotion from '../components/HeroMotion.astro';
 import Process from '../components/Process.astro';
 import CTA from '../components/CTA.astro';
-import {site, services, projects} from '../lib/content';
-const featured=projects.find(p=>p.slug==='odwroceni-projekty-oklejen') || projects[0];
-const stats=site.statistics.filter(s=>s.confirmed && s.value);
-const comparisons=site.comparisons.filter(c=>c.published);
+import {site, services} from '../lib/content';
+const film='/media/nadx/portfolio-cinematic-v2';
+const tiles=[
+ {href:'/realizacje/odwroceni-projekty-oklejen',src:'/media/podglad/odwroceni-c0ec4c60be97/boat-editorial.webp',small:'/media/podglad/odwroceni-c0ec4c60be97/boat-editorial-768.webp',w:1536,h:1024,name:'Odwróceni',type:'Oklejenie łodzi',alt:'Łódź z limonkowo-różową grafiką Odwróceni na jeziorze o zachodzie słońca — wizualizacja projektu oklejenia.'},
+ {href:'/realizacje/shiro-logo-i-wizytowki',src:'/media/shiro/obuwie-mockup-1536.webp',small:'/media/shiro/obuwie-mockup-768.webp',w:1536,h:1024,name:'SHIRO',type:'Znak na obuwiu',alt:'Czarny but z czerwonym znakiem SHIRO na boku i czerwonymi sznurówkami — wizualizacja projektu.'},
+ {href:'/realizacje/olsen-odziez-firmowa',src:'/media/olsen/czapka-projekt-1536.webp',small:'/media/olsen/czapka-projekt-768.webp',w:1536,h:1230,name:'OLSEN',type:'Haft na czapce',alt:'Czarna czapka z haftowanym logo OLSEN — wizualizacja projektu haftu.'},
+];
 ---
 <Layout>
-<section class="hero"><div class="hero-copy"><span class="eyebrow"><i></i> DAWID WOSIEK / GRAFIKA I WIDEO</span><h1>Logo i grafika.<br/>Wideo dla<br/><em>Twojej firmy.</em></h1><p>Projektuję identyfikację, materiały reklamowe i nadruki. Montuję filmy dla firm i twórców. Zobacz realizacje i porozmawiajmy o tym, czego potrzebuje Twoja marka.</p><div class="hero-actions"><a class="button yellow" href="/realizacje">Zobacz realizacje <span aria-hidden="true"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span></a><a class="text-link" href="/kontakt" data-track="quote_click">Zapytaj o wycenę <span aria-hidden="true"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span></a></div><span class="location">Kraków i okolice <span>·</span> Współpraca zdalna w całej Polsce</span></div><div class="hero-visual"><HeroMotion/>{featured&&<div class="hero-work"><a href={`/realizacje/${featured.slug}`}><span>Wybrana realizacja <strong>{featured.name}</strong></span><span>Zobacz projekt <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span></a></div>}</div></section>
-{stats.length>0 && <section class="statistics section" aria-label="Potwierdzone statystyki">{stats.map(s=><div><strong>{s.value}</strong><span>{s.label}</span>{s.context&&<small>{s.context}</small>}</div>)}</section>}
-<section id="realizacje" class="section work-section"><div class="section-heading"><span class="eyebrow">REALIZACJE</span><h2>Wybrane<br/><em>realizacje.</em></h2><a class="text-link" href="/realizacje">Wszystkie realizacje <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></div><Projects featured/></section>
-<section class="section dark services-section"><div class="section-heading"><span class="eyebrow">OFERTA</span><h2>Od pierwszego znaku.<br/>Do ostatniego <em>kadru.</em></h2><p>Projektowanie, które bierze pod uwagę cały obraz. I to, co dzieje się z nim po wyjściu z ekranu.</p></div><div class="service-list">{services.map(s=><a href={`/oferta/${s.slug}`} class="service-row"><span class="service-number">{s.number}</span><div><h3>{s.title}</h3><p>{s.short}</p><ul class="service-items">{s.deliverables.slice(0,3).map(d=><li>{d}</li>)}</ul></div><span class="round-arrow" aria-hidden="true"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span></a>)}</div><a class="text-link" href="/oferta">Znajdź rozwiązanie dla swojej firmy <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></section>
-<section class="section about-teaser">{site.portrait?<img class="about-portrait" src={site.portrait} alt="Dawid Wosiek — NADX" width="800" height="1000" loading="lazy"/>:<div class="about-symbol" aria-hidden="true"><img src="/brand/nadx-logo.svg" alt="" width="812" height="820" loading="lazy"/></div>}<div><span class="eyebrow">ZA MARKĄ NADX</span><h2>Nie tylko<br/>ładny <em>obraz.</em></h2><p>{site.about}</p><a class="text-link" href="/o-mnie">Poznaj mój sposób pracy <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></div></section>
-{comparisons.length>0&&<section class="section"><span class="eyebrow">PRZED / PO</span><h2>Zobacz, co zmienia dobry projekt.</h2>{comparisons.map(c=><div class="comparison"><h3>{c.title}</h3><div class="compare-frame"><img src={c.before} alt={c.beforeAlt} loading="lazy"/><img class="compare-after" src={c.after} alt={c.afterAlt} loading="lazy"/></div><label>Odsłonięcie gotowego projektu<input type="range" min="0" max="100" value="50" aria-label={`Porównanie: ${c.title}`}/></label></div>)}</section>}
-<Process/>
-{site.testimonials.filter(t=>t.consent).length>0&&<section class="section testimonials"><span class="eyebrow">GŁOS KLIENTÓW</span>{site.testimonials.filter(t=>t.consent).map(t=><figure><blockquote>{t.quote}</blockquote><figcaption>{t.author}{t.role&&` · ${t.role}`}</figcaption></figure>)}</section>}
-{site.clientLogos.filter(l=>l.consent).length>0&&<section class="section client-logos" aria-label="Marki, z którymi współpracuję">{site.clientLogos.filter(l=>l.consent).map(l=><img src={l.src} alt={l.name} loading="lazy" width="160" height="80"/>)}</section>}
-<CTA/>
-<script>document.querySelectorAll('.comparison').forEach(el=>{el.querySelector('input')?.addEventListener('input',e=>{(el.querySelector('.compare-after') as HTMLElement).style.clipPath=`inset(0 ${100-Number((e.target as HTMLInputElement).value)}% 0 0)`;});});</script>
-</Layout>
+<section class="home-hero" aria-label="Wstęp i wybrane prace">
+ <div class="hero-tile hero-intro">
+  <div>
+   <h1>Grafika, która wychodzi z&nbsp;ekranu.</h1>
+   <p>Projektuję logo, druki, oklejenia i nadruki na odzież. Montuję filmy dla firm i twórców. Pracuję w&nbsp;Krakowie i&nbsp;zdalnie w&nbsp;całej Polsce.</p>
+  </div>
+  <div class="hero-actions">
+   <a class="button dark" href="/kontakt" data-track="quote_click">Wyceń projekt</a>
+   <a class="text-link" href="/realizacje">Zobacz realizacje</a>
+   <button class="film-link" type="button" data-film-open hidden><i aria-hidden="true"></i>Film, 16 s</button>
+  </div>
+ </div>
+ {tiles.map((t,i)=><a class="hero-tile hero-work" href={t.href}><img src={t.src} srcset={`${t.small} 768w, ${t.src} 1536w`} sizes="(max-width:760px) 100vw, 50vw" alt={t.alt} width={t.w} height={t.h} loading={i===0?'eager':'lazy'} fetchpriority={i===0?'high':undefined} decoding="async"/><span class="tile-caption"><strong>{t.name}</strong>{t.type}</span></a>)}
+</section>
 
-<style>
- .hero-visual{min-width:0;width:100%;max-width:660px;justify-self:end}
- .hero-work{margin-top:4px;padding-top:17px}
- .hero-work>a{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:.69rem;line-height:1.7}
- .hero-work>a>span:first-child{color:#626262}
- .hero-work strong{display:block;color:#101010;font-size:1rem;letter-spacing:-.025em}
- .hero-work>a>span:last-child{display:flex;align-items:center;gap:15px;font-weight:550}
- .hero-copy>p{max-width:420px}.hero h1{font-size:clamp(3rem,5.8vw,6.5rem)}
- .service-items{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.8rem;color:#bdbdbd}
- .service-items li:before{content:"— ";color:#ffcc00}
- .about-portrait{width:100%;aspect-ratio:4/5;object-fit:cover}
- .location{font-size:.75rem}
- @media(max-width:760px){.hero h1{font-size:clamp(2.9rem,11.5vw,5rem)}.hero{padding-top:36px;gap:16px}.hero .eyebrow{font-size:.56rem;letter-spacing:.09em}.hero-work{margin-top:8px;padding-top:13px}.hero-work>a{font-size:.65rem}.hero-work strong{font-size:.95rem}}
-</style>
+<section id="realizacje" class="section home-work work-section" aria-labelledby="work-title">
+ <div class="section-head"><div><h2 id="work-title">Realizacje</h2><p>Oklejenia, identyfikacja, druk i odzież. Każdy projekt pokazany na nośniku, na którym ma pracować.</p></div><a class="text-link" href="/realizacje">Wszystkie realizacje</a></div>
+ <Projects featured/>
+</section>
+
+<section class="section home-offer" aria-labelledby="offer-title">
+ <div class="section-head"><div><h2 id="offer-title">Co mogę zrobić dla Twojej firmy</h2><p>Zakres, liczbę propozycji i formaty plików ustalamy przed rozpoczęciem pracy.</p></div><a class="text-link" href="/oferta">Pełna oferta</a></div>
+ <div class="offer-grid">{services.map(s=><div class="offer-item"><h3>{s.title}</h3><p>{s.short}</p><ul>{s.deliverables.slice(0,3).map(d=><li>{d}</li>)}</ul><a class="text-link" href={`/oferta/${s.slug}`}>Szczegóły</a></div>)}</div>
+</section>
+
+<section class="section home-about" aria-labelledby="about-title">
+ {site.portrait?<img class="about-photo" src={site.portrait} alt="Dawid Wosiek, NADX" width="800" height="1000" loading="lazy"/>:<div class="about-mark"><img src="/brand/nadx-logo.svg" alt="Znak NADX" width="812" height="820" loading="lazy"/></div>}
+ <div><h2 id="about-title">Projekt, który da się wykonać.</h2><p>{site.about}</p><a class="text-link" href="/o-mnie">O mnie i sposobie pracy</a></div>
+</section>
+
+<Process/>
+<CTA/>
+
+<dialog class="film-dialog" aria-labelledby="film-title">
+ <div class="film-bar"><h2 id="film-title">Odwróceni: od grafiki do formy</h2><button type="button" data-film-close>Zamknij</button></div>
+ <video data-src={`${film}.mp4`} controls playsinline muted preload="none" poster={`${film}-poster.webp`} width="1280" height="720"></video>
+</dialog>
+<script>
+ const dialog=document.querySelector<HTMLDialogElement>('.film-dialog');
+ const open=document.querySelector<HTMLButtonElement>('[data-film-open]');
+ const video=dialog?.querySelector('video');
+ if(dialog&&open&&video){
+  open.hidden=false;
+  open.addEventListener('click',()=>{if(!video.src)video.src=video.dataset.src!;dialog.showModal();void video.play().catch(()=>{});});
+  dialog.querySelector('[data-film-close]')?.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('close',()=>{video.pause();open.focus({preventScroll:true});});
+  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+ }
+</script>
+</Layout>

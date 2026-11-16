@@ -20,11 +20,11 @@
       "categories": [
         "druk i reklama"
       ],
-      "scope": "Projekt graficzny oklejenia łodzi — od kompozycji i rozmieszczenia motywu po plansze i wizualizacje.",
+      "scope": "Projekty oklejenia samochodu i łodzi — od wariantów kompozycji po rozmieszczenie grafiki i wizualizacje.",
       "scopeItems": [
-        "Koncepcja graficzna oklejenia łodzi",
-        "Hierarchia napisów oraz rytm kompozycji",
-        "Dopasowanie motywu do burt i rufy",
+        "Koncepcje graficzne samochodu i łodzi",
+        "Warianty kompozycji i hierarchii znaku",
+        "Dopasowanie grafiki do poszczególnych widoków",
         "Plansze i materiały wizualne projektu"
       ],
       "image": "/media/podglad/odwroceni-c0ec4c60be97/car-editorial-v2.webp",
@@ -32,15 +32,15 @@
       "shareImage": "/media/podglad/odwroceni-c0ec4c60be97/car-editorial-v2.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "imageCaption": "Łódź Odwróceni · wizualizacja projektu oklejenia.",
-      "alt": "Łódź Odwróceni z oryginalną limonkowo-różową grafiką, na podporach w jasnoszarym studiu — wizualizacja projektu.",
-      "client": "Odwróceni — projekt graficzny oklejenia łodzi.",
-      "need": "Grafika wykorzystująca długość kadłuba, z dużym napisem i spójnym rozmieszczeniem motywu na burtach oraz rufie.",
-      "solution": "Limonkowo-różowa kompozycja łączy nazwę z ostrymi cięciami. Prezentacja wykorzystuje dostarczone widoki projektu i fotografie rzeczywistej łodzi.",
+      "imageCaption": "Samochód Odwróceni · wizualizacja projektu oklejenia.",
+      "alt": "Żółty samochód z czarno-biało-złotą grafiką Odwróceni przed nowoczesnym budynkiem — wizualizacja projektu.",
+      "client": "Odwróceni — projekty graficzne oklejeń.",
+      "need": "Grafika dopasowana do dwóch różnych brył: samochodu oraz łodzi. Duża nazwa, rozpoznawalny motyw i spójne rozmieszczenie na poszczególnych powierzchniach.",
+      "solution": "Dwa warianty samochodu wykorzystują czarne pola, ostre cięcia i złoty akcent. Na łodzi ten sam język graficzny rozwija się w limonkowo-różowej kompozycji. Prezentacja zestawia oryginalne plansze, wizualizacje i zdjęcia gotowego oklejenia.",
       "gallery": [],
       "published": true,
       "featured": true,
-      "teaser": "Wyrazista grafika oklejenia łodzi. Limonka, róż i motyw dopasowany do kadłuba."
+      "teaser": "Grafika oklejenia samochodu i łodzi, dopasowana do kształtu każdego nośnika."
     },
     {
       "slug": "shiro-logo-i-wizytowki",
