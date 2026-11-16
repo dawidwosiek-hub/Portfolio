@@ -4,16 +4,13 @@ import type {PrintMockup} from '../lib/content';
 interface Props {mockup:PrintMockup;priority?:boolean}
 const {mockup,priority=false}=Astro.props;
 ---
-{mockup.preview?<div class:list={['studio-render',mockup.kind==='cd'?'album-stage':'rollup-stage']} aria-label={mockup.kind==='cd'?'Prezentacja okładki i nadruku płyty CD':'Prezentacja oryginalnego projektu roll-upu'}><div class:list={{'rollup-print':mockup.kind==='rollup'}}><ProjectImage media={mockup.preview} priority={priority} sizes="(max-width:760px) 88vw, min(90vw,1120px)"/></div></div>:mockup.kind==='cd'?<div class="album-stage" aria-label="Prezentacja okładki i nadruku płyty CD">
+{mockup.kind==='cd'?<div class="album-stage" aria-label="Prezentacja okładki i nadruku płyty CD">
  <div class="compact-disc"><div class="disc-face"><ProjectImage media={mockup.disc} sizes="(max-width: 760px) 45vw, 34vw"/><span class="disc-hub" aria-hidden="true"></span></div></div>
  <div class="jewel-case"><div class="jewel-spine" aria-hidden="true"></div><div class="jewel-art"><ProjectImage media={mockup.cover} priority={priority} sizes="(max-width: 760px) 66vw, min(50vw, 600px)"/></div><span class="jewel-edge" aria-hidden="true"></span></div>
 </div>:<div class="rollup-stage" aria-label="Prezentacja oryginalnego projektu roll-upu">
  <div class="rollup-object"><div class="rollup-print"><ProjectImage media={mockup.artwork} sizes="(max-width: 760px) 57vw, 30vw"/></div><div class="rollup-base" aria-hidden="true"></div><div class="rollup-foot" aria-hidden="true"></div></div>
 </div>}
 <style>
- .studio-render{aspect-ratio:auto!important;width:100%;display:grid;place-items:center}
- .studio-render .rollup-print{border:0;box-shadow:none;width:100%;max-width:620px}
- .studio-render :global(img){width:100%;height:auto;max-height:none!important;object-fit:contain}
  .album-stage{position:relative;isolation:isolate;aspect-ratio:1.5;width:100%;background:transparent}
  .jewel-case{position:absolute;left:6%;top:12%;width:55%;aspect-ratio:1.1;transform:perspective(1600px) rotateY(-8deg) rotateZ(-7deg);border:1px solid #c1c4c5;border-radius:3px;background:rgb(243 246 246 / .5);box-shadow:1px 2px 0 #9a9d9e,2px 4px 0 #ced0d1,0 14px 18px -13px rgb(0 0 0 / .4),0 30px 45px -25px rgb(0 0 0 / .22);z-index:2}
  .jewel-art{position:absolute;inset:2% 2% 2% 10%;overflow:hidden;box-shadow:0 0 0 1px rgb(255 255 255 / .7)}

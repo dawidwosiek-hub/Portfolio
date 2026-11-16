@@ -4,14 +4,12 @@ import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
 import {chromium} from '@playwright/test';
 
-// Editorial film from the reviewed studio compositions and source project assets.
+// Editorial film from supplied project footage and the existing case-study assets.
 // No generated lettering, invented production footage, or browser 3D dependency.
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
-const option=process.argv.indexOf('--edit');
-const edit=JSON.parse(await readFile(resolve(root,option>=0?process.argv[option+1]:'assets/nadx-cinematic/edit.json'),'utf8'));
-const work=process.env.NADX_FILM_WORK||`/tmp/nadx-cinematic-${edit.version}`;
-const sourceRoot=process.env.NADX_FILM_SOURCE_ROOT||root;
-const output=resolve(root,process.env.NADX_FILM_OUTPUT||edit.outputDirectory||'public/media/nadx');
+const edit=JSON.parse(await readFile(resolve(root,'assets/nadx-cinematic/edit.json'),'utf8'));
+const work=process.env.NADX_FILM_WORK||'/tmp/nadx-cinematic-render';
+const output=resolve(root,'public/media/nadx');
 await mkdir(work,{recursive:true});await mkdir(output,{recursive:true});
 const {fps,width,height}=edit;
 const run=(args)=>execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-filter_threads','1','-filter_complex_threads','1',...args],{stdio:'inherit'});
@@ -21,17 +19,17 @@ const logo=await readFile(resolve(root,'public/brand/nadx-logo.svg'),'utf8');
 const css=`
 @font-face{font-family:NADX;src:url(data:font/woff2;base64,${fonts[0]});font-weight:100 900}
 @font-face{font-family:NADX;src:url(data:font/woff2;base64,${fonts[1]});font-weight:100 900;unicode-range:U+0100-02BA,U+1E00-1E9F,U+2020-206F}
-*{box-sizing:border-box}html,body{width:${width}px;height:${height}px;margin:0;background:transparent;font-family:NADX,sans-serif;color:#111}
+*{box-sizing:border-box}html,body{width:${width}px;height:${height}px;margin:0;background:transparent;font-family:NADX,sans-serif;color:white}
 .top{position:absolute;left:40px;right:40px;top:12px;display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:550;letter-spacing:2.4px}
 .top i{width:7px;height:7px;display:inline-block;background:#fc0;margin-right:12px}
 .bottom{position:absolute;left:40px;right:40px;bottom:17px;display:flex;justify-content:space-between;align-items:center;font-size:22px;font-weight:600;letter-spacing:.8px}
-.bottom small{font-size:13px;letter-spacing:2px;color:#626262}
-.signature{position:absolute;inset:0;background:#f0f0f0;padding:58px 64px;overflow:hidden}
-.signature .kicker{font-size:17px;letter-spacing:3px;font-weight:500;color:#626262}
+.bottom small{font-size:13px;letter-spacing:2px;color:#c8c8c8}
+.signature{position:absolute;inset:0;background:#111;padding:58px 64px;overflow:hidden}
+.signature .kicker{font-size:17px;letter-spacing:3px;font-weight:500;color:#ddd}
 .signature h1{position:absolute;left:64px;top:190px;font-size:105px;line-height:1.01;letter-spacing:-6px;font-weight:750;margin:0}
-.signature h1 span{color:#111;text-decoration:underline;text-decoration-color:#fc0;text-decoration-thickness:8px;text-underline-offset:12px}
+.signature h1 span{color:#fc0}
 .signature svg{position:absolute;right:66px;top:219px;width:222px;height:225px}
-.signature .footer{position:absolute;left:64px;right:64px;bottom:54px;border-top:1px solid #bbb;padding-top:22px;display:flex;justify-content:space-between;font-size:17px;letter-spacing:.6px}
+.signature .footer{position:absolute;left:64px;right:64px;bottom:54px;border-top:1px solid #4b4b4b;padding-top:22px;display:flex;justify-content:space-between;font-size:17px;letter-spacing:.6px}
 `;
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE||'/usr/bin/chromium',args:['--no-sandbox']});
 try{
@@ -46,8 +44,8 @@ try{
   }
 }finally{await browser.close();}
 
-// Still photographs use slow, eased reframing. They are not represented as
-// newly modelled 3D scenes or newly filmed production footage.
+// Actual camera moves come from the supplied car films. Still study/boat shots
+// use slow, eased reframing; they are not represented as newly modelled 3D scenes.
 for(const shot of edit.shots){
   const shotPath=resolve(work,`${shot.id}.mkv`);
   const label=resolve(work,`${shot.id}-overlay.png`);
@@ -56,12 +54,12 @@ for(const shot of edit.shots){
   }else{
     let inputs,base;
     if(shot.type==='video'){
-      inputs=['-ss',String(shot.start),'-i',resolve(sourceRoot,shot.source)];
-      base=`fps=${fps},setpts=PTS-STARTPTS,scale=${width}:${height}:flags=lanczos,crop=${width}:620:0:30,pad=${width}:${height}:0:42:color=0xf0f0f0,setsar=1`;
+      inputs=['-ss',String(shot.start),'-i',resolve(root,shot.source)];
+      base=`fps=${fps},setpts=PTS-STARTPTS,scale=${width}:${height}:flags=lanczos,crop=${width}:620:0:30,eq=contrast=1.035:brightness=-0.006:saturation=1.015,pad=${width}:${height}:0:42:color=0x111111,setsar=1`;
     }else if(shot.type==='still'){
-      inputs=['-i',resolve(sourceRoot,shot.source)];
+      inputs=['-i',resolve(root,shot.source)];
       const zoom=`${shot.zoomFrom}+(${shot.zoomTo}-${shot.zoomFrom})*(0.5-0.5*cos(PI*on/${shot.frames-1}))`;
-      base=`scale=${width}:620:force_original_aspect_ratio=decrease:flags=lanczos,pad=${width}:620:(ow-iw)/2:(oh-ih)/2:color=0xf0f0f0,scale=2560:1240:flags=lanczos,zoompan=z='${zoom}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d=${shot.frames}:s=${width}x620:fps=${fps},pad=${width}:${height}:0:42:color=0xf0f0f0,setsar=1`;
+      base=`scale=3072:-2:flags=lanczos,crop=3072:1488:0:156,zoompan=z='${zoom}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d=${shot.frames}:s=${width}x620:fps=${fps},pad=${width}:${height}:0:42:color=0x111111,setsar=1`;
     }else{
       inputs=['-loop','1','-framerate',String(fps),'-i',resolve(work,'opening-frame.png')];
       base='setsar=1';
@@ -88,10 +86,8 @@ filters.push(`[${current}]format=yuv420p[film]`);
 const inputs=edit.shots.flatMap(shot=>['-i',resolve(work,`${shot.id}.mkv`)]);
 const master=resolve(output,`${edit.version}.mp4`);
 run([...inputs,'-filter_complex',filters.join(';'),'-map','[film]','-frames:v',String(frames),'-r',String(fps),'-an','-c:v','libx264','-preset','slow','-crf','21','-profile:v','high','-level','3.1','-threads','3','-movflags','+faststart',master]);
-if(edit.auxiliary!==false){
- run(['-i',master,'-vf','scale=768:432:flags=lanczos','-an','-c:v','libx264','-preset','slow','-crf','23','-profile:v','high','-level','3.1','-threads','3','-movflags','+faststart',resolve(output,`${edit.version}-mobile.mp4`)]);
- for(const size of [1280,768])run(['-ss','0.5','-i',master,'-vf',`scale=${size}:-2:flags=lanczos`,'-frames:v','1','-c:v','libwebp','-quality','92','-threads','1',resolve(output,`${edit.version}-poster${size===768?'-768':''}.webp`)]);
-}
+run(['-i',master,'-vf','scale=768:432:flags=lanczos','-an','-c:v','libx264','-preset','slow','-crf','23','-profile:v','high','-level','3.1','-threads','3','-movflags','+faststart',resolve(output,`${edit.version}-mobile.mp4`)]);
+for(const size of [1280,768])run(['-ss','0.5','-i',master,'-vf',`scale=${size}:-2:flags=lanczos`,'-frames:v','1','-c:v','libwebp','-quality','92','-threads','1',resolve(output,`${edit.version}-poster${size===768?'-768':''}.webp`)]);
 const metadata=JSON.parse(execFileSync('ffprobe',['-v','error','-show_entries','stream=codec_type,width,height,nb_frames,duration','-of','json',master],{encoding:'utf8'}));
 if(metadata.streams.length!==1||Number(metadata.streams[0].nb_frames)!==frames)throw new Error('Unexpected film streams/frame count');
 await writeFile(resolve(work,'edit-report.json'),JSON.stringify({version:edit.version,frames,duration:frames/fps,metadata},null,2));
