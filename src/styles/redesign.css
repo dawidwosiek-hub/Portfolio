@@ -195,3 +195,16 @@ body.home h3{letter-spacing:-.02em!important}
 body.home .work-card img{aspect-ratio:auto}
 .header .button>span[aria-hidden],.cta .button>span[aria-hidden]{display:none}
 .cta .button{min-height:52px;justify-content:center;padding:14px 24px}
+/* Szerokie ekrany: kafle w proporcjach zdjęć (3:2), bez przycinania; treść w maks. 1680 px */
+body.home .home-hero{grid-auto-rows:auto;max-width:1680px;margin-inline:auto}
+body.home .hero-tile{aspect-ratio:3/2}
+body.home .hero-intro{aspect-ratio:auto}
+body.home .hero-intro h1{font-size:clamp(2.4rem,4.4vw,5.6rem)}
+body.home .hero-intro p{font-size:clamp(1rem,1.05vw,1.25rem)}
+body.home .home-work,body.home .home-offer,body.home .process{max-width:1680px;margin-inline:auto}
+body.home .work-card.wide .work-image{aspect-ratio:2/1}
+@media(max-width:760px){body.home .hero-intro{aspect-ratio:auto}body.home .hero-work{aspect-ratio:1}body.home .hero-work:nth-of-type(1){aspect-ratio:3/2}}
+body .header,body .footer{padding-inline:max(var(--gutter),calc((100vw - 1680px)/2))}
+body.home .cta{padding-inline:max(var(--gutter),calc((100vw - 1680px)/2))}
+body.home .home-about{padding-inline:max(var(--gutter),calc((100vw - 1680px)/2))}
+body.home .about-mark{max-width:520px}
