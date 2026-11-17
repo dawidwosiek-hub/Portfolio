@@ -19,7 +19,7 @@ test('approved Odwróceni is published, discoverable and keeps the old shared li
   }
   await page.setViewportSize({width:1440,height:1000});
   await page.goto('/');
-  await expect(page.locator('.hero-work a')).toHaveAttribute('href',projectPath);
+  await expect(page.locator('#lx h1')).toContainText('Logo i grafika.');
   const cards = page.locator('.work-section .project');
   await expect(cards).toHaveCount(4);
   const boxes = await cards.evaluateAll(cards=>cards.map(card=>{const r=card.getBoundingClientRect();return {x:r.x,y:r.y,bottom:r.bottom};}));

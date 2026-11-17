@@ -1,0 +1,375 @@
+---
+// Wstęp strony głównej: znak NADX budowany w 3D podczas przewijania (Three.js z /public/nadx3d).
+---
+<section id="lx" aria-label="Wstęp: znak NADX">
+ <div class="lx-pin" id="lx-pin">
+  <canvas id="lx-gl" aria-hidden="true"></canvas>
+  <img class="lx-fallback" src="/brand/nadx-logo.svg" alt="" width="812" height="820"/>
+  <div class="lx-cap lx-fade" id="lx-cap" aria-hidden="true"></div>
+  <div class="lx-final lx-fade" id="lx-final">
+   <p class="lx-k">Dawid Wosiek / grafika i wideo</p>
+   <h1>Logo i grafika. Wideo dla <u>Twojej firmy.</u></h1>
+   <p class="lx-lead">Projektuję identyfikację, materiały reklamowe i nadruki. Montuję filmy dla firm i twórców.</p>
+   <div class="lx-row"><a class="lx-btn" href="/realizacje">Zobacz realizacje</a><a class="lx-btn lx-ghost" href="/kontakt">Zapytaj o wycenę</a></div>
+  </div>
+  <div class="lx-hint" id="lx-hint" aria-hidden="true">Przewiń, żeby zbudować znak</div>
+  <div class="lx-prog" aria-hidden="true"><i id="lx-bar"></i></div>
+ </div>
+</section>
+<style is:global>
+#lx{position:relative;height:760vh;background:#080808;color:#fff;font-family:inherit}
+#lx.lx-static{height:100vh;height:100svh}
+#lx .lx-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+#lx canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#lx .lx-fallback{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:min(34vw,420px);display:none}
+#lx.lx-no3d .lx-fallback{display:block}
+#lx .lx-cap{position:absolute;z-index:3;left:clamp(16px,5vw,72px);bottom:clamp(40px,8vh,88px);max-width:min(460px,calc(100vw - 32px));pointer-events:none}
+#lx .lx-cap small{display:block;color:#ffcc00;font-size:14px;font-weight:600;margin-bottom:6px}
+#lx .lx-cap strong{display:block;font-size:clamp(44px,7vw,104px);line-height:.92;font-weight:800;letter-spacing:-.05em}
+#lx .lx-cap span{display:block;color:#c9c9c9;margin-top:12px;font-size:17px;max-width:38ch;line-height:1.5}
+#lx .lx-final{position:absolute;z-index:3;left:clamp(16px,5vw,72px);top:50%;max-width:min(560px,46vw)}
+#lx .lx-final p.lx-k{font-size:13px;font-weight:600;color:#ffcc00;margin:0 0 16px;letter-spacing:0;text-transform:none}
+#lx .lx-final h1{font-size:clamp(40px,5.6vw,86px);line-height:.96;font-weight:800;letter-spacing:-.045em;margin:0;color:#fff;text-wrap:balance}
+#lx .lx-final h1 u{text-decoration:none;box-shadow:inset 0 -.12em #ffcc00}
+#lx .lx-final .lx-lead{color:#c9c9c9;max-width:42ch;margin:20px 0 26px;font-size:17px;line-height:1.55}
+#lx .lx-row{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center}
+#lx .lx-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;background:#ffcc00;color:#000;font-weight:600;text-decoration:none;font-size:15px}
+#lx .lx-btn.lx-ghost{background:none;color:#fff;border-bottom:2px solid #fff;min-height:44px;padding:10px 2px}
+#lx .lx-btn:focus-visible{outline:2px solid #ffcc00;outline-offset:3px}
+#lx .lx-fade{opacity:0;transition:opacity .35s ease,transform .35s ease;transform:translateY(12px)}
+#lx .lx-fade.on{opacity:1;transform:none}
+#lx .lx-final.lx-fade{transform:translateY(calc(-50% + 12px))}
+#lx .lx-final.lx-fade.on{transform:translateY(-50%)}
+#lx .lx-final:not(.on) *{pointer-events:none}
+#lx .lx-prog{position:absolute;z-index:3;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.1)}
+#lx .lx-prog i{display:block;height:100%;width:0;background:#ffcc00}
+#lx .lx-hint{position:absolute;z-index:3;right:clamp(16px,5vw,72px);bottom:clamp(40px,8vh,88px);font-size:14px;color:#aaa;transition:opacity .3s}
+@media(max-width:860px){
+ #lx .lx-final{top:auto;bottom:clamp(36px,7vh,72px);max-width:none;right:16px}
+ #lx .lx-final.lx-fade{transform:translateY(12px)}#lx .lx-final.lx-fade.on{transform:none}
+ #lx .lx-final .lx-lead{display:none}
+ #lx .lx-hint{display:none}
+ #lx .lx-fallback{top:12%;right:50%;transform:translateX(50%);width:52vw}
+}
+@media(prefers-reduced-motion:reduce){#lx .lx-fade,#lx .lx-final.lx-fade{transition:none}}
+</style>
+<script is:inline type="module">
+import * as THREE from '/nadx3d/lib/three.module.min.js';
+import {SVGLoader} from '/nadx3d/lib/addons/loaders/SVGLoader.js';
+import {EffectComposer} from '/nadx3d/lib/addons/postprocessing/EffectComposer.js';
+import {RenderPass} from '/nadx3d/lib/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from '/nadx3d/lib/addons/postprocessing/UnrealBloomPass.js';
+import {BokehPass} from '/nadx3d/lib/addons/postprocessing/BokehPass.js';
+import {ShaderPass} from '/nadx3d/lib/addons/postprocessing/ShaderPass.js';
+import {OutputPass} from '/nadx3d/lib/addons/postprocessing/OutputPass.js';
+import {RoomEnvironment} from '/nadx3d/lib/addons/environments/RoomEnvironment.js';
+import {Reflector} from '/nadx3d/lib/addons/objects/Reflector.js';
+import {RoundedBoxGeometry} from '/nadx3d/lib/addons/geometries/RoundedBoxGeometry.js';
+{
+const $=id=>document.getElementById(id);
+const intro=$('lx'),canvas=$('lx-gl');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mobile=()=>innerWidth<860;
+const shot=location.search.includes('shot');
+const clock=new THREE.Clock();
+const cl=x=>Math.min(1,Math.max(0,x)),sm=x=>{x=cl(x);return x*x*(3-2*x);};
+const seg=(p,a,b)=>cl((p-a)/(b-a));
+const easeOut=x=>1-Math.pow(1-x,3),easeBack=x=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);};
+
+// ---------- renderer ----------
+let renderer;
+try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:shot});}
+catch(e){intro.classList.add('lx-no3d','lx-static');$('lx-final').classList.add('on');$('lx-hint').style.display='none';throw e;}
+if(reduce)intro.classList.add('lx-static');
+renderer.setPixelRatio(Math.min(devicePixelRatio,mobile()?1.5:1.75));
+renderer.setSize(innerWidth,innerHeight,false);
+renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x080808);scene.fog=new THREE.Fog(0x080808,9,22);
+scene.environment=new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(renderer),.04).texture;
+const camera=new THREE.PerspectiveCamera(34,innerWidth/innerHeight,.1,80);
+
+// ---------- posadzka, siatka szkicu, światła ----------
+const fg=new THREE.PlaneGeometry(60,60);
+let reflector=null;
+if(!mobile()){reflector=new Reflector(fg,{clipBias:.003,textureWidth:Math.round(innerWidth*.5),textureHeight:Math.round(innerHeight*.5),color:0x8a8a8a});reflector.rotation.x=-Math.PI/2;scene.add(reflector);}
+const floorMat=new THREE.MeshStandardMaterial({color:0x0c0c0c,roughness:.5,transparent:true,opacity:mobile()?1:.86});
+const floor=new THREE.Mesh(fg,floorMat);floor.rotation.x=-Math.PI/2;floor.position.y=.003;scene.add(floor);
+const grid=new THREE.GridHelper(24,48,0xffcc00,0xffcc00);grid.position.y=.01;grid.material.transparent=true;grid.material.depthWrite=false;scene.add(grid);
+const sc=document.createElement('canvas');sc.width=sc.height=128;{const g=sc.getContext('2d'),gr=g.createRadialGradient(64,64,0,64,64,64);gr.addColorStop(0,'rgba(0,0,0,.9)');gr.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=gr;g.fillRect(0,0,128,128);}
+const shadow=new THREE.Mesh(new THREE.PlaneGeometry(3.6,2.3),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(sc),transparent:true,depthWrite:false,opacity:0}));shadow.rotation.x=-Math.PI/2;shadow.position.y=.02;scene.add(shadow);
+scene.add(new THREE.HemisphereLight(0xffffff,0x111111,.3));
+const keyL=new THREE.SpotLight(0xffffff,0,22,.6,.6,2);keyL.position.set(-3,6.5,5);keyL.target.position.set(0,1.4,0);scene.add(keyL,keyL.target);
+const rim=new THREE.SpotLight(0xffcc00,0,14,.7,.7,2);rim.position.set(3,3,-4);rim.target.position.set(0,1.4,0);scene.add(rim,rim.target);
+const flash=new THREE.PointLight(0xffffff,0,7,2);scene.add(flash);
+const strips=[];
+for(const [x,z] of [[-4.2,-3.6],[4.2,-3.6],[-2.2,-4.6],[2.2,-4.6]]){
+ const m=new THREE.Mesh(new THREE.BoxGeometry(.03,4.4,.03),new THREE.MeshBasicMaterial({color:0xffcc00,transparent:true,opacity:0}));m.position.set(x,2.2,z);
+ const l=new THREE.PointLight(0xffcc00,0,9,2);l.position.set(x,2.2,z+.6);scene.add(m,l);strips.push({m,l});
+}
+// pył i iskry
+const dn=mobile()?350:1000,dpos=new Float32Array(dn*3);for(let i=0;i<dn;i++){dpos[i*3]=(Math.random()-.5)*14;dpos[i*3+1]=Math.random()*5.5;dpos[i*3+2]=(Math.random()-.5)*9;}
+const dg=new THREE.BufferGeometry();dg.setAttribute('position',new THREE.BufferAttribute(dpos,3));
+const dust=new THREE.Points(dg,new THREE.PointsMaterial({color:0xfff2c2,size:.016,transparent:true,opacity:.5,depthWrite:false,blending:THREE.AdditiveBlending}));scene.add(dust);
+const SPK=260,spos=new Float32Array(SPK*3),svel=[];for(let i=0;i<SPK;i++)svel.push(new THREE.Vector3((Math.random()-.5)*2.4,Math.random()*1.6+.3,(Math.random()*.9+.2)*1.6));
+const sgeo=new THREE.BufferGeometry();sgeo.setAttribute('position',new THREE.BufferAttribute(spos,3));
+const sparks=new THREE.Points(sgeo,new THREE.PointsMaterial({color:new THREE.Color(0xffd84d).multiplyScalar(3),size:.03,transparent:true,opacity:0,depthWrite:false,blending:THREE.AdditiveBlending}));scene.add(sparks);
+
+// ---------- znak ----------
+const S=2.2/820.32,PW=811.89*S,PH=820.32*S,PD=.32,Y0=1.5;
+const logo=new THREE.Group();logo.position.y=Y0;scene.add(logo);
+const yellow=new THREE.MeshStandardMaterial({color:0xffcc00,roughness:.32,metalness:0,envMapIntensity:.7,emissive:0xffcc00,emissiveIntensity:.04});
+// płyta: zwykły prostopadłościan i proste materiały (Safari na iOS źle renderował zaokrągloną bryłę)
+const plateSide=new THREE.MeshLambertMaterial({color:0xffcc00,emissive:0xffcc00,emissiveIntensity:.08});
+let plateFace=plateSide;
+const plate=new THREE.Mesh(new THREE.BoxGeometry(PW,PH,PD),[plateSide,plateSide,plateSide,plateSide,plateSide,plateSide]);plate.visible=false;logo.add(plate);
+// kafle budujące płytę
+const NX=14,NY=14,tw=PW/NX,th=PH/NY;
+const tiles=new THREE.InstancedMesh(new RoundedBoxGeometry(tw*.96,th*.96,PD,2,.012),yellow,NX*NY);logo.add(tiles);
+const tileData=[];for(let j=0;j<NY;j++)for(let i=0;i<NX;i++){
+ const home=new THREE.Vector3(-PW/2+tw*(i+.5),-PH/2+th*(j+.5),0);
+ const dir=new THREE.Vector3((Math.random()-.5)*2,(Math.random()-.2)*1.6,Math.random()*1.2+.4).normalize().multiplyScalar(4+Math.random()*5);
+ const d=home.length()/1.6;tileData.push({home,from:home.clone().add(dir),rot:new THREE.Euler((Math.random()-.5)*7,(Math.random()-.5)*7,(Math.random()-.5)*7),delay:d*.55+Math.random()*.25});
+}
+// obrys płyty (szkic)
+const wireMat=new THREE.LineBasicMaterial({color:0xffcc00,transparent:true,opacity:1});
+const wires=[];
+function addWire(geo,parent,pos,scale){const e=new THREE.EdgesGeometry(geo,25);const l=new THREE.LineSegments(e,wireMat);if(pos)l.position.copy(pos);if(scale)l.scale.copy(scale);parent.add(l);wires.push(l);l.userData.n=e.attributes.position.count;return l;}
+addWire(new THREE.BoxGeometry(PW,PH,PD),logo);
+const letters=[],letterMat=new THREE.MeshStandardMaterial({color:0x0a0a0a,roughness:.2,metalness:.2,envMapIntensity:1.2,emissive:0xffcc00,emissiveIntensity:0});
+let ready=false;
+new SVGLoader().load('/nadx3d/nadx-logo-inline.svg',data=>{
+ data.paths.forEach(path=>{
+  // Safari na iOS nie odczytuje stylów CSS z pliku SVG, więc żółte tło też wygląda na czarny kształt.
+  // Rozpoznajemy je po rozmiarze (prawie cały znak) i pomijamy, niezależnie od koloru.
+  const shapes=SVGLoader.createShapes(path);if(!shapes.length)return;
+  {const bb=new THREE.Box2();shapes.forEach(sh=>sh.getPoints().forEach(pt=>bb.expandByPoint(pt)));const sz=new THREE.Vector2();bb.getSize(sz);if(sz.x>600||sz.y>600)return;}
+  if(path.color.getHex()!==0x000000)return;
+  const geo=new THREE.ExtrudeGeometry(shapes,{depth:34,bevelEnabled:true,bevelThickness:4,bevelSize:2.5,bevelSegments:3,curveSegments:24});
+  geo.computeBoundingBox();const bb=geo.boundingBox,c=new THREE.Vector3();bb.getCenter(c);
+  geo.translate(-c.x,-c.y,-bb.min.z);
+  {const n=geo.attributes.normal.array;for(let i=0;i<n.length;i+=3){if(!(Number.isFinite(n[i])&&Number.isFinite(n[i+1])&&Number.isFinite(n[i+2]))||(n[i]===0&&n[i+1]===0&&n[i+2]===0)){n[i]=0;n[i+1]=0;n[i+2]=1;}}}
+  const m=new THREE.Mesh(geo,letterMat);
+  const home=new THREE.Vector3((c.x-811.89/2)*S,-(c.y-820.32/2)*S,PD/2-.004);
+  m.position.copy(home);m.scale.set(S,-S,S);
+  m.userData={home,order:(c.y<410?0:2)+(c.x<406?0:1),pop:0};
+  logo.add(m);letters.push(m);
+  m.userData.wire=addWire(geo,logo,home,new THREE.Vector3(S,-S,S));
+ });
+ letters.sort((a,b)=>a.userData.order-b.userData.order);
+ letters.forEach((m,i)=>m.userData.i=i);
+ ready=true;
+ plate.visible=true;tiles.visible=true;try{renderer.compile(scene,camera);}catch(e){}plate.visible=false;
+});
+
+// ---------- makiety: wizytówki, papier firmowy, naklejka ----------
+const logoImg=new Image();logoImg.src='/nadx3d/nadx-logo-inline.svg';
+function canvasTex(w,h,draw){const c=document.createElement('canvas');c.width=w;c.height=h;const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=renderer.capabilities.getMaxAnisotropy();
+ const run=()=>{const g=c.getContext('2d');draw(g,w,h);t.needsUpdate=true;};run();
+ const again=()=>run();if(!logoImg.complete)logoImg.addEventListener('load',again,{once:true});if(document.fonts)document.fonts.ready.then(again);return t;}
+const rr=(g,x,y,w,h,r)=>{g.beginPath();g.roundRect(x,y,w,h,r);};
+const D_front=(g,w,h)=>{g.clearRect(0,0,w,h);rr(g,0,0,w,h,26);g.fillStyle='#ffcc00';g.fill();if(logoImg.complete&&logoImg.naturalWidth){const s=300;g.drawImage(logoImg,(w-s)/2,(h-s)/2-6,s,s*820/812);}};
+const D_back=(g,w,h)=>{g.clearRect(0,0,w,h);rr(g,0,0,w,h,26);g.fillStyle='#111';g.fill();
+ if(logoImg.complete&&logoImg.naturalWidth)g.drawImage(logoImg,70,70,118,118*820/812);
+ g.fillStyle='#fff';g.font='800 64px Inter, Arial';g.fillText('Dawid Wosiek',70,330);
+ g.fillStyle='#bdbdbd';g.font='500 32px Inter, Arial';g.fillText('Grafika, wideo i produkcja',70,380);
+ g.fillStyle='#fff';g.font='500 30px Inter, Arial';g.fillText('516 139 400',70,470);g.fillText('DawidWosiek@gmail.com',70,515);
+ g.fillStyle='#ffcc00';g.font='800 30px Inter, Arial';g.fillText('nadx.pl',w-70-g.measureText('nadx.pl').width,515);};
+const D_paper=(g,w,h)=>{g.fillStyle='#fafafa';g.fillRect(0,0,w,h);
+ if(logoImg.complete&&logoImg.naturalWidth)g.drawImage(logoImg,64,64,96,96*820/812);
+ g.fillStyle='#111';g.font='600 22px Inter, Arial';g.fillText('Dawid Wosiek / NADX',w-64-g.measureText('Dawid Wosiek / NADX').width,92);
+ g.fillStyle='#777';g.font='400 18px Inter, Arial';g.fillText('nadx.pl  |  516 139 400',w-64-g.measureText('nadx.pl  |  516 139 400').width,122);
+ g.fillStyle='#ffcc00';g.fillRect(64,200,w-128,6);
+ g.fillStyle='#d9d9d9';const rows=[[250,.42],[300,.92],[334,.88],[368,.95],[402,.7],[470,.9],[504,.94],[538,.86],[572,.6],[640,.93],[674,.9],[708,.8]];rows.forEach(([y,f])=>g.fillRect(64,y,(w-128)*f,12));
+ g.fillStyle='#111';g.fillRect(64,h-120,w-128,2);g.fillStyle='#999';g.font='400 16px Inter, Arial';g.fillText('Kraków  |  DawidWosiek@gmail.com',64,h-84);};
+const D_sticker=(g,w,h)=>{g.clearRect(0,0,w,h);g.beginPath();g.arc(w/2,h/2,w/2-4,0,Math.PI*2);g.fillStyle='#ffcc00';g.fill();g.lineWidth=10;g.strokeStyle='#111';g.stroke();if(logoImg.complete&&logoImg.naturalWidth){const s=300;g.drawImage(logoImg,(w-s)/2,(h-s)/2,s,s*820/812);}};
+// twarz płyty: logo narysowane z oryginalnego SVG
+plateFace=new THREE.MeshLambertMaterial({map:canvasTex(812,820,(g,w,h)=>{g.fillStyle='#ffcc00';g.fillRect(0,0,w,h);if(logoImg.complete&&logoImg.naturalWidth)g.drawImage(logoImg,0,0,w,h);}),emissive:0xffffff,emissiveIntensity:.35});
+plateFace.emissiveMap=plateFace.map;
+// makieta = obrys (szkic) + druk odsłaniany żółtą linią + rewers
+// ---------- makiety 3D: wizytówki, kubek, telefon, notes ----------
+renderer.localClippingEnabled=true;
+const scanMat=new THREE.MeshBasicMaterial({color:new THREE.Color(0xffcc00).multiplyScalar(2.2),transparent:true,opacity:.55,depthWrite:false,side:THREE.DoubleSide,blending:THREE.AdditiveBlending});
+// zestaw: grupa obiektu + materiały z płaszczyzną odcięcia (druk 3D od dołu do góry) + obrys z żółtych linii
+function kit(build,home,rot,delay){
+ const grp=new THREE.Group(),clip=new THREE.Plane(new THREE.Vector3(0,-1,0),-99);
+ const wire=new THREE.LineBasicMaterial({color:0xffcc00,transparent:true,opacity:0,depthWrite:false});
+ const M=o=>{o.clippingPlanes=[clip];o.clipShadows=true;return o;};
+ build(grp,M);
+ grp.traverse(o=>{if(o.isMesh&&!o.userData.noWire){const e=new THREE.LineSegments(new THREE.EdgesGeometry(o.geometry,28),wire);o.add(e);}});
+ grp.position.fromArray(home);grp.rotation.fromArray(rot);scene.add(grp);
+ grp.updateMatrixWorld(true);const bb=new THREE.Box3().setFromObject(grp);
+ const scan=new THREE.Mesh(new THREE.PlaneGeometry(1,1),scanMat);scan.rotation.x=-Math.PI/2;scan.scale.set((bb.max.x-bb.min.x)*1.25,(bb.max.z-bb.min.z)*1.25,1);scan.position.set((bb.min.x+bb.max.x)/2,0,(bb.min.z+bb.max.z)/2);scene.add(scan);
+ return {grp,clip,wire,scan,bb,home:new THREE.Vector3(...home),rot:new THREE.Euler(...rot),delay};
+}
+const mat=(o)=>new THREE.MeshStandardMaterial(o);
+const tex=(w,h,d)=>canvasTex(w,h,d);
+// 1) stos wizytówek z żółtymi krawędziami + złocone logo na wierzchu
+const D_foil=(g,w,h)=>{g.fillStyle='#141414';g.fillRect(0,0,w,h);if(logoImg.complete&&logoImg.naturalWidth){const s=260;const c=document.createElement('canvas');c.width=c.height=s;const x=c.getContext('2d');x.drawImage(logoImg,0,0,s,s*820/812);const d=x.getImageData(0,0,s,s);for(let i=0;i<d.data.length;i+=4){const dark=d.data[i]<90&&d.data[i+1]<90;d.data[i]=dark?20:255;d.data[i+1]=dark?20:204;d.data[i+2]=dark?20:0;}x.putImageData(d,0,0);g.drawImage(c,(w-s)/2,(h-s)/2);}};
+const stack=kit((G,M)=>{
+ const W=1.5,H=W*600/1050,T=.016,edge=M(mat({color:0xffcc00,roughness:.45}));
+ for(let i=0;i<7;i++){const top=i===6;const face=top?M(mat({map:tex(1050,600,D_foil),roughness:.3,metalness:.55,envMapIntensity:1.2})):M(mat({color:0x141414,roughness:.6}));
+  const c=new THREE.Mesh(new THREE.BoxGeometry(W,T,H),[edge,edge,face,M(mat({color:0x141414,roughness:.6})),edge,edge]);c.position.set(Math.sin(i*1.7)*.025,T/2+i*T,Math.cos(i*2.3)*.02);c.rotation.y=Math.sin(i*1.3)*.04;if(i<6)c.userData.noWire=i%3!==0;G.add(c);}
+ const lean=new THREE.Group();const back=M(mat({map:tex(1050,600,D_back),roughness:.5}));const front=M(mat({map:tex(1050,600,D_front),roughness:.4}));
+ const lc=new THREE.Mesh(new THREE.BoxGeometry(W,H,T),[edge,edge,edge,edge,back,front]);lean.add(lc);lean.position.set(.15,H/2+.06,-.42);lean.rotation.x=-.32;G.add(lean);
+},[-.35,0,1.9],[0,.35,0],0);
+// 2) kubek z żółtym logo
+const D_mug=(g,w,h)=>{g.clearRect(0,0,w,h);g.fillStyle='#ffcc00';g.fillRect(w*.08,h*.12,w*.84,h*.76);if(logoImg.complete&&logoImg.naturalWidth){const s=h*.62;g.drawImage(logoImg,(w-s*812/820)/2,(h-s)/2,s*812/820,s);}};
+const mug=kit((G,M)=>{
+ const pts=[[0,0],[.33,0],[.35,.02],[.37,.86],[.34,.86],[.32,.06],[0,.06]].map(([x,y])=>new THREE.Vector2(x,y));
+ const body=new THREE.Mesh(new THREE.LatheGeometry(pts,64),M(mat({color:0x111111,roughness:.18,metalness:.1,envMapIntensity:1.1,side:THREE.DoubleSide})));G.add(body);
+ const lab=new THREE.Mesh(new THREE.CylinderGeometry(.373,.364,.62,64,1,true,-.8,1.6),M(mat({map:tex(512,420,D_mug),transparent:true,alphaTest:.4,roughness:.25})));lab.position.y=.45;lab.userData.noWire=true;G.add(lab);
+ const handle=new THREE.Mesh(new THREE.TorusGeometry(.2,.045,16,40,Math.PI),M(mat({color:0x111111,roughness:.18})));handle.rotation.z=-Math.PI/2;handle.position.set(-.38,.45,0);G.add(handle);
+},[1.15,0,1.85],[0,-.55,0],.12);
+// 3) telefon z postem NADX
+const D_screen=(g,w,h)=>{g.fillStyle='#0d0d0d';g.fillRect(0,0,w,h);g.fillStyle='#fff';g.font='600 30px Inter, Arial';g.fillText('9:41',40,58);
+ g.fillStyle='#ffcc00';g.beginPath();g.arc(70,140,34,0,7);g.fill();if(logoImg.complete&&logoImg.naturalWidth)g.drawImage(logoImg,48,118,44,44*820/812);
+ g.fillStyle='#fff';g.font='700 30px Inter, Arial';g.fillText('nadx.pl',122,134);g.fillStyle='#9a9a9a';g.font='400 22px Inter, Arial';g.fillText('Kraków',122,164);
+ g.fillStyle='#ffcc00';g.fillRect(0,200,w,w);if(logoImg.complete&&logoImg.naturalWidth){const s=w*.6;g.drawImage(logoImg,(w-s)/2,200+(w-s)/2,s,s*820/812);}
+ const y=200+w+30;g.strokeStyle='#fff';g.lineWidth=4;g.beginPath();g.arc(56,y+14,14,0,7);g.stroke();g.strokeRect(96,y,28,28);g.beginPath();g.moveTo(150,y+28);g.lineTo(178,y);g.stroke();
+ g.fillStyle='#fff';g.font='700 26px Inter, Arial';g.fillText('Nowy znak gotowy do druku',40,y+80);g.fillStyle='#9a9a9a';g.font='400 22px Inter, Arial';g.fillText('Logo, wizytówki i oklejenia',40,y+116);};
+const phone=kit((G,M)=>{
+ const b=new THREE.Mesh(new THREE.BoxGeometry(.74,1.5,.07),M(mat({color:0x1a1a1a,roughness:.25,metalness:.7,envMapIntensity:1.2})));G.add(b);
+ const scr=new THREE.Mesh(new THREE.PlaneGeometry(.68,1.44),M(new THREE.MeshBasicMaterial({map:tex(600,1270,D_screen)})));scr.position.z=.0362;scr.userData.noWire=true;G.add(scr);
+ const cam=new THREE.Mesh(new THREE.CylinderGeometry(.03,.03,.02,20),M(mat({color:0x050505,roughness:.1})));cam.rotation.x=Math.PI/2;cam.position.set(0,.66,.037);cam.userData.noWire=true;G.add(cam);
+},[1.8,1.2,.95],[-.05,-.5,.05],.24);
+// 4) notes w twardej oprawie z żółtą gumką
+const D_cover=(g,w,h)=>{g.fillStyle='#161616';g.fillRect(0,0,w,h);if(logoImg.complete&&logoImg.naturalWidth){const s=w*.32;g.drawImage(logoImg,(w-s)/2,h*.38,s,s*820/812);}};
+const book=kit((G,M)=>{
+ const pages=M(mat({color:0xeeeeea,roughness:.9})),cover=M(mat({color:0x161616,roughness:.75}));
+ const b=new THREE.Mesh(new THREE.BoxGeometry(1.05,1.45,.14),[pages,cover,pages,pages,M(mat({map:tex(700,966,D_cover),roughness:.7})),cover]);G.add(b);
+ const band=new THREE.Mesh(new THREE.BoxGeometry(.05,1.47,.15),M(mat({color:0xffcc00,roughness:.5})));band.position.x=.38;band.userData.noWire=true;G.add(band);
+},[1.75,1.95,-1.15],[0,-.45,.05],.36);
+const mocks=[stack,mug,phone,book];
+
+const mockShadow=new THREE.Mesh(new THREE.PlaneGeometry(6.5,3),shadow.material.clone());mockShadow.rotation.x=-Math.PI/2;mockShadow.position.set(.2,.015,.4);scene.add(mockShadow);
+
+// ---------- post ----------
+const composer=new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene,camera));
+let bokeh=null;if(!mobile()&&!reduce){bokeh=new BokehPass(scene,camera,{focus:6,aperture:.0012,maxblur:.004});composer.addPass(bokeh);}
+const bloom=new UnrealBloomPass(new THREE.Vector2(innerWidth,innerHeight),.3,.45,1.15);composer.addPass(bloom);
+const grain=new ShaderPass({uniforms:{tDiffuse:{value:null},time:{value:0},ca:{value:0}},
+ vertexShader:'varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+ fragmentShader:'uniform sampler2D tDiffuse;uniform float time,ca;varying vec2 vUv;float h(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}void main(){vec2 o=(vUv-.5)*ca;vec4 c=texture2D(tDiffuse,vUv);c.r=texture2D(tDiffuse,vUv+o).r;c.b=texture2D(tDiffuse,vUv-o).b;c.rgb+=(h(vUv*913.+time)-.5)*.03;c.rgb*=mix(1.,.55,smoothstep(.4,.95,distance(vUv,vec2(.5))));gl_FragColor=c;}'});
+composer.addPass(grain);composer.addPass(new OutputPass());
+
+// ---------- kamera: klatki kluczowe ----------
+// p: postęp przewijania 0..1; c: pozycja kamery, l: punkt patrzenia
+const KEYS=[
+ {p:0,   c:[0,6.2,3.2], l:[0,.6,0]},     // szkic z góry
+ {p:.16, c:[1.4,3.6,5.6],l:[0,1.3,0]},
+ {p:.34, c:[-2.6,2.3,5.4],l:[0,1.5,0]},  // budowa z kafli
+ {p:.52, c:[3.9,1.9,4.9],l:[0,1.5,0]},   // litery – widok z boku
+ {p:.68, c:[-4.4,2.2,4.0],l:[0,1.5,.4]}, // rozkład na warstwy
+ {p:.8,  c:[.4,1.6,5.2], l:[0,1.5,0]},
+ {p:.88, c:[1.6,2.1,6.2], l:[.2,1.35,0]},  // zastosowanie: makiety
+ {p:1,   c:[.3,1.9,8.8], l:[-1.45,1.3,0]} // finał: znak po prawej
+];
+const vA=new THREE.Vector3(),vB=new THREE.Vector3(),camC=new THREE.Vector3(),camL=new THREE.Vector3();
+function camAt(p){
+ let i=0;while(i<KEYS.length-2&&p>KEYS[i+1].p)i++;
+ const a=KEYS[i],b=KEYS[i+1],f=sm((p-a.p)/(b.p-a.p));
+ camC.lerpVectors(vA.fromArray(a.c),vB.fromArray(b.c),f);camL.lerpVectors(vA.fromArray(a.l),vB.fromArray(b.l),f);
+ if(mobile()){const fin=seg(p,.8,1);camC.z+=3.4+fin*1.2;camC.y+=fin*.5;camL.x*= (1-fin);camL.y-=fin*.95;}
+}
+
+// ---------- podpisy etapów ----------
+const CAPS=[
+ [.02,.17,'Krok 1','Szkic.','Każdy znak zaczyna się od linii i proporcji.'],
+ [.2,.36,'Krok 2','Budowa.','Kształt składa się z pojedynczych elementów w jedną płaszczyznę.'],
+ [.4,.56,'Krok 3','Głębia.','Litery wychodzą z płyty i dostają światło.'],
+ [.6,.75,'Krok 4','Detal.','Każda warstwa sprawdzona osobno, zanim trafi do druku czy na ekran.'],
+ [.84,.94,'Krok 5','Zastosowanie.','Gotowy znak trafia na wizytówki, kubki, notesy i ekran telefonu.'],
+];
+let capShown=-2;
+function caption(p){
+ let idx=-1;CAPS.forEach((c,i)=>{if(p>=c[0]&&p<c[1])idx=i;});
+ if(idx!==capShown){capShown=idx;const el=$('lx-cap');el.classList.remove('on');
+  if(idx>=0){const c=CAPS[idx];setTimeout(()=>{if(capShown!==idx)return;el.innerHTML=`<small>${c[2]}</small><strong>${c[3]}</strong><span>${c[4]}</span>`;el.classList.add('on');},180);}}
+ $('lx-final').classList.toggle('on',p>.955);
+ $('lx-hint').style.opacity=p>.03?0:1;$('lx-bar').style.width=(p*100)+'%';
+}
+
+// ---------- interakcja ----------
+const ptr=new THREE.Vector2(),ptrS=new THREE.Vector2(),ray=new THREE.Raycaster();
+addEventListener('pointermove',e=>{ptr.set(e.clientX/innerWidth*2-1,-(e.clientY/innerHeight*2-1));},{passive:true});
+let pT=0,pS=0;
+const readP=()=>{const r=intro.getBoundingClientRect(),len=r.height-innerHeight;pT=len>0?cl(-r.top/len):0;};
+addEventListener('scroll',readP,{passive:true});readP();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight,false);composer.setSize(innerWidth,innerHeight);readP();});
+let visible=true;new IntersectionObserver(e=>{visible=e[0].isIntersecting;}).observe($('lx-pin'));
+
+const M=new THREE.Matrix4(),Q=new THREE.Quaternion(),Pv=new THREE.Vector3(),Sv=new THREE.Vector3(1,1,1),E=new THREE.Euler();
+function frame(){
+ requestAnimationFrame(frame);
+ const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;
+ if(!visible)return;
+ pS+=(pT-pS)*(1-Math.pow(.0008,dt));
+ const p=window.__forceP!=null?window.__forceP:(reduce?1:pS),k=reduce?0:1;
+ caption(p);
+ ptrS.lerp(ptr,Math.min(1,dt*3));
+
+ // etapy
+ const A=seg(p,0,.2),B=seg(p,.16,.42),Cc=seg(p,.4,.6),D=seg(p,.58,.8),Fin=seg(p,.8,.92);
+ // światła: zapalają się po kolei
+ strips.forEach((s,i)=>{const on=sm(seg(p,.02+i*.035,.08+i*.035));s.m.material.opacity=on;s.m.material.color.setScalar(1).set(0xffcc00).multiplyScalar(1+1.4*on);s.l.intensity=16*on;});
+ keyL.intensity=95*sm(seg(p,.14,.3));rim.intensity=60*sm(seg(p,.45,.6))*(1-.6*Fin);
+ // siatka szkicu
+ grid.material.opacity=.22*(1-sm(seg(p,.25,.45)));
+ floorMat.opacity=mobile()?1:(.86+.14*(1-sm(seg(p,.2,.4))));
+ // obrysy rysują się w etapie A, wracają w etapie D
+ const wireIn=sm(A),wireBack=Math.sin(Math.PI*seg(p,.6,.8));
+ wires.forEach((w,i)=>{const n=w.userData.n;const prog=Math.max(cl(wireIn*1.15-i*.05),wireBack);w.geometry.setDrawRange(0,Math.floor(n*prog/2)*2);w.visible=prog>0;});
+ wireMat.opacity=Math.max(1-sm(seg(p,.24,.42)),wireBack*.85);
+ // kafle
+ const solid=B>=1;tiles.visible=!solid&&B>0;plate.visible=solid;
+ if(tiles.visible){tileData.forEach((d,i)=>{const q=easeOut(cl((B*1.6-d.delay)/.6));Pv.lerpVectors(d.from,d.home,q);E.set(d.rot.x*(1-q),d.rot.y*(1-q),d.rot.z*(1-q));Q.setFromEuler(E);Sv.setScalar(q<.001?0.0001:.4+.6*q);M.compose(Pv,Q,Sv);tiles.setMatrixAt(i,M);});tiles.instanceMatrix.needsUpdate=true;}
+ shadow.material.opacity=.85*sm(B);
+ // litery: wyciągnięcie z płyty, potem rozkład na warstwy
+ ray.setFromCamera(ptrS,camera);const hit=(Fin>.95&&letters.length)?ray.intersectObjects(letters,false)[0]:null;
+ letters.forEach(m=>{
+  const u=m.userData,i=u.i;
+  const ex=easeBack(cl((Cc*1.5-i*.13)/.75));
+  const lay=Math.sin(Math.PI*cl((D*1.2-i*.05)));
+  u.pop+=((hit&&hit.object===m?1:0)-u.pop)*Math.min(1,dt*8);
+  m.visible=ex>.002;m.scale.z=S*Math.max(.002,ex);
+  m.position.set(u.home.x+lay*(u.home.x>0?.25:-.25),u.home.y+lay*(u.home.y>0?.18:-.18),u.home.z+lay*(.55+i*.18)+u.pop*.14);
+  m.rotation.y=lay*.25*(u.home.x>0?-1:1);
+  if(u.wire){u.wire.position.copy(m.position);u.wire.rotation.copy(m.rotation);}
+ });
+ letterMat.emissiveIntensity=.4*Math.sin(Math.PI*cl(Cc*1.1))+.25*wireBack;
+ // iskry przy wyciąganiu liter
+ const sp=seg(p,.4,.62);sparks.material.opacity=Math.sin(Math.PI*sp)*.9;
+ if(sp>0&&sp<1){for(let i=0;i<SPK;i++){const v=svel[i],tt=((sp*2.2+i/SPK)%1);spos[i*3]=v.x*tt*.9;spos[i*3+1]=Y0-.2+v.y*tt-1.6*tt*tt;spos[i*3+2]=PD/2+v.z*tt*.6;}sgeo.attributes.position.needsUpdate=true;}
+ sparks.position.copy(logo.position).setY(0);sparks.rotation.copy(logo.rotation);
+ // błysk przy złożeniu
+ const fl=Math.sin(Math.PI*seg(p,.8,.9));flash.intensity=7*fl;flash.position.set(-2.4+seg(p,.8,.9)*4.8,2.4,1.4);
+ grain.uniforms.ca.value=.006*fl+.003*Math.sin(Math.PI*seg(p,.58,.8));
+ // twarz płyty z nadrukiem dopiero po rozkładzie (iOS: gwarantuje widoczny znak)
+ plate.material[4]=p>.78?plateFace:plateSide;
+ // makiety
+ const Mk=seg(p,.83,.96);mockShadow.material.opacity=.7*sm(cl(Mk*1.4-.3));
+ mocks.forEach((m,i)=>{
+  const L=cl((Mk*1.4-m.delay)/.7);
+  const wireIn=cl(L/.3),rev=sm(cl((L-.28)/.55));
+  m.grp.visible=L>0;
+  const h=rev>=1?99:THREE.MathUtils.lerp(m.bb.min.y-.02,m.bb.max.y+.02,rev);m.clip.constant=h;
+  m.wire.opacity=wireIn*(1-rev*.85);
+  m.scan.visible=rev>0&&rev<1;m.scan.position.y=h;
+  const fl=rev>=1?1:0;m.grp.position.y=m.home.y+(m.home.y>.05?Math.sin(t*.8+i)*.03*k*fl:0);
+  m.grp.rotation.y=m.rot.y+Math.sin(t*.35+i)*.05*k*fl*(m.home.y>.05?1:.3);
+ });;
+ // ruch znaku
+ logo.rotation.set(-.04-ptrS.y*.12*k*Fin+Math.sin(Math.PI*D)*.15,(1-B)*-.6+Math.sin(t*.35)*.06*k*Fin+ptrS.x*.25*k*Fin-.18*Fin,0);
+ logo.position.y=Y0+Math.sin(t*.9)*.035*k;
+ // kamera
+ camAt(p);camC.x+=ptrS.x*.35*k;camC.y+=ptrS.y*.2*k;
+ camera.position.copy(camC);camera.lookAt(camL);
+ if(bokeh)bokeh.uniforms.focus.value=camera.position.distanceTo(logo.position);
+ dust.rotation.y=t*.01*k;
+ grain.uniforms.time.value=t%10;
+ composer.render(dt);
+}
+frame();
+}
+</script>
