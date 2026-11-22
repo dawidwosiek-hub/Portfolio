@@ -1,4 +1,5 @@
 ---
+import Lightbox from "../components/Lightbox.astro";
 import '../styles/global.css';
 import BrandLogo from '../components/BrandLogo.astro';
 import {site,phoneHref} from '../lib/content';
@@ -31,6 +32,7 @@ const path = Astro.url.pathname;
 <a class="button small yellow" href="/kontakt" data-track="quote_click">Wyceń projekt <span aria-hidden="true"><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></span></a>
 </nav></header>
 <main id="main" tabindex="-1"><slot/></main>
+<Lightbox/>
 <footer class="footer"><div class="footer-top"><BrandLogo/><p>Dobry pomysł.<br/>Jeszcze lepsza forma.</p><div><span class="eyebrow">MASZ COŚ W PLANACH?</span><a class="footer-link" href="/kontakt" data-track="quote_click">Porozmawiajmy <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a>{(site.email||site.phone)&&<div class="footer-contact">{site.email&&<a href={`mailto:${site.email}`}>{site.email}</a>}{site.phone&&<a href={phoneHref}>{site.phone}</a>}</div>}</div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} NADX</span><span>Kraków i okolice · Zdalnie w całej Polsce</span><a href="/prywatnosc">Prywatność</a></div></footer>
 <script>
 const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');

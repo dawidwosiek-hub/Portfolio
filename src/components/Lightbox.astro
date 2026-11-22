@@ -1,0 +1,44 @@
+<dialog class="lb" aria-label="Podgląd grafiki">
+ <div class="lb-bar"><span class="lb-hint">Kliknij grafikę, aby przybliżyć · przeciągnij, aby przesunąć</span><button type="button" class="lb-close">Zamknij <span aria-hidden="true">×</span></button></div>
+ <div class="lb-stage"><img alt=""/></div>
+</dialog>
+<script>
+const dlg=document.querySelector<HTMLDialogElement>('dialog.lb')!;
+const stage=dlg.querySelector<HTMLDivElement>('.lb-stage')!;
+const img=dlg.querySelector<HTMLImageElement>('img')!;
+let zoomed=false, drag:null|{x:number,y:number,sl:number,st:number,moved:boolean}=null, opener:Element|null=null;
+const best=(el:HTMLImageElement)=>{const set=(el.getAttribute('srcset')||'').split(',').map(s=>s.trim().split(/\s+/)).filter(p=>p[0]);if(set.length){set.sort((a,b)=>parseInt(b[1]||'0')-parseInt(a[1]||'0'));return set[0][0]}return el.currentSrc||el.src};
+const setZoom=(z:boolean,cx=.5,cy=.5)=>{zoomed=z;dlg.classList.toggle('zoomed',z);if(z){const w=Math.max(img.naturalWidth,stage.clientWidth*2);img.style.width=w+'px';requestAnimationFrame(()=>{stage.scrollLeft=img.offsetWidth*cx-stage.clientWidth/2;stage.scrollTop=img.offsetHeight*cy-stage.clientHeight/2})}else{img.style.width=''}};
+const open=(src:string,alt:string,from:Element)=>{opener=from;setZoom(false);img.src=src;img.alt=alt||'';dlg.showModal();document.documentElement.classList.add('lb-open')};
+dlg.addEventListener('close',()=>{document.documentElement.classList.remove('lb-open');img.removeAttribute('src');(opener as HTMLElement|null)?.focus?.()});
+dlg.querySelector('.lb-close')!.addEventListener('click',()=>dlg.close());
+document.addEventListener('click',e=>{
+ const t=e.target as Element; if(t.closest('dialog')) return;
+ const link=t.closest<HTMLAnchorElement>('a[data-zoom]');
+ if(link){e.preventDefault();const im=link.querySelector('img');open(link.href,im?.alt||'',link);return}
+ const im=t.closest<HTMLImageElement>('main figure img'); if(!im) return;
+ if(im.closest('a,button,[data-shiro-src],[data-scene-src]')) return;
+ e.preventDefault(); open(best(im),im.alt,im);
+});
+stage.addEventListener('pointerdown',e=>{if(!zoomed)return;drag={x:e.clientX,y:e.clientY,sl:stage.scrollLeft,st:stage.scrollTop,moved:false};stage.setPointerCapture(e.pointerId)});
+stage.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>4)drag.moved=true;stage.scrollLeft=drag.sl-dx;stage.scrollTop=drag.st-dy});
+stage.addEventListener('pointerup',e=>{const d=drag;drag=null;if(d&&d.moved)return;
+ if(e.target===img){const r=img.getBoundingClientRect();setZoom(!zoomed,(e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height)}
+ else if(!zoomed) dlg.close()});
+</script>
+<style is:global>
+ dialog.lb{width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#0d0d0d;color:#fff;inset:0}
+ dialog.lb::backdrop{background:rgba(0,0,0,.85)}
+ .lb-bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 20px;z-index:2;background:linear-gradient(#0d0d0dee,#0d0d0d00)}
+ .lb-hint{font-size:.72rem;color:#bdbdbd}
+ .lb-close{background:#fff;color:#101010;border:0;padding:10px 16px;font:inherit;font-size:.8rem;font-weight:600;cursor:pointer}
+ .lb-close span{font-size:1.1rem;margin-left:6px}
+ .lb-stage{position:absolute;inset:0;overflow:auto;display:grid;place-items:center;padding:56px 20px 20px;box-sizing:border-box;touch-action:pan-x pan-y}
+ .lb-stage img{display:block;max-width:100%;max-height:calc(100dvh - 80px);width:auto;height:auto;cursor:zoom-in;user-select:none;-webkit-user-drag:none}
+ dialog.lb.zoomed .lb-stage{display:block;padding:0;cursor:grab}
+ dialog.lb.zoomed .lb-stage img{max-width:none;max-height:none;cursor:zoom-out}
+ html.lb-open{overflow:hidden}
+ main figure img{cursor:zoom-in}
+ main figure a img,main figure button img{cursor:zoom-in}
+ @media(max-width:760px){.lb-hint{display:none}}
+</style>
