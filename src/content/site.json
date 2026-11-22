@@ -302,19 +302,19 @@
         "Ulotka dla techników",
         "Przygotowanie plików do druku"
       ],
-      "image": "/media/estetic-studio/scena-komplet-1536.webp",
-      "imageSmall": "/media/estetic-studio/scena-komplet-768.webp",
+      "image": "/media/estetic-studio/scena-pracownia-1536.webp",
+      "imageSmall": "/media/estetic-studio/scena-pracownia-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "shareImage": "/media/estetic-studio/scena-komplet-1536.webp",
-      "imageCaption": "Estetic Studio · ulotki i wizytówki.",
-      "alt": "Ulotki i czarne wizytówki Estetic Studio na trawertynowym blacie w miękkim, porannym świetle.",
+      "shareImage": "/media/estetic-studio/scena-pracownia-1536.webp",
+      "imageCaption": "Estetic Studio · materiały w pracowni.",
+      "alt": "Ulotki i czarne wizytówki Estetic Studio na grafitowym blacie pracowni protetycznej, obok modelu protezy i narzędzi.",
       "cover": {
-        "src": "/media/estetic-studio/scena-komplet-1536.webp",
-        "smallSrc": "/media/estetic-studio/scena-komplet-768.webp",
+        "src": "/media/estetic-studio/scena-pracownia-1536.webp",
+        "smallSrc": "/media/estetic-studio/scena-pracownia-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Ulotki i czarne wizytówki Estetic Studio na trawertynowym blacie w miękkim, porannym świetle.",
+        "alt": "Ulotki i czarne wizytówki Estetic Studio na grafitowym blacie pracowni protetycznej, obok modelu protezy i narzędzi.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#5fc7b0",
@@ -322,8 +322,8 @@
       "need": "Pracownia potrzebowała znaku i materiałów, które pokażą nowoczesną technologię i precyzję wykonania — osobno dla lekarzy stomatologów i dla techników.",
       "solution": "Znak łączy uproszczony kontur zęba z szerokim, technicznym krojem. Czarne tło, biel i miętowy akcent przechodzą z wizytówki na ulotki, a układ treści prowadzi od głównego hasła do konkretów i realizacji.",
       "galleryLabel": "Komplet",
-      "galleryTitle": "Jeden język.\nKażdy format.",
-      "galleryIntro": "Wizytówka i dwie ulotki tworzą zestaw: ten sam znak, czerń z miętowym akcentem i rytm informacji.",
+      "galleryTitle": "Materiały\nw pracowni.",
+      "galleryIntro": "Ulotki dla lekarzy i techników oraz wizytówki — w miejscu, w którym marka naprawdę pracuje: na blacie laboratorium, obok protez i narzędzi.",
       "gallery": [],
       "applications": [
         {
@@ -332,11 +332,11 @@
           "title": "Wizytówka.",
           "description": "Czarny karton, cienka linia znaku i miętowy akcent. Minimum treści, maksimum charakteru — wizytówka, którą zapamiętuje się po jednym spojrzeniu.",
           "image": {
-            "src": "/media/estetic-studio/scena-wizytowka-1536.webp",
-            "smallSrc": "/media/estetic-studio/scena-wizytowka-768.webp",
+            "src": "/media/estetic-studio/scena-wizytowka-lab-1536.webp",
+            "smallSrc": "/media/estetic-studio/scena-wizytowka-lab-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Czarna wizytówka Estetic Studio trzymana w dłoni na tle jasnej pracowni protetycznej.",
+            "alt": "Czarna wizytówka Estetic Studio w dłoni technika w rękawiczce, w tle pracownia z drukarką 3D i protezami.",
             "kind": "visualization",
             "caption": "Wizytówka · wizualizacja projektu."
           },
@@ -366,15 +366,6 @@
           "label": "Ulotki",
           "title": "Dwie ulotki.\nDwóch odbiorców.",
           "description": "Ulotka dla lekarzy stawia na efekt i jakość protez, ulotka dla techników — na technologię, sprzęt i współpracę. Wspólna siatka sprawia, że obie wyglądają jak jedna seria.",
-          "image": {
-            "src": "/media/estetic-studio/scena-ulotki-1536.webp",
-            "smallSrc": "/media/estetic-studio/scena-ulotki-768.webp",
-            "width": 1536,
-            "height": 2304,
-            "alt": "Ulotki Estetic Studio dla lekarzy i techników oraz wizytówki ułożone na trawertynowym blacie.",
-            "kind": "visualization",
-            "caption": "Ulotki A4 · wizualizacja projektu."
-          },
           "originals": [
             {
               "src": "/media/estetic-studio/ulotka-lekarze-1536.webp",
@@ -394,7 +385,16 @@
               "kind": "original",
               "caption": "Ulotka dla techników · oryginalny projekt."
             }
-          ]
+          ],
+          "image": {
+            "src": "/media/estetic-studio/ulotki-plansza-1536.webp",
+            "smallSrc": "/media/estetic-studio/ulotki-plansza-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Ulotki Estetic Studio dla lekarzy i techników obok siebie na grafitowym tle.",
+            "caption": "Ulotki A4 · projekt.",
+            "kind": "original"
+          }
         }
       ],
       "published": true,
@@ -626,19 +626,19 @@
         "Samodzielny znak",
         "Pliki do druku i do internetu"
       ],
-      "image": "/media/parkiety-przybycien/scena-parkiet-1536.webp",
-      "imageSmall": "/media/parkiety-przybycien/scena-parkiet-768.webp",
+      "image": "/media/parkiety-przybycien/scena-bus-1536.webp",
+      "imageSmall": "/media/parkiety-przybycien/scena-bus-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "shareImage": "/media/parkiety-przybycien/scena-parkiet-1536.webp",
-      "imageCaption": "Parkiety Przybycień · monogram i wersja jednobarwna.",
-      "alt": "Karta z monogramem PP i grafitowa wizytówka z logo Parkiety Przybycień na dębowym parkiecie w jodełkę.",
+      "shareImage": "/media/parkiety-przybycien/scena-bus-1536.webp",
+      "imageCaption": "Parkiety Przybycień · oklejenie busa.",
+      "alt": "Grafitowy bus firmowy z białym logo Parkiety Przybycień na burcie, zaparkowany przed nowym domem.",
       "cover": {
-        "src": "/media/parkiety-przybycien/scena-parkiet-1536.webp",
-        "smallSrc": "/media/parkiety-przybycien/scena-parkiet-768.webp",
+        "src": "/media/parkiety-przybycien/scena-bus-1536.webp",
+        "smallSrc": "/media/parkiety-przybycien/scena-bus-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Karta z monogramem PP i grafitowa wizytówka z logo Parkiety Przybycień na dębowym parkiecie w jodełkę.",
+        "alt": "Grafitowy bus firmowy z białym logo Parkiety Przybycień na burcie, zaparkowany przed nowym domem.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#7e4930",
@@ -694,6 +694,36 @@
         }
       ],
       "applications": [
+        {
+          "slug": "wizytowka",
+          "label": "Wizytówka",
+          "title": "Wizytówka w dłoni fachowca.",
+          "description": "Biała wizytówka z pełnym logo — wręczana na budowie, przy świeżo ułożonej jodełce. Prosta, czytelna i solidna jak sama firma.",
+          "image": {
+            "src": "/media/parkiety-przybycien/scena-wizytowka-1536.webp",
+            "smallSrc": "/media/parkiety-przybycien/scena-wizytowka-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Wizytówka z logo Parkiety Przybycień w dłoni parkieciarza, w tle świeżo ułożona jodełka i narzędzia.",
+            "kind": "visualization",
+            "caption": "Wizytówka · wizualizacja projektu."
+          }
+        },
+        {
+          "slug": "monogram",
+          "label": "Monogram",
+          "title": "Monogram i wersja jednobarwna.",
+          "description": "Sam znak PP na białej karcie i biała wersja logo na grafitowej wizytówce — na dębowym parkiecie, który firma układa od 1980 roku.",
+          "image": {
+            "src": "/media/parkiety-przybycien/scena-parkiet-1536.webp",
+            "smallSrc": "/media/parkiety-przybycien/scena-parkiet-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Karta z monogramem PP i grafitowa wizytówka z białym logo na dębowym parkiecie w jodełkę.",
+            "kind": "visualization",
+            "caption": "Monogram · wizualizacja projektu."
+          }
+        },
         {
           "slug": "szyld",
           "label": "Szyld",
@@ -1010,19 +1040,19 @@
         "Plakat i ulotka szkoły zajęć pozalekcyjnych",
         "Przygotowanie plików do druku"
       ],
-      "image": "/media/robo-edukacja/scena-plakat-lato-1536.webp",
-      "imageSmall": "/media/robo-edukacja/scena-plakat-lato-768.webp",
+      "image": "/media/robo-edukacja/scena-sala-lato-1536.webp",
+      "imageSmall": "/media/robo-edukacja/scena-sala-lato-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "shareImage": "/media/robo-edukacja/scena-plakat-lato-1536.webp",
+      "shareImage": "/media/robo-edukacja/scena-sala-lato-1536.webp",
       "imageCaption": "Plakat Letnie ROBO · wizualizacja projektu.",
-      "alt": "Plakat Letnie ROBO w dębowej ramie na jasnej ścianie nad komodą.",
+      "alt": "Plakat Letnie ROBO przypięty do tablicy korkowej w kolorowej sali zajęć z robotami z klocków.",
       "cover": {
-        "src": "/media/robo-edukacja/scena-plakat-lato-1536.webp",
-        "smallSrc": "/media/robo-edukacja/scena-plakat-lato-768.webp",
+        "src": "/media/robo-edukacja/scena-sala-lato-1536.webp",
+        "smallSrc": "/media/robo-edukacja/scena-sala-lato-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Plakat Letnie ROBO w dębowej ramie na jasnej ścianie nad komodą.",
+        "alt": "Plakat Letnie ROBO przypięty do tablicy korkowej w kolorowej sali zajęć z robotami z klocków.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#3aa935",
@@ -1040,11 +1070,11 @@
           "title": "Lato i zima.\nJedna seria.",
           "description": "Ulotki A5 obu edycji mają ten sam układ: program, terminy, lokalizacje i cenę. Zmienia się tylko klimat — zieleń lata i błękit zimy.",
           "image": {
-            "src": "/media/robo-edukacja/scena-ulotki-1536.webp",
-            "smallSrc": "/media/robo-edukacja/scena-ulotki-768.webp",
+            "src": "/media/robo-edukacja/scena-lawka-1536.webp",
+            "smallSrc": "/media/robo-edukacja/scena-lawka-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Ulotki Letnie ROBO i Zimowe ROBO trzymane obok siebie nad dębowym stołem.",
+            "alt": "Ulotki Letnie ROBO i Zimowe ROBO na ławce między klockami, robotem i tabletem.",
             "kind": "visualization",
             "caption": "Ulotki A5 · wizualizacja projektu."
           },
@@ -1073,13 +1103,13 @@
           "slug": "zimowe",
           "label": "Zima",
           "title": "Edycja zimowa.",
-          "description": "Plakat zimowej edycji w tej samej ramie — rodzic, który zna letnią wersję, od razu rozpozna markę.",
+          "description": "Zimowa edycja na tej samej tablicy w sali zajęć — ten sam układ, inny klimat. Rodzic od razu rozpozna markę.",
           "image": {
-            "src": "/media/robo-edukacja/scena-plakat-zima-1536.webp",
-            "smallSrc": "/media/robo-edukacja/scena-plakat-zima-768.webp",
+            "src": "/media/robo-edukacja/scena-sala-zima-1536.webp",
+            "smallSrc": "/media/robo-edukacja/scena-sala-zima-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Plakat Zimowe ROBO w dębowej ramie na jasnej ścianie nad komodą.",
+            "alt": "Plakat Zimowe ROBO przypięty do tablicy korkowej w sali zajęć z robotyki.",
             "kind": "visualization",
             "caption": "Plakat A3 · wizualizacja projektu."
           }
@@ -1105,21 +1135,30 @@
           "title": "Zajęcia pozalekcyjne.",
           "description": "Plakat i ulotka szkoły ROBO Edukacja: robotyka z klockami, programowanie i druk 3D, z kodem QR do zapisu na lekcję próbną.",
           "image": {
-            "src": "/media/robo-edukacja/plakat-edukacja-1536.webp",
-            "smallSrc": "/media/robo-edukacja/plakat-edukacja-768.webp",
-            "width": 1024,
-            "height": 1443,
-            "alt": "Plakat ROBO Edukacja.",
-            "kind": "original",
-            "caption": "Plakat · projekt."
+            "src": "/media/robo-edukacja/scena-lawka-edukacja-1536.webp",
+            "smallSrc": "/media/robo-edukacja/scena-lawka-edukacja-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plakat i ulotka ROBO Edukacja na ławce między klockami i robotem.",
+            "kind": "visualization",
+            "caption": "Plakat i ulotka · wizualizacja projektu."
           },
           "originals": [
+            {
+              "src": "/media/robo-edukacja/plakat-edukacja-1536.webp",
+              "smallSrc": "/media/robo-edukacja/plakat-edukacja-768.webp",
+              "width": 1024,
+              "height": 1443,
+              "alt": "Oryginalny plakat ROBO Edukacja.",
+              "kind": "original",
+              "caption": "Plakat · oryginalny projekt."
+            },
             {
               "src": "/media/robo-edukacja/ulotka-edukacja-1536.webp",
               "smallSrc": "/media/robo-edukacja/ulotka-edukacja-768.webp",
               "width": 1024,
               "height": 1444,
-              "alt": "Ulotka ROBO Edukacja.",
+              "alt": "Oryginalna ulotka ROBO Edukacja.",
               "kind": "original",
               "caption": "Ulotka · oryginalny projekt."
             }
