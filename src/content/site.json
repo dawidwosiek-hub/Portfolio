@@ -158,13 +158,13 @@
           "title": "Naklejki Car Rental.",
           "description": "Projekt naklejki SHIRO Car Rental łączy znak z ciemnym, geometrycznym tłem. Sześciokąty i czerwone akcenty rozwijają motoryzacyjny charakter marki.",
           "image": {
-            "src": "/media/shiro/scena-naklejka-1536.webp",
-            "smallSrc": "/media/shiro/scena-naklejka-768.webp",
+            "src": "/media/shiro/naklejki-cutout-1536.webp",
+            "smallSrc": "/media/shiro/naklejki-cutout-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Naklejka SHIRO Car Rental na tylnej szybie czarnego auta na parkingu wypożyczalni o zmierzchu.",
+            "alt": "Wizualizacja naklejek SHIRO Car Rental.",
             "kind": "visualization",
-            "caption": "Naklejka na szybie auta · wizualizacja projektu."
+            "caption": "Naklejki SHIRO · wizualizacja projektu."
           },
           "original": {
             "src": "/media/shiro/naklejka-projekt-1536.webp",
