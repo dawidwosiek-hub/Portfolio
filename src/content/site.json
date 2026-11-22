@@ -401,13 +401,13 @@
       "imageHeight": 1024,
       "shareImage": "/media/prato-development/scena-telefon-1536.webp",
       "imageCaption": "Relacja z budowy · wizualizacja projektu.",
-      "alt": "Telefon w dłoni z kadrem relacji z wnętrza budynku Prato Development.",
+      "alt": "Telefon w dłoni z kadrem relacji pokazującym inwestycję Prato Development z góry.",
       "cover": {
         "src": "/media/prato-development/scena-telefon-1536.webp",
         "smallSrc": "/media/prato-development/scena-telefon-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Telefon w dłoni z kadrem relacji z wnętrza budynku Prato Development.",
+        "alt": "Telefon w dłoni z kadrem relacji pokazującym inwestycję Prato Development z góry.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#d9a21b",
@@ -452,16 +452,7 @@
               "width": 720,
               "height": 1280
             }
-          ],
-          "image": {
-            "src": "/media/prato-development/scena-telefon-2-1536.webp",
-            "smallSrc": "/media/prato-development/scena-telefon-2-768.webp",
-            "width": 1536,
-            "height": 2048,
-            "alt": "Telefon w dłoni z widokiem inwestycji Prato Development z góry.",
-            "kind": "visualization",
-            "caption": "Relacja · widok inwestycji z góry."
-          }
+          ]
         }
       ],
       "published": true,
@@ -1025,41 +1016,68 @@
       "galleryLabel": "Plakaty",
       "galleryTitle": "Seria, nie pojedynczy plakat.",
       "galleryIntro": "Wersja letnia i zimowa mają wspólny układ, a zmienia się klimat. Klient może kolejne edycje ogłaszać w tym samym stylu.",
-      "gallery": [
-        {
-          "src": "/media/robo-edukacja/plakat-letnie-1536.webp",
-          "smallSrc": "/media/robo-edukacja/plakat-letnie-768.webp",
-          "width": 1536,
-          "height": 2166,
-          "alt": "Oryginalny plakat Letnie ROBO — półkolonie 2026.",
-          "caption": "Plakat A3 · półkolonie letnie.",
-          "kind": "original"
-        },
-        {
-          "src": "/media/robo-edukacja/plakat-zimowe-1536.webp",
-          "smallSrc": "/media/robo-edukacja/plakat-zimowe-768.webp",
-          "width": 1536,
-          "height": 2166,
-          "alt": "Oryginalny plakat Zimowe ROBO — półkolonie 2026.",
-          "caption": "Plakat A3 · półkolonie zimowe.",
-          "kind": "original"
-        }
-      ],
+      "gallery": [],
       "applications": [
+        {
+          "slug": "letnie",
+          "label": "Lato",
+          "title": "Półkolonie letnie.",
+          "description": "Plakat A3 i ulotka A5 z pełnym programem, terminami turnusów i ceną. Zielone tło i hasło „Letnie” widać z daleka.",
+          "image": {
+            "src": "/media/robo-edukacja/scena-ulotka-letnia-1536.webp",
+            "smallSrc": "/media/robo-edukacja/scena-ulotka-letnia-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Ulotka Letnie ROBO trzymana w dłoniach nad drewnianym stołem.",
+            "kind": "visualization",
+            "caption": "Ulotka A5 · wizualizacja projektu."
+          },
+          "originals": [
+            {
+              "src": "/media/robo-edukacja/plakat-letnie-1536.webp",
+              "smallSrc": "/media/robo-edukacja/plakat-letnie-768.webp",
+              "width": 1536,
+              "height": 2166,
+              "alt": "Oryginalny plakat Letnie ROBO.",
+              "kind": "original",
+              "caption": "Plakat A3 · oryginalny projekt."
+            }
+          ]
+        },
         {
           "slug": "zimowe",
           "label": "Zima",
           "title": "Edycja zimowa.",
-          "description": "Ten sam układ w zimowej kolorystyce. Rodzic, który zna letnią edycję, od razu rozpozna markę.",
+          "description": "Ten sam układ w zimowej kolorystyce — na tym samym przystanku od razu widać, że to jedna seria.",
           "image": {
-            "src": "/media/robo-edukacja/scena-ulotka-zimowa-1536.webp",
-            "smallSrc": "/media/robo-edukacja/scena-ulotka-zimowa-768.webp",
+            "src": "/media/robo-edukacja/scena-przystanek-zima-1536.webp",
+            "smallSrc": "/media/robo-edukacja/scena-przystanek-zima-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Ulotka Zimowe ROBO trzymana w dłoniach nad drewnianym stołem.",
+            "alt": "Plakat Zimowe ROBO w podświetlanej gablocie na przystanku.",
             "kind": "visualization",
-            "caption": "Ulotka A5 · wizualizacja projektu."
-          }
+            "caption": "Plakat A3 · wizualizacja projektu."
+          },
+          "originals": [
+            {
+              "src": "/media/robo-edukacja/scena-ulotka-zimowa-1536.webp",
+              "smallSrc": "/media/robo-edukacja/scena-ulotka-zimowa-768.webp",
+              "width": 1536,
+              "height": 1024,
+              "alt": "Ulotka Zimowe ROBO trzymana w dłoniach nad drewnianym stołem.",
+              "kind": "visualization",
+              "caption": "Ulotka A5 · wizualizacja projektu."
+            },
+            {
+              "src": "/media/robo-edukacja/plakat-zimowe-1536.webp",
+              "smallSrc": "/media/robo-edukacja/plakat-zimowe-768.webp",
+              "width": 1536,
+              "height": 2166,
+              "alt": "Oryginalny plakat Zimowe ROBO.",
+              "kind": "original",
+              "caption": "Plakat A3 · oryginalny projekt."
+            }
+          ]
         },
         {
           "slug": "baner",
@@ -1099,119 +1117,6 @@
               "alt": "Ulotka ROBO Edukacja.",
               "kind": "original",
               "caption": "Ulotka · oryginalny projekt."
-            }
-          ]
-        }
-      ],
-      "published": true,
-      "featured": false
-    },
-    {
-      "slug": "dmk-general-group-wizytowki-i-banery",
-      "name": "DMK General Group",
-      "category": "druk i reklama",
-      "scope": "Wizytówki w dwóch wariantach i banery reklamowe dla firmy z branży energetycznej.",
-      "teaser": "Wizytówki dla zespołu i banery w dwóch formatach dla firmy z branży energetycznej.",
-      "scopeItems": [
-        "Wizytówki dla zespołu — wariant jasny",
-        "Wizytówki — wariant ciemny",
-        "Baner 152 × 225 cm",
-        "Baner 95 × 140 cm",
-        "Przygotowanie plików do druku"
-      ],
-      "image": "/media/dmk/scena-baner-1536.webp",
-      "imageSmall": "/media/dmk/scena-baner-768.webp",
-      "imageWidth": 1536,
-      "imageHeight": 1024,
-      "shareImage": "/media/dmk/scena-baner-1536.webp",
-      "imageCaption": "Baner 152 × 225 cm · wizualizacja projektu.",
-      "alt": "Baner DMK General Group zawieszony na stalowym ogrodzeniu obok pachołka drogowego.",
-      "cover": {
-        "src": "/media/dmk/scena-baner-1536.webp",
-        "smallSrc": "/media/dmk/scena-baner-768.webp",
-        "width": 1536,
-        "height": 1024,
-        "alt": "Baner DMK General Group zawieszony na stalowym ogrodzeniu obok pachołka drogowego.",
-        "caption": "Wizualizacja projektu"
-      },
-      "accent": "#1f3fd1",
-      "client": "DMK General Group — prefabrykacja rozdzielnic i stacji transformatorowych.",
-      "need": "Firma potrzebowała materiałów, które pokażą realną pracę zespołu: wizytówek dla kolejnych osób i banerów z zakresem usług.",
-      "solution": "Zdjęcia z realizacji grają główną rolę, a mocny niebieski i ukośne cięcia porządkują dane kontaktowe. Wizytówki przygotowałem w dwóch wariantach — jasnym i ciemnym — z kodem QR na rewersie.",
-      "galleryLabel": "Banery",
-      "galleryTitle": "Banery.",
-      "galleryIntro": "Dwa formaty banera z tą samą treścią: zdjęcia z realizacji, zakres usług i dane firmy.",
-      "gallery": [
-        {
-          "src": "/media/dmk/baner-152x225-1536.webp",
-          "smallSrc": "/media/dmk/baner-152x225-768.webp",
-          "width": 1024,
-          "height": 1513,
-          "alt": "Oryginalny projekt banera DMK 152 × 225 cm.",
-          "kind": "original",
-          "caption": "Baner 152 × 225 cm · oryginalny projekt."
-        },
-        {
-          "src": "/media/dmk/baner-95x140-1536.webp",
-          "smallSrc": "/media/dmk/baner-95x140-768.webp",
-          "width": 1024,
-          "height": 1505,
-          "alt": "Oryginalny projekt banera DMK 95 × 140 cm.",
-          "kind": "original",
-          "caption": "Baner 95 × 140 cm · oryginalny projekt."
-        }
-      ],
-      "applications": [
-        {
-          "slug": "wizytowki",
-          "label": "Wizytówki",
-          "title": "Wizytówki dla zespołu.",
-          "description": "Wspólny awers firmy i rewers z danymi konkretnej osoby oraz kodem QR. Powstał też ciemny wariant, bardziej elegancki.",
-          "image": {
-            "src": "/media/dmk/scena-wizytowki-1536.webp",
-            "smallSrc": "/media/dmk/scena-wizytowki-768.webp",
-            "width": 1536,
-            "height": 1024,
-            "alt": "Awers i rewers wizytówki DMK leżące na ciemnym, drewnianym blacie.",
-            "kind": "visualization",
-            "caption": "Wizytówki · wizualizacja projektu."
-          },
-          "originals": [
-            {
-              "src": "/media/dmk/wizytowka-awers-1536.webp",
-              "smallSrc": "/media/dmk/wizytowka-awers-768.webp",
-              "width": 1024,
-              "height": 588,
-              "alt": "Awers wizytówki DMK z logo, danymi firmy i zdjęciem pracownika.",
-              "kind": "original",
-              "caption": "Awers · wariant jasny."
-            },
-            {
-              "src": "/media/dmk/wizytowka-rewers-1536.webp",
-              "smallSrc": "/media/dmk/wizytowka-rewers-768.webp",
-              "width": 1024,
-              "height": 570,
-              "alt": "Rewers wizytówki DMK z imieniem, stanowiskiem i kodem QR.",
-              "kind": "original",
-              "caption": "Rewers · wariant jasny."
-            },
-            {
-              "src": "/media/dmk/wizytowka-ciemna-awers-1536.webp",
-              "smallSrc": "/media/dmk/wizytowka-ciemna-awers-768.webp",
-              "width": 1024,
-              "height": 568,
-              "alt": "Ciemny awers wizytówki DMK z białym logo.",
-              "kind": "original",
-              "caption": "Awers · wariant ciemny."
-            },
-            {
-              "src": "/media/dmk/wizytowka-ciemna-rewers-1536.webp",
-              "smallSrc": "/media/dmk/wizytowka-ciemna-rewers-768.webp",
-              "width": 1024,
-              "height": 568,
-              "alt": "Ciemny rewers wizytówki DMK z danymi kontaktowymi.",
-              "kind": "original",
-              "caption": "Rewers · wariant ciemny."
             }
           ]
         }
