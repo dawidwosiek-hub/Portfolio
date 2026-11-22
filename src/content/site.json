@@ -286,6 +286,206 @@
       }
     },
     {
+      "slug": "estetic-studio-pracownia-protetyczna",
+      "name": "Estetic Studio",
+      "category": "logo i identyfikacja",
+      "categories": [
+        "druk i reklama"
+      ],
+      "scope": "Logo, wizytówka i ulotki pracowni protetycznej Estetic Studio — spójny, ciemny język wizualny z miętowym akcentem.",
+      "teaser": "Znak pracowni protetycznej, wizytówka i dwie ulotki: dla lekarzy i dla techników.",
+      "scopeItems": [
+        "Projekt logo z motywem zęba",
+        "Warianty kolorystyczne znaku",
+        "Wizytówka",
+        "Ulotka dla lekarzy",
+        "Ulotka dla techników",
+        "Przygotowanie plików do druku"
+      ],
+      "image": "/media/estetic-studio/cover-1536.webp",
+      "imageSmall": "/media/estetic-studio/cover-768.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1024,
+      "shareImage": "/media/estetic-studio/cover-1536.webp",
+      "imageCaption": "Estetic Studio · ulotki i wizytówki.",
+      "alt": "Dwie ulotki i dwie czarne wizytówki Estetic Studio ułożone na jasnym stole.",
+      "cover": {
+        "src": "/media/estetic-studio/cover-1536.webp",
+        "smallSrc": "/media/estetic-studio/cover-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Dwie ulotki i dwie czarne wizytówki Estetic Studio ułożone na jasnym stole.",
+        "kind": "visualization",
+        "caption": "Wizualizacja projektu"
+      },
+      "accent": "#5fc7b0",
+      "client": "Estetic Studio — pracownia protetyczna.",
+      "need": "Pracownia potrzebowała znaku i materiałów, które pokażą nowoczesną technologię i precyzję wykonania — osobno dla lekarzy stomatologów i dla techników.",
+      "solution": "Znak łączy uproszczony kontur zęba z szerokim, technicznym krojem. Czarne tło, biel i miętowy akcent przechodzą z wizytówki na ulotki, a układ treści prowadzi od głównego hasła do konkretów i realizacji.",
+      "galleryLabel": "Materiały",
+      "galleryTitle": "Materiały w komplecie.",
+      "galleryIntro": "Wizytówka i dwie ulotki tworzą jeden zestaw. Ten sam znak, kolorystyka i rytm informacji w każdym formacie.",
+      "gallery": [
+        {
+          "src": "/media/estetic-studio/logo-warianty-1536.webp",
+          "smallSrc": "/media/estetic-studio/logo-warianty-768.webp",
+          "width": 1024,
+          "height": 1452,
+          "alt": "Arkusz z wariantami logo Estetic Studio na szarym tle.",
+          "caption": "Logo · warianty znaku.",
+          "kind": "original"
+        },
+        {
+          "src": "/media/estetic-studio/wizytowka-projekt-1536.webp",
+          "smallSrc": "/media/estetic-studio/wizytowka-projekt-768.webp",
+          "width": 1024,
+          "height": 583,
+          "alt": "Projekt czarnej wizytówki Estetic Studio z logo i nazwiskiem.",
+          "caption": "Wizytówka · projekt.",
+          "kind": "original"
+        }
+      ],
+      "applications": [
+        {
+          "slug": "ulotki",
+          "label": "Ulotki",
+          "title": "Dwie ulotki.\nDwóch odbiorców.",
+          "description": "Ulotka dla lekarzy stawia na efekt i jakość protez, ulotka dla techników — na technologię, sprzęt i współpracę. Wspólna siatka sprawia, że obie wyglądają jak jedna seria.",
+          "image": {
+            "src": "/media/estetic-studio/ulotki-1536.webp",
+            "smallSrc": "/media/estetic-studio/ulotki-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Ulotki Estetic Studio dla lekarzy i techników leżące obok siebie.",
+            "caption": "Ulotki A4 · wizualizacja projektu.",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/estetic-studio/ulotka-lekarze-1536.webp",
+              "smallSrc": "/media/estetic-studio/ulotka-lekarze-768.webp",
+              "width": 1024,
+              "height": 1452,
+              "alt": "Oryginalny projekt ulotki Estetic Studio dla lekarzy.",
+              "caption": "Ulotka dla lekarzy · oryginalny projekt.",
+              "kind": "original"
+            },
+            {
+              "src": "/media/estetic-studio/ulotka-technicy-1536.webp",
+              "smallSrc": "/media/estetic-studio/ulotka-technicy-768.webp",
+              "width": 1024,
+              "height": 1452,
+              "alt": "Oryginalny projekt ulotki Estetic Studio dla techników.",
+              "caption": "Ulotka dla techników · oryginalny projekt.",
+              "kind": "original"
+            }
+          ]
+        },
+        {
+          "slug": "wizytowka",
+          "label": "Wizytówka",
+          "title": "Wizytówka.",
+          "description": "Czarny karton, cienka linia znaku i miętowy akcent. Minimum treści, maksimum charakteru.",
+          "image": {
+            "src": "/media/estetic-studio/wizytowka-1536.webp",
+            "smallSrc": "/media/estetic-studio/wizytowka-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Dwie czarne wizytówki Estetic Studio na jasnym tle.",
+            "caption": "Wizytówka · wizualizacja projektu.",
+            "kind": "visualization"
+          }
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
+      "slug": "prato-development-rolki",
+      "name": "Prato Development",
+      "category": "filmy i social media",
+      "scope": "Pionowe filmy do social mediów dla dewelopera: rolka główna i seria relacji z budowy.",
+      "teaser": "Rolka i relacje z budowy dla dewelopera — pionowe wideo do social mediów.",
+      "scopeItems": [
+        "Rolka główna",
+        "Seria trzech relacji",
+        "Montaż pod format pionowy 9:16",
+        "Wersje do publikacji w social mediach"
+      ],
+      "image": "/media/prato-development/cover-1536.webp",
+      "imageSmall": "/media/prato-development/cover-768.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1024,
+      "shareImage": "/media/prato-development/cover-1536.webp",
+      "imageCaption": "Prato Development · filmy pionowe.",
+      "alt": "Trzy telefony z kadrami filmów Prato Development: wnętrze budynku, prowadzący i widok inwestycji z góry.",
+      "cover": {
+        "src": "/media/prato-development/cover-1536.webp",
+        "smallSrc": "/media/prato-development/cover-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Trzy telefony z kadrami filmów Prato Development: wnętrze budynku, prowadzący i widok inwestycji z góry.",
+        "kind": "visualization",
+        "caption": "Wizualizacja projektu"
+      },
+      "accent": "#d9a21b",
+      "client": "Prato Development — inwestycja mieszkaniowa.",
+      "need": "Deweloper chciał pokazywać postęp budowy w social mediach: krótko, dynamicznie i w formacie, który ludzie oglądają na telefonie.",
+      "solution": "Rolka główna przedstawia inwestycję z prowadzącym, a relacje pokazują szczegóły — wnętrza, okna i widok z góry. Wszystko w formacie 9:16, gotowe do publikacji.",
+      "galleryLabel": "Prezentacja",
+      "galleryTitle": "Inwestycja na ekranie telefonu.",
+      "galleryIntro": "Rolka i relacje zmontowane w formacie 9:16 — tak, jak ogląda się je w social mediach.",
+      "gallery": [],
+      "applications": [
+        {
+          "slug": "filmy",
+          "label": "Filmy",
+          "title": "Rolka i relacje.",
+          "description": "Rolka główna i trzy relacje z budowy. Kliknij, aby obejrzeć.",
+          "videos": [
+            {
+              "src": "",
+              "embed": "https://drive.google.com/file/d/1TxDuD8JLb2VeESYyoBvuoULeDc7VqiYy/preview",
+              "poster": "/media/prato-development/main-poster.webp",
+              "title": "Rolka główna",
+              "caption": "Prato Development · rolka.",
+              "width": 720,
+              "height": 1280
+            },
+            {
+              "src": "",
+              "embed": "https://drive.google.com/file/d/1ZOFSZ12bCkaD9gyZ4Twgr4M2bD-xTqPX/preview",
+              "poster": "/media/prato-development/story1-poster.webp",
+              "title": "Relacja 1",
+              "caption": "Teren inwestycji.",
+              "width": 720,
+              "height": 1280
+            },
+            {
+              "src": "",
+              "embed": "https://drive.google.com/file/d/1Db0f3Q1rAy7RzY0ZBN0NQFrCd_ohmK9A/preview",
+              "poster": "/media/prato-development/story2-poster.webp",
+              "title": "Relacja 2",
+              "caption": "Wnętrza budynku.",
+              "width": 720,
+              "height": 1280
+            },
+            {
+              "src": "",
+              "embed": "https://drive.google.com/file/d/18hSm5umTi8dyxnr-KAeiu7g521uRETYx/preview",
+              "poster": "/media/prato-development/story3-poster.webp",
+              "title": "Relacja 3",
+              "caption": "Inwestycja z góry.",
+              "width": 720,
+              "height": 1280
+            }
+          ]
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
       "slug": "diverto-materialy-promocyjne",
       "name": "Diverto",
       "category": "druk i reklama",
@@ -423,6 +623,107 @@
         "kind": "visualization",
         "caption": "Wizualizacja projektu"
       }
+    },
+    {
+      "slug": "parkiety-przybycien-logo",
+      "name": "Parkiety Przybycień",
+      "category": "logo i identyfikacja",
+      "scope": "Logo firmy parkieciarskiej z tradycją od 1980 roku — monogram PP, pełna wersja, warianty jednobarwne i znak.",
+      "teaser": "Monogram PP i komplet wariantów logo dla firmy działającej od 1980 roku.",
+      "scopeItems": [
+        "Projekt monogramu PP",
+        "Logo w wersji poziomej",
+        "Wersje jednobarwne: czarna i biała",
+        "Samodzielny znak",
+        "Pliki do druku i do internetu"
+      ],
+      "image": "/media/parkiety-przybycien/cover-1536.webp",
+      "imageSmall": "/media/parkiety-przybycien/cover-768.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1024,
+      "shareImage": "/media/parkiety-przybycien/cover-1536.webp",
+      "imageCaption": "Parkiety Przybycień · logo i warianty.",
+      "alt": "Logo Parkiety Przybycień na białej, grafitowej i miedzianej karcie.",
+      "cover": {
+        "src": "/media/parkiety-przybycien/cover-1536.webp",
+        "smallSrc": "/media/parkiety-przybycien/cover-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Logo Parkiety Przybycień na białej, grafitowej i miedzianej karcie.",
+        "kind": "visualization",
+        "caption": "Wizualizacja projektu"
+      },
+      "accent": "#7e4930",
+      "client": "Parkiety Przybycień — usługi od 1980 roku.",
+      "need": "Rodzinna firma z długim stażem potrzebowała znaku, który pokaże doświadczenie i solidność, a jednocześnie będzie wyglądać współcześnie na aucie, odzieży i w internecie.",
+      "solution": "Monogram buduje litera P powtórzona dwa razy, z ukośnymi cięciami przypominającymi układ klepki. Grafit i miedziany brąz nawiązują do drewna, a wersje jednobarwne działają tam, gdzie kolor nie jest możliwy.",
+      "logo": {
+        "src": "/media/parkiety-przybycien/logo-1536.webp",
+        "width": 1536,
+        "height": 649,
+        "alt": "Logo Parkiety Przybycień: monogram PP i napis z hasłem Usługi od 1980 roku.",
+        "caption": "Logo Parkiety Przybycień · wersja podstawowa."
+      },
+      "galleryLabel": "Warianty",
+      "galleryTitle": "Jeden znak.\nWiele zastosowań.",
+      "galleryIntro": "Wersja kolorowa, jednobarwna czarna i biała oraz samodzielny monogram — gotowe na każde tło i każdy nośnik.",
+      "gallery": [
+        {
+          "src": "/media/parkiety-przybycien/logo-mono-czarne-1536.webp",
+          "smallSrc": "/media/parkiety-przybycien/logo-mono-czarne-768.webp",
+          "width": 1536,
+          "height": 672,
+          "alt": "Czarna, jednobarwna wersja logo Parkiety Przybycień.",
+          "caption": "Wersja jednobarwna · czarna.",
+          "kind": "original"
+        },
+        {
+          "src": "/media/parkiety-przybycien/logo-mono-biale-1536.webp",
+          "smallSrc": "/media/parkiety-przybycien/logo-mono-biale-768.webp",
+          "width": 1536,
+          "height": 672,
+          "alt": "Biała wersja logo Parkiety Przybycień na grafitowym tle.",
+          "caption": "Wersja jednobarwna · biała.",
+          "kind": "original"
+        },
+        {
+          "src": "/media/parkiety-przybycien/znak-1536.webp",
+          "smallSrc": "/media/parkiety-przybycien/znak-768.webp",
+          "width": 1000,
+          "height": 1000,
+          "alt": "Samodzielny monogram PP w kolorach grafitu i miedzi.",
+          "caption": "Znak · monogram PP.",
+          "kind": "original"
+        },
+        {
+          "src": "/media/parkiety-przybycien/arkusz-logo-1536.webp",
+          "smallSrc": "/media/parkiety-przybycien/arkusz-logo-768.webp",
+          "width": 1024,
+          "height": 1448,
+          "alt": "Arkusz prezentacyjny logo Parkiety Przybycień.",
+          "caption": "Arkusz logo · oryginalny plik.",
+          "kind": "original"
+        }
+      ],
+      "applications": [
+        {
+          "slug": "system",
+          "label": "System",
+          "title": "Kolory i warianty.",
+          "description": "Grafit, miedź i jasne tło. Każdy wariant zachowuje proporcje i charakter znaku.",
+          "image": {
+            "src": "/media/parkiety-przybycien/warianty-1536.webp",
+            "smallSrc": "/media/parkiety-przybycien/warianty-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plansza z wariantami logo Parkiety Przybycień na białym, grafitowym, miedzianym i jasnym tle.",
+            "caption": "Plansza wariantów logo.",
+            "kind": "visualization"
+          }
+        }
+      ],
+      "published": true,
+      "featured": false
     },
     {
       "slug": "olsen-odziez-firmowa",
@@ -692,6 +993,287 @@
         "kind": "visualization",
         "caption": "Wizualizacja projektu"
       }
+    },
+    {
+      "slug": "robo-edukacja-polkolonie",
+      "name": "ROBO Edukacja",
+      "category": "druk i reklama",
+      "scope": "Plakaty, ulotki i baner dla półkolonii ROBO — edycja letnia, zimowa i materiały szkoły zajęć pozalekcyjnych.",
+      "teaser": "Seria plakatów, ulotek i baner dla półkolonii z robotyką i programowaniem.",
+      "scopeItems": [
+        "Plakat A3 i ulotka A5 — półkolonie letnie",
+        "Plakat i ulotka — półkolonie zimowe",
+        "Baner reklamowy",
+        "Plakat i ulotka szkoły zajęć pozalekcyjnych",
+        "Przygotowanie plików do druku"
+      ],
+      "image": "/media/robo-edukacja/cover-1536.webp",
+      "imageSmall": "/media/robo-edukacja/cover-768.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1024,
+      "shareImage": "/media/robo-edukacja/cover-1536.webp",
+      "imageCaption": "ROBO Edukacja · plakaty i ulotki.",
+      "alt": "Plakaty ROBO na półkolonie letnie i zimowe oraz ulotka ROBO Edukacja ułożone na stole.",
+      "cover": {
+        "src": "/media/robo-edukacja/cover-1536.webp",
+        "smallSrc": "/media/robo-edukacja/cover-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Plakaty ROBO na półkolonie letnie i zimowe oraz ulotka ROBO Edukacja ułożone na stole.",
+        "kind": "visualization",
+        "caption": "Wizualizacja projektu"
+      },
+      "accent": "#3aa935",
+      "client": "ROBO Edukacja — półkolonie i zajęcia dla dzieci.",
+      "need": "Organizator półkolonii dla dzieci w wieku 5–13 lat potrzebował materiałów, które od razu przyciągną uwagę dzieci, a rodzicom szybko podadzą program, terminy i cenę.",
+      "solution": "Pikselowy, „klockowy” styl nawiązuje do gier, które dzieci znają, a mocne kolory i duże hasła działają z daleka. Pod spodem treść jest uporządkowana w czytelne bloki: program, terminy, lokalizacje i cena.",
+      "galleryLabel": "Plakaty",
+      "galleryTitle": "Seria, nie pojedynczy plakat.",
+      "galleryIntro": "Wersja letnia i zimowa mają wspólny układ, a zmienia się klimat. Klient może kolejne edycje ogłaszać w tym samym stylu.",
+      "gallery": [
+        {
+          "src": "/media/robo-edukacja/plakat-letnie-1536.webp",
+          "smallSrc": "/media/robo-edukacja/plakat-letnie-768.webp",
+          "width": 1536,
+          "height": 2166,
+          "alt": "Oryginalny plakat Letnie ROBO — półkolonie 2026.",
+          "caption": "Plakat A3 · półkolonie letnie.",
+          "kind": "original"
+        },
+        {
+          "src": "/media/robo-edukacja/plakat-zimowe-1536.webp",
+          "smallSrc": "/media/robo-edukacja/plakat-zimowe-768.webp",
+          "width": 1536,
+          "height": 2166,
+          "alt": "Oryginalny plakat Zimowe ROBO — półkolonie 2026.",
+          "caption": "Plakat A3 · półkolonie zimowe.",
+          "kind": "original"
+        }
+      ],
+      "applications": [
+        {
+          "slug": "letnie",
+          "label": "Lato",
+          "title": "Półkolonie letnie.",
+          "description": "Plakat A3 i ulotka A5 z pełnym programem, terminami turnusów i ceną. Zielone tło i hasło „Letnie” widać z daleka.",
+          "image": {
+            "src": "/media/robo-edukacja/letnie-1536.webp",
+            "smallSrc": "/media/robo-edukacja/letnie-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plakat A3 i ulotka A5 Letnie ROBO na jasnym tle.",
+            "caption": "Plakat A3 i ulotka A5 · wizualizacja projektu.",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "zimowe",
+          "label": "Zima",
+          "title": "Edycja zimowa.",
+          "description": "Ten sam układ w zimowej kolorystyce. Rodzic, który zna letnią edycję, od razu rozpozna markę.",
+          "image": {
+            "src": "/media/robo-edukacja/zimowe-1536.webp",
+            "smallSrc": "/media/robo-edukacja/zimowe-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plakat A3 i ulotka A5 Zimowe ROBO na jasnym tle.",
+            "caption": "Plakat A3 i ulotka A5 · wizualizacja projektu.",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "baner",
+          "label": "Baner",
+          "title": "Baner.",
+          "description": "Najważniejsze informacje w poziomym formacie: hasło, wiek dzieci, lokalizacje i telefon — czytelne z kilkunastu metrów.",
+          "image": {
+            "src": "/media/robo-edukacja/baner-1536.webp",
+            "smallSrc": "/media/robo-edukacja/baner-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Baner ROBO Półkolonie z oczkami montażowymi zawieszony na jasnej ścianie.",
+            "caption": "Baner · wizualizacja projektu.",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/robo-edukacja/baner-projekt-1536.webp",
+              "smallSrc": "/media/robo-edukacja/baner-projekt-768.webp",
+              "width": 1536,
+              "height": 1044,
+              "alt": "Oryginalny projekt banera ROBO Półkolonie.",
+              "caption": "Baner · oryginalny projekt.",
+              "kind": "original"
+            }
+          ]
+        },
+        {
+          "slug": "edukacja",
+          "label": "Szkoła",
+          "title": "Zajęcia pozalekcyjne.",
+          "description": "Plakat i ulotka szkoły ROBO Edukacja: robotyka z klockami, programowanie i druk 3D, z kodem QR do zapisu na lekcję próbną.",
+          "image": {
+            "src": "/media/robo-edukacja/edukacja-1536.webp",
+            "smallSrc": "/media/robo-edukacja/edukacja-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plakat i ulotka ROBO Edukacja na jasnym tle.",
+            "caption": "Plakat i ulotka · wizualizacja projektu.",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/robo-edukacja/plakat-edukacja-1536.webp",
+              "smallSrc": "/media/robo-edukacja/plakat-edukacja-768.webp",
+              "width": 1024,
+              "height": 1443,
+              "alt": "Oryginalny plakat ROBO Edukacja.",
+              "caption": "Plakat · oryginalny projekt.",
+              "kind": "original"
+            },
+            {
+              "src": "/media/robo-edukacja/ulotka-edukacja-1536.webp",
+              "smallSrc": "/media/robo-edukacja/ulotka-edukacja-768.webp",
+              "width": 1024,
+              "height": 1444,
+              "alt": "Oryginalna ulotka ROBO Edukacja.",
+              "caption": "Ulotka · oryginalny projekt.",
+              "kind": "original"
+            }
+          ]
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
+      "slug": "dmk-general-group-wizytowki-i-banery",
+      "name": "DMK General Group",
+      "category": "druk i reklama",
+      "scope": "Wizytówki w dwóch wariantach i banery reklamowe dla firmy z branży energetycznej.",
+      "teaser": "Wizytówki dla zespołu i banery w dwóch formatach dla firmy z branży energetycznej.",
+      "scopeItems": [
+        "Wizytówki dla zespołu — wariant jasny",
+        "Wizytówki — wariant ciemny",
+        "Baner 152 × 225 cm",
+        "Baner 95 × 140 cm",
+        "Przygotowanie plików do druku"
+      ],
+      "image": "/media/dmk/cover-1536.webp",
+      "imageSmall": "/media/dmk/cover-768.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1024,
+      "shareImage": "/media/dmk/cover-1536.webp",
+      "imageCaption": "DMK General Group · baner i wizytówki.",
+      "alt": "Baner DMK General Group i dwie wizytówki ułożone na jasnym stole.",
+      "cover": {
+        "src": "/media/dmk/cover-1536.webp",
+        "smallSrc": "/media/dmk/cover-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Baner DMK General Group i dwie wizytówki ułożone na jasnym stole.",
+        "kind": "visualization",
+        "caption": "Wizualizacja projektu"
+      },
+      "accent": "#1f3fd1",
+      "client": "DMK General Group — prefabrykacja rozdzielnic i stacji transformatorowych.",
+      "need": "Firma potrzebowała materiałów, które pokażą realną pracę zespołu: wizytówek dla kolejnych osób i banerów z zakresem usług.",
+      "solution": "Zdjęcia z realizacji grają główną rolę, a mocny niebieski i ukośne cięcia porządkują dane kontaktowe. Wizytówki przygotowałem w dwóch wariantach — jasnym i ciemnym — z kodem QR na rewersie.",
+      "galleryLabel": "Wizytówki",
+      "galleryTitle": "Wizytówki dla zespołu.",
+      "galleryIntro": "Wspólny awers firmy i rewers z danymi konkretnej osoby. Jasny wariant z kodem QR i ciemny, bardziej elegancki.",
+      "gallery": [
+        {
+          "src": "/media/dmk/wizytowka-awers-1536.webp",
+          "smallSrc": "/media/dmk/wizytowka-awers-768.webp",
+          "width": 1024,
+          "height": 588,
+          "alt": "Awers wizytówki DMK z logo, danymi firmy i zdjęciem pracownika.",
+          "caption": "Awers · wariant jasny.",
+          "kind": "original"
+        },
+        {
+          "src": "/media/dmk/wizytowka-rewers-1536.webp",
+          "smallSrc": "/media/dmk/wizytowka-rewers-768.webp",
+          "width": 1024,
+          "height": 570,
+          "alt": "Rewers wizytówki DMK z imieniem, stanowiskiem i kodem QR.",
+          "caption": "Rewers · wariant jasny.",
+          "kind": "original"
+        },
+        {
+          "src": "/media/dmk/wizytowka-ciemna-awers-1536.webp",
+          "smallSrc": "/media/dmk/wizytowka-ciemna-awers-768.webp",
+          "width": 1024,
+          "height": 568,
+          "alt": "Ciemny awers wizytówki DMK z białym logo.",
+          "caption": "Awers · wariant ciemny.",
+          "kind": "original"
+        },
+        {
+          "src": "/media/dmk/wizytowka-ciemna-rewers-1536.webp",
+          "smallSrc": "/media/dmk/wizytowka-ciemna-rewers-768.webp",
+          "width": 1024,
+          "height": 568,
+          "alt": "Ciemny rewers wizytówki DMK z danymi kontaktowymi.",
+          "caption": "Rewers · wariant ciemny.",
+          "kind": "original"
+        }
+      ],
+      "applications": [
+        {
+          "slug": "wizytowki",
+          "label": "Warianty",
+          "title": "Jasny i ciemny.",
+          "description": "Dwa warianty tej samej wizytówki. Jasny lepiej pokazuje zdjęcie i kod QR, ciemny wygląda bardziej elegancko.",
+          "image": {
+            "src": "/media/dmk/wizytowki-1536.webp",
+            "smallSrc": "/media/dmk/wizytowki-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Jasne i ciemne wizytówki DMK, awersy i rewersy, na jasnym tle.",
+            "caption": "Wizytówki · wizualizacja projektu.",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "banery",
+          "label": "Banery",
+          "title": "Banery.",
+          "description": "Dwa formaty banera z tą samą treścią: zdjęcia z realizacji, zakres usług i dane firmy.",
+          "image": {
+            "src": "/media/dmk/banery-1536.webp",
+            "smallSrc": "/media/dmk/banery-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Dwa banery DMK General Group w różnych formatach na jasnym tle.",
+            "caption": "Banery 152 × 225 i 95 × 140 cm · wizualizacja projektu.",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/dmk/baner-152x225-1536.webp",
+              "smallSrc": "/media/dmk/baner-152x225-768.webp",
+              "width": 1024,
+              "height": 1513,
+              "alt": "Oryginalny projekt banera DMK 152 × 225 cm.",
+              "caption": "Baner 152 × 225 cm · oryginalny projekt.",
+              "kind": "original"
+            },
+            {
+              "src": "/media/dmk/baner-95x140-1536.webp",
+              "smallSrc": "/media/dmk/baner-95x140-768.webp",
+              "width": 1024,
+              "height": 1505,
+              "alt": "Oryginalny projekt banera DMK 95 × 140 cm.",
+              "caption": "Baner 95 × 140 cm · oryginalny projekt.",
+              "kind": "original"
+            }
+          ]
+        }
+      ],
+      "published": true,
+      "featured": false
     }
   ]
 }
