@@ -1,19 +1,22 @@
 <dialog class="lb" aria-label="Podgląd grafiki">
  <div class="lb-bar"><span class="lb-hint">Kliknij grafikę, aby przybliżyć · przeciągnij, aby przesunąć</span><button type="button" class="lb-close">Zamknij <span aria-hidden="true">×</span></button></div>
- <div class="lb-stage"><img alt=""/></div>
+ <div class="lb-stage"><img alt=""/><video class="lb-video" controls playsinline preload="metadata" hidden></video></div>
 </dialog>
 <script>
 const dlg=document.querySelector<HTMLDialogElement>('dialog.lb')!;
 const stage=dlg.querySelector<HTMLDivElement>('.lb-stage')!;
 const img=dlg.querySelector<HTMLImageElement>('img')!;
+const vid=dlg.querySelector<HTMLVideoElement>('video')!;
 let zoomed=false, drag:null|{x:number,y:number,sl:number,st:number,moved:boolean}=null, opener:Element|null=null;
 const best=(el:HTMLImageElement)=>{const set=(el.getAttribute('srcset')||'').split(',').map(s=>s.trim().split(/\s+/)).filter(p=>p[0]);if(set.length){set.sort((a,b)=>parseInt(b[1]||'0')-parseInt(a[1]||'0'));return set[0][0]}return el.currentSrc||el.src};
 const setZoom=(z:boolean,cx=.5,cy=.5)=>{zoomed=z;dlg.classList.toggle('zoomed',z);if(z){const w=Math.max(img.naturalWidth,stage.clientWidth*2);img.style.width=w+'px';requestAnimationFrame(()=>{stage.scrollLeft=img.offsetWidth*cx-stage.clientWidth/2;stage.scrollTop=img.offsetHeight*cy-stage.clientHeight/2})}else{img.style.width=''}};
-const open=(src:string,alt:string,from:Element)=>{opener=from;setZoom(false);img.src=src;img.alt=alt||'';dlg.showModal();document.documentElement.classList.add('lb-open')};
-dlg.addEventListener('close',()=>{document.documentElement.classList.remove('lb-open');img.removeAttribute('src');(opener as HTMLElement|null)?.focus?.()});
+const open=(src:string,alt:string,from:Element)=>{opener=from;setZoom(false);vid.pause();vid.hidden=true;img.hidden=false;img.src=src;img.alt=alt||'';dlg.showModal();document.documentElement.classList.add('lb-open')};
+dlg.addEventListener('close',()=>{vid.pause();vid.removeAttribute('src');vid.load();document.documentElement.classList.remove('lb-open');img.removeAttribute('src');(opener as HTMLElement|null)?.focus?.()});
 dlg.querySelector('.lb-close')!.addEventListener('click',()=>dlg.close());
 document.addEventListener('click',e=>{
  const t=e.target as Element; if(t.closest('dialog')) return;
+ const vlink=t.closest<HTMLAnchorElement>('a[data-zoom-video]');
+ if(vlink){e.preventDefault();opener=vlink;setZoom(false);img.hidden=true;img.removeAttribute('src');vid.hidden=false;vid.src=vlink.href;dlg.showModal();document.documentElement.classList.add('lb-open');vid.play().catch(()=>{});return}
  const link=t.closest<HTMLAnchorElement>('a[data-zoom]');
  if(link){e.preventDefault();const im=link.querySelector('img');open(link.href,im?.alt||'',link);return}
  const im=t.closest<HTMLImageElement>('main figure img'); if(!im) return;
@@ -35,6 +38,8 @@ stage.addEventListener('pointerup',e=>{const d=drag;drag=null;if(d&&d.moved)retu
  .lb-close span{font-size:1.1rem;margin-left:6px}
  .lb-stage{position:absolute;inset:0;overflow:auto;display:grid;place-items:center;padding:56px 20px 20px;box-sizing:border-box;touch-action:pan-x pan-y}
  .lb-stage img{display:block;max-width:100%;max-height:calc(100dvh - 80px);width:auto;height:auto;cursor:zoom-in;user-select:none;-webkit-user-drag:none}
+ .lb-video{max-width:100%;max-height:calc(100dvh - 80px);background:#000}
+ .lb-stage [hidden]{display:none!important}
  dialog.lb.zoomed .lb-stage{display:block;padding:0;cursor:grab}
  dialog.lb.zoomed .lb-stage img{max-width:none;max-height:none;cursor:zoom-out}
  html.lb-open{overflow:hidden}
