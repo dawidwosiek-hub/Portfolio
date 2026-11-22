@@ -305,21 +305,21 @@
         "Ulotka dla techników",
         "Przygotowanie plików do druku"
       ],
-      "image": "/media/estetic-studio/scena-pracownia-blisko-2x.webp",
-      "imageSmall": "/media/estetic-studio/scena-pracownia-blisko-768.webp",
-      "imageWidth": 2576,
-      "imageHeight": 1717,
-      "shareImage": "/media/estetic-studio/scena-pracownia-blisko-1536.webp",
+      "image": "/media/estetic-studio/scena-pracownia-2x.webp",
+      "imageSmall": "/media/estetic-studio/scena-pracownia-768.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/estetic-studio/scena-pracownia-1536.webp",
       "imageCaption": "Ulotki i wizytówki Estetic Studio w pracowni · wizualizacja projektu.",
       "alt": "Ulotki i czarne wizytówki Estetic Studio na grafitowym blacie pracowni protetycznej, obok modelu protezy i narzędzi.",
       "cover": {
-        "src": "/media/estetic-studio/scena-pracownia-blisko-2x.webp",
-        "smallSrc": "/media/estetic-studio/scena-pracownia-blisko-768.webp",
-        "width": 2576,
-        "height": 1717,
+        "src": "/media/estetic-studio/scena-pracownia-2x.webp",
+        "smallSrc": "/media/estetic-studio/scena-pracownia-768.webp",
+        "width": 3072,
+        "height": 2048,
         "alt": "Ulotki i czarne wizytówki Estetic Studio na grafitowym blacie pracowni protetycznej, obok modelu protezy i narzędzi.",
         "caption": "Wizualizacja projektu",
-        "mediumSrc": "/media/estetic-studio/scena-pracownia-blisko-1536.webp"
+        "mediumSrc": "/media/estetic-studio/scena-pracownia-1536.webp"
       },
       "accent": "#5fc7b0",
       "client": "Estetic Studio — pracownia protetyczna.",
@@ -450,7 +450,7 @@
       ],
       "published": true,
       "featured": true,
-      "imageMedium": "/media/estetic-studio/scena-pracownia-blisko-1536.webp"
+      "imageMedium": "/media/estetic-studio/scena-pracownia-1536.webp"
     },
     {
       "slug": "prato-development-rolki",
@@ -883,7 +883,16 @@
               "alt": "Oryginalny drugi wariant koszulki OLSEN z innym opracowaniem pola kontaktowego na plecach.",
               "caption": "Koszulka DTF · wariant 02"
             }
-          ]
+          ],
+          "image": {
+            "src": "/media/olsen/scena-van-1536.webp",
+            "smallSrc": "/media/olsen/scena-van-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Złożona koszulka OLSEN z nadrukiem i czapka z haftem w aucie serwisowym instalatora, obok przewodów wentylacyjnych i skrzynki z narzędziami.",
+            "kind": "visualization",
+            "caption": "Koszulka i czapka OLSEN · wizualizacja projektu."
+          }
         },
         {
           "slug": "czapka",
