@@ -59,10 +59,10 @@
         "Koncepcja graficzna obuwia",
         "Przygotowanie materiałów do druku"
       ],
-      "image": "/media/shiro/scena-warsztat-1536.webp",
+      "image": "/media/shiro/scena-warsztat-2x.webp",
       "imageSmall": "/media/shiro/scena-warsztat-768.webp",
-      "imageWidth": 1536,
-      "imageHeight": 1024,
+      "imageWidth": 3072,
+      "imageHeight": 2048,
       "imageCaption": "Wizytówki SHIRO w warsztacie · wizualizacja projektu.",
       "alt": "Dwie wizytówki SHIRO na czarnym blacie warsztatu tuningowego, obok klucza dynamometrycznego, kabla diagnostycznego i kluczyka; w tle auto na podnośniku w czerwonym świetle.",
       "client": "SHIRO — motoryzacja.",
@@ -123,13 +123,14 @@
           "title": "Vouchery podarunkowe.",
           "description": "Dwustronny voucher podarunkowy SHIRO Car Rental. Strona z logo buduje charakter materiału, a rewers porządkuje pola na odbiorcę, osobę obdarowującą oraz wartość lub liczbę dni.",
           "image": {
-            "src": "/media/shiro/scena-voucher-1536.webp",
+            "src": "/media/shiro/scena-voucher-2x.webp",
             "smallSrc": "/media/shiro/scena-voucher-768.webp",
-            "width": 1536,
-            "height": 1024,
+            "width": 3072,
+            "height": 2048,
             "alt": "Voucher podarunkowy SHIRO Car Rental na skórzanym fotelu samochodu, obok kluczyka, w czerwonym świetle ambientowym.",
             "kind": "visualization",
-            "caption": "Voucher SHIRO · wizualizacja projektu."
+            "caption": "Voucher SHIRO · wizualizacja projektu.",
+            "mediumSrc": "/media/shiro/scena-voucher-1536.webp"
           },
           "originals": [
             {
@@ -182,13 +183,14 @@
           "title": "Reklama w dużym formacie.",
           "description": "Grafika reklamowa SHIRO Mechanic & Chiptuning zestawia motoryzacyjne fotografie z listą usług i danymi kontaktowymi. Wyraźna hierarchia prowadzi od znaku do oferty.",
           "image": {
-            "src": "/media/shiro/scena-baner-1536.webp",
+            "src": "/media/shiro/scena-baner-2x.webp",
             "smallSrc": "/media/shiro/scena-baner-768.webp",
-            "width": 1536,
-            "height": 1024,
+            "width": 3072,
+            "height": 2048,
             "alt": "Baner SHIRO Mechanic & Chiptuning na elewacji warsztatu, obok otwartej bramy z autem na podnośniku.",
             "kind": "visualization",
-            "caption": "Baner SHIRO na warsztacie · wizualizacja projektu."
+            "caption": "Baner SHIRO na warsztacie · wizualizacja projektu.",
+            "mediumSrc": "/media/shiro/scena-baner-1536.webp"
           }
         },
         {
@@ -275,14 +277,16 @@
       "shareImage": "/media/shiro/scena-warsztat-1536.webp",
       "teaser": "Identyfikacja warsztatu i wypożyczalni: od autorskiego znaku po druk i odzież.",
       "cover": {
-        "src": "/media/shiro/scena-warsztat-1536.webp",
+        "src": "/media/shiro/scena-warsztat-2x.webp",
         "smallSrc": "/media/shiro/scena-warsztat-768.webp",
-        "width": 1536,
-        "height": 1024,
+        "width": 3072,
+        "height": 2048,
         "alt": "Dwie wizytówki SHIRO na czarnym blacie warsztatu tuningowego, obok klucza dynamometrycznego, kabla diagnostycznego i kluczyka; w tle auto na podnośniku w czerwonym świetle.",
         "kind": "visualization",
-        "caption": "Wizytówki SHIRO w warsztacie · wizualizacja projektu."
-      }
+        "caption": "Wizytówki SHIRO w warsztacie · wizualizacja projektu.",
+        "mediumSrc": "/media/shiro/scena-warsztat-1536.webp"
+      },
+      "imageMedium": "/media/shiro/scena-warsztat-1536.webp"
     },
     {
       "slug": "estetic-studio-pracownia-protetyczna",
@@ -301,20 +305,21 @@
         "Ulotka dla techników",
         "Przygotowanie plików do druku"
       ],
-      "image": "/media/estetic-studio/scena-pracownia-1536.webp",
+      "image": "/media/estetic-studio/scena-pracownia-2x.webp",
       "imageSmall": "/media/estetic-studio/scena-pracownia-768.webp",
-      "imageWidth": 1536,
-      "imageHeight": 1024,
+      "imageWidth": 3072,
+      "imageHeight": 2048,
       "shareImage": "/media/estetic-studio/scena-pracownia-1536.webp",
       "imageCaption": "Estetic Studio · materiały w pracowni.",
       "alt": "Ulotki i czarne wizytówki Estetic Studio na grafitowym blacie pracowni protetycznej, obok modelu protezy i narzędzi.",
       "cover": {
-        "src": "/media/estetic-studio/scena-pracownia-1536.webp",
+        "src": "/media/estetic-studio/scena-pracownia-2x.webp",
         "smallSrc": "/media/estetic-studio/scena-pracownia-768.webp",
-        "width": 1536,
-        "height": 1024,
+        "width": 3072,
+        "height": 2048,
         "alt": "Ulotki i czarne wizytówki Estetic Studio na grafitowym blacie pracowni protetycznej, obok modelu protezy i narzędzi.",
-        "caption": "Wizualizacja projektu"
+        "caption": "Wizualizacja projektu",
+        "mediumSrc": "/media/estetic-studio/scena-pracownia-1536.webp"
       },
       "accent": "#5fc7b0",
       "client": "Estetic Studio — pracownia protetyczna.",
@@ -386,18 +391,20 @@
             }
           ],
           "image": {
-            "src": "/media/estetic-studio/scena-recepcja-1536.webp",
+            "src": "/media/estetic-studio/scena-recepcja-2x.webp",
             "smallSrc": "/media/estetic-studio/scena-recepcja-768.webp",
-            "width": 1536,
-            "height": 1024,
+            "width": 3072,
+            "height": 2048,
             "alt": "Dwie ulotki Estetic Studio w akrylowych stojakach na grafitowym blacie recepcji gabinetu stomatologicznego, w tle fotel dentystyczny.",
             "kind": "visualization",
-            "caption": "Ulotki w recepcji gabinetu · wizualizacja projektu."
+            "caption": "Ulotki w recepcji gabinetu · wizualizacja projektu.",
+            "mediumSrc": "/media/estetic-studio/scena-recepcja-1536.webp"
           }
         }
       ],
       "published": true,
-      "featured": true
+      "featured": true,
+      "imageMedium": "/media/estetic-studio/scena-pracownia-1536.webp"
     },
     {
       "slug": "prato-development-rolki",
@@ -485,10 +492,10 @@
         "Projekt roll-upu reklamowego",
         "Przygotowanie materiałów do druku"
       ],
-      "image": "/media/diverto/scena-scena-1536.webp",
+      "image": "/media/diverto/scena-scena-2x.webp",
       "imageSmall": "/media/diverto/scena-scena-768.webp",
-      "imageWidth": 1536,
-      "imageHeight": 1024,
+      "imageWidth": 3072,
+      "imageHeight": 2048,
       "shareImage": "/media/diverto/scena-scena-1536.webp",
       "imageCaption": "Płyta Diverto na scenie · wizualizacja projektu.",
       "alt": "Płyta Diverto w pudełku i nadrukowany krążek CD na klawiaturze scenicznej, w tle czerwone światła sceny i saksofon.",
@@ -564,13 +571,14 @@
             }
           ],
           "image": {
-            "src": "/media/diverto/scena-rollup-1536.webp",
+            "src": "/media/diverto/scena-rollup-2x.webp",
             "smallSrc": "/media/diverto/scena-rollup-768.webp",
-            "width": 1536,
-            "height": 1024,
+            "width": 3072,
+            "height": 2048,
             "alt": "Roll-up zespołu Diverto na sali weselnej, obok sceny z instrumentami w czerwonym świetle.",
             "kind": "visualization",
-            "caption": "Roll-up Diverto na sali · wizualizacja projektu."
+            "caption": "Roll-up Diverto na sali · wizualizacja projektu.",
+            "mediumSrc": "/media/diverto/scena-rollup-1536.webp"
           }
         }
       ],
@@ -578,14 +586,16 @@
       "featured": true,
       "teaser": "Oprawa graficzna płyty i materiałów promocyjnych zespołu muzycznego.",
       "cover": {
-        "src": "/media/diverto/scena-scena-1536.webp",
+        "src": "/media/diverto/scena-scena-2x.webp",
         "smallSrc": "/media/diverto/scena-scena-768.webp",
-        "width": 1536,
-        "height": 1024,
+        "width": 3072,
+        "height": 2048,
         "alt": "Płyta Diverto w pudełku i nadrukowany krążek CD na klawiaturze scenicznej, w tle czerwone światła sceny i saksofon.",
         "kind": "visualization",
-        "caption": "Płyta Diverto na scenie · wizualizacja projektu."
-      }
+        "caption": "Płyta Diverto na scenie · wizualizacja projektu.",
+        "mediumSrc": "/media/diverto/scena-scena-1536.webp"
+      },
+      "imageMedium": "/media/diverto/scena-scena-1536.webp"
     },
     {
       "slug": "parkiety-przybycien-logo",
@@ -911,20 +921,21 @@
         "Plakat i ulotka szkoły zajęć pozalekcyjnych",
         "Przygotowanie plików do druku"
       ],
-      "image": "/media/robo-edukacja/scena-sala-lato-1536.webp",
+      "image": "/media/robo-edukacja/scena-sala-lato-2x.webp",
       "imageSmall": "/media/robo-edukacja/scena-sala-lato-768.webp",
-      "imageWidth": 1536,
-      "imageHeight": 1024,
+      "imageWidth": 1932,
+      "imageHeight": 1288,
       "shareImage": "/media/robo-edukacja/scena-sala-lato-1536.webp",
       "imageCaption": "Plakat Letnie ROBO · wizualizacja projektu.",
       "alt": "Plakat Letnie ROBO przypięty do tablicy korkowej w kolorowej sali zajęć z robotami z klocków.",
       "cover": {
-        "src": "/media/robo-edukacja/scena-sala-lato-1536.webp",
+        "src": "/media/robo-edukacja/scena-sala-lato-2x.webp",
         "smallSrc": "/media/robo-edukacja/scena-sala-lato-768.webp",
-        "width": 1536,
-        "height": 1024,
+        "width": 1932,
+        "height": 1288,
         "alt": "Plakat Letnie ROBO przypięty do tablicy korkowej w kolorowej sali zajęć z robotami z klocków.",
-        "caption": "Wizualizacja projektu"
+        "caption": "Wizualizacja projektu",
+        "mediumSrc": "/media/robo-edukacja/scena-sala-lato-1536.webp"
       },
       "accent": "#3aa935",
       "client": "ROBO Edukacja — półkolonie i zajęcia dla dzieci.",
@@ -933,7 +944,17 @@
       "galleryLabel": "Plakaty",
       "galleryTitle": "Seria, nie pojedynczy plakat.",
       "galleryIntro": "Wersja letnia i zimowa mają wspólny układ, a zmienia się klimat. Klient może kolejne edycje ogłaszać w tym samym stylu.",
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "/media/robo-edukacja/plakat-letnie-1536.webp",
+          "smallSrc": "/media/robo-edukacja/plakat-letnie-768.webp",
+          "width": 1536,
+          "height": 2166,
+          "alt": "Oryginalny projekt plakatu Letnie ROBO Półkolonie.",
+          "kind": "original",
+          "caption": "Plakat letni · oryginalny projekt."
+        }
+      ],
       "applications": [
         {
           "slug": "seria",
@@ -941,13 +962,14 @@
           "title": "Lato i zima.\nJedna seria.",
           "description": "Ulotki A5 obu edycji mają ten sam układ: program, terminy, lokalizacje i cenę. Zmienia się tylko klimat — zieleń lata i błękit zimy.",
           "image": {
-            "src": "/media/robo-edukacja/scena-lawka-1536.webp",
+            "src": "/media/robo-edukacja/scena-lawka-2x.webp",
             "smallSrc": "/media/robo-edukacja/scena-lawka-768.webp",
-            "width": 1536,
-            "height": 1024,
+            "width": 2312,
+            "height": 1542,
             "alt": "Ulotki Letnie ROBO i Zimowe ROBO na ławce między klockami, robotem i tabletem.",
             "kind": "visualization",
-            "caption": "Ulotki A5 · wizualizacja projektu."
+            "caption": "Ulotki A5 · wizualizacja projektu.",
+            "mediumSrc": "/media/robo-edukacja/scena-lawka-1536.webp"
           },
           "originals": [
             {
@@ -983,7 +1005,18 @@
             "alt": "Plakat A3 i ulotka A5 Zimowe ROBO Półkolonie.",
             "kind": "visualization",
             "caption": "Plakat A3 · wizualizacja projektu."
-          }
+          },
+          "originals": [
+            {
+              "src": "/media/robo-edukacja/plakat-zimowe-1536.webp",
+              "smallSrc": "/media/robo-edukacja/plakat-zimowe-768.webp",
+              "width": 1536,
+              "height": 2166,
+              "alt": "Oryginalny projekt plakatu Zimowe ROBO Półkolonie.",
+              "kind": "original",
+              "caption": "Plakat zimowy · oryginalny projekt."
+            }
+          ]
         },
         {
           "slug": "baner",
@@ -991,14 +1024,26 @@
           "title": "Baner.",
           "description": "Najważniejsze informacje w poziomym formacie: hasło, wiek dzieci, lokalizacje i telefon — czytelne z kilkunastu metrów.",
           "image": {
-            "src": "/media/robo-edukacja/scena-baner-1536.webp",
+            "src": "/media/robo-edukacja/scena-baner-2x.webp",
             "smallSrc": "/media/robo-edukacja/scena-baner-768.webp",
-            "width": 1536,
-            "height": 1024,
+            "width": 3072,
+            "height": 2048,
             "alt": "Baner ROBO Półkolonie zawieszony na ogrodzeniu szkoły, w tle plac zabaw i kolorowa elewacja.",
             "kind": "visualization",
-            "caption": "Baner na ogrodzeniu szkoły · wizualizacja projektu."
-          }
+            "caption": "Baner na ogrodzeniu szkoły · wizualizacja projektu.",
+            "mediumSrc": "/media/robo-edukacja/scena-baner-1536.webp"
+          },
+          "originals": [
+            {
+              "src": "/media/robo-edukacja/baner-projekt-1536.webp",
+              "smallSrc": "/media/robo-edukacja/baner-projekt-768.webp",
+              "width": 1536,
+              "height": 1044,
+              "alt": "Oryginalny projekt banera ROBO Półkolonie.",
+              "kind": "original",
+              "caption": "Baner · oryginalny projekt."
+            }
+          ]
         },
         {
           "slug": "edukacja",
@@ -1006,13 +1051,14 @@
           "title": "Zajęcia pozalekcyjne.",
           "description": "Plakat i ulotka szkoły ROBO Edukacja: robotyka z klockami, programowanie i druk 3D, z kodem QR do zapisu na lekcję próbną.",
           "image": {
-            "src": "/media/robo-edukacja/scena-lawka-edukacja-1536.webp",
+            "src": "/media/robo-edukacja/scena-lawka-edukacja-2x.webp",
             "smallSrc": "/media/robo-edukacja/scena-lawka-edukacja-768.webp",
-            "width": 1536,
-            "height": 1024,
+            "width": 2312,
+            "height": 1542,
             "alt": "Plakat i ulotka ROBO Edukacja na ławce między klockami i robotem.",
             "kind": "visualization",
-            "caption": "Plakat i ulotka · wizualizacja projektu."
+            "caption": "Plakat i ulotka · wizualizacja projektu.",
+            "mediumSrc": "/media/robo-edukacja/scena-lawka-edukacja-1536.webp"
           },
           "originals": [
             {
@@ -1037,7 +1083,8 @@
         }
       ],
       "published": true,
-      "featured": true
+      "featured": true,
+      "imageMedium": "/media/robo-edukacja/scena-sala-lato-1536.webp"
     }
   ]
 }
