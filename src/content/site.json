@@ -302,29 +302,28 @@
         "Ulotka dla techników",
         "Przygotowanie plików do druku"
       ],
-      "image": "/media/estetic-studio/cover-1536.webp",
-      "imageSmall": "/media/estetic-studio/cover-768.webp",
+      "image": "/media/estetic-studio/scena-wizytowka-1536.webp",
+      "imageSmall": "/media/estetic-studio/scena-wizytowka-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "shareImage": "/media/estetic-studio/cover-1536.webp",
-      "imageCaption": "Estetic Studio · ulotki i wizytówki.",
-      "alt": "Dwie ulotki i dwie czarne wizytówki Estetic Studio ułożone na jasnym stole.",
+      "shareImage": "/media/estetic-studio/scena-wizytowka-1536.webp",
+      "imageCaption": "Wizytówka Estetic Studio · wizualizacja projektu.",
+      "alt": "Czarna wizytówka Estetic Studio z miętowym logo trzymana w dłoni.",
       "cover": {
-        "src": "/media/estetic-studio/cover-1536.webp",
-        "smallSrc": "/media/estetic-studio/cover-768.webp",
+        "src": "/media/estetic-studio/scena-wizytowka-1536.webp",
+        "smallSrc": "/media/estetic-studio/scena-wizytowka-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Dwie ulotki i dwie czarne wizytówki Estetic Studio ułożone na jasnym stole.",
-        "kind": "visualization",
+        "alt": "Czarna wizytówka Estetic Studio z miętowym logo trzymana w dłoni.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#5fc7b0",
       "client": "Estetic Studio — pracownia protetyczna.",
       "need": "Pracownia potrzebowała znaku i materiałów, które pokażą nowoczesną technologię i precyzję wykonania — osobno dla lekarzy stomatologów i dla techników.",
       "solution": "Znak łączy uproszczony kontur zęba z szerokim, technicznym krojem. Czarne tło, biel i miętowy akcent przechodzą z wizytówki na ulotki, a układ treści prowadzi od głównego hasła do konkretów i realizacji.",
-      "galleryLabel": "Materiały",
-      "galleryTitle": "Materiały w komplecie.",
-      "galleryIntro": "Wizytówka i dwie ulotki tworzą jeden zestaw. Ten sam znak, kolorystyka i rytm informacji w każdym formacie.",
+      "galleryLabel": "Wizytówka",
+      "galleryTitle": "Wizytówka.",
+      "galleryIntro": "Czarny karton, cienka linia znaku i miętowy akcent. Minimum treści, maksimum charakteru.",
       "gallery": [
         {
           "src": "/media/estetic-studio/logo-warianty-1536.webp",
@@ -352,13 +351,13 @@
           "title": "Dwie ulotki.\nDwóch odbiorców.",
           "description": "Ulotka dla lekarzy stawia na efekt i jakość protez, ulotka dla techników — na technologię, sprzęt i współpracę. Wspólna siatka sprawia, że obie wyglądają jak jedna seria.",
           "image": {
-            "src": "/media/estetic-studio/ulotki-1536.webp",
-            "smallSrc": "/media/estetic-studio/ulotki-768.webp",
+            "src": "/media/estetic-studio/scena-ulotka-1536.webp",
+            "smallSrc": "/media/estetic-studio/scena-ulotka-768.webp",
             "width": 1536,
-            "height": 1024,
-            "alt": "Ulotki Estetic Studio dla lekarzy i techników leżące obok siebie.",
-            "caption": "Ulotki A4 · wizualizacja projektu.",
-            "kind": "visualization"
+            "height": 2048,
+            "alt": "Ulotka Estetic Studio dla lekarzy leżąca na marmurowym blacie obok gałązki eukaliptusa.",
+            "kind": "visualization",
+            "caption": "Ulotka dla lekarzy · wizualizacja projektu."
           },
           "originals": [
             {
@@ -380,21 +379,6 @@
               "kind": "original"
             }
           ]
-        },
-        {
-          "slug": "wizytowka",
-          "label": "Wizytówka",
-          "title": "Wizytówka.",
-          "description": "Czarny karton, cienka linia znaku i miętowy akcent. Minimum treści, maksimum charakteru.",
-          "image": {
-            "src": "/media/estetic-studio/wizytowka-1536.webp",
-            "smallSrc": "/media/estetic-studio/wizytowka-768.webp",
-            "width": 1536,
-            "height": 1024,
-            "alt": "Dwie czarne wizytówki Estetic Studio na jasnym tle.",
-            "caption": "Wizytówka · wizualizacja projektu.",
-            "kind": "visualization"
-          }
         }
       ],
       "published": true,
@@ -404,34 +388,32 @@
       "slug": "prato-development-rolki",
       "name": "Prato Development",
       "category": "filmy i social media",
-      "scope": "Pionowe filmy do social mediów dla dewelopera: rolka główna i seria relacji z budowy.",
-      "teaser": "Rolka i relacje z budowy dla dewelopera — pionowe wideo do social mediów.",
+      "scope": "Pionowe filmy do social mediów dla dewelopera: seria relacji z budowy.",
+      "teaser": "Relacje z budowy dla dewelopera — pionowe wideo do social mediów.",
       "scopeItems": [
-        "Rolka główna",
-        "Seria trzech relacji",
+        "Seria relacji z budowy",
         "Montaż pod format pionowy 9:16",
         "Wersje do publikacji w social mediach"
       ],
-      "image": "/media/prato-development/cover-1536.webp",
-      "imageSmall": "/media/prato-development/cover-768.webp",
+      "image": "/media/prato-development/scena-telefon-1536.webp",
+      "imageSmall": "/media/prato-development/scena-telefon-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "shareImage": "/media/prato-development/cover-1536.webp",
-      "imageCaption": "Prato Development · filmy pionowe.",
-      "alt": "Trzy telefony z kadrami filmów Prato Development: wnętrze budynku, prowadzący i widok inwestycji z góry.",
+      "shareImage": "/media/prato-development/scena-telefon-1536.webp",
+      "imageCaption": "Relacja z budowy · wizualizacja projektu.",
+      "alt": "Telefon w dłoni z kadrem relacji z wnętrza budynku Prato Development.",
       "cover": {
-        "src": "/media/prato-development/cover-1536.webp",
-        "smallSrc": "/media/prato-development/cover-768.webp",
+        "src": "/media/prato-development/scena-telefon-1536.webp",
+        "smallSrc": "/media/prato-development/scena-telefon-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Trzy telefony z kadrami filmów Prato Development: wnętrze budynku, prowadzący i widok inwestycji z góry.",
-        "kind": "visualization",
+        "alt": "Telefon w dłoni z kadrem relacji z wnętrza budynku Prato Development.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#d9a21b",
       "client": "Prato Development — inwestycja mieszkaniowa.",
       "need": "Deweloper chciał pokazywać postęp budowy w social mediach: krótko, dynamicznie i w formacie, który ludzie oglądają na telefonie.",
-      "solution": "Rolka główna przedstawia inwestycję z prowadzącym, a relacje pokazują szczegóły — wnętrza, okna i widok z góry. Wszystko w formacie 9:16, gotowe do publikacji.",
+      "solution": "Krótkie relacje pokazują to, co najważniejsze dla przyszłych mieszkańców: postęp prac, wnętrza, okna i widok inwestycji z góry. Wszystko w formacie 9:16, gotowe do publikacji.",
       "galleryLabel": "Prezentacja",
       "galleryTitle": "Inwestycja na ekranie telefonu.",
       "galleryIntro": "Rolka i relacje zmontowane w formacie 9:16 — tak, jak ogląda się je w social mediach.",
@@ -440,18 +422,9 @@
         {
           "slug": "filmy",
           "label": "Filmy",
-          "title": "Rolka i relacje.",
-          "description": "Rolka główna i trzy relacje z budowy. Kliknij, aby obejrzeć.",
+          "title": "Relacje z budowy.",
+          "description": "Trzy relacje z inwestycji. Kliknij, aby obejrzeć.",
           "videos": [
-            {
-              "src": "",
-              "embed": "https://drive.google.com/file/d/1TxDuD8JLb2VeESYyoBvuoULeDc7VqiYy/preview",
-              "poster": "/media/prato-development/main-poster.webp",
-              "title": "Rolka główna",
-              "caption": "Prato Development · rolka.",
-              "width": 720,
-              "height": 1280
-            },
             {
               "src": "",
               "embed": "https://drive.google.com/file/d/1ZOFSZ12bCkaD9gyZ4Twgr4M2bD-xTqPX/preview",
@@ -479,7 +452,16 @@
               "width": 720,
               "height": 1280
             }
-          ]
+          ],
+          "image": {
+            "src": "/media/prato-development/scena-telefon-2-1536.webp",
+            "smallSrc": "/media/prato-development/scena-telefon-2-768.webp",
+            "width": 1536,
+            "height": 2048,
+            "alt": "Telefon w dłoni z widokiem inwestycji Prato Development z góry.",
+            "kind": "visualization",
+            "caption": "Relacja · widok inwestycji z góry."
+          }
         }
       ],
       "published": true,
@@ -637,20 +619,19 @@
         "Samodzielny znak",
         "Pliki do druku i do internetu"
       ],
-      "image": "/media/parkiety-przybycien/cover-1536.webp",
-      "imageSmall": "/media/parkiety-przybycien/cover-768.webp",
+      "image": "/media/parkiety-przybycien/scena-parkiet-1536.webp",
+      "imageSmall": "/media/parkiety-przybycien/scena-parkiet-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "shareImage": "/media/parkiety-przybycien/cover-1536.webp",
-      "imageCaption": "Parkiety Przybycień · logo i warianty.",
-      "alt": "Logo Parkiety Przybycień na białej, grafitowej i miedzianej karcie.",
+      "shareImage": "/media/parkiety-przybycien/scena-parkiet-1536.webp",
+      "imageCaption": "Monogram PP · wizualizacja projektu.",
+      "alt": "Karta z monogramem PP trzymana w dłoni nad dębowym parkietem.",
       "cover": {
-        "src": "/media/parkiety-przybycien/cover-1536.webp",
-        "smallSrc": "/media/parkiety-przybycien/cover-768.webp",
+        "src": "/media/parkiety-przybycien/scena-parkiet-1536.webp",
+        "smallSrc": "/media/parkiety-przybycien/scena-parkiet-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Logo Parkiety Przybycień na białej, grafitowej i miedzianej karcie.",
-        "kind": "visualization",
+        "alt": "Karta z monogramem PP trzymana w dłoni nad dębowym parkietem.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#7e4930",
@@ -706,6 +687,21 @@
         }
       ],
       "applications": [
+        {
+          "slug": "szyld",
+          "label": "Szyld",
+          "title": "Znak na elewacji.",
+          "description": "Monogram w bieli na miedzianym tle sprawdza się jako szyld — czytelny z daleka i rozpoznawalny nawet bez nazwy.",
+          "image": {
+            "src": "/media/parkiety-przybycien/scena-szyld-1536.webp",
+            "smallSrc": "/media/parkiety-przybycien/scena-szyld-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Miedziany szyld z białym monogramem PP na elewacji budynku.",
+            "kind": "visualization",
+            "caption": "Szyld · wizualizacja projektu."
+          }
+        },
         {
           "slug": "system",
           "label": "System",
@@ -1007,20 +1003,19 @@
         "Plakat i ulotka szkoły zajęć pozalekcyjnych",
         "Przygotowanie plików do druku"
       ],
-      "image": "/media/robo-edukacja/cover-1536.webp",
-      "imageSmall": "/media/robo-edukacja/cover-768.webp",
+      "image": "/media/robo-edukacja/scena-przystanek-1536.webp",
+      "imageSmall": "/media/robo-edukacja/scena-przystanek-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "shareImage": "/media/robo-edukacja/cover-1536.webp",
-      "imageCaption": "ROBO Edukacja · plakaty i ulotki.",
-      "alt": "Plakaty ROBO na półkolonie letnie i zimowe oraz ulotka ROBO Edukacja ułożone na stole.",
+      "shareImage": "/media/robo-edukacja/scena-przystanek-1536.webp",
+      "imageCaption": "Plakat Letnie ROBO · wizualizacja projektu.",
+      "alt": "Plakat Letnie ROBO w podświetlanej gablocie na przystanku tramwajowym.",
       "cover": {
-        "src": "/media/robo-edukacja/cover-1536.webp",
-        "smallSrc": "/media/robo-edukacja/cover-768.webp",
+        "src": "/media/robo-edukacja/scena-przystanek-1536.webp",
+        "smallSrc": "/media/robo-edukacja/scena-przystanek-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Plakaty ROBO na półkolonie letnie i zimowe oraz ulotka ROBO Edukacja ułożone na stole.",
-        "kind": "visualization",
+        "alt": "Plakat Letnie ROBO w podświetlanej gablocie na przystanku tramwajowym.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#3aa935",
@@ -1052,33 +1047,18 @@
       ],
       "applications": [
         {
-          "slug": "letnie",
-          "label": "Lato",
-          "title": "Półkolonie letnie.",
-          "description": "Plakat A3 i ulotka A5 z pełnym programem, terminami turnusów i ceną. Zielone tło i hasło „Letnie” widać z daleka.",
-          "image": {
-            "src": "/media/robo-edukacja/letnie-1536.webp",
-            "smallSrc": "/media/robo-edukacja/letnie-768.webp",
-            "width": 1536,
-            "height": 1024,
-            "alt": "Plakat A3 i ulotka A5 Letnie ROBO na jasnym tle.",
-            "caption": "Plakat A3 i ulotka A5 · wizualizacja projektu.",
-            "kind": "visualization"
-          }
-        },
-        {
           "slug": "zimowe",
           "label": "Zima",
           "title": "Edycja zimowa.",
           "description": "Ten sam układ w zimowej kolorystyce. Rodzic, który zna letnią edycję, od razu rozpozna markę.",
           "image": {
-            "src": "/media/robo-edukacja/zimowe-1536.webp",
-            "smallSrc": "/media/robo-edukacja/zimowe-768.webp",
+            "src": "/media/robo-edukacja/scena-ulotka-zimowa-1536.webp",
+            "smallSrc": "/media/robo-edukacja/scena-ulotka-zimowa-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Plakat A3 i ulotka A5 Zimowe ROBO na jasnym tle.",
-            "caption": "Plakat A3 i ulotka A5 · wizualizacja projektu.",
-            "kind": "visualization"
+            "alt": "Ulotka Zimowe ROBO trzymana w dłoniach nad drewnianym stołem.",
+            "kind": "visualization",
+            "caption": "Ulotka A5 · wizualizacja projektu."
           }
         },
         {
@@ -1087,25 +1067,14 @@
           "title": "Baner.",
           "description": "Najważniejsze informacje w poziomym formacie: hasło, wiek dzieci, lokalizacje i telefon — czytelne z kilkunastu metrów.",
           "image": {
-            "src": "/media/robo-edukacja/baner-1536.webp",
-            "smallSrc": "/media/robo-edukacja/baner-768.webp",
+            "src": "/media/robo-edukacja/baner-projekt-1536.webp",
+            "smallSrc": "/media/robo-edukacja/baner-projekt-768.webp",
             "width": 1536,
-            "height": 1024,
-            "alt": "Baner ROBO Półkolonie z oczkami montażowymi zawieszony na jasnej ścianie.",
-            "caption": "Baner · wizualizacja projektu.",
-            "kind": "visualization"
-          },
-          "originals": [
-            {
-              "src": "/media/robo-edukacja/baner-projekt-1536.webp",
-              "smallSrc": "/media/robo-edukacja/baner-projekt-768.webp",
-              "width": 1536,
-              "height": 1044,
-              "alt": "Oryginalny projekt banera ROBO Półkolonie.",
-              "caption": "Baner · oryginalny projekt.",
-              "kind": "original"
-            }
-          ]
+            "height": 1044,
+            "alt": "Projekt banera ROBO Półkolonie.",
+            "kind": "original",
+            "caption": "Baner · projekt."
+          }
         },
         {
           "slug": "edukacja",
@@ -1113,32 +1082,23 @@
           "title": "Zajęcia pozalekcyjne.",
           "description": "Plakat i ulotka szkoły ROBO Edukacja: robotyka z klockami, programowanie i druk 3D, z kodem QR do zapisu na lekcję próbną.",
           "image": {
-            "src": "/media/robo-edukacja/edukacja-1536.webp",
-            "smallSrc": "/media/robo-edukacja/edukacja-768.webp",
-            "width": 1536,
-            "height": 1024,
-            "alt": "Plakat i ulotka ROBO Edukacja na jasnym tle.",
-            "caption": "Plakat i ulotka · wizualizacja projektu.",
-            "kind": "visualization"
+            "src": "/media/robo-edukacja/plakat-edukacja-1536.webp",
+            "smallSrc": "/media/robo-edukacja/plakat-edukacja-768.webp",
+            "width": 1024,
+            "height": 1443,
+            "alt": "Plakat ROBO Edukacja.",
+            "kind": "original",
+            "caption": "Plakat · projekt."
           },
           "originals": [
-            {
-              "src": "/media/robo-edukacja/plakat-edukacja-1536.webp",
-              "smallSrc": "/media/robo-edukacja/plakat-edukacja-768.webp",
-              "width": 1024,
-              "height": 1443,
-              "alt": "Oryginalny plakat ROBO Edukacja.",
-              "caption": "Plakat · oryginalny projekt.",
-              "kind": "original"
-            },
             {
               "src": "/media/robo-edukacja/ulotka-edukacja-1536.webp",
               "smallSrc": "/media/robo-edukacja/ulotka-edukacja-768.webp",
               "width": 1024,
               "height": 1444,
-              "alt": "Oryginalna ulotka ROBO Edukacja.",
-              "caption": "Ulotka · oryginalny projekt.",
-              "kind": "original"
+              "alt": "Ulotka ROBO Edukacja.",
+              "kind": "original",
+              "caption": "Ulotka · oryginalny projekt."
             }
           ]
         }
@@ -1159,115 +1119,99 @@
         "Baner 95 × 140 cm",
         "Przygotowanie plików do druku"
       ],
-      "image": "/media/dmk/cover-1536.webp",
-      "imageSmall": "/media/dmk/cover-768.webp",
+      "image": "/media/dmk/scena-baner-1536.webp",
+      "imageSmall": "/media/dmk/scena-baner-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "shareImage": "/media/dmk/cover-1536.webp",
-      "imageCaption": "DMK General Group · baner i wizytówki.",
-      "alt": "Baner DMK General Group i dwie wizytówki ułożone na jasnym stole.",
+      "shareImage": "/media/dmk/scena-baner-1536.webp",
+      "imageCaption": "Baner 152 × 225 cm · wizualizacja projektu.",
+      "alt": "Baner DMK General Group zawieszony na stalowym ogrodzeniu obok pachołka drogowego.",
       "cover": {
-        "src": "/media/dmk/cover-1536.webp",
-        "smallSrc": "/media/dmk/cover-768.webp",
+        "src": "/media/dmk/scena-baner-1536.webp",
+        "smallSrc": "/media/dmk/scena-baner-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Baner DMK General Group i dwie wizytówki ułożone na jasnym stole.",
-        "kind": "visualization",
+        "alt": "Baner DMK General Group zawieszony na stalowym ogrodzeniu obok pachołka drogowego.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#1f3fd1",
       "client": "DMK General Group — prefabrykacja rozdzielnic i stacji transformatorowych.",
       "need": "Firma potrzebowała materiałów, które pokażą realną pracę zespołu: wizytówek dla kolejnych osób i banerów z zakresem usług.",
       "solution": "Zdjęcia z realizacji grają główną rolę, a mocny niebieski i ukośne cięcia porządkują dane kontaktowe. Wizytówki przygotowałem w dwóch wariantach — jasnym i ciemnym — z kodem QR na rewersie.",
-      "galleryLabel": "Wizytówki",
-      "galleryTitle": "Wizytówki dla zespołu.",
-      "galleryIntro": "Wspólny awers firmy i rewers z danymi konkretnej osoby. Jasny wariant z kodem QR i ciemny, bardziej elegancki.",
+      "galleryLabel": "Banery",
+      "galleryTitle": "Banery.",
+      "galleryIntro": "Dwa formaty banera z tą samą treścią: zdjęcia z realizacji, zakres usług i dane firmy.",
       "gallery": [
         {
-          "src": "/media/dmk/wizytowka-awers-1536.webp",
-          "smallSrc": "/media/dmk/wizytowka-awers-768.webp",
+          "src": "/media/dmk/baner-152x225-1536.webp",
+          "smallSrc": "/media/dmk/baner-152x225-768.webp",
           "width": 1024,
-          "height": 588,
-          "alt": "Awers wizytówki DMK z logo, danymi firmy i zdjęciem pracownika.",
-          "caption": "Awers · wariant jasny.",
-          "kind": "original"
+          "height": 1513,
+          "alt": "Oryginalny projekt banera DMK 152 × 225 cm.",
+          "kind": "original",
+          "caption": "Baner 152 × 225 cm · oryginalny projekt."
         },
         {
-          "src": "/media/dmk/wizytowka-rewers-1536.webp",
-          "smallSrc": "/media/dmk/wizytowka-rewers-768.webp",
+          "src": "/media/dmk/baner-95x140-1536.webp",
+          "smallSrc": "/media/dmk/baner-95x140-768.webp",
           "width": 1024,
-          "height": 570,
-          "alt": "Rewers wizytówki DMK z imieniem, stanowiskiem i kodem QR.",
-          "caption": "Rewers · wariant jasny.",
-          "kind": "original"
-        },
-        {
-          "src": "/media/dmk/wizytowka-ciemna-awers-1536.webp",
-          "smallSrc": "/media/dmk/wizytowka-ciemna-awers-768.webp",
-          "width": 1024,
-          "height": 568,
-          "alt": "Ciemny awers wizytówki DMK z białym logo.",
-          "caption": "Awers · wariant ciemny.",
-          "kind": "original"
-        },
-        {
-          "src": "/media/dmk/wizytowka-ciemna-rewers-1536.webp",
-          "smallSrc": "/media/dmk/wizytowka-ciemna-rewers-768.webp",
-          "width": 1024,
-          "height": 568,
-          "alt": "Ciemny rewers wizytówki DMK z danymi kontaktowymi.",
-          "caption": "Rewers · wariant ciemny.",
-          "kind": "original"
+          "height": 1505,
+          "alt": "Oryginalny projekt banera DMK 95 × 140 cm.",
+          "kind": "original",
+          "caption": "Baner 95 × 140 cm · oryginalny projekt."
         }
       ],
       "applications": [
         {
           "slug": "wizytowki",
-          "label": "Warianty",
-          "title": "Jasny i ciemny.",
-          "description": "Dwa warianty tej samej wizytówki. Jasny lepiej pokazuje zdjęcie i kod QR, ciemny wygląda bardziej elegancko.",
+          "label": "Wizytówki",
+          "title": "Wizytówki dla zespołu.",
+          "description": "Wspólny awers firmy i rewers z danymi konkretnej osoby oraz kodem QR. Powstał też ciemny wariant, bardziej elegancki.",
           "image": {
-            "src": "/media/dmk/wizytowki-1536.webp",
-            "smallSrc": "/media/dmk/wizytowki-768.webp",
+            "src": "/media/dmk/scena-wizytowki-1536.webp",
+            "smallSrc": "/media/dmk/scena-wizytowki-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Jasne i ciemne wizytówki DMK, awersy i rewersy, na jasnym tle.",
-            "caption": "Wizytówki · wizualizacja projektu.",
-            "kind": "visualization"
-          }
-        },
-        {
-          "slug": "banery",
-          "label": "Banery",
-          "title": "Banery.",
-          "description": "Dwa formaty banera z tą samą treścią: zdjęcia z realizacji, zakres usług i dane firmy.",
-          "image": {
-            "src": "/media/dmk/banery-1536.webp",
-            "smallSrc": "/media/dmk/banery-768.webp",
-            "width": 1536,
-            "height": 1024,
-            "alt": "Dwa banery DMK General Group w różnych formatach na jasnym tle.",
-            "caption": "Banery 152 × 225 i 95 × 140 cm · wizualizacja projektu.",
-            "kind": "visualization"
+            "alt": "Awers i rewers wizytówki DMK leżące na ciemnym, drewnianym blacie.",
+            "kind": "visualization",
+            "caption": "Wizytówki · wizualizacja projektu."
           },
           "originals": [
             {
-              "src": "/media/dmk/baner-152x225-1536.webp",
-              "smallSrc": "/media/dmk/baner-152x225-768.webp",
+              "src": "/media/dmk/wizytowka-awers-1536.webp",
+              "smallSrc": "/media/dmk/wizytowka-awers-768.webp",
               "width": 1024,
-              "height": 1513,
-              "alt": "Oryginalny projekt banera DMK 152 × 225 cm.",
-              "caption": "Baner 152 × 225 cm · oryginalny projekt.",
-              "kind": "original"
+              "height": 588,
+              "alt": "Awers wizytówki DMK z logo, danymi firmy i zdjęciem pracownika.",
+              "kind": "original",
+              "caption": "Awers · wariant jasny."
             },
             {
-              "src": "/media/dmk/baner-95x140-1536.webp",
-              "smallSrc": "/media/dmk/baner-95x140-768.webp",
+              "src": "/media/dmk/wizytowka-rewers-1536.webp",
+              "smallSrc": "/media/dmk/wizytowka-rewers-768.webp",
               "width": 1024,
-              "height": 1505,
-              "alt": "Oryginalny projekt banera DMK 95 × 140 cm.",
-              "caption": "Baner 95 × 140 cm · oryginalny projekt.",
-              "kind": "original"
+              "height": 570,
+              "alt": "Rewers wizytówki DMK z imieniem, stanowiskiem i kodem QR.",
+              "kind": "original",
+              "caption": "Rewers · wariant jasny."
+            },
+            {
+              "src": "/media/dmk/wizytowka-ciemna-awers-1536.webp",
+              "smallSrc": "/media/dmk/wizytowka-ciemna-awers-768.webp",
+              "width": 1024,
+              "height": 568,
+              "alt": "Ciemny awers wizytówki DMK z białym logo.",
+              "kind": "original",
+              "caption": "Awers · wariant ciemny."
+            },
+            {
+              "src": "/media/dmk/wizytowka-ciemna-rewers-1536.webp",
+              "smallSrc": "/media/dmk/wizytowka-ciemna-rewers-768.webp",
+              "width": 1024,
+              "height": 568,
+              "alt": "Ciemny rewers wizytówki DMK z danymi kontaktowymi.",
+              "kind": "original",
+              "caption": "Rewers · wariant ciemny."
             }
           ]
         }

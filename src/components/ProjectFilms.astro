@@ -4,7 +4,7 @@ import type {ApplicationVideo} from '../lib/content';
 interface Props {videos:ApplicationVideo[];section:string}
 const {videos,section}=Astro.props;
 ---
-<div class:list={["film-grid",{"film-grid-4":videos.length>=4}]}>{videos.map((video,index)=>{
+<div class:list={["film-grid",{"film-grid-4":videos.length>=3}]}>{videos.map((video,index)=>{
  const id=`film-${section}-${index}`;
  return <figure class="film-preview">
   <button class="film-open" type="button" data-film-open={id} aria-label={`Obejrzyj film: ${video.title}`} aria-haspopup="dialog" aria-controls={id}>
@@ -47,7 +47,7 @@ document.querySelectorAll<HTMLButtonElement>('[data-film-open]').forEach(button=
  .film-toolbar h3{font-size:.9rem;letter-spacing:-.02em}
  .film-toolbar button{width:40px;height:40px;background:white;border:1px solid var(--line);font-size:1.5rem;line-height:1}
  .film-dialog video{display:block;width:100%;height:auto;max-height:calc(100dvh - 128px);aspect-ratio:9/16;background:#000;object-fit:contain}
- .film-grid-4{grid-template-columns:repeat(4,1fr);gap:28px}
+ .film-grid-4{grid-template-columns:repeat(3,1fr);gap:28px;max-width:900px;margin-inline:auto}
  .film-grid-4 .film-image{aspect-ratio:9/16;padding:0;background:#f2f2f0}
  .film-grid-4 .film-image img{object-fit:cover}
  .film-embed{position:relative;aspect-ratio:9/16;max-height:calc(100dvh - 128px);background:#000}
