@@ -1103,13 +1103,13 @@
           "slug": "zimowe",
           "label": "Zima",
           "title": "Edycja zimowa.",
-          "description": "Zimowa edycja na tej samej tablicy w sali zajęć — ten sam układ, inny klimat. Rodzic od razu rozpozna markę.",
+          "description": "Plakat A3 i ulotka A5 edycji zimowej: ten sam układ co latem, inny klimat. Rodzic od razu rozpozna markę.",
           "image": {
-            "src": "/media/robo-edukacja/scena-sala-zima-1536.webp",
-            "smallSrc": "/media/robo-edukacja/scena-sala-zima-768.webp",
+            "src": "/media/robo-edukacja/zima-plansza-1536.webp",
+            "smallSrc": "/media/robo-edukacja/zima-plansza-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Plakat Zimowe ROBO przypięty do tablicy korkowej w sali zajęć z robotyki.",
+            "alt": "Plakat A3 i ulotka A5 Zimowe ROBO Półkolonie.",
             "kind": "visualization",
             "caption": "Plakat A3 · wizualizacja projektu."
           }
