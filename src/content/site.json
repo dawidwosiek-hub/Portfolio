@@ -59,12 +59,12 @@
         "Koncepcja graficzna obuwia",
         "Przygotowanie materiałów do druku"
       ],
-      "image": "/media/shiro/shiro-mark-presentation-1536.webp",
-      "imageSmall": "/media/shiro/shiro-mark-presentation-768.webp",
+      "image": "/media/shiro/scena-warsztat-1536.webp",
+      "imageSmall": "/media/shiro/scena-warsztat-768.webp",
       "imageWidth": 1536,
-      "imageHeight": 830,
-      "imageCaption": "Logo SHIRO · autorskie liternictwo, motyw bieżnika i czerwony akcent.",
-      "alt": "Oryginalne logo SHIRO na bieli z czerwonym akcentem H oraz detal litery na czerwonym polu.",
+      "imageHeight": 1024,
+      "imageCaption": "Wizytówki SHIRO w warsztacie · wizualizacja projektu.",
+      "alt": "Dwie wizytówki SHIRO na czarnym blacie warsztatu tuningowego, obok klucza dynamometrycznego, kabla diagnostycznego i kluczyka; w tle auto na podnośniku w czerwonym świetle.",
       "client": "SHIRO — motoryzacja.",
       "need": "Materiały marki dla mechaniki i chiptuningu oraz wynajmu samochodów: wizytówki, voucher podarunkowy, naklejka, baner i projekty flag. Wizualizacje koszulki i bluzy oraz koncepcja obuwia rozwijają zastosowania znaku.",
       "solution": "Zaprojektowałem znak z wyrazistym liternictwem i motywem bieżnika. Czerń, czerwony akcent i geometria sześciokątów wracają w kolejnych materiałach. Różne formaty zachowują wspólny charakter, a typografia Red Hat Display porządkuje komunikację marki.",
@@ -123,13 +123,13 @@
           "title": "Vouchery podarunkowe.",
           "description": "Dwustronny voucher podarunkowy SHIRO Car Rental. Strona z logo buduje charakter materiału, a rewers porządkuje pola na odbiorcę, osobę obdarowującą oraz wartość lub liczbę dni.",
           "image": {
-            "src": "/media/shiro/voucher-cutout-1536.webp",
-            "smallSrc": "/media/shiro/voucher-cutout-768.webp",
+            "src": "/media/shiro/scena-voucher-1536.webp",
+            "smallSrc": "/media/shiro/scena-voucher-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Wizualizacja awersu i rewersu czarno-czerwonego vouchera podarunkowego SHIRO na białym tle.",
-            "caption": "Voucher podarunkowy SHIRO · wizualizacja projektu.",
-            "kind": "visualization"
+            "alt": "Voucher podarunkowy SHIRO Car Rental na skórzanym fotelu samochodu, obok kluczyka, w czerwonym świetle ambientowym.",
+            "kind": "visualization",
+            "caption": "Voucher SHIRO · wizualizacja projektu."
           },
           "originals": [
             {
@@ -182,13 +182,13 @@
           "title": "Reklama w dużym formacie.",
           "description": "Grafika reklamowa SHIRO Mechanic & Chiptuning zestawia motoryzacyjne fotografie z listą usług i danymi kontaktowymi. Wyraźna hierarchia prowadzi od znaku do oferty.",
           "image": {
-            "src": "/media/shiro/baner-cutout-1536.webp",
-            "smallSrc": "/media/shiro/baner-cutout-768.webp",
+            "src": "/media/shiro/scena-baner-1536.webp",
+            "smallSrc": "/media/shiro/scena-baner-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Wizualizacja poziomego banera SHIRO z samochodami, logo i listą usług warsztatu na jasnym tle.",
-            "caption": "Baner SHIRO Mechanic & Chiptuning · wizualizacja projektu.",
-            "kind": "visualization"
+            "alt": "Baner SHIRO Mechanic & Chiptuning na elewacji warsztatu, obok otwartej bramy z autem na podnośniku.",
+            "kind": "visualization",
+            "caption": "Baner SHIRO na warsztacie · wizualizacja projektu."
           }
         },
         {
@@ -272,17 +272,16 @@
           }
         }
       ],
-      "shareImage": "/media/mockups/shiro-studio-v1.webp",
-      "presentation": "business-cards",
+      "shareImage": "/media/shiro/scena-warsztat-1536.webp",
       "teaser": "Identyfikacja warsztatu i wypożyczalni: od autorskiego znaku po druk i odzież.",
       "cover": {
-        "src": "/media/mockups/shiro-studio-v1.webp",
-        "smallSrc": "/media/mockups/shiro-studio-v1-768.webp",
+        "src": "/media/shiro/scena-warsztat-1536.webp",
+        "smallSrc": "/media/shiro/scena-warsztat-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Wizualizacja dwóch oryginalnych wizytówek SHIRO na białej powierzchni, obok czarnego kluczyka samochodowego.",
+        "alt": "Dwie wizytówki SHIRO na czarnym blacie warsztatu tuningowego, obok klucza dynamometrycznego, kabla diagnostycznego i kluczyka; w tle auto na podnośniku w czerwonym świetle.",
         "kind": "visualization",
-        "caption": "Wizualizacja projektu"
+        "caption": "Wizytówki SHIRO w warsztacie · wizualizacja projektu."
       }
     },
     {
@@ -486,13 +485,13 @@
         "Projekt roll-upu reklamowego",
         "Przygotowanie materiałów do druku"
       ],
-      "image": "/media/diverto/album-preview-3072.webp",
-      "imageSmall": "/media/diverto/album-preview-768.webp",
-      "imageWidth": 3072,
-      "imageHeight": 2048,
-      "shareImage": "/media/mockups/diverto-studio-v1.webp",
-      "imageCaption": "Oprawa płyty Diverto · prezentacja oryginalnych projektów.",
-      "alt": "Prezentacja oryginalnej okładki i nadruku płyty Diverto na białym tle.",
+      "image": "/media/diverto/scena-scena-1536.webp",
+      "imageSmall": "/media/diverto/scena-scena-768.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1024,
+      "shareImage": "/media/diverto/scena-scena-1536.webp",
+      "imageCaption": "Płyta Diverto na scenie · wizualizacja projektu.",
+      "alt": "Płyta Diverto w pudełku i nadrukowany krążek CD na klawiaturze scenicznej, w tle czerwone światła sceny i saksofon.",
       "accent": "#a51e3c",
       "client": "Diverto — zespół muzyczny.",
       "need": "Materiały promujące oprawę muzyczną wydarzeń: wydawnictwo CD prezentujące zespół i repertuar oraz roll-up z ofertą i danymi kontaktowymi.",
@@ -500,27 +499,6 @@
       "galleryLabel": "Płyta CD",
       "galleryTitle": "Muzyka ma swoją oprawę.",
       "galleryIntro": "Okładka, wkładki i nadruk na płytę tworzą jeden zestaw. Fotografie zespołu, sceniczna czerwień i wyraziste liternictwo wracają w każdym jego elemencie.",
-      "mockup": {
-        "kind": "cd",
-        "cover": {
-          "src": "/media/diverto/okladka-1536.webp",
-          "smallSrc": "/media/diverto/okladka-768.webp",
-          "width": 1536,
-          "height": 1536,
-          "kind": "original",
-          "alt": "Oryginalna okładka płyty Diverto: zdjęcie trzech muzyków na scenie, białe liternictwo i czerwone światło.",
-          "caption": "Okładka · oryginalny projekt"
-        },
-        "disc": {
-          "src": "/media/diverto/nadruk-plyty-1536.webp",
-          "smallSrc": "/media/diverto/nadruk-plyty-768.webp",
-          "width": 1536,
-          "height": 1536,
-          "kind": "original",
-          "alt": "Oryginalny projekt nadruku na płytę Diverto: biała nazwa zespołu na czarno-bordowym tle.",
-          "caption": "Nadruk na płytę · oryginalny projekt"
-        }
-      },
       "gallery": [
         {
           "src": "/media/diverto/okladka-1536.webp",
@@ -574,18 +552,6 @@
           "label": "Roll-up",
           "title": "Oferta widoczna z daleka.",
           "description": "Pionowy format porządkuje ofertę zespołu: nazwa, rodzaje wydarzeń i kontakt. Czerwień oraz motyw klawiatury i nut nawiązują do muzycznego charakteru materiałów.",
-          "mockup": {
-            "kind": "rollup",
-            "artwork": {
-              "src": "/media/diverto/rollup-1024.webp",
-              "smallSrc": "/media/diverto/rollup-768.webp",
-              "width": 1024,
-              "height": 2047,
-              "kind": "original",
-              "alt": "Projekt roll-upu Diverto z ofertą zespołu, motywem klawiatury, czerwonych nut i polem kontaktowym.",
-              "caption": "Roll-up · oryginalny projekt"
-            }
-          },
           "originals": [
             {
               "src": "/media/diverto/rollup-1024.webp",
@@ -596,21 +562,29 @@
               "alt": "Projekt roll-upu Diverto z ofertą zespołu, motywem klawiatury, czerwonych nut i polem kontaktowym.",
               "caption": "Roll-up · oryginalny projekt"
             }
-          ]
+          ],
+          "image": {
+            "src": "/media/diverto/scena-rollup-1536.webp",
+            "smallSrc": "/media/diverto/scena-rollup-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Roll-up zespołu Diverto na sali weselnej, obok sceny z instrumentami w czerwonym świetle.",
+            "kind": "visualization",
+            "caption": "Roll-up Diverto na sali · wizualizacja projektu."
+          }
         }
       ],
       "published": true,
       "featured": true,
-      "imageMedium": "/media/diverto/album-preview-1536.webp",
       "teaser": "Oprawa graficzna płyty i materiałów promocyjnych zespołu muzycznego.",
       "cover": {
-        "src": "/media/mockups/diverto-studio-v1.webp",
-        "smallSrc": "/media/mockups/diverto-studio-v1-768.webp",
+        "src": "/media/diverto/scena-scena-1536.webp",
+        "smallSrc": "/media/diverto/scena-scena-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Wizualizacja fizycznego opakowania płyty Diverto z oryginalną okładką i nadrukiem na CD, w jasnym studiu.",
+        "alt": "Płyta Diverto w pudełku i nadrukowany krążek CD na klawiaturze scenicznej, w tle czerwone światła sceny i saksofon.",
         "kind": "visualization",
-        "caption": "Wizualizacja projektu"
+        "caption": "Płyta Diverto na scenie · wizualizacja projektu."
       }
     },
     {
@@ -769,14 +743,13 @@
         "Dwa warianty nadruku DTF na koszulkach",
         "Dokumentacja położenia i wielkości oznakowania"
       ],
-      "image": "/media/olsen/ulozenie-3072.webp",
-      "imageSmall": "/media/olsen/ulozenie-768.webp",
-      "imageMedium": "/media/olsen/ulozenie-1536.webp",
-      "imageWidth": 3072,
-      "imageHeight": 2048,
-      "shareImage": "/media/mockups/olsen-studio-v1.webp",
-      "imageCaption": "Kurtka OLSEN · wizualizacja projektu z oryginalnymi grafikami oznakowania.",
-      "alt": "Kurtka firmowa OLSEN na białym tle: przód z małym znakiem i tył z większym oznakowaniem.",
+      "image": "/media/olsen/scena-kurtka-1536.webp",
+      "imageSmall": "/media/olsen/scena-kurtka-768.webp",
+      "imageWidth": 1536,
+      "imageHeight": 1024,
+      "shareImage": "/media/olsen/scena-kurtka-1536.webp",
+      "imageCaption": "Kurtka OLSEN w warsztacie · wizualizacja projektu.",
+      "alt": "Czarna kurtka softshell OLSEN z haftem na plecach, rozłożona w warsztacie instalatora wentylacji obok przewodów, rekuperatora i wkrętarki.",
       "accent": "#c42128",
       "galleryLabel": "Kurtka / haft",
       "galleryTitle": "Marka widoczna w pracy.",
@@ -784,46 +757,6 @@
       "client": "OLSEN — wentylacja i klimatyzacja.",
       "need": "Oznakowanie odzieży dla firmy zajmującej się wentylacją, rekuperacją i klimatyzacją. Projekt obejmuje kurtkę, bluzę z kapturem, czapkę oraz dwa warianty koszulki.",
       "solution": "Z przodu umieściłem niewielki znak na lewej piersi. Większe oznakowanie na plecach łączy nazwę firmy z zakresem usług i kontaktem. Układ dopasowałem do kroju odzieży i wskazanej techniki zdobienia: haftu lub nadruku DTF.",
-      "apparel": {
-        "base": {
-          "src": "/media/olsen/kurtka-baza-1536.webp",
-          "smallSrc": "/media/olsen/kurtka-baza-768.webp",
-          "width": 1536,
-          "height": 1024,
-          "alt": ""
-        },
-        "layout": "pair",
-        "label": "Kurtka firmowa OLSEN: mały haft na lewej piersi i większe oznakowanie na plecach.",
-        "caption": "Wizualizacja projektu z oryginalnymi grafikami oznakowania.",
-        "marks": [
-          {
-            "image": {
-              "src": "/media/olsen/haft-przod.png",
-              "width": 377,
-              "height": 118,
-              "alt": "Oryginalny znak OLSEN w wizualizacji haftu."
-            },
-            "top": 32.3,
-            "width": 14.7,
-            "screen": true,
-            "view": "front",
-            "centerX": 67.3
-          },
-          {
-            "image": {
-              "src": "/media/olsen/haft-tyl.png",
-              "width": 1020,
-              "height": 538,
-              "alt": "Oryginalny projekt haftu OLSEN z opisem usług i kontaktem."
-            },
-            "top": 28.1,
-            "width": 39.3,
-            "screen": true,
-            "view": "back",
-            "centerX": 48.4
-          }
-        ]
-      },
       "gallery": [
         {
           "src": "/media/olsen/kurtka-projekt-2048.webp",
@@ -902,46 +835,6 @@
           "label": "Koszulki / DTF",
           "title": "Oznakowanie w wersji DTF.",
           "description": "Dwa warianty projektu koszulki różnią się opracowaniem pola kontaktowego na plecach. Mały znak z przodu pozostaje wspólnym elementem zestawu. Poniżej można porównać oba oryginalne projekty.",
-          "apparel": {
-            "base": {
-              "src": "/media/olsen/koszulka-baza-1536.webp",
-              "smallSrc": "/media/olsen/koszulka-baza-768.webp",
-              "width": 1536,
-              "height": 1024,
-              "alt": ""
-            },
-            "layout": "pair",
-            "label": "Koszulka OLSEN: mały nadruk z przodu i pełne oznakowanie DTF na plecach.",
-            "caption": "Wizualizacja projektu z oryginalnymi grafikami oznakowania.",
-            "marks": [
-              {
-                "image": {
-                  "src": "/media/olsen/dtf-przod.png",
-                  "width": 377,
-                  "height": 117,
-                  "alt": "Oryginalny znak OLSEN w wersji do nadruku DTF."
-                },
-                "top": 31.5,
-                "width": 12.1,
-                "screen": false,
-                "view": "front",
-                "centerX": 66.3
-              },
-              {
-                "image": {
-                  "src": "/media/olsen/dtf-tyl.png",
-                  "width": 1096,
-                  "height": 573,
-                  "alt": "Oryginalny projekt nadruku DTF OLSEN: znak, zakres usług, telefon i e-mail."
-                },
-                "top": 26.0,
-                "width": 35.2,
-                "screen": false,
-                "view": "back",
-                "centerX": 48.0
-              }
-            ]
-          },
           "originals": [
             {
               "src": "/media/olsen/koszulka-dtf-projekt-2048.webp",
@@ -965,7 +858,16 @@
               "alt": "Oryginalny drugi wariant koszulki OLSEN z innym opracowaniem pola kontaktowego na plecach.",
               "caption": "Koszulka DTF · wariant 02"
             }
-          ]
+          ],
+          "image": {
+            "src": "/media/olsen/scena-van-1536.webp",
+            "smallSrc": "/media/olsen/scena-van-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Złożona koszulka OLSEN z nadrukiem i czapka z haftem w aucie serwisowym instalatora, obok przewodów wentylacyjnych i skrzynki z narzędziami.",
+            "kind": "visualization",
+            "caption": "Koszulka i czapka OLSEN · wizualizacja projektu."
+          }
         },
         {
           "slug": "czapka",
@@ -1018,13 +920,13 @@
       "featured": true,
       "teaser": "Oznakowanie kurtek, bluz i koszulek. Mały znak z przodu, pełna informacja na plecach.",
       "cover": {
-        "src": "/media/mockups/olsen-studio-v1.webp",
-        "smallSrc": "/media/mockups/olsen-studio-v1-768.webp",
+        "src": "/media/olsen/scena-kurtka-1536.webp",
+        "smallSrc": "/media/olsen/scena-kurtka-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Wizualizacja czarnej kurtki OLSEN na białym podeście, z oryginalnym projektem haftu na plecach.",
+        "alt": "Czarna kurtka softshell OLSEN z haftem na plecach, rozłożona w warsztacie instalatora wentylacji obok przewodów, rekuperatora i wkrętarki.",
         "kind": "visualization",
-        "caption": "Wizualizacja projektu"
+        "caption": "Kurtka OLSEN w warsztacie · wizualizacja projektu."
       }
     },
     {
