@@ -398,7 +398,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     },
     {
       "slug": "prato-development-rolki",
@@ -756,7 +756,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     },
     {
       "slug": "olsen-odziez-firmowa",
@@ -1166,7 +1166,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     }
   ]
 }
