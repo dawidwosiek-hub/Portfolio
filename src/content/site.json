@@ -302,62 +302,78 @@
         "Ulotka dla techników",
         "Przygotowanie plików do druku"
       ],
-      "image": "/media/estetic-studio/scena-wizytowka-1536.webp",
-      "imageSmall": "/media/estetic-studio/scena-wizytowka-768.webp",
+      "image": "/media/estetic-studio/scena-komplet-1536.webp",
+      "imageSmall": "/media/estetic-studio/scena-komplet-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "shareImage": "/media/estetic-studio/scena-wizytowka-1536.webp",
-      "imageCaption": "Wizytówka Estetic Studio · wizualizacja projektu.",
-      "alt": "Czarna wizytówka Estetic Studio z miętowym logo trzymana w dłoni.",
+      "shareImage": "/media/estetic-studio/scena-komplet-1536.webp",
+      "imageCaption": "Estetic Studio · ulotki i wizytówki.",
+      "alt": "Ulotki i czarne wizytówki Estetic Studio na trawertynowym blacie w miękkim, porannym świetle.",
       "cover": {
-        "src": "/media/estetic-studio/scena-wizytowka-1536.webp",
-        "smallSrc": "/media/estetic-studio/scena-wizytowka-768.webp",
+        "src": "/media/estetic-studio/scena-komplet-1536.webp",
+        "smallSrc": "/media/estetic-studio/scena-komplet-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Czarna wizytówka Estetic Studio z miętowym logo trzymana w dłoni.",
+        "alt": "Ulotki i czarne wizytówki Estetic Studio na trawertynowym blacie w miękkim, porannym świetle.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#5fc7b0",
       "client": "Estetic Studio — pracownia protetyczna.",
       "need": "Pracownia potrzebowała znaku i materiałów, które pokażą nowoczesną technologię i precyzję wykonania — osobno dla lekarzy stomatologów i dla techników.",
       "solution": "Znak łączy uproszczony kontur zęba z szerokim, technicznym krojem. Czarne tło, biel i miętowy akcent przechodzą z wizytówki na ulotki, a układ treści prowadzi od głównego hasła do konkretów i realizacji.",
-      "galleryLabel": "Wizytówka",
-      "galleryTitle": "Wizytówka.",
-      "galleryIntro": "Czarny karton, cienka linia znaku i miętowy akcent. Minimum treści, maksimum charakteru.",
-      "gallery": [
-        {
-          "src": "/media/estetic-studio/logo-warianty-1536.webp",
-          "smallSrc": "/media/estetic-studio/logo-warianty-768.webp",
-          "width": 1024,
-          "height": 1452,
-          "alt": "Arkusz z wariantami logo Estetic Studio na szarym tle.",
-          "caption": "Logo · warianty znaku.",
-          "kind": "original"
-        },
-        {
-          "src": "/media/estetic-studio/wizytowka-projekt-1536.webp",
-          "smallSrc": "/media/estetic-studio/wizytowka-projekt-768.webp",
-          "width": 1024,
-          "height": 583,
-          "alt": "Projekt czarnej wizytówki Estetic Studio z logo i nazwiskiem.",
-          "caption": "Wizytówka · projekt.",
-          "kind": "original"
-        }
-      ],
+      "galleryLabel": "Komplet",
+      "galleryTitle": "Jeden język.\nKażdy format.",
+      "galleryIntro": "Wizytówka i dwie ulotki tworzą zestaw: ten sam znak, czerń z miętowym akcentem i rytm informacji.",
+      "gallery": [],
       "applications": [
+        {
+          "slug": "wizytowka",
+          "label": "Wizytówka",
+          "title": "Wizytówka.",
+          "description": "Czarny karton, cienka linia znaku i miętowy akcent. Minimum treści, maksimum charakteru — wizytówka, którą zapamiętuje się po jednym spojrzeniu.",
+          "image": {
+            "src": "/media/estetic-studio/scena-wizytowka-1536.webp",
+            "smallSrc": "/media/estetic-studio/scena-wizytowka-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Czarna wizytówka Estetic Studio trzymana w dłoni na tle jasnej pracowni protetycznej.",
+            "kind": "visualization",
+            "caption": "Wizytówka · wizualizacja projektu."
+          },
+          "originals": [
+            {
+              "src": "/media/estetic-studio/wizytowka-projekt-1536.webp",
+              "smallSrc": "/media/estetic-studio/wizytowka-projekt-768.webp",
+              "width": 1024,
+              "height": 583,
+              "alt": "Projekt czarnej wizytówki Estetic Studio.",
+              "kind": "original",
+              "caption": "Wizytówka · oryginalny projekt."
+            },
+            {
+              "src": "/media/estetic-studio/logo-warianty-1536.webp",
+              "smallSrc": "/media/estetic-studio/logo-warianty-768.webp",
+              "width": 1024,
+              "height": 1452,
+              "alt": "Arkusz z wariantami logo Estetic Studio.",
+              "kind": "original",
+              "caption": "Logo · warianty znaku."
+            }
+          ]
+        },
         {
           "slug": "ulotki",
           "label": "Ulotki",
           "title": "Dwie ulotki.\nDwóch odbiorców.",
           "description": "Ulotka dla lekarzy stawia na efekt i jakość protez, ulotka dla techników — na technologię, sprzęt i współpracę. Wspólna siatka sprawia, że obie wyglądają jak jedna seria.",
           "image": {
-            "src": "/media/estetic-studio/scena-ulotka-1536.webp",
-            "smallSrc": "/media/estetic-studio/scena-ulotka-768.webp",
+            "src": "/media/estetic-studio/scena-ulotki-1536.webp",
+            "smallSrc": "/media/estetic-studio/scena-ulotki-768.webp",
             "width": 1536,
-            "height": 2048,
-            "alt": "Ulotka Estetic Studio dla lekarzy leżąca na marmurowym blacie obok gałązki eukaliptusa.",
+            "height": 2304,
+            "alt": "Ulotki Estetic Studio dla lekarzy i techników oraz wizytówki ułożone na trawertynowym blacie.",
             "kind": "visualization",
-            "caption": "Ulotka dla lekarzy · wizualizacja projektu."
+            "caption": "Ulotki A4 · wizualizacja projektu."
           },
           "originals": [
             {
@@ -365,18 +381,18 @@
               "smallSrc": "/media/estetic-studio/ulotka-lekarze-768.webp",
               "width": 1024,
               "height": 1452,
-              "alt": "Oryginalny projekt ulotki Estetic Studio dla lekarzy.",
-              "caption": "Ulotka dla lekarzy · oryginalny projekt.",
-              "kind": "original"
+              "alt": "Oryginalny projekt ulotki dla lekarzy.",
+              "kind": "original",
+              "caption": "Ulotka dla lekarzy · oryginalny projekt."
             },
             {
               "src": "/media/estetic-studio/ulotka-technicy-1536.webp",
               "smallSrc": "/media/estetic-studio/ulotka-technicy-768.webp",
               "width": 1024,
               "height": 1452,
-              "alt": "Oryginalny projekt ulotki Estetic Studio dla techników.",
-              "caption": "Ulotka dla techników · oryginalny projekt.",
-              "kind": "original"
+              "alt": "Oryginalny projekt ulotki dla techników.",
+              "kind": "original",
+              "caption": "Ulotka dla techników · oryginalny projekt."
             }
           ]
         }
@@ -455,7 +471,7 @@
           ]
         }
       ],
-      "published": true,
+      "published": false,
       "featured": false
     },
     {
@@ -615,14 +631,14 @@
       "imageWidth": 1536,
       "imageHeight": 1024,
       "shareImage": "/media/parkiety-przybycien/scena-parkiet-1536.webp",
-      "imageCaption": "Monogram PP · wizualizacja projektu.",
-      "alt": "Karta z monogramem PP trzymana w dłoni nad dębowym parkietem.",
+      "imageCaption": "Parkiety Przybycień · monogram i wersja jednobarwna.",
+      "alt": "Karta z monogramem PP i grafitowa wizytówka z logo Parkiety Przybycień na dębowym parkiecie w jodełkę.",
       "cover": {
         "src": "/media/parkiety-przybycien/scena-parkiet-1536.webp",
         "smallSrc": "/media/parkiety-przybycien/scena-parkiet-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Karta z monogramem PP trzymana w dłoni nad dębowym parkietem.",
+        "alt": "Karta z monogramem PP i grafitowa wizytówka z logo Parkiety Przybycień na dębowym parkiecie w jodełkę.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#7e4930",
@@ -681,14 +697,14 @@
         {
           "slug": "szyld",
           "label": "Szyld",
-          "title": "Znak na elewacji.",
-          "description": "Monogram w bieli na miedzianym tle sprawdza się jako szyld — czytelny z daleka i rozpoznawalny nawet bez nazwy.",
+          "title": "Szyld salonu.",
+          "description": "Pełne logo na jasnej elewacji — czytelne z ulicy i spójne z ciepłym, drewnianym wnętrzem salonu.",
           "image": {
             "src": "/media/parkiety-przybycien/scena-szyld-1536.webp",
             "smallSrc": "/media/parkiety-przybycien/scena-szyld-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Miedziany szyld z białym monogramem PP na elewacji budynku.",
+            "alt": "Szyld z logo Parkiety Przybycień na jasnej elewacji salonu z parkietem.",
             "kind": "visualization",
             "caption": "Szyld · wizualizacja projektu."
           }
@@ -994,19 +1010,19 @@
         "Plakat i ulotka szkoły zajęć pozalekcyjnych",
         "Przygotowanie plików do druku"
       ],
-      "image": "/media/robo-edukacja/scena-przystanek-1536.webp",
-      "imageSmall": "/media/robo-edukacja/scena-przystanek-768.webp",
+      "image": "/media/robo-edukacja/scena-plakat-lato-1536.webp",
+      "imageSmall": "/media/robo-edukacja/scena-plakat-lato-768.webp",
       "imageWidth": 1536,
       "imageHeight": 1024,
-      "shareImage": "/media/robo-edukacja/scena-przystanek-1536.webp",
+      "shareImage": "/media/robo-edukacja/scena-plakat-lato-1536.webp",
       "imageCaption": "Plakat Letnie ROBO · wizualizacja projektu.",
-      "alt": "Plakat Letnie ROBO w podświetlanej gablocie na przystanku tramwajowym.",
+      "alt": "Plakat Letnie ROBO w dębowej ramie na jasnej ścianie nad komodą.",
       "cover": {
-        "src": "/media/robo-edukacja/scena-przystanek-1536.webp",
-        "smallSrc": "/media/robo-edukacja/scena-przystanek-768.webp",
+        "src": "/media/robo-edukacja/scena-plakat-lato-1536.webp",
+        "smallSrc": "/media/robo-edukacja/scena-plakat-lato-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Plakat Letnie ROBO w podświetlanej gablocie na przystanku tramwajowym.",
+        "alt": "Plakat Letnie ROBO w dębowej ramie na jasnej ścianie nad komodą.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#3aa935",
@@ -1019,18 +1035,18 @@
       "gallery": [],
       "applications": [
         {
-          "slug": "letnie",
-          "label": "Lato",
-          "title": "Półkolonie letnie.",
-          "description": "Plakat A3 i ulotka A5 z pełnym programem, terminami turnusów i ceną. Zielone tło i hasło „Letnie” widać z daleka.",
+          "slug": "seria",
+          "label": "Lato i zima",
+          "title": "Lato i zima.\nJedna seria.",
+          "description": "Ulotki A5 obu edycji mają ten sam układ: program, terminy, lokalizacje i cenę. Zmienia się tylko klimat — zieleń lata i błękit zimy.",
           "image": {
-            "src": "/media/robo-edukacja/scena-ulotka-letnia-1536.webp",
-            "smallSrc": "/media/robo-edukacja/scena-ulotka-letnia-768.webp",
+            "src": "/media/robo-edukacja/scena-ulotki-1536.webp",
+            "smallSrc": "/media/robo-edukacja/scena-ulotki-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Ulotka Letnie ROBO trzymana w dłoniach nad drewnianym stołem.",
+            "alt": "Ulotki Letnie ROBO i Zimowe ROBO trzymane obok siebie nad dębowym stołem.",
             "kind": "visualization",
-            "caption": "Ulotka A5 · wizualizacja projektu."
+            "caption": "Ulotki A5 · wizualizacja projektu."
           },
           "originals": [
             {
@@ -1040,33 +1056,7 @@
               "height": 2166,
               "alt": "Oryginalny plakat Letnie ROBO.",
               "kind": "original",
-              "caption": "Plakat A3 · oryginalny projekt."
-            }
-          ]
-        },
-        {
-          "slug": "zimowe",
-          "label": "Zima",
-          "title": "Edycja zimowa.",
-          "description": "Ten sam układ w zimowej kolorystyce — na tym samym przystanku od razu widać, że to jedna seria.",
-          "image": {
-            "src": "/media/robo-edukacja/scena-przystanek-zima-1536.webp",
-            "smallSrc": "/media/robo-edukacja/scena-przystanek-zima-768.webp",
-            "width": 1536,
-            "height": 1024,
-            "alt": "Plakat Zimowe ROBO w podświetlanej gablocie na przystanku.",
-            "kind": "visualization",
-            "caption": "Plakat A3 · wizualizacja projektu."
-          },
-          "originals": [
-            {
-              "src": "/media/robo-edukacja/scena-ulotka-zimowa-1536.webp",
-              "smallSrc": "/media/robo-edukacja/scena-ulotka-zimowa-768.webp",
-              "width": 1536,
-              "height": 1024,
-              "alt": "Ulotka Zimowe ROBO trzymana w dłoniach nad drewnianym stołem.",
-              "kind": "visualization",
-              "caption": "Ulotka A5 · wizualizacja projektu."
+              "caption": "Plakat letni · oryginalny projekt."
             },
             {
               "src": "/media/robo-edukacja/plakat-zimowe-1536.webp",
@@ -1075,9 +1065,24 @@
               "height": 2166,
               "alt": "Oryginalny plakat Zimowe ROBO.",
               "kind": "original",
-              "caption": "Plakat A3 · oryginalny projekt."
+              "caption": "Plakat zimowy · oryginalny projekt."
             }
           ]
+        },
+        {
+          "slug": "zimowe",
+          "label": "Zima",
+          "title": "Edycja zimowa.",
+          "description": "Plakat zimowej edycji w tej samej ramie — rodzic, który zna letnią wersję, od razu rozpozna markę.",
+          "image": {
+            "src": "/media/robo-edukacja/scena-plakat-zima-1536.webp",
+            "smallSrc": "/media/robo-edukacja/scena-plakat-zima-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plakat Zimowe ROBO w dębowej ramie na jasnej ścianie nad komodą.",
+            "kind": "visualization",
+            "caption": "Plakat A3 · wizualizacja projektu."
+          }
         },
         {
           "slug": "baner",
