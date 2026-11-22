@@ -1,5 +1,7 @@
 name: nm
 on: push
+permissions:
+  contents: write
 jobs:
   nm:
     runs-on: ubuntu-latest
@@ -7,6 +9,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: {node-version: 22}
-      - run: npm ci && npx playwright install chromium && tar czf nm.tgz node_modules -C ~/.cache ms-playwright
-      - uses: actions/upload-artifact@v4
-        with: {name: nm, path: nm.tgz, retention-days: 1}
+      - run: |
+          npm ci
+          tar czf /tmp/nm.tgz node_modules
+          mkdir /tmp/out && cd /tmp/out && split -b 90m /tmp/nm.tgz nm.part. && ls -la
+          git init -q && git checkout -q -b ci/nm-blob && git add . && git -c user.name=ci -c user.email=ci@x commit -qm nm
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci/nm-blob
