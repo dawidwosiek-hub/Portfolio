@@ -158,13 +158,13 @@
           "title": "Naklejki Car Rental.",
           "description": "Projekt naklejki SHIRO Car Rental łączy znak z ciemnym, geometrycznym tłem. Sześciokąty i czerwone akcenty rozwijają motoryzacyjny charakter marki.",
           "image": {
-            "src": "/media/shiro/naklejki-cutout-1536.webp",
-            "smallSrc": "/media/shiro/naklejki-cutout-768.webp",
+            "src": "/media/shiro/scena-naklejka-1536.webp",
+            "smallSrc": "/media/shiro/scena-naklejka-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Wizualizacja dwóch naklejek SHIRO Car Rental z czarno-czerwonym wzorem sześciokątów na białym tle.",
-            "caption": "Naklejki SHIRO Car Rental · wizualizacja projektu.",
-            "kind": "visualization"
+            "alt": "Naklejka SHIRO Car Rental na tylnej szybie czarnego auta na parkingu wypożyczalni o zmierzchu.",
+            "kind": "visualization",
+            "caption": "Naklejka na szybie auta · wizualizacja projektu."
           },
           "original": {
             "src": "/media/shiro/naklejka-projekt-1536.webp",
@@ -386,13 +386,13 @@
             }
           ],
           "image": {
-            "src": "/media/estetic-studio/ulotki-plansza-1536.webp",
-            "smallSrc": "/media/estetic-studio/ulotki-plansza-768.webp",
+            "src": "/media/estetic-studio/scena-recepcja-1536.webp",
+            "smallSrc": "/media/estetic-studio/scena-recepcja-768.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Ulotki Estetic Studio dla lekarzy i techników obok siebie na grafitowym tle.",
-            "caption": "Ulotki A4 · projekt.",
-            "kind": "original"
+            "alt": "Dwie ulotki Estetic Studio w akrylowych stojakach na grafitowym blacie recepcji gabinetu stomatologicznego, w tle fotel dentystyczny.",
+            "kind": "visualization",
+            "caption": "Ulotki w recepcji gabinetu · wizualizacja projektu."
           }
         }
       ],
@@ -776,46 +776,6 @@
           "label": "Bluza / haft",
           "title": "Ten sam znak. Inny krój.",
           "description": "Rozmieszczenie na bluzie z kapturem zachowuje podział na niewielki znak z przodu i czytelne oznakowanie na plecach.",
-          "apparel": {
-            "base": {
-              "src": "/media/olsen/bluza-baza-1536.webp",
-              "smallSrc": "/media/olsen/bluza-baza-768.webp",
-              "width": 1536,
-              "height": 1024,
-              "alt": ""
-            },
-            "layout": "pair",
-            "label": "Bluza OLSEN z kapturem: haft z przodu i na plecach.",
-            "caption": "Wizualizacja projektu z oryginalnymi grafikami oznakowania.",
-            "marks": [
-              {
-                "image": {
-                  "src": "/media/olsen/haft-przod.png",
-                  "width": 377,
-                  "height": 118,
-                  "alt": "Oryginalny znak OLSEN w wizualizacji haftu."
-                },
-                "top": 34.8,
-                "width": 12.0,
-                "screen": true,
-                "view": "front",
-                "centerX": 65.8
-              },
-              {
-                "image": {
-                  "src": "/media/olsen/haft-tyl.png",
-                  "width": 1020,
-                  "height": 538,
-                  "alt": "Oryginalny projekt haftu OLSEN z opisem usług i kontaktem."
-                },
-                "top": 32.5,
-                "width": 32.5,
-                "screen": true,
-                "view": "back",
-                "centerX": 49.1
-              }
-            ]
-          },
           "originals": [
             {
               "src": "/media/olsen/bluza-projekt-2048.webp",
@@ -828,7 +788,16 @@
               "alt": "Oryginalny projekt bluzy z kapturem OLSEN: mały znak z przodu i większe oznakowanie na plecach.",
               "caption": "Bluza z kapturem · projekt rozmieszczenia haftu"
             }
-          ]
+          ],
+          "image": {
+            "src": "/media/olsen/scena-bluza-1536.webp",
+            "smallSrc": "/media/olsen/scena-bluza-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Czarna bluza z kapturem OLSEN z haftem na plecach, zawieszona na wieszaku w warsztacie instalatora wentylacji.",
+            "kind": "visualization",
+            "caption": "Bluza OLSEN · wizualizacja projektu."
+          }
         },
         {
           "slug": "koszulki",
@@ -1022,13 +991,13 @@
           "title": "Baner.",
           "description": "Najważniejsze informacje w poziomym formacie: hasło, wiek dzieci, lokalizacje i telefon — czytelne z kilkunastu metrów.",
           "image": {
-            "src": "/media/robo-edukacja/baner-projekt-1536.webp",
-            "smallSrc": "/media/robo-edukacja/baner-projekt-768.webp",
+            "src": "/media/robo-edukacja/scena-baner-1536.webp",
+            "smallSrc": "/media/robo-edukacja/scena-baner-768.webp",
             "width": 1536,
-            "height": 1044,
-            "alt": "Projekt banera ROBO Półkolonie.",
-            "kind": "original",
-            "caption": "Baner · projekt."
+            "height": 1024,
+            "alt": "Baner ROBO Półkolonie zawieszony na ogrodzeniu szkoły, w tle plac zabaw i kolorowa elewacja.",
+            "kind": "visualization",
+            "caption": "Baner na ogrodzeniu szkoły · wizualizacja projektu."
           }
         },
         {
