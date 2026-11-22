@@ -310,7 +310,7 @@
       "imageWidth": 3072,
       "imageHeight": 2048,
       "shareImage": "/media/estetic-studio/scena-pracownia-1536.webp",
-      "imageCaption": "Estetic Studio · materiały w pracowni.",
+      "imageCaption": "Ulotki i wizytówki Estetic Studio w pracowni · wizualizacja projektu.",
       "alt": "Ulotki i czarne wizytówki Estetic Studio na grafitowym blacie pracowni protetycznej, obok modelu protezy i narzędzi.",
       "cover": {
         "src": "/media/estetic-studio/scena-pracownia-2x.webp",
@@ -333,8 +333,8 @@
         {
           "slug": "wizytowka",
           "label": "Wizytówka",
-          "title": "Wizytówka.",
-          "description": "Czarny karton, cienka linia znaku i miętowy akcent. Minimum treści, maksimum charakteru — wizytówka, którą zapamiętuje się po jednym spojrzeniu.",
+          "title": "Wizytówka.\nDwie strony.",
+          "description": "Czarny karton, cienka linia znaku i miętowy akcent. Na awersie logo i podpis, na rewersie hasło „Precyzja, która przywraca uśmiech”, dane pracowni, kontakt i NIP.",
           "image": {
             "src": "/media/estetic-studio/scena-wizytowka-lab-2x.webp",
             "smallSrc": "/media/estetic-studio/scena-wizytowka-lab-768.webp",
@@ -347,48 +347,93 @@
           },
           "originals": [
             {
-              "src": "/media/estetic-studio/wizytowka-projekt-1536.webp",
-              "smallSrc": "/media/estetic-studio/wizytowka-projekt-768.webp",
-              "width": 1024,
-              "height": 583,
-              "alt": "Projekt czarnej wizytówki Estetic Studio.",
+              "src": "/media/estetic-studio/wizytowka-przod-2000.webp",
+              "smallSrc": "/media/estetic-studio/wizytowka-przod-768.webp",
+              "width": 2000,
+              "height": 1140,
+              "alt": "Awers wizytówki Estetic Studio z logo i podpisem Pamela Kaliszewska.",
               "kind": "original",
-              "caption": "Wizytówka · oryginalny projekt."
+              "caption": "Wizytówka · awers."
             },
             {
-              "src": "/media/estetic-studio/logo-warianty-1536.webp",
-              "smallSrc": "/media/estetic-studio/logo-warianty-768.webp",
-              "width": 1024,
-              "height": 1452,
-              "alt": "Arkusz z wariantami logo Estetic Studio.",
+              "src": "/media/estetic-studio/wizytowka-tyl-2000.webp",
+              "smallSrc": "/media/estetic-studio/wizytowka-tyl-768.webp",
+              "width": 2000,
+              "height": 1140,
+              "alt": "Rewers wizytówki Estetic Studio z adresem, telefonem, e-mailem i NIP.",
               "kind": "original",
-              "caption": "Logo · warianty znaku."
+              "caption": "Wizytówka · rewers."
+            },
+            {
+              "src": "/media/estetic-studio/logo-v1-2000.webp",
+              "smallSrc": "/media/estetic-studio/logo-v1-768.webp",
+              "width": 2000,
+              "height": 2838,
+              "alt": "Plansza wariantów logo Estetic Studio – wersja pozioma.",
+              "kind": "original",
+              "caption": "Logo · warianty poziome."
+            },
+            {
+              "src": "/media/estetic-studio/logo-v2-2000.webp",
+              "smallSrc": "/media/estetic-studio/logo-v2-768.webp",
+              "width": 2000,
+              "height": 2838,
+              "alt": "Plansza wariantów logo Estetic Studio – wersja pionowa.",
+              "kind": "original",
+              "caption": "Logo · warianty pionowe."
+            },
+            {
+              "src": "/media/estetic-studio/logo-mono-2000.webp",
+              "smallSrc": "/media/estetic-studio/logo-mono-768.webp",
+              "width": 2000,
+              "height": 2838,
+              "alt": "Plansza wersji jednobarwnych logo Estetic Studio.",
+              "kind": "original",
+              "caption": "Logo · wersje jednobarwne."
             }
           ]
         },
         {
           "slug": "ulotki",
           "label": "Ulotki",
-          "title": "Dwie ulotki.\nDwóch odbiorców.",
-          "description": "Ulotka dla lekarzy stawia na efekt i jakość protez, ulotka dla techników — na technologię, sprzęt i współpracę. Wspólna siatka sprawia, że obie wyglądają jak jedna seria.",
+          "title": "Dwie ulotki.\nDwie strony każdej.",
+          "description": "Obie ulotki są dwustronne. Z przodu: dla lekarzy — efekt i jakość protez, dla techników — technologia i sprzęt. Z tyłu: osobne cenniki dla każdej grupy. Wspólna siatka sprawia, że wyglądają jak jedna seria.",
           "originals": [
             {
-              "src": "/media/estetic-studio/ulotka-lekarze-1536.webp",
-              "smallSrc": "/media/estetic-studio/ulotka-lekarze-768.webp",
-              "width": 1024,
-              "height": 1452,
-              "alt": "Oryginalny projekt ulotki dla lekarzy.",
+              "src": "/media/estetic-studio/ulotka-lekarze-przod-2000.webp",
+              "smallSrc": "/media/estetic-studio/ulotka-lekarze-przod-768.webp",
+              "width": 2000,
+              "height": 2838,
+              "alt": "Przód ulotki Estetic Studio dla lekarzy.",
               "kind": "original",
-              "caption": "Ulotka dla lekarzy · oryginalny projekt."
+              "caption": "Ulotka dla lekarzy · przód."
             },
             {
-              "src": "/media/estetic-studio/ulotka-technicy-1536.webp",
-              "smallSrc": "/media/estetic-studio/ulotka-technicy-768.webp",
-              "width": 1024,
-              "height": 1452,
-              "alt": "Oryginalny projekt ulotki dla techników.",
+              "src": "/media/estetic-studio/ulotka-lekarze-tyl-2000.webp",
+              "smallSrc": "/media/estetic-studio/ulotka-lekarze-tyl-768.webp",
+              "width": 2000,
+              "height": 2838,
+              "alt": "Tył ulotki Estetic Studio dla lekarzy – cennik 2026.",
               "kind": "original",
-              "caption": "Ulotka dla techników · oryginalny projekt."
+              "caption": "Ulotka dla lekarzy · tył (cennik)."
+            },
+            {
+              "src": "/media/estetic-studio/ulotka-technicy-przod-2000.webp",
+              "smallSrc": "/media/estetic-studio/ulotka-technicy-przod-768.webp",
+              "width": 2000,
+              "height": 2838,
+              "alt": "Przód ulotki Estetic Studio dla techników.",
+              "kind": "original",
+              "caption": "Ulotka dla techników · przód."
+            },
+            {
+              "src": "/media/estetic-studio/ulotka-technicy-tyl-2000.webp",
+              "smallSrc": "/media/estetic-studio/ulotka-technicy-tyl-768.webp",
+              "width": 2000,
+              "height": 2838,
+              "alt": "Tył ulotki Estetic Studio dla techników – cennik frezowania CAD/CAM i druku 3D.",
+              "kind": "original",
+              "caption": "Ulotka dla techników · tył (cennik)."
             }
           ],
           "image": {
@@ -396,9 +441,9 @@
             "smallSrc": "/media/estetic-studio/scena-recepcja-768.webp",
             "width": 3072,
             "height": 2048,
-            "alt": "Dwie ulotki Estetic Studio w akrylowych stojakach na grafitowym blacie recepcji gabinetu stomatologicznego, w tle fotel dentystyczny.",
+            "alt": "Tył obu ulotek Estetic Studio – cennik dla lekarzy i cennik frezowania dla techników – w akrylowych stojakach na recepcji gabinetu.",
             "kind": "visualization",
-            "caption": "Ulotki w recepcji gabinetu · wizualizacja projektu.",
+            "caption": "Tył ulotek: cenniki · wizualizacja projektu.",
             "mediumSrc": "/media/estetic-studio/scena-recepcja-1536.webp"
           }
         }
@@ -838,16 +883,7 @@
               "alt": "Oryginalny drugi wariant koszulki OLSEN z innym opracowaniem pola kontaktowego na plecach.",
               "caption": "Koszulka DTF · wariant 02"
             }
-          ],
-          "image": {
-            "src": "/media/olsen/scena-van-1536.webp",
-            "smallSrc": "/media/olsen/scena-van-768.webp",
-            "width": 1536,
-            "height": 1024,
-            "alt": "Złożona koszulka OLSEN z nadrukiem i czapka z haftem w aucie serwisowym instalatora, obok przewodów wentylacyjnych i skrzynki z narzędziami.",
-            "kind": "visualization",
-            "caption": "Koszulka i czapka OLSEN · wizualizacja projektu."
-          }
+          ]
         },
         {
           "slug": "czapka",
@@ -1050,35 +1086,44 @@
           "slug": "edukacja",
           "label": "Szkoła",
           "title": "Zajęcia pozalekcyjne.",
-          "description": "Plakat i ulotka szkoły ROBO Edukacja: robotyka z klockami, programowanie i druk 3D, z kodem QR do zapisu na lekcję próbną.",
+          "description": "Dwustronna ulotka i plakat szkoły ROBO Edukacja. Z przodu: robotyka z klockami, programowanie i druk 3D z kodem QR do zapisu na lekcję próbną. Z tyłu: program każdego kursu, płatności i rabaty.",
           "image": {
             "src": "/media/robo-edukacja/scena-lawka-edukacja-2x.webp",
             "smallSrc": "/media/robo-edukacja/scena-lawka-edukacja-768.webp",
             "width": 2312,
             "height": 1542,
-            "alt": "Plakat i ulotka ROBO Edukacja na ławce między klockami i robotem.",
+            "alt": "Przód i tył ulotki ROBO Edukacja na ławce w sali, obok klocków, robota i tabletu.",
             "kind": "visualization",
-            "caption": "Plakat i ulotka · wizualizacja projektu.",
+            "caption": "Ulotka szkoły · przód i tył · wizualizacja projektu.",
             "mediumSrc": "/media/robo-edukacja/scena-lawka-edukacja-1536.webp"
           },
           "originals": [
             {
-              "src": "/media/robo-edukacja/plakat-edukacja-1536.webp",
-              "smallSrc": "/media/robo-edukacja/plakat-edukacja-768.webp",
-              "width": 1024,
-              "height": 1443,
-              "alt": "Oryginalny plakat ROBO Edukacja.",
+              "src": "/media/robo-edukacja/ulotka-edukacja-przod-2000.webp",
+              "smallSrc": "/media/robo-edukacja/ulotka-edukacja-przod-768.webp",
+              "width": 2000,
+              "height": 2821,
+              "alt": "Przód ulotki ROBO Edukacja.",
               "kind": "original",
-              "caption": "Plakat · oryginalny projekt."
+              "caption": "Ulotka · przód."
             },
             {
-              "src": "/media/robo-edukacja/ulotka-edukacja-1536.webp",
-              "smallSrc": "/media/robo-edukacja/ulotka-edukacja-768.webp",
-              "width": 1024,
-              "height": 1444,
-              "alt": "Oryginalna ulotka ROBO Edukacja.",
+              "src": "/media/robo-edukacja/ulotka-edukacja-tyl-2000.webp",
+              "smallSrc": "/media/robo-edukacja/ulotka-edukacja-tyl-768.webp",
+              "width": 2000,
+              "height": 2821,
+              "alt": "Tył ulotki ROBO Edukacja z opisem kursów i płatnościami.",
               "kind": "original",
-              "caption": "Ulotka · oryginalny projekt."
+              "caption": "Ulotka · tył."
+            },
+            {
+              "src": "/media/robo-edukacja/plakat-edukacja-hd-2000.webp",
+              "smallSrc": "/media/robo-edukacja/plakat-edukacja-hd-768.webp",
+              "width": 2000,
+              "height": 2820,
+              "alt": "Plakat ROBO Edukacja.",
+              "kind": "original",
+              "caption": "Plakat · oryginalny projekt."
             }
           ]
         }
