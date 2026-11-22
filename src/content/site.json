@@ -336,13 +336,14 @@
           "title": "Wizytówka.",
           "description": "Czarny karton, cienka linia znaku i miętowy akcent. Minimum treści, maksimum charakteru — wizytówka, którą zapamiętuje się po jednym spojrzeniu.",
           "image": {
-            "src": "/media/estetic-studio/scena-wizytowka-lab-1536.webp",
+            "src": "/media/estetic-studio/scena-wizytowka-lab-2x.webp",
             "smallSrc": "/media/estetic-studio/scena-wizytowka-lab-768.webp",
-            "width": 1536,
-            "height": 1024,
+            "width": 3072,
+            "height": 2048,
             "alt": "Czarna wizytówka Estetic Studio w dłoni technika w rękawiczce, w tle pracownia z drukarką 3D i protezami.",
             "kind": "visualization",
-            "caption": "Wizytówka · wizualizacja projektu."
+            "caption": "Wizytówka · wizualizacja projektu.",
+            "mediumSrc": "/media/estetic-studio/scena-wizytowka-lab-1536.webp"
           },
           "originals": [
             {
