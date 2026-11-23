@@ -4,7 +4,7 @@
 // Poprzednie intro (znak budowany przewijaniem) zostało zachowane w LogoIntro.astro i działa pod /intro-3d.
 import {projects} from '../lib/content';
 const order=['odwroceni-projekty-oklejen','shiro-logo-i-wizytowki','bipi-detailing-bilbord','lucky-luke-meble-baner','estetic-studio-pracownia-protetyczna','mm-trans-plus-logo','prato-development-rolki','olsen-odziez-firmowa','leasing-cartel-logo','diverto-materialy-promocyjne','marta-romanska-zagorska-plakaty','parkiety-przybycien-logo'];
-const V='20261123d';
+const V='20261123e';
 const cards=order.map(s=>projects.find(p=>p.slug===s)).filter(p=>p&&p.imageSmall).map(p=>{
  const big=(p.imageWidth||1536)<=1536?p.image:p.imageSmall!.replace(/-768\.webp$/,'-1536.webp');
  return {slug:p.slug,name:p.name,cat:p.category,small:`${p.imageSmall}?v=${V}`,big:`${big}?v=${V}`};

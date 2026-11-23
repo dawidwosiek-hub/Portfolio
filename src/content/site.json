@@ -470,13 +470,13 @@
       "imageHeight": 1024,
       "shareImage": "/media/prato-development/scena-telefon-1536.webp",
       "imageCaption": "Relacja z budowy · wizualizacja projektu.",
-      "alt": "Telefon w dłoni z kadrem relacji pokazującym inwestycję Prato Development z góry.",
+      "alt": "Telefon w dłoni z kadrem filmu: logo Prato Development i lokalizacja inwestycji w Swoszowicach.",
       "cover": {
         "src": "/media/prato-development/scena-telefon-1536.webp",
         "smallSrc": "/media/prato-development/scena-telefon-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Telefon w dłoni z kadrem relacji pokazującym inwestycję Prato Development z góry.",
+        "alt": "Telefon w dłoni z kadrem filmu: logo Prato Development i lokalizacja inwestycji w Swoszowicach.",
         "caption": "Wizualizacja projektu"
       },
       "accent": "#d9a21b",
@@ -497,7 +497,7 @@
             {
               "src": "",
               "embed": "https://drive.google.com/file/d/1EmaVn9e29MZAhjuSCiTDJdNaOaDnSull/preview",
-              "poster": "/media/prato-development/film-poster.webp",
+              "poster": "/media/prato-development/film-poster-v2.webp",
               "title": "Film inwestycji",
               "caption": "Prezentacja inwestycji z inwestorem.",
               "width": 1080,
