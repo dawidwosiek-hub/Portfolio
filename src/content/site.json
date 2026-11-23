@@ -1155,14 +1155,14 @@
       "slug": "marta-romanska-zagorska-plakaty",
       "name": "Marta Romańska-Zagórska",
       "category": "druk i reklama",
-      "scope": "Plakaty wydarzeń lokalnych w Gminie Zielonki — warsztaty o profilaktyce Alzheimera, spotkanie „Jestem silna” i debata o edukacji.",
-      "teaser": "Plakaty wydarzeń lokalnych dla radnej Gminy Zielonki.",
+      "scope": "Plakaty, zaproszenia i posty do social mediów dla wydarzeń lokalnych w Gminie Zielonki.",
+      "teaser": "Plakaty, zaproszenia i posty wydarzeń lokalnych dla radnej Gminy Zielonki.",
       "scopeItems": [
-        "Plakat „Zdążyć przed Alzheimerem”",
-        "Plakat „Jestem silna — bo wygrałam z rakiem!”",
-        "Plakat debaty o edukacji z Małopolską Kurator Oświaty",
-        "Wersja plakatu do social mediów",
-        "Przygotowanie plików do druku A3"
+        "„Zdążyć przed Alzheimerem” — plakat i zaproszenie",
+        "„Jestem silna — bo wygrałam z rakiem!” — plakat",
+        "Debata o edukacji — plakat i post",
+        "Zajęcia ruchowo-taneczne 50+ — plakat",
+        "„Różowy Patrol” — posty na Instagram"
       ],
       "image": "/media/marta/scena-korytarz-2x.webp",
       "imageSmall": "/media/marta/scena-korytarz-768.webp",
@@ -1183,48 +1183,160 @@
       "client": "Radna Gminy Zielonki — wydarzenia lokalne.",
       "need": "Każde wydarzenie miało innego odbiorcę i inny ton: warsztaty o zdrowiu mózgu dla dorosłych, spotkanie dla kobiet po chorobie nowotworowej i otwarta debata o edukacji. Plakaty musiały być czytelne z daleka, zmieścić długą listę organizatorów i partnerów, a przy tym nie wyglądać jak urzędowe ogłoszenia.",
       "solution": "Każdy plakat dostał własny klimat dopasowany do tematu: spokojną zieleń i szkicowe ilustracje przy warsztatach o Alzheimerze, ciepły róż i motyw wstążki przy spotkaniu „Jestem silna” oraz wyraziste kolory koła KO przy debacie. Najważniejsze informacje — tytuł, data, godzina i miejsce — są zawsze w tym samym porządku i widać je pierwsze.",
-      "galleryTitle": "Plakaty wydarzeń.",
-      "galleryIntro": "Kliknij plakat, żeby go przybliżyć i przeczytać wszystkie szczegóły.",
+      "galleryTitle": "Plakaty na miejscu.",
+      "galleryIntro": "Wizualizacje plakatów w przestrzeniach, w których wisiały. Każdy projekt opisuję osobno poniżej.",
       "gallery": [
         {
-          "src": "/media/marta/plakat-alzheimer-2000.webp",
-          "width": 2000,
-          "height": 2828,
-          "alt": "Plakat „Zdążyć przed Alzheimerem” — warsztaty o zdrowiu mózgu w CIS Zielonki, z prowadzącą i listą tematów zajęć.",
-          "caption": "„Zdążyć przed Alzheimerem” · oryginalny projekt plakatu",
-          "kind": "original",
-          "smallSrc": "/media/marta/plakat-alzheimer-768.webp"
+          "src": "/media/marta/scena-korytarz-2x.webp",
+          "mediumSrc": "/media/marta/scena-korytarz-1536.webp",
+          "smallSrc": "/media/marta/scena-korytarz-768.webp",
+          "width": 3072,
+          "height": 2048,
+          "alt": "Trzy plakaty A3 na ścianie korytarza: „Zdążyć przed Alzheimerem”, „Jestem silna” i debata o edukacji.",
+          "caption": "Plakaty na ścianie korytarza · wizualizacja",
+          "kind": "visualization"
         },
         {
-          "src": "/media/marta/plakat-jestem-silna-2000.webp",
-          "width": 2000,
-          "height": 2828,
-          "alt": "Plakat „Jestem silna — bo wygrałam z rakiem!” z różową wstążką w kształcie serca, datą 23.11.2025 i listą prelegentów.",
-          "caption": "„Jestem silna” · oryginalny projekt plakatu",
-          "kind": "original",
-          "smallSrc": "/media/marta/plakat-jestem-silna-768.webp"
-        },
-        {
-          "src": "/media/marta/plakat-debata-2000.webp",
-          "width": 2000,
-          "height": 2828,
-          "alt": "Plakat koła Koalicji Obywatelskiej zapraszający na otwarte spotkanie i debatę o edukacji w Michałowicach.",
-          "caption": "Debata o edukacji · oryginalny projekt plakatu",
-          "kind": "original",
-          "smallSrc": "/media/marta/plakat-debata-768.webp"
-        },
-        {
-          "src": "/media/marta/post-debata-2000.webp",
-          "width": 1080,
-          "height": 1350,
-          "alt": "Wersja plakatu debaty o edukacji w formacie posta do social mediów.",
-          "caption": "Debata o edukacji · wersja do social mediów",
-          "kind": "original",
-          "smallSrc": "/media/marta/post-debata-768.webp"
+          "src": "/media/marta/scena-sala-taniec-2x.webp",
+          "mediumSrc": "/media/marta/scena-sala-taniec-1536.webp",
+          "smallSrc": "/media/marta/scena-sala-taniec-768.webp",
+          "width": 3072,
+          "height": 2048,
+          "alt": "Plakat zajęć ruchowo-tanecznych 50+ w ramie na ścianie sali w Domu Ludowym.",
+          "caption": "Plakat zajęć tanecznych · wizualizacja",
+          "kind": "visualization"
         }
       ],
       "published": true,
-      "featured": false
+      "featured": false,
+      "galleryLabel": "Plakaty",
+      "applications": [
+        {
+          "slug": "alzheimer",
+          "label": "Zdążyć przed Alzheimerem",
+          "title": "Zdążyć przed\nAlzheimerem.",
+          "description": "Cykl bezpłatnych wykładów i warsztatów o profilaktyce zdrowia mózgu. Plakat pionowy do wywieszenia i poziome zaproszenie z dwoma terminami: Dom Ludowy w Bibicach i CIS Zielonki. Spokojna zieleń, szkic mózgu i wiejski pejzaż.",
+          "originals": [
+            {
+              "src": "/media/marta/plakat-alzheimer-2000.webp",
+              "width": 2000,
+              "height": 2828,
+              "alt": "Plakat „Zdążyć przed Alzheimerem”.",
+              "caption": "Plakat · oryginalny projekt",
+              "kind": "original",
+              "smallSrc": "/media/marta/plakat-alzheimer-768.webp"
+            },
+            {
+              "src": "/media/marta/zaproszenie-alzheimer-2000.webp",
+              "width": 2000,
+              "height": 1410,
+              "alt": "Poziome zaproszenie „Zdążyć przed Alzheimerem” z dwoma terminami i listą organizatorów.",
+              "caption": "Zaproszenie · oryginalny projekt",
+              "kind": "original",
+              "smallSrc": "/media/marta/zaproszenie-alzheimer-768.webp"
+            }
+          ]
+        },
+        {
+          "slug": "jestem-silna",
+          "label": "Jestem silna",
+          "title": "Jestem silna —\nbo wygrałam z rakiem!",
+          "description": "Spotkanie dla kobiet po chorobie nowotworowej. Ciepły róż, wstążka w kształcie serca i czytelna lista prelegentów.",
+          "originals": [
+            {
+              "src": "/media/marta/plakat-jestem-silna-2000.webp",
+              "width": 2000,
+              "height": 2828,
+              "alt": "Plakat „Jestem silna — bo wygrałam z rakiem!”.",
+              "caption": "Plakat · oryginalny projekt",
+              "kind": "original",
+              "smallSrc": "/media/marta/plakat-jestem-silna-768.webp"
+            }
+          ]
+        },
+        {
+          "slug": "debata",
+          "label": "Debata o edukacji",
+          "title": "Debata\no edukacji.",
+          "description": "Otwarte spotkanie koła KO w Michałowicach. Plakat do druku i wersja kwadratowa do publikacji w social mediach.",
+          "originals": [
+            {
+              "src": "/media/marta/plakat-debata-2000.webp",
+              "width": 2000,
+              "height": 2828,
+              "alt": "Plakat debaty o edukacji.",
+              "caption": "Plakat · oryginalny projekt",
+              "kind": "original",
+              "smallSrc": "/media/marta/plakat-debata-768.webp"
+            },
+            {
+              "src": "/media/marta/post-debata-2000.webp",
+              "width": 1080,
+              "height": 1350,
+              "alt": "Post o debacie do social mediów.",
+              "caption": "Post · oryginalny projekt",
+              "kind": "original",
+              "smallSrc": "/media/marta/post-debata-768.webp"
+            }
+          ]
+        },
+        {
+          "slug": "taniec",
+          "label": "Zajęcia taneczne 50+",
+          "title": "Zajęcia ruchowo-\ntaneczne 50+.",
+          "description": "Plakat cyklicznych zajęć w Domu Ludowym w Bibicach w ramach projektu „Sprawne ciało, zdrowy umysł”. Jasne zdjęcie, duży termin i godziny, logotypy partnerów w stopce.",
+          "image": {
+            "src": "/media/marta/scena-sala-taniec-2x.webp",
+            "mediumSrc": "/media/marta/scena-sala-taniec-1536.webp",
+            "smallSrc": "/media/marta/scena-sala-taniec-768.webp",
+            "width": 3072,
+            "height": 2048,
+            "alt": "Plakat zajęć ruchowo-tanecznych 50+ w ramie na ścianie sali.",
+            "caption": "Plakat w sali · wizualizacja projektu",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/marta/plakat-taniec-2000.webp",
+              "width": 2000,
+              "height": 2828,
+              "alt": "Plakat „Zajęcia ruchowo-taneczne dla osób 50+”.",
+              "caption": "Plakat · oryginalny projekt",
+              "kind": "original",
+              "smallSrc": "/media/marta/plakat-taniec-768.webp"
+            }
+          ]
+        },
+        {
+          "slug": "rozowy-patrol",
+          "label": "Różowy Patrol",
+          "title": "Różowy\nPatrol.",
+          "description": "Posty na Instagram o profilaktyce raka piersi w Gminie Zielonki. Dwie wersje z różnymi zestawami partnerów w stopce.",
+          "originals": [
+            {
+              "src": "/media/marta/post-rozowy-patrol-1080.webp",
+              "width": 1080,
+              "height": 1080,
+              "alt": "Post „Różowy Patrol” — wersja z OnkoCafe.",
+              "caption": "Post · wersja 1",
+              "kind": "original",
+              "smallSrc": "/media/marta/post-rozowy-patrol-768.webp"
+            },
+            {
+              "src": "/media/marta/post-rozowy-patrol-2-1080.webp",
+              "width": 1080,
+              "height": 1080,
+              "alt": "Post „Różowy Patrol” — wersja z Kobiety w Centrum i OnkoCafe.",
+              "caption": "Post · wersja 2",
+              "kind": "original",
+              "smallSrc": "/media/marta/post-rozowy-patrol-2-768.webp"
+            }
+          ]
+        }
+      ],
+      "categories": [
+        "filmy i social media"
+      ]
     },
     {
       "slug": "lp-bud-wizytowki",
@@ -1539,6 +1651,202 @@
               "height": 1920
             }
           ]
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
+      "slug": "mm-trans-plus-logo",
+      "name": "MM Trans Plus",
+      "category": "logo i identyfikacja",
+      "image": "/media/mm-trans-plus/scena-ciezarowka-2x.webp",
+      "imageSmall": "/media/mm-trans-plus/scena-ciezarowka-768.webp",
+      "imageMedium": "/media/mm-trans-plus/scena-ciezarowka-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/mm-trans-plus/scena-ciezarowka-1536.webp",
+      "imageCaption": "Logo na kabinie ciągnika · wizualizacja projektu",
+      "alt": "Biała kabina ciężarówki z logo MM Trans Plus na bocznym panelu, w tle magazyn z rampami.",
+      "cover": {
+        "src": "/media/mm-trans-plus/scena-ciezarowka-1536.webp",
+        "smallSrc": "/media/mm-trans-plus/scena-ciezarowka-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Biała kabina ciężarówki z logo MM Trans Plus na bocznym panelu, w tle magazyn z rampami.",
+        "caption": "Logo na kabinie ciągnika · wizualizacja projektu"
+      },
+      "scope": "Logo firmy transportowej MM Trans Plus w wersji kolorowej, czarnej i białej.",
+      "teaser": "Logo dla firmy transportowej.",
+      "scopeItems": [
+        "Znak z inicjałami MM i dynamicznym łukiem",
+        "Logotyp TRANS PLUS",
+        "Wersja kolorowa, czarna i biała (negatyw)",
+        "Pliki wektorowe do oklejania pojazdów"
+      ],
+      "client": "MM Trans Plus — transport drogowy.",
+      "need": "Firma transportowa potrzebowała prostego, mocnego znaku, który będzie czytelny na kabinie ciężarówki, na naczepie, w dokumentach i w internecie.",
+      "solution": "Litery MM zbudowałem z grubych, pochylonych kresek, a pod nimi poprowadziłem pomarańczowy łuk jak trasę lub ślad ruchu. Krótki, pogrubiony logotyp TRANS PLUS stoi obok znaku. Znak działa w jednym kolorze, więc sprawdzi się też w folii na pojazdach.",
+      "galleryTitle": "Logo.",
+      "galleryIntro": "Wersje logo i plik do zastosowań na jasnym tle — kliknij, żeby przybliżyć.",
+      "gallery": [
+        {
+          "src": "/media/mm-trans-plus/logo-2000.webp",
+          "width": 2000,
+          "height": 814,
+          "alt": "Logo MM Trans Plus w wersji kolorowej na białym tle.",
+          "caption": "Wersja główna · oryginalny projekt",
+          "kind": "original",
+          "smallSrc": "/media/mm-trans-plus/logo-768.webp"
+        },
+        {
+          "src": "/media/mm-trans-plus/wersje-logo-2000.webp",
+          "width": 2000,
+          "height": 2838,
+          "alt": "Trzy wersje logo MM Trans Plus: kolorowa, czarna i biała na szarym tle.",
+          "caption": "Wersje kolorystyczne · oryginalny projekt",
+          "kind": "original",
+          "smallSrc": "/media/mm-trans-plus/wersje-logo-768.webp"
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
+      "slug": "szablony-techniczne-odziezy",
+      "name": "Szablony odzieży 2D",
+      "category": "odzież i nadruki",
+      "image": "/media/szablony-odziezy/scena-biurko-2x.webp",
+      "imageSmall": "/media/szablony-odziezy/scena-biurko-768.webp",
+      "imageMedium": "/media/szablony-odziezy/scena-biurko-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/szablony-odziezy/scena-biurko-1536.webp",
+      "imageCaption": "Szablony na biurku · wizualizacja",
+      "alt": "Wydrukowane karty z płaskimi szablonami bluzy, koszulki polo i kamizelki odblaskowej na biurku obok wzornika Pantone, próbek tkanin i miarki.",
+      "cover": {
+        "src": "/media/szablony-odziezy/scena-biurko-1536.webp",
+        "smallSrc": "/media/szablony-odziezy/scena-biurko-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Wydrukowane karty z płaskimi szablonami bluzy, koszulki polo i kamizelki odblaskowej na biurku obok wzornika Pantone, próbek tkanin i miarki.",
+        "caption": "Szablony na biurku · wizualizacja"
+      },
+      "scope": "Biblioteka płaskich szablonów odzieży 2D w CorelDRAW do wizualizacji znakowania.",
+      "teaser": "Biblioteka technicznych szablonów odzieży do wizualizacji nadruków i haftów.",
+      "scopeItems": [
+        "Kilkadziesiąt modeli: koszulki, bluzy, polo, polary, kamizelki, spodnie, czapki, torby",
+        "Przód, tył i rękawy w jednej skali",
+        "Linie wymiarowe pól nadruku",
+        "Wersje męskie, damskie i dziecięce",
+        "Karta akceptacji: kolorystyka i technika zdobienia"
+      ],
+      "client": "Własna biblioteka robocza do wizualizacji odzieży z nadrukiem.",
+      "need": "Przy każdym zamówieniu odzieży klient musi zobaczyć, jak i gdzie znajdzie się logo, zanim ruszy produkcja. Rysowanie produktu od zera za każdym razem zajmuje za dużo czasu i daje niespójne wizualizacje.",
+      "solution": "Przygotowałem bibliotekę wektorowych szablonów 2D: każdy model ma przód, tył i rękawy w tej samej skali, z liniami wymiarowymi pól nadruku. Wystarczy wstawić projekt klienta, ustawić kolor materiału i oznaczyć technikę — wizualizacja do akceptacji jest gotowa w kilka minut.",
+      "galleryLabel": "Biblioteka",
+      "galleryTitle": "Wybrane szablony.",
+      "galleryIntro": "Dziesięć szablonów z biblioteki — każdy w pełnej rozdzielczości. Kliknij, żeby przybliżyć.",
+      "gallery": [
+        {
+          "src": "/media/szablony-odziezy/biblioteka-2x.webp",
+          "mediumSrc": "/media/szablony-odziezy/biblioteka-1536.webp",
+          "smallSrc": "/media/szablony-odziezy/biblioteka-768.webp",
+          "width": 3072,
+          "height": 2048,
+          "alt": "Zestawienie dziesięciu płaskich szablonów odzieży na kartach.",
+          "caption": "Zestawienie szablonów",
+          "kind": "original"
+        },
+        {
+          "src": "/media/szablony-odziezy/bluza-2000.webp",
+          "width": 2000,
+          "height": 871,
+          "alt": "Bluza z kapturem — przód, rękaw, tył.",
+          "caption": "Bluza z kapturem — przód, rękaw, tył",
+          "kind": "original",
+          "smallSrc": "/media/szablony-odziezy/bluza-768.webp"
+        },
+        {
+          "src": "/media/szablony-odziezy/koszulka-2000.webp",
+          "width": 2000,
+          "height": 897,
+          "alt": "T-shirt — przód i tył z wymiarami nadruku.",
+          "caption": "T-shirt — przód i tył z wymiarami nadruku",
+          "kind": "original",
+          "smallSrc": "/media/szablony-odziezy/koszulka-768.webp"
+        },
+        {
+          "src": "/media/szablony-odziezy/raglan-2000.webp",
+          "width": 2000,
+          "height": 1001,
+          "alt": "T-shirt raglan — przód i tył.",
+          "caption": "T-shirt raglan — przód i tył",
+          "kind": "original",
+          "smallSrc": "/media/szablony-odziezy/raglan-768.webp"
+        },
+        {
+          "src": "/media/szablony-odziezy/longsleeve-2000.webp",
+          "width": 2000,
+          "height": 739,
+          "alt": "Longsleeve — rękawy, przód i tył.",
+          "caption": "Longsleeve — rękawy, przód i tył",
+          "kind": "original",
+          "smallSrc": "/media/szablony-odziezy/longsleeve-768.webp"
+        },
+        {
+          "src": "/media/szablony-odziezy/polo-2000.webp",
+          "width": 2000,
+          "height": 927,
+          "alt": "Koszulka polo — przód i tył.",
+          "caption": "Koszulka polo — przód i tył",
+          "kind": "original",
+          "smallSrc": "/media/szablony-odziezy/polo-768.webp"
+        },
+        {
+          "src": "/media/szablony-odziezy/polar-2000.webp",
+          "width": 2000,
+          "height": 1072,
+          "alt": "Polar rozpinany — przód i tył.",
+          "caption": "Polar rozpinany — przód i tył",
+          "kind": "original",
+          "smallSrc": "/media/szablony-odziezy/polar-768.webp"
+        },
+        {
+          "src": "/media/szablony-odziezy/kamizelka-2000.webp",
+          "width": 2000,
+          "height": 850,
+          "alt": "Kamizelka odblaskowa — przód i tył.",
+          "caption": "Kamizelka odblaskowa — przód i tył",
+          "kind": "original",
+          "smallSrc": "/media/szablony-odziezy/kamizelka-768.webp"
+        },
+        {
+          "src": "/media/szablony-odziezy/spodnie-2000.webp",
+          "width": 2000,
+          "height": 1387,
+          "alt": "Spodnie dresowe — przód i tył.",
+          "caption": "Spodnie dresowe — przód i tył",
+          "kind": "original",
+          "smallSrc": "/media/szablony-odziezy/spodnie-768.webp"
+        },
+        {
+          "src": "/media/szablony-odziezy/czapki-2000.webp",
+          "width": 2000,
+          "height": 733,
+          "alt": "Czapka z daszkiem — przód i bok.",
+          "caption": "Czapka z daszkiem — przód i bok",
+          "kind": "original",
+          "smallSrc": "/media/szablony-odziezy/czapki-768.webp"
+        },
+        {
+          "src": "/media/szablony-odziezy/torba-2000.webp",
+          "width": 2000,
+          "height": 1335,
+          "alt": "Torba bawełniana — przód i tył.",
+          "caption": "Torba bawełniana — przód i tył",
+          "kind": "original",
+          "smallSrc": "/media/szablony-odziezy/torba-768.webp"
         }
       ],
       "published": true,
