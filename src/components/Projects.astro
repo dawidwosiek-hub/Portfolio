@@ -2,7 +2,7 @@
 import {projects,projectCategories} from '../lib/content';
 import ProjectCover from './ProjectCover.astro';
 const {featured=false} = Astro.props;
-const selected = featured ? projects.filter(p=>p.featured).slice(0,8) : projects;
+const selected = featured ? projects.filter(p=>p.featured).slice(0,12) : projects;
 ---
 {selected.length ? <div class="project-grid project-index">{selected.map((p,i)=><a href={`/realizacje/${p.slug}`} class="project" data-category={p.category} data-categories={JSON.stringify(projectCategories(p))}>
   <ProjectCover project={p}/>

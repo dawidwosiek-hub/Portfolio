@@ -534,7 +534,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     },
     {
       "slug": "diverto-materialy-promocyjne",
@@ -1164,21 +1164,21 @@
         "Wersja plakatu do social mediów",
         "Przygotowanie plików do druku A3"
       ],
-      "image": "/media/marta/plakaty-plansza-2x.webp",
-      "imageSmall": "/media/marta/plakaty-plansza-768.webp",
-      "imageMedium": "/media/marta/plakaty-plansza-1536.webp",
+      "image": "/media/marta/scena-korytarz-2x.webp",
+      "imageSmall": "/media/marta/scena-korytarz-768.webp",
+      "imageMedium": "/media/marta/scena-korytarz-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2048,
-      "shareImage": "/media/marta/plakaty-plansza-1536.webp",
-      "imageCaption": "Plakaty wydarzeń · prezentacja oryginalnych projektów.",
-      "alt": "Trzy plakaty A3 obok siebie na jasnym tle: zielony plakat o profilaktyce Alzheimera, różowy plakat „Jestem silna” i biało-niebieski plakat debaty o edukacji.",
+      "shareImage": "/media/marta/scena-korytarz-1536.webp",
+      "imageCaption": "Plakaty na ścianie korytarza · wizualizacja projektu",
+      "alt": "Trzy plakaty A3 przypięte na ścianie korytarza w ośrodku: „Zdążyć przed Alzheimerem”, „Jestem silna” i debata o edukacji.",
       "cover": {
-        "src": "/media/marta/plakaty-plansza-1536.webp",
-        "smallSrc": "/media/marta/plakaty-plansza-768.webp",
+        "src": "/media/marta/scena-korytarz-1536.webp",
+        "smallSrc": "/media/marta/scena-korytarz-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Trzy plakaty A3 obok siebie na jasnym tle: zielony plakat o profilaktyce Alzheimera, różowy plakat „Jestem silna” i biało-niebieski plakat debaty o edukacji.",
-        "caption": "Prezentacja projektu"
+        "alt": "Trzy plakaty A3 przypięte na ścianie korytarza w ośrodku: „Zdążyć przed Alzheimerem”, „Jestem silna” i debata o edukacji.",
+        "caption": "Plakaty na ścianie korytarza · wizualizacja projektu"
       },
       "client": "Radna Gminy Zielonki — wydarzenia lokalne.",
       "need": "Każde wydarzenie miało innego odbiorcę i inny ton: warsztaty o zdrowiu mózgu dla dorosłych, spotkanie dla kobiet po chorobie nowotworowej i otwarta debata o edukacji. Plakaty musiały być czytelne z daleka, zmieścić długą listę organizatorów i partnerów, a przy tym nie wyglądać jak urzędowe ogłoszenia.",
@@ -1238,21 +1238,21 @@
         "Lista usług w czytelnym układzie",
         "Przygotowanie pliku do druku ze spadami"
       ],
-      "image": "/media/lp-bud/wizytowka-plansza-2x.webp",
-      "imageSmall": "/media/lp-bud/wizytowka-plansza-768.webp",
-      "imageMedium": "/media/lp-bud/wizytowka-plansza-1536.webp",
+      "image": "/media/lp-bud/scena-warsztat-2x.webp",
+      "imageSmall": "/media/lp-bud/scena-warsztat-768.webp",
+      "imageMedium": "/media/lp-bud/scena-warsztat-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2048,
-      "shareImage": "/media/lp-bud/wizytowka-plansza-1536.webp",
-      "imageCaption": "Wizytówka LP-BUD · prezentacja oryginalnego projektu.",
-      "alt": "Wizytówka LP-BUD na ciemnym tle: po lewej logo z fachowcem w kasku i dane kontaktowe, po prawej lista usług na zdjęciu z budowy.",
+      "shareImage": "/media/lp-bud/scena-warsztat-1536.webp",
+      "imageCaption": "Wizytówki na stole warsztatowym · wizualizacja projektu",
+      "alt": "Wizytówki LP-BUD na sklejce warsztatowej, obok miarka, kielnia, krzyżyki do płytek, ołówek i rękawice.",
       "cover": {
-        "src": "/media/lp-bud/wizytowka-plansza-1536.webp",
-        "smallSrc": "/media/lp-bud/wizytowka-plansza-768.webp",
+        "src": "/media/lp-bud/scena-warsztat-1536.webp",
+        "smallSrc": "/media/lp-bud/scena-warsztat-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Wizytówka LP-BUD na ciemnym tle: po lewej logo z fachowcem w kasku i dane kontaktowe, po prawej lista usług na zdjęciu z budowy.",
-        "caption": "Prezentacja projektu"
+        "alt": "Wizytówki LP-BUD na sklejce warsztatowej, obok miarka, kielnia, krzyżyki do płytek, ołówek i rękawice.",
+        "caption": "Wizytówki na stole warsztatowym · wizualizacja projektu"
       },
       "client": "LP-BUD — remonty i usługi budowlane, Modlnica.",
       "need": "Firma remontowa potrzebowała wizytówki, która od razu mówi, czym się zajmuje: od malowania i płytek po instalacje, kostkę brukową i wypożyczalnię sprzętu. Telefon miał być widoczny na pierwszy rzut oka.",
@@ -1285,21 +1285,21 @@
         "Ikony usług i kierunkowskaz do studia",
         "Przygotowanie pliku do druku wielkoformatowego"
       ],
-      "image": "/media/bipi/bilbord-plansza-2x.webp",
-      "imageSmall": "/media/bipi/bilbord-plansza-768.webp",
-      "imageMedium": "/media/bipi/bilbord-plansza-1536.webp",
+      "image": "/media/bipi/scena-bilbord-2x.webp",
+      "imageSmall": "/media/bipi/scena-bilbord-768.webp",
+      "imageMedium": "/media/bipi/scena-bilbord-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2048,
-      "shareImage": "/media/bipi/bilbord-plansza-1536.webp",
-      "imageCaption": "Billboard BIPI · prezentacja oryginalnego projektu.",
-      "alt": "Billboard BIPI Detailing & Wrapping: duże hasło po lewej, ilustrowany właściciel z polerką obok sportowego auta, numer telefonu, adres i strzałka „prosto 30 m”.",
+      "shareImage": "/media/bipi/scena-bilbord-1536.webp",
+      "imageCaption": "Billboard przy drodze · wizualizacja projektu",
+      "alt": "Billboard BIPI Detailing & Wrapping przy drodze o zachodzie słońca, w tle studio z bramą garażową.",
       "cover": {
-        "src": "/media/bipi/bilbord-plansza-1536.webp",
-        "smallSrc": "/media/bipi/bilbord-plansza-768.webp",
+        "src": "/media/bipi/scena-bilbord-1536.webp",
+        "smallSrc": "/media/bipi/scena-bilbord-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Billboard BIPI Detailing & Wrapping: duże hasło po lewej, ilustrowany właściciel z polerką obok sportowego auta, numer telefonu, adres i strzałka „prosto 30 m”.",
-        "caption": "Prezentacja projektu"
+        "alt": "Billboard BIPI Detailing & Wrapping przy drodze o zachodzie słońca, w tle studio z bramą garażową.",
+        "caption": "Billboard przy drodze · wizualizacja projektu"
       },
       "client": "BIPI Detailing — detailing, wrapping i serwis aut, Prusy.",
       "need": "Billboard przy drodze ogląda się przez kilka sekund z jadącego auta. Musiał przyciągnąć uwagę fanów motoryzacji, powiedzieć, co robi studio, i od razu pokazać, gdzie skręcić.",
@@ -1318,7 +1318,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     },
     {
       "slug": "lucky-luke-meble-baner",
@@ -1332,21 +1332,21 @@
         "Kod QR i logotypy partnerów",
         "Przygotowanie pliku do druku wielkoformatowego"
       ],
-      "image": "/media/lucky-luke/baner-plansza-2x.webp",
-      "imageSmall": "/media/lucky-luke/baner-plansza-768.webp",
-      "imageMedium": "/media/lucky-luke/baner-plansza-1536.webp",
+      "image": "/media/lucky-luke/scena-fasada-2x.webp",
+      "imageSmall": "/media/lucky-luke/scena-fasada-768.webp",
+      "imageMedium": "/media/lucky-luke/scena-fasada-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2048,
-      "shareImage": "/media/lucky-luke/baner-plansza-1536.webp",
-      "imageCaption": "Baner Lucky Luke · prezentacja oryginalnego projektu.",
-      "alt": "Długi granatowo-złoty baner Lucky Luke Meble: logo i lista usług, zdjęcie nowoczesnej kuchni, duży numer telefonu, kod QR i logotypy partnerów.",
+      "shareImage": "/media/lucky-luke/scena-fasada-1536.webp",
+      "imageCaption": "Baner na fasadzie salonu · wizualizacja projektu",
+      "alt": "Baner Lucky Luke Meble zawieszony nad witryną salonu z ekspozycją kuchni.",
       "cover": {
-        "src": "/media/lucky-luke/baner-plansza-1536.webp",
-        "smallSrc": "/media/lucky-luke/baner-plansza-768.webp",
+        "src": "/media/lucky-luke/scena-fasada-1536.webp",
+        "smallSrc": "/media/lucky-luke/scena-fasada-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Długi granatowo-złoty baner Lucky Luke Meble: logo i lista usług, zdjęcie nowoczesnej kuchni, duży numer telefonu, kod QR i logotypy partnerów.",
-        "caption": "Prezentacja projektu"
+        "alt": "Baner Lucky Luke Meble zawieszony nad witryną salonu z ekspozycją kuchni.",
+        "caption": "Baner na fasadzie salonu · wizualizacja projektu"
       },
       "client": "Lucky Luke — meble na wymiar: kuchnie, szafy, garderoby i meble łazienkowe.",
       "need": "Baner w bardzo wydłużonym formacie miał zmieścić logo, pełną listę usług, przykład realizacji, telefon, kod QR i logotypy producentów, z którymi pracuje firma — i nadal być czytelny z ulicy.",
@@ -1354,6 +1354,15 @@
       "galleryTitle": "Baner.",
       "galleryIntro": "Oryginalny projekt w wysokiej rozdzielczości — kliknij, żeby przybliżyć i przewijać.",
       "gallery": [
+        {
+          "src": "/media/lucky-luke/baner-plansza-2x.webp",
+          "smallSrc": "/media/lucky-luke/baner-plansza-768.webp",
+          "width": 3072,
+          "height": 2048,
+          "alt": "Cały baner Lucky Luke i dwa zbliżenia: logo z listą usług oraz numer telefonu ze zdjęciem kuchni.",
+          "caption": "Baner i zbliżenia detali",
+          "kind": "original"
+        },
         {
           "src": "/media/lucky-luke/baner-4800.webp",
           "width": 4800,
@@ -1365,7 +1374,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     },
     {
       "slug": "super-rally-50-grafika",
@@ -1435,21 +1444,21 @@
         "Złoty gradient i wersja jednobarwna",
         "Karta specyfikacji: kolory i typografia"
       ],
-      "image": "/media/leasing-cartel/logo-plansza-2x.webp",
-      "imageSmall": "/media/leasing-cartel/logo-plansza-768.webp",
-      "imageMedium": "/media/leasing-cartel/logo-plansza-1536.webp",
+      "image": "/media/leasing-cartel/scena-recepcja-2x.webp",
+      "imageSmall": "/media/leasing-cartel/scena-recepcja-768.webp",
+      "imageMedium": "/media/leasing-cartel/scena-recepcja-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2048,
-      "shareImage": "/media/leasing-cartel/logo-plansza-1536.webp",
-      "imageCaption": "Leasing Cartel · prezentacja oryginalnych projektów.",
-      "alt": "Złote logo Leasing Cartel na ciemnym tle: sześciokątny znak z literami L i C oraz napis Leasing Cartel, obok karta specyfikacji z wersjami logo, kolorami i fontami.",
+      "shareImage": "/media/leasing-cartel/scena-recepcja-1536.webp",
+      "imageCaption": "Logo w recepcji · wizualizacja projektu",
+      "alt": "Złote logo Leasing Cartel na czarnym panelu w recepcji z marmurową ladą.",
       "cover": {
-        "src": "/media/leasing-cartel/logo-plansza-1536.webp",
-        "smallSrc": "/media/leasing-cartel/logo-plansza-768.webp",
+        "src": "/media/leasing-cartel/scena-recepcja-1536.webp",
+        "smallSrc": "/media/leasing-cartel/scena-recepcja-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Złote logo Leasing Cartel na ciemnym tle: sześciokątny znak z literami L i C oraz napis Leasing Cartel, obok karta specyfikacji z wersjami logo, kolorami i fontami.",
-        "caption": "Prezentacja projektu"
+        "alt": "Złote logo Leasing Cartel na czarnym panelu w recepcji z marmurową ladą.",
+        "caption": "Logo w recepcji · wizualizacja projektu"
       },
       "client": "Leasing Cartel — leasing i finansowanie.",
       "need": "Nowa marka leasingowa potrzebowała znaku, który wygląda solidnie i premium, a jednocześnie jest prosty — tak, żeby działał w internecie, na dokumentach i na samochodowych materiałach reklamowych.",
@@ -1477,7 +1486,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     },
     {
       "slug": "moto-session-2025-film",
@@ -1491,21 +1500,21 @@
         "Efekty przejść i grafika marki",
         "Wersja do publikacji w social mediach"
       ],
-      "image": "/media/moto-session/film-plansza-2x.webp",
-      "imageSmall": "/media/moto-session/film-plansza-768.webp",
-      "imageMedium": "/media/moto-session/film-plansza-1536.webp",
+      "image": "/media/moto-session/scena-telefon-2x.webp",
+      "imageSmall": "/media/moto-session/scena-telefon-768.webp",
+      "imageMedium": "/media/moto-session/scena-telefon-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2048,
-      "shareImage": "/media/moto-session/film-plansza-1536.webp",
-      "imageCaption": "Moto Session 2025 · kadr z filmu.",
-      "alt": "Kadr z filmu Moto Session 2025: hala wydarzenia, publiczność i białe logo Swagier Audio na środku.",
+      "shareImage": "/media/moto-session/scena-telefon-1536.webp",
+      "imageCaption": "Film na telefonie · wizualizacja",
+      "alt": "Telefon w dłoni z kadrem filmu Moto Session 2025 i logo Swagier Audio, w tle hala z autami i światłami sceny.",
       "cover": {
-        "src": "/media/moto-session/film-plansza-1536.webp",
-        "smallSrc": "/media/moto-session/film-plansza-768.webp",
+        "src": "/media/moto-session/scena-telefon-1536.webp",
+        "smallSrc": "/media/moto-session/scena-telefon-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Kadr z filmu Moto Session 2025: hala wydarzenia, publiczność i białe logo Swagier Audio na środku.",
-        "caption": "Prezentacja projektu"
+        "alt": "Telefon w dłoni z kadrem filmu Moto Session 2025 i logo Swagier Audio, w tle hala z autami i światłami sceny.",
+        "caption": "Film na telefonie · wizualizacja"
       },
       "client": "Swagier Audio — car audio.",
       "need": "Z wydarzenia motoryzacyjnego miał powstać krótki film, który odda energię imprezy i pokaże markę Swagier Audio — w formacie pod telefon i social media.",
