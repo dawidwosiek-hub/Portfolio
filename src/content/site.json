@@ -456,9 +456,10 @@
       "slug": "prato-development-rolki",
       "name": "Prato Development",
       "category": "filmy i social media",
-      "scope": "Pionowe filmy do social mediów dla dewelopera: seria relacji z budowy.",
+      "scope": "Pionowe filmy do social mediów dla dewelopera: film inwestycji i seria relacji z budowy.",
       "teaser": "Relacje z budowy dla dewelopera — pionowe wideo do social mediów.",
       "scopeItems": [
+        "Główny film inwestycji",
         "Seria relacji z budowy",
         "Montaż pod format pionowy 9:16",
         "Wersje do publikacji w social mediach"
@@ -490,9 +491,18 @@
         {
           "slug": "filmy",
           "label": "Filmy",
-          "title": "Relacje z budowy.",
-          "description": "Trzy relacje z inwestycji. Kliknij, aby obejrzeć.",
+          "title": "Film i relacje z budowy.",
+          "description": "Główny film inwestycji i trzy relacje z budowy. Kliknij, aby obejrzeć.",
           "videos": [
+            {
+              "src": "",
+              "embed": "https://drive.google.com/file/d/1EmaVn9e29MZAhjuSCiTDJdNaOaDnSull/preview",
+              "poster": "/media/prato-development/film-poster.webp",
+              "title": "Film inwestycji",
+              "caption": "Prezentacja inwestycji z inwestorem.",
+              "width": 1080,
+              "height": 1920
+            },
             {
               "src": "",
               "embed": "https://drive.google.com/file/d/1ZOFSZ12bCkaD9gyZ4Twgr4M2bD-xTqPX/preview",
@@ -523,7 +533,7 @@
           ]
         }
       ],
-      "published": false,
+      "published": true,
       "featured": false
     },
     {
@@ -1140,6 +1150,390 @@
       "published": true,
       "featured": true,
       "imageMedium": "/media/robo-edukacja/scena-sala-lato-1536.webp"
+    },
+    {
+      "slug": "marta-romanska-zagorska-plakaty",
+      "name": "Marta Romańska-Zagórska",
+      "category": "druk i reklama",
+      "scope": "Plakaty wydarzeń lokalnych w Gminie Zielonki — warsztaty o profilaktyce Alzheimera, spotkanie „Jestem silna” i debata o edukacji.",
+      "teaser": "Plakaty wydarzeń lokalnych dla radnej Gminy Zielonki.",
+      "scopeItems": [
+        "Plakat „Zdążyć przed Alzheimerem”",
+        "Plakat „Jestem silna — bo wygrałam z rakiem!”",
+        "Plakat debaty o edukacji z Małopolską Kurator Oświaty",
+        "Wersja plakatu do social mediów",
+        "Przygotowanie plików do druku A3"
+      ],
+      "image": "/media/marta/plakaty-plansza-2x.webp",
+      "imageSmall": "/media/marta/plakaty-plansza-768.webp",
+      "imageMedium": "/media/marta/plakaty-plansza-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/marta/plakaty-plansza-1536.webp",
+      "imageCaption": "Plakaty wydarzeń · prezentacja oryginalnych projektów.",
+      "alt": "Trzy plakaty A3 obok siebie na jasnym tle: zielony plakat o profilaktyce Alzheimera, różowy plakat „Jestem silna” i biało-niebieski plakat debaty o edukacji.",
+      "cover": {
+        "src": "/media/marta/plakaty-plansza-1536.webp",
+        "smallSrc": "/media/marta/plakaty-plansza-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Trzy plakaty A3 obok siebie na jasnym tle: zielony plakat o profilaktyce Alzheimera, różowy plakat „Jestem silna” i biało-niebieski plakat debaty o edukacji.",
+        "caption": "Prezentacja projektu"
+      },
+      "client": "Radna Gminy Zielonki — wydarzenia lokalne.",
+      "need": "Każde wydarzenie miało innego odbiorcę i inny ton: warsztaty o zdrowiu mózgu dla dorosłych, spotkanie dla kobiet po chorobie nowotworowej i otwarta debata o edukacji. Plakaty musiały być czytelne z daleka, zmieścić długą listę organizatorów i partnerów, a przy tym nie wyglądać jak urzędowe ogłoszenia.",
+      "solution": "Każdy plakat dostał własny klimat dopasowany do tematu: spokojną zieleń i szkicowe ilustracje przy warsztatach o Alzheimerze, ciepły róż i motyw wstążki przy spotkaniu „Jestem silna” oraz wyraziste kolory koła KO przy debacie. Najważniejsze informacje — tytuł, data, godzina i miejsce — są zawsze w tym samym porządku i widać je pierwsze.",
+      "galleryTitle": "Plakaty wydarzeń.",
+      "galleryIntro": "Kliknij plakat, żeby go przybliżyć i przeczytać wszystkie szczegóły.",
+      "gallery": [
+        {
+          "src": "/media/marta/plakat-alzheimer-2000.webp",
+          "width": 2000,
+          "height": 2828,
+          "alt": "Plakat „Zdążyć przed Alzheimerem” — warsztaty o zdrowiu mózgu w CIS Zielonki, z prowadzącą i listą tematów zajęć.",
+          "caption": "„Zdążyć przed Alzheimerem” · oryginalny projekt plakatu",
+          "kind": "original",
+          "smallSrc": "/media/marta/plakat-alzheimer-768.webp"
+        },
+        {
+          "src": "/media/marta/plakat-jestem-silna-2000.webp",
+          "width": 2000,
+          "height": 2828,
+          "alt": "Plakat „Jestem silna — bo wygrałam z rakiem!” z różową wstążką w kształcie serca, datą 23.11.2025 i listą prelegentów.",
+          "caption": "„Jestem silna” · oryginalny projekt plakatu",
+          "kind": "original",
+          "smallSrc": "/media/marta/plakat-jestem-silna-768.webp"
+        },
+        {
+          "src": "/media/marta/plakat-debata-2000.webp",
+          "width": 2000,
+          "height": 2828,
+          "alt": "Plakat koła Koalicji Obywatelskiej zapraszający na otwarte spotkanie i debatę o edukacji w Michałowicach.",
+          "caption": "Debata o edukacji · oryginalny projekt plakatu",
+          "kind": "original",
+          "smallSrc": "/media/marta/plakat-debata-768.webp"
+        },
+        {
+          "src": "/media/marta/post-debata-2000.webp",
+          "width": 1080,
+          "height": 1350,
+          "alt": "Wersja plakatu debaty o edukacji w formacie posta do social mediów.",
+          "caption": "Debata o edukacji · wersja do social mediów",
+          "kind": "original",
+          "smallSrc": "/media/marta/post-debata-768.webp"
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
+      "slug": "lp-bud-wizytowki",
+      "name": "LP-BUD",
+      "category": "druk i reklama",
+      "scope": "Wizytówka firmy remontowo-budowlanej LP-BUD.",
+      "teaser": "Wizytówka dla firmy remontowo-budowlanej.",
+      "scopeItems": [
+        "Projekt wizytówki",
+        "Ikona fachowca i układ danych kontaktowych",
+        "Lista usług w czytelnym układzie",
+        "Przygotowanie pliku do druku ze spadami"
+      ],
+      "image": "/media/lp-bud/wizytowka-plansza-2x.webp",
+      "imageSmall": "/media/lp-bud/wizytowka-plansza-768.webp",
+      "imageMedium": "/media/lp-bud/wizytowka-plansza-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/lp-bud/wizytowka-plansza-1536.webp",
+      "imageCaption": "Wizytówka LP-BUD · prezentacja oryginalnego projektu.",
+      "alt": "Wizytówka LP-BUD na ciemnym tle: po lewej logo z fachowcem w kasku i dane kontaktowe, po prawej lista usług na zdjęciu z budowy.",
+      "cover": {
+        "src": "/media/lp-bud/wizytowka-plansza-1536.webp",
+        "smallSrc": "/media/lp-bud/wizytowka-plansza-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Wizytówka LP-BUD na ciemnym tle: po lewej logo z fachowcem w kasku i dane kontaktowe, po prawej lista usług na zdjęciu z budowy.",
+        "caption": "Prezentacja projektu"
+      },
+      "client": "LP-BUD — remonty i usługi budowlane, Modlnica.",
+      "need": "Firma remontowa potrzebowała wizytówki, która od razu mówi, czym się zajmuje: od malowania i płytek po instalacje, kostkę brukową i wypożyczalnię sprzętu. Telefon miał być widoczny na pierwszy rzut oka.",
+      "solution": "Podzieliłem wizytówkę na dwie części: jasną z logo i kontaktem oraz ciemną z listą usług na zdjęciu z budowy. Pomarańczowy łączy obie strony i prowadzi wzrok do numeru telefonu na dole.",
+      "galleryTitle": "Wizytówka.",
+      "galleryIntro": "Oryginalny projekt — kliknij, żeby przybliżyć.",
+      "gallery": [
+        {
+          "src": "/media/lp-bud/wizytowka-plansza-2x.webp",
+          "width": 3072,
+          "height": 2048,
+          "alt": "Oryginalny projekt wizytówki LP-BUD.",
+          "caption": "Wizytówka LP-BUD · oryginalny projekt",
+          "kind": "original",
+          "smallSrc": "/media/lp-bud/wizytowka-768.webp"
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
+      "slug": "bipi-detailing-bilbord",
+      "name": "BIPI Detailing",
+      "category": "druk i reklama",
+      "scope": "Billboard reklamowy studia detailingu i wrappingu BIPI w Prusach.",
+      "teaser": "Billboard dla studia detailingu i oklejania aut.",
+      "scopeItems": [
+        "Projekt billboardu",
+        "Ilustracja w klimacie gry z autem i właścicielem studia",
+        "Ikony usług i kierunkowskaz do studia",
+        "Przygotowanie pliku do druku wielkoformatowego"
+      ],
+      "image": "/media/bipi/bilbord-plansza-2x.webp",
+      "imageSmall": "/media/bipi/bilbord-plansza-768.webp",
+      "imageMedium": "/media/bipi/bilbord-plansza-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/bipi/bilbord-plansza-1536.webp",
+      "imageCaption": "Billboard BIPI · prezentacja oryginalnego projektu.",
+      "alt": "Billboard BIPI Detailing & Wrapping: duże hasło po lewej, ilustrowany właściciel z polerką obok sportowego auta, numer telefonu, adres i strzałka „prosto 30 m”.",
+      "cover": {
+        "src": "/media/bipi/bilbord-plansza-1536.webp",
+        "smallSrc": "/media/bipi/bilbord-plansza-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Billboard BIPI Detailing & Wrapping: duże hasło po lewej, ilustrowany właściciel z polerką obok sportowego auta, numer telefonu, adres i strzałka „prosto 30 m”.",
+        "caption": "Prezentacja projektu"
+      },
+      "client": "BIPI Detailing — detailing, wrapping i serwis aut, Prusy.",
+      "need": "Billboard przy drodze ogląda się przez kilka sekund z jadącego auta. Musiał przyciągnąć uwagę fanów motoryzacji, powiedzieć, co robi studio, i od razu pokazać, gdzie skręcić.",
+      "solution": "Postawiłem na ilustrację w stylistyce znanej z gier o miejskich wyścigach — z właścicielem studia i sportowym autem. Hasło „Detailing & Wrapping” jest największym elementem, usługi mają proste ikony, a na dole są tylko telefon, adres i strzałka do studia.",
+      "galleryTitle": "Billboard.",
+      "galleryIntro": "Oryginalny projekt w wysokiej rozdzielczości — kliknij, żeby przybliżyć.",
+      "gallery": [
+        {
+          "src": "/media/bipi/bilbord-plansza-2x.webp",
+          "width": 3072,
+          "height": 2048,
+          "alt": "Oryginalny projekt billboardu BIPI Detailing & Wrapping.",
+          "caption": "Billboard BIPI · oryginalny projekt",
+          "kind": "original",
+          "smallSrc": "/media/bipi/bilbord-768.webp"
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
+      "slug": "lucky-luke-meble-baner",
+      "name": "Lucky Luke Meble",
+      "category": "druk i reklama",
+      "scope": "Baner reklamowy firmy Lucky Luke — meble na wymiar.",
+      "teaser": "Długi baner reklamowy dla producenta mebli na wymiar.",
+      "scopeItems": [
+        "Projekt banera w formacie 5:1",
+        "Logo, lista usług i zdjęcie realizacji",
+        "Kod QR i logotypy partnerów",
+        "Przygotowanie pliku do druku wielkoformatowego"
+      ],
+      "image": "/media/lucky-luke/baner-plansza-2x.webp",
+      "imageSmall": "/media/lucky-luke/baner-plansza-768.webp",
+      "imageMedium": "/media/lucky-luke/baner-plansza-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/lucky-luke/baner-plansza-1536.webp",
+      "imageCaption": "Baner Lucky Luke · prezentacja oryginalnego projektu.",
+      "alt": "Długi granatowo-złoty baner Lucky Luke Meble: logo i lista usług, zdjęcie nowoczesnej kuchni, duży numer telefonu, kod QR i logotypy partnerów.",
+      "cover": {
+        "src": "/media/lucky-luke/baner-plansza-1536.webp",
+        "smallSrc": "/media/lucky-luke/baner-plansza-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Długi granatowo-złoty baner Lucky Luke Meble: logo i lista usług, zdjęcie nowoczesnej kuchni, duży numer telefonu, kod QR i logotypy partnerów.",
+        "caption": "Prezentacja projektu"
+      },
+      "client": "Lucky Luke — meble na wymiar: kuchnie, szafy, garderoby i meble łazienkowe.",
+      "need": "Baner w bardzo wydłużonym formacie miał zmieścić logo, pełną listę usług, przykład realizacji, telefon, kod QR i logotypy producentów, z którymi pracuje firma — i nadal być czytelny z ulicy.",
+      "solution": "Ułożyłem treść od lewej do prawej, tak jak się go czyta: kim jest firma i co robi, potem zdjęcie gotowej kuchni, a w centrum duży złoty numer telefonu z wezwaniem do wyceny. Granat ze złotem nadaje marce elegancki charakter, który pasuje do mebli premium.",
+      "galleryTitle": "Baner.",
+      "galleryIntro": "Oryginalny projekt w wysokiej rozdzielczości — kliknij, żeby przybliżyć i przewijać.",
+      "gallery": [
+        {
+          "src": "/media/lucky-luke/baner-4800.webp",
+          "width": 4800,
+          "height": 960,
+          "alt": "Oryginalny projekt banera Lucky Luke Meble Na Wymiar.",
+          "caption": "Baner Lucky Luke · oryginalny projekt",
+          "kind": "original",
+          "smallSrc": "/media/lucky-luke/baner-768.webp"
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
+      "slug": "super-rally-50-grafika",
+      "name": "Super Rally 2025",
+      "category": "druk i reklama",
+      "scope": "Grafika jubileuszowa 50. FH-DCE Super Rally w Bydgoszczy dla H-DC Riders of Poland.",
+      "teaser": "Grafika jubileuszowa zlotu motocyklowego Super Rally 2025.",
+      "scopeItems": [
+        "Ilustracja silnika V-twin ze skrzydłami",
+        "Liternictwo „Super Rally” i „50 Anniversary”",
+        "Dwie wersje grafiki",
+        "Przygotowanie plików do nadruku"
+      ],
+      "image": "/media/super-rally/nadruk-plansza-2x.webp",
+      "imageSmall": "/media/super-rally/nadruk-plansza-768.webp",
+      "imageMedium": "/media/super-rally/nadruk-plansza-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/super-rally/nadruk-plansza-1536.webp",
+      "imageCaption": "Super Rally 2025 · prezentacja oryginalnych projektów.",
+      "alt": "Dwie wersje grafiki Super Rally 50 Anniversary: pomarańczowe liternictwo, skrzydła i chromowany silnik V-twin na czarnym tle, z napisem Bydgoszcz-Poland 04–08.06.2025.",
+      "cover": {
+        "src": "/media/super-rally/nadruk-plansza-1536.webp",
+        "smallSrc": "/media/super-rally/nadruk-plansza-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Dwie wersje grafiki Super Rally 50 Anniversary: pomarańczowe liternictwo, skrzydła i chromowany silnik V-twin na czarnym tle, z napisem Bydgoszcz-Poland 04–08.06.2025.",
+        "caption": "Prezentacja projektu"
+      },
+      "client": "H-DC Riders of Poland — organizator 50. FH-DCE Super Rally, Bydgoszcz 2025.",
+      "need": "Na pięćdziesiątą edycję europejskiego zlotu klubów Harley-Davidson potrzebna była grafika jubileuszowa, która dobrze wygląda na czarnym tle nadruku i oddaje motocyklowy klimat wydarzenia.",
+      "solution": "Sercem kompozycji jest ilustrowany silnik V-twin ze skrzydłami — klasyczny motyw motocyklowy. Wokół niego ułożyłem liternictwo w duchu custom, wstęgi z latami 1975–2025 i daty zlotu. Powstały dwie wersje: z dopiskiem „Made by” i bez niego.",
+      "galleryTitle": "Grafika jubileuszowa.",
+      "galleryIntro": "Obie wersje w wysokiej rozdzielczości — kliknij, żeby przybliżyć detale ilustracji.",
+      "gallery": [
+        {
+          "src": "/media/super-rally/wersja-glowna-2000.webp",
+          "width": 2000,
+          "height": 2753,
+          "alt": "Grafika Super Rally 50 Anniversary — wersja główna.",
+          "caption": "Wersja główna · oryginalny projekt",
+          "kind": "original",
+          "smallSrc": "/media/super-rally/wersja-glowna-768.webp"
+        },
+        {
+          "src": "/media/super-rally/wersja-made-by-2000.webp",
+          "width": 2000,
+          "height": 2753,
+          "alt": "Grafika Super Rally 50 Anniversary — wersja z dopiskiem Made by H-DC Riders of Poland.",
+          "caption": "Wersja „Made by” · oryginalny projekt",
+          "kind": "original",
+          "smallSrc": "/media/super-rally/wersja-made-by-768.webp"
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
+      "slug": "leasing-cartel-logo",
+      "name": "Leasing Cartel",
+      "category": "logo i identyfikacja",
+      "scope": "Logo i karta specyfikacji marki Leasing Cartel.",
+      "teaser": "Logo dla firmy leasingowej.",
+      "scopeItems": [
+        "Projekt znaku i logotypu",
+        "Wersja pozioma i pionowa",
+        "Złoty gradient i wersja jednobarwna",
+        "Karta specyfikacji: kolory i typografia"
+      ],
+      "image": "/media/leasing-cartel/logo-plansza-2x.webp",
+      "imageSmall": "/media/leasing-cartel/logo-plansza-768.webp",
+      "imageMedium": "/media/leasing-cartel/logo-plansza-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/leasing-cartel/logo-plansza-1536.webp",
+      "imageCaption": "Leasing Cartel · prezentacja oryginalnych projektów.",
+      "alt": "Złote logo Leasing Cartel na ciemnym tle: sześciokątny znak z literami L i C oraz napis Leasing Cartel, obok karta specyfikacji z wersjami logo, kolorami i fontami.",
+      "cover": {
+        "src": "/media/leasing-cartel/logo-plansza-1536.webp",
+        "smallSrc": "/media/leasing-cartel/logo-plansza-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Złote logo Leasing Cartel na ciemnym tle: sześciokątny znak z literami L i C oraz napis Leasing Cartel, obok karta specyfikacji z wersjami logo, kolorami i fontami.",
+        "caption": "Prezentacja projektu"
+      },
+      "client": "Leasing Cartel — leasing i finansowanie.",
+      "need": "Nowa marka leasingowa potrzebowała znaku, który wygląda solidnie i premium, a jednocześnie jest prosty — tak, żeby działał w internecie, na dokumentach i na samochodowych materiałach reklamowych.",
+      "solution": "Litery L i C zamknąłem w sześciokącie, który kojarzy się z wytrzymałością i strukturą. Złoty gradient i czysty, geometryczny krój Proxima Nova budują wrażenie marki premium. Karta specyfikacji porządkuje wersje logo, kolor Pantone i fonty.",
+      "galleryTitle": "Logo i specyfikacja.",
+      "galleryIntro": "Logo oraz karta specyfikacji marki — kliknij, żeby przybliżyć.",
+      "gallery": [
+        {
+          "src": "/media/leasing-cartel/logo-plansza-2x.webp",
+          "width": 3072,
+          "height": 2048,
+          "alt": "Logo Leasing Cartel w złotym gradiencie na ciemnym tle.",
+          "caption": "Logo Leasing Cartel · oryginalny projekt",
+          "kind": "original",
+          "smallSrc": "/media/leasing-cartel/logo-768.webp"
+        },
+        {
+          "src": "/media/leasing-cartel/specyfikacja-2000.webp",
+          "width": 2000,
+          "height": 2828,
+          "alt": "Karta specyfikacji Leasing Cartel: wersja główna, wersja dodatkowa, kolory i typografia.",
+          "caption": "Karta specyfikacji · oryginalny projekt",
+          "kind": "original",
+          "smallSrc": "/media/leasing-cartel/specyfikacja-768.webp"
+        }
+      ],
+      "published": true,
+      "featured": false
+    },
+    {
+      "slug": "moto-session-2025-film",
+      "name": "Moto Session 2025",
+      "category": "filmy i social media",
+      "scope": "Film z wydarzenia Moto Session 2025 dla Swagier Audio — zawody car audio i klimat imprezy.",
+      "teaser": "Film z wydarzenia motoryzacyjnego w formacie pionowym.",
+      "scopeItems": [
+        "Zdjęcia na wydarzeniu",
+        "Montaż dynamicznego filmu 9:16",
+        "Efekty przejść i grafika marki",
+        "Wersja do publikacji w social mediach"
+      ],
+      "image": "/media/moto-session/film-plansza-2x.webp",
+      "imageSmall": "/media/moto-session/film-plansza-768.webp",
+      "imageMedium": "/media/moto-session/film-plansza-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/moto-session/film-plansza-1536.webp",
+      "imageCaption": "Moto Session 2025 · kadr z filmu.",
+      "alt": "Kadr z filmu Moto Session 2025: hala wydarzenia, publiczność i białe logo Swagier Audio na środku.",
+      "cover": {
+        "src": "/media/moto-session/film-plansza-1536.webp",
+        "smallSrc": "/media/moto-session/film-plansza-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Kadr z filmu Moto Session 2025: hala wydarzenia, publiczność i białe logo Swagier Audio na środku.",
+        "caption": "Prezentacja projektu"
+      },
+      "client": "Swagier Audio — car audio.",
+      "need": "Z wydarzenia motoryzacyjnego miał powstać krótki film, który odda energię imprezy i pokaże markę Swagier Audio — w formacie pod telefon i social media.",
+      "solution": "Zmontowałem dynamiczny pionowy film z ujęć z hali, publiczności i aut, z mocnymi przejściami i grafiką marki. Tempo montażu podąża za muzyką, a logo Swagier Audio spina całość.",
+      "galleryTitle": "Film.",
+      "galleryIntro": "Kliknij, żeby obejrzeć film bezpośrednio na stronie.",
+      "gallery": [],
+      "applications": [
+        {
+          "slug": "film",
+          "label": "Film",
+          "title": "Moto Session 2025.",
+          "description": "Pionowy film z wydarzenia. Kliknij, aby obejrzeć.",
+          "videos": [
+            {
+              "src": "",
+              "embed": "https://drive.google.com/file/d/1eKUeXMmcmfI5Wbypvzn2Ews9p6nHpOVF/preview",
+              "poster": "/media/moto-session/film-poster.webp",
+              "title": "Moto Session 2025",
+              "caption": "Film z wydarzenia.",
+              "width": 1080,
+              "height": 1920
+            }
+          ]
+        }
+      ],
+      "published": true,
+      "featured": false
     }
   ]
 }
