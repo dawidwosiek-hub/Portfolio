@@ -1261,9 +1261,9 @@
       "galleryIntro": "Oryginalny projekt — kliknij, żeby przybliżyć.",
       "gallery": [
         {
-          "src": "/media/lp-bud/wizytowka-plansza-2x.webp",
-          "width": 3072,
-          "height": 2048,
+          "src": "/media/lp-bud/wizytowka-2127.webp",
+          "width": 2127,
+          "height": 1182,
           "alt": "Oryginalny projekt wizytówki LP-BUD.",
           "caption": "Wizytówka LP-BUD · oryginalny projekt",
           "kind": "original",
@@ -1308,9 +1308,9 @@
       "galleryIntro": "Oryginalny projekt w wysokiej rozdzielczości — kliknij, żeby przybliżyć.",
       "gallery": [
         {
-          "src": "/media/bipi/bilbord-plansza-2x.webp",
+          "src": "/media/bipi/bilbord-3072.webp",
           "width": 3072,
-          "height": 2048,
+          "height": 1549,
           "alt": "Oryginalny projekt billboardu BIPI Detailing & Wrapping.",
           "caption": "Billboard BIPI · oryginalny projekt",
           "kind": "original",
@@ -1458,9 +1458,9 @@
       "galleryIntro": "Logo oraz karta specyfikacji marki — kliknij, żeby przybliżyć.",
       "gallery": [
         {
-          "src": "/media/leasing-cartel/logo-plansza-2x.webp",
-          "width": 3072,
-          "height": 2048,
+          "src": "/media/leasing-cartel/logo-2000.webp",
+          "width": 1816,
+          "height": 1105,
           "alt": "Logo Leasing Cartel w złotym gradiencie na ciemnym tle.",
           "caption": "Logo Leasing Cartel · oryginalny projekt",
           "kind": "original",
