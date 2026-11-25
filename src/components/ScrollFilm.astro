@@ -29,7 +29,7 @@ const W=works.map(w=>{const p=projects.find(x=>x.slug===w.slug);return p&&p.imag
  </div>
 </section>
 <style is:global>
-#sf{position:relative;height:560vh;background:#060504;color:#fff}
+#sf{position:relative;height:820vh;background:#060504;color:#fff}
 #sf .sf-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 #sf canvas,#sf .sf-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 #sf .sf-poster{transition:opacity .6s}#sf.sf-ok .sf-poster{opacity:0}
@@ -72,7 +72,7 @@ const W=works.map(w=>{const p=projects.find(x=>x.slug===w.slug);return p&&p.imag
 #sf .sf-load i{display:block;height:100%;background:rgba(255,204,0,.5);width:var(--l,0%);transition:width .3s,opacity .6s}
 #sf.sf-full .sf-load i{opacity:0}
 @media(max-width:860px){
- #sf{height:460vh}
+ #sf{height:680vh}
  #sf .sf-t{font-size:clamp(28px,8.4vw,52px);max-width:none}
  #sf .sf-cap,#sf .sf-end{top:auto;bottom:max(64px,9svh);transform:translateY(var(--y,24px))}
  #sf .sf-r,#sf .sf-c{text-align:left}#sf .sf-r .sf-t,#sf .sf-c .sf-t{margin:0}
