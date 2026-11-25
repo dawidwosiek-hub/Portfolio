@@ -267,8 +267,8 @@ const fin=new ShaderPass({uniforms:{tDiffuse:{value:null},uTime:{value:0},uCA:{v
   vec2 dd=vUv-.5;float r2=dot(dd,dd);vec2 off=dd*(uCA*(.4+r2*3.)+uWaveA*.01);
   vec3 c=vec3(texture2D(tDiffuse,uv+off).r,texture2D(tDiffuse,uv).g,texture2D(tDiffuse,uv-off).b);
   c*=1.-smoothstep(.12,.75,r2*1.4)*.6;
-  float g=fract(sin(dot(floor(vUv*uRes)+floor(uTime*12.)*vec2(.113,.071)*37.,vec2(12.9898,78.233)))*43758.5453);
-  c+=(g-.5)*uGrain;gl_FragColor=vec4(c,1.);}`});
+  float g=fract(52.9829189*fract(dot(gl_FragCoord.xy,vec2(.06711056,.00583715))));
+  c+=(g-.5)/255.;gl_FragColor=vec4(c,1.);}`});
 composer.addPass(fin);composer.addPass(new OutputPass());
 // ---------- układ: środek sceny = środek kolumny „stage” (centrowany kontener, także ultrawide) ----------
 let W=1,H=1,stageC={x:.5,y:.5},fovNeed=30;
@@ -308,13 +308,19 @@ addEventListener('pointerup',endDrag);addEventListener('pointercancel',()=>{drag
 // ---------- sterowanie odtwarzaniem ----------
 let t=0,last=performance.now(),playing=false,visible=true,raf=0,started=false;
 const seen=(()=>{try{return sessionStorage.getItem('nadxHero')==='1';}catch(e){return false;}})();
-function finish(){playing=false;root.classList.remove('ch-cine');skipB.hidden=true;replayB.hidden=false;try{sessionStorage.setItem('nadxHero','1');}catch(e){}}
+function finish(){playing=false;lockDoc(false);root.classList.remove('ch-cine');skipB.hidden=true;replayB.hidden=false;try{sessionStorage.setItem('nadxHero','1');}catch(e){}}
 function play(from){t=from;playing=from<T.end;root.classList.toggle('ch-cine',from<T.rev0);skipB.hidden=!playing;replayB.hidden=playing;
  if(from<.3){blackEl.classList.add('on');requestAnimationFrame(()=>requestAnimationFrame(()=>blackEl.classList.remove('on')));}
  root.classList.toggle('ch-ready',from>=T.rev0+.6);}
-skipB.addEventListener('click',()=>{t=Math.max(t,T.rev0);root.classList.remove('ch-cine');});
-replayB.addEventListener('click',()=>{if(scrollY>10)scrollTo({top:0,behavior:'instant'});rot=0;vel=0;play(0);});
-addEventListener('scroll',()=>{if(playing&&scrollY>60&&t<T.rev0)t=T.rev0;},{passive:true});
+skipB.addEventListener('click',()=>{t=Math.max(t,T.rev0);lockDoc(false);root.classList.remove('ch-cine');});
+replayB.addEventListener('click',()=>{if(scrollY>10)scrollTo({top:0,behavior:'instant'});rot=0;vel=0;play(0);lockDoc(true);});
+// intro nie daje się przewinąć: blokada przewijania do końca części filmowej
+const locked=()=>playing&&t<T.rev0;
+const stopEv=e=>{if(locked())e.preventDefault();};
+addEventListener('wheel',stopEv,{passive:false});addEventListener('touchmove',stopEv,{passive:false});
+addEventListener('keydown',e=>{if(locked()&&[' ','PageDown','PageUp','ArrowDown','ArrowUp','Home','End'].includes(e.key))e.preventDefault();});
+let docLocked=false;const lockDoc=on=>{docLocked=on;document.documentElement.style.overflow=on?'hidden':'';};
+addEventListener('scroll',()=>{if(locked()&&scrollY>0)scrollTo(0,0);},{passive:true});
 // ---------- pętla ----------
 const camP=new THREE.Vector3(),look=new THREE.Vector3();
 function frame(now){
@@ -322,6 +328,7 @@ function frame(now){
  const dt=Math.min(.05,(now-last)/1000);last=now;
  if(!visible)return;
  if(forceT!==null)t=forceT;else if(playing||t<T.end)t+=dt;
+ if(docLocked&&t>=T.rev0)lockDoc(false);
  if(playing&&t>=T.end)finish();
  const time=now/1000;
  // fazy
@@ -377,7 +384,7 @@ Promise.all([logoReady,imgsReady]).then(()=>{
  if(started)return;started=true;
  const fresh=!seen&&scrollY<10&&!location.hash&&!reduce&&forceT===null;
  if(reduce){t=T.end;play(T.end);finish();}
- else play(fresh?0:T.rev0-.2);
+ else{play(fresh?0:T.rev0-.2);if(fresh)lockDoc(true);}
  if(!fresh&&!reduce)root.classList.remove('ch-cine');
  last=performance.now();raf=requestAnimationFrame(frame);
 });
