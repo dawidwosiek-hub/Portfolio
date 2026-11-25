@@ -545,6 +545,7 @@
         "Projekt okładki płyty CD",
         "Wkładki do opakowania i lista utworów",
         "Projekt nadruku na płytę",
+        "Projekt ulotki A4",
         "Projekt roll-upu reklamowego",
         "Przygotowanie materiałów do druku"
       ],
@@ -607,6 +608,25 @@
           "kind": "original",
           "alt": "Oryginalny projekt nadruku na płytę Diverto: biała nazwa zespołu na czarno-bordowym tle.",
           "caption": "Nadruk na płytę · oryginalny projekt"
+        },
+        {
+          "src": "/media/diverto-materialy-promocyjne/diverto-ulotka-stol-1536.webp",
+          "smallSrc": "/media/diverto-materialy-promocyjne/diverto-ulotka-stol-768.webp",
+          "fullSrc": "/media/diverto-materialy-promocyjne/diverto-ulotka-stol-2x.webp",
+          "width": 1536,
+          "height": 1030,
+          "alt": "Ulotka Diverto A4 na drewnianym stole obok słuchawek studyjnych, kostek do gitary, kabla i kawy.",
+          "caption": "Ulotka A4 · wizualizacja projektu",
+          "kind": "visualization"
+        },
+        {
+          "src": "/media/diverto-materialy-promocyjne/diverto-ulotka-full.webp",
+          "smallSrc": "/media/diverto-materialy-promocyjne/diverto-ulotka-768.webp",
+          "width": 1748,
+          "height": 2480,
+          "alt": "Oryginalna ulotka Diverto: zdjęcie zespołu na scenie, oferta oprawy muzycznej i telefony kontaktowe.",
+          "caption": "Ulotka A4 · oryginalny projekt",
+          "kind": "original"
         }
       ],
       "applications": [
@@ -1851,6 +1871,469 @@
       ],
       "published": true,
       "featured": false
+    },
+    {
+      "slug": "alterclothes-nadruki",
+      "name": "Alterclothes",
+      "category": "odzież i nadruki",
+      "image": "/media/alterclothes-nadruki/alter-tee-czarna-2x.webp",
+      "imageSmall": "/media/alterclothes-nadruki/alter-tee-czarna-768.webp",
+      "imageMedium": "/media/alterclothes-nadruki/alter-tee-czarna-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2061,
+      "shareImage": "/media/alterclothes-nadruki/alter-tee-czarna-1536.webp",
+      "imageCaption": "Nadruk na czarnej koszulce · wizualizacja projektu",
+      "alt": "Czarna koszulka z białym nadrukiem Alterclothes: ćma w geometrycznej ramie z księżycami, leżąca na ciemnym betonie obok rękawic motocyklowych i czerwonej bandany.",
+      "cover": {
+        "src": "/media/alterclothes-nadruki/alter-tee-czarna-1536.webp",
+        "smallSrc": "/media/alterclothes-nadruki/alter-tee-czarna-768.webp",
+        "width": 1536,
+        "height": 1030,
+        "alt": "Czarna koszulka z białym nadrukiem Alterclothes: ćma w geometrycznej ramie z księżycami, leżąca na ciemnym betonie obok rękawic motocyklowych i czerwonej bandany.",
+        "caption": "Nadruk na czarnej koszulce · wizualizacja projektu"
+      },
+      "published": true,
+      "categories": [
+        "odzież i nadruki"
+      ],
+      "scope": "Ilustracja na koszulki marki Alterclothes: ćma w geometrycznej kompozycji, przygotowana w dwóch wersjach kolorystycznych.",
+      "teaser": "Ilustracja ćmy na koszulki, w wersji na jasną i ciemną tkaninę.",
+      "scopeItems": [
+        "Autorska ilustracja ćmy",
+        "Liternictwo gotyckie „alterclothes”",
+        "Wersja na jasną i ciemną tkaninę",
+        "Przygotowanie plików do nadruku"
+      ],
+      "client": "Alterclothes — marka odzieżowa.",
+      "need": "Grafika na koszulki o mrocznym, symbolicznym charakterze, czytelna zarówno na białej, jak i czarnej bawełnie.",
+      "solution": "Ćma z księżycem na tułowiu jest osią symetrycznej kompozycji z okręgami, fazami księżyca i liniami konstrukcyjnymi. Gęsta, linearna faktura skrzydeł zachowuje detal w nadruku. Wersja odwrócona pozwala użyć tego samego motywu na ciemnej tkaninie.",
+      "galleryTitle": "Ćma w dwóch odsłonach.",
+      "galleryIntro": "Ten sam motyw na czarnej i białej koszulce oraz oryginalne pliki obu wersji.",
+      "gallery": [
+        {
+          "src": "/media/alterclothes-nadruki/alter-tee-biala-1536.webp",
+          "smallSrc": "/media/alterclothes-nadruki/alter-tee-biala-768.webp",
+          "fullSrc": "/media/alterclothes-nadruki/alter-tee-biala-2x.webp",
+          "width": 1536,
+          "height": 1030,
+          "alt": "Biała koszulka z czarnym nadrukiem Alterclothes na jasnym tynku obok gałązki eukaliptusa i lnianej ściereczki.",
+          "caption": "Nadruk na białej koszulce · wizualizacja projektu",
+          "kind": "visualization"
+        },
+        {
+          "src": "/media/alterclothes-nadruki/alter-model-full.webp",
+          "smallSrc": "/media/alterclothes-nadruki/alter-model-768.webp",
+          "width": 600,
+          "height": 900,
+          "alt": "Modelka w czarnej koszulce z białym nadrukiem ćmy i napisem „queen of the night”.",
+          "caption": "Koszulka z nadrukiem · prezentacja",
+          "kind": "original"
+        },
+        {
+          "src": "/media/alterclothes-nadruki/alter-bialy-full.webp",
+          "smallSrc": "/media/alterclothes-nadruki/alter-bialy-768.webp",
+          "width": 1825,
+          "height": 2576,
+          "alt": "Oryginalna grafika Alterclothes: biała ćma w geometrycznej ramie na czarnym tle.",
+          "caption": "Wersja na ciemną tkaninę · oryginalny projekt",
+          "kind": "original"
+        },
+        {
+          "src": "/media/alterclothes-nadruki/alter-czarny-full.webp",
+          "smallSrc": "/media/alterclothes-nadruki/alter-czarny-768.webp",
+          "width": 1825,
+          "height": 2576,
+          "alt": "Oryginalna grafika Alterclothes: czarna ćma w geometrycznej ramie na białym tle.",
+          "caption": "Wersja na jasną tkaninę · oryginalny projekt",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "slug": "kot-egipski-ilustracja",
+      "name": "Kot egipski",
+      "category": "odzież i nadruki",
+      "image": "/media/kot-egipski-ilustracja/kot-salon-2x.webp",
+      "imageSmall": "/media/kot-egipski-ilustracja/kot-salon-768.webp",
+      "imageMedium": "/media/kot-egipski-ilustracja/kot-salon-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2061,
+      "shareImage": "/media/kot-egipski-ilustracja/kot-salon-1536.webp",
+      "imageCaption": "Ilustracja w ramie · wizualizacja projektu",
+      "alt": "Ilustracja egipskiego kota w złotej oprawie, oprawiona w mosiężną ramę na oliwkowej ścianie salonu obok skórzanego fotela i lampy.",
+      "cover": {
+        "src": "/media/kot-egipski-ilustracja/kot-salon-1536.webp",
+        "smallSrc": "/media/kot-egipski-ilustracja/kot-salon-768.webp",
+        "width": 1536,
+        "height": 1030,
+        "alt": "Ilustracja egipskiego kota w złotej oprawie, oprawiona w mosiężną ramę na oliwkowej ścianie salonu obok skórzanego fotela i lampy.",
+        "caption": "Ilustracja w ramie · wizualizacja projektu"
+      },
+      "published": true,
+      "categories": [
+        "odzież i nadruki",
+        "druk i reklama"
+      ],
+      "scope": "Kolorowa ilustracja kota w stylistyce egipskiej, przygotowana do druku i nadruku na odzież.",
+      "teaser": "Ilustracja kota w egipskiej oprawie — od szkicu do pełnego koloru.",
+      "scopeItems": [
+        "Szkic i linia",
+        "Kolor i cieniowanie",
+        "Cztery warianty koloru oczu",
+        "Pliki do druku i nadruku"
+      ],
+      "client": "Ilustracja do druku i nadruku na odzież.",
+      "need": "Wyrazista ilustracja, która broni się zarówno jako plakat, jak i nadruk na koszulce.",
+      "solution": "Sfinks w nemes z błękitnych i złotych pasów, z czerwonym nosem i zielonymi oczami jako mocnymi akcentami. Kreskowanie i drobne refleksy budują fakturę bez utraty czytelności w małym formacie. Powstały cztery warianty kolorystyczne oczu.",
+      "galleryTitle": "Od szkicu do koloru.",
+      "galleryIntro": "Kolejne etapy pracy, warianty kolorystyczne i ilustracja na koszulce.",
+      "gallery": [
+        {
+          "src": "/media/kot-egipski-ilustracja/kot-tee-biala-1536.webp",
+          "smallSrc": "/media/kot-egipski-ilustracja/kot-tee-biala-768.webp",
+          "fullSrc": "/media/kot-egipski-ilustracja/kot-tee-biala-2x.webp",
+          "width": 1536,
+          "height": 1030,
+          "alt": "Biała koszulka z nadrukiem egipskiego kota na jasnym tynku.",
+          "caption": "Nadruk na koszulce · wizualizacja projektu",
+          "kind": "visualization"
+        },
+        {
+          "src": "/media/kot-egipski-ilustracja/kot-full.webp",
+          "smallSrc": "/media/kot-egipski-ilustracja/kot-768.webp",
+          "width": 1757,
+          "height": 2576,
+          "alt": "Ilustracja egipskiego kota w błękitno-złotej nemes, z zielonymi oczami — wersja finalna.",
+          "caption": "Wersja finalna · oryginalny projekt",
+          "kind": "original"
+        },
+        {
+          "src": "/media/kot-egipski-ilustracja/kot-proces-full.webp",
+          "smallSrc": "/media/kot-egipski-ilustracja/kot-proces-768.webp",
+          "width": 1200,
+          "height": 352,
+          "alt": "Pięć etapów ilustracji kota: od szarego szkicu do pełnego koloru z cieniowaniem.",
+          "caption": "Etapy pracy · od szkicu do koloru",
+          "kind": "original"
+        },
+        {
+          "src": "/media/kot-egipski-ilustracja/kot-warianty-full.webp",
+          "smallSrc": "/media/kot-egipski-ilustracja/kot-warianty-768.webp",
+          "width": 1200,
+          "height": 440,
+          "alt": "Cztery warianty ilustracji kota z oczami w kolorze czerwonym, niebieskim, zielonym i złotym.",
+          "caption": "Warianty kolorystyczne · oryginalny projekt",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "slug": "klepsydra-ilustracja",
+      "name": "Klepsydra",
+      "category": "odzież i nadruki",
+      "image": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-2x.webp",
+      "imageSmall": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-768.webp",
+      "imageMedium": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2061,
+      "shareImage": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-1536.webp",
+      "imageCaption": "Nadruk na czarnej koszulce · wizualizacja projektu",
+      "alt": "Czarna koszulka z kolorowym nadrukiem klepsydry trzymanej przez dłonie, na ciemnym betonie obok rękawic i bandany.",
+      "cover": {
+        "src": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-1536.webp",
+        "smallSrc": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-768.webp",
+        "width": 1536,
+        "height": 1030,
+        "alt": "Czarna koszulka z kolorowym nadrukiem klepsydry trzymanej przez dłonie, na ciemnym betonie obok rękawic i bandany.",
+        "caption": "Nadruk na czarnej koszulce · wizualizacja projektu"
+      },
+      "published": true,
+      "categories": [
+        "odzież i nadruki"
+      ],
+      "scope": "Ilustracja klepsydry trzymanej przez dłonie — w wersji liniowej i kolorowej, do nadruku na ciemnej tkaninie.",
+      "teaser": "Ilustracja klepsydry z dłońmi — linia, kolor i cień.",
+      "scopeItems": [
+        "Rysunek liniowy",
+        "Kolor płaski",
+        "Cieniowanie i światło",
+        "Wersja do nadruku na ciemnej tkaninie"
+      ],
+      "client": "Ilustracja do nadruku na odzież.",
+      "need": "Motyw upływającego czasu, czytelny na czarnej koszulce.",
+      "solution": "Dłonie tworzą kształt klepsydry, a piasek przelewa się między nimi. Ilustracja powstawała w trzech krokach: biała linia na czarnym tle, kolor płaski i cieniowanie z ciepłym światłem.",
+      "galleryTitle": "Trzy kroki.",
+      "galleryIntro": "Linia, kolor i cień — od pierwszej wersji do gotowego nadruku.",
+      "gallery": [
+        {
+          "src": "/media/klepsydra-ilustracja/klepsydra-proces-full.webp",
+          "smallSrc": "/media/klepsydra-ilustracja/klepsydra-proces-768.webp",
+          "width": 2000,
+          "height": 1112,
+          "alt": "Trzy wersje ilustracji klepsydry z dłońmi: biała linia na czarnym tle, kolor płaski i wersja z cieniowaniem.",
+          "caption": "Etapy pracy · oryginalny projekt",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "slug": "sweet-drink-nadruk",
+      "name": "Sweet Drink",
+      "category": "odzież i nadruki",
+      "image": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-2x.webp",
+      "imageSmall": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-768.webp",
+      "imageMedium": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2061,
+      "shareImage": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-1536.webp",
+      "imageCaption": "Nadruk na białej koszulce · wizualizacja projektu",
+      "alt": "Biała koszulka z czarnym nadrukiem czaszki w kształcie butelki z korkiem i napisem „sweet drink”, na jasnym tynku.",
+      "cover": {
+        "src": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-1536.webp",
+        "smallSrc": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-768.webp",
+        "width": 1536,
+        "height": 1030,
+        "alt": "Biała koszulka z czarnym nadrukiem czaszki w kształcie butelki z korkiem i napisem „sweet drink”, na jasnym tynku.",
+        "caption": "Nadruk na białej koszulce · wizualizacja projektu"
+      },
+      "published": true,
+      "categories": [
+        "odzież i nadruki"
+      ],
+      "scope": "Czarno-biała ilustracja czaszki w butelce z gotyckim napisem, przygotowana do jednokolorowego nadruku.",
+      "teaser": "Czaszka w butelce — jednokolorowa ilustracja do nadruku.",
+      "scopeItems": [
+        "Autorska ilustracja",
+        "Liternictwo gotyckie",
+        "Plik do nadruku jednokolorowego"
+      ],
+      "client": "Ilustracja do nadruku na odzież.",
+      "need": "Grafika w jednym kolorze, z wyraźnym konturem, tania i prosta w nadruku.",
+      "solution": "Butelka przechodzi w czaszkę, a w oczodołach i we wnętrzu widać rozgwieżdżone niebo z księżycem. Kwiaty u dołu i promienie wokół domykają kompozycję. Jeden kolor bez półtonów sprawdza się w sitodruku.",
+      "galleryTitle": "Jeden kolor.",
+      "galleryIntro": "Oryginalny plik ilustracji.",
+      "gallery": [
+        {
+          "src": "/media/sweet-drink-nadruk/sweetdrink-full.webp",
+          "smallSrc": "/media/sweet-drink-nadruk/sweetdrink-768.webp",
+          "width": 600,
+          "height": 920,
+          "alt": "Oryginalna ilustracja Sweet Drink: czaszka w butelce z korkiem, kwiaty i promienie, napis gotycki.",
+          "caption": "Ilustracja · oryginalny projekt",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "slug": "american-choppers-nadruk",
+      "name": "American Choppers",
+      "category": "odzież i nadruki",
+      "image": "/media/american-choppers-nadruk/choppers-tee-czarna-2x.webp",
+      "imageSmall": "/media/american-choppers-nadruk/choppers-tee-czarna-768.webp",
+      "imageMedium": "/media/american-choppers-nadruk/choppers-tee-czarna-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2061,
+      "shareImage": "/media/american-choppers-nadruk/choppers-tee-czarna-1536.webp",
+      "imageCaption": "Nadruk na czarnej koszulce · wizualizacja projektu",
+      "alt": "Czarna koszulka z kolorowym nadrukiem American Choppers: orzeł ze skrzydłami w barwach flagi USA, motocykl i napis „Route 66 · Born to be wild”.",
+      "cover": {
+        "src": "/media/american-choppers-nadruk/choppers-tee-czarna-1536.webp",
+        "smallSrc": "/media/american-choppers-nadruk/choppers-tee-czarna-768.webp",
+        "width": 1536,
+        "height": 1030,
+        "alt": "Czarna koszulka z kolorowym nadrukiem American Choppers: orzeł ze skrzydłami w barwach flagi USA, motocykl i napis „Route 66 · Born to be wild”.",
+        "caption": "Nadruk na czarnej koszulce · wizualizacja projektu"
+      },
+      "published": true,
+      "categories": [
+        "odzież i nadruki"
+      ],
+      "scope": "Kolorowa grafika motocyklowa w klimacie Route 66, przygotowana do nadruku na czarnej koszulce.",
+      "teaser": "Grafika motocyklowa z orłem i motywem Route 66.",
+      "scopeItems": [
+        "Kompozycja grafiki",
+        "Liternictwo z fakturą flagi",
+        "Fotomontaż motocykla i drogi",
+        "Plik do nadruku na ciemną tkaninę"
+      ],
+      "client": "Grafika do nadruku na odzież.",
+      "need": "Mocna, kolorowa grafika motocyklowa na czarną koszulkę.",
+      "solution": "Orzeł z rozpostartymi skrzydłami w barwach flagi otwiera kompozycję, motocykl na drodze stanowi jej środek. Liternictwo w stylu college z fakturą flagi i skryptowy napis „Born to be wild” budują hierarchię.",
+      "galleryTitle": "Na czarnym tle.",
+      "galleryIntro": "Oryginalny plik grafiki.",
+      "gallery": [
+        {
+          "src": "/media/american-choppers-nadruk/choppers-full.webp",
+          "smallSrc": "/media/american-choppers-nadruk/choppers-768.webp",
+          "width": 2000,
+          "height": 2333,
+          "alt": "Oryginalna grafika American Choppers: orzeł w barwach flagi USA, motocykl na drodze i napisy US 66, Route, Born to be wild.",
+          "caption": "Grafika · oryginalny projekt",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "slug": "plakaty-autorskie",
+      "name": "Plakaty",
+      "category": "druk i reklama",
+      "image": "/media/plakaty-autorskie/plakaty-trio-a-2x.webp",
+      "imageSmall": "/media/plakaty-autorskie/plakaty-trio-a-768.webp",
+      "imageMedium": "/media/plakaty-autorskie/plakaty-trio-a-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2061,
+      "shareImage": "/media/plakaty-autorskie/plakaty-trio-a-1536.webp",
+      "imageCaption": "Plakaty w galerii · wizualizacja projektu",
+      "alt": "Trzy plakaty w czarnych ramach na ciemnej ścianie galerii: Invisible, Destination i Future, oświetlone punktowymi lampami.",
+      "cover": {
+        "src": "/media/plakaty-autorskie/plakaty-trio-a-1536.webp",
+        "smallSrc": "/media/plakaty-autorskie/plakaty-trio-a-768.webp",
+        "width": 1536,
+        "height": 1030,
+        "alt": "Trzy plakaty w czarnych ramach na ciemnej ścianie galerii: Invisible, Destination i Future, oświetlone punktowymi lampami.",
+        "caption": "Plakaty w galerii · wizualizacja projektu"
+      },
+      "published": true,
+      "categories": [
+        "druk i reklama"
+      ],
+      "scope": "Seria plakatów: kolaże, fotomanipulacje i typografia eksperymentalna.",
+      "teaser": "Seria plakatów — kolaż, glitch i fotomanipulacja.",
+      "scopeItems": [
+        "Kolaż i fotomanipulacja",
+        "Typografia eksperymentalna",
+        "Efekty glitch",
+        "Przygotowanie do druku"
+      ],
+      "client": "Seria plakatów.",
+      "need": "Plakaty, które łączą fotografię, typografię i efekty cyfrowe w różnych konwencjach.",
+      "solution": "Invisible łączy oko, glitch i komendy terminala. Destination to kolaż rzeźby z neonową zielenią i interfejsem odtwarzacza. Future zestawia zebrę, góry i surową typografię w temacie ekologii. No Humans Allowed przekształca klasyczny portret w negatywie, a Karta odbija postać w lustrzanym układzie.",
+      "galleryTitle": "Plakaty w szczegółach.",
+      "galleryIntro": "Druga odsłona serii w ramach i wszystkie plakaty w wysokiej rozdzielczości.",
+      "gallery": [
+        {
+          "src": "/media/plakaty-autorskie/plakaty-trio-b-1536.webp",
+          "smallSrc": "/media/plakaty-autorskie/plakaty-trio-b-768.webp",
+          "fullSrc": "/media/plakaty-autorskie/plakaty-trio-b-2x.webp",
+          "width": 1536,
+          "height": 1030,
+          "alt": "Trzy plakaty w czarnych ramach na ciemnej ścianie: No Humans Allowed, Karta i Invisible.",
+          "caption": "Druga odsłona serii · wizualizacja projektu",
+          "kind": "visualization"
+        },
+        {
+          "src": "/media/plakaty-autorskie/invisible-full.webp",
+          "smallSrc": "/media/plakaty-autorskie/invisible-768.webp",
+          "width": 2000,
+          "height": 2556,
+          "alt": "Plakat Invisible: zbliżenie oka, efekty glitch, niebieski ekran błędu i komendy terminala.",
+          "caption": "Invisible · oryginalny projekt",
+          "kind": "original"
+        },
+        {
+          "src": "/media/plakaty-autorskie/destination-full.webp",
+          "smallSrc": "/media/plakaty-autorskie/destination-768.webp",
+          "width": 2000,
+          "height": 2556,
+          "alt": "Plakat Destination: kolaż rzeźby z neonową zielenią i różem oraz elementy interfejsu odtwarzacza muzyki.",
+          "caption": "Destination · oryginalny projekt",
+          "kind": "original"
+        },
+        {
+          "src": "/media/plakaty-autorskie/future-full.webp",
+          "smallSrc": "/media/plakaty-autorskie/future-768.webp",
+          "width": 1200,
+          "height": 1533,
+          "alt": "Plakat Future: zebra na tle górskiego lasu, diamentowe kadry i teksty o ekologii.",
+          "caption": "Future · oryginalny projekt",
+          "kind": "original"
+        },
+        {
+          "src": "/media/plakaty-autorskie/mona-full.webp",
+          "smallSrc": "/media/plakaty-autorskie/mona-768.webp",
+          "width": 1855,
+          "height": 2576,
+          "alt": "Plakat No Humans Allowed: klasyczny portret w odwróconych kolorach, z sześciorgiem oczu i statkami UFO.",
+          "caption": "No Humans Allowed · oryginalny projekt",
+          "kind": "original"
+        },
+        {
+          "src": "/media/plakaty-autorskie/karta-full.webp",
+          "smallSrc": "/media/plakaty-autorskie/karta-768.webp",
+          "width": 600,
+          "height": 920,
+          "alt": "Plakat w formie karty: lustrzany portret kobiety z różami w czerni i bieli z turkusowymi akcentami.",
+          "caption": "Karta · oryginalny projekt",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "slug": "ilustracje-motoryzacyjne",
+      "name": "Ilustracje motoryzacyjne",
+      "category": "druk i reklama",
+      "image": "/media/ilustracje-motoryzacyjne/mustang-garaz-2x.webp",
+      "imageSmall": "/media/ilustracje-motoryzacyjne/mustang-garaz-768.webp",
+      "imageMedium": "/media/ilustracje-motoryzacyjne/mustang-garaz-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2061,
+      "shareImage": "/media/ilustracje-motoryzacyjne/mustang-garaz-1536.webp",
+      "imageCaption": "Ilustracja w warsztacie · wizualizacja projektu",
+      "alt": "Wektorowa ilustracja czerwonego Mustanga w czarnej ramie na ceglanej ścianie warsztatu, nad stołem z kluczami, obok kasku i motocykla.",
+      "cover": {
+        "src": "/media/ilustracje-motoryzacyjne/mustang-garaz-1536.webp",
+        "smallSrc": "/media/ilustracje-motoryzacyjne/mustang-garaz-768.webp",
+        "width": 1536,
+        "height": 1030,
+        "alt": "Wektorowa ilustracja czerwonego Mustanga w czarnej ramie na ceglanej ścianie warsztatu, nad stołem z kluczami, obok kasku i motocykla.",
+        "caption": "Ilustracja w warsztacie · wizualizacja projektu"
+      },
+      "published": true,
+      "categories": [
+        "druk i reklama"
+      ],
+      "scope": "Wektorowe ilustracje samochodów do druku wielkoformatowego.",
+      "teaser": "Wektorowe ilustracje samochodów — Mustang i nocny warsztat.",
+      "scopeItems": [
+        "Ilustracja wektorowa samochodu",
+        "Scena nocna z oświetleniem",
+        "Przygotowanie do druku"
+      ],
+      "client": "Ilustracje do druku.",
+      "need": "Ilustracje samochodów do powieszenia na ścianie — czyste, wektorowe i skalowalne.",
+      "solution": "Mustang w ujęciu z boku, oddany płaskimi plamami koloru i precyzyjnymi refleksami. Druga ilustracja to nocna scena: dwa muscle cary przed oświetlonym budynkiem.",
+      "galleryTitle": "Dwie ilustracje.",
+      "galleryIntro": "Nocna scena w warsztacie i oryginalne pliki obu ilustracji.",
+      "gallery": [
+        {
+          "src": "/media/ilustracje-motoryzacyjne/warsztat-garaz-1536.webp",
+          "smallSrc": "/media/ilustracje-motoryzacyjne/warsztat-garaz-768.webp",
+          "fullSrc": "/media/ilustracje-motoryzacyjne/warsztat-garaz-2x.webp",
+          "width": 1536,
+          "height": 1030,
+          "alt": "Nocna ilustracja dwóch muscle carów przed budynkiem, w ramie na ceglanej ścianie warsztatu.",
+          "caption": "Nocna scena w warsztacie · wizualizacja projektu",
+          "kind": "visualization"
+        },
+        {
+          "src": "/media/ilustracje-motoryzacyjne/mustang-full.webp",
+          "smallSrc": "/media/ilustracje-motoryzacyjne/mustang-768.webp",
+          "width": 2400,
+          "height": 1697,
+          "alt": "Wektorowa ilustracja czerwonego Mustanga z boku na szarym tle.",
+          "caption": "Mustang · oryginalny projekt",
+          "kind": "original"
+        },
+        {
+          "src": "/media/ilustracje-motoryzacyjne/warsztat-full.webp",
+          "smallSrc": "/media/ilustracje-motoryzacyjne/warsztat-768.webp",
+          "width": 2400,
+          "height": 1697,
+          "alt": "Wektorowa ilustracja nocnej sceny: czerwony i niebieski muscle car przed oświetlonym budynkiem.",
+          "caption": "Nocna scena · oryginalny projekt",
+          "kind": "original"
+        }
+      ]
     }
   ]
 }

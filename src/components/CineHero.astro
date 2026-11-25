@@ -116,14 +116,14 @@ try{gl=new THREE.WebGLRenderer({canvas,antialias:false,alpha:false,powerPreferen
 if(gl){
 const mobile=()=>innerWidth<860;
 const lowEnd=(navigator.hardwareConcurrency||8)<=4;
-const N=mobile()||lowEnd?24000:62000;
+const N=mobile()||lowEnd?20000:44000;
 const K=Math.min(CARDS.length,12);
 // ---------- oś czasu (s) ----------
 const T={neb0:.5,logo0:.7,logo1:4.6,title0:3.9,title1:6.4,boom:6.3,gal1:9.0,rev0:9.8,rev1:11.7,end:12.6};
 // ---------- geometria świata ----------
 const R=7.6,CW=3.0,CH=2.0,GAP=.42,DTH=(CW+GAP)/R,SPAN=DTH*K,CARD_Y=.25,FLOOR=-1.05;
 const LOGO_Z=-2.4,LOGO_H=2.15,CAMZ=5.0;
-gl.setPixelRatio(Math.min(devicePixelRatio,mobile()?1.5:1.75));
+let dpr=Math.min(devicePixelRatio,mobile()?1.5:1.5);gl.setPixelRatio(dpr);
 gl.outputColorSpace=THREE.SRGBColorSpace;gl.toneMapping=THREE.NoToneMapping;
 const scene=new THREE.Scene(),world=new THREE.Group();world.rotation.x=.035;scene.add(world);
 const cam=new THREE.PerspectiveCamera(30,1,.1,80);
@@ -133,7 +133,7 @@ const texL=new THREE.TextureLoader();
 const bgTex=texL.load(mobile()?'/media/hero/studio-v2-1280.webp':'/media/hero/studio-v2-2560.webp');bgTex.colorSpace=THREE.SRGBColorSpace;
 const NOISE=`float hash(vec3 p){p=fract(p*.3183099+.1);p*=17.;return fract(p.x*p.y*p.z*(p.x+p.y+p.z));}
 float vn(vec3 x){vec3 i=floor(x),f=fract(x);f=f*f*(3.-2.*f);return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);}
-float fbm(vec3 p){float a=.5,s=0.;for(int i=0;i<4;i++){s+=a*vn(p);p*=2.03;a*=.5;}return s;}`;
+float fbm(vec3 p){float a=.5,s=0.;for(int i=0;i<3;i++){s+=a*vn(p);p*=2.03;a*=.5;}return s;}`;
 const bgMat=new THREE.ShaderMaterial({depthTest:false,depthWrite:false,uniforms:{uTex:{value:bgTex},uRes:{value:new THREE.Vector2(1,1)},uImg:{value:new THREE.Vector2(2560,1086)},uB:{value:0},uTime:{value:0},uPar:{value:new THREE.Vector2()},uShift:{value:new THREE.Vector2()},uFlash:{value:0}},
  vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}`,
  fragmentShader:`${NOISE}uniform sampler2D uTex;uniform vec2 uRes,uImg,uPar,uShift;uniform float uB,uTime,uFlash;varying vec2 vUv;
@@ -141,7 +141,7 @@ const bgMat=new THREE.ShaderMaterial({depthTest:false,depthWrite:false,uniforms:
   float zm=max(1.04,(1.+2.*abs(uShift.x))*s.x);vec2 tuv=vec2((vUv.x-.5-uShift.x)*s.x/zm+.5,(vUv.y-.5)*s.y/zm+.52);
   vec3 c=texture2D(uTex,clamp(tuv,.001,.999)).rgb;
   float fl=1.;
-  vec2 q=vUv*vec2(ra,1.)*1.6;float f=fbm(vec3(q+vec2(uTime*.025,0.),uTime*.03));float f2=fbm(vec3(q*2.3-vec2(uTime*.04,uTime*.01),7.+uTime*.05));
+  vec2 q=vUv*vec2(ra,1.)*1.6;float f=fbm(vec3(q+vec2(uTime*.025,0.),uTime*.03));float f2=f*.6;
   vec3 haze=vec3(1.,.8,.55)*(f*f*.07+f2*.02)*(1.-vUv.y*.6);
   vec3 col=(c*.85+haze)*uB+vec3(1.,.8,.4)*uFlash*.35*(1.-length(vUv-.5));
   gl_FragColor=vec4(col,1.);}`});
@@ -288,7 +288,7 @@ function layout(){
  const logoDist=5.9,visWlogo=visH*logoDist*asp;pu.uLogoS.value=Math.min(1,(mobile()?.62:.42)*visWlogo/LOGO_H,.5*visH*logoDist/LOGO_H);
  bgMat.uniforms.uRes.value.set(W,H);bgMat.uniforms.uShift.value.set((cx-W/2)/W,0);
  fin.uniforms.uRes.value.set(W*gl.getPixelRatio(),H*gl.getPixelRatio());fin.uniforms.uC.value.set(cx/W,1-cy/H);
- bloom.setSize(W*gl.getPixelRatio()/2,H*gl.getPixelRatio()/2);
+ bloom.setSize(W*gl.getPixelRatio()/3,H*gl.getPixelRatio()/3);
  {const cp=$('ch-copy').getBoundingClientRect(),dpr=gl.getPixelRatio();if(mobile()){SPLIT.set(0,(r.bottom-cp.top+12)/H,H*dpr);}else{SPLIT.set((cp.right-r.left-40)/W,W*dpr,0);}}
  root.style.setProperty('--ch-split',(Math.max(30,Math.min(60,(s.left-r.left)/W*100)))+'%');
  titleEl.style.left=cx+'px';
@@ -306,6 +306,7 @@ const endDrag=e=>{if(!drag)return;const wasClick=drag.moved<6;drag=null;canvas.c
  if(wasClick&&interactive){const i=pick(e);if(i>=0&&cards[i].data)location.href='/realizacje/'+cards[i].data.slug;}};
 addEventListener('pointerup',endDrag);addEventListener('pointercancel',()=>{drag=null;canvas.classList.remove('ch-drag');});
 // ---------- sterowanie odtwarzaniem ----------
+let perfN=0,perfS=0,perfOk=0;
 let t=0,last=performance.now(),playing=false,visible=true,raf=0,started=false;
 const seen=(()=>{try{return sessionStorage.getItem('nadxHero')==='1';}catch(e){return false;}})();
 function finish(){playing=false;lockDoc(false);root.classList.remove('ch-cine');skipB.hidden=true;replayB.hidden=false;try{sessionStorage.setItem('nadxHero','1');}catch(e){}}
@@ -325,8 +326,12 @@ addEventListener('scroll',()=>{if(locked()&&scrollY>0)scrollTo(0,0);},{passive:t
 const camP=new THREE.Vector3(),look=new THREE.Vector3();
 function frame(now){
  raf=requestAnimationFrame(frame);
- const dt=Math.min(.05,(now-last)/1000);last=now;
+ const raw=(now-last)/1000,dt=Math.min(.05,raw);last=now;
  if(!visible)return;
+ // adaptacyjna jakość: przy spadku płynności obniżamy rozdzielczość renderu
+ perfN++;perfS+=raw;if(perfN>=36){const avg=perfS/perfN;perfN=0;perfS=0;
+  if(avg>1/48&&dpr>1.01){dpr=Math.max(1,dpr-.25);gl.setPixelRatio(dpr);layout();}
+  else if(avg<1/58&&dpr<Math.min(devicePixelRatio,1.5)-.01&&++perfOk>4){perfOk=0;dpr=Math.min(Math.min(devicePixelRatio,1.5),dpr+.25);gl.setPixelRatio(dpr);layout();}}
  if(forceT!==null)t=forceT;else if(playing||t<T.end)t+=dt;
  if(docLocked&&t>=T.rev0)lockDoc(false);
  if(playing&&t>=T.end)finish();
