@@ -2,17 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import ScrollFilm from '../components/ScrollFilm.astro';
 const captions=[
- {from:0.01,to:0.14,k:'Identyfikacja',t:'Znak, który <em>zapamiętają.</em>'},
- {from:0.18,to:0.31,k:'Projekt',t:'Każdy detal <em>na swoim miejscu.</em>',align:'c'},
- {from:0.35,to:0.48,k:'Druk',t:'Papier, który <em>trzyma się w rękach.</em>'},
- {from:0.52,to:0.65,k:'Wideo',t:'Film, który ogląda się <em>do końca.</em>',align:'r'},
- {from:0.69,to:0.82,k:'Reklama i oklejenia',t:'Twoja marka <em>na ulicy.</em>'},
+ {from:0.02,to:0.2,k:'Identyfikacja',t:'Znak, który <em>zapamiętają.</em>'},
+ {from:0.3,to:0.5,k:'Druk',t:'Papier, który <em>trzyma się w rękach.</em>'},
+ {from:0.7,to:0.87,k:'Wideo',t:'Film, który ogląda się <em>do końca.</em>',align:'r'},
 ];
 const works=[
- {from:0.03,to:0.14,slug:'leasing-cartel-logo',side:'r'},
- {from:0.36,to:0.48,slug:'diverto-materialy-promocyjne',side:'r'},
- {from:0.53,to:0.65,slug:'prato-development-rolki',side:'l'},
- {from:0.70,to:0.81,slug:'bipi-detailing-bilbord',side:'r'},
+ {from:0.03,to:0.19,slug:'leasing-cartel-logo',side:'r'},
+ {from:0.31,to:0.49,slug:'diverto-materialy-promocyjne',side:'r'},
+ {from:0.71,to:0.86,slug:'prato-development-rolki',side:'l'},
 ];
 ---
 <Layout title="Test: przewijany film" noindex={true}>
