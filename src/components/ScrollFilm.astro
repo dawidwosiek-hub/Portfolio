@@ -35,13 +35,17 @@ const W=works.map(w=>{const p=projects.find(x=>x.slug===w.slug);return p&&p.imag
 #sf .sf-poster{transition:opacity .6s}#sf.sf-ok .sf-poster{opacity:0}
 #sf .sf-shade{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 80% at 50% 50%,transparent 45%,rgba(0,0,0,.55)),linear-gradient(0deg,rgba(0,0,0,.45),transparent 35%)}
 #sf .sf-wrap{position:absolute;inset:0;padding:0 max(5%,calc((100% - 1620px) / 2))}
-#sf .sf-cap,#sf .sf-end{position:absolute;top:50%;left:max(5%,calc((100% - 1620px) / 2));right:max(5%,calc((100% - 1620px) / 2));opacity:0;transform:translateY(calc(-50% + var(--y,24px)));filter:blur(var(--b,8px));will-change:opacity,transform,filter;pointer-events:none}
+#sf .sf-cap,#sf .sf-end{position:absolute;top:50%;left:max(5%,calc((100% - 1620px) / 2));right:max(5%,calc((100% - 1620px) / 2));opacity:0;transform:translateY(calc(-50% + var(--y,24px)));will-change:opacity,transform,filter;pointer-events:none}
 #sf .sf-c{text-align:center}#sf .sf-r{text-align:right}
-#sf .sf-k{font-size:13px;font-weight:600;color:#ffcc00;margin:0 0 14px;max-width:none}
-#sf .sf-t{font-size:clamp(38px,6vw,104px);line-height:.95;font-weight:800;letter-spacing:-.045em;margin:0;max-width:13ch;text-wrap:balance;text-shadow:0 2px 40px rgba(0,0,0,.45)}
+#sf .sf-cap::before,#sf .sf-end::before{content:"";position:absolute;z-index:-1;top:-45vh;bottom:-45vh;left:-12vw;right:-12vw;background:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.62) 38%,rgba(0,0,0,0) 66%);pointer-events:none}
+#sf .sf-r::before{background:linear-gradient(270deg,rgba(0,0,0,.86),rgba(0,0,0,.62) 38%,rgba(0,0,0,0) 66%)}
+#sf .sf-c::before{background:radial-gradient(60% 50% at 50% 50%,rgba(0,0,0,.8),rgba(0,0,0,.45) 60%,rgba(0,0,0,0))}
+#sf .sf-cap,#sf .sf-end{z-index:1;isolation:isolate}
+#sf .sf-k{font-size:14px;text-shadow:0 1px 10px #000;font-weight:600;color:#ffcc00;margin:0 0 14px;max-width:none}
+#sf .sf-t{font-size:clamp(36px,4.8vw,88px);line-height:1;font-weight:800;letter-spacing:-.04em;margin:0;max-width:12ch;text-wrap:balance;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.8),0 0 2px rgba(0,0,0,.6)}
 #sf .sf-c .sf-t{margin:0 auto}#sf .sf-r .sf-t{margin-left:auto}
 #sf .sf-t em{font-style:normal;color:#ffcc00}
-#sf .sf-work{position:absolute;top:50%;width:min(36vw,560px);opacity:0;transform:translateY(calc(-50% + var(--y,40px))) scale(var(--s,.96));background:#111;box-shadow:0 30px 80px rgba(0,0,0,.6);pointer-events:none;color:#fff;will-change:opacity,transform}
+#sf .sf-work{position:absolute;top:50%;width:min(30vw,480px);z-index:2;opacity:0;transform:translateY(calc(-50% + var(--y,40px))) scale(var(--s,.96));background:#111;box-shadow:0 30px 80px rgba(0,0,0,.6);pointer-events:none;color:#fff;will-change:opacity,transform}
 #sf .sf-work img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
 #sf .sf-work span{display:block;padding:12px 16px 14px;font-weight:700;font-size:16px;letter-spacing:-.02em}
 #sf .sf-work small{display:block;font-weight:600;font-size:11px;color:#ffcc00;margin-bottom:2px}
@@ -69,13 +73,15 @@ const W=works.map(w=>{const p=projects.find(x=>x.slug===w.slug);return p&&p.imag
 #sf.sf-full .sf-load i{opacity:0}
 @media(max-width:860px){
  #sf{height:620vh}
- #sf .sf-t{font-size:clamp(34px,10.5vw,60px)}
+ #sf .sf-t{font-size:clamp(28px,8.4vw,52px);max-width:none}
  #sf .sf-cap,#sf .sf-end{top:auto;bottom:max(64px,9svh);transform:translateY(var(--y,24px))}
  #sf .sf-r,#sf .sf-c{text-align:left}#sf .sf-r .sf-t,#sf .sf-c .sf-t{margin:0}
  #sf .sf-work{width:72vw;top:16svh;transform:translateY(var(--y,40px)) scale(var(--s,.96))}
  #sf .sf-wl{left:6%}#sf .sf-wr{right:6%}
  #sf .sf-lead{display:none}
- #sf .sf-shade{background:linear-gradient(0deg,rgba(0,0,0,.8),rgba(0,0,0,.25) 50%,rgba(0,0,0,.2))}
+ #sf .sf-shade{background:linear-gradient(0deg,rgba(0,0,0,.9),rgba(0,0,0,.55) 38%,rgba(0,0,0,.15) 62%,rgba(0,0,0,.35))}
+ #sf .sf-cap::before,#sf .sf-end::before{display:none}
+ #sf .sf-work{width:64vw}
 }
 @media(prefers-reduced-motion:reduce){#sf{height:auto}#sf .sf-pin{position:relative}#sf .sf-cap,#sf .sf-work,#sf .sf-hint{display:none}#sf .sf-end{opacity:1;filter:none;transform:translateY(-50%)}#sf.sf-ok .sf-poster{opacity:1}#sf canvas{display:none}}
 </style>
