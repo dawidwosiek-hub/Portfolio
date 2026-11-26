@@ -1172,190 +1172,282 @@
       "imageMedium": "/media/robo-edukacja/scena-sala-lato-1536.webp"
     },
     {
-      "slug": "marta-romanska-zagorska-plakaty",
-      "name": "Marta Romańska-Zagórska",
+      "slug": "marta-zdazyc-przed-alzheimerem",
+      "name": "Zdążyć przed Alzheimerem",
       "category": "druk i reklama",
-      "scope": "Plakaty, zaproszenia i posty do social mediów dla wydarzeń lokalnych w Gminie Zielonki.",
-      "teaser": "Plakaty, zaproszenia i posty wydarzeń lokalnych dla radnej Gminy Zielonki.",
-      "scopeItems": [
-        "„Zdążyć przed Alzheimerem” — plakat i zaproszenie",
-        "„Jestem silna — bo wygrałam z rakiem!” — plakat",
-        "Debata o edukacji — plakat i post",
-        "Zajęcia ruchowo-taneczne 50+ — plakat",
-        "„Różowy Patrol” — posty na Instagram"
-      ],
-      "image": "/media/marta/scena-korytarz-2x.webp",
-      "imageSmall": "/media/marta/scena-korytarz-768.webp",
-      "imageMedium": "/media/marta/scena-korytarz-1536.webp",
+      "image": "/media/marta/alzheimer-korytarz-czerwiec-2x.webp",
+      "imageSmall": "/media/marta/alzheimer-korytarz-czerwiec-768.webp",
+      "imageMedium": "/media/marta/alzheimer-korytarz-czerwiec-1536.webp",
       "imageWidth": 3072,
-      "imageHeight": 2048,
-      "shareImage": "/media/marta/scena-korytarz-1536.webp",
-      "imageCaption": "Plakaty na ścianie korytarza · wizualizacja projektu",
-      "alt": "Trzy plakaty A3 przypięte na ścianie korytarza w ośrodku: „Zdążyć przed Alzheimerem”, „Jestem silna” i debata o edukacji.",
+      "imageHeight": 2061,
+      "shareImage": "/media/marta/alzheimer-korytarz-czerwiec-1536.webp",
+      "imageCaption": "Plakat na korytarzu ośrodka · wizualizacja projektu",
+      "alt": "Plakat „Zdążyć przed Alzheimerem” przypięty mosiężnymi pinezkami do jasnej ściany korytarza w ośrodku, nad drewnianą ławką z paprotką.",
       "cover": {
-        "src": "/media/marta/scena-korytarz-1536.webp",
-        "smallSrc": "/media/marta/scena-korytarz-768.webp",
+        "src": "/media/marta/alzheimer-korytarz-czerwiec-1536.webp",
+        "smallSrc": "/media/marta/alzheimer-korytarz-czerwiec-768.webp",
         "width": 1536,
-        "height": 1024,
-        "alt": "Trzy plakaty A3 przypięte na ścianie korytarza w ośrodku: „Zdążyć przed Alzheimerem”, „Jestem silna” i debata o edukacji.",
-        "caption": "Plakaty na ścianie korytarza · wizualizacja projektu"
+        "height": 1030,
+        "alt": "Plakat „Zdążyć przed Alzheimerem” przypięty mosiężnymi pinezkami do jasnej ściany korytarza w ośrodku, nad drewnianą ławką z paprotką.",
+        "caption": "Plakat na korytarzu ośrodka · wizualizacja projektu"
       },
-      "client": "Radna Gminy Zielonki — wydarzenia lokalne.",
-      "need": "Każde wydarzenie miało innego odbiorcę i inny ton: warsztaty o zdrowiu mózgu dla dorosłych, spotkanie dla kobiet po chorobie nowotworowej i otwarta debata o edukacji. Plakaty musiały być czytelne z daleka, zmieścić długą listę organizatorów i partnerów, a przy tym nie wyglądać jak urzędowe ogłoszenia.",
-      "solution": "Każdy plakat dostał własny klimat dopasowany do tematu: spokojną zieleń i szkicowe ilustracje przy warsztatach o Alzheimerze, ciepły róż i motyw wstążki przy spotkaniu „Jestem silna” oraz wyraziste kolory koła KO przy debacie. Najważniejsze informacje — tytuł, data, godzina i miejsce — są zawsze w tym samym porządku i widać je pierwsze.",
-      "galleryTitle": "Plakaty na miejscu.",
-      "galleryIntro": "Wizualizacje plakatów w przestrzeniach, w których wisiały. Każdy projekt opisuję osobno poniżej.",
+      "published": true,
+      "categories": [
+        "druk i reklama"
+      ],
+      "scope": "Plakat i zaproszenie na cykl bezpłatnych wykładów i warsztatów o profilaktyce zdrowia mózgu.",
+      "teaser": "Plakat i zaproszenie na wykłady o zdrowiu mózgu — zieleń, szkic i pióro pawia.",
+      "scopeItems": [
+        "Plakat A2 do wywieszenia",
+        "Zaproszenie poziome z dwoma terminami",
+        "Wersje plakatu na kolejne terminy",
+        "Przygotowanie do druku"
+      ],
+      "client": "Marta Romańska-Zagórska, Radna Gminy Zielonki.",
+      "need": "Wydarzenie dla dorosłych z obszarów wiejskich, z długą listą organizatorów, partnerów i źródeł finansowania. Plakat musiał zachęcić, a nie straszyć tematem choroby, i jednocześnie pomieścić program warsztatów oraz sylwetkę prowadzącej.",
+      "solution": "Duży szeryfowy tytuł, ołówkowy szkic mózgu i wiejski pejzaż w tle nadają spokojny, przyjazny ton. Program warsztatów to pięć ikon z krótkimi hasłami, a termin i miejsce są zamknięte w osobnej karcie, którą widać z daleka. Należy do serii materiałów dla Stowarzyszenia Koło Integracji Bibic w ramach projektu „Sprawne ciało, zdrowy umysł”. Zieleń, kremowe tło i ilustracja pióra pawia łączą go z plakatem zajęć ruchowo-tanecznych 50+, więc oba wydarzenia od razu wyglądają na część jednego cyklu.",
+      "galleryTitle": "Plakat i zaproszenie.",
+      "galleryIntro": "Zaproszenie na stole i oryginalne pliki obu projektów.",
       "gallery": [
         {
-          "src": "/media/marta/scena-korytarz-2x.webp",
-          "mediumSrc": "/media/marta/scena-korytarz-1536.webp",
-          "smallSrc": "/media/marta/scena-korytarz-768.webp",
-          "width": 3072,
-          "height": 2048,
-          "alt": "Trzy plakaty A3 na ścianie korytarza: „Zdążyć przed Alzheimerem”, „Jestem silna” i debata o edukacji.",
-          "caption": "Plakaty na ścianie korytarza · wizualizacja",
+          "src": "/media/marta/alzheimer-zaproszenie-1536.webp",
+          "smallSrc": "/media/marta/alzheimer-zaproszenie-768.webp",
+          "fullSrc": "/media/marta/alzheimer-zaproszenie-2x.webp",
+          "width": 1536,
+          "height": 1030,
+          "alt": "Poziome zaproszenie „Zdążyć przed Alzheimerem” na lnianym obrusie obok rozmarynu, szałwii, okularów i herbaty.",
+          "caption": "Zaproszenie · wizualizacja projektu",
           "kind": "visualization"
         },
         {
-          "src": "/media/marta/scena-sala-taniec-2x.webp",
-          "mediumSrc": "/media/marta/scena-sala-taniec-1536.webp",
-          "smallSrc": "/media/marta/scena-sala-taniec-768.webp",
-          "width": 3072,
-          "height": 2048,
-          "alt": "Plakat zajęć ruchowo-tanecznych 50+ w ramie na ścianie sali w Domu Ludowym.",
-          "caption": "Plakat zajęć tanecznych · wizualizacja",
-          "kind": "visualization"
+          "src": "/media/marta/plakat-alzheimer-2000.webp",
+          "smallSrc": "/media/marta/plakat-alzheimer-768.webp",
+          "width": 2000,
+          "height": 2828,
+          "alt": "Plakat „Zdążyć przed Alzheimerem” z programem warsztatów, prowadzącą Agnieszką Kudroń i terminem 14 czerwca w CIS Zielonki.",
+          "caption": "Plakat · oryginalny projekt",
+          "kind": "original"
+        },
+        {
+          "src": "/media/marta/zaproszenie-alzheimer-2000.webp",
+          "smallSrc": "/media/marta/zaproszenie-alzheimer-768.webp",
+          "width": 2000,
+          "height": 1410,
+          "alt": "Poziome zaproszenie „Zdążyć przed Alzheimerem” z dwoma terminami i listą organizatorów.",
+          "caption": "Zaproszenie · oryginalny projekt",
+          "kind": "original"
         }
-      ],
+      ]
+    },
+    {
+      "slug": "marta-zajecia-taneczne-50",
+      "name": "Zajęcia ruchowo-taneczne 50+",
+      "category": "druk i reklama",
+      "image": "/media/marta/scena-sala-taniec-2x.webp",
+      "imageSmall": "/media/marta/scena-sala-taniec-768.webp",
+      "imageMedium": "/media/marta/scena-sala-taniec-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2048,
+      "shareImage": "/media/marta/scena-sala-taniec-1536.webp",
+      "imageCaption": "Plakat w sali · wizualizacja projektu",
+      "alt": "Plakat zajęć ruchowo-tanecznych 50+ w ramie na ścianie sali w Domu Ludowym.",
+      "cover": {
+        "src": "/media/marta/scena-sala-taniec-1536.webp",
+        "smallSrc": "/media/marta/scena-sala-taniec-768.webp",
+        "width": 1536,
+        "height": 1024,
+        "alt": "Plakat zajęć ruchowo-tanecznych 50+ w ramie na ścianie sali w Domu Ludowym.",
+        "caption": "Plakat w sali · wizualizacja projektu"
+      },
       "published": true,
-      "featured": false,
-      "galleryLabel": "Plakaty",
-      "applications": [
-        {
-          "slug": "alzheimer",
-          "label": "Zdążyć przed Alzheimerem",
-          "title": "Zdążyć przed\nAlzheimerem.",
-          "description": "Cykl bezpłatnych wykładów i warsztatów o profilaktyce zdrowia mózgu. Plakat pionowy do wywieszenia i poziome zaproszenie z dwoma terminami: Dom Ludowy w Bibicach i CIS Zielonki. Spokojna zieleń, szkic mózgu i wiejski pejzaż.",
-          "originals": [
-            {
-              "src": "/media/marta/plakat-alzheimer-2000.webp",
-              "width": 2000,
-              "height": 2828,
-              "alt": "Plakat „Zdążyć przed Alzheimerem”.",
-              "caption": "Plakat · oryginalny projekt",
-              "kind": "original",
-              "smallSrc": "/media/marta/plakat-alzheimer-768.webp"
-            },
-            {
-              "src": "/media/marta/zaproszenie-alzheimer-2000.webp",
-              "width": 2000,
-              "height": 1410,
-              "alt": "Poziome zaproszenie „Zdążyć przed Alzheimerem” z dwoma terminami i listą organizatorów.",
-              "caption": "Zaproszenie · oryginalny projekt",
-              "kind": "original",
-              "smallSrc": "/media/marta/zaproszenie-alzheimer-768.webp"
-            }
-          ]
-        },
-        {
-          "slug": "jestem-silna",
-          "label": "Jestem silna",
-          "title": "Jestem silna —\nbo wygrałam z rakiem!",
-          "description": "Spotkanie dla kobiet po chorobie nowotworowej. Ciepły róż, wstążka w kształcie serca i czytelna lista prelegentów.",
-          "originals": [
-            {
-              "src": "/media/marta/plakat-jestem-silna-2000.webp",
-              "width": 2000,
-              "height": 2828,
-              "alt": "Plakat „Jestem silna — bo wygrałam z rakiem!”.",
-              "caption": "Plakat · oryginalny projekt",
-              "kind": "original",
-              "smallSrc": "/media/marta/plakat-jestem-silna-768.webp"
-            }
-          ]
-        },
-        {
-          "slug": "debata",
-          "label": "Debata o edukacji",
-          "title": "Debata\no edukacji.",
-          "description": "Otwarte spotkanie koła KO w Michałowicach. Plakat do druku i wersja kwadratowa do publikacji w social mediach.",
-          "originals": [
-            {
-              "src": "/media/marta/plakat-debata-2000.webp",
-              "width": 2000,
-              "height": 2828,
-              "alt": "Plakat debaty o edukacji.",
-              "caption": "Plakat · oryginalny projekt",
-              "kind": "original",
-              "smallSrc": "/media/marta/plakat-debata-768.webp"
-            },
-            {
-              "src": "/media/marta/post-debata-2000.webp",
-              "width": 1080,
-              "height": 1350,
-              "alt": "Post o debacie do social mediów.",
-              "caption": "Post · oryginalny projekt",
-              "kind": "original",
-              "smallSrc": "/media/marta/post-debata-768.webp"
-            }
-          ]
-        },
-        {
-          "slug": "taniec",
-          "label": "Zajęcia taneczne 50+",
-          "title": "Zajęcia ruchowo-\ntaneczne 50+.",
-          "description": "Plakat cyklicznych zajęć w Domu Ludowym w Bibicach w ramach projektu „Sprawne ciało, zdrowy umysł”. Jasne zdjęcie, duży termin i godziny, logotypy partnerów w stopce.",
-          "image": {
-            "src": "/media/marta/scena-sala-taniec-2x.webp",
-            "mediumSrc": "/media/marta/scena-sala-taniec-1536.webp",
-            "smallSrc": "/media/marta/scena-sala-taniec-768.webp",
-            "width": 3072,
-            "height": 2048,
-            "alt": "Plakat zajęć ruchowo-tanecznych 50+ w ramie na ścianie sali.",
-            "caption": "Plakat w sali · wizualizacja projektu",
-            "kind": "visualization"
-          },
-          "originals": [
-            {
-              "src": "/media/marta/plakat-taniec-2000.webp",
-              "width": 2000,
-              "height": 2828,
-              "alt": "Plakat „Zajęcia ruchowo-taneczne dla osób 50+”.",
-              "caption": "Plakat · oryginalny projekt",
-              "kind": "original",
-              "smallSrc": "/media/marta/plakat-taniec-768.webp"
-            }
-          ]
-        },
-        {
-          "slug": "rozowy-patrol",
-          "label": "Różowy Patrol",
-          "title": "Różowy\nPatrol.",
-          "description": "Posty na Instagram o profilaktyce raka piersi w Gminie Zielonki. Dwie wersje z różnymi zestawami partnerów w stopce.",
-          "originals": [
-            {
-              "src": "/media/marta/post-rozowy-patrol-1080.webp",
-              "width": 1080,
-              "height": 1080,
-              "alt": "Post „Różowy Patrol” — wersja z OnkoCafe.",
-              "caption": "Post · wersja 1",
-              "kind": "original",
-              "smallSrc": "/media/marta/post-rozowy-patrol-768.webp"
-            },
-            {
-              "src": "/media/marta/post-rozowy-patrol-2-1080.webp",
-              "width": 1080,
-              "height": 1080,
-              "alt": "Post „Różowy Patrol” — wersja z Kobiety w Centrum i OnkoCafe.",
-              "caption": "Post · wersja 2",
-              "kind": "original",
-              "smallSrc": "/media/marta/post-rozowy-patrol-2-768.webp"
-            }
-          ]
-        }
+      "categories": [
+        "druk i reklama"
       ],
+      "scope": "Plakat cotygodniowych zajęć ruchowo-tanecznych dla osób 50+ w Domu Ludowym w Bibicach.",
+      "teaser": "Plakat zajęć tanecznych dla seniorów — lekki, ciepły i czytelny z daleka.",
+      "scopeItems": [
+        "Plakat A2",
+        "Dobór zdjęcia i obróbka tła",
+        "Przygotowanie do druku"
+      ],
+      "client": "Marta Romańska-Zagórska, Radna Gminy Zielonki.",
+      "need": "Zaproszenie dla osób 50+, które mogą obawiać się, że zajęcia ruchowe są „nie dla nich”. Plakat miał pokazać lekkość i radość ruchu, a jednocześnie jasno podać stały termin, godziny i miejsce.",
+      "solution": "Rozjaśnione zdjęcie tańczących nóg w jasnych butach daje ruch bez pokazywania twarzy, więc każdy może się w nim odnaleźć. Odręczne „dla osób 50+” ociepla szeryfowy tytuł, a termin, godziny i adres ułożone są w jednej kolumnie pod ikoną kalendarza. Należy do serii materiałów dla Stowarzyszenia Koło Integracji Bibic w ramach projektu „Sprawne ciało, zdrowy umysł”. Zieleń, kremowe tło i ilustracja pióra pawia łączą go z plakatem „Zdążyć przed Alzheimerem”, więc oba wydarzenia od razu wyglądają na część jednego cyklu.",
+      "galleryTitle": "Oryginalny projekt.",
+      "galleryIntro": "Plik plakatu przygotowany do druku.",
+      "gallery": [
+        {
+          "src": "/media/marta/plakat-taniec-2000.webp",
+          "smallSrc": "/media/marta/plakat-taniec-768.webp",
+          "width": 2000,
+          "height": 2828,
+          "alt": "Plakat „Zajęcia ruchowo-taneczne dla osób 50+”: termin w środy 10:30–12:30, Dom Ludowy w Bibicach.",
+          "caption": "Plakat · oryginalny projekt",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "slug": "marta-debata-o-edukacji",
+      "name": "Debata o edukacji",
+      "category": "druk i reklama",
+      "image": "/media/marta/debata-tablica-2x.webp",
+      "imageSmall": "/media/marta/debata-tablica-768.webp",
+      "imageMedium": "/media/marta/debata-tablica-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2061,
+      "shareImage": "/media/marta/debata-tablica-1536.webp",
+      "imageCaption": "Plakat na szkolnej tablicy · wizualizacja projektu",
+      "alt": "Plakat „Debata o edukacji” przypięty czerwonymi pinezkami do tablicy korkowej na szkolnym korytarzu.",
+      "cover": {
+        "src": "/media/marta/debata-tablica-1536.webp",
+        "smallSrc": "/media/marta/debata-tablica-768.webp",
+        "width": 1536,
+        "height": 1030,
+        "alt": "Plakat „Debata o edukacji” przypięty czerwonymi pinezkami do tablicy korkowej na szkolnym korytarzu.",
+        "caption": "Plakat na szkolnej tablicy · wizualizacja projektu"
+      },
+      "published": true,
+      "categories": [
+        "druk i reklama",
+        "filmy i social media"
+      ],
+      "scope": "Plakat i post do social mediów zapraszające na otwarte spotkanie z Małopolską Kurator Oświaty.",
+      "teaser": "Plakat i post na otwartą debatę o edukacji — granat, czerwień i szkolna tablica.",
+      "scopeItems": [
+        "Plakat do druku",
+        "Post 4:5 do social mediów",
+        "Ilustracja liniowa szkoły i osiedla"
+      ],
+      "client": "Marta Romańska-Zagórska, Koło KO Zielonki.",
+      "need": "Spotkanie skierowane do młodzieży i rodziców, organizowane przez koło partii. Projekt musiał trzymać się barw organizatora, a mimo to mówić o szkole, nie o polityce.",
+      "solution": "Granat i czerwień z identyfikacji koła, ale głównym obrazem jest szkolna tablica, kredki i portret gościni w okrągłym kadrze. Data i miejsce dostały duże ikony, a na dole biegnie liniowa ilustracja szkoły i osiedla, która domyka kompozycję. Ta sama kompozycja działa jako plakat i jako post do social mediów.",
+      "galleryTitle": "Plakat i post.",
+      "galleryIntro": "Oryginalne pliki obu wersji.",
+      "gallery": [
+        {
+          "src": "/media/marta/plakat-debata-2000.webp",
+          "smallSrc": "/media/marta/plakat-debata-768.webp",
+          "width": 2000,
+          "height": 2828,
+          "alt": "Plakat „Debata o edukacji” z Gabrielą Olszowską, 2 czerwca, Hotel Szary Residence w Michałowicach.",
+          "caption": "Plakat · oryginalny projekt",
+          "kind": "original"
+        },
+        {
+          "src": "/media/marta/post-debata-2000.webp",
+          "smallSrc": "/media/marta/post-debata-768.webp",
+          "width": 1080,
+          "height": 1350,
+          "alt": "Post 4:5 „Debata o edukacji” do social mediów.",
+          "caption": "Post do social mediów · oryginalny projekt",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "slug": "marta-jestem-silna",
+      "name": "Jestem silna",
+      "category": "druk i reklama",
+      "image": "/media/marta/jestem-silna-rama-2x.webp",
+      "imageSmall": "/media/marta/jestem-silna-rama-768.webp",
+      "imageMedium": "/media/marta/jestem-silna-rama-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2061,
+      "shareImage": "/media/marta/jestem-silna-rama-1536.webp",
+      "imageCaption": "Plakat w ramie · wizualizacja projektu",
+      "alt": "Plakat „Jestem silna — bo wygrałam z rakiem!” w jasnej drewnianej ramie na różowej ścianie, nad półką z piwoniami, książkami i filiżanką.",
+      "cover": {
+        "src": "/media/marta/jestem-silna-rama-1536.webp",
+        "smallSrc": "/media/marta/jestem-silna-rama-768.webp",
+        "width": 1536,
+        "height": 1030,
+        "alt": "Plakat „Jestem silna — bo wygrałam z rakiem!” w jasnej drewnianej ramie na różowej ścianie, nad półką z piwoniami, książkami i filiżanką.",
+        "caption": "Plakat w ramie · wizualizacja projektu"
+      },
+      "published": true,
+      "categories": [
+        "druk i reklama"
+      ],
+      "scope": "Plakat spotkania dla kobiet po chorobie nowotworowej w Centrum Integracji Społecznej w Zielonkach.",
+      "teaser": "Plakat spotkania „Jestem silna — bo wygrałam z rakiem!” — róż i wstążka-serce.",
+      "scopeItems": [
+        "Plakat A2",
+        "Ilustracja wstążki w kształcie serca",
+        "Przygotowanie do druku"
+      ],
+      "client": "Marta Romańska-Zagórska, Radna Gminy Zielonki.",
+      "need": "Spotkanie o trudnym temacie, które miało być świętem siły, a nie przypomnieniem o chorobie. Plakat musiał też pomieścić długą listę prelegentów, organizatorów i partnerów.",
+      "solution": "Różowa wstążka splata się w serce, a w nim stoi data. Ciepły róż, kwiaty i miękkie chmury budują pogodny nastrój, a lista prelegentów jest złożona drobnym, równym krojem pod główną informacją. Róż i wstążka łączą go z postami „Różowy Patrol” o profilaktyce raka piersi, dzięki czemu obie akcje są rozpoznawalne jako jedna sprawa.",
+      "galleryTitle": "Oryginalny projekt.",
+      "galleryIntro": "Plik plakatu przygotowany do druku.",
+      "gallery": [
+        {
+          "src": "/media/marta/plakat-jestem-silna-2000.webp",
+          "smallSrc": "/media/marta/plakat-jestem-silna-768.webp",
+          "width": 2000,
+          "height": 2828,
+          "alt": "Plakat „Jestem silna — bo wygrałam z rakiem!”, 23.11.2025, Centrum Integracji Społecznej w Zielonkach.",
+          "caption": "Plakat · oryginalny projekt",
+          "kind": "original"
+        }
+      ]
+    },
+    {
+      "slug": "marta-rozowy-patrol",
+      "name": "Różowy Patrol",
+      "category": "filmy i social media",
+      "image": "/media/marta/rozowy-patrol-telefon-2x.webp",
+      "imageSmall": "/media/marta/rozowy-patrol-telefon-768.webp",
+      "imageMedium": "/media/marta/rozowy-patrol-telefon-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2061,
+      "shareImage": "/media/marta/rozowy-patrol-telefon-1536.webp",
+      "imageCaption": "Posty w feedzie · wizualizacja projektu",
+      "alt": "Dwa posty „Różowy Patrol” w feedzie na ekranie telefonu trzymanego w dłoni nad stolikiem w kawiarni z różowymi kwiatami.",
+      "cover": {
+        "src": "/media/marta/rozowy-patrol-telefon-1536.webp",
+        "smallSrc": "/media/marta/rozowy-patrol-telefon-768.webp",
+        "width": 1536,
+        "height": 1030,
+        "alt": "Dwa posty „Różowy Patrol” w feedzie na ekranie telefonu trzymanego w dłoni nad stolikiem w kawiarni z różowymi kwiatami.",
+        "caption": "Posty w feedzie · wizualizacja projektu"
+      },
+      "published": true,
       "categories": [
         "filmy i social media"
+      ],
+      "scope": "Seria postów na Instagram i Facebook o akcji profilaktyki raka piersi w Gminie Zielonki.",
+      "teaser": "Posty o profilaktyce raka piersi — różowy pas, wstążka i portret radnej.",
+      "scopeItems": [
+        "Post kwadratowy 1:1",
+        "Wariant z logotypami partnerów",
+        "Obróbka portretu"
+      ],
+      "client": "Marta Romańska-Zagórska, Radna Gminy Zielonki.",
+      "need": "Akcja profilaktyczna potrzebowała rozpoznawalnego znaku w feedzie, z twarzą osoby, która ją prowadzi, i z miejscem na logotypy partnerów.",
+      "solution": "Szary, studyjny kadr z portretem i mocny różowy blok z tytułem tworzą kontrast, który zatrzymuje kciuk. Wstążka łączy imię i funkcję z hasłem akcji, a dolny pas mieści logotypy partnerów w dwóch wariantach. Róż i wstążka łączą go z plakatem „Jestem silna”, dzięki czemu obie akcje są rozpoznawalne jako jedna sprawa.",
+      "galleryTitle": "Dwa warianty posta.",
+      "galleryIntro": "Oryginalne pliki obu wersji.",
+      "gallery": [
+        {
+          "src": "/media/marta/post-rozowy-patrol-1080.webp",
+          "smallSrc": "/media/marta/post-rozowy-patrol-768.webp",
+          "width": 1080,
+          "height": 1080,
+          "alt": "Post „Różowy Patrol w Gminie Zielonki — profilaktyka raka piersi” z portretem Marty Romańskiej-Zagórskiej.",
+          "caption": "Post · oryginalny projekt",
+          "kind": "original"
+        },
+        {
+          "src": "/media/marta/post-rozowy-patrol-2-1080.webp",
+          "smallSrc": "/media/marta/post-rozowy-patrol-2-768.webp",
+          "width": 1080,
+          "height": 1080,
+          "alt": "Wariant posta „Różowy Patrol” z logotypem Kobiety w Centrum.",
+          "caption": "Post z partnerami · oryginalny projekt",
+          "kind": "original"
+        }
       ]
     },
     {
@@ -2270,40 +2362,41 @@
     },
     {
       "slug": "ilustracje-motoryzacyjne",
-      "name": "Ilustracje motoryzacyjne",
+      "name": "Obrazy w stylu Simpsonów",
       "category": "druk i reklama",
-      "image": "/media/ilustracje-motoryzacyjne/mustang-garaz-2x.webp",
-      "imageSmall": "/media/ilustracje-motoryzacyjne/mustang-garaz-768.webp",
-      "imageMedium": "/media/ilustracje-motoryzacyjne/mustang-garaz-1536.webp",
+      "image": "/media/ilustracje-motoryzacyjne/simpsons-garaz-2x.webp",
+      "imageSmall": "/media/ilustracje-motoryzacyjne/simpsons-garaz-768.webp",
+      "imageMedium": "/media/ilustracje-motoryzacyjne/simpsons-garaz-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2061,
-      "shareImage": "/media/ilustracje-motoryzacyjne/mustang-garaz-1536.webp",
-      "imageCaption": "Ilustracja w warsztacie · wizualizacja projektu",
-      "alt": "Wektorowa ilustracja czerwonego Mustanga w czarnej ramie na ceglanej ścianie warsztatu, nad stołem z kluczami, obok kasku i motocykla.",
+      "shareImage": "/media/ilustracje-motoryzacyjne/simpsons-garaz-1536.webp",
+      "imageCaption": "Obraz w warsztacie · wizualizacja",
+      "alt": "Autorski obraz w stylu Simpsonów: Bart przy zielonym Mustangu Shelby GT500 przed fioletowym domem, w ramie na ceglanej ścianie warsztatu nad stołem z kluczami.",
       "cover": {
-        "src": "/media/ilustracje-motoryzacyjne/mustang-garaz-1536.webp",
-        "smallSrc": "/media/ilustracje-motoryzacyjne/mustang-garaz-768.webp",
+        "src": "/media/ilustracje-motoryzacyjne/simpsons-garaz-1536.webp",
+        "smallSrc": "/media/ilustracje-motoryzacyjne/simpsons-garaz-768.webp",
         "width": 1536,
         "height": 1030,
-        "alt": "Wektorowa ilustracja czerwonego Mustanga w czarnej ramie na ceglanej ścianie warsztatu, nad stołem z kluczami, obok kasku i motocykla.",
-        "caption": "Ilustracja w warsztacie · wizualizacja projektu"
+        "alt": "Autorski obraz w stylu Simpsonów: Bart przy zielonym Mustangu Shelby GT500 przed fioletowym domem, w ramie na ceglanej ścianie warsztatu nad stołem z kluczami.",
+        "caption": "Obraz w warsztacie · wizualizacja"
       },
       "published": true,
       "categories": [
         "druk i reklama"
       ],
-      "scope": "Wektorowe ilustracje samochodów do druku wielkoformatowego.",
-      "teaser": "Wektorowe ilustracje samochodów — Mustang i nocny warsztat.",
+      "scope": "Autorskie obrazy rysowane w stylistyce Simpsonów, z samochodami w roli głównej.",
+      "teaser": "Moje rysowane obrazy w stylu Simpsonów — Mustang, Bart i nocny sklep.",
       "scopeItems": [
-        "Ilustracja wektorowa samochodu",
-        "Scena nocna z oświetleniem",
-        "Przygotowanie do druku"
+        "Rysunek wektorowy w stylistyce serialu",
+        "Samochody odwzorowane z oryginałów",
+        "Sceny dzienne i nocne",
+        "Przygotowanie do druku wielkoformatowego"
       ],
-      "client": "Ilustracje do druku.",
-      "need": "Ilustracje samochodów do powieszenia na ścianie — czyste, wektorowe i skalowalne.",
-      "solution": "Mustang w ujęciu z boku, oddany płaskimi plamami koloru i precyzyjnymi refleksami. Druga ilustracja to nocna scena: dwa muscle cary przed oświetlonym budynkiem.",
-      "galleryTitle": "Dwie ilustracje.",
-      "galleryIntro": "Nocna scena w warsztacie i oryginalne pliki obu ilustracji.",
+      "client": "Projekt własny.",
+      "need": "Moje autorskie, rysowane obrazy, pokazywane w portfolio jako przykład warsztatu ilustratorskiego — nie są na sprzedaż. Chciałem połączyć kreskę Simpsonów z klasycznymi samochodami: auta wierne oryginałom, a reszta sceny jak kadr z serialu.",
+      "solution": "Samochody rysuję z dokładnością do detali: przetłoczeń, felg, pasów i refleksów na lakierze. Wokół nich buduję świat w stylistyce serialu: płaskie plamy koloru, gruby kontur, chmury i domy z Springfield. W nocnej scenie ciepłe światło witryny sklepu kontrastuje z granatowym niebem i dwoma muscle carami na parkingu.",
+      "galleryTitle": "Trzy obrazy.",
+      "galleryIntro": "Kolejne obrazy w warsztacie i oryginalne pliki.",
       "gallery": [
         {
           "src": "/media/ilustracje-motoryzacyjne/warsztat-garaz-1536.webp",
@@ -2311,17 +2404,26 @@
           "fullSrc": "/media/ilustracje-motoryzacyjne/warsztat-garaz-2x.webp",
           "width": 1536,
           "height": 1030,
-          "alt": "Nocna ilustracja dwóch muscle carów przed budynkiem, w ramie na ceglanej ścianie warsztatu.",
+          "alt": "Nocna scena w stylu Simpsonów: dwóch muscle carów przed budynkiem, w ramie na ceglanej ścianie warsztatu.",
           "caption": "Nocna scena w warsztacie · wizualizacja projektu",
           "kind": "visualization"
+        },
+        {
+          "src": "/media/ilustracje-motoryzacyjne/obraz-mustang-full.webp",
+          "smallSrc": "/media/ilustracje-motoryzacyjne/obraz-mustang-768.webp",
+          "width": 2000,
+          "height": 1414,
+          "alt": "Bart przy zielonym Mustangu Shelby GT500 przed fioletowym domem — rysunek w stylu Simpsonów.",
+          "caption": "Mustang z Bartem · oryginał",
+          "kind": "original"
         },
         {
           "src": "/media/ilustracje-motoryzacyjne/mustang-full.webp",
           "smallSrc": "/media/ilustracje-motoryzacyjne/mustang-768.webp",
           "width": 2400,
           "height": 1697,
-          "alt": "Wektorowa ilustracja czerwonego Mustanga z boku na szarym tle.",
-          "caption": "Mustang · oryginalny projekt",
+          "alt": "Rysunek w stylu Simpsonów: czerwonego Mustanga z boku na szarym tle.",
+          "caption": "Mustang · oryginał",
           "kind": "original"
         },
         {
@@ -2329,8 +2431,8 @@
           "smallSrc": "/media/ilustracje-motoryzacyjne/warsztat-768.webp",
           "width": 2400,
           "height": 1697,
-          "alt": "Wektorowa ilustracja nocnej sceny: czerwony i niebieski muscle car przed oświetlonym budynkiem.",
-          "caption": "Nocna scena · oryginalny projekt",
+          "alt": "Rysunek w stylu Simpsonów: nocnej sceny: czerwony i niebieski muscle car przed oświetlonym budynkiem.",
+          "caption": "Nocna scena · oryginał",
           "kind": "original"
         }
       ]
