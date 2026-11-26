@@ -1237,7 +1237,8 @@
           "caption": "Zaproszenie · oryginalny projekt",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "slug": "marta-zajecia-taneczne-50",
@@ -1285,7 +1286,8 @@
           "caption": "Plakat · oryginalny projekt",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "slug": "marta-debata-o-edukacji",
@@ -1343,7 +1345,8 @@
           "caption": "Post do social mediów · oryginalny projekt",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "slug": "marta-jestem-silna",
@@ -1391,7 +1394,8 @@
           "caption": "Plakat · oryginalny projekt",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "slug": "marta-rozowy-patrol",
@@ -1448,7 +1452,8 @@
           "caption": "Post z partnerami · oryginalny projekt",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "slug": "lp-bud-wizytowki",
@@ -1495,7 +1500,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     },
     {
       "slug": "bipi-detailing-bilbord",
@@ -1654,7 +1659,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     },
     {
       "slug": "leasing-cartel-logo",
@@ -1766,7 +1771,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     },
     {
       "slug": "mm-trans-plus-logo",
@@ -1822,7 +1827,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     },
     {
       "slug": "szablony-techniczne-odziezy",
@@ -1962,7 +1967,7 @@
         }
       ],
       "published": true,
-      "featured": false
+      "featured": true
     },
     {
       "slug": "alterclothes-nadruki",
@@ -2039,7 +2044,8 @@
           "caption": "Wersja na jasną tkaninę · oryginalny projekt",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "slug": "kot-egipski-ilustracja",
@@ -2117,7 +2123,8 @@
           "caption": "Warianty kolorystyczne · oryginalny projekt",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "slug": "klepsydra-ilustracja",
@@ -2166,7 +2173,8 @@
           "caption": "Etapy pracy · oryginalny projekt",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "slug": "sweet-drink-nadruk",
@@ -2214,7 +2222,8 @@
           "caption": "Ilustracja · oryginalny projekt",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "slug": "american-choppers-nadruk",
@@ -2263,7 +2272,8 @@
           "caption": "Grafika · oryginalny projekt",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "slug": "plakaty-autorskie",
@@ -2358,7 +2368,8 @@
           "caption": "Karta · oryginalny projekt",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "slug": "ilustracje-motoryzacyjne",
@@ -2435,7 +2446,8 @@
           "caption": "Nocna scena · oryginał",
           "kind": "original"
         }
-      ]
+      ],
+      "featured": true
     }
   ]
 }
