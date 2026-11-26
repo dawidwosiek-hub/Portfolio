@@ -1172,8 +1172,8 @@
       "imageMedium": "/media/robo-edukacja/scena-sala-lato-1536.webp"
     },
     {
-      "slug": "marta-zdazyc-przed-alzheimerem",
-      "name": "Zdążyć przed Alzheimerem",
+      "slug": "marta-sprawne-cialo-zdrowy-umysl",
+      "name": "Sprawne ciało, zdrowy umysł",
       "category": "druk i reklama",
       "image": "/media/marta/alzheimer-korytarz-czerwiec-2x.webp",
       "imageSmall": "/media/marta/alzheimer-korytarz-czerwiec-768.webp",
@@ -1195,137 +1195,121 @@
       "categories": [
         "druk i reklama"
       ],
-      "scope": "Plakat i zaproszenie na cykl bezpłatnych wykładów i warsztatów o profilaktyce zdrowia mózgu.",
-      "teaser": "Plakat i zaproszenie na wykłady o zdrowiu mózgu — zieleń, szkic i pióro pawia.",
+      "scope": "Seria plakatów i zaproszenie dla projektu „Sprawne ciało, zdrowy umysł”: wykłady o zdrowiu mózgu i zajęcia ruchowo-taneczne dla osób 50+.",
+      "teaser": "Seria materiałów dla jednego projektu: wykłady o zdrowiu mózgu i zajęcia taneczne 50+.",
       "scopeItems": [
-        "Plakat A2 do wywieszenia",
-        "Zaproszenie poziome z dwoma terminami",
-        "Wersje plakatu na kolejne terminy",
+        "Plakat „Zdążyć przed Alzheimerem”",
+        "Zaproszenie z dwoma terminami",
+        "Plakat zajęć ruchowo-tanecznych 50+",
+        "Wspólna kolorystyka i układ serii",
         "Przygotowanie do druku"
       ],
       "client": "Marta Romańska-Zagórska, Radna Gminy Zielonki.",
-      "need": "Wydarzenie dla dorosłych z obszarów wiejskich, z długą listą organizatorów, partnerów i źródeł finansowania. Plakat musiał zachęcić, a nie straszyć tematem choroby, i jednocześnie pomieścić program warsztatów oraz sylwetkę prowadzącej.",
-      "solution": "Duży szeryfowy tytuł, ołówkowy szkic mózgu i wiejski pejzaż w tle nadają spokojny, przyjazny ton. Program warsztatów to pięć ikon z krótkimi hasłami, a termin i miejsce są zamknięte w osobnej karcie, którą widać z daleka. Należy do serii materiałów dla Stowarzyszenia Koło Integracji Bibic w ramach projektu „Sprawne ciało, zdrowy umysł”. Zieleń, kremowe tło i ilustracja pióra pawia łączą go z plakatem zajęć ruchowo-tanecznych 50+, więc oba wydarzenia od razu wyglądają na część jednego cyklu.",
-      "galleryTitle": "Plakat i zaproszenie.",
-      "galleryIntro": "Zaproszenie na stole i oryginalne pliki obu projektów.",
-      "gallery": [
+      "need": "Stowarzyszenie Koło Integracji Bibic prowadziło w ramach jednego projektu dwa rodzaje zajęć: wykłady o profilaktyce zdrowia mózgu i cotygodniowe zajęcia ruchowe dla seniorów. Materiały miały wyglądać jak jedna rodzina, a mimo to każde wydarzenie musiało być czytelne osobno.",
+      "solution": "Wspólny mianownik to głęboka zieleń, kremowe tło, szeryfowe tytuły i ołówkowe szkice w tle: mózg i pióro pawia przy wykładach, ruch i lekkość przy zajęciach tanecznych. Terminy, godziny i adresy zawsze stoją w osobnych, mocno zaznaczonych blokach, żeby starsi odbiorcy znaleźli je od razu.",
+      "galleryTitle": "Jeden projekt, dwa wydarzenia.",
+      "galleryIntro": "Plakat na korytarzu ośrodka, a niżej każde wydarzenie osobno: od plakatu po zaproszenie.",
+      "gallery": [],
+      "featured": true,
+      "accent": "#1f5a35",
+      "applications": [
         {
-          "src": "/media/marta/alzheimer-zaproszenie-1536.webp",
-          "smallSrc": "/media/marta/alzheimer-zaproszenie-768.webp",
-          "fullSrc": "/media/marta/alzheimer-zaproszenie-2x.webp",
-          "width": 1536,
-          "height": 1030,
-          "alt": "Poziome zaproszenie „Zdążyć przed Alzheimerem” na lnianym obrusie obok rozmarynu, szałwii, okularów i herbaty.",
-          "caption": "Zaproszenie · wizualizacja projektu",
-          "kind": "visualization"
+          "slug": "zdazyc",
+          "label": "Wykłady",
+          "title": "Zdążyć przed\nAlzheimerem.",
+          "description": "Plakat z programem warsztatów i sylwetką prowadzącej oraz poziome zaproszenie z dwoma terminami. Szkic mózgu i pióra pawia łączy oba materiały.",
+          "image": {
+            "src": "/media/marta/alzheimer-zaproszenie-1536.webp",
+            "smallSrc": "/media/marta/alzheimer-zaproszenie-768.webp",
+            "fullSrc": "/media/marta/alzheimer-zaproszenie-2x.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Poziome zaproszenie „Zdążyć przed Alzheimerem” na lnianym obrusie obok rozmarynu, szałwii, okularów i herbaty.",
+            "caption": "Zaproszenie na stole · wizualizacja projektu",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/marta/plakat-alzheimer-2000.webp",
+              "smallSrc": "/media/marta/plakat-alzheimer-768.webp",
+              "width": 2000,
+              "height": 2828,
+              "alt": "Plakat „Zdążyć przed Alzheimerem” z programem warsztatów, prowadzącą Agnieszką Kudroń i terminem 14 czerwca w CIS Zielonki.",
+              "caption": "Plakat · oryginalny projekt",
+              "kind": "original"
+            },
+            {
+              "src": "/media/marta/zaproszenie-alzheimer-2000.webp",
+              "smallSrc": "/media/marta/zaproszenie-alzheimer-768.webp",
+              "width": 2000,
+              "height": 1410,
+              "alt": "Poziome zaproszenie „Zdążyć przed Alzheimerem” z dwoma terminami i listą organizatorów.",
+              "caption": "Zaproszenie · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
         },
         {
-          "src": "/media/marta/plakat-alzheimer-2000.webp",
-          "smallSrc": "/media/marta/plakat-alzheimer-768.webp",
-          "width": 2000,
-          "height": 2828,
-          "alt": "Plakat „Zdążyć przed Alzheimerem” z programem warsztatów, prowadzącą Agnieszką Kudroń i terminem 14 czerwca w CIS Zielonki.",
-          "caption": "Plakat · oryginalny projekt",
-          "kind": "original"
-        },
-        {
-          "src": "/media/marta/zaproszenie-alzheimer-2000.webp",
-          "smallSrc": "/media/marta/zaproszenie-alzheimer-768.webp",
-          "width": 2000,
-          "height": 1410,
-          "alt": "Poziome zaproszenie „Zdążyć przed Alzheimerem” z dwoma terminami i listą organizatorów.",
-          "caption": "Zaproszenie · oryginalny projekt",
-          "kind": "original"
+          "slug": "taniec",
+          "label": "Zajęcia 50+",
+          "title": "Zajęcia ruchowo-\ntaneczne 50+.",
+          "description": "Ten sam projekt, inny ton: rozjaśnione zdjęcie tańczących nóg zamiast portretu, odręczne „dla osób 50+” i stały termin w jednej kolumnie.",
+          "image": {
+            "src": "/media/marta/scena-sala-taniec-1536.webp",
+            "smallSrc": "/media/marta/scena-sala-taniec-768.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plakat zajęć ruchowo-tanecznych 50+ w ramie na ścianie sali w Domu Ludowym.",
+            "caption": "Plakat w sali · wizualizacja projektu",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/marta/plakat-taniec-2000.webp",
+              "smallSrc": "/media/marta/plakat-taniec-768.webp",
+              "width": 2000,
+              "height": 2828,
+              "alt": "Plakat „Zajęcia ruchowo-taneczne dla osób 50+”: środy 10:30–12:30, Dom Ludowy w Bibicach.",
+              "caption": "Plakat · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
         }
-      ],
-      "featured": true
-    },
-    {
-      "slug": "marta-zajecia-taneczne-50",
-      "name": "Zajęcia ruchowo-taneczne 50+",
-      "category": "druk i reklama",
-      "image": "/media/marta/scena-sala-taniec-2x.webp",
-      "imageSmall": "/media/marta/scena-sala-taniec-768.webp",
-      "imageMedium": "/media/marta/scena-sala-taniec-1536.webp",
-      "imageWidth": 3072,
-      "imageHeight": 2048,
-      "shareImage": "/media/marta/scena-sala-taniec-1536.webp",
-      "imageCaption": "Plakat w sali · wizualizacja projektu",
-      "alt": "Plakat zajęć ruchowo-tanecznych 50+ w ramie na ścianie sali w Domu Ludowym.",
-      "cover": {
-        "src": "/media/marta/scena-sala-taniec-1536.webp",
-        "smallSrc": "/media/marta/scena-sala-taniec-768.webp",
-        "width": 1536,
-        "height": 1024,
-        "alt": "Plakat zajęć ruchowo-tanecznych 50+ w ramie na ścianie sali w Domu Ludowym.",
-        "caption": "Plakat w sali · wizualizacja projektu"
-      },
-      "published": true,
-      "categories": [
-        "druk i reklama"
-      ],
-      "scope": "Plakat cotygodniowych zajęć ruchowo-tanecznych dla osób 50+ w Domu Ludowym w Bibicach.",
-      "teaser": "Plakat zajęć tanecznych dla seniorów — lekki, ciepły i czytelny z daleka.",
-      "scopeItems": [
-        "Plakat A2",
-        "Dobór zdjęcia i obróbka tła",
-        "Przygotowanie do druku"
-      ],
-      "client": "Marta Romańska-Zagórska, Radna Gminy Zielonki.",
-      "need": "Zaproszenie dla osób 50+, które mogą obawiać się, że zajęcia ruchowe są „nie dla nich”. Plakat miał pokazać lekkość i radość ruchu, a jednocześnie jasno podać stały termin, godziny i miejsce.",
-      "solution": "Rozjaśnione zdjęcie tańczących nóg w jasnych butach daje ruch bez pokazywania twarzy, więc każdy może się w nim odnaleźć. Odręczne „dla osób 50+” ociepla szeryfowy tytuł, a termin, godziny i adres ułożone są w jednej kolumnie pod ikoną kalendarza. Należy do serii materiałów dla Stowarzyszenia Koło Integracji Bibic w ramach projektu „Sprawne ciało, zdrowy umysł”. Zieleń, kremowe tło i ilustracja pióra pawia łączą go z plakatem „Zdążyć przed Alzheimerem”, więc oba wydarzenia od razu wyglądają na część jednego cyklu.",
-      "galleryTitle": "Oryginalny projekt.",
-      "galleryIntro": "Plik plakatu przygotowany do druku.",
-      "gallery": [
-        {
-          "src": "/media/marta/plakat-taniec-2000.webp",
-          "smallSrc": "/media/marta/plakat-taniec-768.webp",
-          "width": 2000,
-          "height": 2828,
-          "alt": "Plakat „Zajęcia ruchowo-taneczne dla osób 50+”: termin w środy 10:30–12:30, Dom Ludowy w Bibicach.",
-          "caption": "Plakat · oryginalny projekt",
-          "kind": "original"
-        }
-      ],
-      "featured": true
+      ]
     },
     {
       "slug": "marta-debata-o-edukacji",
       "name": "Debata o edukacji",
       "category": "druk i reklama",
-      "image": "/media/marta/debata-tablica-2x.webp",
-      "imageSmall": "/media/marta/debata-tablica-768.webp",
-      "imageMedium": "/media/marta/debata-tablica-1536.webp",
+      "image": "/media/marta/debata-citylight-2x.webp",
+      "imageSmall": "/media/marta/debata-citylight-768.webp",
+      "imageMedium": "/media/marta/debata-citylight-1536.webp",
       "imageWidth": 3072,
-      "imageHeight": 2061,
-      "shareImage": "/media/marta/debata-tablica-1536.webp",
-      "imageCaption": "Plakat na szkolnej tablicy · wizualizacja projektu",
-      "alt": "Plakat „Debata o edukacji” przypięty czerwonymi pinezkami do tablicy korkowej na szkolnym korytarzu.",
+      "imageHeight": 2049,
+      "shareImage": "/media/marta/debata-citylight-1536.webp",
+      "imageCaption": "Plakat na przystanku · wizualizacja projektu",
+      "alt": "Plakat „Debata o edukacji” w podświetlanej gablocie na przystanku autobusowym w słoneczny dzień.",
       "cover": {
-        "src": "/media/marta/debata-tablica-1536.webp",
-        "smallSrc": "/media/marta/debata-tablica-768.webp",
+        "src": "/media/marta/debata-citylight-1536.webp",
+        "smallSrc": "/media/marta/debata-citylight-768.webp",
         "width": 1536,
-        "height": 1030,
-        "alt": "Plakat „Debata o edukacji” przypięty czerwonymi pinezkami do tablicy korkowej na szkolnym korytarzu.",
-        "caption": "Plakat na szkolnej tablicy · wizualizacja projektu"
+        "height": 1024,
+        "alt": "Plakat „Debata o edukacji” w podświetlanej gablocie na przystanku autobusowym w słoneczny dzień.",
+        "caption": "Plakat na przystanku · wizualizacja projektu"
       },
       "published": true,
-      "categories": [
-        "druk i reklama",
-        "filmy i social media"
-      ],
-      "scope": "Plakat i post do social mediów zapraszające na otwarte spotkanie z Małopolską Kurator Oświaty.",
-      "teaser": "Plakat i post na otwartą debatę o edukacji — granat, czerwień i szkolna tablica.",
+      "scope": "Plakat zapraszający na otwarte spotkanie z Małopolską Kurator Oświaty.",
+      "teaser": "Plakat na otwartą debatę o edukacji — granat, czerwień i szkolna tablica.",
       "scopeItems": [
         "Plakat do druku",
-        "Post 4:5 do social mediów",
-        "Ilustracja liniowa szkoły i osiedla"
+        "Ilustracja liniowa szkoły i osiedla",
+        "Wersja do social mediów"
       ],
       "client": "Marta Romańska-Zagórska, Koło KO Zielonki.",
       "need": "Spotkanie skierowane do młodzieży i rodziców, organizowane przez koło partii. Projekt musiał trzymać się barw organizatora, a mimo to mówić o szkole, nie o polityce.",
       "solution": "Granat i czerwień z identyfikacji koła, ale głównym obrazem jest szkolna tablica, kredki i portret gościni w okrągłym kadrze. Data i miejsce dostały duże ikony, a na dole biegnie liniowa ilustracja szkoły i osiedla, która domyka kompozycję. Ta sama kompozycja działa jako plakat i jako post do social mediów.",
-      "galleryTitle": "Plakat i post.",
-      "galleryIntro": "Oryginalne pliki obu wersji.",
+      "galleryTitle": "Plakat w mieście.",
+      "galleryIntro": "Plakat w gablocie przystankowej i oryginalny plik.",
       "gallery": [
         {
           "src": "/media/marta/plakat-debata-2000.webp",
@@ -1335,22 +1319,17 @@
           "alt": "Plakat „Debata o edukacji” z Gabrielą Olszowską, 2 czerwca, Hotel Szary Residence w Michałowicach.",
           "caption": "Plakat · oryginalny projekt",
           "kind": "original"
-        },
-        {
-          "src": "/media/marta/post-debata-2000.webp",
-          "smallSrc": "/media/marta/post-debata-768.webp",
-          "width": 1080,
-          "height": 1350,
-          "alt": "Post 4:5 „Debata o edukacji” do social mediów.",
-          "caption": "Post do social mediów · oryginalny projekt",
-          "kind": "original"
         }
       ],
-      "featured": true
+      "featured": true,
+      "accent": "#1d3f8f",
+      "categories": [
+        "druk i reklama"
+      ]
     },
     {
-      "slug": "marta-jestem-silna",
-      "name": "Jestem silna",
+      "slug": "marta-rozowy-patrol-jestem-silna",
+      "name": "Różowy Patrol i „Jestem silna”",
       "category": "druk i reklama",
       "image": "/media/marta/jestem-silna-rama-2x.webp",
       "imageSmall": "/media/marta/jestem-silna-rama-768.webp",
@@ -1370,90 +1349,80 @@
       },
       "published": true,
       "categories": [
-        "druk i reklama"
-      ],
-      "scope": "Plakat spotkania dla kobiet po chorobie nowotworowej w Centrum Integracji Społecznej w Zielonkach.",
-      "teaser": "Plakat spotkania „Jestem silna — bo wygrałam z rakiem!” — róż i wstążka-serce.",
-      "scopeItems": [
-        "Plakat A2",
-        "Ilustracja wstążki w kształcie serca",
-        "Przygotowanie do druku"
-      ],
-      "client": "Marta Romańska-Zagórska, Radna Gminy Zielonki.",
-      "need": "Spotkanie o trudnym temacie, które miało być świętem siły, a nie przypomnieniem o chorobie. Plakat musiał też pomieścić długą listę prelegentów, organizatorów i partnerów.",
-      "solution": "Różowa wstążka splata się w serce, a w nim stoi data. Ciepły róż, kwiaty i miękkie chmury budują pogodny nastrój, a lista prelegentów jest złożona drobnym, równym krojem pod główną informacją. Róż i wstążka łączą go z postami „Różowy Patrol” o profilaktyce raka piersi, dzięki czemu obie akcje są rozpoznawalne jako jedna sprawa.",
-      "galleryTitle": "Oryginalny projekt.",
-      "galleryIntro": "Plik plakatu przygotowany do druku.",
-      "gallery": [
-        {
-          "src": "/media/marta/plakat-jestem-silna-2000.webp",
-          "smallSrc": "/media/marta/plakat-jestem-silna-768.webp",
-          "width": 2000,
-          "height": 2828,
-          "alt": "Plakat „Jestem silna — bo wygrałam z rakiem!”, 23.11.2025, Centrum Integracji Społecznej w Zielonkach.",
-          "caption": "Plakat · oryginalny projekt",
-          "kind": "original"
-        }
-      ],
-      "featured": true
-    },
-    {
-      "slug": "marta-rozowy-patrol",
-      "name": "Różowy Patrol",
-      "category": "filmy i social media",
-      "image": "/media/marta/rozowy-patrol-telefon-2x.webp",
-      "imageSmall": "/media/marta/rozowy-patrol-telefon-768.webp",
-      "imageMedium": "/media/marta/rozowy-patrol-telefon-1536.webp",
-      "imageWidth": 3072,
-      "imageHeight": 2061,
-      "shareImage": "/media/marta/rozowy-patrol-telefon-1536.webp",
-      "imageCaption": "Posty w feedzie · wizualizacja projektu",
-      "alt": "Dwa posty „Różowy Patrol” w feedzie na ekranie telefonu trzymanego w dłoni nad stolikiem w kawiarni z różowymi kwiatami.",
-      "cover": {
-        "src": "/media/marta/rozowy-patrol-telefon-1536.webp",
-        "smallSrc": "/media/marta/rozowy-patrol-telefon-768.webp",
-        "width": 1536,
-        "height": 1030,
-        "alt": "Dwa posty „Różowy Patrol” w feedzie na ekranie telefonu trzymanego w dłoni nad stolikiem w kawiarni z różowymi kwiatami.",
-        "caption": "Posty w feedzie · wizualizacja projektu"
-      },
-      "published": true,
-      "categories": [
+        "druk i reklama",
         "filmy i social media"
       ],
-      "scope": "Seria postów na Instagram i Facebook o akcji profilaktyki raka piersi w Gminie Zielonki.",
-      "teaser": "Posty o profilaktyce raka piersi — różowy pas, wstążka i portret radnej.",
+      "scope": "Plakat spotkania „Jestem silna” i posty akcji Różowy Patrol: jedna kampania o profilaktyce raka piersi w Gminie Zielonki.",
+      "teaser": "Kampania o profilaktyce raka piersi: plakat spotkania i posty do social mediów w jednym różu.",
       "scopeItems": [
-        "Post kwadratowy 1:1",
-        "Wariant z logotypami partnerów",
-        "Obróbka portretu"
+        "Plakat A2 „Jestem silna”",
+        "Ilustracja wstążki w kształcie serca",
+        "Posty 1:1 na Instagram i Facebook",
+        "Wariant postu z logotypami partnerów"
       ],
       "client": "Marta Romańska-Zagórska, Radna Gminy Zielonki.",
-      "need": "Akcja profilaktyczna potrzebowała rozpoznawalnego znaku w feedzie, z twarzą osoby, która ją prowadzi, i z miejscem na logotypy partnerów.",
-      "solution": "Szary, studyjny kadr z portretem i mocny różowy blok z tytułem tworzą kontrast, który zatrzymuje kciuk. Wstążka łączy imię i funkcję z hasłem akcji, a dolny pas mieści logotypy partnerów w dwóch wariantach. Róż i wstążka łączą go z plakatem „Jestem silna”, dzięki czemu obie akcje są rozpoznawalne jako jedna sprawa.",
-      "galleryTitle": "Dwa warianty posta.",
-      "galleryIntro": "Oryginalne pliki obu wersji.",
-      "gallery": [
+      "need": "Dwa wydarzenia o tej samej sprawie: spotkanie dla kobiet po chorobie nowotworowej i akcja profilaktyczna w gminie. Miały być ciepłe, a nie przygnębiające, i od razu rozpoznawalne jako jedna kampania.",
+      "solution": "Wspólny znak to różowa wstążka i jeden odcień różu. Na plakacie wstążka splata się w serce z datą, w postach łączy portret radnej z hasłem akcji. Szare, spokojne tło w postach i kremowe na plakacie oddają pole różowi, który prowadzi wzrok.",
+      "galleryTitle": "Jedna kampania.",
+      "galleryIntro": "Plakat w ramie, a niżej plakat i posty osobno.",
+      "gallery": [],
+      "featured": true,
+      "accent": "#d63a77",
+      "applications": [
         {
-          "src": "/media/marta/post-rozowy-patrol-1080.webp",
-          "smallSrc": "/media/marta/post-rozowy-patrol-768.webp",
-          "width": 1080,
-          "height": 1080,
-          "alt": "Post „Różowy Patrol w Gminie Zielonki — profilaktyka raka piersi” z portretem Marty Romańskiej-Zagórskiej.",
-          "caption": "Post · oryginalny projekt",
-          "kind": "original"
+          "slug": "plakat",
+          "label": "Plakat",
+          "title": "Jestem silna.",
+          "description": "Plakat spotkania „Jestem silna — bo wygrałam z rakiem!”. Wstążka-serce, kwiaty i miękkie chmury budują pogodny nastrój, a lista prelegentów stoi pod główną informacją.",
+          "originals": [
+            {
+              "src": "/media/marta/plakat-jestem-silna-2000.webp",
+              "smallSrc": "/media/marta/plakat-jestem-silna-768.webp",
+              "width": 2000,
+              "height": 2828,
+              "alt": "Plakat „Jestem silna — bo wygrałam z rakiem!”, 23.11.2025, Centrum Integracji Społecznej w Zielonkach.",
+              "caption": "Plakat · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
         },
         {
-          "src": "/media/marta/post-rozowy-patrol-2-1080.webp",
-          "smallSrc": "/media/marta/post-rozowy-patrol-2-768.webp",
-          "width": 1080,
-          "height": 1080,
-          "alt": "Wariant posta „Różowy Patrol” z logotypem Kobiety w Centrum.",
-          "caption": "Post z partnerami · oryginalny projekt",
-          "kind": "original"
+          "slug": "posty",
+          "label": "Social media",
+          "title": "Różowy Patrol.",
+          "description": "Posty o akcji profilaktycznej: portret radnej na szarym tle, mocny różowy blok z tytułem i wstążka spinająca całość. Drugi wariant ma pas z logotypami partnerów.",
+          "image": {
+            "src": "/media/marta/rozowy-patrol-telefon-1536.webp",
+            "smallSrc": "/media/marta/rozowy-patrol-telefon-768.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Dwa posty „Różowy Patrol” w feedzie na ekranie telefonu trzymanego w dłoni nad stolikiem w kawiarni z różowymi kwiatami.",
+            "caption": "Posty w feedzie · wizualizacja projektu",
+            "kind": "visualization",
+            "fullSrc": "/media/marta/rozowy-patrol-telefon-2x.webp"
+          },
+          "originals": [
+            {
+              "src": "/media/marta/post-rozowy-patrol-1080.webp",
+              "smallSrc": "/media/marta/post-rozowy-patrol-768.webp",
+              "width": 1080,
+              "height": 1080,
+              "alt": "Post „Różowy Patrol w Gminie Zielonki — profilaktyka raka piersi” z portretem Marty Romańskiej-Zagórskiej.",
+              "caption": "Post · oryginalny projekt",
+              "kind": "original"
+            },
+            {
+              "src": "/media/marta/post-rozowy-patrol-2-1080.webp",
+              "smallSrc": "/media/marta/post-rozowy-patrol-2-768.webp",
+              "width": 1080,
+              "height": 1080,
+              "alt": "Wariant posta „Różowy Patrol” z logotypem Kobiety w Centrum.",
+              "caption": "Post z partnerami · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
         }
-      ],
-      "featured": true
+      ]
     },
     {
       "slug": "lp-bud-wizytowki",
@@ -1467,21 +1436,21 @@
         "Lista usług w czytelnym układzie",
         "Przygotowanie pliku do druku ze spadami"
       ],
-      "image": "/media/lp-bud/scena-warsztat-2x.webp",
-      "imageSmall": "/media/lp-bud/scena-warsztat-768.webp",
-      "imageMedium": "/media/lp-bud/scena-warsztat-1536.webp",
+      "image": "/media/lp-bud/lpbud-dlon-2x.webp",
+      "imageSmall": "/media/lp-bud/lpbud-dlon-768.webp",
+      "imageMedium": "/media/lp-bud/lpbud-dlon-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2048,
-      "shareImage": "/media/lp-bud/scena-warsztat-1536.webp",
-      "imageCaption": "Wizytówki na stole warsztatowym · wizualizacja projektu",
-      "alt": "Wizytówki LP-BUD na sklejce warsztatowej, obok miarka, kielnia, krzyżyki do płytek, ołówek i rękawice.",
+      "shareImage": "/media/lp-bud/lpbud-dlon-1536.webp",
+      "imageCaption": "Wizytówka na budowie · wizualizacja projektu",
+      "alt": "Wizytówka LP-BUD trzymana w dłoni nad świeżo ułożonym parkietem w jodełkę, w tle wiadro, gumowy młotek i paca.",
       "cover": {
-        "src": "/media/lp-bud/scena-warsztat-1536.webp",
-        "smallSrc": "/media/lp-bud/scena-warsztat-768.webp",
+        "src": "/media/lp-bud/lpbud-dlon-1536.webp",
+        "smallSrc": "/media/lp-bud/lpbud-dlon-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Wizytówki LP-BUD na sklejce warsztatowej, obok miarka, kielnia, krzyżyki do płytek, ołówek i rękawice.",
-        "caption": "Wizytówki na stole warsztatowym · wizualizacja projektu"
+        "alt": "Wizytówka LP-BUD trzymana w dłoni nad świeżo ułożonym parkietem w jodełkę, w tle wiadro, gumowy młotek i paca.",
+        "caption": "Wizytówka na budowie · wizualizacja projektu"
       },
       "client": "LP-BUD — remonty i usługi budowlane, Modlnica.",
       "need": "Firma remontowa potrzebowała wizytówki, która od razu mówi, czym się zajmuje: od malowania i płytek po instalacje, kostkę brukową i wypożyczalnię sprzętu. Telefon miał być widoczny na pierwszy rzut oka.",
@@ -1500,7 +1469,8 @@
         }
       ],
       "published": true,
-      "featured": true
+      "featured": true,
+      "accent": "#e87511"
     },
     {
       "slug": "bipi-detailing-bilbord",
@@ -1609,13 +1579,14 @@
       "slug": "super-rally-50-grafika",
       "name": "Super Rally 2025",
       "category": "druk i reklama",
-      "scope": "Grafika jubileuszowa 50. FH-DCE Super Rally w Bydgoszczy dla H-DC Riders of Poland.",
-      "teaser": "Grafika jubileuszowa zlotu motocyklowego Super Rally 2025.",
+      "scope": "Grafika jubileuszowa 50. zlotu Super Rally w Bydgoszczy: od elementów i palety, przez przygotowanie do druku, po koszulki, plakat i social media.",
+      "teaser": "Grafika na 50. zlot motocyklowy — od elementów do koszulki, plakatu i posta.",
       "scopeItems": [
-        "Ilustracja silnika V-twin ze skrzydłami",
-        "Liternictwo „Super Rally” i „50 Anniversary”",
-        "Dwie wersje grafiki",
-        "Przygotowanie plików do nadruku"
+        "Liternictwo i emblemat z silnikiem V-twin",
+        "Paleta pod druk na czarnej tkaninie",
+        "Podział na kolory do sitodruku",
+        "Dwie wersje: główna i „Made by”",
+        "Plakat i grafika do social mediów"
       ],
       "image": "/media/super-rally/scena-koszulka-2x.webp",
       "imageSmall": "/media/super-rally/scena-koszulka-768.webp",
@@ -1634,32 +1605,120 @@
         "caption": "Grafika na koszulce · wizualizacja projektu"
       },
       "client": "H-DC Riders of Poland — organizator 50. FH-DCE Super Rally, Bydgoszcz 2025.",
-      "need": "Na pięćdziesiątą edycję europejskiego zlotu klubów Harley-Davidson potrzebna była grafika jubileuszowa, która dobrze wygląda na czarnym tle nadruku i oddaje motocyklowy klimat wydarzenia.",
-      "solution": "Sercem kompozycji jest ilustrowany silnik V-twin ze skrzydłami — klasyczny motyw motocyklowy. Wokół niego ułożyłem liternictwo w duchu custom, wstęgi z latami 1975–2025 i daty zlotu. Powstały dwie wersje: z dopiskiem „Made by” i bez niego.",
-      "galleryTitle": "Grafika jubileuszowa.",
-      "galleryIntro": "Obie wersje w wysokiej rozdzielczości — kliknij, żeby przybliżyć detale ilustracji.",
-      "gallery": [
+      "need": "Jubileuszowy, 50. zlot Federacji H-DCE w Polsce. Grafika miała działać na plecach czarnej koszulki, na plakacie i w mediach społecznościowych, a do tego zmieścić daty, miejsce i znaki organizatorów.",
+      "solution": "Całość zbudowałem wokół emblematu: silnik V-twin w skrzydłach, w środku duża „50” i wstęga z latami 1975–2025. Nad nim łukowe liternictwo SUPER RALLY, pod nim stopka z miejscem i datą. Pomarańcz, biel i dwie szarości dobrałem pod czarną tkaninę, więc projekt rozkłada się na cztery kolory do sitodruku bez utraty detalu.",
+      "galleryTitle": "Od pomysłu do nadruku.",
+      "galleryIntro": "Nadruk na plecach koszulki, a niżej cały proces: elementy, warstwy, wersje i zastosowania.",
+      "gallery": [],
+      "published": true,
+      "featured": true,
+      "accent": "#e8601c",
+      "categories": [
+        "odzież i nadruki",
+        "druk i reklama"
+      ],
+      "applications": [
         {
-          "src": "/media/super-rally/wersja-glowna-2000.webp",
-          "width": 2000,
-          "height": 2753,
-          "alt": "Grafika Super Rally 50 Anniversary — wersja główna.",
-          "caption": "Wersja główna · oryginalny projekt",
-          "kind": "original",
-          "smallSrc": "/media/super-rally/wersja-glowna-768.webp"
+          "slug": "koncepcja",
+          "label": "Koncepcja",
+          "title": "Elementy\ni paleta.",
+          "description": "Trzy bloki, z których składa się grafika: liternictwo, emblemat i stopka. Paleta ograniczona do pomarańczu, bieli, dwóch szarości i brązu na cieniach piór.",
+          "image": {
+            "src": "/media/super-rally/rally-elementy-1536.webp",
+            "smallSrc": "/media/super-rally/rally-elementy-768.webp",
+            "fullSrc": "/media/super-rally/rally-elementy-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plansza z elementami grafiki Super Rally: emblemat z silnikiem i skrzydłami, liternictwo, stopka z datą oraz paleta kolorów.",
+            "caption": "Elementy i paleta · plansza projektowa",
+            "kind": "visualization"
+          }
         },
         {
-          "src": "/media/super-rally/wersja-made-by-2000.webp",
-          "width": 2000,
-          "height": 2753,
-          "alt": "Grafika Super Rally 50 Anniversary — wersja z dopiskiem Made by H-DC Riders of Poland.",
-          "caption": "Wersja „Made by” · oryginalny projekt",
-          "kind": "original",
-          "smallSrc": "/media/super-rally/wersja-made-by-768.webp"
+          "slug": "druk",
+          "label": "Druk",
+          "title": "Warstwy\ndo sitodruku.",
+          "description": "Przed drukiem grafika rozkłada się na osobne kolory. Każda warstwa to jedna matryca, a dopiero razem dają pełny nadruk na czarnej koszulce.",
+          "image": {
+            "src": "/media/super-rally/rally-rozbarwienia-1536.webp",
+            "smallSrc": "/media/super-rally/rally-rozbarwienia-768.webp",
+            "fullSrc": "/media/super-rally/rally-rozbarwienia-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Rozłożone warstwy kolorów grafiki Super Rally: ciemna szarość, jasna szarość, pomarańcz, biel i nadruk po złożeniu.",
+            "caption": "Podział na kolory · plansza procesu",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "wersje",
+          "label": "Wersje",
+          "title": "Dwie wersje.",
+          "description": "Wersja główna na koszulki uczestników i wersja „Made by” ze znakami organizatorów.",
+          "image": {
+            "src": "/media/super-rally/rally-wersje-1536.webp",
+            "smallSrc": "/media/super-rally/rally-wersje-768.webp",
+            "fullSrc": "/media/super-rally/rally-wersje-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Dwie wersje grafiki Super Rally obok siebie na ciemnym tle.",
+            "caption": "Wersja główna i „Made by”",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/super-rally/rally-glowna-full.webp",
+              "smallSrc": "/media/super-rally/rally-glowna-768.webp",
+              "width": 2000,
+              "height": 2753,
+              "alt": "Grafika Super Rally 50 Anniversary — wersja główna.",
+              "caption": "Wersja główna · oryginalny projekt",
+              "kind": "original"
+            },
+            {
+              "src": "/media/super-rally/rally-made-by-full.webp",
+              "smallSrc": "/media/super-rally/rally-made-by-768.webp",
+              "width": 2000,
+              "height": 2753,
+              "alt": "Grafika Super Rally 50 Anniversary — wersja „Made by” z logotypami organizatorów.",
+              "caption": "Wersja „Made by” · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
+        },
+        {
+          "slug": "plakat",
+          "label": "Plakat",
+          "title": "Na ścianie.",
+          "description": "Ta sama grafika jako plakat pamiątkowy.",
+          "image": {
+            "src": "/media/super-rally/rally-salon-1536.webp",
+            "smallSrc": "/media/super-rally/rally-salon-768.webp",
+            "fullSrc": "/media/super-rally/rally-salon-2x.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Plakat Super Rally 50 w złotej ramie na oliwkowej ścianie obok skórzanego fotela i lampy.",
+            "caption": "Plakat w ramie · wizualizacja projektu",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "social",
+          "label": "Social media",
+          "title": "Na wydarzeniu.",
+          "description": "Grafika w formacie posta, czytelna na ekranie telefonu.",
+          "image": {
+            "src": "/media/super-rally/rally-telefon-1536.webp",
+            "smallSrc": "/media/super-rally/rally-telefon-768.webp",
+            "fullSrc": "/media/super-rally/rally-telefon-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Telefon w dłoni z grafiką Super Rally na ekranie, w tle hala z motoryzacyjnym show i światłami sceny.",
+            "caption": "Post na telefonie · wizualizacja projektu",
+            "kind": "visualization"
+          }
         }
-      ],
-      "published": true,
-      "featured": true
+      ]
     },
     {
       "slug": "leasing-cartel-logo",
@@ -1833,20 +1892,20 @@
       "slug": "szablony-techniczne-odziezy",
       "name": "Szablony odzieży 2D",
       "category": "odzież i nadruki",
-      "image": "/media/szablony-odziezy/scena-biurko-2x.webp",
-      "imageSmall": "/media/szablony-odziezy/scena-biurko-768.webp",
-      "imageMedium": "/media/szablony-odziezy/scena-biurko-1536.webp",
+      "image": "/media/szablony-odziezy/szablony-biurko-2x.webp",
+      "imageSmall": "/media/szablony-odziezy/szablony-biurko-768.webp",
+      "imageMedium": "/media/szablony-odziezy/szablony-biurko-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2048,
-      "shareImage": "/media/szablony-odziezy/scena-biurko-1536.webp",
+      "shareImage": "/media/szablony-odziezy/szablony-biurko-1536.webp",
       "imageCaption": "Szablony na biurku · wizualizacja",
-      "alt": "Wydrukowane karty z płaskimi szablonami bluzy, koszulki polo i kamizelki odblaskowej na biurku obok wzornika Pantone, próbek tkanin i miarki.",
+      "alt": "Wydrukowane grafitowe szablony bluzy, polaru i koszulki na biurku obok wzornika kolorów, centymetra krawieckiego, nożyczek i próbek tkanin.",
       "cover": {
-        "src": "/media/szablony-odziezy/scena-biurko-1536.webp",
-        "smallSrc": "/media/szablony-odziezy/scena-biurko-768.webp",
+        "src": "/media/szablony-odziezy/szablony-biurko-1536.webp",
+        "smallSrc": "/media/szablony-odziezy/szablony-biurko-768.webp",
         "width": 1536,
         "height": 1024,
-        "alt": "Wydrukowane karty z płaskimi szablonami bluzy, koszulki polo i kamizelki odblaskowej na biurku obok wzornika Pantone, próbek tkanin i miarki.",
+        "alt": "Wydrukowane grafitowe szablony bluzy, polaru i koszulki na biurku obok wzornika kolorów, centymetra krawieckiego, nożyczek i próbek tkanin.",
         "caption": "Szablony na biurku · wizualizacja"
       },
       "scope": "Biblioteka płaskich szablonów odzieży 2D w CorelDRAW do wizualizacji znakowania.",
@@ -1862,112 +1921,122 @@
       "need": "Przy każdym zamówieniu odzieży klient musi zobaczyć, jak i gdzie znajdzie się logo, zanim ruszy produkcja. Rysowanie produktu od zera za każdym razem zajmuje za dużo czasu i daje niespójne wizualizacje.",
       "solution": "Przygotowałem bibliotekę wektorowych szablonów 2D: każdy model ma przód, tył i rękawy w tej samej skali, z liniami wymiarowymi pól nadruku. Wystarczy wstawić projekt klienta, ustawić kolor materiału i oznaczyć technikę — wizualizacja do akceptacji jest gotowa w kilka minut.",
       "galleryLabel": "Biblioteka",
-      "galleryTitle": "Wybrane szablony.",
-      "galleryIntro": "Dziesięć szablonów z biblioteki — każdy w pełnej rozdzielczości. Kliknij, żeby przybliżyć.",
-      "gallery": [
-        {
-          "src": "/media/szablony-odziezy/biblioteka-2x.webp",
-          "mediumSrc": "/media/szablony-odziezy/biblioteka-1536.webp",
-          "smallSrc": "/media/szablony-odziezy/biblioteka-768.webp",
-          "width": 3072,
-          "height": 2048,
-          "alt": "Zestawienie dziesięciu płaskich szablonów odzieży na kartach.",
-          "caption": "Zestawienie szablonów",
-          "kind": "original"
-        },
-        {
-          "src": "/media/szablony-odziezy/bluza-2000.webp",
-          "width": 2000,
-          "height": 871,
-          "alt": "Bluza z kapturem — przód, rękaw, tył.",
-          "caption": "Bluza z kapturem — przód, rękaw, tył",
-          "kind": "original",
-          "smallSrc": "/media/szablony-odziezy/bluza-768.webp"
-        },
-        {
-          "src": "/media/szablony-odziezy/koszulka-2000.webp",
-          "width": 2000,
-          "height": 897,
-          "alt": "T-shirt — przód i tył z wymiarami nadruku.",
-          "caption": "T-shirt — przód i tył z wymiarami nadruku",
-          "kind": "original",
-          "smallSrc": "/media/szablony-odziezy/koszulka-768.webp"
-        },
-        {
-          "src": "/media/szablony-odziezy/raglan-2000.webp",
-          "width": 2000,
-          "height": 1001,
-          "alt": "T-shirt raglan — przód i tył.",
-          "caption": "T-shirt raglan — przód i tył",
-          "kind": "original",
-          "smallSrc": "/media/szablony-odziezy/raglan-768.webp"
-        },
-        {
-          "src": "/media/szablony-odziezy/longsleeve-2000.webp",
-          "width": 2000,
-          "height": 739,
-          "alt": "Longsleeve — rękawy, przód i tył.",
-          "caption": "Longsleeve — rękawy, przód i tył",
-          "kind": "original",
-          "smallSrc": "/media/szablony-odziezy/longsleeve-768.webp"
-        },
-        {
-          "src": "/media/szablony-odziezy/polo-2000.webp",
-          "width": 2000,
-          "height": 927,
-          "alt": "Koszulka polo — przód i tył.",
-          "caption": "Koszulka polo — przód i tył",
-          "kind": "original",
-          "smallSrc": "/media/szablony-odziezy/polo-768.webp"
-        },
-        {
-          "src": "/media/szablony-odziezy/polar-2000.webp",
-          "width": 2000,
-          "height": 1072,
-          "alt": "Polar rozpinany — przód i tył.",
-          "caption": "Polar rozpinany — przód i tył",
-          "kind": "original",
-          "smallSrc": "/media/szablony-odziezy/polar-768.webp"
-        },
-        {
-          "src": "/media/szablony-odziezy/kamizelka-2000.webp",
-          "width": 2000,
-          "height": 850,
-          "alt": "Kamizelka odblaskowa — przód i tył.",
-          "caption": "Kamizelka odblaskowa — przód i tył",
-          "kind": "original",
-          "smallSrc": "/media/szablony-odziezy/kamizelka-768.webp"
-        },
-        {
-          "src": "/media/szablony-odziezy/spodnie-2000.webp",
-          "width": 2000,
-          "height": 1387,
-          "alt": "Spodnie dresowe — przód i tył.",
-          "caption": "Spodnie dresowe — przód i tył",
-          "kind": "original",
-          "smallSrc": "/media/szablony-odziezy/spodnie-768.webp"
-        },
-        {
-          "src": "/media/szablony-odziezy/czapki-2000.webp",
-          "width": 2000,
-          "height": 733,
-          "alt": "Czapka z daszkiem — przód i bok.",
-          "caption": "Czapka z daszkiem — przód i bok",
-          "kind": "original",
-          "smallSrc": "/media/szablony-odziezy/czapki-768.webp"
-        },
-        {
-          "src": "/media/szablony-odziezy/torba-2000.webp",
-          "width": 2000,
-          "height": 1335,
-          "alt": "Torba bawełniana — przód i tył.",
-          "caption": "Torba bawełniana — przód i tył",
-          "kind": "original",
-          "smallSrc": "/media/szablony-odziezy/torba-768.webp"
-        }
-      ],
+      "galleryTitle": "Jedna biblioteka, jeden kolor.",
+      "galleryIntro": "Szablony wydrukowane do przymiarki, a niżej cała biblioteka.",
+      "gallery": [],
       "published": true,
-      "featured": true
+      "featured": true,
+      "accent": "#2e3238",
+      "applications": [
+        {
+          "slug": "biblioteka",
+          "label": "Biblioteka",
+          "title": "Dziesięć krojów.\nJeden styl.",
+          "description": "Wszystkie szablony w tym samym grafitowym kolorze, z tą samą grubością linii szwów i czerwonymi wymiarami pól nadruku. Dzięki temu każda wizualizacja dla klienta wygląda spójnie, niezależnie od rodzaju odzieży.",
+          "image": {
+            "src": "/media/szablony-odziezy/szablony-biblioteka-1536.webp",
+            "smallSrc": "/media/szablony-odziezy/szablony-biblioteka-768.webp",
+            "fullSrc": "/media/szablony-odziezy/szablony-biblioteka-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plansza z dziesięcioma szablonami odzieży w jednolitym grafitowym kolorze: t-shirt, raglan, longsleeve, polo, bluza, polar, kamizelka, spodnie, czapka i torba.",
+            "caption": "Biblioteka szablonów · plansza",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/szablony-odziezy/szab-koszulka-full.webp",
+              "smallSrc": "/media/szablony-odziezy/szab-koszulka-768.webp",
+              "width": 2000,
+              "height": 897,
+              "alt": "T-shirt — przód i tył z wymiarami nadruku, szablon w jednolitym grafitowym kolorze.",
+              "caption": "T-shirt — przód i tył z wymiarami nadruku",
+              "kind": "original"
+            },
+            {
+              "src": "/media/szablony-odziezy/szab-raglan-full.webp",
+              "smallSrc": "/media/szablony-odziezy/szab-raglan-768.webp",
+              "width": 2000,
+              "height": 1001,
+              "alt": "T-shirt raglan — przód i tył, szablon w jednolitym grafitowym kolorze.",
+              "caption": "T-shirt raglan — przód i tył",
+              "kind": "original"
+            },
+            {
+              "src": "/media/szablony-odziezy/szab-longsleeve-full.webp",
+              "smallSrc": "/media/szablony-odziezy/szab-longsleeve-768.webp",
+              "width": 2000,
+              "height": 739,
+              "alt": "Longsleeve — rękawy, przód i tył, szablon w jednolitym grafitowym kolorze.",
+              "caption": "Longsleeve — rękawy, przód i tył",
+              "kind": "original"
+            },
+            {
+              "src": "/media/szablony-odziezy/szab-polo-full.webp",
+              "smallSrc": "/media/szablony-odziezy/szab-polo-768.webp",
+              "width": 2000,
+              "height": 927,
+              "alt": "Koszulka polo — przód i tył, szablon w jednolitym grafitowym kolorze.",
+              "caption": "Koszulka polo — przód i tył",
+              "kind": "original"
+            },
+            {
+              "src": "/media/szablony-odziezy/szab-bluza-full.webp",
+              "smallSrc": "/media/szablony-odziezy/szab-bluza-768.webp",
+              "width": 2000,
+              "height": 871,
+              "alt": "Bluza z kapturem — przód, rękaw, tył, szablon w jednolitym grafitowym kolorze.",
+              "caption": "Bluza z kapturem — przód, rękaw, tył",
+              "kind": "original"
+            },
+            {
+              "src": "/media/szablony-odziezy/szab-polar-full.webp",
+              "smallSrc": "/media/szablony-odziezy/szab-polar-768.webp",
+              "width": 2000,
+              "height": 1072,
+              "alt": "Polar rozpinany — przód i tył, szablon w jednolitym grafitowym kolorze.",
+              "caption": "Polar rozpinany — przód i tył",
+              "kind": "original"
+            },
+            {
+              "src": "/media/szablony-odziezy/szab-kamizelka-full.webp",
+              "smallSrc": "/media/szablony-odziezy/szab-kamizelka-768.webp",
+              "width": 2000,
+              "height": 850,
+              "alt": "Kamizelka odblaskowa — przód i tył, szablon w jednolitym grafitowym kolorze.",
+              "caption": "Kamizelka odblaskowa — przód i tył",
+              "kind": "original"
+            },
+            {
+              "src": "/media/szablony-odziezy/szab-spodnie-full.webp",
+              "smallSrc": "/media/szablony-odziezy/szab-spodnie-768.webp",
+              "width": 2000,
+              "height": 1387,
+              "alt": "Spodnie dresowe — przód i tył, szablon w jednolitym grafitowym kolorze.",
+              "caption": "Spodnie dresowe — przód i tył",
+              "kind": "original"
+            },
+            {
+              "src": "/media/szablony-odziezy/szab-czapki-full.webp",
+              "smallSrc": "/media/szablony-odziezy/szab-czapki-768.webp",
+              "width": 2000,
+              "height": 733,
+              "alt": "Czapka z daszkiem — przód i bok, szablon w jednolitym grafitowym kolorze.",
+              "caption": "Czapka z daszkiem — przód i bok",
+              "kind": "original"
+            },
+            {
+              "src": "/media/szablony-odziezy/szab-torba-full.webp",
+              "smallSrc": "/media/szablony-odziezy/szab-torba-768.webp",
+              "width": 2000,
+              "height": 1335,
+              "alt": "Torba bawełniana — przód i tył, szablon w jednolitym grafitowym kolorze.",
+              "caption": "Torba bawełniana — przód i tył",
+              "kind": "original"
+            }
+          ]
+        }
+      ]
     },
     {
       "slug": "alterclothes-nadruki",
@@ -2004,48 +2073,65 @@
       "client": "Alterclothes — marka odzieżowa.",
       "need": "Grafika na koszulki o mrocznym, symbolicznym charakterze, czytelna zarówno na białej, jak i czarnej bawełnie.",
       "solution": "Ćma z księżycem na tułowiu jest osią symetrycznej kompozycji z okręgami, fazami księżyca i liniami konstrukcyjnymi. Gęsta, linearna faktura skrzydeł zachowuje detal w nadruku. Wersja odwrócona pozwala użyć tego samego motywu na ciemnej tkaninie.",
-      "galleryTitle": "Ćma w dwóch odsłonach.",
-      "galleryIntro": "Ten sam motyw na czarnej i białej koszulce oraz oryginalne pliki obu wersji.",
-      "gallery": [
+      "galleryTitle": "Nocna ćma na czarnej bawełnie.",
+      "galleryIntro": "Nadruk na koszulce, a niżej droga od detalu do dwóch wersji druku.",
+      "gallery": [],
+      "featured": true,
+      "accent": "#6f6450",
+      "applications": [
         {
-          "src": "/media/alterclothes-nadruki/alter-tee-biala-1536.webp",
-          "smallSrc": "/media/alterclothes-nadruki/alter-tee-biala-768.webp",
-          "fullSrc": "/media/alterclothes-nadruki/alter-tee-biala-2x.webp",
-          "width": 1536,
-          "height": 1030,
-          "alt": "Biała koszulka z czarnym nadrukiem Alterclothes na jasnym tynku obok gałązki eukaliptusa i lnianej ściereczki.",
-          "caption": "Nadruk na białej koszulce · wizualizacja projektu",
-          "kind": "visualization"
+          "slug": "koncepcja",
+          "label": "Koncepcja",
+          "title": "Ćma, księżyce\ni geometria.",
+          "description": "Punktem wyjścia była ćma jako znak nocy. Wokół niej ułożyłem fazy księżyca, okręgi i cienkie linie konstrukcyjne, a całość zamyka gotyckie liternictwo marki.",
+          "image": {
+            "src": "/media/alterclothes-nadruki/alter-detale-1536.webp",
+            "smallSrc": "/media/alterclothes-nadruki/alter-detale-768.webp",
+            "fullSrc": "/media/alterclothes-nadruki/alter-detale-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plansza z detalami grafiki Alterclothes: ćma z księżycem, liternictwo marki i łańcuch faz księżyca.",
+            "caption": "Detale rysunku · plansza projektowa",
+            "kind": "visualization"
+          }
         },
         {
-          "src": "/media/alterclothes-nadruki/alter-model-full.webp",
-          "smallSrc": "/media/alterclothes-nadruki/alter-model-768.webp",
-          "width": 600,
-          "height": 900,
-          "alt": "Modelka w czarnej koszulce z białym nadrukiem ćmy i napisem „queen of the night”.",
-          "caption": "Koszulka z nadrukiem · prezentacja",
-          "kind": "original"
-        },
-        {
-          "src": "/media/alterclothes-nadruki/alter-bialy-full.webp",
-          "smallSrc": "/media/alterclothes-nadruki/alter-bialy-768.webp",
-          "width": 1825,
-          "height": 2576,
-          "alt": "Oryginalna grafika Alterclothes: biała ćma w geometrycznej ramie na czarnym tle.",
-          "caption": "Wersja na ciemną tkaninę · oryginalny projekt",
-          "kind": "original"
-        },
-        {
-          "src": "/media/alterclothes-nadruki/alter-czarny-full.webp",
-          "smallSrc": "/media/alterclothes-nadruki/alter-czarny-768.webp",
-          "width": 1825,
-          "height": 2576,
-          "alt": "Oryginalna grafika Alterclothes: czarna ćma w geometrycznej ramie na białym tle.",
-          "caption": "Wersja na jasną tkaninę · oryginalny projekt",
-          "kind": "original"
+          "slug": "wersje",
+          "label": "Wersje",
+          "title": "Negatyw\ni pozytyw.",
+          "description": "Jeden rysunek w dwóch wersjach do druku: biała linia na ciemne tkaniny i czarna na jasne. Grubości linii dobrałem tak, żeby żadna nie zniknęła w druku.",
+          "image": {
+            "src": "/media/alterclothes-nadruki/alter-wersje-1536.webp",
+            "smallSrc": "/media/alterclothes-nadruki/alter-wersje-768.webp",
+            "fullSrc": "/media/alterclothes-nadruki/alter-wersje-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Dwie wersje grafiki Alterclothes obok siebie: biała na czarnym tle i czarna na kremowym.",
+            "caption": "Wersja na ciemną i jasną tkaninę",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/alterclothes-nadruki/alter-bialy-full.webp",
+              "smallSrc": "/media/alterclothes-nadruki/alter-bialy-768.webp",
+              "width": 1825,
+              "height": 2576,
+              "alt": "Oryginalna grafika Alterclothes: biała ćma w geometrycznej ramie na czarnym tle.",
+              "caption": "Wersja na ciemną tkaninę · oryginalny projekt",
+              "kind": "original"
+            },
+            {
+              "src": "/media/alterclothes-nadruki/alter-czarny-full.webp",
+              "smallSrc": "/media/alterclothes-nadruki/alter-czarny-768.webp",
+              "width": 1825,
+              "height": 2576,
+              "alt": "Oryginalna grafika Alterclothes: czarna ćma w geometrycznej ramie na białym tle.",
+              "caption": "Wersja na jasną tkaninę · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
         }
-      ],
-      "featured": true
+      ]
     },
     {
       "slug": "kot-egipski-ilustracja",
@@ -2083,19 +2169,9 @@
       "client": "Ilustracja do druku i nadruku na odzież.",
       "need": "Wyrazista ilustracja, która broni się zarówno jako plakat, jak i nadruk na koszulce.",
       "solution": "Sfinks w nemes z błękitnych i złotych pasów, z czerwonym nosem i zielonymi oczami jako mocnymi akcentami. Kreskowanie i drobne refleksy budują fakturę bez utraty czytelności w małym formacie. Powstały cztery warianty kolorystyczne oczu.",
-      "galleryTitle": "Od szkicu do koloru.",
-      "galleryIntro": "Kolejne etapy pracy, warianty kolorystyczne i ilustracja na koszulce.",
+      "galleryTitle": "Ilustracja w ramie.",
+      "galleryIntro": "Gotowa ilustracja, a niżej droga od szkicu do koloru i nadruku.",
       "gallery": [
-        {
-          "src": "/media/kot-egipski-ilustracja/kot-tee-biala-1536.webp",
-          "smallSrc": "/media/kot-egipski-ilustracja/kot-tee-biala-768.webp",
-          "fullSrc": "/media/kot-egipski-ilustracja/kot-tee-biala-2x.webp",
-          "width": 1536,
-          "height": 1030,
-          "alt": "Biała koszulka z nadrukiem egipskiego kota na jasnym tynku.",
-          "caption": "Nadruk na koszulce · wizualizacja projektu",
-          "kind": "visualization"
-        },
         {
           "src": "/media/kot-egipski-ilustracja/kot-full.webp",
           "smallSrc": "/media/kot-egipski-ilustracja/kot-768.webp",
@@ -2104,27 +2180,76 @@
           "alt": "Ilustracja egipskiego kota w błękitno-złotej nemes, z zielonymi oczami — wersja finalna.",
           "caption": "Wersja finalna · oryginalny projekt",
           "kind": "original"
-        },
-        {
-          "src": "/media/kot-egipski-ilustracja/kot-proces-full.webp",
-          "smallSrc": "/media/kot-egipski-ilustracja/kot-proces-768.webp",
-          "width": 1200,
-          "height": 352,
-          "alt": "Pięć etapów ilustracji kota: od szarego szkicu do pełnego koloru z cieniowaniem.",
-          "caption": "Etapy pracy · od szkicu do koloru",
-          "kind": "original"
-        },
-        {
-          "src": "/media/kot-egipski-ilustracja/kot-warianty-full.webp",
-          "smallSrc": "/media/kot-egipski-ilustracja/kot-warianty-768.webp",
-          "width": 1200,
-          "height": 440,
-          "alt": "Cztery warianty ilustracji kota z oczami w kolorze czerwonym, niebieskim, zielonym i złotym.",
-          "caption": "Warianty kolorystyczne · oryginalny projekt",
-          "kind": "original"
         }
       ],
-      "featured": true
+      "featured": true,
+      "accent": "#b8862b",
+      "applications": [
+        {
+          "slug": "etapy",
+          "label": "Proces",
+          "title": "Od szkicu\ndo koloru.",
+          "description": "Najpierw szkic ołówkiem, potem czysta linia, płaskie kolory, światłocień i złote detale.",
+          "image": {
+            "src": "/media/kot-egipski-ilustracja/kot-etapy-1536.webp",
+            "smallSrc": "/media/kot-egipski-ilustracja/kot-etapy-768.webp",
+            "fullSrc": "/media/kot-egipski-ilustracja/kot-etapy-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Kolejne etapy ilustracji egipskiego kota: szkic, kolor bazowy, cieniowanie i wersja finalna.",
+            "caption": "Etapy pracy · plansza procesu",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "warianty",
+          "label": "Warianty",
+          "title": "Cztery\nspojrzenia.",
+          "description": "Warianty kolorystyczne oczu i detali, z których klient wybrał wersję finalną.",
+          "image": {
+            "src": "/media/kot-egipski-ilustracja/kot-warianty-1536.webp",
+            "smallSrc": "/media/kot-egipski-ilustracja/kot-warianty-768.webp",
+            "fullSrc": "/media/kot-egipski-ilustracja/kot-warianty-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Cztery warianty kolorystyczne ilustracji kota różniące się kolorem oczu.",
+            "caption": "Warianty kolorystyczne · plansza",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "detale",
+          "label": "Detale",
+          "title": "Złoto, lapis\ni czerwień.",
+          "description": "Zbliżenia pokazują kreskę i światłocień: złote ozdoby, niebieskie pasy nemesu i czerwień kołnierza.",
+          "image": {
+            "src": "/media/kot-egipski-ilustracja/kot-detale-1536.webp",
+            "smallSrc": "/media/kot-egipski-ilustracja/kot-detale-768.webp",
+            "fullSrc": "/media/kot-egipski-ilustracja/kot-detale-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Zbliżenia ilustracji kota: głowa z zielonymi oczami, pysk i złoty kołnierz.",
+            "caption": "Detale ilustracji · plansza",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "nadruk",
+          "label": "Nadruk",
+          "title": "Na koszulce.",
+          "description": "Ta sama ilustracja jako pełnokolorowy nadruk na białej koszulce.",
+          "image": {
+            "src": "/media/kot-egipski-ilustracja/kot-tee-biala-1536.webp",
+            "smallSrc": "/media/kot-egipski-ilustracja/kot-tee-biala-768.webp",
+            "fullSrc": "/media/kot-egipski-ilustracja/kot-tee-biala-2x.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Biała koszulka z nadrukiem egipskiego kota na jasnym tynku.",
+            "caption": "Nadruk na koszulce · wizualizacja projektu",
+            "kind": "visualization"
+          }
+        }
+      ]
     },
     {
       "slug": "klepsydra-ilustracja",
@@ -2161,20 +2286,40 @@
       "client": "Ilustracja do nadruku na odzież.",
       "need": "Motyw upływającego czasu, czytelny na czarnej koszulce.",
       "solution": "Dłonie tworzą kształt klepsydry, a piasek przelewa się między nimi. Ilustracja powstawała w trzech krokach: biała linia na czarnym tle, kolor płaski i cieniowanie z ciepłym światłem.",
-      "galleryTitle": "Trzy kroki.",
-      "galleryIntro": "Linia, kolor i cień — od pierwszej wersji do gotowego nadruku.",
-      "gallery": [
+      "galleryTitle": "Czas w dłoniach.",
+      "galleryIntro": "Nadruk na czarnej koszulce, a niżej kolejne etapy rysunku.",
+      "gallery": [],
+      "featured": true,
+      "accent": "#b48c3c",
+      "applications": [
         {
-          "src": "/media/klepsydra-ilustracja/klepsydra-proces-full.webp",
-          "smallSrc": "/media/klepsydra-ilustracja/klepsydra-proces-768.webp",
-          "width": 2000,
-          "height": 1112,
-          "alt": "Trzy wersje ilustracji klepsydry z dłońmi: biała linia na czarnym tle, kolor płaski i wersja z cieniowaniem.",
-          "caption": "Etapy pracy · oryginalny projekt",
-          "kind": "original"
+          "slug": "etapy",
+          "label": "Proces",
+          "title": "Linia, kolor\ni cień.",
+          "description": "Ilustracja powstawała w trzech krokach: biała linia na czarnym tle, płaskie kolory i na końcu światłocień, który nadaje piaskowi i dłoniom objętość.",
+          "image": {
+            "src": "/media/klepsydra-ilustracja/klepsydra-etapy-1536.webp",
+            "smallSrc": "/media/klepsydra-ilustracja/klepsydra-etapy-768.webp",
+            "fullSrc": "/media/klepsydra-ilustracja/klepsydra-etapy-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Trzy etapy ilustracji klepsydry trzymanej przez dłonie: linia, kolor i cieniowanie.",
+            "caption": "Etapy pracy · plansza procesu",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/klepsydra-ilustracja/klepsydra-proces-full.webp",
+              "smallSrc": "/media/klepsydra-ilustracja/klepsydra-proces-768.webp",
+              "width": 2000,
+              "height": 1112,
+              "alt": "Trzy wersje ilustracji klepsydry z dłońmi: biała linia na czarnym tle, kolor płaski i wersja z cieniowaniem.",
+              "caption": "Etapy pracy · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
         }
-      ],
-      "featured": true
+      ]
     },
     {
       "slug": "sweet-drink-nadruk",
@@ -2210,20 +2355,40 @@
       "client": "Ilustracja do nadruku na odzież.",
       "need": "Grafika w jednym kolorze, z wyraźnym konturem, tania i prosta w nadruku.",
       "solution": "Butelka przechodzi w czaszkę, a w oczodołach i we wnętrzu widać rozgwieżdżone niebo z księżycem. Kwiaty u dołu i promienie wokół domykają kompozycję. Jeden kolor bez półtonów sprawdza się w sitodruku.",
-      "galleryTitle": "Jeden kolor.",
-      "galleryIntro": "Oryginalny plik ilustracji.",
-      "gallery": [
+      "galleryTitle": "Jeden kolor, pełna ilustracja.",
+      "galleryIntro": "Nadruk na białej koszulce, a niżej detale linii.",
+      "gallery": [],
+      "featured": true,
+      "accent": "#222222",
+      "applications": [
         {
-          "src": "/media/sweet-drink-nadruk/sweetdrink-full.webp",
-          "smallSrc": "/media/sweet-drink-nadruk/sweetdrink-768.webp",
-          "width": 600,
-          "height": 920,
-          "alt": "Oryginalna ilustracja Sweet Drink: czaszka w butelce z korkiem, kwiaty i promienie, napis gotycki.",
-          "caption": "Ilustracja · oryginalny projekt",
-          "kind": "original"
+          "slug": "detale",
+          "label": "Detale",
+          "title": "Czaszka\nw butelce.",
+          "description": "Butelka z korkiem zamienia się w czaszkę, w oczodołach świeci nocne niebo, a róże i promienie domykają kompozycję. Całość w jednym kolorze, gotowa do druku jedną matrycą.",
+          "image": {
+            "src": "/media/sweet-drink-nadruk/sweet-detale-1536.webp",
+            "smallSrc": "/media/sweet-drink-nadruk/sweet-detale-768.webp",
+            "fullSrc": "/media/sweet-drink-nadruk/sweet-detale-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plansza z detalami ilustracji Sweet Drink: cała grafika, liternictwo z korkiem i zbliżenie oczodołów czaszki.",
+            "caption": "Detale linii · plansza",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/sweet-drink-nadruk/sweetdrink-4x-full.webp",
+              "smallSrc": "/media/sweet-drink-nadruk/sweetdrink-4x-768.webp",
+              "width": 2000,
+              "height": 3067,
+              "alt": "Ilustracja Sweet Drink: czaszka w kształcie butelki z korkiem, różami i napisem.",
+              "caption": "Ilustracja · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
         }
-      ],
-      "featured": true
+      ]
     },
     {
       "slug": "american-choppers-nadruk",
@@ -2260,20 +2425,40 @@
       "client": "Grafika do nadruku na odzież.",
       "need": "Mocna, kolorowa grafika motocyklowa na czarną koszulkę.",
       "solution": "Orzeł z rozpostartymi skrzydłami w barwach flagi otwiera kompozycję, motocykl na drodze stanowi jej środek. Liternictwo w stylu college z fakturą flagi i skryptowy napis „Born to be wild” budują hierarchię.",
-      "galleryTitle": "Na czarnym tle.",
-      "galleryIntro": "Oryginalny plik grafiki.",
-      "gallery": [
+      "galleryTitle": "Route 66 na plecach.",
+      "galleryIntro": "Nadruk na czarnej koszulce, a niżej przygotowanie do druku.",
+      "gallery": [],
+      "featured": true,
+      "accent": "#b3122e",
+      "applications": [
         {
-          "src": "/media/american-choppers-nadruk/choppers-full.webp",
-          "smallSrc": "/media/american-choppers-nadruk/choppers-768.webp",
-          "width": 2000,
-          "height": 2333,
-          "alt": "Oryginalna grafika American Choppers: orzeł w barwach flagi USA, motocykl na drodze i napisy US 66, Route, Born to be wild.",
-          "caption": "Grafika · oryginalny projekt",
-          "kind": "original"
+          "slug": "druk",
+          "label": "Druk",
+          "title": "Warstwy\nkoloru.",
+          "description": "Grafika rozłożona na kolory przed drukiem na ciemnej tkaninie: czerwień, granat, biel i szarości składają się w orła, flagę i motocykl.",
+          "image": {
+            "src": "/media/american-choppers-nadruk/choppers-warstwy-1536.webp",
+            "smallSrc": "/media/american-choppers-nadruk/choppers-warstwy-768.webp",
+            "fullSrc": "/media/american-choppers-nadruk/choppers-warstwy-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Rozłożone warstwy kolorów grafiki American Choppers i nadruk po złożeniu.",
+            "caption": "Podział na kolory · plansza procesu",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/american-choppers-nadruk/choppers-full.webp",
+              "smallSrc": "/media/american-choppers-nadruk/choppers-768.webp",
+              "width": 2000,
+              "height": 2333,
+              "alt": "Oryginalna grafika American Choppers: orzeł w barwach flagi USA, motocykl na drodze i napisy US 66, Route, Born to be wild.",
+              "caption": "Grafika · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
         }
-      ],
-      "featured": true
+      ]
     },
     {
       "slug": "plakaty-autorskie",
@@ -2406,48 +2591,90 @@
       "client": "Projekt własny.",
       "need": "Moje autorskie, rysowane obrazy, pokazywane w portfolio jako przykład warsztatu ilustratorskiego — nie są na sprzedaż. Chciałem połączyć kreskę Simpsonów z klasycznymi samochodami: auta wierne oryginałom, a reszta sceny jak kadr z serialu.",
       "solution": "Samochody rysuję z dokładnością do detali: przetłoczeń, felg, pasów i refleksów na lakierze. Wokół nich buduję świat w stylistyce serialu: płaskie plamy koloru, gruby kontur, chmury i domy z Springfield. W nocnej scenie ciepłe światło witryny sklepu kontrastuje z granatowym niebem i dwoma muscle carami na parkingu.",
-      "galleryTitle": "Trzy obrazy.",
-      "galleryIntro": "Kolejne obrazy w warsztacie i oryginalne pliki.",
-      "gallery": [
+      "galleryTitle": "Jedna historia, cztery kadry.",
+      "galleryIntro": "Obrazy ułożone jak komiks: od studium auta po nocną scenę.",
+      "gallery": [],
+      "featured": true,
+      "accent": "#e0b400",
+      "applications": [
         {
-          "src": "/media/ilustracje-motoryzacyjne/warsztat-garaz-1536.webp",
-          "smallSrc": "/media/ilustracje-motoryzacyjne/warsztat-garaz-768.webp",
-          "fullSrc": "/media/ilustracje-motoryzacyjne/warsztat-garaz-2x.webp",
-          "width": 1536,
-          "height": 1030,
-          "alt": "Nocna scena w stylu Simpsonów: dwóch muscle carów przed budynkiem, w ramie na ceglanej ścianie warsztatu.",
-          "caption": "Nocna scena w warsztacie · wizualizacja projektu",
-          "kind": "visualization"
+          "slug": "historia",
+          "label": "Historia",
+          "title": "Od auta\ndo sceny.",
+          "description": "Każdy obraz zaczyna się od samochodu. Dopiero gdy auto jest wierne oryginałowi, buduję wokół niego świat w stylistyce serialu.",
+          "image": {
+            "src": "/media/ilustracje-motoryzacyjne/simpsons-komiks-1536.webp",
+            "smallSrc": "/media/ilustracje-motoryzacyjne/simpsons-komiks-768.webp",
+            "fullSrc": "/media/ilustracje-motoryzacyjne/simpsons-komiks-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Plansza w formie komiksu z czterema kadrami: Mustang na szarym tle, Mustang z Bartem przed domem, zbliżenie i nocna scena pod sklepem.",
+            "caption": "Cztery kadry jednej historii · plansza",
+            "kind": "visualization"
+          }
         },
         {
-          "src": "/media/ilustracje-motoryzacyjne/obraz-mustang-full.webp",
-          "smallSrc": "/media/ilustracje-motoryzacyjne/obraz-mustang-768.webp",
-          "width": 2000,
-          "height": 1414,
-          "alt": "Bart przy zielonym Mustangu Shelby GT500 przed fioletowym domem — rysunek w stylu Simpsonów.",
-          "caption": "Mustang z Bartem · oryginał",
-          "kind": "original"
+          "slug": "auto",
+          "label": "Rozdział 1",
+          "title": "Najpierw\nauto.",
+          "description": "Studium Mustanga: przetłoczenia, felgi, pasy i refleksy na lakierze narysowane z dokładnością do detalu, zanim auto trafi do sceny.",
+          "originals": [
+            {
+              "src": "/media/ilustracje-motoryzacyjne/mustang-full.webp",
+              "smallSrc": "/media/ilustracje-motoryzacyjne/mustang-768.webp",
+              "width": 2400,
+              "height": 1697,
+              "alt": "Rysunek w stylu Simpsonów: czerwonego Mustanga z boku na szarym tle.",
+              "caption": "Mustang · oryginał",
+              "kind": "original"
+            }
+          ]
         },
         {
-          "src": "/media/ilustracje-motoryzacyjne/mustang-full.webp",
-          "smallSrc": "/media/ilustracje-motoryzacyjne/mustang-768.webp",
-          "width": 2400,
-          "height": 1697,
-          "alt": "Rysunek w stylu Simpsonów: czerwonego Mustanga z boku na szarym tle.",
-          "caption": "Mustang · oryginał",
-          "kind": "original"
+          "slug": "poludnie",
+          "label": "Rozdział 2",
+          "title": "Południe\nw Springfield.",
+          "description": "Zielony Shelby GT500 zaparkowany przed fioletowym domem, obok Bart. Płaskie plamy koloru, gruby kontur i chmury jak z serialu.",
+          "originals": [
+            {
+              "src": "/media/ilustracje-motoryzacyjne/obraz-mustang-full.webp",
+              "smallSrc": "/media/ilustracje-motoryzacyjne/obraz-mustang-768.webp",
+              "width": 2000,
+              "height": 1414,
+              "alt": "Bart przy zielonym Mustangu Shelby GT500 przed fioletowym domem — rysunek w stylu Simpsonów.",
+              "caption": "Mustang z Bartem · oryginał",
+              "kind": "original"
+            }
+          ]
         },
         {
-          "src": "/media/ilustracje-motoryzacyjne/warsztat-full.webp",
-          "smallSrc": "/media/ilustracje-motoryzacyjne/warsztat-768.webp",
-          "width": 2400,
-          "height": 1697,
-          "alt": "Rysunek w stylu Simpsonów: nocnej sceny: czerwony i niebieski muscle car przed oświetlonym budynkiem.",
-          "caption": "Nocna scena · oryginał",
-          "kind": "original"
+          "slug": "noc",
+          "label": "Rozdział 3",
+          "title": "Noc pod\nsklepem.",
+          "description": "Na koniec zmiana pory dnia: ciepłe światło witryny kontra granatowe niebo i dwa muscle cary na parkingu.",
+          "image": {
+            "src": "/media/ilustracje-motoryzacyjne/warsztat-garaz-1536.webp",
+            "smallSrc": "/media/ilustracje-motoryzacyjne/warsztat-garaz-768.webp",
+            "fullSrc": "/media/ilustracje-motoryzacyjne/warsztat-garaz-2x.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Nocna scena w stylu Simpsonów: dwóch muscle carów przed budynkiem, w ramie na ceglanej ścianie warsztatu.",
+            "caption": "Nocna scena w warsztacie · wizualizacja projektu",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/ilustracje-motoryzacyjne/warsztat-full.webp",
+              "smallSrc": "/media/ilustracje-motoryzacyjne/warsztat-768.webp",
+              "width": 2400,
+              "height": 1697,
+              "alt": "Rysunek w stylu Simpsonów: nocnej sceny: czerwony i niebieski muscle car przed oświetlonym budynkiem.",
+              "caption": "Nocna scena · oryginał",
+              "kind": "original"
+            }
+          ]
         }
-      ],
-      "featured": true
+      ]
     }
   ]
 }
