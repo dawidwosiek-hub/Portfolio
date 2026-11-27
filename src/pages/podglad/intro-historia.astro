@@ -57,8 +57,8 @@ const PI=Math.PI;
 
 // ---------------- oś czasu ----------------
 const T={gather0:.15,gather1:2.3,crisp0:2.35,crisp1:3.05,rot0:3.35,rot1:4.55,open0:4.8,open1:5.45,flip0:5.65,flip1:6.35,close0:6.6,close1:7.15,
- burn0:7.3,burn1:9.2,f10:9.55,f11:10.1,f20:10.2,f21:10.75,f30:10.85,f31:11.4,card0:11.6,card1:12.35,sq0:12.95,sq1:13.65,merch0:13.9,STEP:1.02,NM:5,back0:19.1,back1:20.5,END:21.2};
-const CAPS=[[0,'01','Znak'],[3.3,'02','Księga znaku'],[7.25,'03','Plakat'],[11.55,'04','Wizytówka'],[13.8,'05','Merch i pojazdy'],[19.1,'','']];
+ burn0:7.3,burn1:9.2,f10:9.55,f11:10.1,f20:10.2,f21:10.75,f30:10.85,f31:11.4,card0:11.6,card1:12.35,sq0:12.95,sq1:13.65,merch0:13.9,STEP:1.02,NM:6,back0:20.1,back1:21.5,END:22.2};
+const CAPS=[[0,'01','Znak'],[3.3,'02','Księga znaku'],[7.25,'03','Plakat'],[11.55,'04','Wizytówka'],[13.8,'05','Merch i pojazdy'],[20.1,'','']];
 
 // ---------------- renderer ----------------
 const canvas=$('#gl');
@@ -208,7 +208,7 @@ const card=new THREE.Mesh(new THREE.BoxGeometry(CW,CH,.012),[cardBackM,cardBackM
 const sq=new THREE.Mesh(new THREE.BoxGeometry(1,1,.02),[logoEdge,logoEdge,logoEdge,logoEdge,new THREE.MeshStandardMaterial({map:tLogo,roughness:.55}),logoEdge]);sq.visible=false;holder.add(sq);
 
 // ---------------- 4. merch ----------------
-const MERCH=[['tee-czarna',[.417,.595,.295,.563]],['bluza',[.387,.596,.39,.706]],['tee-biala',[.421,.591,.318,.574]],['van',[.182,.404,.293,.625]],['truck',[.478,.661,.205,.483]]];
+const MERCH=[['tee-czarna',[.449,.5518,.3125,.4658]],['bluza',[.4297,.5664,.3809,.5859]],['tee-biala',[.4509,.5498,.3331,.4805]],['tee-wieszak',[.3877,.4806,.3626,.5012]],['van',[.2083,.3385,.3223,.5176]],['truck',[.5078,.6315,.2539,.4419]]];
 const MR=10,MPW=3.6,MPH=2.4,MSP=.43;
 const panels=MERCH.map(([n,q],i)=>{const th=(i-(MERCH.length-1)/2)*MSP;
  const m=new THREE.MeshBasicMaterial({map:tex(M+'merch-'+n+'.webp'),transparent:true,opacity:0,toneMapped:false});
@@ -240,15 +240,15 @@ function camAt(t){
  // 1: lekki najazd na kwadrat
  pz=lerp(8.5,5.6,eio(seg(t,0,3.1)));
  // 2: obrót + ruch wokół księgi
- const o=Math.sin(seg(t,T.rot0,T.close1)*PI);px+=o*1.1;py+=o*.35;
- if(t>T.open0&&t<T.close1+.3){pz=lerp(5.6,6.6,eio(seg(t,T.open0,T.open1)))-lerp(0,1,eio(seg(t,T.close0,T.close1)));lx=lerp(0,-.75,eio(seg(t,T.open0,T.open1)))*(1-eio(seg(t,T.close0,T.close1)));}
+ const o=Math.sin(seg(t,T.rot0,T.close1)*PI);py+=o*.25;
+ if(t>T.open0&&t<T.close1+.3){pz=lerp(5.6,6.6,eio(seg(t,T.open0,T.open1)))-lerp(0,1,eio(seg(t,T.close0,T.close1)));lx=lerp(0,-.75,eio(seg(t,T.open0,T.open1)))*(1-eio(seg(t,T.close0,T.close1)));px=lx;}
  if(t>=T.close1+.3){pz=5.6;}
  // 3: spalanie: zbliżenie od dołu
  const b=eio(seg(t,T.burn0,T.burn0+.8))*(1-eio(seg(t,T.burn1-.4,T.burn1+.3)));pz-=b*.8;py-=b*.35;
  // 4: składanie: kamera podąża za kurczącym się arkuszem
  const f=eio(seg(t,T.f10,T.card1));pz=lerp(pz,3.0,f);
  const cz=eio(seg(t,T.card1,T.sq0+.3));pz=lerp(pz,2.35,cz);
- const orb=Math.sin(seg(t,T.f10,T.sq1)*PI)*.5;px+=orb;
+ const orb=Math.sin(seg(t,T.f10,T.sq1)*PI)*.35;px+=orb;
  const s1=eio(seg(t,T.sq0,T.sq1));pz=lerp(pz,3.2,s1);
  let P=new THREE.Vector3(px,py,pz*fit),L=new THREE.Vector3(lx,ly,lz);
  // 5: merch — szybkie przejścia między nośnikami
