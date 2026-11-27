@@ -64,11 +64,11 @@ const CAPS=[[0,'01','Znak'],[3.3,'02','Księga znaku'],[7.25,'03','Plakat'],[11.
 const canvas=$('#gl');
 const gl=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
 gl.outputColorSpace=THREE.SRGBColorSpace;gl.toneMapping=THREE.ACESFilmicToneMapping;gl.toneMappingExposure=1.0;
-const DPR=Math.min(devicePixelRatio||1,2);gl.setPixelRatio(DPR);
+const DPR=Math.min(devicePixelRatio||1,innerWidth<800?1.5:1.6);gl.setPixelRatio(DPR);
 const scene=new THREE.Scene();
 const cam=new THREE.PerspectiveCamera(35,1,.05,120);
 const texL=new THREE.TextureLoader();
-const tex=(u,srgb=true)=>{const t=texL.load(u);if(srgb)t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=gl.capabilities.getMaxAnisotropy();return t;};
+const ALLT=[];const tex=(u,srgb=true)=>{const t=texL.load(u);ALLT.push(t);if(srgb)t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=gl.capabilities.getMaxAnisotropy();return t;};
 const M='/media/intro/';
 const tLogo=tex(M+'logo.webp'),tCover=tex(M+'book-cover.webp'),tS1=tex(M+'book-spread1.webp'),tS2=tex(M+'book-spread2.webp'),tPoster=tex(M+'poster.webp'),tCard=tex(M+'card.webp'),tPaper=tex(M+'paper.webp');
 const half=(t,right)=>{const c=t.clone();c.repeat.set(.5,1);c.offset.set(right?.5:0,0);c.needsUpdate=true;return c;};
@@ -91,7 +91,7 @@ const rim=new THREE.DirectionalLight(0xffd28a,1.4);rim.position.set(-4,2,-3);sce
 const fireL=new THREE.PointLight(0xff7a1a,0,6,2);fireL.position.set(0,-.6,1.2);scene.add(fireL);
 
 // ---------------- 1. cząstki → kwadrat ----------------
-const N=innerWidth<800?22000:42000, LS=1.9; // rozmiar kwadratu (świat)
+const N=innerWidth<800?14000:28000, LS=1.9; // rozmiar kwadratu (świat)
 const pos=new Float32Array(N*3),tgt=new Float32Array(N*3),col=new Float32Array(N*3),rnd=new Float32Array(N*4);
 for(let i=0;i<N;i++){
  const r=2.2+Math.pow(Math.random(),.6)*7,a=Math.random()*PI*2,y=(Math.random()-.5)*(2+r*.5);
@@ -237,6 +237,7 @@ addEventListener('resize',resize);resize();
 const cP=new THREE.Vector3(),cL=new THREE.Vector3(),tmp=new THREE.Vector3(),tmp2=new THREE.Vector3();
 function panelView(i,dist){const p=panels[i];const n=new THREE.Vector3(Math.sin(p.th),0,-Math.cos(p.th));
  return {pos:p.g.position.clone().addScaledVector(n,-dist),look:p.g.position.clone()};}
+let KICK=0,IDLE=0;
 function camAt(t){
  let px=0,py=0,pz=6.2,lx=0,ly=0,lz=0;
  // 1: lekki najazd na kwadrat
@@ -264,14 +265,16 @@ function camAt(t){
    const from=k<0?{pos:P,look:L}:prev;const to=k<0?panelView(0,4.1*fit):cur;
    P=from.pos.clone().lerp(to.pos,m);L=from.look.clone().lerp(to.look,m);
    P.y+=Math.sin(m*PI)*.25;
+   if(k>=0){const kk=Math.sin(cl((fr-.36)/.3)*PI)*(fr>.36?1:0);P.lerp(L,kk*.07);KICK=kk*(i%2?1:-1);}
   }else{
    const last=panelView(MERCH.length-1,4.1*fit);const e=eio(seg(t,T.back0,T.back1));
    P=last.pos.clone().lerp(new THREE.Vector3(0,.35,7.2*fit),e);L=last.look.clone().lerp(new THREE.Vector3(0,-.15,-6),e);
+   if(IDLE>0){const w=Math.min(1,IDLE/2);P.x+=Math.sin(IDLE*.22)*1.6*w;L.x+=Math.sin(IDLE*.22)*2.4*w;P.y+=Math.sin(IDLE*.17)*.15*w;}
   }
  }
  // ręczna kamera
  P.x+=Math.sin(t*.7)*.04;P.y+=Math.sin(t*.53+1)*.03;
- cam.position.copy(P);cam.lookAt(L);
+ cam.position.copy(P);cam.lookAt(L);if(KICK)cam.rotateZ(KICK*.018);KICK=0;
 }
 
 // ---------------- scena w czasie t ----------------
@@ -341,18 +344,21 @@ function update(t){
 }
 
 // ---------------- pętla ----------------
-let t0=performance.now(),t=0,playing=true,sent=false;const EMBED=qs.has('embed');
+let t0=performance.now(),t=0,playing=true,sent=false,paused=false;const SPEED=1.38;
+addEventListener('message',e=>{if(e.data==='nadx-pause')paused=true;if(e.data==='nadx-play')paused=false;});const EMBED=qs.has('embed');
 if(EMBED){document.querySelectorAll('#fin a').forEach(a=>a.target='_top');}
-const startAll=()=>{t0=performance.now();playing=true;sent=false;document.body.classList.remove('end');};
+const startAll=()=>{t0=performance.now();IDLE=0;playing=true;sent=false;document.body.classList.remove('end');};
 $('#again').addEventListener('click',startAll);
-const ready=Promise.all([tLogo,tCover,tS1,tS2,tPoster,tCard].map(x=>new Promise(r=>{if(x.image&&x.image.complete)r();else{const i=setInterval(()=>{if(x.image&&x.image.complete){clearInterval(i);r();}},50);}})));
+const ready=Promise.race([new Promise(r=>setTimeout(r,9000)),Promise.all(ALLT.map(x=>new Promise(r=>{if(x.image&&x.image.complete)r();else{const i=setInterval(()=>{if(x.image&&x.image.complete){clearInterval(i);r();}},50);}})))]);
 let frames=0,acc=0;
+let pauseAt=0;
 function loop(now){requestAnimationFrame(loop);
- if(FORCE!==null)t=FORCE;else if(playing){t=(now-t0)/1000;if(t>T.END){t=T.END;if(EMBED&&!sent){sent=true;setTimeout(()=>parent.postMessage('nadx-intro-end','*'),1600);}}}
+ if(paused&&FORCE===null){pauseAt=pauseAt||now;return;}if(pauseAt){t0+=now-pauseAt;pauseAt=0;}
+ if(FORCE!==null){t=Math.min(FORCE,T.END);IDLE=Math.max(0,FORCE-T.END);}else if(playing){t=(now-t0)/1000*SPEED;if(t>T.END){IDLE=(t-T.END)/SPEED;t=T.END;if(EMBED&&!sent){sent=true;parent.postMessage('nadx-intro-end','*');}}}
  update(t);composer.render();
  if(qs.has('hud')){frames++;acc+=1;const h=$('#hud');h.hidden=false;h.textContent=t.toFixed(2)+'s';}
 }
-ready.then(()=>{t0=performance.now();requestAnimationFrame(loop);if(EMBED)parent.postMessage('nadx-intro-ready','*');});
+ready.then(()=>{ALLT.forEach(x=>{try{gl.initTexture(x)}catch(e){}});t0=performance.now();requestAnimationFrame(loop);if(EMBED)parent.postMessage('nadx-intro-ready','*');});
 window.__setT=v=>{update(v);composer.render();};
 </script>
 </body>
