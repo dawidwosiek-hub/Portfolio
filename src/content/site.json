@@ -43,6 +43,102 @@
       "teaser": "Grafika oklejenia samochodu i łodzi, dopasowana do kształtu każdego nośnika."
     },
     {
+      "slug": "odwroceni-i-partnerzy",
+      "name": "Odwróceni i Partnerzy",
+      "category": "druk i reklama",
+      "categories": [
+        "druk i reklama",
+        "filmy i social media"
+      ],
+      "accent": "#c49a5a",
+      "published": true,
+      "image": "/media/odwroceni-partnerzy/odw-totemy-2x.webp",
+      "imageSmall": "/media/odwroceni-partnerzy/odw-totemy-768.webp",
+      "imageMedium": "/media/odwroceni-partnerzy/odw-totemy-1536.webp",
+      "imageWidth": 3072,
+      "imageHeight": 2061,
+      "shareImage": "/media/odwroceni-partnerzy/odw-totemy-1536.webp",
+      "imageCaption": "Plakaty na totemach w recepcji · wizualizacja projektu",
+      "alt": "Dwa cyfrowe totemy z plakatami Odwróceni i Partnerzy w recepcji kliniki z drewnianą boazerią i oliwką.",
+      "cover": {
+        "src": "/media/odwroceni-partnerzy/odw-totemy-1536.webp",
+        "smallSrc": "/media/odwroceni-partnerzy/odw-totemy-768.webp",
+        "width": 1536,
+        "height": 1030,
+        "alt": "Dwa cyfrowe totemy z plakatami Odwróceni i Partnerzy w recepcji kliniki z drewnianą boazerią i oliwką.",
+        "caption": "Plakaty na totemach w recepcji · wizualizacja projektu"
+      },
+      "scope": "Plakaty i grafika story zapraszające specjalistów zdrowia psychicznego do ogólnopolskiej sieci partnerskiej Odwróceni.",
+      "teaser": "Rekrutacja partnerów sieci Odwróceni — czerń, złoto i twarz założyciela.",
+      "scopeItems": [
+        "Dwie wersje plakatu",
+        "Rozszerzona grafika story 9:16",
+        "Typografia szeryfowa i złote akcenty",
+        "Układ liczb i korzyści"
+      ],
+      "client": "Odwróceni — ogólnopolska sieć specjalistów zdrowia psychicznego.",
+      "need": "Sieć szukała psychiatrów, psychologów i terapeutów do współpracy. Materiał musiał budzić zaufanie, pokazać konkretne liczby i nie wyglądać jak zwykła reklama kliniki.",
+      "solution": "Ciemne, ciepłe tło, złoto i klasyczny szeryf dają spokojny, prestiżowy ton. Uśmiechnięty portret założyciela zamiast stockowego zdjęcia buduje relację, a liczby i korzyści stoją w krótkich, równych blokach. Wersja story rozwija to samo w pełną ofertę z ekspertami.",
+      "galleryTitle": "W recepcji kliniki.",
+      "galleryIntro": "Plakaty na totemach, a niżej obie wersje i story na telefonie.",
+      "gallery": [],
+      "applications": [
+        {
+          "slug": "partnerzy-totemy",
+          "label": "Odwróceni i Partnerzy",
+          "title": "Rekrutacja\npartnerów.",
+          "description": "Dwie wersje plakatu zapraszającego specjalistów do sieci partnerskiej: czerń, ciepłe złoto i szeryfowe nagłówki, a w centrum uśmiechnięta twarz założyciela.",
+          "originals": [
+            {
+              "src": "/media/odwroceni-partnerzy/odw-a1-full.webp",
+              "smallSrc": "/media/odwroceni-partnerzy/odw-a1-768.webp",
+              "width": 539,
+              "height": 958,
+              "alt": "Plakat Odwróceni i Partnerzy — wersja 1.",
+              "caption": "Plakat · wersja 1",
+              "kind": "original"
+            },
+            {
+              "src": "/media/odwroceni-partnerzy/odw-a2-full.webp",
+              "smallSrc": "/media/odwroceni-partnerzy/odw-a2-768.webp",
+              "width": 539,
+              "height": 958,
+              "alt": "Plakat Odwróceni i Partnerzy — wersja 2.",
+              "caption": "Plakat · wersja 2",
+              "kind": "original"
+            }
+          ]
+        },
+        {
+          "slug": "partnerzy-story",
+          "label": "Story",
+          "title": "Pełna oferta\nw formacie story.",
+          "description": "Rozszerzona wersja 9:16: liczby, profile ekspertów i formy współpracy ułożone w czytelne bloki na ciemnym tle.",
+          "image": {
+            "src": "/media/odwroceni-partnerzy/odw-story-telefon-1536.webp",
+            "smallSrc": "/media/odwroceni-partnerzy/odw-story-telefon-768.webp",
+            "fullSrc": "/media/odwroceni-partnerzy/odw-story-telefon-2x.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Grafika story Odwróceni i Partnerzy na ekranie telefonu w gabinecie terapeuty.",
+            "caption": "Story na telefonie · wizualizacja projektu",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/odwroceni-partnerzy/odw-story-full.webp",
+              "smallSrc": "/media/odwroceni-partnerzy/odw-story-768.webp",
+              "width": 1080,
+              "height": 1920,
+              "alt": "Grafika story Odwróceni i Partnerzy z liczbami i ekspertami.",
+              "caption": "Story 9:16 · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "slug": "shiro-logo-i-wizytowki",
       "name": "SHIRO",
       "category": "logo i identyfikacja",
@@ -1281,35 +1377,36 @@
       "slug": "marta-debata-o-edukacji",
       "name": "Debata o edukacji",
       "category": "druk i reklama",
-      "image": "/media/marta/debata-citylight-2x.webp",
-      "imageSmall": "/media/marta/debata-citylight-768.webp",
-      "imageMedium": "/media/marta/debata-citylight-1536.webp",
+      "image": "/media/marta/debata-drzwi-2x.webp",
+      "imageSmall": "/media/marta/debata-drzwi-768.webp",
+      "imageMedium": "/media/marta/debata-drzwi-1536.webp",
       "imageWidth": 3072,
-      "imageHeight": 2049,
-      "shareImage": "/media/marta/debata-citylight-1536.webp",
-      "imageCaption": "Plakat na przystanku · wizualizacja projektu",
-      "alt": "Plakat „Debata o edukacji” w podświetlanej gablocie na przystanku autobusowym w słoneczny dzień.",
+      "imageHeight": 2061,
+      "shareImage": "/media/marta/debata-drzwi-1536.webp",
+      "imageCaption": "Plakat na drzwiach szkoły · wizualizacja projektu",
+      "alt": "Plakat „Debata o edukacji” przyklejony od środka do szklanych drzwi wejściowych szkoły, za szybą korytarz z granatowymi szafkami.",
       "cover": {
-        "src": "/media/marta/debata-citylight-1536.webp",
-        "smallSrc": "/media/marta/debata-citylight-768.webp",
+        "src": "/media/marta/debata-drzwi-1536.webp",
+        "smallSrc": "/media/marta/debata-drzwi-768.webp",
         "width": 1536,
-        "height": 1024,
-        "alt": "Plakat „Debata o edukacji” w podświetlanej gablocie na przystanku autobusowym w słoneczny dzień.",
-        "caption": "Plakat na przystanku · wizualizacja projektu"
+        "height": 1030,
+        "alt": "Plakat „Debata o edukacji” przyklejony od środka do szklanych drzwi wejściowych szkoły, za szybą korytarz z granatowymi szafkami.",
+        "caption": "Plakat na drzwiach szkoły · wizualizacja projektu"
       },
       "published": true,
-      "scope": "Plakat zapraszający na otwarte spotkanie z Małopolską Kurator Oświaty.",
+      "scope": "Plakat i post zapraszające na otwarte spotkanie z Małopolską Kurator Oświaty.",
       "teaser": "Plakat na otwartą debatę o edukacji — granat, czerwień i szkolna tablica.",
       "scopeItems": [
         "Plakat do druku",
+        "Post 4:5 do social mediów",
         "Ilustracja liniowa szkoły i osiedla",
-        "Wersja do social mediów"
+        "Spójny układ obu formatów"
       ],
       "client": "Marta Romańska-Zagórska, Koło KO Zielonki.",
       "need": "Spotkanie skierowane do młodzieży i rodziców, organizowane przez koło partii. Projekt musiał trzymać się barw organizatora, a mimo to mówić o szkole, nie o polityce.",
       "solution": "Granat i czerwień z identyfikacji koła, ale głównym obrazem jest szkolna tablica, kredki i portret gościni w okrągłym kadrze. Data i miejsce dostały duże ikony, a na dole biegnie liniowa ilustracja szkoły i osiedla, która domyka kompozycję. Ta sama kompozycja działa jako plakat i jako post do social mediów.",
-      "galleryTitle": "Plakat w mieście.",
-      "galleryIntro": "Plakat w gablocie przystankowej i oryginalny plik.",
+      "galleryTitle": "Plakat przy wejściu.",
+      "galleryIntro": "Plakat tam, gdzie zobaczą go uczniowie i rodzice, a niżej wersja do social mediów i oryginały.",
       "gallery": [
         {
           "src": "/media/marta/plakat-debata-2000.webp",
@@ -1324,7 +1421,37 @@
       "featured": true,
       "accent": "#1d3f8f",
       "categories": [
-        "druk i reklama"
+        "druk i reklama",
+        "filmy i social media"
+      ],
+      "applications": [
+        {
+          "slug": "social",
+          "label": "Social media",
+          "title": "Ta sama debata\nw telefonie.",
+          "description": "Wersja 4:5 do feedu: ten sam portret, ikony daty i miejsca oraz liniowa ilustracja szkoły, przeskalowane tak, żeby czytały się na ekranie telefonu.",
+          "image": {
+            "src": "/media/marta/debata-telefon-szkola-1536.webp",
+            "smallSrc": "/media/marta/debata-telefon-szkola-768.webp",
+            "fullSrc": "/media/marta/debata-telefon-szkola-2x.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Post „Debata o edukacji” na ekranie telefonu trzymanego w szkolnym korytarzu z granatowymi szafkami.",
+            "caption": "Post na telefonie · wizualizacja projektu",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/marta/post-debata-2000.webp",
+              "smallSrc": "/media/marta/post-debata-768.webp",
+              "width": 1080,
+              "height": 1350,
+              "alt": "Post 4:5 „Debata o edukacji”.",
+              "caption": "Post 4:5 · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1476,13 +1603,13 @@
       "slug": "bipi-detailing-bilbord",
       "name": "BIPI Detailing",
       "category": "druk i reklama",
-      "scope": "Billboard reklamowy studia detailingu i wrappingu BIPI w Prusach.",
-      "teaser": "Billboard dla studia detailingu i oklejania aut.",
+      "scope": "Materiały reklamowe studia detailingu i wrappingu BIPI w Prusach: billboard, ulotka A5 i wizytówka.",
+      "teaser": "Billboard, ulotka i wizytówka dla studia detailingu i oklejania aut.",
       "scopeItems": [
-        "Projekt billboardu",
-        "Ilustracja w klimacie gry z autem i właścicielem studia",
-        "Ikony usług i kierunkowskaz do studia",
-        "Przygotowanie pliku do druku wielkoformatowego"
+        "Billboard wielkoformatowy",
+        "Ulotka A5 z rabatem",
+        "Wizytówka",
+        "Spójny granatowo-błękitny styl z neonowym światłem"
       ],
       "image": "/media/bipi/scena-bilbord-2x.webp",
       "imageSmall": "/media/bipi/scena-bilbord-768.webp",
@@ -1503,8 +1630,8 @@
       "client": "BIPI Detailing — detailing, wrapping i serwis aut, Prusy.",
       "need": "Billboard przy drodze ogląda się przez kilka sekund z jadącego auta. Musiał przyciągnąć uwagę fanów motoryzacji, powiedzieć, co robi studio, i od razu pokazać, gdzie skręcić.",
       "solution": "Postawiłem na ilustrację w stylistyce znanej z gier o miejskich wyścigach — z właścicielem studia i sportowym autem. Hasło „Detailing & Wrapping” jest największym elementem, usługi mają proste ikony, a na dole są tylko telefon, adres i strzałka do studia.",
-      "galleryTitle": "Billboard.",
-      "galleryIntro": "Oryginalny projekt w wysokiej rozdzielczości — kliknij, żeby przybliżyć.",
+      "galleryTitle": "Billboard przy drodze.",
+      "galleryIntro": "Billboard prowadzi do studia, a ulotka i wizytówka zostają w rękach klienta.",
       "gallery": [
         {
           "src": "/media/bipi/bilbord-3072.webp",
@@ -1517,7 +1644,64 @@
         }
       ],
       "published": true,
-      "featured": true
+      "featured": true,
+      "accent": "#1f7fe0",
+      "applications": [
+        {
+          "slug": "ulotka",
+          "label": "Ulotka",
+          "title": "Ulotka\nz rabatem.",
+          "description": "Ulotka A5 w tym samym klimacie: czarny lakier, niebieskie światło LED i lista usług z ikonami. Rabat −10% w rogu daje powód, żeby ją zachować.",
+          "image": {
+            "src": "/media/bipi/bipi-ulotka-maska-1536.webp",
+            "smallSrc": "/media/bipi/bipi-ulotka-maska-768.webp",
+            "fullSrc": "/media/bipi/bipi-ulotka-maska-2x.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Ulotka BIPI Detailing leżąca na lśniącej czarnej masce auta w studiu detailingu, obok mikrofibry i atomizera.",
+            "caption": "Ulotka na masce · wizualizacja projektu",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/bipi/bipi-ulotka-full.webp",
+              "smallSrc": "/media/bipi/bipi-ulotka-768.webp",
+              "width": 1748,
+              "height": 2480,
+              "alt": "Ulotka BIPI Detailing „Perfekcja w każdym detalu” z zakresem usług i rabatem −10%.",
+              "caption": "Ulotka A5 · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
+        },
+        {
+          "slug": "wizytowka",
+          "label": "Wizytówka",
+          "title": "Wizytówka.",
+          "description": "Ten sam reflektor i błękit w formacie 85 × 55 mm: logo, pięć usług, telefon i adres.",
+          "image": {
+            "src": "/media/bipi/bipi-wizytowka-recznik-1536.webp",
+            "smallSrc": "/media/bipi/bipi-wizytowka-recznik-768.webp",
+            "fullSrc": "/media/bipi/bipi-wizytowka-recznik-2x.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Wizytówka BIPI na grafitowym ręczniku z mikrofibry obok pędzla do detailingu, buteleczki powłoki ceramicznej i kluczyka.",
+            "caption": "Wizytówka na ręczniku · wizualizacja projektu",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/bipi/bipi-wizytowka-full.webp",
+              "smallSrc": "/media/bipi/bipi-wizytowka-768.webp",
+              "width": 1098,
+              "height": 626,
+              "alt": "Wizytówka BIPI Studio Detailingu & Wrappingu.",
+              "caption": "Wizytówka · oryginalny projekt",
+              "kind": "original"
+            }
+          ]
+        }
+      ]
     },
     {
       "slug": "lucky-luke-meble-baner",
@@ -1689,16 +1873,16 @@
         {
           "slug": "plakat",
           "label": "Plakat",
-          "title": "Na ścianie.",
+          "title": "Na ścianie\nklubu.",
           "description": "Ta sama grafika jako plakat pamiątkowy.",
           "image": {
-            "src": "/media/super-rally/rally-salon-1536.webp",
-            "smallSrc": "/media/super-rally/rally-salon-768.webp",
-            "fullSrc": "/media/super-rally/rally-salon-2x.webp",
+            "src": "/media/super-rally/rally-bar-1536.webp",
+            "smallSrc": "/media/super-rally/rally-bar-768.webp",
+            "fullSrc": "/media/super-rally/rally-bar-2x.webp",
             "width": 1536,
             "height": 1030,
-            "alt": "Plakat Super Rally 50 w złotej ramie na oliwkowej ścianie obok skórzanego fotela i lampy.",
-            "caption": "Plakat w ramie · wizualizacja projektu",
+            "alt": "Plakat Super Rally 50 w czarnej ramie na ceglanej ścianie baru motocyklowego nad skórzaną ławką.",
+            "caption": "Plakat w barze · wizualizacja projektu",
             "kind": "visualization"
           }
         },
@@ -1892,24 +2076,24 @@
       "slug": "szablony-techniczne-odziezy",
       "name": "Szablony odzieży 2D",
       "category": "odzież i nadruki",
-      "image": "/media/szablony-odziezy/szablony-biurko-2x.webp",
-      "imageSmall": "/media/szablony-odziezy/szablony-biurko-768.webp",
-      "imageMedium": "/media/szablony-odziezy/szablony-biurko-1536.webp",
+      "image": "/media/szablony-odziezy/szablony-tablica-2x.webp",
+      "imageSmall": "/media/szablony-odziezy/szablony-tablica-768.webp",
+      "imageMedium": "/media/szablony-odziezy/szablony-tablica-1536.webp",
       "imageWidth": 3072,
-      "imageHeight": 2048,
-      "shareImage": "/media/szablony-odziezy/szablony-biurko-1536.webp",
-      "imageCaption": "Szablony na biurku · wizualizacja",
-      "alt": "Wydrukowane grafitowe szablony bluzy, polaru i koszulki na biurku obok wzornika kolorów, centymetra krawieckiego, nożyczek i próbek tkanin.",
+      "imageHeight": 2061,
+      "shareImage": "/media/szablony-odziezy/szablony-tablica-1536.webp",
+      "imageCaption": "Karta techniczna w pracowni · wizualizacja",
+      "alt": "Karta techniczna t-shirtu z polami nadruku przypięta magnesami do tablicy w pracowni szycia, pod nią stół z belami czarnej tkaniny.",
       "cover": {
-        "src": "/media/szablony-odziezy/szablony-biurko-1536.webp",
-        "smallSrc": "/media/szablony-odziezy/szablony-biurko-768.webp",
+        "src": "/media/szablony-odziezy/szablony-tablica-1536.webp",
+        "smallSrc": "/media/szablony-odziezy/szablony-tablica-768.webp",
         "width": 1536,
-        "height": 1024,
-        "alt": "Wydrukowane grafitowe szablony bluzy, polaru i koszulki na biurku obok wzornika kolorów, centymetra krawieckiego, nożyczek i próbek tkanin.",
-        "caption": "Szablony na biurku · wizualizacja"
+        "height": 1030,
+        "alt": "Karta techniczna t-shirtu z polami nadruku przypięta magnesami do tablicy w pracowni szycia, pod nią stół z belami czarnej tkaniny.",
+        "caption": "Karta techniczna w pracowni · wizualizacja"
       },
-      "scope": "Biblioteka płaskich szablonów odzieży 2D w CorelDRAW do wizualizacji znakowania.",
-      "teaser": "Biblioteka technicznych szablonów odzieży do wizualizacji nadruków i haftów.",
+      "scope": "Autorska biblioteka dziesięciu szablonów odzieży 2D w jednym stylu: karty techniczne z polami nadruku i haftu, gotowe do wizualizacji dla klientów.",
+      "teaser": "Własna biblioteka szablonów odzieży: karty techniczne, pola nadruku i wizualizacje dla klientów.",
       "scopeItems": [
         "Kilkadziesiąt modeli: koszulki, bluzy, polo, polary, kamizelki, spodnie, czapki, torby",
         "Przód, tył i rękawy w jednej skali",
@@ -1918,16 +2102,48 @@
         "Karta akceptacji: kolorystyka i technika zdobienia"
       ],
       "client": "Własna biblioteka robocza do wizualizacji odzieży z nadrukiem.",
-      "need": "Przy każdym zamówieniu odzieży klient musi zobaczyć, jak i gdzie znajdzie się logo, zanim ruszy produkcja. Rysowanie produktu od zera za każdym razem zajmuje za dużo czasu i daje niespójne wizualizacje.",
-      "solution": "Przygotowałem bibliotekę wektorowych szablonów 2D: każdy model ma przód, tył i rękawy w tej samej skali, z liniami wymiarowymi pól nadruku. Wystarczy wstawić projekt klienta, ustawić kolor materiału i oznaczyć technikę — wizualizacja do akceptacji jest gotowa w kilka minut.",
+      "need": "Klient zamawiający odzież firmową chce zobaczyć, jak jego znak będzie wyglądał na konkretnej bluzie czy kamizelce, zanim cokolwiek trafi do druku. Gotowe mockupy z internetu mają różne style, kąty i kolory, więc każda prezentacja wyglądała inaczej.",
+      "solution": "Narysowałem własną bibliotekę dziesięciu krojów w jednym grafitowym kolorze, z identyczną grubością szwów i czerwonymi wymiarami pól nadruku. Każdy szablon ma swoją kartę techniczną: przód i tył, pola A i B w centymetrach, kolor bazowy i numer arkusza. Dzięki temu wizualizacja dla klienta i plik dla drukarni wychodzą z tego samego źródła.",
       "galleryLabel": "Biblioteka",
-      "galleryTitle": "Jedna biblioteka, jeden kolor.",
-      "galleryIntro": "Szablony wydrukowane do przymiarki, a niżej cała biblioteka.",
+      "galleryTitle": "Karta techniczna w pracowni.",
+      "galleryIntro": "Od karty technicznej, przez pracę na szablonie, po całą bibliotekę.",
       "gallery": [],
       "published": true,
       "featured": true,
-      "accent": "#2e3238",
+      "accent": "#2e323a",
       "applications": [
+        {
+          "slug": "karta",
+          "label": "Karta techniczna",
+          "title": "Każdy krój\nma swoją kartę.",
+          "description": "Przód i tył w skali, pole nadruku A na piersi, pole B na plecach i wymiary pozycjonowania. Na dole tabliczka z nazwą modelu, kolorem i numerem arkusza.",
+          "image": {
+            "src": "/media/szablony-odziezy/szablony-karta-1536.webp",
+            "smallSrc": "/media/szablony-odziezy/szablony-karta-768.webp",
+            "fullSrc": "/media/szablony-odziezy/szablony-karta-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Karta techniczna t-shirtu: przód z logo w polu nadruku A, tył z polem B, wymiary i tabliczka rysunkowa.",
+            "caption": "Karta techniczna · arkusz 01",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "praca",
+          "label": "W praktyce",
+          "title": "Logo klienta\nw kilka minut.",
+          "description": "Na szablon wstawiam znak klienta, ustawiam wymiar haftu lub nadruku i od razu mam wizualizację do akceptacji oraz plik dla wykonawcy.",
+          "image": {
+            "src": "/media/szablony-odziezy/szablony-laptop-1536.webp",
+            "smallSrc": "/media/szablony-odziezy/szablony-laptop-768.webp",
+            "fullSrc": "/media/szablony-odziezy/szablony-laptop-2x.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Laptop na biurku projektanta z otwartym szablonem bluzy z kapturem i logo na plecach, obok złożona czarna koszulka i próbki tkanin.",
+            "caption": "Praca na szablonie · wizualizacja",
+            "kind": "visualization"
+          }
+        },
         {
           "slug": "biblioteka",
           "label": "Biblioteka",
@@ -2042,28 +2258,28 @@
       "slug": "alterclothes-nadruki",
       "name": "Alterclothes",
       "category": "odzież i nadruki",
-      "image": "/media/alterclothes-nadruki/alter-tee-czarna-2x.webp",
-      "imageSmall": "/media/alterclothes-nadruki/alter-tee-czarna-768.webp",
-      "imageMedium": "/media/alterclothes-nadruki/alter-tee-czarna-1536.webp",
+      "image": "/media/alterclothes-nadruki/alter-wieszak-2x.webp",
+      "imageSmall": "/media/alterclothes-nadruki/alter-wieszak-768.webp",
+      "imageMedium": "/media/alterclothes-nadruki/alter-wieszak-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2061,
-      "shareImage": "/media/alterclothes-nadruki/alter-tee-czarna-1536.webp",
-      "imageCaption": "Nadruk na czarnej koszulce · wizualizacja projektu",
-      "alt": "Czarna koszulka z białym nadrukiem Alterclothes: ćma w geometrycznej ramie z księżycami, leżąca na ciemnym betonie obok rękawic motocyklowych i czerwonej bandany.",
+      "shareImage": "/media/alterclothes-nadruki/alter-wieszak-1536.webp",
+      "imageCaption": "Koszulka na wieszaku · wizualizacja projektu",
+      "alt": "Czarna koszulka Alterclothes z białą ćmą i fazami księżyca na drewnianym wieszaku na tle surowego betonu, obok suszone trawy.",
       "cover": {
-        "src": "/media/alterclothes-nadruki/alter-tee-czarna-1536.webp",
-        "smallSrc": "/media/alterclothes-nadruki/alter-tee-czarna-768.webp",
+        "src": "/media/alterclothes-nadruki/alter-wieszak-1536.webp",
+        "smallSrc": "/media/alterclothes-nadruki/alter-wieszak-768.webp",
         "width": 1536,
         "height": 1030,
-        "alt": "Czarna koszulka z białym nadrukiem Alterclothes: ćma w geometrycznej ramie z księżycami, leżąca na ciemnym betonie obok rękawic motocyklowych i czerwonej bandany.",
-        "caption": "Nadruk na czarnej koszulce · wizualizacja projektu"
+        "alt": "Czarna koszulka Alterclothes z białą ćmą i fazami księżyca na drewnianym wieszaku na tle surowego betonu, obok suszone trawy.",
+        "caption": "Koszulka na wieszaku · wizualizacja projektu"
       },
       "published": true,
       "categories": [
         "odzież i nadruki"
       ],
       "scope": "Ilustracja na koszulki marki Alterclothes: ćma w geometrycznej kompozycji, przygotowana w dwóch wersjach kolorystycznych.",
-      "teaser": "Ilustracja ćmy na koszulki, w wersji na jasną i ciemną tkaninę.",
+      "teaser": "Ćma, księżyce i gotyckie liternictwo — koszulka dla niezależnej marki odzieżowej.",
       "scopeItems": [
         "Autorska ilustracja ćmy",
         "Liternictwo gotyckie „alterclothes”",
@@ -2074,7 +2290,7 @@
       "need": "Grafika na koszulki o mrocznym, symbolicznym charakterze, czytelna zarówno na białej, jak i czarnej bawełnie.",
       "solution": "Ćma z księżycem na tułowiu jest osią symetrycznej kompozycji z okręgami, fazami księżyca i liniami konstrukcyjnymi. Gęsta, linearna faktura skrzydeł zachowuje detal w nadruku. Wersja odwrócona pozwala użyć tego samego motywu na ciemnej tkaninie.",
       "galleryTitle": "Nocna ćma na czarnej bawełnie.",
-      "galleryIntro": "Nadruk na koszulce, a niżej droga od detalu do dwóch wersji druku.",
+      "galleryIntro": "Od koncepcji, przez dwie wersje druku, po gotowy produkt w opakowaniu.",
       "gallery": [],
       "featured": true,
       "accent": "#6f6450",
@@ -2083,30 +2299,30 @@
           "slug": "koncepcja",
           "label": "Koncepcja",
           "title": "Ćma, księżyce\ni geometria.",
-          "description": "Punktem wyjścia była ćma jako znak nocy. Wokół niej ułożyłem fazy księżyca, okręgi i cienkie linie konstrukcyjne, a całość zamyka gotyckie liternictwo marki.",
+          "description": "Ćma jako znak nocy i przemiany, oś symetrii, okręgi i fazy księżyca oraz gotyckie liternictwo marki. Paleta ograniczona do czerni tkaniny, kości słoniowej i patyny.",
           "image": {
-            "src": "/media/alterclothes-nadruki/alter-detale-1536.webp",
-            "smallSrc": "/media/alterclothes-nadruki/alter-detale-768.webp",
-            "fullSrc": "/media/alterclothes-nadruki/alter-detale-2x.webp",
+            "src": "/media/alterclothes-nadruki/alter-koncepcja-1536.webp",
+            "smallSrc": "/media/alterclothes-nadruki/alter-koncepcja-768.webp",
+            "fullSrc": "/media/alterclothes-nadruki/alter-koncepcja-2x.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Plansza z detalami grafiki Alterclothes: ćma z księżycem, liternictwo marki i łańcuch faz księżyca.",
-            "caption": "Detale rysunku · plansza projektowa",
+            "alt": "Szkicownik z koncepcją Alterclothes: szkic ćmy, liternictwo, fazy księżyca i paleta trzech kolorów.",
+            "caption": "Koncepcja · szkicownik",
             "kind": "visualization"
           }
         },
         {
           "slug": "wersje",
-          "label": "Wersje",
+          "label": "Druk",
           "title": "Negatyw\ni pozytyw.",
-          "description": "Jeden rysunek w dwóch wersjach do druku: biała linia na ciemne tkaniny i czarna na jasne. Grubości linii dobrałem tak, żeby żadna nie zniknęła w druku.",
+          "description": "Jeden rysunek w dwóch wersjach do druku: biała farba na ciemne tkaniny i czarna na jasne. Grubości linii dobrane tak, żeby żaden detal nie zniknął w sitodruku.",
           "image": {
             "src": "/media/alterclothes-nadruki/alter-wersje-1536.webp",
             "smallSrc": "/media/alterclothes-nadruki/alter-wersje-768.webp",
             "fullSrc": "/media/alterclothes-nadruki/alter-wersje-2x.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Dwie wersje grafiki Alterclothes obok siebie: biała na czarnym tle i czarna na kremowym.",
+            "alt": "Dwie wersje grafiki Alterclothes: biała na czarnym polu i czarna na kremowym.",
             "caption": "Wersja na ciemną i jasną tkaninę",
             "kind": "visualization"
           },
@@ -2130,121 +2346,169 @@
               "kind": "original"
             }
           ]
+        },
+        {
+          "slug": "produkt",
+          "label": "Produkt",
+          "title": "Gotowe\ndo wysyłki.",
+          "description": "Złożona koszulka, metka z kraftu i czarne pudełko: cały produkt utrzymany w tej samej nocnej palecie.",
+          "image": {
+            "src": "/media/alterclothes-nadruki/alter-flatlay-1536.webp",
+            "smallSrc": "/media/alterclothes-nadruki/alter-flatlay-768.webp",
+            "fullSrc": "/media/alterclothes-nadruki/alter-flatlay-2x.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Złożona czarna koszulka Alterclothes na lnianym obrusie obok metki z kraftu, czarnego pudełka, mosiężnego klucza i świec.",
+            "caption": "Produkt · wizualizacja projektu",
+            "kind": "visualization"
+          }
         }
       ]
     },
     {
       "slug": "kot-egipski-ilustracja",
-      "name": "Kot egipski",
+      "name": "Kot egipski i Klepsydra",
       "category": "odzież i nadruki",
-      "image": "/media/kot-egipski-ilustracja/kot-salon-2x.webp",
-      "imageSmall": "/media/kot-egipski-ilustracja/kot-salon-768.webp",
-      "imageMedium": "/media/kot-egipski-ilustracja/kot-salon-1536.webp",
+      "image": "/media/kot-egipski-ilustracja/kot-biurko-2x.webp",
+      "imageSmall": "/media/kot-egipski-ilustracja/kot-biurko-768.webp",
+      "imageMedium": "/media/kot-egipski-ilustracja/kot-biurko-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2061,
-      "shareImage": "/media/kot-egipski-ilustracja/kot-salon-1536.webp",
-      "imageCaption": "Ilustracja w ramie · wizualizacja projektu",
-      "alt": "Ilustracja egipskiego kota w złotej oprawie, oprawiona w mosiężną ramę na oliwkowej ścianie salonu obok skórzanego fotela i lampy.",
+      "shareImage": "/media/kot-egipski-ilustracja/kot-biurko-1536.webp",
+      "imageCaption": "Od szkicu do koloru · na biurku",
+      "alt": "Biurko ilustratora: szkic ołówkiem i kolorowa ilustracja egipskiego kota obok ołówków, palety gwaszy ze złotem i herbaty.",
       "cover": {
-        "src": "/media/kot-egipski-ilustracja/kot-salon-1536.webp",
-        "smallSrc": "/media/kot-egipski-ilustracja/kot-salon-768.webp",
+        "src": "/media/kot-egipski-ilustracja/kot-biurko-1536.webp",
+        "smallSrc": "/media/kot-egipski-ilustracja/kot-biurko-768.webp",
         "width": 1536,
         "height": 1030,
-        "alt": "Ilustracja egipskiego kota w złotej oprawie, oprawiona w mosiężną ramę na oliwkowej ścianie salonu obok skórzanego fotela i lampy.",
-        "caption": "Ilustracja w ramie · wizualizacja projektu"
+        "alt": "Biurko ilustratora: szkic ołówkiem i kolorowa ilustracja egipskiego kota obok ołówków, palety gwaszy ze złotem i herbaty.",
+        "caption": "Od szkicu do koloru · na biurku"
       },
       "published": true,
       "categories": [
-        "odzież i nadruki",
-        "druk i reklama"
+        "odzież i nadruki"
       ],
-      "scope": "Kolorowa ilustracja kota w stylistyce egipskiej, przygotowana do druku i nadruku na odzież.",
-      "teaser": "Ilustracja kota w egipskiej oprawie — od szkicu do pełnego koloru.",
+      "scope": "Dwie autorskie ilustracje do nadruku na odzieży: egipski kot w złocie i lapisie oraz klepsydra trzymana przez dłonie.",
+      "teaser": "Dwie ilustracje do nadruku — od szkicu ołówkiem do koszulki.",
       "scopeItems": [
-        "Szkic i linia",
-        "Kolor i cieniowanie",
-        "Cztery warianty koloru oczu",
-        "Pliki do druku i nadruku"
+        "Szkic i czysta linia",
+        "Kolor, światłocień i złote detale",
+        "Warianty kolorystyczne",
+        "Przygotowanie do nadruku na jasnej i ciemnej tkaninie"
       ],
       "client": "Ilustracja do druku i nadruku na odzież.",
-      "need": "Wyrazista ilustracja, która broni się zarówno jako plakat, jak i nadruk na koszulce.",
-      "solution": "Sfinks w nemes z błękitnych i złotych pasów, z czerwonym nosem i zielonymi oczami jako mocnymi akcentami. Kreskowanie i drobne refleksy budują fakturę bez utraty czytelności w małym formacie. Powstały cztery warianty kolorystyczne oczu.",
-      "galleryTitle": "Ilustracja w ramie.",
-      "galleryIntro": "Gotowa ilustracja, a niżej droga od szkicu do koloru i nadruku.",
-      "gallery": [
-        {
-          "src": "/media/kot-egipski-ilustracja/kot-full.webp",
-          "smallSrc": "/media/kot-egipski-ilustracja/kot-768.webp",
-          "width": 1757,
-          "height": 2576,
-          "alt": "Ilustracja egipskiego kota w błękitno-złotej nemes, z zielonymi oczami — wersja finalna.",
-          "caption": "Wersja finalna · oryginalny projekt",
-          "kind": "original"
-        }
-      ],
+      "need": "Ilustracje miały działać jako samodzielne grafiki na koszulkach: czytelne z daleka, a z bliska pełne detalu, który nagradza dłuższe patrzenie.",
+      "solution": "Obie zaczynają się na papierze. Kot to symetryczny portret w nemesie: złoto, lapis i jedna mocna czerwień kołnierza prowadzą wzrok do zielonych oczu. Klepsydra powstała jako biała linia na czarnym tle, potem dostała kolor i piasek ze światłem, żeby świeciła na ciemnej bawełnie.",
+      "galleryTitle": "Od kartki do nadruku.",
+      "galleryIntro": "Historia dwóch ilustracji: szkicownik, warianty, detale i koszulki.",
+      "gallery": [],
       "featured": true,
       "accent": "#b8862b",
       "applications": [
         {
           "slug": "etapy",
-          "label": "Proces",
-          "title": "Od szkicu\ndo koloru.",
-          "description": "Najpierw szkic ołówkiem, potem czysta linia, płaskie kolory, światłocień i złote detale.",
+          "label": "Rozdział 1",
+          "title": "Kot: od szkicu\ndo koloru.",
+          "description": "Cztery etapy na jednej rozkładówce szkicownika: ołówek, czysta linia, płaskie kolory, a na końcu światło i złoto.",
           "image": {
             "src": "/media/kot-egipski-ilustracja/kot-etapy-1536.webp",
             "smallSrc": "/media/kot-egipski-ilustracja/kot-etapy-768.webp",
             "fullSrc": "/media/kot-egipski-ilustracja/kot-etapy-2x.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Kolejne etapy ilustracji egipskiego kota: szkic, kolor bazowy, cieniowanie i wersja finalna.",
-            "caption": "Etapy pracy · plansza procesu",
+            "alt": "Rozkładówka szkicownika z czterema etapami ilustracji kota: szkic ołówkiem, czysta linia, płaskie kolory i wersja finalna.",
+            "caption": "Etapy pracy · szkicownik",
             "kind": "visualization"
           }
         },
         {
           "slug": "warianty",
-          "label": "Warianty",
+          "label": "Rozdział 2",
           "title": "Cztery\nspojrzenia.",
-          "description": "Warianty kolorystyczne oczu i detali, z których klient wybrał wersję finalną.",
+          "description": "Wersje kolorystyczne oczu sprawdzone obok siebie. Zieleń wygrała, bo najmocniej kontrastuje ze złotem i czerwienią.",
           "image": {
             "src": "/media/kot-egipski-ilustracja/kot-warianty-1536.webp",
             "smallSrc": "/media/kot-egipski-ilustracja/kot-warianty-768.webp",
             "fullSrc": "/media/kot-egipski-ilustracja/kot-warianty-2x.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Cztery warianty kolorystyczne ilustracji kota różniące się kolorem oczu.",
-            "caption": "Warianty kolorystyczne · plansza",
+            "alt": "Strona szkicownika z czterema wariantami oczu kota: zielone, złote, lapis i ametyst, zieleń zakreślona na czerwono.",
+            "caption": "Warianty · szkicownik",
             "kind": "visualization"
           }
         },
         {
           "slug": "detale",
-          "label": "Detale",
+          "label": "Rozdział 3",
           "title": "Złoto, lapis\ni czerwień.",
-          "description": "Zbliżenia pokazują kreskę i światłocień: złote ozdoby, niebieskie pasy nemesu i czerwień kołnierza.",
+          "description": "Z bliska widać kreskę: dwa odcienie zieleni w oczach, ręczny światłocień na złocie i pasy nemesu.",
           "image": {
             "src": "/media/kot-egipski-ilustracja/kot-detale-1536.webp",
             "smallSrc": "/media/kot-egipski-ilustracja/kot-detale-768.webp",
             "fullSrc": "/media/kot-egipski-ilustracja/kot-detale-2x.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Zbliżenia ilustracji kota: głowa z zielonymi oczami, pysk i złoty kołnierz.",
-            "caption": "Detale ilustracji · plansza",
+            "alt": "Zbliżenia ilustracji kota przypięte taśmą do papieru z odręcznymi notatkami.",
+            "caption": "Detale · szkicownik",
             "kind": "visualization"
           }
         },
         {
           "slug": "nadruk",
-          "label": "Nadruk",
-          "title": "Na koszulce.",
-          "description": "Ta sama ilustracja jako pełnokolorowy nadruk na białej koszulce.",
+          "label": "Rozdział 4",
+          "title": "Kot\nna koszulce.",
+          "description": "Pełnokolorowy nadruk na białej bawełnie.",
           "image": {
-            "src": "/media/kot-egipski-ilustracja/kot-tee-biala-1536.webp",
-            "smallSrc": "/media/kot-egipski-ilustracja/kot-tee-biala-768.webp",
-            "fullSrc": "/media/kot-egipski-ilustracja/kot-tee-biala-2x.webp",
+            "src": "/media/kot-egipski-ilustracja/kot-koszulka-sciana-1536.webp",
+            "smallSrc": "/media/kot-egipski-ilustracja/kot-koszulka-sciana-768.webp",
+            "fullSrc": "/media/kot-egipski-ilustracja/kot-koszulka-sciana-2x.webp",
             "width": 1536,
             "height": 1030,
-            "alt": "Biała koszulka z nadrukiem egipskiego kota na jasnym tynku.",
+            "alt": "Biała koszulka z ilustracją egipskiego kota na drewnianym wieszaku przy piaskowej ścianie z cieniem liści palmy.",
+            "caption": "Nadruk na koszulce · wizualizacja projektu",
+            "kind": "visualization"
+          },
+          "originals": [
+            {
+              "src": "/media/kot-egipski-ilustracja/kot-full.webp",
+              "smallSrc": "/media/kot-egipski-ilustracja/kot-768.webp",
+              "width": 1757,
+              "height": 2576,
+              "alt": "Ilustracja egipskiego kota — wersja finalna.",
+              "caption": "Kot egipski · oryginał",
+              "kind": "original"
+            }
+          ]
+        },
+        {
+          "slug": "klepsydra",
+          "label": "Rozdział 5",
+          "title": "Klepsydra:\nczas w dłoniach.",
+          "description": "Druga ilustracja z tego samego szkicownika: biała linia, kolor, a na końcu piasek ze światłem.",
+          "image": {
+            "src": "/media/kot-egipski-ilustracja/klepsydra-etapy-1536.webp",
+            "smallSrc": "/media/kot-egipski-ilustracja/klepsydra-etapy-768.webp",
+            "fullSrc": "/media/kot-egipski-ilustracja/klepsydra-etapy-2x.webp",
+            "width": 1536,
+            "height": 1024,
+            "alt": "Czarny szkicownik z trzema etapami ilustracji klepsydry trzymanej przez dłonie.",
+            "caption": "Etapy klepsydry · szkicownik",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "klepsydra-nadruk",
+          "label": "Rozdział 6",
+          "title": "Klepsydra\nna czarnej bawełnie.",
+          "description": "Nadruk ułożony wśród rzeczy, które mierzą czas.",
+          "image": {
+            "src": "/media/kot-egipski-ilustracja/klepsydra-stol-1536.webp",
+            "smallSrc": "/media/kot-egipski-ilustracja/klepsydra-stol-768.webp",
+            "fullSrc": "/media/kot-egipski-ilustracja/klepsydra-stol-2x.webp",
+            "width": 1536,
+            "height": 1030,
+            "alt": "Czarna koszulka z ilustracją klepsydry na starym stole obok mosiężnej klepsydry, zegarka kieszonkowego, suszonych róż i świecy.",
             "caption": "Nadruk na koszulce · wizualizacja projektu",
             "kind": "visualization"
           }
@@ -2252,94 +2516,24 @@
       ]
     },
     {
-      "slug": "klepsydra-ilustracja",
-      "name": "Klepsydra",
-      "category": "odzież i nadruki",
-      "image": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-2x.webp",
-      "imageSmall": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-768.webp",
-      "imageMedium": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-1536.webp",
-      "imageWidth": 3072,
-      "imageHeight": 2061,
-      "shareImage": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-1536.webp",
-      "imageCaption": "Nadruk na czarnej koszulce · wizualizacja projektu",
-      "alt": "Czarna koszulka z kolorowym nadrukiem klepsydry trzymanej przez dłonie, na ciemnym betonie obok rękawic i bandany.",
-      "cover": {
-        "src": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-1536.webp",
-        "smallSrc": "/media/klepsydra-ilustracja/klepsydra-tee-czarna-768.webp",
-        "width": 1536,
-        "height": 1030,
-        "alt": "Czarna koszulka z kolorowym nadrukiem klepsydry trzymanej przez dłonie, na ciemnym betonie obok rękawic i bandany.",
-        "caption": "Nadruk na czarnej koszulce · wizualizacja projektu"
-      },
-      "published": true,
-      "categories": [
-        "odzież i nadruki"
-      ],
-      "scope": "Ilustracja klepsydry trzymanej przez dłonie — w wersji liniowej i kolorowej, do nadruku na ciemnej tkaninie.",
-      "teaser": "Ilustracja klepsydry z dłońmi — linia, kolor i cień.",
-      "scopeItems": [
-        "Rysunek liniowy",
-        "Kolor płaski",
-        "Cieniowanie i światło",
-        "Wersja do nadruku na ciemnej tkaninie"
-      ],
-      "client": "Ilustracja do nadruku na odzież.",
-      "need": "Motyw upływającego czasu, czytelny na czarnej koszulce.",
-      "solution": "Dłonie tworzą kształt klepsydry, a piasek przelewa się między nimi. Ilustracja powstawała w trzech krokach: biała linia na czarnym tle, kolor płaski i cieniowanie z ciepłym światłem.",
-      "galleryTitle": "Czas w dłoniach.",
-      "galleryIntro": "Nadruk na czarnej koszulce, a niżej kolejne etapy rysunku.",
-      "gallery": [],
-      "featured": true,
-      "accent": "#b48c3c",
-      "applications": [
-        {
-          "slug": "etapy",
-          "label": "Proces",
-          "title": "Linia, kolor\ni cień.",
-          "description": "Ilustracja powstawała w trzech krokach: biała linia na czarnym tle, płaskie kolory i na końcu światłocień, który nadaje piaskowi i dłoniom objętość.",
-          "image": {
-            "src": "/media/klepsydra-ilustracja/klepsydra-etapy-1536.webp",
-            "smallSrc": "/media/klepsydra-ilustracja/klepsydra-etapy-768.webp",
-            "fullSrc": "/media/klepsydra-ilustracja/klepsydra-etapy-2x.webp",
-            "width": 1536,
-            "height": 1024,
-            "alt": "Trzy etapy ilustracji klepsydry trzymanej przez dłonie: linia, kolor i cieniowanie.",
-            "caption": "Etapy pracy · plansza procesu",
-            "kind": "visualization"
-          },
-          "originals": [
-            {
-              "src": "/media/klepsydra-ilustracja/klepsydra-proces-full.webp",
-              "smallSrc": "/media/klepsydra-ilustracja/klepsydra-proces-768.webp",
-              "width": 2000,
-              "height": 1112,
-              "alt": "Trzy wersje ilustracji klepsydry z dłońmi: biała linia na czarnym tle, kolor płaski i wersja z cieniowaniem.",
-              "caption": "Etapy pracy · oryginalny projekt",
-              "kind": "original"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "slug": "sweet-drink-nadruk",
       "name": "Sweet Drink",
       "category": "odzież i nadruki",
-      "image": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-2x.webp",
-      "imageSmall": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-768.webp",
-      "imageMedium": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-1536.webp",
+      "image": "/media/sweet-drink-nadruk/sweet-bar-2x.webp",
+      "imageSmall": "/media/sweet-drink-nadruk/sweet-bar-768.webp",
+      "imageMedium": "/media/sweet-drink-nadruk/sweet-bar-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2061,
-      "shareImage": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-1536.webp",
-      "imageCaption": "Nadruk na białej koszulce · wizualizacja projektu",
-      "alt": "Biała koszulka z czarnym nadrukiem czaszki w kształcie butelki z korkiem i napisem „sweet drink”, na jasnym tynku.",
+      "shareImage": "/media/sweet-drink-nadruk/sweet-bar-1536.webp",
+      "imageCaption": "Koszulka na barze · wizualizacja projektu",
+      "alt": "Biała koszulka z czarną ilustracją Sweet Drink na czarnym marmurowym barze obok butelki z korkiem, szklanki whisky i czerwonych róż.",
       "cover": {
-        "src": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-1536.webp",
-        "smallSrc": "/media/sweet-drink-nadruk/sweetdrink-tee-biala-768.webp",
+        "src": "/media/sweet-drink-nadruk/sweet-bar-1536.webp",
+        "smallSrc": "/media/sweet-drink-nadruk/sweet-bar-768.webp",
         "width": 1536,
         "height": 1030,
-        "alt": "Biała koszulka z czarnym nadrukiem czaszki w kształcie butelki z korkiem i napisem „sweet drink”, na jasnym tynku.",
-        "caption": "Nadruk na białej koszulce · wizualizacja projektu"
+        "alt": "Biała koszulka z czarną ilustracją Sweet Drink na czarnym marmurowym barze obok butelki z korkiem, szklanki whisky i czerwonych róż.",
+        "caption": "Koszulka na barze · wizualizacja projektu"
       },
       "published": true,
       "categories": [
@@ -2394,21 +2588,21 @@
       "slug": "american-choppers-nadruk",
       "name": "American Choppers",
       "category": "odzież i nadruki",
-      "image": "/media/american-choppers-nadruk/choppers-tee-czarna-2x.webp",
-      "imageSmall": "/media/american-choppers-nadruk/choppers-tee-czarna-768.webp",
-      "imageMedium": "/media/american-choppers-nadruk/choppers-tee-czarna-1536.webp",
+      "image": "/media/american-choppers-nadruk/choppers-garaz-2x.webp",
+      "imageSmall": "/media/american-choppers-nadruk/choppers-garaz-768.webp",
+      "imageMedium": "/media/american-choppers-nadruk/choppers-garaz-1536.webp",
       "imageWidth": 3072,
       "imageHeight": 2061,
-      "shareImage": "/media/american-choppers-nadruk/choppers-tee-czarna-1536.webp",
-      "imageCaption": "Nadruk na czarnej koszulce · wizualizacja projektu",
-      "alt": "Czarna koszulka z kolorowym nadrukiem American Choppers: orzeł ze skrzydłami w barwach flagi USA, motocykl i napis „Route 66 · Born to be wild”.",
+      "shareImage": "/media/american-choppers-nadruk/choppers-garaz-1536.webp",
+      "imageCaption": "Koszulka w garażu · wizualizacja projektu",
+      "alt": "Czarna koszulka American Choppers na posadzce garażu motocyklowego obok kasku, rękawic, kluczy i czerwonej bandany.",
       "cover": {
-        "src": "/media/american-choppers-nadruk/choppers-tee-czarna-1536.webp",
-        "smallSrc": "/media/american-choppers-nadruk/choppers-tee-czarna-768.webp",
+        "src": "/media/american-choppers-nadruk/choppers-garaz-1536.webp",
+        "smallSrc": "/media/american-choppers-nadruk/choppers-garaz-768.webp",
         "width": 1536,
         "height": 1030,
-        "alt": "Czarna koszulka z kolorowym nadrukiem American Choppers: orzeł ze skrzydłami w barwach flagi USA, motocykl i napis „Route 66 · Born to be wild”.",
-        "caption": "Nadruk na czarnej koszulce · wizualizacja projektu"
+        "alt": "Czarna koszulka American Choppers na posadzce garażu motocyklowego obok kasku, rękawic, kluczy i czerwonej bandany.",
+        "caption": "Koszulka w garażu · wizualizacja projektu"
       },
       "published": true,
       "categories": [
@@ -2600,16 +2794,30 @@
         {
           "slug": "historia",
           "label": "Historia",
-          "title": "Od auta\ndo sceny.",
-          "description": "Każdy obraz zaczyna się od samochodu. Dopiero gdy auto jest wierne oryginałowi, buduję wokół niego świat w stylistyce serialu.",
+          "title": "Jedna historia\nw ruchu.",
+          "description": "Trzy obrazy połączone jak kadry komiksu: najpierw samo auto, potem południe w Springfield, a na koniec noc pod sklepem.",
+          "image": {
+            "src": "/media/ilustracje-motoryzacyjne/simpsons-historia.webp",
+            "width": 1280,
+            "height": 800,
+            "alt": "Animowana historia: studium Mustanga przechodzi komiksowym rastrem w scenę z Bartem przed domem, kamera najeżdża, zapada noc i zapalają się światła sklepu.",
+            "caption": "Animowana historia · trzy rozdziały",
+            "kind": "visualization"
+          }
+        },
+        {
+          "slug": "komiks",
+          "label": "Komiks",
+          "title": "Cała strona\nkomiksu.",
+          "description": "Te same obrazy ułożone w czterech kadrach, z rozdziałami jak w zeszycie.",
           "image": {
             "src": "/media/ilustracje-motoryzacyjne/simpsons-komiks-1536.webp",
             "smallSrc": "/media/ilustracje-motoryzacyjne/simpsons-komiks-768.webp",
             "fullSrc": "/media/ilustracje-motoryzacyjne/simpsons-komiks-2x.webp",
             "width": 1536,
             "height": 1024,
-            "alt": "Plansza w formie komiksu z czterema kadrami: Mustang na szarym tle, Mustang z Bartem przed domem, zbliżenie i nocna scena pod sklepem.",
-            "caption": "Cztery kadry jednej historii · plansza",
+            "alt": "Plansza komiksu z czterema kadrami: Mustang, Mustang z Bartem przed domem, zbliżenie i nocna scena pod sklepem.",
+            "caption": "Strona komiksu",
             "kind": "visualization"
           }
         },
@@ -2652,16 +2860,6 @@
           "label": "Rozdział 3",
           "title": "Noc pod\nsklepem.",
           "description": "Na koniec zmiana pory dnia: ciepłe światło witryny kontra granatowe niebo i dwa muscle cary na parkingu.",
-          "image": {
-            "src": "/media/ilustracje-motoryzacyjne/warsztat-garaz-1536.webp",
-            "smallSrc": "/media/ilustracje-motoryzacyjne/warsztat-garaz-768.webp",
-            "fullSrc": "/media/ilustracje-motoryzacyjne/warsztat-garaz-2x.webp",
-            "width": 1536,
-            "height": 1030,
-            "alt": "Nocna scena w stylu Simpsonów: dwóch muscle carów przed budynkiem, w ramie na ceglanej ścianie warsztatu.",
-            "caption": "Nocna scena w warsztacie · wizualizacja projektu",
-            "kind": "visualization"
-          },
           "originals": [
             {
               "src": "/media/ilustracje-motoryzacyjne/warsztat-full.webp",

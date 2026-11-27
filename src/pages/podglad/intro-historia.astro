@@ -1,0 +1,355 @@
+---
+// Podgląd nowego intro: kwadrat z cząstek → logo → księga znaku → spalenie → plakat → składanie → wizytówka → kwadrat → merch.
+export const prerender = true;
+---
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>Podgląd intro NADX</title>
+<link rel="stylesheet" href="/fonts/fonts.css"/>
+<style>
+html,body{margin:0;height:100%;background:#050505;color:#fff;font-family:'Inter','NADX Sans',Arial,sans-serif;overflow:hidden}
+#gl{position:fixed;inset:0;width:100%;height:100%;display:block}
+.bar{position:fixed;left:0;right:0;height:7vh;background:#000;z-index:2;transition:height 1s cubic-bezier(.7,0,.2,1)}
+.bar.t{top:0}.bar.b{bottom:0}
+body.end .bar{height:0}
+#cap{position:fixed;left:5vw;bottom:calc(7vh + 22px);z-index:3;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#cfcfcf;display:flex;gap:14px;align-items:center;opacity:0;transition:opacity .35s}
+#cap.on{opacity:1}#cap i{display:block;width:26px;height:3px;background:#ffcc00}
+#cap b{color:#ffcc00;font-weight:700}
+#fin{position:fixed;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:9vh;pointer-events:none;opacity:0;transition:opacity 1s}
+body.end #fin{opacity:1;pointer-events:auto}
+#fin h1{font-size:clamp(30px,4.4vw,64px);letter-spacing:-.045em;line-height:1;margin:0 0 14px;text-align:center}
+#fin h1 span{color:#ffcc00}
+#fin p{color:#bdbdbd;margin:0 0 26px;font-size:16px}
+#fin .row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+#fin a,#fin button{font:inherit;font-weight:600;font-size:15px;min-height:46px;padding:12px 22px;border:0;cursor:pointer;background:#ffcc00;color:#000;text-decoration:none;display:inline-flex;align-items:center}
+#fin button{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+#prog{position:fixed;left:0;bottom:0;height:3px;background:#ffcc00;z-index:4;width:0}
+#hud{position:fixed;right:16px;top:calc(7vh + 12px);z-index:4;font:12px/1.4 monospace;color:#777}
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+<div class="bar t"></div><div class="bar b"></div>
+<div id="cap"><i></i><span></span></div>
+<div id="fin"><h1>Jeden znak. <span>Każdy nośnik.</span></h1><p>Logo, druk, odzież i oklejenia — od pomysłu do produkcji.</p><div class="row"><a href="/realizacje">Zobacz realizacje</a><button id="again" type="button">Odtwórz ponownie</button></div></div>
+<div id="prog"></div>
+<div id="hud" hidden></div>
+<script is:inline type="module">
+import * as THREE from '/nadx3d/lib/three.module.min.js';
+import {EffectComposer} from '/nadx3d/lib/addons/postprocessing/EffectComposer.js';
+import {RenderPass} from '/nadx3d/lib/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from '/nadx3d/lib/addons/postprocessing/UnrealBloomPass.js';
+import {OutputPass} from '/nadx3d/lib/addons/postprocessing/OutputPass.js';
+
+const $=s=>document.querySelector(s);
+const qs=new URLSearchParams(location.search);
+const FORCE=qs.has('t')?parseFloat(qs.get('t')):null;
+const cl=x=>Math.min(1,Math.max(0,x)),seg=(t,a,b)=>cl((t-a)/(b-a));
+const eio=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;};
+const eo=x=>1-Math.pow(1-cl(x),3), ei=x=>{x=cl(x);return x*x*x;};
+const eoBack=x=>{x=cl(x);const c1=1.4,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2);};
+const lerp=(a,b,t)=>a+(b-a)*t;
+const PI=Math.PI;
+
+// ---------------- oś czasu ----------------
+const T={gather0:.15,gather1:2.3,crisp0:2.35,crisp1:3.05,rot0:3.35,rot1:4.55,open0:4.8,open1:5.45,flip0:5.65,flip1:6.35,close0:6.6,close1:7.15,
+ burn0:7.3,burn1:9.2,f10:9.55,f11:10.1,f20:10.2,f21:10.75,f30:10.85,f31:11.4,card0:11.6,card1:12.35,sq0:12.95,sq1:13.65,merch0:13.9,STEP:1.02,NM:5,back0:19.1,back1:20.5,END:21.2};
+const CAPS=[[0,'01','Znak'],[3.3,'02','Księga znaku'],[7.25,'03','Plakat'],[11.55,'04','Wizytówka'],[13.8,'05','Merch i pojazdy'],[19.1,'','']];
+
+// ---------------- renderer ----------------
+const canvas=$('#gl');
+const gl=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
+gl.outputColorSpace=THREE.SRGBColorSpace;gl.toneMapping=THREE.ACESFilmicToneMapping;gl.toneMappingExposure=1.0;
+const DPR=Math.min(devicePixelRatio||1,2);gl.setPixelRatio(DPR);
+const scene=new THREE.Scene();
+const cam=new THREE.PerspectiveCamera(35,1,.05,120);
+const texL=new THREE.TextureLoader();
+const tex=(u,srgb=true)=>{const t=texL.load(u);if(srgb)t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=gl.capabilities.getMaxAnisotropy();return t;};
+const M='/media/intro/';
+const tLogo=tex(M+'logo.webp'),tCover=tex(M+'book-cover.webp'),tS1=tex(M+'book-spread1.webp'),tS2=tex(M+'book-spread2.webp'),tPoster=tex(M+'poster.webp'),tCard=tex(M+'card.webp'),tPaper=tex(M+'paper.webp');
+const half=(t,right)=>{const c=t.clone();c.repeat.set(.5,1);c.offset.set(right?.5:0,0);c.needsUpdate=true;return c;};
+
+// tło: ciemne studio z miękkim światłem
+const bgMat=new THREE.ShaderMaterial({depthWrite:false,depthTest:false,uniforms:{uA:{value:1},uT:{value:0},uWarm:{value:0}},
+ vertexShader:`varying vec2 v;void main(){v=uv;gl_Position=vec4(position.xy,.9999,1.);}`,
+ fragmentShader:`varying vec2 v;uniform float uA,uT,uWarm;
+ float h(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}
+ void main(){vec2 p=v-vec2(.5,.56);float r=length(p*vec2(1.6,1.));
+  vec3 c=mix(vec3(.085,.08,.075),vec3(.012),smoothstep(.0,.75,r));
+  c+=vec3(.9,.45,.12)*uWarm*.22*exp(-pow(length(p*vec2(1.2,1.6)),2.)*5.);
+  c*=uA;c+=(h(gl_FragCoord.xy+uT)-.5)/255.;gl_FragColor=vec4(c,1.);}`});
+const bg=new THREE.Mesh(new THREE.PlaneGeometry(2,2),bgMat);bg.frustumCulled=false;bg.renderOrder=-10;scene.add(bg);
+
+// światła
+scene.add(new THREE.HemisphereLight(0xfff4e6,0x1a1612,.9));
+const key=new THREE.DirectionalLight(0xffffff,2.2);key.position.set(2.5,3.5,5);scene.add(key);
+const rim=new THREE.DirectionalLight(0xffd28a,1.4);rim.position.set(-4,2,-3);scene.add(rim);
+const fireL=new THREE.PointLight(0xff7a1a,0,6,2);fireL.position.set(0,-.6,1.2);scene.add(fireL);
+
+// ---------------- 1. cząstki → kwadrat ----------------
+const N=innerWidth<800?22000:42000, LS=1.9; // rozmiar kwadratu (świat)
+const pos=new Float32Array(N*3),tgt=new Float32Array(N*3),col=new Float32Array(N*3),rnd=new Float32Array(N*4);
+for(let i=0;i<N;i++){
+ const r=2.2+Math.pow(Math.random(),.6)*7,a=Math.random()*PI*2,y=(Math.random()-.5)*(2+r*.5);
+ pos.set([Math.cos(a)*r,y,Math.sin(a)*r*.6-1.5],i*3);rnd.set([Math.random(),Math.random(),Math.random(),Math.random()],i*4);
+}
+const pgeo=new THREE.BufferGeometry();
+pgeo.setAttribute('position',new THREE.BufferAttribute(pos,3));pgeo.setAttribute('aT',new THREE.BufferAttribute(tgt,3));
+pgeo.setAttribute('aC',new THREE.BufferAttribute(col,3));pgeo.setAttribute('aR',new THREE.BufferAttribute(rnd,4));
+const pU={uG:{value:0},uTime:{value:0},uFade:{value:1},uPx:{value:600}};
+const pmat=new THREE.ShaderMaterial({uniforms:pU,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,
+ vertexShader:`attribute vec3 aT,aC;attribute vec4 aR;uniform float uG,uTime,uFade,uPx;varying vec3 vC;varying float vA;
+ void main(){float d=smoothstep(0.,1.,clamp((uG-aR.w*.35)/.65,0.,1.));
+  vec3 p=position;float a=uTime*.15*(.5+aR.y);p.xz=mat2(cos(a),-sin(a),sin(a),cos(a))*p.xz;
+  vec3 sw=vec3(sin(uTime*1.3+aR.x*6.28),cos(uTime*1.1+aR.y*6.28),sin(uTime*.9+aR.z*6.28));
+  p+=sw*.25;
+  vec3 q=mix(p,aT,d)+sw*.6*sin(d*3.1416)*(1.-d);
+  vC=mix(vec3(1.,.62,.15)*.6,aC*1.15,d);vA=(.35+.65*d)*uFade;
+  vec4 mv=modelViewMatrix*vec4(q,1.);gl_PointSize=max(1.2,mix(.03,.016,d)*uPx/-mv.z);gl_Position=projectionMatrix*mv;}`,
+ fragmentShader:`varying vec3 vC;varying float vA;void main(){vec2 c=gl_PointCoord-.5;float a=smoothstep(.5,.1,length(c))*vA;if(a<.01)discard;gl_FragColor=vec4(vC*a,a);}`});
+const pts=new THREE.Points(pgeo,pmat);pts.frustumCulled=false;scene.add(pts);
+// próbkowanie całego znaku (żółte tło + czarne litery jako ciemne cząstki)
+{const im=new Image();im.onload=()=>{const S=360,cv=document.createElement('canvas');cv.width=cv.height=S;const c=cv.getContext('2d');c.drawImage(im,0,0,S,S);
+ const d=c.getImageData(0,0,S,S).data;
+ for(let i=0;i<N;i++){const x=Math.random()*S|0,y=Math.random()*S|0,o=(y*S+x)*4;const dark=d[o]<80;
+  tgt.set([(x/S-.5)*LS,-(y/S-.5)*LS,(Math.random()-.5)*.02],i*3);
+  col.set(dark?[.05,.04,.03]:[1,.78,.05],i*3);}
+ pgeo.attributes.aT.needsUpdate=true;pgeo.attributes.aC.needsUpdate=true;};im.src=M+'logo.webp';}
+
+// ---------------- 2. znak → księga ----------------
+const G=new THREE.Group();scene.add(G);
+const BW=1.6,BH=2.262,BT=.24;
+const logoMat=new THREE.MeshStandardMaterial({map:tLogo,roughness:.55,metalness:0,transparent:true,opacity:0});
+const logoEdge=new THREE.MeshStandardMaterial({color:0xffcc00,roughness:.6});
+const logo=new THREE.Mesh(new THREE.BoxGeometry(1,1,1),[logoEdge,logoEdge,logoEdge,logoEdge,logoMat,logoEdge]);
+logo.scale.set(LS,LS,.02);G.add(logo);
+const bookRoot=new THREE.Group();bookRoot.rotation.y=PI;G.add(bookRoot);
+// shader spalania wstrzykiwany do materiałów księgi
+const burnU={uBurn:{value:0},uY0:{value:-BH/2},uY1:{value:BH/2}};
+const BURN_GLSL=`float bh(vec3 p){p=fract(p*.3183099+.1);p*=17.;return fract(p.x*p.y*p.z*(p.x+p.y+p.z));}
+ float bn(vec3 x){vec3 i=floor(x),f=fract(x);f=f*f*(3.-2.*f);return mix(mix(mix(bh(i),bh(i+vec3(1,0,0)),f.x),mix(bh(i+vec3(0,1,0)),bh(i+vec3(1,1,0)),f.x),f.y),mix(mix(bh(i+vec3(0,0,1)),bh(i+vec3(1,0,1)),f.x),mix(bh(i+vec3(0,1,1)),bh(i+vec3(1,1,1)),f.x),f.y),f.z);}
+ float bf(vec3 p){return bn(p)*.55+bn(p*2.1)*.3+bn(p*4.3)*.15;}`;
+function burnable(mat){mat.onBeforeCompile=sh=>{Object.assign(sh.uniforms,burnU);
+ sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vBP;').replace('#include <begin_vertex>','#include <begin_vertex>\nvBP=(modelMatrix*vec4(transformed,1.)).xyz;');
+ sh.fragmentShader=sh.fragmentShader.replace('#include <common>',`#include <common>\nvarying vec3 vBP;uniform float uBurn,uY0,uY1;\n${BURN_GLSL}`)
+ .replace('#include <map_fragment>',`#include <map_fragment>\nfloat yn=(vBP.y-uY0)/(uY1-uY0);float bv=yn*.85+bf(vBP*3.2)*.55;float th=uBurn*1.55-.12;
+  if(bv<th)discard;float edge=1.-smoothstep(0.,.07,bv-th);float charr=1.-smoothstep(.05,.2,bv-th);diffuseColor.rgb*=1.-charr*.85*step(.001,uBurn);`)
+ .replace('#include <emissivemap_fragment>',`#include <emissivemap_fragment>\ntotalEmissiveRadiance+=vec3(1.,.42,.06)*edge*6.*step(.001,uBurn)+vec3(1.,.8,.4)*pow(edge,6.)*8.*step(.001,uBurn);`);};
+ mat.customProgramCacheKey=()=>'burn';return mat;}
+const coverOut=burnable(new THREE.MeshStandardMaterial({map:tCover,roughness:.7}));
+const coverIn=burnable(new THREE.MeshStandardMaterial({map:half(tS1,false),roughness:.85}));
+const darkM=burnable(new THREE.MeshStandardMaterial({color:0x141414,roughness:.75}));
+const pageEdge=(()=>{const c=document.createElement('canvas');c.width=16;c.height=256;const x=c.getContext('2d');for(let i=0;i<256;i++){const v=225+((i*37)%23);x.fillStyle=`rgb(${v},${v-3},${v-10})`;x.fillRect(0,i,16,1);}const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(1,6);return t;})();
+const edgeM=burnable(new THREE.MeshStandardMaterial({map:pageEdge,roughness:.9}));
+const pageRightM=burnable(new THREE.MeshStandardMaterial({map:half(tS1,true),roughness:.85}));
+const book=new THREE.Group();bookRoot.add(book);
+const back=new THREE.Mesh(new THREE.BoxGeometry(BW,BH,.025),darkM);back.position.z=-BT/2;book.add(back);
+const block=new THREE.Mesh(new THREE.BoxGeometry(BW-.05,BH-.07,BT-.05),[edgeM,edgeM,edgeM,edgeM,pageRightM,edgeM]);block.position.set(.01,0,0);book.add(block);
+const spine=new THREE.Mesh(new THREE.BoxGeometry(.03,BH,BT),darkM);spine.position.set(-BW/2,0,0);book.add(spine);
+const hinge=new THREE.Group();hinge.position.set(-BW/2,0,BT/2);book.add(hinge);
+const cover=new THREE.Mesh(new THREE.BoxGeometry(BW,BH,.025),[darkM,darkM,darkM,darkM,coverOut,coverIn]);cover.position.set(BW/2,0,0);hinge.add(cover);
+// kartka przewracana (zgięcie liczone na CPU)
+const PG=new THREE.PlaneGeometry(BW-.06,BH-.08,40,1);PG.translate((BW-.06)/2,0,0);
+const pgBase=PG.attributes.position.array.slice();
+const pageFront=burnable(new THREE.MeshStandardMaterial({map:half(tS1,true),roughness:.85,side:THREE.FrontSide}));
+const pageBack=burnable(new THREE.MeshStandardMaterial({map:half(tS2,false),roughness:.85,side:THREE.BackSide}));
+const pageHinge=new THREE.Group();pageHinge.position.set(-BW/2+.02,0,BT/2-.015);book.add(pageHinge);
+const pageA=new THREE.Mesh(PG,pageFront),pageB=new THREE.Mesh(PG,pageBack);pageHinge.add(pageA,pageB);pageHinge.visible=false;
+pageBack.map.repeat.x=-.5;pageBack.map.offset.x=.5;pageBack.map.needsUpdate=true;
+function bendPage(p){const a=PG.attributes.position.array,w=BW-.06,n=41;const curl=Math.sin(p*PI)*1.1;
+ let px=0,pz=0;for(let i=0;i<n;i++){const s=i/(n-1);const ang=p*PI+curl*(s-.5)*.9*(1-p*.2);
+  if(i>0){const ds=w/(n-1);px+=Math.cos(ang)*ds;pz+=Math.sin(ang)*ds;}
+  for(const k of [i,i+n]){a[k*3]=px;a[k*3+2]=pz;}}
+ PG.attributes.position.needsUpdate=true;PG.computeVertexNormals();}
+// żar
+const EN=1600,eGeo=new THREE.BufferGeometry(),eA=new Float32Array(EN*4);
+for(let i=0;i<EN;i++)eA.set([Math.random(),Math.random(),Math.random(),Math.random()],i*4);
+eGeo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(EN*3),3));eGeo.setAttribute('aR',new THREE.BufferAttribute(eA,4));
+const eU={uT:{value:0},uB0:{value:T.burn0},uB1:{value:T.burn1},uPx:{value:600},uW:{value:BW},uH:{value:BH}};
+const eMat=new THREE.ShaderMaterial({uniforms:eU,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,
+ vertexShader:`attribute vec4 aR;uniform float uT,uB0,uB1,uPx,uW,uH;varying float vA;varying vec3 vC;
+ void main(){float born=mix(uB0,uB1-.2,aR.x);float age=uT-born;float life=.9+aR.y*1.1;
+  float k=clamp((born-uB0)/(uB1-uB0),0.,1.);float fy=-uH/2.+uH*clamp(k*1.55-.12,0.,1.)/.85;
+  vec3 p=vec3((aR.z-.5)*uW,fy,(aR.w-.5)*.3);
+  p.y+=age*(.6+aR.y*.9)+age*age*.3;p.x+=sin(age*3.+aR.z*20.)*.12*age;p.z+=age*.5*(aR.w-.3);
+  vA=step(0.,age)*(1.-smoothstep(life*.4,life,age))*step(uB0,uT);
+  vC=mix(vec3(1.,.35,.03),vec3(1.,.85,.5),aR.y);
+  vec4 mv=modelViewMatrix*vec4(p,1.);gl_PointSize=max(1.,(.012+aR.w*.02)*uPx/-mv.z);gl_Position=projectionMatrix*mv;}`,
+ fragmentShader:`varying float vA;varying vec3 vC;void main(){float a=smoothstep(.5,0.,length(gl_PointCoord-.5))*vA;if(a<.01)discard;gl_FragColor=vec4(vC*a*2.,a);}`});
+const embers=new THREE.Points(eGeo,eMat);embers.frustumCulled=false;bookRoot.add(embers);
+
+// ---------------- 3. plakat ze składaniem ----------------
+const holder=new THREE.Group();bookRoot.add(holder);
+const PW=BW,PH=BH;
+const fU={uF1:{value:0},uF2:{value:0},uF3:{value:0},uMap:{value:tPoster},uPaper:{value:tPaper},uOp:{value:1}};
+const posterMat=new THREE.ShaderMaterial({uniforms:fU,side:THREE.DoubleSide,transparent:true,
+ vertexShader:`uniform float uF1,uF2,uF3;varying vec2 vUv;varying vec3 vN;varying float vSh;
+ const float PI=3.14159265;
+ void main(){vUv=uv;vec3 p=position;vec3 n=vec3(0.,0.,1.);float H=${PH.toFixed(4)};
+  if(p.y>0.){float a=uF1*PI;float y=p.y,z=p.z;p.y=y*cos(a)-z*sin(a);p.z=y*sin(a)+z*cos(a)+.004*smoothstep(.5,1.,uF1);n=vec3(0.,-sin(a),cos(a));}
+  if(p.x>0.){float b=uF2*PI;float x=p.x,z=p.z;p.x=x*cos(b)-z*sin(b);p.z=x*sin(b)+z*cos(b)+.008*smoothstep(.5,1.,uF2);vec3 m=n;n.x=m.x*cos(b)-m.z*sin(b);n.z=m.x*sin(b)+m.z*cos(b);}
+  float L=-H/4.;if(p.y>L){float c=uF3*PI;float y=p.y-L,z=p.z;p.y=y*cos(c)-z*sin(c)+L;p.z=y*sin(c)+z*cos(c)+.012*smoothstep(.5,1.,uF3);vec3 m=n;n.y=m.y*cos(c)-m.z*sin(c);n.z=m.y*sin(c)+m.z*cos(c);}
+  vN=normalize(normalMatrix*n);gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.);}`,
+ fragmentShader:`uniform sampler2D uMap,uPaper;uniform float uOp;varying vec2 vUv;varying vec3 vN;
+ void main(){vec3 N=gl_FrontFacing?vN:-vN;float l=.55+.5*max(0.,dot(N,normalize(vec3(.35,.55,1.))));
+  vec3 c=gl_FrontFacing?texture2D(uMap,vUv).rgb:texture2D(uPaper,vUv).rgb;
+  c=pow(c,vec3(2.2))*l;gl_FragColor=vec4(pow(c,vec3(1./2.2)),uOp);}`});
+posterMat.toneMapped=false;
+const poster=new THREE.Mesh(new THREE.PlaneGeometry(PW,PH,48,72),posterMat);holder.add(poster);
+// wizytówka
+const CW=.874,CH=.566;
+const cardM=new THREE.MeshStandardMaterial({map:tCard,roughness:.5});
+const cardBackM=new THREE.MeshStandardMaterial({color:0xffcc00,roughness:.55});
+const card=new THREE.Mesh(new THREE.BoxGeometry(CW,CH,.012),[cardBackM,cardBackM,cardBackM,cardBackM,cardM,cardBackM]);card.rotation.y=PI;card.visible=false;holder.add(card);
+const sq=new THREE.Mesh(new THREE.BoxGeometry(1,1,.02),[logoEdge,logoEdge,logoEdge,logoEdge,new THREE.MeshStandardMaterial({map:tLogo,roughness:.55}),logoEdge]);sq.visible=false;holder.add(sq);
+
+// ---------------- 4. merch ----------------
+const MERCH=[['tee-czarna',[.417,.595,.295,.563]],['bluza',[.387,.596,.39,.706]],['tee-biala',[.421,.591,.318,.574]],['van',[.182,.404,.293,.625]],['truck',[.478,.661,.205,.483]]];
+const MR=10,MPW=3.6,MPH=2.4,MSP=.43;
+const panels=MERCH.map(([n,q],i)=>{const th=(i-(MERCH.length-1)/2)*MSP;
+ const m=new THREE.MeshBasicMaterial({map:tex(M+'merch-'+n+'.webp'),transparent:true,opacity:0,toneMapped:false});
+ const mesh=new THREE.Mesh(new THREE.PlaneGeometry(MPW,MPH),m);
+ const g=new THREE.Group();g.position.set(MR*Math.sin(th),0,-MR*Math.cos(th)+2);g.rotation.y=-th;g.add(mesh);scene.add(g);
+ const cx=((q[0]+q[1])/2-.5)*MPW,cy=(.5-(q[2]+q[3])/2)*MPH,s=(q[1]-q[0])*MPW;
+ const spot=new THREE.Vector3(cx,cy,.002);
+ return {g,m,th,spot,s};});
+const flyMat=new THREE.MeshStandardMaterial({map:tLogo,roughness:.5});
+const flyer=new THREE.Mesh(new THREE.BoxGeometry(1,1,.02),[logoEdge,logoEdge,logoEdge,logoEdge,flyMat,logoEdge]);flyer.visible=false;scene.add(flyer);
+
+// ---------------- post ----------------
+const composer=new EffectComposer(gl);composer.addPass(new RenderPass(scene,cam));
+const bloom=new UnrealBloomPass(new THREE.Vector2(512,512),.6,.5,.82);composer.addPass(bloom);composer.addPass(new OutputPass());
+
+let W=1,H=1,fit=1;
+function resize(){W=innerWidth;H=innerHeight;gl.setSize(W,H,false);composer.setSize(W,H);cam.aspect=W/H;
+ fit=Math.max(1,1.25/cam.aspect);cam.updateProjectionMatrix();
+ const visH=2*Math.tan(THREE.MathUtils.degToRad(cam.fov)/2);pU.uPx.value=H*DPR/visH;eU.uPx.value=H*DPR/visH;
+ bloom.setSize(W*DPR/2,H*DPR/2);}
+addEventListener('resize',resize);resize();
+
+// ---------------- kamera ----------------
+const cP=new THREE.Vector3(),cL=new THREE.Vector3(),tmp=new THREE.Vector3(),tmp2=new THREE.Vector3();
+function panelView(i,dist){const p=panels[i];const n=new THREE.Vector3(Math.sin(p.th),0,-Math.cos(p.th));
+ return {pos:p.g.position.clone().addScaledVector(n,-dist),look:p.g.position.clone()};}
+function camAt(t){
+ let px=0,py=0,pz=6.2,lx=0,ly=0,lz=0;
+ // 1: lekki najazd na kwadrat
+ pz=lerp(8.5,5.6,eio(seg(t,0,3.1)));
+ // 2: obrót + ruch wokół księgi
+ const o=Math.sin(seg(t,T.rot0,T.close1)*PI);px+=o*1.1;py+=o*.35;
+ if(t>T.open0&&t<T.close1+.3){pz=lerp(5.6,6.6,eio(seg(t,T.open0,T.open1)))-lerp(0,1,eio(seg(t,T.close0,T.close1)));lx=lerp(0,-.75,eio(seg(t,T.open0,T.open1)))*(1-eio(seg(t,T.close0,T.close1)));}
+ if(t>=T.close1+.3){pz=5.6;}
+ // 3: spalanie: zbliżenie od dołu
+ const b=eio(seg(t,T.burn0,T.burn0+.8))*(1-eio(seg(t,T.burn1-.4,T.burn1+.3)));pz-=b*.8;py-=b*.35;
+ // 4: składanie: kamera podąża za kurczącym się arkuszem
+ const f=eio(seg(t,T.f10,T.card1));pz=lerp(pz,3.0,f);
+ const cz=eio(seg(t,T.card1,T.sq0+.3));pz=lerp(pz,2.35,cz);
+ const orb=Math.sin(seg(t,T.f10,T.sq1)*PI)*.5;px+=orb;
+ const s1=eio(seg(t,T.sq0,T.sq1));pz=lerp(pz,3.2,s1);
+ let P=new THREE.Vector3(px,py,pz*fit),L=new THREE.Vector3(lx,ly,lz);
+ // 5: merch — szybkie przejścia między nośnikami
+ if(t>=T.sq1+.15){
+  const k=(t-T.merch0)/T.STEP;
+  if(t<T.back0){
+   const i=Math.max(0,Math.min(MERCH.length-1,Math.floor(k))),fr=k-Math.floor(k);
+   const prev=i===0?{pos:new THREE.Vector3(0,0,3.2*fit),look:new THREE.Vector3()}:panelView(i-1,4.1*fit);
+   const cur=panelView(i,4.1*fit);
+   const m=k<0?eio(seg(t,T.sq1+.15,T.merch0)):eio(cl(fr/.42));
+   const from=k<0?{pos:P,look:L}:prev;const to=k<0?panelView(0,4.1*fit):cur;
+   P=from.pos.clone().lerp(to.pos,m);L=from.look.clone().lerp(to.look,m);
+   P.y+=Math.sin(m*PI)*.25;
+  }else{
+   const last=panelView(MERCH.length-1,4.1*fit);const e=eio(seg(t,T.back0,T.back1));
+   P=last.pos.clone().lerp(new THREE.Vector3(0,.35,7.2*fit),e);L=last.look.clone().lerp(new THREE.Vector3(0,-.15,-6),e);
+  }
+ }
+ // ręczna kamera
+ P.x+=Math.sin(t*.7)*.04;P.y+=Math.sin(t*.53+1)*.03;
+ cam.position.copy(P);cam.lookAt(L);
+}
+
+// ---------------- scena w czasie t ----------------
+let capI=-1;
+function update(t){
+ pU.uTime.value=t;bgMat.uniforms.uT.value=t;eU.uT.value=t;
+ // 1
+ pU.uG.value=eio(seg(t,T.gather0,T.gather1));pU.uFade.value=1-seg(t,T.crisp0+.25,T.crisp1+.1);pts.visible=t<T.crisp1+.2;
+ logoMat.opacity=eo(seg(t,T.crisp0,T.crisp1));logo.visible=logoMat.opacity>0;
+ bloom.strength=lerp(.9,0,seg(t,T.crisp0,T.crisp1))+.0;bloom.threshold=.82;
+ // 2: obrót 180°, kwadrat → księga
+ const r=eio(seg(t,T.rot0,T.rot1));G.rotation.y=r*PI+Math.sin(r*PI)*.15;G.rotation.x=Math.sin(r*PI)*.12;
+ const morph=eio(seg(t,T.rot0,T.rot0+.6));
+ logo.scale.set(lerp(LS,BW,morph),lerp(LS,BH,morph),lerp(.02,BT,morph));
+ const showBook=G.rotation.y>PI/2;logo.visible=logo.visible&&!showBook;book.visible=showBook&&t<T.burn1+.1;
+ const pop=1+Math.sin(seg(t,T.rot1-.3,T.rot1+.25)*PI)*.06;G.scale.setScalar(pop);
+ // okładka i kartka
+ const open=eio(seg(t,T.open0,T.open1))*(1-eio(seg(t,T.close0,T.close1)));hinge.rotation.y=-open*PI*.985;
+ const fp=eio(seg(t,T.flip0,T.flip1));pageHinge.visible=t>T.flip0&&t<T.close0;if(pageHinge.visible)bendPage(fp);
+ pageRightM.map=t>=T.flip0+.05?(pageRightM.userData.s2||(pageRightM.userData.s2=half(tS2,true))):(pageRightM.userData.s1||(pageRightM.userData.s1=pageRightM.map));
+ // 3: spalanie
+ burnU.uBurn.value=seg(t,T.burn0,T.burn1);fireL.intensity=Math.sin(seg(t,T.burn0,T.burn1)*PI)*9*(0.85+.15*Math.sin(t*23.));
+ bgMat.uniforms.uWarm.value=Math.sin(seg(t,T.burn0,T.burn1)*PI);
+ embers.visible=t>T.burn0&&t<T.burn1+2.2;
+ if(t>T.burn0&&t<T.burn1)bloom.strength=.75;else if(t>=T.burn1)bloom.strength=Math.max(0,.75-(t-T.burn1)*1.2);
+ poster.visible=t>T.burn0&&t<T.card0+(T.card1-T.card0)/2;
+ // 4: składanie
+ fU.uF1.value=eio(seg(t,T.f10,T.f11));fU.uF2.value=eio(seg(t,T.f20,T.f21));fU.uF3.value=eio(seg(t,T.f30,T.f31));
+ const c1=[0,-PH/4],c2=[-PW/4,-PH/4],c3=[-PW/4,-PH*3/8];
+ let cx=lerp(0,c1[0],fU.uF1.value),cy=lerp(0,c1[1],fU.uF1.value);cx=lerp(cx,c2[0],fU.uF2.value);cy=lerp(cy,c2[1],fU.uF2.value);cx=lerp(cx,c3[0],fU.uF3.value);cy=lerp(cy,c3[1],fU.uF3.value);
+ poster.position.set(-cx,-cy,0);
+ // wizytówka: obrót, w połowie zamiana
+ const cr=eio(seg(t,T.card0,T.card1)),sr=eio(seg(t,T.sq0,T.sq1));
+ holder.rotation.y=cr*PI+sr*PI;holder.rotation.x=Math.sin(cr*PI)*.25-Math.sin(sr*PI)*.2;
+ const ph=t<T.card0+(T.card1-T.card0)/2?0:(t<T.sq0+(T.sq1-T.sq0)/2?1:2);
+ poster.visible=poster.visible&&ph===0;card.visible=ph===1;
+ const cs=1+.12*Math.sin(seg(t,T.card1-.15,T.card1+.4)*PI);card.scale.setScalar(cs);
+ sq.visible=ph===2&&t<T.sq1+.15;sq.scale.set(.9,.9,1);
+ // 5: merch
+ const mk=(t-T.merch0)/T.STEP;
+ panels.forEach((p,i)=>{const on=mk-i;p.m.opacity=t<T.sq1?0:Math.min(1,.18+.82*cl((on-.32)/.25)+ (t>T.back0?.0:0));if(t<T.merch0-.4)p.m.opacity=cl((t-(T.sq1-.2))/.6)*.18;});
+ flyer.visible=t>=T.sq1+.15&&t<T.merch0+T.STEP*MERCH.length-.4;
+ if(flyer.visible){
+  let i=Math.max(0,Math.floor(mk)),fr=mk-Math.floor(mk);if(mk<0){i=0;fr=0;}
+  const p=panels[Math.min(i,panels.length-1)];
+  const to=p.spot.clone().applyMatrix4(p.g.matrixWorld);
+  let from;
+  if(i===0){from=new THREE.Vector3(0,0,0);}else{const q=panels[i-1];from=q.spot.clone().applyMatrix4(q.g.matrixWorld);}
+  const e=mk<0?0:eio(cl(fr/.38));
+  flyer.position.copy(from).lerp(to,e);flyer.position.z+=Math.sin(e*PI)*.8;
+  const s0=i===0?.9:panels[i-1].s,s1=p.s;const s=lerp(s0,s1,e);flyer.scale.set(s,s,1);
+  const q0=new THREE.Quaternion().setFromEuler(new THREE.Euler(0,i===0?0:-panels[i-1].th,0)),q1=new THREE.Quaternion().setFromEuler(new THREE.Euler(0,-p.th,0));
+  flyer.quaternion.copy(q0).slerp(q1,e);flyer.rotation.z+=Math.sin(e*PI)*.6;
+  // po „przyklejeniu” znika (logo jest już na zdjęciu)
+  const stick=cl((fr-.38)/.12);flyMat.opacity=1;flyer.visible=!(mk>=0&&stick>=1&&fr<.999);
+  flyMat.transparent=true;flyMat.opacity=mk<0?1:1-stick;
+  if(mk>=MERCH.length-1+.4)flyer.visible=false;
+ }
+ bgMat.uniforms.uA.value=t>T.merch0?lerp(1,.55,seg(t,T.merch0,T.merch0+1)):1;
+ // napisy
+ let ci=0;for(let k=0;k<CAPS.length;k++)if(t>=CAPS[k][0])ci=k;
+ if(ci!==capI){capI=ci;const c=$('#cap');c.classList.remove('on');const [_,n,txt]=CAPS[ci];setTimeout(()=>{if(!txt)return;c.querySelector('span').innerHTML=`<b>${n}</b>&nbsp;&nbsp;${txt}`;c.classList.add('on');},180);}
+ document.body.classList.toggle('end',t>=T.back1-.2);
+ $('#prog').style.width=(cl(t/T.END)*100)+'%';
+ camAt(t);
+}
+
+// ---------------- pętla ----------------
+let t0=performance.now(),t=0,playing=true;
+const startAll=()=>{t0=performance.now();playing=true;document.body.classList.remove('end');};
+$('#again').addEventListener('click',startAll);
+const ready=Promise.all([tLogo,tCover,tS1,tS2,tPoster,tCard].map(x=>new Promise(r=>{if(x.image&&x.image.complete)r();else{const i=setInterval(()=>{if(x.image&&x.image.complete){clearInterval(i);r();}},50);}})));
+let frames=0,acc=0;
+function loop(now){requestAnimationFrame(loop);
+ if(FORCE!==null)t=FORCE;else if(playing){t=(now-t0)/1000;if(t>T.END){t=T.END;}}
+ update(t);composer.render();
+ if(qs.has('hud')){frames++;acc+=1;const h=$('#hud');h.hidden=false;h.textContent=t.toFixed(2)+'s';}
+}
+ready.then(()=>{t0=performance.now();requestAnimationFrame(loop);});
+window.__setT=v=>{update(v);composer.render();};
+</script>
+</body>
+</html>
