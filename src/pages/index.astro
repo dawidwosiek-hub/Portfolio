@@ -11,6 +11,27 @@ const stats=site.statistics.filter(s=>s.confirmed && s.value);
 const comparisons=site.comparisons.filter(c=>c.published);
 ---
 <Layout>
+<div id="nadx-intro" hidden><iframe title="Intro NADX" src="about:blank" allow="autoplay"></iframe><button type="button" class="intro-skip">Pomiń intro</button></div>
+<script is:inline>(()=>{const o=document.getElementById('nadx-intro');if(!o)return;
+let seen=false;try{seen=sessionStorage.getItem('nadxIntro')==='1'&&!location.search.includes('intro');}catch(e){}
+if(seen||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+o.hidden=false;document.documentElement.classList.add('intro-on');
+const f=o.querySelector('iframe');f.src='/podglad/intro-historia?embed';
+const close=()=>{try{sessionStorage.setItem('nadxIntro','1');}catch(e){}o.classList.add('out');document.documentElement.classList.remove('intro-on');setTimeout(()=>{o.remove();},900);};
+o.querySelector('.intro-skip').addEventListener('click',close);
+addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+addEventListener('message',e=>{if(e.origin===location.origin&&e.data==='nadx-intro-end')close();});
+setTimeout(()=>{if(document.body.contains(o)&&!o.dataset.ok)close();},12000);
+addEventListener('message',e=>{if(e.origin===location.origin&&e.data==='nadx-intro-ready')o.dataset.ok='1';});
+})();</script>
+<style is:global>
+#nadx-intro{position:fixed;inset:0;z-index:9999;background:#050505;transition:opacity .8s ease}
+#nadx-intro.out{opacity:0;pointer-events:none}
+#nadx-intro iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+#nadx-intro .intro-skip{position:absolute;right:20px;top:calc(7vh + 14px);z-index:2;font:600 14px/1 'Inter',Arial,sans-serif;color:#fff;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.45);padding:11px 16px;cursor:pointer}
+#nadx-intro .intro-skip:hover,#nadx-intro .intro-skip:focus-visible{background:#ffcc00;color:#000;border-color:#ffcc00;outline:none}
+html.intro-on,html.intro-on body{overflow:hidden}
+</style>
 <CineHero/>
 <div class="discipline-strip" aria-label="Specjalizacje"><span>GRAFIKA</span><i><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></i><span>FILM</span><i><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></i><span>PRODUKCJA</span><i><svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></i><span class="strip-note">JEDEN SPÓJNY WIZERUNEK.</span></div>
 {stats.length>0 && <section class="statistics section" aria-label="Potwierdzone statystyki">{stats.map(s=><div><strong>{s.value}</strong><span>{s.label}</span>{s.context&&<small>{s.context}</small>}</div>)}</section>}

@@ -211,12 +211,14 @@ const sq=new THREE.Mesh(new THREE.BoxGeometry(1,1,.02),[logoEdge,logoEdge,logoEd
 const MERCH=[['tee-czarna',[.449,.5518,.3125,.4658]],['bluza',[.4297,.5664,.3809,.5859]],['tee-biala',[.4509,.5498,.3331,.4805]],['tee-wieszak',[.3877,.4806,.3626,.5012]],['van',[.2083,.3385,.3223,.5176]],['truck',[.5078,.6315,.2539,.4419]]];
 const MR=10,MPW=3.6,MPH=2.4,MSP=.43;
 const panels=MERCH.map(([n,q],i)=>{const th=(i-(MERCH.length-1)/2)*MSP;
- const m=new THREE.MeshBasicMaterial({map:tex(M+'merch-'+n+'.webp'),transparent:true,opacity:0,toneMapped:false});
+ const m=new THREE.MeshBasicMaterial({map:tex(M+'merch-'+n+'-0.webp?v=3'),transparent:true,opacity:0,toneMapped:false});
+ const m2=new THREE.MeshBasicMaterial({map:tex(M+'merch-'+n+'.webp?v=3'),transparent:true,opacity:0,toneMapped:false,depthWrite:false});
  const mesh=new THREE.Mesh(new THREE.PlaneGeometry(MPW,MPH),m);
- const g=new THREE.Group();g.position.set(MR*Math.sin(th),0,-MR*Math.cos(th)+2);g.rotation.y=-th;g.add(mesh);scene.add(g);
+ const mesh2=new THREE.Mesh(new THREE.PlaneGeometry(MPW,MPH),m2);mesh2.position.z=.001;
+ const g=new THREE.Group();g.position.set(MR*Math.sin(th),0,-MR*Math.cos(th)+2);g.rotation.y=-th;g.add(mesh);g.add(mesh2);scene.add(g);
  const cx=((q[0]+q[1])/2-.5)*MPW,cy=(.5-(q[2]+q[3])/2)*MPH,s=(q[1]-q[0])*MPW;
  const spot=new THREE.Vector3(cx,cy,.002);
- return {g,m,th,spot,s};});
+ return {g,m,m2,th,spot,s};});
 const flyMat=new THREE.MeshStandardMaterial({map:tLogo,roughness:.5});
 const flyer=new THREE.Mesh(new THREE.BoxGeometry(1,1,.02),[logoEdge,logoEdge,logoEdge,logoEdge,flyMat,logoEdge]);flyer.visible=false;scene.add(flyer);
 
@@ -310,7 +312,8 @@ function update(t){
  sq.visible=ph===2&&t<T.sq1+.15;sq.scale.set(.9,.9,1);
  // 5: merch
  const mk=(t-T.merch0)/T.STEP;
- panels.forEach((p,i)=>{const on=mk-i;p.m.opacity=t<T.sq1?0:Math.min(1,.18+.82*cl((on-.32)/.25)+ (t>T.back0?.0:0));if(t<T.merch0-.4)p.m.opacity=cl((t-(T.sq1-.2))/.6)*.18;});
+ panels.forEach((p,i)=>{const on=mk-i;p.m.opacity=t<T.sq1?0:Math.min(1,.18+.82*cl((on-.32)/.25)+ (t>T.back0?.0:0));if(t<T.merch0-.4)p.m.opacity=cl((t-(T.sq1-.2))/.6)*.18;
+  const pr=t>=T.back0?1:cl((on-.38)/.12);p.m2.opacity=p.m.opacity*pr;});
  flyer.visible=t>=T.sq1+.15&&t<T.merch0+T.STEP*MERCH.length-.4;
  if(flyer.visible){
   let i=Math.max(0,Math.floor(mk)),fr=mk-Math.floor(mk);if(mk<0){i=0;fr=0;}
@@ -338,17 +341,18 @@ function update(t){
 }
 
 // ---------------- pętla ----------------
-let t0=performance.now(),t=0,playing=true;
-const startAll=()=>{t0=performance.now();playing=true;document.body.classList.remove('end');};
+let t0=performance.now(),t=0,playing=true,sent=false;const EMBED=qs.has('embed');
+if(EMBED){document.querySelectorAll('#fin a').forEach(a=>a.target='_top');}
+const startAll=()=>{t0=performance.now();playing=true;sent=false;document.body.classList.remove('end');};
 $('#again').addEventListener('click',startAll);
 const ready=Promise.all([tLogo,tCover,tS1,tS2,tPoster,tCard].map(x=>new Promise(r=>{if(x.image&&x.image.complete)r();else{const i=setInterval(()=>{if(x.image&&x.image.complete){clearInterval(i);r();}},50);}})));
 let frames=0,acc=0;
 function loop(now){requestAnimationFrame(loop);
- if(FORCE!==null)t=FORCE;else if(playing){t=(now-t0)/1000;if(t>T.END){t=T.END;}}
+ if(FORCE!==null)t=FORCE;else if(playing){t=(now-t0)/1000;if(t>T.END){t=T.END;if(EMBED&&!sent){sent=true;setTimeout(()=>parent.postMessage('nadx-intro-end','*'),1600);}}}
  update(t);composer.render();
  if(qs.has('hud')){frames++;acc+=1;const h=$('#hud');h.hidden=false;h.textContent=t.toFixed(2)+'s';}
 }
-ready.then(()=>{t0=performance.now();requestAnimationFrame(loop);});
+ready.then(()=>{t0=performance.now();requestAnimationFrame(loop);if(EMBED)parent.postMessage('nadx-intro-ready','*');});
 window.__setT=v=>{update(v);composer.render();};
 </script>
 </body>
