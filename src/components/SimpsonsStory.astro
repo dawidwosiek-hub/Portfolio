@@ -1,0 +1,177 @@
+---
+// Obrazy w stylu Simpsonów: historia przewijana jak komiks. Wszystkie warstwy są wyrenderowane z oryginalnych plików wektorowych autora.
+import type {Project} from '../lib/content';
+interface Props {project:Project}
+const {project:p}=Astro.props;
+const S='/media/ilustracje-motoryzacyjne/story/';
+const frames=Array.from({length:28},(_,i)=>`${S}ms-${String(i).padStart(2,'0')}.webp`);
+const originals=[
+ {src:'/media/ilustracje-motoryzacyjne/mustang-full.webp',small:'/media/ilustracje-motoryzacyjne/mustang-768.webp',w:2400,h:1697,t:'Studium auta',d:'Shelby GT500 narysowany z boku, od sylwetki po felgi i refleksy.'},
+ {src:'/media/ilustracje-motoryzacyjne/obraz-mustang-full.webp',small:'/media/ilustracje-motoryzacyjne/obraz-mustang-768.webp',w:2000,h:1414,t:'Południe w Springfield',d:'To samo auto w zieleni, przed fioletowym domem, z Bartem.'},
+ {src:'/media/ilustracje-motoryzacyjne/warsztat-full.webp',small:'/media/ilustracje-motoryzacyjne/warsztat-768.webp',w:2400,h:1697,t:'Noc pod sklepem',d:'Dwa muscle cary na parkingu i ciepłe światło witryny.'},
+];
+---
+<article class="simp case-study">
+ <header class="simp-intro">
+  <a class="breadcrumb" href="/realizacje">← Wszystkie realizacje</a>
+  <div class="simp-intro-grid">
+   <div><span class="simp-k">Ilustracja / projekt własny</span><h1>Obrazy w stylu Simpsonów<span aria-hidden="true">.</span></h1></div>
+   <div><p>Rysuję klasyczne samochody z dokładnością do detalu i wstawiam je w świat jak z serialu. Przewiń w dół: auto narysuje się od zera, wjedzie do Springfield, a potem zapadnie noc.</p><span class="simp-credit">Projekt i rysunek: Dawid Wosiek / NADX</span></div>
+  </div>
+ </header>
+
+ <section class="simp-story" id="simp-story" aria-label="Historia obrazów w ruchu">
+  <div class="simp-sticky">
+   <div class="simp-stage" id="simp-stage">
+    <canvas class="simp-ms" id="simp-ms" width="1600" height="1131" aria-hidden="true"></canvas>
+    <div class="simp-day" id="simp-day" aria-hidden="true">
+     <img class="simp-bg" src={`${S}day-bg.webp`} alt="" width="2400" height="1697" decoding="async"/>
+     <img class="simp-clouds" id="simp-clouds" src={`${S}day-clouds.webp`} alt="" decoding="async" style="left:3.929%;top:1.566%;width:91.893%"/>
+     <div class="simp-lines" id="simp-lines"><i></i><i></i><i></i><i></i></div>
+     <img class="simp-car" id="simp-car" src={`${S}day-car.webp`} alt="" decoding="async" style="left:31.5%;top:61.263%;width:64.321%"/>
+     <img class="simp-bart" id="simp-bart" src={`${S}day-bart.webp`} alt="" decoding="async" style="left:66.643%;top:67.323%;width:7.143%"/>
+     <div class="simp-bubble" id="simp-bubble">Niezła bryka, co?</div>
+     <div class="simp-dusk" id="simp-dusk"></div>
+    </div>
+    <div class="simp-dots" id="simp-dots" aria-hidden="true"></div>
+    <div class="simp-night" id="simp-night" aria-hidden="true">
+     <img src={`${S}night.webp`} alt="" width="2400" height="1697" decoding="async"/>
+     <div class="simp-glow" id="simp-glow"></div>
+     <div class="simp-stars"><i style="left:12%;top:9%"></i><i style="left:27%;top:17%"></i><i style="left:44%;top:6%"></i><i style="left:61%;top:14%"></i><i style="left:78%;top:8%"></i><i style="left:90%;top:20%"></i><i style="left:35%;top:25%"></i><i style="left:70%;top:27%"></i></div>
+    </div>
+    <div class="simp-wall" id="simp-wall" aria-hidden="true"><img id="simp-wall-img" src="/media/ilustracje-motoryzacyjne/warsztat-garaz-2x.webp" alt="" width="3072" height="2061" decoding="async"/></div>
+    <div class="simp-cap" id="simp-cap" aria-live="polite"><b id="simp-cap-n">1</b><span id="simp-cap-t">Najpierw auto</span></div>
+    <ol class="simp-prog" aria-hidden="true"><li></li><li></li><li></li><li></li></ol>
+   </div>
+   <p class="simp-hint" id="simp-hint">Przewijaj, żeby rysować dalej</p>
+  </div>
+ </section>
+
+ <section class="simp-chapters" aria-labelledby="simp-orig-title">
+  <div class="simp-head"><h2 id="simp-orig-title">Trzy obrazy, jedna historia.</h2><p>Oryginalne pliki w pełnej rozdzielczości. Kliknij, żeby obejrzeć detale.</p></div>
+  <div class="simp-grid">
+   {originals.map((o,i)=><a class="simp-card" href={o.src} target="_blank" rel="noopener"><span class="simp-num">{i+1}</span><img src={o.small} alt={`${o.t}: ${o.d}`} width="768" height={Math.round(768*o.h/o.w)} loading="lazy"/><h3>{o.t}</h3><p>{o.d}</p></a>)}
+  </div>
+ </section>
+
+ <section class="simp-scope" aria-labelledby="simp-scope-title">
+  <div><h2 id="simp-scope-title">Jak powstają.</h2><p>{p.solution}</p></div>
+  <ul>{(p.scopeItems||[]).map((s,i)=><li><span>{String(i+1).padStart(2,'0')}</span>{s}</li>)}</ul>
+ </section>
+</article>
+<section class="section cta"><h2>Chcesz swoje auto<br/>w takim <em>kadrze?</em></h2><a class="button yellow" href={`/kontakt?projekt=${encodeURIComponent(p.name)}`} data-track="portfolio_contact" data-project={p.slug}>Napisz do mnie <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.8"/></svg></a></section>
+
+<script type="application/json" id="simp-frames" set:html={JSON.stringify(frames)}></script>
+<script is:inline>(()=>{
+const $=id=>document.getElementById(id);
+const story=$('simp-story'),stage=$('simp-stage'),cv=$('simp-ms'),cx=cv.getContext('2d');
+const day=$('simp-day'),car=$('simp-car'),bart=$('simp-bart'),bub=$('simp-bubble'),clouds=$('simp-clouds'),lines=$('simp-lines'),dusk=$('simp-dusk'),dots=$('simp-dots');
+const night=$('simp-night'),glow=$('simp-glow'),wall=$('simp-wall'),wimg=$('simp-wall-img'),cap=$('simp-cap'),capN=$('simp-cap-n'),capT=$('simp-cap-t'),hint=$('simp-hint');
+const prog=[...story.querySelectorAll('.simp-prog li')];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const F=JSON.parse($('simp-frames').textContent).map(u=>{const i=new Image();i.decoding='async';i.src=u;return i;});
+const cl=x=>Math.max(0,Math.min(1,x)),seg=(p,a,b)=>cl((p-a)/(b-a)),lerp=(a,b,t)=>a+(b-a)*t;
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2,eo=x=>1-Math.pow(1-x,3);
+const back=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2);};
+let lastF=-1;
+function drawF(i){if(i===lastF)return;const im=F[i];if(!im.complete||!im.naturalWidth){return;}lastF=i;cx.drawImage(im,0,0,cv.width,cv.height);}
+const CH=[[0,'1','Najpierw auto'],[.3,'2','Południe w Springfield'],[.62,'3','Noc pod sklepem'],[.84,'4','Na ścianie warsztatu']];
+let capI=-1;
+function frame(now){
+ const r=story.getBoundingClientRect(),H=story.offsetHeight-innerHeight;
+ let p=RM?1:cl(-r.top/Math.max(1,H));
+ const t=now/1000,W=stage.clientWidth,SH=stage.clientHeight;
+ // 1: rysowanie auta
+ drawF(Math.min(F.length-1,Math.floor(seg(p,.02,.24)*(F.length-.01))));
+ const out=eio(seg(p,.26,.34));cv.style.transform=`translateX(${out*115}%) skewX(${-out*12}deg)`;cv.style.opacity=1-seg(p,.3,.34);
+ // 2: wejście do Springfield (rastrowe koło)
+ const wipe=eo(seg(p,.27,.36));day.style.clipPath=`circle(${wipe*80}% at 50% 58%)`;dots.style.opacity=Math.sin(seg(p,.27,.37)*Math.PI)*.9;dots.style.transform=`scale(${1+wipe*.6})`;
+ const drive=eo(seg(p,.33,.46));const dx=(1-drive)*-(.315+.66)*W;const bounce=drive<1?Math.sin(t*28)*1.2*(1-drive):0;
+ car.style.transform=`translate(${dx}px,${bounce}px)`;
+ lines.style.opacity=drive>0&&drive<1?(1-drive):0;lines.style.transform=`translateX(${dx}px)`;
+ const bp=seg(p,.47,.53);bart.style.transform=`scale(${bp>0?back(bp):0})`;
+ const bb=seg(p,.52,.56)*(1-seg(p,.6,.63));bub.style.opacity=bb;bub.style.transform=`scale(${.6+.4*eo(bb)})`;
+ clouds.style.transform=`translateX(${Math.sin(t*.08)*2.2}%)`;
+ const zoom=eio(seg(p,.5,.6))*(1-eio(seg(p,.62,.7)));day.style.transform=`scale(${1+zoom*.35})`;day.style.transformOrigin='70% 72%';
+ // 3: zmierzch i noc
+ dusk.style.opacity=seg(p,.62,.7)*.85;
+ night.style.opacity=seg(p,.68,.74);
+ glow.style.opacity=(.55+.25*Math.sin(t*7)*Math.sin(t*2.3)+(Math.sin(t*31)>.97?-.35:0))*seg(p,.72,.78);
+ night.style.transform=`scale(${1.12-.12*eo(seg(p,.68,.8))})`;
+ // 4: odjazd kamery do warsztatu
+ const fin=seg(p,.84,.98),fe=eio(fin);
+ wall.style.opacity=seg(p,.84,.87);
+ const fw=.3382,fx=.3309+.3382/2,fy=.2356+.3316/2,ar=3072/2061;
+ const w0=W/fw,w1=Math.max(W,SH*ar),w=lerp(w0,w1,fe),h=w/ar;
+ const cx0=W/2-fx*w,cy0=SH/2-fy*h;
+ wimg.style.width=w+'px';wimg.style.height=h+'px';wimg.style.transform=`translate(${cx0}px,${cy0}px)`;
+ // podpisy
+ let ci=0;for(let k=0;k<CH.length;k++)if(p>=CH[k][0])ci=k;
+ if(ci!==capI){capI=ci;cap.classList.remove('pop');void cap.offsetWidth;cap.classList.add('pop');capN.textContent=CH[ci][1];capT.textContent=CH[ci][2];prog.forEach((li,i)=>li.classList.toggle('on',i<=ci));}
+ hint.style.opacity=p<.02?1:0;
+ requestAnimationFrame(frame);
+}
+F[0].onload=()=>drawF(0);
+requestAnimationFrame(frame);
+})();</script>
+
+<style>
+ .simp{--y:#ffd521;--navy:#0f1630;background:#fff}
+ .simp-intro{width:90%;max-width:1320px;margin:auto;padding:45px 0 60px}
+ .simp-intro-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:end}
+ .simp-intro h1{font-size:clamp(3.4rem,7.4vw,7.6rem);letter-spacing:-.07em;line-height:.9}
+ .simp-intro h1 span{color:#d9a800}
+ .simp-k{display:inline-block;background:var(--y);padding:6px 12px;font-size:.78rem;font-weight:700;margin-bottom:22px;border:2px solid #111;transform:rotate(-2deg)}
+ .simp-intro p{font-size:1.05rem;line-height:1.6}
+ .simp-credit{display:block;margin-top:20px;color:var(--muted);font-size:.72rem}
+ .simp-story{height:640vh;position:relative;background:var(--y);background-image:radial-gradient(#e2b800 1.4px,transparent 1.6px);background-size:14px 14px}
+ .simp-sticky{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+ .simp-stage{position:relative;width:min(92vw,calc((100svh - 90px)*1.4142));aspect-ratio:1.4142;background:#555;border:6px solid #111;box-shadow:14px 14px 0 #111;overflow:hidden;transform:rotate(-.6deg)}
+ .simp-stage>*{position:absolute}
+ .simp-ms{inset:0;width:100%;height:100%;background:#555}
+ .simp-day{inset:0;clip-path:circle(0% at 50% 58%);will-change:clip-path,transform}
+ .simp-day img{position:absolute;display:block;max-width:none;height:auto}
+ .simp-bg{inset:0;width:100%;height:100%}
+ .simp-car,.simp-clouds,.simp-bart{will-change:transform}
+ .simp-bart{transform-origin:50% 100%;transform:scale(0)}
+ .simp-lines{position:absolute;left:0;top:64%;width:34%;height:20%;opacity:0}
+ .simp-lines i{position:absolute;right:0;height:5px;border-radius:3px;background:#fff;opacity:.85}
+ .simp-lines i:nth-child(1){top:10%;width:70%}.simp-lines i:nth-child(2){top:35%;width:95%}.simp-lines i:nth-child(3){top:60%;width:60%}.simp-lines i:nth-child(4){top:85%;width:80%}
+ .simp-bubble{position:absolute;left:58%;top:46%;background:#fff;border:3px solid #111;border-radius:22px;padding:10px 16px;font-weight:800;font-size:clamp(.8rem,1.5vw,1.25rem);letter-spacing:-.02em;opacity:0;transform-origin:70% 100%}
+ .simp-bubble:after{content:'';position:absolute;right:22%;bottom:-16px;border:9px solid transparent;border-top:14px solid #111}
+ .simp-dusk{position:absolute;inset:0;background:linear-gradient(#0a1238,#1a1f52 60%,#141832);mix-blend-mode:multiply;opacity:0}
+ .simp-dots{inset:-20%;pointer-events:none;opacity:0;background-image:radial-gradient(#111 32%,transparent 34%);background-size:22px 22px;mix-blend-mode:multiply}
+ .simp-night{inset:0;opacity:0}
+ .simp-night img{width:100%;height:100%;display:block}
+ .simp-glow{position:absolute;left:24%;top:44%;width:26%;height:32%;background:radial-gradient(closest-side,#ffbe5c,#ff9d2e80 55%,transparent);mix-blend-mode:screen;opacity:0}
+ .simp-stars i{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 6px #fff;animation:tw 2.4s ease-in-out infinite}
+ .simp-stars i:nth-child(2n){animation-delay:.8s}.simp-stars i:nth-child(3n){animation-delay:1.5s}
+ @keyframes tw{50%{opacity:.15}}
+ .simp-wall{inset:0;opacity:0;overflow:hidden;background:#111}
+ .simp-wall img{position:absolute;left:0;top:0;max-width:none;transform-origin:0 0}
+ .simp-cap{left:18px;top:16px;display:flex;align-items:center;gap:10px;background:var(--y);border:3px solid #111;padding:8px 14px 8px 8px;font-weight:800;font-size:clamp(.8rem,1.4vw,1.15rem);letter-spacing:-.02em;box-shadow:4px 4px 0 #111;z-index:3}
+ .simp-cap b{display:grid;place-items:center;width:1.9em;height:1.9em;background:#111;color:var(--y);border-radius:50%;font-size:.85em}
+ .simp-cap.pop{animation:pop .45s cubic-bezier(.3,1.6,.5,1)}
+ @keyframes pop{0%{transform:scale(.6) rotate(-4deg)}100%{transform:none}}
+ .simp-prog{right:16px;bottom:14px;display:flex;gap:7px;list-style:none;margin:0;padding:0;z-index:3}
+ .simp-prog li{width:28px;height:7px;background:#ffffff70;border:2px solid #111}
+ .simp-prog li.on{background:var(--y)}
+ .simp-hint{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-weight:700;font-size:.85rem;color:#111;max-width:none;transition:opacity .4s}
+ .simp-chapters,.simp-scope{width:90%;max-width:1320px;margin:auto;padding:90px 0}
+ .simp-head{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;margin-bottom:44px}
+ .simp-head h2{font-size:clamp(2.3rem,4vw,4rem)}
+ .simp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+ .simp-card{position:relative;display:block;border:3px solid #111;box-shadow:7px 7px 0 #111;background:#fff;transition:transform .2s,box-shadow .2s}
+ .simp-card:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 #111}
+ .simp-card img{width:100%;aspect-ratio:1.414;object-fit:cover;border-bottom:3px solid #111}
+ .simp-card h3{font-size:1.35rem;padding:18px 18px 6px}
+ .simp-card p{font-size:.88rem;padding:0 18px 20px}
+ .simp-num{position:absolute;left:-12px;top:-12px;width:40px;height:40px;display:grid;place-items:center;background:var(--y);border:3px solid #111;border-radius:50%;font-weight:800;z-index:1}
+ .simp-scope{display:grid;grid-template-columns:1fr 1fr;gap:8%;border-top:1px solid var(--line)}
+ .simp-scope h2{margin-bottom:24px}
+ .simp-scope ul{list-style:none;padding:0;margin:0}
+ .simp-scope li{display:flex;gap:22px;padding:18px 0;border-bottom:1px solid var(--line);font-weight:600}
+ .simp-scope li span{color:var(--muted);font-size:.75rem;padding-top:4px}
+ @media (max-width:860px){.simp-intro-grid,.simp-head,.simp-scope{grid-template-columns:1fr;gap:24px}.simp-grid{grid-template-columns:1fr}.simp-story{height:520vh}.simp-stage{box-shadow:7px 7px 0 #111;border-width:4px}}
+ @media (prefers-reduced-motion:reduce){.simp-story{height:auto}.simp-sticky{position:relative;height:auto;padding:40px 0}}
+</style>
