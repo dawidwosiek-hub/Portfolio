@@ -3,7 +3,7 @@ import type {ProjectMedia} from '../lib/content';
 interface Props {media:ProjectMedia;priority?:boolean;sizes?:string}
 const {media,priority=false,sizes='(max-width: 760px) 88vw, 90vw'}=Astro.props;
 // cache-busting: bump when media files are regenerated under the same name
-const V='20261123e';
+const V='20261127a';
 const u=(x?:string)=>x&&x.startsWith('/media/')?`${x}?v=${V}`:x;
 ---
 <img src={u(media.src)} srcset={media.smallSrc||media.mediumSrc?[media.smallSrc?`${u(media.smallSrc)} 768w`:null,media.mediumSrc?`${u(media.mediumSrc)} 1536w`:null,`${u(media.src)} ${media.width || 1536}w`].filter(Boolean).join(', '):undefined} sizes={media.smallSrc||media.mediumSrc?sizes:undefined} alt={media.alt} width={media.width || 1600} height={media.height || 1000} loading={priority?'eager':'lazy'} fetchpriority={priority?'high':undefined} decoding="async"/>
