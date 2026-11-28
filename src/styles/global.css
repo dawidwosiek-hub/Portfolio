@@ -30,3 +30,8 @@
 
 .project.with-print-mockup .project-image{background:transparent}
 .project.with-print-mockup .project-image img{object-fit:contain;background:#fff}
+.case-film{margin:0 auto 40px;position:relative}
+.case-film video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#0b0b0b;display:block}
+.case-film figcaption{display:flex;gap:14px;align-items:center;margin-top:12px;font-size:.8rem;color:var(--muted)}
+.case-film figcaption span{background:var(--ink);color:var(--yellow);font-weight:700;padding:4px 9px;font-size:.72rem}
+@media (prefers-reduced-motion:reduce){.case-film video{display:none}.case-film{display:none}}
