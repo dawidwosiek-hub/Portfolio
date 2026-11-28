@@ -18,8 +18,6 @@ interface Props {project:Project}
 const {project:p}=Astro.props;
 const details=p.gallery.filter(image=>image.kind==='visualization');
 const galleryNumber=(p.logo?1:0)+(p.identity?1:0)+1;
-const FILMS=['mm-trans-plus-logo','american-choppers-nadruk','sweet-drink-nadruk','super-rally-50-grafika','olsen-odziez-firmowa','marta-debata-o-edukacji','alterclothes-nadruki','kot-egipski-ilustracja'];
-const film=FILMS.includes(Astro.params.slug as string)?`/media/cine/p/${Astro.params.slug}`:null;
 ---
 <Layout title={`${p.name} — ${p.logo?'logo i identyfikacja marki':p.category} | NADX`} description={p.scope} bodyClass="project-page" image={p.shareImage || p.image}>
 {p.slug==='shiro-logo-i-wizytowki'?<ShiroCase project={p}/>:p.slug==='ilustracje-motoryzacyjne'?<SimpsonsStory project={p}/>:p.slug==='odwroceni-projekty-oklejen'?<WrapProcess/>:<>
@@ -35,7 +33,6 @@ const film=FILMS.includes(Astro.params.slug as string)?`/media/cine/p/${Astro.pa
 </section>}
 {p.identity&&<div class="case-container"><ProjectIdentity identity={p.identity} number={p.logo?2:1}/></div>}
 {p.logo&&<div class="case-container"><ProjectContext project={p}/></div>}
-{film&&<figure class="case-film case-container"><video src={`${film}.mp4`} poster={`${film}.jpg`} muted loop playsinline autoplay preload="metadata" aria-label={`Projekt ${p.name} w ruchu`}></video><figcaption><span>W ruchu</span>Ujęcie filmowe z gotowym projektem na nośniku.</figcaption></figure>}
 <section class="case-print case-container" aria-labelledby="gallery-title"><div class="case-rule"><span class="case-rule-label">{String(galleryNumber).padStart(2,'0')} / {p.logo?'Materiały drukowane':'Prezentacja projektu'}</span></div><div class="case-print-heading"><h2 id="gallery-title">{p.galleryTitle || 'Projekt w szczegółach.'}</h2>{p.galleryIntro&&<p>{p.galleryIntro}</p>}</div><figure class:list={["case-hero",{"case-cards":p.presentation==='business-cards'}]}>{p.presentation==='business-cards'?<BusinessCards cards={p.gallery.filter(image=>image.kind==='original')}/>:p.apparel?<ApparelPresentation presentation={p.apparel} priority={!p.logo}/>:p.mockup?<PrintMockup mockup={p.mockup} priority={!p.logo}/>:<ProjectImage media={{src:p.image,smallSrc:p.imageSmall,mediumSrc:p.imageMedium,alt:p.alt,width:p.imageWidth,height:p.imageHeight}} priority={!p.logo} sizes="(max-width: 760px) 88vw, min(85vw, 1120px)"/>}{p.imageCaption&&<figcaption>{p.imageCaption}</figcaption>}</figure>{p.gallery.length>0&&<ProjectSources media={p.gallery} label={details.length>0?'Projekty i detale':'Oryginalne projekty'}/>}</section>
 {!p.logo&&<div class="case-container"><ProjectContext project={p}/></div>}
 {p.applications&&p.applications.length>0&&<div class="case-container"><ProjectApplications applications={p.applications} startNumber={galleryNumber+1}/></div>}
