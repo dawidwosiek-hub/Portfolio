@@ -1,0 +1,90 @@
+---
+import data from '../content/reels.json';
+const {featured,reels,stats}=data as any;
+const has=(featured&&featured.length)||(reels&&reels.length);
+---
+{has&&<section class="rl" id="rolki" aria-labelledby="rl-title">
+ <div class="rl-head">
+  <span class="rl-tc" aria-hidden="true">REC <i></i> <b id="rl-tc">00:00:00:00</b></span>
+  <h2 id="rl-title">Rolki, które robią zasięgi.</h2>
+  <p>Montaż, napisy i rytm pod algorytm. Kilka sekund decyduje, czy ktoś przewinie, czy zostanie do końca.</p>
+ </div>
+ {stats&&stats.length>0&&<ul class="rl-stats">{stats.map((s:any)=><li><strong>{s.value}</strong><span>{s.label}</span></li>)}</ul>}
+
+ {featured&&featured.length>0&&<div class="rl-case">
+  <div class="rl-case-copy">
+   <span class="rl-client">{data.client}</span>
+   <h3>{data.caseTitle}</h3>
+   <p>{data.caseText}</p>
+   <a class="rl-ig" href={data.profile} target="_blank" rel="noopener">Zobacz profil na Instagramie <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="2"/></svg></a>
+  </div>
+  <div class="rl-phones">
+   {featured.map((r:any,i:number)=><figure class={`rl-phone p${i}`}>
+    <div class="rl-screen">
+     {r.src?<video muted loop playsinline preload="none" poster={r.poster} data-src={r.src} aria-label={r.title}></video>:<img src={r.poster} alt={r.title} loading="lazy"/>}
+     <div class="rl-ui" aria-hidden="true"><span class="rl-heart">♥ {r.likes}</span></div>
+    </div>
+    <figcaption class="rl-card">
+     <span class="rl-views">{r.views}</span><span class="rl-lbl">wyświetleń</span>
+     <span class="rl-title">„{r.title}”</span>
+     <a href={r.url} target="_blank" rel="noopener">Otwórz rolkę</a>
+    </figcaption>
+   </figure>)}
+  </div>
+ </div>}
+
+ {reels&&reels.length>0&&<div class="rl-strip" role="list">
+  {reels.map((r:any)=><figure class="rl-item" role="listitem">
+   <div class="rl-screen sm"><video muted loop playsinline preload="none" poster={r.poster} data-src={r.src} aria-label={r.title}></video><span class="rl-chip">{r.client}</span></div>
+   <figcaption><b>{r.title}</b>{r.views&&<span>{r.views} wyświetleń</span>}</figcaption>
+  </figure>)}
+ </div>}
+</section>}
+<script is:inline>(()=>{const root=document.getElementById('rolki');if(!root)return;
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const vids=[...root.querySelectorAll('video[data-src]')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){if(!v.src){v.src=v.dataset.src;}if(!RM)v.play().catch(()=>{});}else v.pause();}),{threshold:.35});
+vids.forEach(v=>{io.observe(v);v.addEventListener('click',()=>{v.muted=!v.muted;v.closest('.rl-screen').classList.toggle('sound',!v.muted);});});
+const tc=document.getElementById('rl-tc');let t0=performance.now();const f=n=>String(n).padStart(2,'0');
+(function loop(now){const s=(now-t0)/1000;tc.textContent=`${f(Math.floor(s/3600))}:${f(Math.floor(s/60)%60)}:${f(Math.floor(s)%60)}:${f(Math.floor(s*25)%25)}`;requestAnimationFrame(loop);})(t0);
+})();</script>
+<style>
+ .rl{background:#07070a;color:#fff;padding:110px 5% 120px;position:relative;overflow:hidden}
+ .rl:before{content:'';position:absolute;inset:auto -10% -40% auto;width:60vw;height:60vw;background:radial-gradient(closest-side,#ffcc0022,transparent);pointer-events:none}
+ .rl-head{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:20px 60px;align-items:end}
+ .rl-tc{grid-column:1/-1;display:inline-flex;align-items:center;gap:10px;font-size:.75rem;font-weight:700;color:#bdbdbd;font-variant-numeric:tabular-nums}
+ .rl-tc i{width:9px;height:9px;border-radius:50%;background:#ff3b30;animation:rec 1.2s steps(2) infinite}
+ @keyframes rec{50%{opacity:0}}
+ .rl-head h2{font-size:clamp(2.6rem,5.4vw,5.8rem);letter-spacing:-.06em;line-height:.98}
+ .rl-head p{color:#a9a9a9;font-size:.95rem}
+ .rl-stats{max-width:1300px;margin:56px auto 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #ffffff22}
+ .rl-stats li{padding:26px 20px 0 0}
+ .rl-stats strong{display:block;font-size:clamp(2.2rem,4.4vw,4.6rem);letter-spacing:-.05em;line-height:1;color:var(--yellow)}
+ .rl-stats span{display:block;color:#bdbdbd;font-size:.82rem;margin-top:10px;max-width:220px}
+ .rl-case{max-width:1300px;margin:90px auto 0;display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+ .rl-client{display:inline-block;background:#fff;color:#111;font-weight:700;font-size:.75rem;padding:5px 10px}
+ .rl-case h3{font-size:clamp(2rem,3.4vw,3.4rem);letter-spacing:-.05em;margin:18px 0 16px;line-height:1.02}
+ .rl-case p{color:#b5b5b5}
+ .rl-ig{display:inline-flex;gap:14px;align-items:center;margin-top:26px;font-weight:650;font-size:.88rem;border-bottom:1px solid #fff;padding-bottom:8px}
+ .rl-ig svg{width:16px;height:16px}
+ .rl-phones{display:flex;justify-content:center;gap:28px;perspective:1400px}
+ .rl-phone{margin:0;position:relative;width:min(280px,42%)}
+ .rl-phone.p0{transform:rotate(-4deg) translateY(16px)}
+ .rl-phone.p1{transform:rotate(3deg) translateY(-20px)}
+ .rl-screen{position:relative;aspect-ratio:9/16;border-radius:30px;overflow:hidden;background:#1a1a1a;border:7px solid #1c1c1f;box-shadow:0 30px 80px #000c,0 0 0 1px #ffffff22}
+ .rl-screen video,.rl-screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;cursor:pointer}
+ .rl-ui{position:absolute;right:10px;bottom:16px;font-size:.75rem;font-weight:700;text-shadow:0 1px 4px #000}
+ .rl-card{position:absolute;left:-26px;bottom:-30px;background:#fff;color:#111;padding:14px 16px;min-width:170px;box-shadow:0 18px 40px #0008}
+ .p1 .rl-card{left:auto;right:-26px;bottom:auto;top:40px}
+ .rl-views{display:block;font-size:2rem;font-weight:800;letter-spacing:-.05em;line-height:1}
+ .rl-lbl{font-size:.7rem;color:#666}
+ .rl-title{display:block;font-size:.78rem;font-weight:650;margin-top:8px}
+ .rl-card a{display:inline-block;margin-top:8px;font-size:.72rem;border-bottom:1px solid #111}
+ .rl-strip{max-width:1300px;margin:110px auto 0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(200px,1fr);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+ .rl-item{margin:0;scroll-snap-align:start}
+ .rl-screen.sm{border-radius:18px;border-width:4px}
+ .rl-chip{position:absolute;left:10px;top:10px;background:#000a;padding:4px 8px;font-size:.68rem;font-weight:700}
+ .rl-item figcaption{margin-top:12px;font-size:.85rem}
+ .rl-item figcaption span{display:block;color:#9a9a9a;font-size:.75rem;margin-top:3px}
+ @media(max-width:900px){.rl-head,.rl-case{grid-template-columns:1fr}.rl-stats{grid-template-columns:1fr 1fr}.rl-phone{width:46%}.rl-card{left:-6px;bottom:-24px;min-width:140px}.p1 .rl-card{right:-6px}}
+</style>
