@@ -30,3 +30,7 @@
 
 .project.with-print-mockup .project-image{background:transparent}
 .project.with-print-mockup .project-image img{object-fit:contain;background:#fff}
+.work-dark{background:#0a0a0a;color:#fff}
+.work-dark .section-heading p,.work-dark .eyebrow{color:#a9a9a9}
+.work-dark .section-heading em{color:#fff}
+.work-dark .text-link{color:#fff}
