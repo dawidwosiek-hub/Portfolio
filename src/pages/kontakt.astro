@@ -10,12 +10,12 @@ const topics:Record<string,{title:string;service:string}>={oklejenia:{title:'Pro
 const topicKey=Astro.url.searchParams.get('temat')||'';
 const topic=Object.hasOwn(topics,topicKey)?topics[topicKey]:undefined;
 const selected=services.find(s=>s.slug===Astro.url.searchParams.get('usluga'))?.slug||topic?.service||services.find(s=>selectedProject&&projectInCategory(selectedProject,s.category))?.slug||'';
-const configured=true;
+const configured=true;const viaResend=!!(env('RESEND_API_KEY')&&env('CONTACT_FROM')&&env('CONTACT_TO'));
 ---
 <Layout title="Kontakt i wycena projektu | NADX" description="Opowiedz o swoim projekcie. Zapytaj o logo, materiały reklamowe, montaż filmu lub projekt nadruku. Kraków i współpraca zdalna.">
 <section class="page-intro section contact-intro"><span class="eyebrow">KONTAKT / ZACZNIJMY OD ROZMOWY</span><h1>Zacznijmy<br/><em>Twój projekt.</em></h1><p>Napisz, czym zajmuje się firma i czego potrzebujesz. Wrócę z propozycją zakresu i wyceną.</p><div class="quick-contact"><a href={`mailto:${site.email}`}>{site.email}</a><a href={phoneHref}>{site.phone}</a></div></section>
 <section class="section contact-layout">
-<form id="inquiry" novalidate data-delivery={configured?'api':'email'} data-recipient={site.email} data-topic={topic?.title||''}><input type="hidden" name="challenge" value={createChallenge()}/><input type="hidden" name="project" value={project}/>{(project||topic)&&<div class="project-selection">{project?<>Inspiracja: <strong>{project}</strong></>:<>Temat: <strong>{topic?.title}</strong></>}</div>}
+<form id="inquiry" novalidate data-delivery={viaResend?'api':'formsubmit'} data-recipient={site.email} data-topic={topic?.title||''}><input type="hidden" name="challenge" value={createChallenge()}/><input type="hidden" name="project" value={project}/>{(project||topic)&&<div class="project-selection">{project?<>Inspiracja: <strong>{project}</strong></>:<>Temat: <strong>{topic?.title}</strong></>}</div>}
 <div class="form-field"><label for="service">Czego potrzebujesz? <span>*</span></label><select id="service" name="service" required><option value="">Wybierz usługę</option>{services.map(s=><option value={s.slug} selected={selected===s.slug}>{s.title}</option>)}</select><span class="field-error" id="error-service"></span></div>
 <div class="form-field"><label for="description">Opisz swój projekt <span>*</span></label><textarea id="description" name="description" rows="5" minlength="20" maxlength="5000" required placeholder="Czym zajmuje się firma? Co chcesz zaprojektować lub pokazać?"></textarea><span class="field-error" id="error-description"></span></div>
 <div class="form-row"><div class="form-field"><label for="name">Imię <span>*</span></label><input id="name" name="name" autocomplete="given-name" minlength="2" maxlength="120" required/><span class="field-error" id="error-name"></span></div><div class="form-field"><label for="email">E-mail <span>*</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required/><span class="field-error" id="error-email"></span></div></div>
@@ -55,8 +55,18 @@ form.addEventListener('submit',async event=>{
  if(form.dataset.delivery==='email'){prepareMail(payload);return;}
  button.disabled=true;button.textContent='Wysyłanie…';form.setAttribute('aria-busy','true');status.textContent='Przekazuję zapytanie…';
  try{
-  const response=await fetch('/api/inquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-  const result=await response.json();status.textContent=result.message||'Nie udało się wysłać zapytania.';
+  let response:Response,result:any;
+  if(form.dataset.delivery==='formsubmit'){
+   if(data.website){status.textContent='Dziękuję!';return;}
+   const service=(form.elements.namedItem('service') as HTMLSelectElement).selectedOptions[0]?.textContent||'';
+   response=await fetch(`https://formsubmit.co/ajax/${form.dataset.recipient}`,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({_subject:`Nowe zapytanie NADX — ${payload.name}`,_replyto:payload.email,_template:'table',_captcha:'false','Usługa':service,'Temat':form.dataset.topic||'—','Inspiracja':payload.project||'—','Imię':payload.name,'E-mail':payload.email,'Telefon':payload.phone||'—','Termin':payload.deadline,'Budżet':payload.budget||'—','Materiały':payload.reference||'—','Wiadomość':payload.description})});
+   const j=await response.json().catch(()=>({}));
+   result=String(j.success)==='true'?{message:'Dziękuję! Zapytanie dotarło — odpowiem na podany e-mail.'}:{message:''};
+   if(String(j.success)!=='true')response=new Response(null,{status:502});
+  }else{
+  response=await fetch('/api/inquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+  result=await response.json();}
+  status.textContent=result.message||'Nie udało się wysłać zapytania.';
   if(!response.ok){errors(result.errors||{});if(!result.errors){prepareMail(payload);status.textContent='Formularz nie przekazał wiadomości. Możesz wysłać przygotowaną treść ze swojej poczty.';}}
   else{window.dispatchEvent(new CustomEvent('nadx:analytics',{detail:{event:'inquiry_accepted',service:data.service}}));form.reset();button.hidden=true;draft.hidden=true;status.classList.add('success');status.focus();}
  }catch{prepareMail(payload);status.textContent='Nie udało się połączyć. Treść została zachowana i jest gotowa do wysłania e-mailem.';}

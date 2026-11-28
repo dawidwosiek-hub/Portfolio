@@ -23,13 +23,5 @@ export const POST:APIRoute=async({request,clientAddress})=>{
  const accepted=r.ok?await r.json():null;if(accepted?.id)return response(200,ok);
  }catch{}
  }
- // Bez konfiguracji Resend: FormSubmit przekazuje zapytanie prosto na skrzynkę właściciela.
- const to=env('CONTACT_TO')||'DawidWosiek@gmail.com';
- try{
- const r=await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(to)}`,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json',Origin:'https://nadx.pl',Referer:'https://nadx.pl/kontakt'},
-  body:JSON.stringify({_subject:`Nowe zapytanie NADX — ${d.name}`,_replyto:d.email,_template:'table',_captcha:'false',Usluga:d.service,Realizacja:d.project||'—',Imie:d.name,Email:d.email,Telefon:d.phone||'—',Termin:d.deadline,Budzet:d.budget||'—',Materialy:d.reference||'—',Wiadomosc:d.description}),signal:AbortSignal.timeout(15000)});
- const j:any=await r.json().catch(()=>({}));
- if(r.ok&&String(j.success)==='true')return response(200,ok);
- return response(502,{message:'Nie udało się przekazać wiadomości. Spróbuj ponownie — treść jest zachowana.',detail:String(j.message||r.status).slice(0,200)});
- }catch{return response(502,{message:'Usługa pocztowa nie odpowiada. Spróbuj ponownie bez zmieniania treści.'});}
+ return response(503,{message:'Wysyłka przez serwer nie jest skonfigurowana.'});
 };
