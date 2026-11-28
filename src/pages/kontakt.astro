@@ -10,7 +10,7 @@ const topics:Record<string,{title:string;service:string}>={oklejenia:{title:'Pro
 const topicKey=Astro.url.searchParams.get('temat')||'';
 const topic=Object.hasOwn(topics,topicKey)?topics[topicKey]:undefined;
 const selected=services.find(s=>s.slug===Astro.url.searchParams.get('usluga'))?.slug||topic?.service||services.find(s=>selectedProject&&projectInCategory(selectedProject,s.category))?.slug||'';
-const configured=!!(env('RESEND_API_KEY')&&env('CONTACT_FROM')&&env('CONTACT_TO')&&env('FORM_SECRET')&&env('SITE_URL'));
+const configured=true;
 ---
 <Layout title="Kontakt i wycena projektu | NADX" description="Opowiedz o swoim projekcie. Zapytaj o logo, materiały reklamowe, montaż filmu lub projekt nadruku. Kraków i współpraca zdalna.">
 <section class="page-intro section contact-intro"><span class="eyebrow">KONTAKT / ZACZNIJMY OD ROZMOWY</span><h1>Zacznijmy<br/><em>Twój projekt.</em></h1><p>Napisz, czym zajmuje się firma i czego potrzebujesz. Wrócę z propozycją zakresu i wyceną.</p><div class="quick-contact"><a href={`mailto:${site.email}`}>{site.email}</a><a href={phoneHref}>{site.phone}</a></div></section>

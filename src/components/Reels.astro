@@ -17,7 +17,9 @@ const has=(featured&&featured.length)||(reels&&reels.length);
    <h3>{data.caseTitle}</h3>
    <p>{data.caseText}</p>
    <a class="rl-ig" href={data.profile} target="_blank" rel="noopener">Zobacz profil na Instagramie <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="2"/></svg></a>
+  {data.pillars&&<ul class="rl-pillars">{data.pillars.map((x:any)=><li><b>{x.t}</b><span>{x.d}</span></li>)}</ul>}
   </div>
+  <div class="rl-phones-wrap"><span class="rl-lab">{data.featuredLabel}</span>
   <div class="rl-phones">
    {featured.map((r:any,i:number)=><figure class={`rl-phone p${i}`}>
     <div class="rl-screen">
@@ -30,9 +32,10 @@ const has=(featured&&featured.length)||(reels&&reels.length);
      <a href={r.url} target="_blank" rel="noopener">Otwórz rolkę</a>
     </figcaption>
    </figure>)}
-  </div>
+  </div></div>
  </div>}
 
+ {reels&&reels.length>0&&<span class="rl-lab rl-lab2">{data.stripLabel}</span>}
  {reels&&reels.length>0&&<div class="rl-strip" role="list">
   {reels.map((r:any)=><figure class="rl-item" role="listitem">
    <div class="rl-screen sm"><video muted loop playsinline preload="none" poster={r.poster} data-src={r.src} aria-label={r.title}></video><span class="rl-chip">{r.client}</span><span class="rl-snd" aria-hidden="true">Dźwięk: kliknij</span></div>
@@ -67,6 +70,12 @@ const tc=document.getElementById('rl-tc');let t0=performance.now();const f=n=>St
  .rl-case p{color:#b5b5b5}
  .rl-ig{display:inline-flex;gap:14px;align-items:center;margin-top:26px;font-weight:650;font-size:.88rem;border-bottom:1px solid #fff;padding-bottom:8px}
  .rl-ig svg{width:16px;height:16px}
+ .rl-pillars{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:16px}
+ .rl-pillars li{border-left:3px solid var(--yellow);padding-left:14px}
+ .rl-pillars b{display:block;font-size:.95rem}
+ .rl-pillars span{display:block;color:#a9a9a9;font-size:.84rem;line-height:1.5}
+ .rl-lab{display:block;font-size:.78rem;font-weight:650;color:#bdbdbd;margin-bottom:22px;text-align:center}
+ .rl-lab2{max-width:1300px;margin:100px auto 18px;text-align:left}
  .rl-phones{display:flex;justify-content:center;gap:28px;perspective:1400px}
  .rl-phone{margin:0;position:relative;width:min(280px,42%)}
  .rl-phone.p0{transform:rotate(-4deg) translateY(16px)}
@@ -80,7 +89,7 @@ const tc=document.getElementById('rl-tc');let t0=performance.now();const f=n=>St
  .rl-lbl{font-size:.7rem;color:#666}
  .rl-title{display:block;font-size:.78rem;font-weight:650;margin-top:8px}
  .rl-card a{display:inline-block;margin-top:8px;font-size:.72rem;border-bottom:1px solid #111}
- .rl-strip{max-width:1300px;margin:110px auto 0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(200px,1fr);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+ .rl-strip{max-width:1300px;margin:0 auto;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(200px,1fr);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
  .rl-item{margin:0;scroll-snap-align:start}
  .rl-screen.sm{border-radius:18px;border-width:4px}
  .rl-snd{position:absolute;right:10px;top:10px;background:#000a;color:#fff;padding:4px 8px;font-size:.66rem;font-weight:650;pointer-events:none;transition:opacity .3s}

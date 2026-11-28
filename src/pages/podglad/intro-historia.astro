@@ -70,7 +70,7 @@ const cam=new THREE.PerspectiveCamera(35,1,.05,120);
 const texL=new THREE.TextureLoader();
 const ALLT=[];const tex=(u,srgb=true)=>{const t=texL.load(u);ALLT.push(t);if(srgb)t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=gl.capabilities.getMaxAnisotropy();return t;};
 const M='/media/intro/';
-const tLogo=tex(M+'logo.webp'),tCover=tex(M+'book-cover.webp'),tS1=tex(M+'book-spread1.webp'),tS2=tex(M+'book-spread2.webp'),tPoster=tex(M+'poster.webp'),tCard=tex(M+'card.webp'),tPaper=tex(M+'paper.webp');
+const tLogo=tex(M+'logo.webp'),tCover=tex(M+'book-cover.webp'),tS1=tex(M+'book-spread1.webp'),tS2=tex(M+'book-spread2.webp'),tPoster=tex(M+'poster.webp'),tCard=tex(M+'card.webp'),tPaper=tex(M+'paper.webp?v=2');
 const half=(t,right)=>{const c=t.clone();c.repeat.set(.5,1);c.offset.set(right?.5:0,0);c.needsUpdate=true;return c;};
 
 // tło: ciemne studio z miękkim światłem
@@ -208,11 +208,11 @@ const card=new THREE.Mesh(new THREE.BoxGeometry(CW,CH,.012),[cardBackM,cardBackM
 const sq=new THREE.Mesh(new THREE.BoxGeometry(1,1,.02),[logoEdge,logoEdge,logoEdge,logoEdge,new THREE.MeshStandardMaterial({map:tLogo,roughness:.55}),logoEdge]);sq.visible=false;holder.add(sq);
 
 // ---------------- 4. merch ----------------
-const MERCH=[['tee-czarna',[.449,.5518,.3125,.4658]],['bluza',[.4297,.5664,.3809,.5859]],['tee-biala',[.4509,.5498,.3331,.4805]],['tee-wieszak',[.3877,.4806,.3626,.5012]],['van',[.2083,.3385,.3223,.5176]],['truck',[.5078,.6315,.2539,.4419]]];
+const MERCH=[['tee-czarna',[.465,.555,.45,.585]],['bluza',[.455,.545,.40,.535]],['tee-biala',[.468,.548,.585,.705]],['tee-wieszak',[.455,.545,.44,.57]],['van',[.62,.75,.38,.575]],['truck',[.17,.33,.25,.49]]];
 const MR=10,MPW=3.6,MPH=2.4,MSP=.43;
 const panels=MERCH.map(([n,q],i)=>{const th=(i-(MERCH.length-1)/2)*MSP;
- const m=new THREE.MeshBasicMaterial({map:tex(M+'merch-'+n+'-0.webp?v=3'),transparent:true,opacity:0,toneMapped:false});
- const m2=new THREE.MeshBasicMaterial({map:tex(M+'merch-'+n+'.webp?v=3'),transparent:true,opacity:0,toneMapped:false,depthWrite:false});
+ const m=new THREE.MeshBasicMaterial({map:tex(M+'merch-'+n+'-0.webp?v=4'),transparent:true,opacity:0,toneMapped:false});
+ const m2=new THREE.MeshBasicMaterial({map:tex(M+'merch-'+n+'.webp?v=4'),transparent:true,opacity:0,toneMapped:false,depthWrite:false});
  const mesh=new THREE.Mesh(new THREE.PlaneGeometry(MPW,MPH),m);
  const mesh2=new THREE.Mesh(new THREE.PlaneGeometry(MPW,MPH),m2);mesh2.position.z=.001;
  const g=new THREE.Group();g.position.set(MR*Math.sin(th),0,-MR*Math.cos(th)+2);g.rotation.y=-th;g.add(mesh);g.add(mesh2);scene.add(g);
@@ -345,7 +345,7 @@ function update(t){
 
 // ---------------- pętla ----------------
 let t0=performance.now(),t=0,playing=true,sent=false,paused=false;const SPEED=1.38;
-addEventListener('message',e=>{if(e.data==='nadx-pause')paused=true;if(e.data==='nadx-play')paused=false;});const EMBED=qs.has('embed');
+addEventListener('message',e=>{if(e.data==='nadx-pause')paused=true;if(e.data==='nadx-play')paused=false;});const EMBED=qs.has('embed');if(EMBED)document.querySelectorAll('.bar').forEach(b=>b.style.display='none');
 if(EMBED){document.querySelectorAll('#fin a').forEach(a=>a.target='_top');}
 const startAll=()=>{t0=performance.now();IDLE=0;playing=true;sent=false;document.body.classList.remove('end');};
 $('#again').addEventListener('click',startAll);

@@ -10,5 +10,6 @@ import {categories,projects} from '../../lib/content';
 <script>
 const buttons=document.querySelectorAll<HTMLButtonElement>('[data-filter]');
 buttons.forEach(button=>button.addEventListener('click',()=>{buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));let count=0;document.querySelectorAll<HTMLElement>('[data-category]').forEach(p=>{const categories:string[]=JSON.parse(p.dataset.categories || '[]');p.hidden=button.dataset.filter!=='all'&&!categories.includes(button.dataset.filter || '');if(!p.hidden)count++;});const status=document.querySelector('.filter-count');if(status)status.textContent=`Widoczne realizacje: ${count}`;const empty=document.querySelector<HTMLElement>('.filter-empty');if(empty)empty.hidden=count>0;}));
+const wanted=new URLSearchParams(location.search).get('kategoria');if(wanted)[...buttons].find(b=>b.dataset.filter===wanted)?.click();
 </script>
 </Layout>

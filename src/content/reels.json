@@ -1,24 +1,96 @@
 {
   "client": "Shiro Car Rent",
   "profile": "https://www.instagram.com/shiro_car_rent/",
-  "caseTitle": "Wypożyczalnia aut, którą ogląda pół Polski.",
-  "caseText": "Montuję rolki dla Shiro Car Rent: scenki z biura, szybkie cięcia, napisy pod oglądanie bez dźwięku i puenta w ostatniej sekundzie. Dwie z nich obejrzano razem ponad 8,6 mln razy.",
+  "caseTitle": "Shiro Car Rent: wypożyczalnia, którą ludzie rozpoznają.",
+  "caseText": "Montuję dla Shiro serię scenek z biura: ci sami bohaterowie, ten sam styl napisów i puenta w ostatniej sekundzie. Dzięki temu widz po dwóch sekundach wie, czyja to rolka — a marka zostaje w głowie, nie tylko w feedzie.",
   "stats": [
-    {"value": "8,6 mln", "label": "wyświetleń dwóch najlepszych rolek"},
-    {"value": "4,8 mln", "label": "najlepsza pojedyncza rolka"},
-    {"value": "216 tys.", "label": "polubień pod tymi dwiema"},
-    {"value": "20,5 tys.", "label": "obserwujących profil Shiro"}
+    {
+      "value": "8,7 mln",
+      "label": "wyświetleń 12 ostatnich rolek Shiro na Instagramie"
+    },
+    {
+      "value": "300+",
+      "label": "zmontowanych rolek — nowa niemal codziennie"
+    },
+    {
+      "value": "20,5 tys.",
+      "label": "osób obserwuje Shiro na Instagramie"
+    },
+    {
+      "value": "1 styl",
+      "label": "te same postacie, napisy i rytm w każdym odcinku"
+    }
   ],
   "featured": [
-    {"title": "Jak tam matury? 🫣", "views": "4,8 mln", "likes": "135 tys.", "url": "https://www.instagram.com/shiro_car_rent/reel/DYSH6ujMiKA/", "src": "/media/rolki/shiro-204.mp4", "poster": "/media/rolki/shiro-204.webp"},
-    {"title": "Wariaty❗️", "views": "3,8 mln", "likes": "81 tys.", "url": "https://www.instagram.com/shiro_car_rent/reel/DYKPCDeswG_/", "src": "/media/rolki/shiro-201.mp4", "poster": "/media/rolki/shiro-201.webp"}
+    {
+      "title": "Jak tam matury? 🫣",
+      "views": "4,8 mln",
+      "likes": "135 tys.",
+      "url": "https://www.instagram.com/shiro_car_rent/reel/DYSH6ujMiKA/",
+      "src": "/media/rolki/shiro-204.mp4",
+      "poster": "/media/rolki/shiro-204.webp"
+    },
+    {
+      "title": "Wariaty❗️",
+      "views": "3,8 mln",
+      "likes": "81 tys.",
+      "url": "https://www.instagram.com/shiro_car_rent/reel/DYKPCDeswG_/",
+      "src": "/media/rolki/shiro-201.mp4",
+      "poster": "/media/rolki/shiro-201.webp"
+    }
   ],
   "reels": [
-    {"client": "Shiro", "title": "Przy Tesli?", "src": "/media/rolki/shiro-195.mp4", "poster": "/media/rolki/shiro-195.webp"},
-    {"client": "Shiro", "title": "Mam zażalenia", "src": "/media/rolki/shiro-197.mp4", "poster": "/media/rolki/shiro-197.webp"},
-    {"client": "Shiro", "title": "Te 300 zł?", "src": "/media/rolki/shiro-199.mp4", "poster": "/media/rolki/shiro-199.webp"},
-    {"client": "Shiro", "title": "Najlepszego", "src": "/media/rolki/shiro-200.mp4", "poster": "/media/rolki/shiro-200.webp"},
-    {"client": "Shiro", "title": "Klient zawsze marzył", "src": "/media/rolki/shiro-203.mp4", "poster": "/media/rolki/shiro-203.webp"},
-    {"client": "Shiro", "title": "Cześć Kuba", "src": "/media/rolki/shiro-205.mp4", "poster": "/media/rolki/shiro-205.webp"}
-  ]
+    {
+      "client": "Shiro",
+      "title": "Przy Tesli?",
+      "src": "/media/rolki/shiro-195.mp4",
+      "poster": "/media/rolki/shiro-195.webp"
+    },
+    {
+      "client": "Shiro",
+      "title": "Mam zażalenia",
+      "src": "/media/rolki/shiro-197.mp4",
+      "poster": "/media/rolki/shiro-197.webp"
+    },
+    {
+      "client": "Shiro",
+      "title": "Te 300 zł?",
+      "src": "/media/rolki/shiro-199.mp4",
+      "poster": "/media/rolki/shiro-199.webp"
+    },
+    {
+      "client": "Shiro",
+      "title": "Najlepszego",
+      "src": "/media/rolki/shiro-200.mp4",
+      "poster": "/media/rolki/shiro-200.webp"
+    },
+    {
+      "client": "Shiro",
+      "title": "Klient zawsze marzył",
+      "src": "/media/rolki/shiro-203.mp4",
+      "poster": "/media/rolki/shiro-203.webp"
+    },
+    {
+      "client": "Shiro",
+      "title": "Cześć Kuba",
+      "src": "/media/rolki/shiro-205.mp4",
+      "poster": "/media/rolki/shiro-205.webp"
+    }
+  ],
+  "pillars": [
+    {
+      "t": "Stali bohaterowie",
+      "d": "Zespół Shiro gra samego siebie. Widzowie wracają, bo znają postacie."
+    },
+    {
+      "t": "Rozpoznawalny styl",
+      "d": "Żółte napisy, szybkie cięcia, ta sama scenografia. Rolkę Shiro poznasz bez logo."
+    },
+    {
+      "t": "Regularność",
+      "d": "Nowy odcinek niemal codziennie. Algorytm i widzowie dostają powód, żeby zostać."
+    }
+  ],
+  "featuredLabel": "Najmocniejsze odcinki serii",
+  "stripLabel": "Kolejne odcinki"
 }
