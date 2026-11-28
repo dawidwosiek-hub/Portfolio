@@ -1,9 +1,24 @@
 {
   "client": "Shiro Car Rent",
   "profile": "https://www.instagram.com/shiro_car_rent/",
-  "caseTitle": "Wypożyczalnia aut, która ma widownię.",
-  "caseText": "Montuję rolki dla Shiro Car Rent: szybkie cięcia, humor i auta w roli głównej. Dwie z nich obejrzało razem ponad 8,6 mln osób.",
-  "stats": [],
-  "featured": [],
-  "reels": []
+  "caseTitle": "Wypożyczalnia aut, którą ogląda pół Polski.",
+  "caseText": "Montuję rolki dla Shiro Car Rent: scenki z biura, szybkie cięcia, napisy pod oglądanie bez dźwięku i puenta w ostatniej sekundzie. Dwie z nich obejrzano razem ponad 8,6 mln razy.",
+  "stats": [
+    {"value": "8,6 mln", "label": "wyświetleń dwóch najlepszych rolek"},
+    {"value": "4,8 mln", "label": "najlepsza pojedyncza rolka"},
+    {"value": "216 tys.", "label": "polubień pod tymi dwiema"},
+    {"value": "20,5 tys.", "label": "obserwujących profil Shiro"}
+  ],
+  "featured": [
+    {"title": "Jak tam matury? 🫣", "views": "4,8 mln", "likes": "135 tys.", "url": "https://www.instagram.com/shiro_car_rent/reel/DYSH6ujMiKA/", "src": "/media/rolki/shiro-204.mp4", "poster": "/media/rolki/shiro-204.webp"},
+    {"title": "Wariaty❗️", "views": "3,8 mln", "likes": "81 tys.", "url": "https://www.instagram.com/shiro_car_rent/reel/DYKPCDeswG_/", "src": "/media/rolki/shiro-201.mp4", "poster": "/media/rolki/shiro-201.webp"}
+  ],
+  "reels": [
+    {"client": "Shiro", "title": "Przy Tesli?", "src": "/media/rolki/shiro-195.mp4", "poster": "/media/rolki/shiro-195.webp"},
+    {"client": "Shiro", "title": "Mam zażalenia", "src": "/media/rolki/shiro-197.mp4", "poster": "/media/rolki/shiro-197.webp"},
+    {"client": "Shiro", "title": "Te 300 zł?", "src": "/media/rolki/shiro-199.mp4", "poster": "/media/rolki/shiro-199.webp"},
+    {"client": "Shiro", "title": "Najlepszego", "src": "/media/rolki/shiro-200.mp4", "poster": "/media/rolki/shiro-200.webp"},
+    {"client": "Shiro", "title": "Klient zawsze marzył", "src": "/media/rolki/shiro-203.mp4", "poster": "/media/rolki/shiro-203.webp"},
+    {"client": "Shiro", "title": "Cześć Kuba", "src": "/media/rolki/shiro-205.mp4", "poster": "/media/rolki/shiro-205.webp"}
+  ]
 }
