@@ -1,5 +1,5 @@
 ---
-// Podgląd nowego intro: kwadrat z cząstek → logo → księga znaku → spalenie → plakat → składanie → wizytówka → kwadrat → merch.
+// Podgląd nowego intro: kwadrat z cząstek → logo → księga znaku → spalenie → plakat → składanie → wizytówka → kwadrat → koszulka → bluza → paczka → kurier → samolot → klient.
 export const prerender = true;
 ---
 <!doctype html>
@@ -35,7 +35,7 @@ body.end #fin{opacity:1;pointer-events:auto}
 <canvas id="gl"></canvas>
 <div class="bar t"></div><div class="bar b"></div>
 <div id="cap"><i></i><span></span></div>
-<div id="fin"><h1>Jeden znak. <span>Każdy nośnik.</span></h1><p>Logo, druk, odzież i oklejenia — od pomysłu do produkcji.</p><div class="row"><a href="/realizacje">Zobacz realizacje</a><button id="again" type="button">Odtwórz ponownie</button></div></div>
+<div id="fin"><h1>Jeden znak. <span>Każdy nośnik.</span></h1><p>Logo, druk, odzież i oklejenia — od pomysłu, przez produkcję, aż do klienta.</p><div class="row"><a href="/realizacje">Zobacz realizacje</a><button id="again" type="button">Odtwórz ponownie</button></div></div>
 <div id="prog"></div>
 <div id="hud" hidden></div>
 <script is:inline type="module">
@@ -57,8 +57,9 @@ const PI=Math.PI;
 
 // ---------------- oś czasu ----------------
 const T={gather0:.15,gather1:2.3,crisp0:2.35,crisp1:3.05,rot0:3.35,rot1:4.55,open0:4.8,open1:5.45,flip0:5.65,flip1:6.35,close0:6.6,close1:7.15,
- burn0:7.3,burn1:9.2,f10:9.55,f11:10.1,f20:10.2,f21:10.75,f30:10.85,f31:11.4,card0:11.6,card1:12.35,sq0:12.95,sq1:13.65,merch0:13.9,STEP:1.02,NM:6,back0:20.1,back1:21.5,END:22.2};
-const CAPS=[[0,'01','Znak'],[3.3,'02','Księga znaku'],[7.25,'03','Plakat'],[11.55,'04','Wizytówka'],[13.8,'05','Merch i pojazdy'],[20.1,'','']];
+ burn0:7.3,burn1:9.2,f10:9.55,f11:10.1,f20:10.2,f21:10.75,f30:10.85,f31:11.4,card0:11.6,card1:12.35,sq0:12.95,sq1:13.65,
+ ship0:13.7,teeG1:14.6,teeS0:14.4,teeS1:14.9,logo0:14.45,logo1:15.0,hood0:15.3,hood1:16.15,fold0:16.4,fold1:16.85,flipA:16.9,flipB:17.3,drop0:17.4,drop1:18.05,close0:18.05,close1:18.45,tape0:18.45,tape1:18.7,van0:18.45,van1:19.3,load0:19.35,load1:19.8,drv0:19.85,drv1:21.1,cargo0:21.1,cargo1:21.5,take0:21.55,glb0:23.0,glb1:24.9,door0:24.9,drop2a:25.0,drop2b:25.45,dOpen0:25.45,dOpen1:25.95,bOpen0:25.95,bOpen1:26.25,rise0:26.1,rise1:26.9,back0:26.9,back1:27.9,END:28.5};
+const CAPS=[[0,'01','Znak'],[3.3,'02','Księga znaku'],[7.25,'03','Plakat'],[11.55,'04','Wizytówka'],[13.7,'05','Koszulka'],[15.3,'06','Bluza'],[16.4,'07','Pakowanie'],[18.45,'08','Kurier'],[21.1,'09','Eksport'],[24.9,'10','Dostawa do klienta'],[26.9,'','']];
 
 // ---------------- renderer ----------------
 const canvas=$('#gl');
@@ -207,20 +208,146 @@ const cardBackM=new THREE.MeshStandardMaterial({color:0xffcc00,roughness:.55});
 const card=new THREE.Mesh(new THREE.BoxGeometry(CW,CH,.012),[cardBackM,cardBackM,cardBackM,cardBackM,cardM,cardBackM]);card.rotation.y=PI;card.visible=false;holder.add(card);
 const sq=new THREE.Mesh(new THREE.BoxGeometry(1,1,.02),[logoEdge,logoEdge,logoEdge,logoEdge,new THREE.MeshStandardMaterial({map:tLogo,roughness:.55}),logoEdge]);sq.visible=false;holder.add(sq);
 
-// ---------------- 4. merch ----------------
-const MERCH=[['tee-czarna',[.465,.555,.45,.585]],['bluza',[.455,.545,.40,.535]],['tee-biala',[.468,.548,.585,.705]],['tee-wieszak',[.455,.545,.44,.57]],['van',[.62,.75,.38,.575]],['truck',[.17,.33,.25,.49]]];
-const MR=10,MPW=3.6,MPH=2.4,MSP=.43;
-const panels=MERCH.map(([n,q],i)=>{const th=(i-(MERCH.length-1)/2)*MSP;
- const m=new THREE.MeshBasicMaterial({map:tex(M+'merch-'+n+'-0.webp?v=4'),transparent:true,opacity:0,toneMapped:false});
- const m2=new THREE.MeshBasicMaterial({map:tex(M+'merch-'+n+'.webp?v=4'),transparent:true,opacity:0,toneMapped:false,depthWrite:false});
- const mesh=new THREE.Mesh(new THREE.PlaneGeometry(MPW,MPH),m);
- const mesh2=new THREE.Mesh(new THREE.PlaneGeometry(MPW,MPH),m2);mesh2.position.z=.001;
- const g=new THREE.Group();g.position.set(MR*Math.sin(th),0,-MR*Math.cos(th)+2);g.rotation.y=-th;g.add(mesh);g.add(mesh2);scene.add(g);
- const cx=((q[0]+q[1])/2-.5)*MPW,cy=(.5-(q[2]+q[3])/2)*MPH,s=(q[1]-q[0])*MPW;
- const spot=new THREE.Vector3(cx,cy,.002);
- return {g,m,m2,th,spot,s};});
-const flyMat=new THREE.MeshStandardMaterial({map:tLogo,roughness:.5});
-const flyer=new THREE.Mesh(new THREE.BoxGeometry(1,1,.02),[logoEdge,logoEdge,logoEdge,logoEdge,flyMat,logoEdge]);flyer.visible=false;scene.add(flyer);
+// ---------------- 4. historia produktu: koszulka → bluza → paczka → kurier → samolot → klient ----------------
+const GROUND=-1.6;
+const mats=[];const M3=(o)=>{const m=new THREE.MeshStandardMaterial(o);mats.push(m);return m;};
+// --- kształty odzieży (kontur od środka góry, w lewo) ---
+const mirror=h=>{const r=h.slice();for(let i=h.length-1;i>=1;i--)r.push([-h[i][0],h[i][1]]);return r;};
+const TEE=mirror([[0,.50],[-.12,.52],[-.22,.62],[-.50,.66],[-.88,.40],[-.72,.16],[-.50,.28],[-.52,-.80]]).concat([]);
+const HOOD=mirror([[0,1.02],[-.20,.99],[-.33,.86],[-.37,.70],[-.54,.62],[-.80,.30],[-.95,-.50],[-.93,-.66],[-.74,-.68],[-.72,-.52],[-.57,.06],[-.56,-.70],[-.52,-.86]]);
+const RECT=[[0,.45],[-.45,.45],[-.45,-.65],[.45,-.65],[.45,.45]];
+function chaikin(p,it){for(let k=0;k<it;k++){const o=[];for(let i=0;i<p.length;i++){const a=p[i],b=p[(i+1)%p.length];o.push([a[0]*.75+b[0]*.25,a[1]*.75+b[1]*.25],[a[0]*.25+b[0]*.75,a[1]*.25+b[1]*.75]);}p=o;}return p;}
+function resample(p,n){const L=[0];for(let i=0;i<p.length;i++){const a=p[i],b=p[(i+1)%p.length];L.push(L[i]+Math.hypot(b[0]-a[0],b[1]-a[1]));}
+ const tot=L[L.length-1],o=[];let j=0;for(let i=0;i<n;i++){const d=i/n*tot;while(L[j+1]<d)j++;const a=p[j],b=p[(j+1)%p.length],f=(d-L[j])/(L[j+1]-L[j]||1);o.push([a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f]);}return o;}
+const NP=220;
+const sTEE=resample(chaikin(TEE,2),NP),sHOOD=resample(chaikin(HOOD,2),NP),sRECT=resample(chaikin(RECT,1),NP);
+const GD=.06;
+const garM=M3({color:0x1e1e21,roughness:.8});
+const garment=new THREE.Group();scene.add(garment);garment.visible=false;
+let garGeo=null,garKey='';
+const garMesh=new THREE.Mesh(new THREE.BufferGeometry(),garM);garment.add(garMesh);
+const lineM=new THREE.LineBasicMaterial({color:0xffcc00,transparent:true,opacity:.0});
+const lineGeo=new THREE.BufferGeometry();lineGeo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(NP*3),3));
+const garLine=new THREE.LineLoop(lineGeo,lineM);garment.add(garLine);
+function garShape(h,f){const k=h.toFixed(3)+'_'+f.toFixed(3);if(k===garKey)return;garKey=k;
+ const pts=sTEE.map((p,i)=>{let x=lerp(p[0],sHOOD[i][0],h),y=lerp(p[1],sHOOD[i][1],h);return [lerp(x,sRECT[i][0],f),lerp(y,sRECT[i][1],f)];});
+ const sh=new THREE.Shape(pts.map(p=>new THREE.Vector2(p[0],p[1])));
+ const g=new THREE.ExtrudeGeometry(sh,{depth:GD,bevelEnabled:true,bevelThickness:.012,bevelSize:.014,bevelSegments:2,curveSegments:1});g.translate(0,0,-GD/2);
+ if(garGeo)garGeo.dispose();garGeo=g;garMesh.geometry=g;
+ const a=lineGeo.attributes.position.array;pts.forEach((p,i)=>a.set([p[0],p[1],GD/2+.016],i*3));lineGeo.attributes.position.needsUpdate=true;}
+const logoDecM=new THREE.MeshStandardMaterial({map:tLogo,roughness:.6,polygonOffset:true,polygonOffsetFactor:-2});
+const decal=new THREE.Mesh(new THREE.PlaneGeometry(1,1),logoDecM);garment.add(decal);
+// kaptur i sznurki
+const hoodOpen=new THREE.Mesh(new THREE.CircleGeometry(1,40),M3({color:0x101012,roughness:1}));hoodOpen.position.set(0,.80,GD/2+.017);garment.add(hoodOpen);
+const strM=M3({color:0xd9d9d9,roughness:.6});const strings=new THREE.Group();garment.add(strings);
+for(const s of [-1,1]){const m=new THREE.Mesh(new THREE.BoxGeometry(.018,.3,.012),strM);m.position.set(s*.075,.47,GD/2+.022);strings.add(m);}
+const pocket=new THREE.Mesh(new THREE.PlaneGeometry(.62,.26),M3({color:0x2a2c30,roughness:.9}));pocket.position.set(0,-.5,GD/2+.017);garment.add(pocket);
+// złożona bluza: górna połowa + dolna na zawiasie
+const halfGeo=(y0,y1)=>{const s=new THREE.Shape([new THREE.Vector2(-.45,y0),new THREE.Vector2(.45,y0),new THREE.Vector2(.45,y1),new THREE.Vector2(-.45,y1)]);const g=new THREE.ExtrudeGeometry(s,{depth:GD,bevelEnabled:true,bevelThickness:.012,bevelSize:.014,bevelSegments:2});g.translate(0,0,-GD/2);return g;};
+const foldTop=new THREE.Mesh(halfGeo(-.1,.45),garM);garment.add(foldTop);
+const foldHinge=new THREE.Group();foldHinge.position.set(0,-.1,-.004);garment.add(foldHinge);
+const foldBot=new THREE.Mesh(halfGeo(-.55,0),garM);foldHinge.add(foldBot);
+// cząstki budujące koszulkę
+function inPoly(x,y,p){let c=false;for(let i=0,j=p.length-1;i<p.length;j=i++){const a=p[i],b=p[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c;}return c;}
+const TN=innerWidth<800?6000:11000;
+const tPos=new Float32Array(TN*3),tTgt=new Float32Array(TN*3),tCol=new Float32Array(TN*3),tRnd=new Float32Array(TN*4);
+for(let i=0;i<TN;i++){let x,y;do{x=(Math.random()-.5)*1.9;y=-.82+Math.random()*1.5;}while(!inPoly(x,y,sTEE));
+ tTgt.set([x,y,GD/2],i*3);const r=1.8+Math.random()*4,a=Math.random()*PI*2;tPos.set([Math.cos(a)*r,(Math.random()-.5)*3,Math.sin(a)*r*.5],i*3);
+ const edge=Math.random()<.35;tCol.set(edge?[1,.78,.1]:[.55,.55,.58],i*3);tRnd.set([Math.random(),Math.random(),Math.random(),Math.random()],i*4);}
+const tgeo=new THREE.BufferGeometry();tgeo.setAttribute('position',new THREE.BufferAttribute(tPos,3));tgeo.setAttribute('aT',new THREE.BufferAttribute(tTgt,3));tgeo.setAttribute('aC',new THREE.BufferAttribute(tCol,3));tgeo.setAttribute('aR',new THREE.BufferAttribute(tRnd,4));
+const tmat=pmat.clone();const tU=tmat.uniforms;const teePts=new THREE.Points(tgeo,tmat);teePts.frustumCulled=false;teePts.visible=false;scene.add(teePts);
+
+// --- świat: ziemia, droga, pas startowy ---
+const world=new THREE.Group();scene.add(world);world.visible=false;
+const wm=(c,r=1)=>{const m=M3({color:c,roughness:r,transparent:true});return m;};
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(260,80),wm(0x0d0d0e));ground.rotation.x=-PI/2;ground.position.set(20,GROUND,-10);world.add(ground);
+const road=new THREE.Mesh(new THREE.PlaneGeometry(40,1.3),wm(0x1c1c1f));road.rotation.x=-PI/2;road.position.set(6,GROUND+.003,-1.8);world.add(road);
+const runway=new THREE.Mesh(new THREE.PlaneGeometry(110,2.4),wm(0x1f1f22));runway.rotation.x=-PI/2;runway.position.set(70,GROUND+.004,-3.6);world.add(runway);
+const dashM=new THREE.MeshBasicMaterial({color:0xe9e9e9,transparent:true});mats.push(dashM);
+const dashes=new THREE.InstancedMesh(new THREE.PlaneGeometry(.55,.06),dashM,80);const dm=new THREE.Matrix4(),dq=new THREE.Quaternion().setFromEuler(new THREE.Euler(-PI/2,0,0));
+for(let i=0;i<80;i++){const rw=i>=34;const x=rw?18+(i-34)*2.4:-14+i*1.15;dm.compose(new THREE.Vector3(x,GROUND+.008,rw?-3.6:-1.8),dq,new THREE.Vector3(rw?2:1,1,1));dashes.setMatrixAt(i,dm);}world.add(dashes);
+const lightM=new THREE.MeshBasicMaterial({color:0xffcc00,transparent:true});mats.push(lightM);
+const rLights=new THREE.InstancedMesh(new THREE.SphereGeometry(.05,8,6),lightM,90);
+for(let i=0;i<90;i++){dm.makeTranslation(18+(i>>1)*2.4,GROUND+.05,i%2?-2.35:-4.85);rLights.setMatrixAt(i,dm);}world.add(rLights);
+
+// --- karton ---
+const BXW=1.05,BXH=.55,BXD=.75;
+const boxM=M3({color:0xb98a52,roughness:.92}),cardIn=M3({color:0x8a6236,roughness:1});
+const box=new THREE.Group();scene.add(box);box.visible=false;
+const bp=(w,h,d,x,y,z,m=boxM)=>{const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);box.add(o);return o;};
+bp(BXW,.02,BXD,0,.01,0,cardIn);bp(BXW,BXH,.02,0,BXH/2,BXD/2);bp(BXW,BXH,.02,0,BXH/2,-BXD/2);bp(.02,BXH,BXD,-BXW/2,BXH/2,0);bp(.02,BXH,BXD,BXW/2,BXH/2,0);
+const flap=(hx,hz,w,d,mx,mz,dy)=>{const g=new THREE.Group();g.position.set(hx,BXH+dy,hz);const m=new THREE.Mesh(new THREE.BoxGeometry(w,.014,d),boxM);m.position.set(mx,0,mz);g.add(m);box.add(g);return g;};
+const fF=flap(0,BXD/2,BXW,BXD/2,0,-BXD/4,.016),fB=flap(0,-BXD/2,BXW,BXD/2,0,BXD/4,.016),fL=flap(-BXW/2,0,BXW/2,BXD,BXW/4,0,0),fR=flap(BXW/2,0,BXW/2,BXD,-BXW/4,0,0);
+const tape=new THREE.Mesh(new THREE.BoxGeometry(.2,.012,BXD+.04),M3({color:0xffcc00,roughness:.5}));tape.position.set(0,BXH+.03,0);box.add(tape);
+const sticker=new THREE.Mesh(new THREE.PlaneGeometry(.26,.26),new THREE.MeshStandardMaterial({map:tLogo,roughness:.6}));sticker.position.set(.28,BXH*.5,BXD/2+.012);box.add(sticker);
+function flaps(open){fF.rotation.x=2.15*open.f;fB.rotation.x=-2.15*open.f;fL.rotation.z=2.2*open.s;fR.rotation.z=-2.2*open.s;}
+
+// --- kurier (van) ---
+const van=new THREE.Group();scene.add(van);van.visible=false;
+const vBody=M3({color:0x434851,roughness:.4,metalness:.3}),vGlass=M3({color:0x0a0c10,roughness:.15,metalness:.6}),vBlack=M3({color:0x0b0b0b,roughness:.8});
+const vPart=(g,w,h,d,x,y,z,m)=>{const o=new THREE.Mesh(g||new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);van.add(o);return o;};
+vPart(null,1.75,.95,.95,-.25,.7,0,vBody);vPart(null,.72,.72,.95,.95,.58,0,vBody);vPart(null,.05,.34,.86,1.32,.78,0,vGlass);vPart(null,.5,.3,.02,.95,.78,.476,vGlass);vPart(null,.5,.3,.02,.95,.78,-.476,vGlass);
+vPart(null,2.5,.07,.97,.1,.27,0,M3({color:0xffcc00,roughness:.5}));
+const hl=M3({color:0xfff2c0,emissive:0xfff0b0,emissiveIntensity:2});vPart(null,.03,.08,.16,1.32,.45,.33,hl);vPart(null,.03,.08,.16,1.32,.45,-.33,hl);
+const tl=M3({color:0xff2a1a,emissive:0xff2010,emissiveIntensity:1.5});vPart(null,.03,.12,.08,-1.13,.55,.4,tl);vPart(null,.03,.12,.08,-1.13,.55,-.4,tl);
+const vLogo=new THREE.Mesh(new THREE.PlaneGeometry(.6,.6),new THREE.MeshStandardMaterial({map:tLogo,roughness:.55}));vLogo.position.set(-.3,.72,.477);van.add(vLogo);
+const wheels=[];for(const [x,z] of [[-.78,.43],[-.78,-.43],[.85,.43],[.85,-.43]]){const w=new THREE.Mesh(new THREE.CylinderGeometry(.22,.22,.16,20),vBlack);w.rotation.x=PI/2;w.position.set(x,.22,z);van.add(w);wheels.push(w);}
+
+// --- samolot (nos w +z) ---
+function makePlane(){const g=new THREE.Group();const wM=M3({color:0xf1f1f1,roughness:.35,metalness:.2}),yM=M3({color:0xffcc00,roughness:.45}),dM=M3({color:0x22252a,roughness:.5,metalness:.4});
+ const add=(geo,m,x,y,z,rx=0,ry=0,rz=0,s)=>{const o=new THREE.Mesh(geo,m);o.position.set(x,y,z);o.rotation.set(rx,ry,rz);if(s)o.scale.set(...s);g.add(o);return o;};
+ add(new THREE.CylinderGeometry(.32,.32,2.6,24),wM,0,0,0,PI/2);
+ add(new THREE.SphereGeometry(.32,24,16),wM,0,0,1.3,0,0,0,[1,1,1.7]);
+ add(new THREE.ConeGeometry(.32,1.0,24),wM,0,.06,-1.8,-PI/2,0,0,[1,1,1]);
+ add(new THREE.BoxGeometry(3.8,.06,.75),wM,0,-.12,.15,0,0,0);
+ add(new THREE.BoxGeometry(1.3,.05,.42),wM,0,.12,-1.95);
+ const fin=add(new THREE.BoxGeometry(.06,.8,.6),yM,0,.55,-1.95);
+ for(const s of [-1,1]){const d=new THREE.Mesh(new THREE.PlaneGeometry(.42,.42),new THREE.MeshStandardMaterial({map:tLogo,roughness:.5}));d.position.set(s*.035,.55,-1.95);d.rotation.y=s*PI/2;g.add(d);
+  add(new THREE.CylinderGeometry(.13,.15,.55,16),dM,s*.95,-.32,.35,PI/2);}
+ add(new THREE.BoxGeometry(.5,.16,.02),dM,0,.12,1.55,-.5,0,0);
+ for(let i=0;i<9;i++)for(const s of [-1,1])add(new THREE.BoxGeometry(.01,.07,.09),dM,s*.318,.1,.9-i*.22);
+ return g;}
+const plane=new THREE.Group();const planeM=makePlane();planeM.rotation.y=PI/2;plane.add(planeM);scene.add(plane);plane.visible=false;
+for(const [x,z] of [[.9,0],[-.35,.45],[-.35,-.45]]){const w=new THREE.Mesh(new THREE.CylinderGeometry(.1,.1,.08,12),vBlack);w.rotation.x=PI/2;w.position.set(x,-.45,z);plane.add(w);}
+
+// --- glob z trasą ---
+const GC=new THREE.Vector3(0,40,0),GR=2;
+const globe=new THREE.Group();globe.position.copy(GC);scene.add(globe);globe.visible=false;
+const gSpin=new THREE.Group();globe.add(gSpin);
+gSpin.add(new THREE.Mesh(new THREE.SphereGeometry(GR,48,32),M3({color:0x121418,roughness:.85,metalness:.1})));
+gSpin.add(new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.SphereGeometry(GR*1.003,36,18)),new THREE.LineBasicMaterial({color:0xffcc00,transparent:true,opacity:.16})));
+const ll=(lat,lon,r=GR)=>{lat*=PI/180;lon*=PI/180;return new THREE.Vector3(r*Math.cos(lat)*Math.sin(lon),r*Math.sin(lat),r*Math.cos(lat)*Math.cos(lon));};
+const gA=ll(50.06,19.94),gB=ll(40.71,-74.0);
+const route=[];{const a=gA.clone().normalize(),b=gB.clone().normalize(),ang=a.angleTo(b),ax=new THREE.Vector3().crossVectors(a,b).normalize();
+ for(let i=0;i<=120;i++){const s=i/120;const v=a.clone().applyAxisAngle(ax,ang*s).multiplyScalar(GR*(1+.32*Math.sin(PI*s)));route.push(v);}}
+const rCurve=new THREE.CatmullRomCurve3(route);
+const rTube=new THREE.Mesh(new THREE.TubeGeometry(rCurve,160,.018,8,false),new THREE.MeshBasicMaterial({color:0xffcc00}));gSpin.add(rTube);
+const pinM=new THREE.MeshBasicMaterial({color:0xffcc00});
+const pinA=new THREE.Mesh(new THREE.SphereGeometry(.05,12,8),pinM);pinA.position.copy(gA);gSpin.add(pinA);
+const pinB=new THREE.Mesh(new THREE.SphereGeometry(.05,12,8),pinM);pinB.position.copy(gB);gSpin.add(pinB);
+const ringB=new THREE.Mesh(new THREE.RingGeometry(.08,.11,32),new THREE.MeshBasicMaterial({color:0xffcc00,transparent:true,side:THREE.DoubleSide}));ringB.position.copy(gB.clone().multiplyScalar(1.004));ringB.lookAt(gB.clone().multiplyScalar(2));gSpin.add(ringB);
+const miniPlane=makePlane();miniPlane.scale.setScalar(.075);gSpin.add(miniPlane);
+{const mid=rCurve.getPoint(.5).normalize();gSpin.quaternion.setFromUnitVectors(mid,new THREE.Vector3(0,.32,1).normalize());}
+const gSpin0=gSpin.quaternion.clone();
+
+// --- drzwi klienta ---
+const DC=new THREE.Vector3(-30,0,0);
+const door=new THREE.Group();door.position.copy(DC);scene.add(door);door.visible=false;
+const wall=new THREE.Mesh(new THREE.PlaneGeometry(9,5),M3({color:0x24211e,roughness:.95}));wall.position.set(0,GROUND+2.5,-1.2);door.add(wall);
+const inside=new THREE.Mesh(new THREE.PlaneGeometry(1.0,2.1),new THREE.MeshBasicMaterial({color:0xffb04a}));inside.position.set(0,GROUND+1.05,-1.19);door.add(inside);
+for(const [w,h,x,y] of [[.08,2.2,-.54,1.1],[.08,2.2,.54,1.1],[1.16,.08,0,2.18]]){const f=new THREE.Mesh(new THREE.BoxGeometry(w,h,.1),M3({color:0x3a3632,roughness:.7}));f.position.set(x,GROUND+y,-1.17);door.add(f);}
+const leafP=new THREE.Group();leafP.position.set(-.5,GROUND,-1.16);door.add(leafP);
+const leaf=new THREE.Mesh(new THREE.BoxGeometry(1.0,2.1,.06),M3({color:0x5a3b24,roughness:.6}));leaf.position.set(.5,1.05,0);leafP.add(leaf);
+const knob=new THREE.Mesh(new THREE.SphereGeometry(.04,12,8),M3({color:0xffcc00,metalness:.8,roughness:.3}));knob.position.set(.88,1.0,.05);leafP.add(knob);
+const mat=new THREE.Mesh(new THREE.PlaneGeometry(1.2,.7),M3({color:0x3b3127,roughness:1}));mat.rotation.x=-PI/2;mat.position.set(0,GROUND+.006,-.5);door.add(mat);
+const dFloor=new THREE.Mesh(new THREE.PlaneGeometry(14,8),M3({color:0x121212,roughness:1}));dFloor.rotation.x=-PI/2;dFloor.position.set(0,GROUND,1);door.add(dFloor);
+const warm=new THREE.PointLight(0xffa64a,0,7,1.6);warm.position.set(0,GROUND+1.4,-.6);door.add(warm);
+const lamp=new THREE.PointLight(0xfff0d8,6,8,1.8);lamp.position.set(.9,GROUND+2.6,.4);door.add(lamp);
+
+// --- przejścia (zaciemnienie) ---
+scene.add(cam);
+const fadeM=new THREE.MeshBasicMaterial({color:0x050505,transparent:true,opacity:0,depthTest:false,depthWrite:false});
+const fader=new THREE.Mesh(new THREE.PlaneGeometry(10,10),fadeM);fader.position.z=-.3;fader.renderOrder=999;cam.add(fader);
 
 // ---------------- post ----------------
 const composer=new EffectComposer(gl);composer.addPass(new RenderPass(scene,cam));
@@ -235,8 +362,6 @@ addEventListener('resize',resize);resize();
 
 // ---------------- kamera ----------------
 const cP=new THREE.Vector3(),cL=new THREE.Vector3(),tmp=new THREE.Vector3(),tmp2=new THREE.Vector3();
-function panelView(i,dist){const p=panels[i];const n=new THREE.Vector3(Math.sin(p.th),0,-Math.cos(p.th));
- return {pos:p.g.position.clone().addScaledVector(n,-dist),look:p.g.position.clone()};}
 let KICK=0,IDLE=0;
 function camAt(t){
  let px=0,py=0,pz=6.2,lx=0,ly=0,lz=0;
@@ -254,23 +379,26 @@ function camAt(t){
  const orb=Math.sin(seg(t,T.f10,T.sq1)*PI)*.35;px+=orb;
  const s1=eio(seg(t,T.sq0,T.sq1));pz=lerp(pz,3.2,s1);
  let P=new THREE.Vector3(px,py,pz*fit),L=new THREE.Vector3(lx,ly,lz);
- // 5: merch — szybkie przejścia między nośnikami
- if(t>=T.sq1+.15){
-  const k=(t-T.merch0)/T.STEP;
-  if(t<T.back0){
-   const i=Math.max(0,Math.min(MERCH.length-1,Math.floor(k))),fr=k-Math.floor(k);
-   const prev=i===0?{pos:new THREE.Vector3(0,0,3.2*fit),look:new THREE.Vector3()}:panelView(i-1,4.1*fit);
-   const cur=panelView(i,4.1*fit);
-   const m=k<0?eio(seg(t,T.sq1+.15,T.merch0)):eio(cl(fr/.42));
-   const from=k<0?{pos:P,look:L}:prev;const to=k<0?panelView(0,4.1*fit):cur;
-   P=from.pos.clone().lerp(to.pos,m);L=from.look.clone().lerp(to.look,m);
-   P.y+=Math.sin(m*PI)*.25;
-   if(k>=0){const kk=Math.sin(cl((fr-.36)/.3)*PI)*(fr>.36?1:0);P.lerp(L,kk*.07);KICK=kk*(i%2?1:-1);}
-  }else{
-   const last=panelView(MERCH.length-1,4.1*fit);const e=eio(seg(t,T.back0,T.back1));
-   P=last.pos.clone().lerp(new THREE.Vector3(0,.35,7.2*fit),e);L=last.look.clone().lerp(new THREE.Vector3(0,-.15,-6),e);
-   if(IDLE>0){const w=Math.min(1,IDLE/2);P.x+=Math.sin(IDLE*.22)*1.6*w;L.x+=Math.sin(IDLE*.22)*2.4*w;P.y+=Math.sin(IDLE*.17)*.15*w;}
-  }
+ // 5: historia produktu — kamera
+ if(t>=T.sq1){
+  const V=(x,y,z)=>new THREE.Vector3(x,y,z);
+  const kf=(keys)=>{if(t<=keys[0][0])return {P:keys[0][1].clone(),L:keys[0][2].clone()};
+   for(let i=0;i<keys.length-1;i++){const [a,P0,L0]=keys[i],[b,P1,L1]=keys[i+1];if(t<=b){const e=eio((t-a)/(b-a));return {P:P0.clone().lerp(P1,e),L:L0.clone().lerp(L1,e)};}}
+   const k=keys[keys.length-1];return {P:k[1].clone(),L:k[2].clone()};};
+  const D=(x,y,z)=>DC.clone().add(V(x,y,z)),Gc=(x,y,z)=>GC.clone().add(V(x,y,z));
+  const P1=()=>kf([[T.sq1,V(0,0,3.2),V(0,0,0)],[T.teeG1,V(0,.1,4.7),V(0,0,0)],[T.hood0,V(.5,.2,4.4),V(0,.05,0)],[T.fold0,V(-.45,.25,4.6),V(0,.1,0)],[T.drop0,V(.15,.35,3.4),V(0,-.05,0)]]);
+  const P2=()=>kf([[T.drop0,V(.15,.35,3.4),V(0,-.05,0)],[T.drop1,V(.5,.55,3.5),V(0,-1.25,0)],[T.tape1,V(.6,.5,3.7),V(0,-1.25,0)],[T.van1,V(1.4,.5,6.8),V(.9,-1.1,-1.0)],[T.drv0,V(1.4,.5,6.8),V(1.0,-1.1,-1.2)]]);
+  const vp=van.position,pl=plane.position;
+  const P3=()=>{const s=seg(t,T.drv1-.5,T.cargo1);return {P:vp.clone().add(V(-1.0+1.8*s,1.9+.4*s,6.4+2.2*s)),L:vp.clone().add(V(1.2+2.6*s,.5,-.8*s))};};
+  const P4=()=>({P:pl.clone().add(V(-5.5,1.4,8.5)),L:pl.clone().add(V(2,.3,0))});
+  const P5=()=>{const a=(t-T.glb0)*.35;return {P:Gc(Math.sin(a)*1.2,.7,6.6),L:Gc(0,0,0)};};
+  const P6=()=>kf([[T.door0,D(0,.3,5.2),D(0,-.6,-.6)],[T.dOpen0,D(0,.1,4.3),D(0,-.8,-.6)],[T.bOpen1,D(.3,0,3.7),D(0,-.75,-.3)],[T.rise1,D(0,.35,4.2),D(0,.15,0)],[T.back1,D(0,-.05,6.0),D(0,-.55,0)]]);
+  const phases=[[T.sq1,P1,0],[T.drop0,P2,0],[T.drv0,P3,.45],[T.take0,P4,.6],[T.glb0,P5,0],[T.door0,P6,0]];
+  let k=0;for(let i=0;i<phases.length;i++)if(t>=phases[i][0])k=i;
+  let r=phases[k][1]();
+  if(k>0&&phases[k][2]>0){const w=eio((t-phases[k][0])/phases[k][2]);if(w<1){const o=phases[k-1][1]();r={P:o.P.lerp(r.P,w),L:o.L.lerp(r.L,w)};}}
+  P=r.L.clone().add(r.P.clone().sub(r.L).multiplyScalar(fit));L=r.L;
+  if(t>=T.back0&&IDLE>0){const w=Math.min(1,IDLE/2);P.x+=Math.sin(IDLE*.22)*.9*w;L.x+=Math.sin(IDLE*.22)*.25*w;P.y+=Math.sin(IDLE*.17)*.12*w;}
  }
  // ręczna kamera
  P.x+=Math.sin(t*.7)*.04;P.y+=Math.sin(t*.53+1)*.03;
@@ -312,29 +440,71 @@ function update(t){
  const ph=t<T.card0+(T.card1-T.card0)/2?0:(t<T.sq0+(T.sq1-T.sq0)/2?1:2);
  poster.visible=poster.visible&&ph===0;card.visible=ph===1;
  const cs=1+.12*Math.sin(seg(t,T.card1-.15,T.card1+.4)*PI);card.scale.setScalar(cs);
- sq.visible=ph===2&&t<T.sq1+.15;sq.scale.set(.9,.9,1);
- // 5: merch
- const mk=(t-T.merch0)/T.STEP;
- panels.forEach((p,i)=>{const on=mk-i;p.m.opacity=t<T.sq1?0:Math.min(1,.18+.82*cl((on-.32)/.25)+ (t>T.back0?.0:0));if(t<T.merch0-.4)p.m.opacity=cl((t-(T.sq1-.2))/.6)*.18;
-  const pr=t>=T.back0?1:cl((on-.38)/.12);p.m2.opacity=p.m.opacity*pr;});
- flyer.visible=t>=T.sq1+.15&&t<T.merch0+T.STEP*MERCH.length-.4;
- if(flyer.visible){
-  let i=Math.max(0,Math.floor(mk)),fr=mk-Math.floor(mk);if(mk<0){i=0;fr=0;}
-  const p=panels[Math.min(i,panels.length-1)];
-  const to=p.spot.clone().applyMatrix4(p.g.matrixWorld);
-  let from;
-  if(i===0){from=new THREE.Vector3(0,0,0);}else{const q=panels[i-1];from=q.spot.clone().applyMatrix4(q.g.matrixWorld);}
-  const e=mk<0?0:eio(cl(fr/.38));
-  flyer.position.copy(from).lerp(to,e);flyer.position.z+=Math.sin(e*PI)*.8;
-  const s0=i===0?.9:panels[i-1].s,s1=p.s;const s=lerp(s0,s1,e);flyer.scale.set(s,s,1);
-  const q0=new THREE.Quaternion().setFromEuler(new THREE.Euler(0,i===0?0:-panels[i-1].th,0)),q1=new THREE.Quaternion().setFromEuler(new THREE.Euler(0,-p.th,0));
-  flyer.quaternion.copy(q0).slerp(q1,e);flyer.rotation.z+=Math.sin(e*PI)*.6;
-  // po „przyklejeniu” znika (logo jest już na zdjęciu)
-  const stick=cl((fr-.38)/.12);flyMat.opacity=1;flyer.visible=!(mk>=0&&stick>=1&&fr<.999);
-  flyMat.transparent=true;flyMat.opacity=mk<0?1:1-stick;
-  if(mk>=MERCH.length-1+.4)flyer.visible=false;
+ sq.scale.set(.9,.9,1);
+ // 5: historia produktu
+ sq.visible=ph===2&&t<T.logo0;
+ const SH=t>=T.ship0;
+ // cząstki → koszulka
+ teePts.visible=SH&&t<T.teeS1+.3;tU.uTime.value=t;tU.uPx.value=pU.uPx.value;
+ tU.uG.value=eio(seg(t,T.ship0,T.teeG1));tU.uFade.value=1-seg(t,T.teeS0+.2,T.teeS1+.25);
+ const h=t>=T.rise0?1:eio(seg(t,T.hood0,T.hood1)),f=t>=T.rise0?0:eio(seg(t,T.fold0,T.fold1));
+ const inBox=t>=T.close1&&t<T.rise0;
+ garment.visible=SH&&t>=T.logo0&&!inBox;
+ if(garment.visible){
+  const folded=t>=T.flipA&&t<T.rise0;
+  garMesh.visible=!folded;foldTop.visible=foldHinge.visible=folded;
+  if(!folded)garShape(h,f);
+  foldHinge.rotation.x=eio(seg(t,T.flipA,T.flipB))*PI*.985;
+  const op=t>=T.rise0?1:eo(seg(t,T.teeS0,T.teeS1));garM.transparent=op<1;garM.opacity=op;
+  garM.color.setHex(0x1e1e21).lerp(new THREE.Color(0x3a3d43),h);
+  lineM.opacity=folded?0:(t>=T.rise0?.35:lerp(.95,.4,seg(t,T.teeS1,T.hood0)))*cl((t-T.ship0)/.4);
+  const hd=folded?0:Math.pow(h,4)*(1-f);hoodOpen.scale.set(.14*hd+1e-3,.17*hd+1e-3,1);strings.scale.set(1,hd+1e-3,1);pocket.scale.set(hd+1e-3,hd+1e-3,1);
+  // logo: z kwadratu na piersi
+  const le=eio(seg(t,T.logo0,T.logo1));const ly=lerp(lerp(.30,.20,h),.18,f),ls=lerp(.34,.3,f);
+  decal.position.set(0,lerp(0,ly,le),GD/2+.02+Math.sin(le*PI)*.5);decal.scale.setScalar(lerp(.9,ls,le));decal.rotation.z=Math.sin(le*PI)*.5;
+  // ruch odzieży
+  if(t<T.rise0){
+   const a=eio(seg(t,T.drop0,T.drop0+.4)),b=eio(seg(t,T.drop0+.35,T.drop1));
+   garment.rotation.set(-PI/2*a,Math.sin(seg(t,T.teeS1,T.fold0)*PI*2)*.28*(1-a),0);
+   garment.position.set(0,lerp(lerp(0,-.7,a),GROUND+.06,b),lerp(0,.175,a));garment.scale.setScalar(1);
+  }else{
+   const r=seg(t,T.rise0,T.rise1);garment.rotation.set(0,Math.sin(r*PI)*.5+Math.sin(IDLE*.5)*.35,0);
+   garment.position.set(DC.x,lerp(GROUND+.3,.3,eo(r)),DC.z+lerp(-.35,.1,eo(r)));garment.scale.setScalar(lerp(.25,.82,eoBack(r)));
+  }
  }
- bgMat.uniforms.uA.value=t>T.merch0?lerp(1,.55,seg(t,T.merch0,T.merch0+1)):1;
+ // świat
+ world.visible=t>=T.drop0-.3&&t<T.glb0;const wo=seg(t,T.drop0-.3,T.drop0+.6);[ground.material,road.material,runway.material,dashM,lightM].forEach(m=>m.opacity=wo);
+ // karton
+ box.visible=(t>=T.drop0-.25&&t<T.load1)||(t>=T.cargo0&&t<T.cargo1)||t>=T.drop2a;
+ const vanX=t<T.van1?lerp(-9,1.6,eo(seg(t,T.van0,T.van1))):lerp(1.6,21.2,eio(seg(t,T.drv0,T.drv1)));
+ van.visible=t>=T.van0&&t<T.glb0;van.position.set(vanX,GROUND,-1.8);wheels.forEach(w=>w.rotation.y=-vanX/.22);
+ const rear=new THREE.Vector3(vanX-1.0,GROUND+.3,-1.8);
+ const tau=Math.max(0,t-T.take0);
+ plane.visible=t>=T.drv0&&t<T.glb0;plane.position.set(26+7*tau*tau,GROUND+.55+(tau>.6?4.2*(tau-.6)*(tau-.6):0),-3.6);plane.rotation.z=.26*seg(tau,.5,1.0);
+ if(box.visible){
+  box.rotation.set(0,0,0);let bs=1;
+  if(t<T.load0){box.position.set(0,GROUND,0);bs=eoBack(seg(t,T.drop0-.25,T.drop0+.15));}
+  else if(t<T.load1){const s=eio(seg(t,T.load0,T.load1));box.position.set(lerp(0,rear.x,s),lerp(GROUND,rear.y,s)+Math.sin(s*PI)*1.1,lerp(0,rear.z,s));bs=lerp(1,.55,s);box.rotation.z=s*PI*.5;}
+  else if(t<T.cargo1){const s=eio(seg(t,T.cargo0,T.cargo1));const to=plane.position.clone().add(new THREE.Vector3(-.8,-.1,.4));box.position.set(lerp(rear.x,to.x,s),lerp(rear.y,to.y,s)+Math.sin(s*PI)*1.2,lerp(rear.z,to.z,s));bs=lerp(.55,.35,s);box.rotation.y=s*PI;}
+  else{const e=seg(t,T.drop2a,T.drop2b);const bo=Math.sin(seg(t,T.drop2b,T.drop2b+.25)*PI)*.12;box.position.set(DC.x,GROUND+2.6*(1-ei(e))+bo,DC.z-.35);box.rotation.y=(1-e)*1.2;}
+  box.scale.setScalar(Math.max(.001,bs));
+  const cs=t<T.cargo0?eio(seg(t,T.close0,T.close0+.25)):1,cf=t<T.cargo0?eio(seg(t,T.close0+.15,T.close1)):1;
+  let op={s:1-cs,f:1-cf};if(t>=T.drop2a){const o=eio(seg(t,T.bOpen0,T.bOpen1));op={s:o,f:o};}
+  flaps(op);tape.scale.set(1,1,t>=T.drop2a?Math.max(.001,1-seg(t,T.bOpen0-.15,T.bOpen0)):Math.max(.001,eio(seg(t,T.tape0,T.tape1))));tape.visible=tape.scale.z>.01;
+ }
+ // glob
+ globe.visible=t>=T.glb0-.05&&t<T.door0+.05;
+ if(globe.visible){const p=eio(seg(t,T.glb0+.15,T.glb1-.4));rTube.geometry.setDrawRange(0,Math.floor(p*160)*8*6);
+  globe.rotation.y=(t-T.glb0)*.06;
+  const pp=rCurve.getPoint(Math.min(p,.999)),pn=rCurve.getPoint(Math.min(p+.01,1));const m4=new THREE.Matrix4().lookAt(pn,pp,pp.clone().normalize());miniPlane.position.copy(pp);miniPlane.quaternion.setFromRotationMatrix(m4);
+  miniPlane.visible=p<.995;const rp=seg(t,T.glb1-.45,T.glb1);ringB.scale.setScalar(1+rp*3);ringB.material.opacity=rp>0?1-rp:0;}
+ // drzwi
+ door.visible=t>=T.door0-.05;
+ if(door.visible){const o=eio(seg(t,T.dOpen0,T.dOpen1));leafP.rotation.y=-1.75*o;warm.intensity=10*o;}
+ // zaciemnienia między scenami
+ const bump=(c)=>cl(1-Math.abs(t-c)/.28);fadeM.opacity=Math.max(bump(T.glb0),bump(T.door0));fader.visible=fadeM.opacity>0;
+ if(SH){bloom.strength=globe.visible?.45:(t>=T.door0?.25:0);bloom.threshold=globe.visible?.55:.85;}
+ bgMat.uniforms.uA.value=t>T.drop0-.3?lerp(1,.45,seg(t,T.drop0-.3,T.drop0+.6)):1;
  // napisy
  let ci=0;for(let k=0;k<CAPS.length;k++)if(t>=CAPS[k][0])ci=k;
  if(ci!==capI){capI=ci;const c=$('#cap');c.classList.remove('on');const [_,n,txt]=CAPS[ci];setTimeout(()=>{if(!txt)return;c.querySelector('span').innerHTML=`<b>${n}</b>&nbsp;&nbsp;${txt}`;c.classList.add('on');},180);}
